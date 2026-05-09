@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iRonic Health — وصف المشروع الرسمي الكامل (عربي) v4</title>
+<link href="https://fonts.googleapis.com/css2?family=Kufam:wght@400;600;700;900&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #4179AD;
+    --gold: #CAB164;
+    --blue-dark: #2d5a8a;
+    --gold-dark: #a8914a;
+    --text: #1a1a2e;
+    --text-light: #4a4a6a;
+    --border: #dde3ed;
+    --bg-light: #f4f7fb;
+    --bg-gold: #faf7f0;
+    --green: #2e7d5e;
+    --green-light: #eaf5f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: #eef2f7;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+    direction: rtl;
+  }
+
+  @media print {
+    body { background: #fff; font-size: 11.5px; }
+    .no-print { display: none !important; }
+    .page { box-shadow: none; margin: 0; border-radius: 0; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    .section { page-break-inside: avoid; }
+  }
+
+  .page {
+    max-width: 940px;
+    margin: 30px auto;
+    background: #fff;
+    box-shadow: 0 8px 60px rgba(65,121,173,0.15);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+    padding: 44px 54px 34px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(202,177,100,0.12);
+    pointer-events: none;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; right: 60px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    pointer-events: none;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .logo-area { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+  .header-meta {
+    text-align: right;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+    line-height: 2;
+  }
+  .header-meta .lbl { color: var(--gold); font-weight: 700; display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px; }
+  .header-title-block { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; }
+  .header-title { font-family: 'Kufam', sans-serif; font-size: 27px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .header-subtitle { font-size: 13.5px; color: rgba(255,255,255,0.78); font-weight: 400; }
+  .gold-bar { height: 5px; background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 60%, transparent 100%); }
+
+  /* ===== CONTENT ===== */
+  .content { padding: 44px 54px; }
+
+  /* ===== SECTION ===== */
+  .section { margin-bottom: 38px; }
+  .section-title {
+    font-family: 'Kufam', sans-serif;
+    font-size: 16.5px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .num {
+    background: var(--blue);
+    color: #fff;
+    min-width: 28px; height: 28px;
+    border-radius: 7px;
+    font-size: 13px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    font-family: 'Cairo', sans-serif;
+  }
+  .section-title .num.gold { background: var(--gold); color: var(--blue-dark); }
+
+  p { color: var(--text); margin-bottom: 12px; font-size: 14px; text-align: justify; }
+  p strong { color: var(--blue-dark); }
+
+  /* ===== GRIDS ===== */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .info-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .info-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: 8px; padding: 13px 16px; }
+  .info-label { font-size: 11px; color: var(--text-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .info-value { font-size: 14px; font-weight: 700; color: var(--text); }
+
+  /* ===== BOXES ===== */
+  .highlight-box {
+    background: var(--bg-gold);
+    border-right: 4px solid var(--gold);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  .highlight-box strong { color: var(--gold-dark); }
+  .blue-box {
+    background: var(--bg-light);
+    border-right: 4px solid var(--blue);
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  .blue-box strong { color: var(--blue-dark); }
+  .green-box {
+    background: var(--green-light);
+    border-right: 4px solid var(--green);
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  .green-box strong { color: var(--green); }
+
+  /* ===== PARTY CARDS (7 parties) ===== */
+  .party-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0; }
+  .party-card {
+    background: var(--bg-light);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+  .party-card:hover { border-color: var(--blue); }
+  .party-icon { font-size: 24px; margin-bottom: 6px; }
+  .party-name { font-family: 'Kufam', sans-serif; font-size: 13px; font-weight: 700; color: var(--blue); line-height: 1.4; }
+
+  /* ===== MODULE LIST ===== */
+  .module-list { list-style: none; counter-reset: mc; }
+  .module-list li { counter-increment: mc; display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+  .module-list li::before {
+    content: counter(mc);
+    background: var(--blue); color: #fff;
+    min-width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; font-family: 'Cairo', sans-serif;
+    margin-top: 2px; flex-shrink: 0;
+  }
+  .mod-title { font-weight: 800; color: var(--blue-dark); display: block; margin-bottom: 3px; font-size: 14.5px; }
+  .mod-desc { font-size: 13px; color: var(--text-light); line-height: 1.75; }
+  .mod-tag { display: inline-block; background: var(--bg-light); border: 1px solid var(--blue); color: var(--blue); font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-top: 5px; margin-left: 4px; }
+  .mod-tag.gold { border-color: var(--gold); color: var(--gold-dark); background: var(--bg-gold); }
+
+  /* ===== INSURANCE FEATURES ===== */
+  .ins-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .ins-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .ins-card-head { background: var(--blue); color: #fff; padding: 9px 14px; font-weight: 700; font-family: 'Kufam', sans-serif; font-size: 13px; display: flex; align-items: center; gap: 8px; }
+  .ins-card-body { padding: 12px 14px; font-size: 13px; color: var(--text-light); line-height: 1.75; background: var(--bg-light); }
+  .ins-card-body strong { color: var(--text); }
+
+  /* ===== TABLE ===== */
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th { background: var(--blue); color: #fff; padding: 10px 14px; text-align: right; font-weight: 700; font-family: 'Kufam', sans-serif; font-size: 13px; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.7; }
+  tr:nth-child(even) td { background: var(--bg-light); }
+  td strong { color: var(--blue-dark); }
+
+  /* ===== NICE CLASSES ===== */
+  .class-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+  .class-card { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .class-head { background: var(--blue); color: #fff; padding: 9px 14px; font-weight: 700; font-family: 'Kufam', sans-serif; font-size: 13px; }
+  .class-body { padding: 12px 14px; font-size: 13px; color: var(--text-light); line-height: 1.75; background: var(--bg-light); }
+
+  /* ===== MARKS ===== */
+  .mark-item { display: flex; gap: 12px; align-items: flex-start; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; }
+  .mark-num { background: var(--gold); color: var(--blue-dark); font-weight: 900; font-size: 13px; min-width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .mark-text { font-size: 13px; color: var(--text); line-height: 1.65; }
+  .mark-text strong { color: var(--blue-dark); display: block; margin-bottom: 2px; font-size: 14px; }
+
+  /* ===== COMPETITOR TABLE ===== */
+  .comp-table th { background: var(--blue-dark); }
+  .comp-win { color: var(--green); font-weight: 700; }
+  .comp-gap { color: #c0392b; font-size: 12px; }
+
+  /* ===== FINANCIALS ===== */
+  .fin-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 14px 0; }
+  .fin-card { background: var(--bg-light); border: 1.5px solid var(--border); border-radius: 10px; padding: 16px 14px; text-align: center; }
+  .fin-card.blue { border-color: var(--blue); background: rgba(65,121,173,0.07); }
+  .fin-card.gold { border-color: var(--gold); background: var(--bg-gold); }
+  .fin-num { font-family: 'Kufam', sans-serif; font-size: 26px; font-weight: 900; color: var(--blue); }
+  .fin-card.gold .fin-num { color: var(--gold-dark); }
+  .fin-label { font-size: 12px; color: var(--text-light); margin-top: 4px; line-height: 1.5; }
+
+  /* ===== TEAM ===== */
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0; }
+  .team-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: 10px; padding: 14px 10px; text-align: center; }
+  .team-role { background: var(--blue); color: #fff; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px; display: inline-block; font-family: 'Kufam', sans-serif; }
+  .team-name { font-size: 12px; font-weight: 700; color: var(--text); }
+
+  /* ===== STAGE BOX ===== */
+  .stage-list { list-style: none; }
+  .stage-item { display: flex; gap: 14px; margin-bottom: 12px; align-items: flex-start; }
+  .stage-dot { min-width: 32px; height: 32px; border-radius: 50%; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0; font-family: 'Kufam', sans-serif; margin-top: 2px; }
+  .stage-dot.gold { background: var(--gold); color: var(--blue-dark); }
+  .stage-content { font-size: 13.5px; }
+  .stage-title { font-weight: 800; color: var(--blue-dark); display: block; }
+
+  /* ===== DIVIDER ===== */
+  .divider { height: 1px; background: var(--border); margin: 30px 0; }
+
+  /* ===== NOTE BOX ===== */
+  .note-box { background: #fff8e7; border: 1px dashed var(--gold); border-radius: 8px; padding: 14px 18px; font-size: 12.5px; color: #7a6020; margin-top: 16px; line-height: 1.8; }
+  .note-box strong { color: var(--gold-dark); }
+
+  /* ===== FOOTER ===== */
+  .footer { background: var(--bg-light); border-top: 1px solid var(--border); padding: 26px 54px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-light); }
+  .sig-line { width: 180px; border-bottom: 1px solid #999; margin-bottom: 5px; height: 34px; }
+
+  /* ===== PRINT BTN ===== */
+  .print-btn {
+    position: fixed; bottom: 28px; left: 28px;
+    background: var(--blue); color: #fff; border: none;
+    padding: 13px 26px; border-radius: 8px;
+    font-family: 'Cairo', sans-serif; font-size: 14px; font-weight: 700;
+    cursor: pointer; box-shadow: 0 4px 24px rgba(65,121,173,0.35);
+    z-index: 100;
+  }
+  .print-btn:hover { background: var(--blue-dark); }
+
+  .tag { display: inline-block; background: var(--bg-light); border: 1px solid var(--blue); color: var(--blue); font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 4px; margin: 2px; }
+  .tag.gold { border-color: var(--gold); color: var(--gold-dark); background: var(--bg-gold); }
+  .tag.green { border-color: var(--green); color: var(--green); background: var(--green-light); }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 14px 0; }
+  .kpi-box { text-align: center; background: var(--bg-light); border-radius: 10px; padding: 14px 10px; border: 1px solid var(--border); }
+  .kpi-num { font-family: 'Kufam', sans-serif; font-size: 24px; font-weight: 900; color: var(--blue); }
+  .kpi-lbl { font-size: 12px; color: var(--text-light); margin-top: 3px; }
+
+  .section-intro { font-size: 14.5px; color: var(--text); background: var(--bg-light); border-radius: 8px; padding: 14px 18px; margin-bottom: 16px; line-height: 1.9; border-right: 3px solid var(--blue); }
+
+  .logo-img-ar { height: 95px; width: auto; display: block; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-area">
+        <img class="logo-img-ar" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjY3NyIgaGVpZ2h0PSI5MDkiIHZpZXdCb3g9IjAgMCAyNjc3IDkwOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI2MzMuNzYgNTUxLjRDMjY0Ny44NiA1NDcuNiAyNjYzLjI2IDUzNS42IDI2NjkuNjYgNTIzLjNDMjY3NS45NiA1MTEuMyAyNjc4LjE2IDQ5Ny40IDI2NzUuNzYgNDg0LjRDMjY3My4xNiA0NzAgMjY3NS44NiA0NzMuNSAyNTQ0LjM2IDMxMUMyNDc2Ljg2IDIyNy43IDI0MTkuMzYgMTU3LjEgMjQxNi41NiAxNTQuMkMyMzkwLjU2IDEyNy40IDIzNDUuMjYgMTMyLjkgMjMyNi4zNiAxNjUuMUMyMzIwLjI2IDE3NS42IDIzMTguNTYgMTgyIDIzMTguNTYgMTk0LjVDMjMxOC41NiAyMDcuNCAyMzIxLjA2IDIxNi4xIDIzMjcuNTYgMjI1LjdDMjMzNC40NiAyMzYgMjU3Ni40NiA1MzQuNSAyNTgxLjg2IDUzOS4zQzI1ODcuNzYgNTQ0LjYgMjU5OC43NiA1NTAuMiAyNjA2LjY2IDU1MS45QzI2MTMuODYgNTUzLjQgMjYyNy4xNiA1NTMuMiAyNjMzLjc2IDU1MS40WiIgZmlsbD0iI0NBQjE2NCIvPgo8cGF0aCBkPSJNMjM5MS4zNiA1NTEuMUMyNDAwLjM2IDU0OC42IDI0MDcuNDYgNTQ0LjMgMjQxNS40NiA1MzYuN0MyNDI5LjE2IDUyMy44IDI0MzUuNTYgNTA1LjYgMjQzMi44NiA0ODcuM0MyNDMwLjQ2IDQ3MS4xIDI0MzAuOTYgNDcxLjkgMjM1NS45NiAzNzlDMjMxOC40NiAzMzIuNSAyMjg0Ljg2IDI5MS44IDIyODEuMzYgMjg4LjRDMjI2OS44NiAyNzcuNCAyMjUyLjM2IDI3MS4xIDIyMzcuODYgMjcyLjZDMjIxOS41NiAyNzQuNSAyMjA0LjI2IDI4My4xIDIxOTQuODYgMjk3QzIxODIuNTYgMzE1LjEgMjE4MC45NiAzMzYuOCAyMTkwLjU2IDM1NS42QzIxOTMuNDYgMzYxLjMgMjIxMC44NiAzODMuNSAyMjYyLjg2IDQ0Ny44QzIzMDAuNTYgNDk0LjQgMjMzMy44NiA1MzQuOSAyMzM2Ljg2IDUzNy44QzIzNDIuOTYgNTQzLjggMjM1NS4wNiA1NTAuMSAyMzYzLjY2IDU1MS45QzIzNzEuMzYgNTUzLjUgMjM4NC40NiA1NTMuMSAyMzkxLjM2IDU1MS4xWiIgZmlsbD0iI0NBQjE2NCIvPgo8cGF0aCBkPSJNMjYzMy45NiAyNTAuNkMyNjU3LjM2IDI0NC4xIDI2NzQuNjYgMjIzLjIgMjY3Ni41NiAxOTguOUMyNjc5LjE2IDE2NiAyNjUyLjU2IDEzNyAyNjE5Ljg2IDEzN0MyNTk3Ljc2IDEzNyAyNTc3LjE2IDE0OS43IDI1NjcuNjYgMTY5QzI1NjIuOTYgMTc4LjUgMjU2MS45NiAxODMuMyAyNTYxLjg2IDE5NC41QzI1NjEuODYgMjExLjEgMjU2Ni44NiAyMjMuMiAyNTc4Ljc2IDIzNS4xQzI1ODcuMDYgMjQzLjQgMjU5Ni42NiAyNDguOCAyNjA2LjY2IDI1MC45QzI2MTMuNTYgMjUyLjMgMjYyOC4xNiAyNTIuMiAyNjMzLjk2IDI1MC42WiIgZmlsbD0iI0NBQjE2NCIvPgo8cGF0aCBkPSJNMjE0Ny4yNiAyNTAuNUMyMTYxLjk2IDI0Ni41IDIxNzcuNDYgMjMzLjggMjE4My41NiAyMjFDMjE5OS4xNiAxODguMyAyMTg0LjI2IDE1MS43IDIxNTAuNjYgMTM5LjhDMjE0My4wNiAxMzcuMSAyMTI1LjQ2IDEzNi42IDIxMTcuMzYgMTM4LjlDMjA5My41NiAxNDUuNSAyMDc2LjU2IDE2Ni4zIDIwNzUuMTYgMTkwLjVDMjA3NC40NiAyMDIuMSAyMDc1Ljk2IDIwOS41IDIwODAuODYgMjE5LjlDMjA4OC4yNiAyMzUuMyAyMTAzLjY2IDI0Ny42IDIxMTkuNjYgMjUwLjlDMjEyNi43NiAyNTIuNCAyMTQxLjE2IDI1Mi4xIDIxNDcuMjYgMjUwLjVaIiBmaWxsPSIjQ0FCMTY0Ii8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMjg2LjgzNyA5MDguNTEzQzM1NS41MzcgOTA0LjExMyAzOTEuMjM3IDg5OC43MTMgNDI0LjMzNyA4ODcuNDEzQzQ3NC41MzcgODcwLjMxMyA1MDguNjM3IDg0MC4zMTMgNTMwLjgzNyA3OTMuOTEzQzU0Ny40MzcgNzU5LjExMyA1NTguMDM3IDcxNC45MTMgNTYzLjMzNyA2NTcuNjEzQzU2Ni4xMzcgNjI3LjMxMyA1NjguNTM3IDYxNC4xMTMgNTgzLjMzNyA1NDcuMTEzQzYwNS40MzcgNDQ3LjIxMyA2MTIuMDM3IDQwMC41MTMgNjEzLjUzNyAzMzUuNjEzQzYxNC4zMzcgMjk4LjcxMyA2MTIuMDM3IDI2MC4wMTMgNjA3LjIzNyAyMjcuODEzQzYwMS40MzcgMTg4LjUxMyA1ODYuNDM3IDE0OS41MTMgNTY0LjMzNyAxMTYuMTEzQzUzOC44MzcgNzcuNDEyOCA1MDcuODM3IDQ5LjkxMjggNDY2LjkzNyAyOS42MTI4QzQ0Mi4zMzcgMTcuNDEyOCA0MzQuNDM3IDE1LjIxMjcgMzkxLjYzNyA5LjIxMjc1QzMyMS4yMzcgLTAuNzg3MjUzIDI1Ni41MzcgLTIuNjg3MjUgMjA2LjMzNyAzLjcxMjc1QzE4Mi45MzcgNi43MTI3NSAxNTYuNjM3IDEyLjUxMjggMTM4LjMzNyAxOC44MTI4QzEyNC4xMzcgMjMuNjEyOCAxMDMuNTM3IDM0LjExMjggOTUuMzM2NyA0MC41MTI4QzkyLjUwOTggNDIuNjg3NCA4Ny45NDg4IDQ2LjIyODEgODMuNzg2OCA0OS40NTkxQzgyLjIwNzEgNTAuNjg1NSA4MC42ODQ5IDUxLjg2NzIgNzkuMzM2NyA1Mi45MTI4QzYxLjczNjcgNjYuNDEyOCA0Ni40MzY4IDgxLjIxMjggMzMuNDM2OCA5Ny4zMTI4QzI3LjQzNjggMTA0LjgxMyAxNy4yMzY4IDEyMi40MTMgMTMuOTM2OCAxMzEuMjEzQzcuOTM2ODIgMTQ3LjAxMyA3LjUzNjYxIDE1Mi4wMTMgOC4yMzY2MiAyMDYuNjEzQzEwLjczNjYgNDA1LjcxMyAxMC4yMzY3IDQzOC4yMTMgMi4zMzY3MiA1ODYuNjEzQy0yLjY2MzI4IDY4MC4yMTMgMC4yMzY2MjIgNzMxLjQxMyAxMi4yMzY2IDc2My41MTNDMjAuNTM2NiA3ODUuNDEzIDQxLjczNjYgODE2LjUxMyA2MC43MzY2IDgzNC40MTNDODIuODM2NiA4NTUuMjEzIDExMi4zMzcgODczLjQxMyAxNDMuNTM3IDg4NS41MTNDMTcwLjkzNyA4OTYuMTEzIDIwNS4zMzcgOTA0LjAxMyAyMzcuODM3IDkwNy4wMTNDMjQ5LjgzNyA5MDguMTEzIDI3OC42MzcgOTA5LjAxMyAyODYuODM3IDkwOC41MTNaTTE0Mi4zMzcgMjcyLjg2M1Y1OTEuODYzQzE0Mi4zMzcgNjE2LjMwMSAxNjIuMTQ4IDYzNi4xMTMgMTg2LjU4NyA2MzYuMTEzQzIxMS4wMjUgNjM2LjExMyAyMzAuODM3IDYxNi4zMDEgMjMwLjgzNyA1OTEuODYzVjUyMi4zNjNDMjMwLjgzNyA0OTEuNTczIDI1NS43OTcgNDY2LjYxMyAyODYuNTg3IDQ2Ni42MTNDMzE3LjM3NyA0NjYuNjEzIDM0Mi4zMzcgNDkxLjU3MyAzNDIuMzM3IDUyMi4zNjNWNjA4LjY5NkMzNDIuMzM3IDYyNS40OTIgMzUxLjg0NyA2NDAuODQxIDM2Ni44ODcgNjQ4LjMxOUMzOTYuMzAzIDY2Mi45NDMgNDMwLjgzNyA2NDEuNTQ3IDQzMC44MzcgNjA4LjY5NlYyNzIuODYzQzQzMC44MzcgMjQ4LjQyNCA0MTEuMDI1IDIyOC42MTMgMzg2LjU4NyAyMjguNjEzQzM2Mi4xNDggMjI4LjYxMyAzNDIuMzM3IDI0OC40MjQgMzQyLjMzNyAyNzIuODYzVjMyMi4zNjNDMzQyLjMzNyAzNTMuMTUzIDMxNy4zNzcgMzc4LjExMyAyODYuNTg3IDM3OC4xMTNDMjU1Ljc5NyAzNzguMTEzIDIzMC44MzcgMzUzLjE1MyAyMzAuODM3IDMyMi4zNjNWMjcyLjg2M0MyMzAuODM3IDI0OC40MjQgMjExLjAyNSAyMjguNjEzIDE4Ni41ODcgMjI4LjYxM0MxNjIuMTQ4IDIyOC42MTMgMTQyLjMzNyAyNDguNDI0IDE0Mi4zMzcgMjcyLjg2M1oiIGZpbGw9IiNDQUIxNjQiLz4KPHBhdGggZD0iTTczMC4zMTIgODI2LjQ0N0w3MjkuODU5IDgzNC45NzlDNzI5LjI1NSA4MzUuODg1IDcyOC4yOTggODM2Ljg5MSA3MjYuOTkgODM3Ljk5OUM3MjUuNzMxIDgzOS4xMDYgNzI0LjE0NiA4NDAuMDYyIDcyMi4yMzMgODQwLjg2OEM3MjAuMzIgODQxLjYyMyA3MTguMTMxIDg0MiA3MTUuNjY1IDg0MkM3MTIuOTk3IDg0MiA3MTAuNTU2IDg0MS4zOTYgNzA4LjM0MSA4NDAuMTg4QzcwNi4xNzcgODM4Ljk4IDcwNC40MTUgODM3LjI5NCA3MDMuMDU2IDgzNS4xM0M3MDEuNzQ3IDgzMi45MTUgNzAxLjA5MyA4MzAuMzIzIDcwMS4wOTMgODI3LjM1M0M3MDEuMDkzIDgyNS4yODkgNzAxLjM3IDgyMy4zNzcgNzAxLjkyNCA4MjEuNjE1QzcwMi41MjggODE5Ljg1MyA3MDMuNTA5IDgxOC4xOTIgNzA0Ljg2OCA4MTYuNjMyQzcwNi4yNzcgODE1LjAyMSA3MDguMTkgODEzLjQ2MSA3MTAuNjA2IDgxMS45NTFDNzEzLjAyMiA4MTAuMzkxIDcxNi4wNDIgODA4LjgzIDcxOS42NjYgODA3LjI3QzcyMy4zNCA4MDUuNzEgNzI3LjcxOSA4MDQuMDc0IDczMi44MDMgODAyLjM2M0w3MjkuNzA4IDgxMy4zMUM3MjcuNDkzIDgxNC4xMTUgNzI1LjMwMyA4MTQuOTcxIDcyMy4xMzkgODE1Ljg3N0M3MjEuMDI1IDgxNi43MzMgNzE4LjkzNiA4MTcuNzM5IDcxNi44NzIgODE4Ljg5N0M3MTQuODU5IDgyMC4wMDQgNzEyLjg0NiA4MjEuMzEzIDcxMC44MzMgODIyLjgyM0w3MTUuNTE0IDgxNy42MTRDNzE0LjgwOSA4MTguNjcxIDcxNC4yOCA4MTkuODUzIDcxMy45MjggODIxLjE2MkM3MTMuNjI2IDgyMi40MiA3MTMuNDc1IDgyMy43MDQgNzEzLjQ3NSA4MjUuMDEyQzcxMy40NzUgODI3LjEyNiA3MTQuMDU0IDgyOC43MzcgNzE1LjIxMiA4MjkuODQ0QzcxNi40MiA4MzAuOTAxIDcxNy45NTUgODMxLjQzIDcxOS44MTcgODMxLjQzQzcyMS41MjggODMxLjQzIDcyMy4yMTUgODMxLjAwMiA3MjQuODc2IDgzMC4xNDZDNzI2LjU4NyA4MjkuMjkxIDcyOC4zOTkgODI4LjA1OCA3MzAuMzEyIDgyNi40NDdaTTc0Ny45MDMgODQySDcyOC40MjRWODMxLjU4MUw3MjYuNDYxIDgzNC42NzdWNzk5LjcyTDczOC45MTkgNzk4LjM2MUg3MzkuNzQ5VjgzNi4xODdMNzM0LjMxMyA4MzAuNzVINzQ5LjQxM1Y4NDAuNDlMNzQ3LjkwMyA4NDJaTTcyNy44MiA3OTQuMTMzQzcyOS41MzEgNzk0LjEzMyA3MzAuOTY2IDc5My42MDQgNzMyLjEyNCA3OTIuNTQ3QzczMy4yODEgNzkxLjQ5IDczMy44NiA3OTAuMDMxIDczMy44NiA3ODguMTY4QzczMy44NiA3ODYuMjU2IDczMy4yODEgNzg0Ljc5NiA3MzIuMTI0IDc4My43OUM3MzAuOTY2IDc4Mi43MzMgNzI5LjUzMSA3ODIuMjA0IDcyNy44MiA3ODIuMjA0QzcyNi4yMDkgNzgyLjIwNCA3MjQuOCA3ODIuNzMzIDcyMy41OTIgNzgzLjc5QzcyMi40MzQgNzg0Ljc5NiA3MjEuODU2IDc4Ni4yNTYgNzIxLjg1NiA3ODguMTY4QzcyMS44NTYgNzkwLjAzMSA3MjIuNDM0IDc5MS40OSA3MjMuNTkyIDc5Mi41NDdDNzI0LjggNzkzLjYwNCA3MjYuMjA5IDc5NC4xMzMgNzI3LjgyIDc5NC4xMzNaTTcxNC4xNTUgNzk1LjcxOUM3MTUuODE2IDc5NS43MTkgNzE3LjIyNSA3OTUuMTkgNzE4LjM4MyA3OTQuMTMzQzcxOS41NCA3OTMuMDc2IDcyMC4xMTkgNzkxLjYxNiA3MjAuMTE5IDc4OS43NTRDNzIwLjExOSA3ODcuODQxIDcxOS41NCA3ODYuMzU2IDcxOC4zODMgNzg1LjI5OUM3MTcuMjI1IDc4NC4yNDIgNzE1LjgxNiA3ODMuNzE0IDcxNC4xNTUgNzgzLjcxNEM3MTIuNDk0IDc4My43MTQgNzExLjA4NCA3ODQuMjQyIDcwOS45MjcgNzg1LjI5OUM3MDguNzY5IDc4Ni4zNTYgNzA4LjE5IDc4Ny44NDEgNzA4LjE5IDc4OS43NTRDNzA4LjE5IDc5MS42MTYgNzA4Ljc2OSA3OTMuMDc2IDcwOS45MjcgNzk0LjEzM0M3MTEuMDg0IDc5NS4xOSA3MTIuNDk0IDc5NS43MTkgNzE0LjE1NSA3OTUuNzE5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTc0Ny45MDQgODMwLjc1SDc2Mi4wOThMNzU3LjY0NCA4MzIuNzg5Qzc1Ny4wNCA4MzIuMTg1IDc1Ni42MTIgODMxLjE3OCA3NTYuMzYgODI5Ljc2OUM3NTYuMTU5IDgyOC4zMDkgNzU2LjA1OCA4MjYuNTIyIDc1Ni4wNTggODI0LjQwOFY4MDIuOTY3TDc2OC41MTYgODAxLjYwOEg3NjkuMzQ2VjgzNi4xODdMNzYzLjk4NiA4MzAuNzVINzc5LjA4NlY4NDAuNDlMNzc3LjU3NiA4NDJINzQ2LjM5NFY4MzIuMjZMNzQ3LjkwNCA4MzAuNzVaTTc2MC41MTMgODUzLjE3NEM3NjAuNTEzIDg1MS4yNjEgNzYxLjA5MiA4NDkuNzc2IDc2Mi4yNDkgODQ4LjcxOUM3NjMuNDU3IDg0Ny43MTMgNzY0Ljg5MiA4NDcuMjA5IDc2Ni41NTMgODQ3LjIwOUM3NjguMjE0IDg0Ny4yMDkgNzY5LjYyMyA4NDcuNzEzIDc3MC43ODEgODQ4LjcxOUM3NzEuOTM4IDg0OS43NzYgNzcyLjUxNyA4NTEuMjYxIDc3Mi41MTcgODUzLjE3NEM3NzIuNTE3IDg1NS4wMzYgNzcxLjkzOCA4NTYuNDk2IDc3MC43ODEgODU3LjU1M0M3NjkuNjIzIDg1OC42MSA3NjguMjE0IDg1OS4xMzkgNzY2LjU1MyA4NTkuMTM5Qzc2NC44OTIgODU5LjEzOSA3NjMuNDU3IDg1OC42MSA3NjIuMjQ5IDg1Ny41NTNDNzYxLjA5MiA4NTYuNDk2IDc2MC41MTMgODU1LjAzNiA3NjAuNTEzIDg1My4xNzRaTTc0Ni44NDcgODU0LjY4NEM3NDYuODQ3IDg1Mi44MjIgNzQ3LjQyNiA4NTEuMzYyIDc0OC41ODQgODUwLjMwNUM3NDkuNzQxIDg0OS4yOTggNzUxLjE3NiA4NDguNzk1IDc1Mi44ODcgODQ4Ljc5NUM3NTQuNTQ4IDg0OC43OTUgNzU1LjkzMiA4NDkuMjk4IDc1Ny4wNCA4NTAuMzA1Qzc1OC4xOTcgODUxLjM2MiA3NTguNzc2IDg1Mi44MjIgNzU4Ljc3NiA4NTQuNjg0Qzc1OC43NzYgODU2LjU5NyA3NTguMTk3IDg1OC4wODIgNzU3LjA0IDg1OS4xMzlDNzU1LjkzMiA4NjAuMTk2IDc1NC41MjMgODYwLjcyNCA3NTIuODEyIDg2MC43MjRDNzUxLjE1MSA4NjAuNzI0IDc0OS43NDEgODYwLjE5NiA3NDguNTg0IDg1OS4xMzlDNzQ3LjQyNiA4NTguMDgyIDc0Ni44NDcgODU2LjU5NyA3NDYuODQ3IDg1NC42ODRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNzc3LjU4MiA4NDJWODMyLjI2TDc3OS4wOTIgODMwLjc1SDgxNi4yMzhMODEzLjQ0NSA4MzIuMzM2QzgxMC42NzYgODMwLjg3NiA4MDcuNzMyIDgyOC45MzggODA0LjYxMSA4MjYuNTIyQzgwMS40OTEgODI0LjA1NiA3OTguMjk0IDgyMS4yMzggNzk1LjAyMyA4MTguMDY3Qzc5MS44MDEgODE0Ljg0NSA3ODguNTggODExLjM5NyA3ODUuMzU5IDgwNy43MjNMNzkyLjkwOSA3OTcuNjgySDc5My43MzlDNzk5Ljg4IDgwNC4yMjUgODA1LjIxNSA4MDkuNjM2IDgwOS43NDUgODEzLjkxNEM4MTQuMjc1IDgxOC4xOTIgODE4LjEyNiA4MjEuNTY1IDgyMS4yOTcgODI0LjAzMUM4MjQuNDY4IDgyNi40OTcgODI3LjA4NSA4MjguMjM0IDgyOS4xNDkgODI5LjI0QzgzMS4yMTIgODMwLjI0NyA4MzIuODIzIDgzMC43NSA4MzMuOTgxIDgzMC43NUg4MzYuMDE5Vjg0MC40OUw4MzQuNTA5IDg0Mkg3NzcuNTgyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTg5Ny41MDUgODQyVjgzMC43NUg5MjkuMDY0Vjg0MC40OUw5MjcuNTU0IDg0Mkg4OTcuNTA1Wk04NTMuOTQxIDgzMC43NUg4OTkuNjE5QzkwMi43OSA4MzAuNzUgOTA1LjAwNCA4MzAuMjk3IDkwNi4yNjMgODI5LjM5MUM5MDcuNTIxIDgyOC40ODUgOTA4LjE1IDgyNy4xMjYgOTA4LjE1IDgyNS4zMTRDOTA4LjE1IDgyMy44MDQgOTA3Ljc5OCA4MjIuMzcgOTA3LjA5MyA4MjEuMDExQzkwNi40MzkgODE5LjYwMiA5MDUuNjU5IDgxOC40NDQgOTA0Ljc1MyA4MTcuNTM4TDkxMC4yNjQgODE3Ljk5MUM5MDguMTUgODE4LjQ5NCA5MDYuMzM4IDgxOC44NzIgOTA0LjgyOCA4MTkuMTI0QzkwMy4zMTggODE5LjM3NSA5MDEuOTA5IDgxOS41NTEgOTAwLjYgODE5LjY1MkM4OTkuMzQyIDgxOS43NTMgODk3LjkzMiA4MTkuODAzIDg5Ni4zNzIgODE5LjgwM0g4NTQuNjIxTDg1OC45MjQgODA4LjU1M0g4OTguNjM3QzkwMS4wMDMgODA4LjU1MyA5MDMuMzE4IDgwOC41MDMgOTA1LjU4MyA4MDguNDAyQzkwNy44OTggODA4LjI1MSA5MDkuODExIDgwOCA5MTEuMzIxIDgwNy42NDdIOTEyLjIyN0M5MTMuNDg1IDgwOC44MDUgOTE0Ljc0NCA4MTAuMjY1IDkxNi4wMDIgODEyLjAyNkM5MTcuMzExIDgxMy43MzggOTE4LjQxOCA4MTUuNjI1IDkxOS4zMjQgODE3LjY4OUM5MjAuMjMgODE5Ljc1MyA5MjAuNjgzIDgyMS44NDEgOTIwLjY4MyA4MjMuOTU1QzkyMC42ODMgODI2LjI3MSA5MjAuMTggODI4LjQ2IDkxOS4xNzMgODMwLjUyNEM5MTguMjE3IDgzMi41ODggOTE2LjUzMSA4MzQuNDUgOTE0LjExNSA4MzYuMTExTDkxMS43NzQgODQwLjI2NEM5MTAuNDE1IDg0MC44MTcgOTA4Ljg1NSA4NDEuMjQ1IDkwNy4wOTMgODQxLjU0N0M5MDUuMzMxIDg0MS44NDkgOTAzLjM0MyA4NDIgOTAxLjEyOCA4NDJIODUzLjk0MVY4MzAuNzVaTTgzNC41MzggODMwLjc1SDg0OC41MDVMODQ0LjA1IDgzMi43ODlDODQzLjQ5NyA4MzIuMTg1IDg0My4wOTQgODMxLjE3OCA4NDIuODQzIDgyOS43NjlDODQyLjU5MSA4MjguMzA5IDg0Mi40NjUgODI2LjUyMiA4NDIuNDY1IDgyNC40MDhWODA3LjI3TDg1NC45OTggODA1LjkxMUg4NTUuNzUzVjgzNi4yNjJMODUwLjM5MyA4MzAuNzVIODY1LjcxOVY4NDAuNDlMODY0LjIwOSA4NDJIODMzLjAyOFY4MzIuMjZMODM0LjUzOCA4MzAuNzVaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNOTI3LjU1IDg0MlY4MzIuMjZMOTI5LjA2IDgzMC43NUg5NDMuMDI4TDkzOC42NDggODMyLjc4OUM5MzguMDQ0IDgzMi4xODUgOTM3LjYxNyA4MzEuMTc4IDkzNy4zNjUgODI5Ljc2OUM5MzcuMTY0IDgyOC4zMDkgOTM3LjA2MyA4MjYuNTIyIDkzNy4wNjMgODI0LjQwOFY3ODUuOTAzTDk0OS41MiA3ODQuNTQ1SDk1MC4zNTFWODI3Ljk1N0M5NTAuMzUxIDgyOC45NjQgOTUwLjM1MSA4MzAuMjIyIDk1MC4zNTEgODMxLjczMkM5NTAuNDAxIDgzMy4xOTIgOTUwLjQ1MiA4MzQuNjUxIDk1MC41MDIgODM2LjExMUM5NTAuNjAzIDgzNy41MiA5NTAuNzU0IDgzOC42NzggOTUwLjk1NSA4MzkuNTg0Vjg0MC4xODhDOTQ5LjQ0NSA4NDAuNzkyIDk0Ny42MDggODQxLjI0NSA5NDUuNDQ0IDg0MS41NDdDOTQzLjI3OSA4NDEuODQ5IDk0MC42MTEgODQyIDkzNy40NCA4NDJIOTI3LjU1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTk2Mi4zMDUgNzg1Ljk3OUw5NzUuOTcgNzg0LjYyTDk3Ni4xOTcgNzg1LjIyNEM5NzUuOTk1IDc4Ni4xMyA5NzUuODQ0IDc4Ny4yNjIgOTc1Ljc0NCA3ODguNjIxQzk3NS42OTMgNzg5Ljk4IDk3NS42NDMgNzkxLjM2NSA5NzUuNTkzIDc5Mi43NzRDOTc1LjU5MyA3OTQuMTgzIDk3NS41OTMgNzk1LjM5MSA5NzUuNTkzIDc5Ni4zOThWODQySDk2Mi4zMDVWNzg1Ljk3OVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMDMyLjA5IDgyNi40NDdMMTAzMS42NCA4MzQuOTc5QzEwMzEuMDMgODM1Ljg4NSAxMDMwLjA4IDgzNi44OTEgMTAyOC43NyA4MzcuOTk5QzEwMjcuNTEgODM5LjEwNiAxMDI1LjkyIDg0MC4wNjIgMTAyNC4wMSA4NDAuODY4QzEwMjIuMSA4NDEuNjIzIDEwMTkuOTEgODQyIDEwMTcuNDQgODQyQzEwMTQuNzggODQyIDEwMTIuMzMgODQxLjM5NiAxMDEwLjEyIDg0MC4xODhDMTAwNy45NiA4MzguOTggMTAwNi4xOSA4MzcuMjk0IDEwMDQuODMgODM1LjEzQzEwMDMuNTMgODMyLjkxNSAxMDAyLjg3IDgzMC4zMjMgMTAwMi44NyA4MjcuMzUzQzEwMDIuODcgODI1LjI4OSAxMDAzLjE1IDgyMy4zNzcgMTAwMy43IDgyMS42MTVDMTAwNC4zMSA4MTkuODUzIDEwMDUuMjkgODE4LjE5MiAxMDA2LjY1IDgxNi42MzJDMTAwOC4wNiA4MTUuMDIxIDEwMDkuOTcgODEzLjQ2MSAxMDEyLjM4IDgxMS45NTFDMTAxNC44IDgxMC4zOTEgMTAxNy44MiA4MDguODMgMTAyMS40NCA4MDcuMjdDMTAyNS4xMiA4MDUuNzEgMTAyOS41IDgwNC4wNzQgMTAzNC41OCA4MDIuMzYzTDEwMzEuNDkgODEzLjMxQzEwMjkuMjcgODE0LjExNSAxMDI3LjA4IDgxNC45NzEgMTAyNC45MiA4MTUuODc3QzEwMjIuOCA4MTYuNzMzIDEwMjAuNzEgODE3LjczOSAxMDE4LjY1IDgxOC44OTdDMTAxNi42NCA4MjAuMDA0IDEwMTQuNjIgODIxLjMxMyAxMDEyLjYxIDgyMi44MjNMMTAxNy4yOSA4MTcuNjE0QzEwMTYuNTkgODE4LjY3MSAxMDE2LjA2IDgxOS44NTMgMTAxNS43MSA4MjEuMTYyQzEwMTUuNCA4MjIuNDIgMTAxNS4yNSA4MjMuNzA0IDEwMTUuMjUgODI1LjAxMkMxMDE1LjI1IDgyNy4xMjYgMTAxNS44MyA4MjguNzM3IDEwMTYuOTkgODI5Ljg0NEMxMDE4LjIgODMwLjkwMSAxMDE5LjczIDgzMS40MyAxMDIxLjYgODMxLjQzQzEwMjMuMzEgODMxLjQzIDEwMjQuOTkgODMxLjAwMiAxMDI2LjY1IDgzMC4xNDZDMTAyOC4zNyA4MjkuMjkxIDEwMzAuMTggODI4LjA1OCAxMDMyLjA5IDgyNi40NDdaTTEwNDkuNjggODQySDEwMzAuMlY4MzEuNTgxTDEwMjguMjQgODM0LjY3N1Y3OTkuNzJMMTA0MC43IDc5OC4zNjFIMTA0MS41M1Y4MzYuMTg3TDEwMzYuMDkgODMwLjc1SDEwNTEuMTlWODQwLjQ5TDEwNDkuNjggODQyWk0xMDI5LjYgNzk0LjEzM0MxMDMxLjMxIDc5NC4xMzMgMTAzMi43NCA3OTMuNjA0IDEwMzMuOSA3OTIuNTQ3QzEwMzUuMDYgNzkxLjQ5IDEwMzUuNjQgNzkwLjAzMSAxMDM1LjY0IDc4OC4xNjhDMTAzNS42NCA3ODYuMjU2IDEwMzUuMDYgNzg0Ljc5NiAxMDMzLjkgNzgzLjc5QzEwMzIuNzQgNzgyLjczMyAxMDMxLjMxIDc4Mi4yMDQgMTAyOS42IDc4Mi4yMDRDMTAyNy45OSA3ODIuMjA0IDEwMjYuNTggNzgyLjczMyAxMDI1LjM3IDc4My43OUMxMDI0LjIxIDc4NC43OTYgMTAyMy42MyA3ODYuMjU2IDEwMjMuNjMgNzg4LjE2OEMxMDIzLjYzIDc5MC4wMzEgMTAyNC4yMSA3OTEuNDkgMTAyNS4zNyA3OTIuNTQ3QzEwMjYuNTggNzkzLjYwNCAxMDI3Ljk5IDc5NC4xMzMgMTAyOS42IDc5NC4xMzNaTTEwMTUuOTMgNzk1LjcxOUMxMDE3LjU5IDc5NS43MTkgMTAxOSA3OTUuMTkgMTAyMC4xNiA3OTQuMTMzQzEwMjEuMzIgNzkzLjA3NiAxMDIxLjkgNzkxLjYxNiAxMDIxLjkgNzg5Ljc1NEMxMDIxLjkgNzg3Ljg0MSAxMDIxLjMyIDc4Ni4zNTYgMTAyMC4xNiA3ODUuMjk5QzEwMTkgNzg0LjI0MiAxMDE3LjU5IDc4My43MTQgMTAxNS45MyA3ODMuNzE0QzEwMTQuMjcgNzgzLjcxNCAxMDEyLjg2IDc4NC4yNDIgMTAxMS43MSA3ODUuMjk5QzEwMTAuNTUgNzg2LjM1NiAxMDA5Ljk3IDc4Ny44NDEgMTAwOS45NyA3ODkuNzU0QzEwMDkuOTcgNzkxLjYxNiAxMDEwLjU1IDc5My4wNzYgMTAxMS43MSA3OTQuMTMzQzEwMTIuODYgNzk1LjE5IDEwMTQuMjcgNzk1LjcxOSAxMDE1LjkzIDc5NS43MTlaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTA3NS43MyA4MDMuNzk3QzEwODAuNDYgODAzLjc5NyAxMDg0LjU0IDgwNC42NzggMTA4Ny45NiA4MDYuNDM5QzEwOTEuMzggODA4LjIwMSAxMDk0IDgxMC41OTIgMTA5NS44MSA4MTMuNjEyQzEwOTcuNjggODE2LjU4MiAxMDk4LjYxIDgxOS45NTQgMTA5OC42MSA4MjMuNzI5QzEwOTguNjEgODI3LjU1NCAxMDk3LjczIDgzMS4wMDIgMTA5NS45NiA4MzQuMDczQzEwOTQuMjUgODM3LjA5MyAxMDkxLjgxIDgzOS41MDkgMTA4OC42NCA4NDEuMzIxQzEwODUuNTIgODQzLjA4MiAxMDgxLjg3IDg0My45NjMgMTA3Ny42OSA4NDMuOTYzQzEwNzQuOTggODQzLjk2MyAxMDcyLjMxIDg0My41NiAxMDY5LjY5IDg0Mi43NTVDMTA2Ny4xMiA4NDIgMTA2NC42OCA4NDAuODE3IDEwNjIuMzcgODM5LjIwN0MxMDYwLjEgODM3LjU0NiAxMDU4LjAxIDgzNS40MzIgMTA1Ni4xIDgzMi44NjVMMTA2NS45MiA4MjUuMzlDMTA2Ny40OCA4MjYuODUgMTA2OS4yNiA4MjguMTU4IDEwNzEuMjggODI5LjMxNkMxMDczLjI5IDgzMC40MjMgMTA3NS4zOCA4MzEuMzA0IDEwNzcuNTQgODMxLjk1OEMxMDc5LjcxIDgzMi42MTMgMTA4MS44IDgzMi45NjUgMTA4My44MSA4MzMuMDE2QzEwODQuNzEgODMzLjA2NiAxMDg1LjM5IDgzMy4wOTEgMTA4NS44NSA4MzMuMDkxQzEwODYuMzUgODMzLjA0MSAxMDg2Ljc1IDgzMy4wMTYgMTA4Ny4wNiA4MzMuMDE2TDEwODAuNzEgODM2LjcxNUMxMDgyLjE3IDgzNS4xMDQgMTA4My4zNiA4MzMuMzY4IDEwODQuMjYgODMxLjUwNUMxMDg1LjIyIDgyOS41OTMgMTA4NS43IDgyNy40NzkgMTA4NS43IDgyNS4xNjNDMTA4NS43IDgyMi45NDkgMTA4NS4wMiA4MjEuMDYxIDEwODMuNjYgODE5LjUwMUMxMDgyLjM1IDgxNy45NDEgMTA4MC41NiA4MTYuNzgzIDEwNzguMyA4MTYuMDI4QzEwNzYuMDMgODE1LjIyMyAxMDczLjQ3IDgxNC44NyAxMDcwLjYgODE0Ljk3MUwxMDczLjA5IDgxMi42M0MxMDcyLjc0IDgxNy4xNiAxMDcyLjExIDgyMS4yNjMgMTA3MS4yIDgyNC45MzdDMTA3MC4zNCA4MjguNTYxIDEwNjkuMDEgODMxLjYzMSAxMDY3LjIgODM0LjE0OEMxMDY1LjM5IDgzNi42NjUgMTA2Mi45NSA4MzguNjAzIDEwNTkuODggODM5Ljk2MkMxMDU2LjgxIDg0MS4zMjEgMTA1Mi45IDg0MiAxMDQ4LjE3IDg0MlY4MzIuMjZMMTA0OS42OCA4MzAuNzVDMTA1Mi41NSA4MzAuNzUgMTA1NC43NCA4MjkuOTIgMTA1Ni4yNSA4MjguMjU5QzEwNTcuNzYgODI2LjU5OCAxMDU4LjkyIDgyNC4wMDYgMTA1OS43MiA4MjAuNDgzQzEwNjAuNTggODE2Ljk1OSAxMDYxLjMxIDgxMi40NTQgMTA2MS45MSA4MDYuOTY4TDEwNjIuOTcgODA1Ljk4NkMxMDY0LjgzIDgwNS4zODIgMTA2Ni44NyA4MDQuODc5IDEwNjkuMDkgODA0LjQ3NkMxMDcxLjMgODA0LjAyMyAxMDczLjUyIDgwMy43OTcgMTA3NS43MyA4MDMuNzk3WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTExMDcuMTQgODI0LjcxQzExMDcuMTQgODIxLjc5MSAxMTA3LjY3IDgxOS4wNDggMTEwOC43MyA4MTYuNDgxQzExMDkuODMgODEzLjg2NCAxMTExLjMyIDgxMS41NzMgMTExMy4xOCA4MDkuNjFDMTExNS4wNCA4MDcuNjQ3IDExMTcuMTYgODA2LjExMiAxMTE5LjUyIDgwNS4wMDVDMTEyMS45NCA4MDMuODQ3IDExMjQuNDggODAzLjI2OSAxMTI3LjE1IDgwMy4yNjlDMTEyOS43NyA4MDMuMjY5IDExMzIuMzMgODAzLjk0OCAxMTM0Ljg1IDgwNS4zMDdDMTEzNy40MiA4MDYuNjE2IDExMzkuNzMgODA4LjUwMyAxMTQxLjggODEwLjk2OUMxMTQzLjg2IDgxMy40MzYgMTE0NS41MiA4MTYuNDA2IDExNDYuNzggODE5Ljg3OUMxMTQ4LjA0IDgyMy4zMDEgMTE0OC42NyA4MjcuMTI2IDExNDguNjcgODMxLjM1NEMxMTQ4LjY3IDgzNy44OTggMTE0Ny42MyA4NDMuNDM0IDExNDUuNTcgODQ3Ljk2NEMxMTQzLjU2IDg1Mi40OTQgMTE0MC43MSA4NTUuOTE3IDExMzcuMDQgODU4LjIzM0MxMTMzLjM2IDg2MC41NDggMTEyOC45NCA4NjEuNzA1IDExMjMuNzUgODYxLjcwNUMxMTIwLjQ4IDg2MS43MDUgMTExNy42MSA4NjEuNDA0IDExMTUuMTQgODYwLjhDMTExMi43MyA4NjAuMTk2IDExMTAuODQgODU5LjU5MiAxMTA5LjQ4IDg1OC45ODhDMTEwOC4xMiA4NTguMzg0IDExMDcuNDQgODU4LjA4MiAxMTA3LjQ0IDg1OC4wODJMMTExMS4zNyA4NDcuNzM4SDExMTIuMkMxMTE0LjMxIDg0OC43OTUgMTExNi41MyA4NDkuNTI1IDExMTguODQgODQ5LjkyN0MxMTIxLjIxIDg1MC4zMyAxMTIzLjIgODUwLjUzMSAxMTI0LjgxIDg1MC41MzFDMTEyNy4wMiA4NTAuNTMxIDExMjguOTYgODUwLjMwNSAxMTMwLjYyIDg0OS44NTJDMTEzMi4zMyA4NDkuNDQ5IDExMzMuODQgODQ4Ljc5NSAxMTM1LjE1IDg0Ny44ODlMMTEzMS42IDg1MS4wNkMxMTMyLjQ2IDg1MC4wNTMgMTEzMy4xOSA4NDguNzcgMTEzMy43OSA4NDcuMjA5QzExMzQuNCA4NDUuNjQ5IDExMzQuODUgODQzLjY4NiAxMTM1LjE1IDg0MS4zMjFDMTEzNS40NSA4MzguOTU1IDExMzUuNiA4MzUuOTYgMTEzNS42IDgzMi4zMzZDMTEzNS42IDgzMC4wMjEgMTEzNS4zOCA4MjcuODA2IDExMzQuOTIgODI1LjY5MkMxMTM0LjQ3IDgyMy41MjggMTEzMy43NCA4MjEuNTE0IDExMzIuNzQgODE5LjY1MkMxMTMxLjczIDgxNy43OSAxMTMwLjQ1IDgxNi4xMjkgMTEyOC44OCA4MTQuNjY5QzExMjcuMzcgODEzLjE1OSAxMTI1LjU2IDgxMS45MjYgMTEyMy40NSA4MTAuOTY5TDExMjkuNzIgODExLjA0NUMxMTI2LjM5IDgxMS45NTEgMTEyMy44NSA4MTMuNTYyIDExMjIuMDkgODE1Ljg3N0MxMTIwLjM4IDgxOC4xNDIgMTExOS41MiA4MjAuNTgzIDExMTkuNTIgODIzLjJDMTExOS41MiA4MjQuNDU5IDExMTkuODggODI1LjY5MiAxMTIwLjU4IDgyNi45QzExMjEuMjggODI4LjEwOCAxMTIyLjM3IDgyOS4xMTUgMTEyMy44MyA4MjkuOTJDMTEyNS4yOSA4MzAuNjc1IDExMjcuMTUgODMxLjA1MiAxMTI5LjQxIDgzMS4wNTJIMTEzNi44OUwxMTM3LjQyIDgzMC43NUgxMTU0LjYzVjg0MC40OUwxMTUzLjEyIDg0MkwxMTI4LjY2IDg0Mi4wNzVDMTEyNC41MyA4NDIuMDc1IDExMjAuODMgODQxLjQyMSAxMTE3LjU2IDg0MC4xMTNDMTExNC4zNCA4MzguNzU0IDExMTEuOCA4MzYuNzkxIDExMDkuOTMgODM0LjIyNEMxMTA4LjA3IDgzMS42MDYgMTEwNy4xNCA4MjguNDM1IDExMDcuMTQgODI0LjcxWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEyMTcuMyA4NDJWODMwLjc1SDEyNDguODZWODQwLjQ5TDEyNDcuMzUgODQySDEyMTcuM1pNMTE3My4zNiA4MzAuNzVIMTIxOS4yNkMxMjIxLjM4IDgzMC43NSAxMjIzLjA0IDgzMC41MjQgMTIyNC4yNSA4MzAuMDcxQzEyMjUuNTEgODI5LjU2OCAxMjI2LjQxIDgyOC45MTMgMTIyNi45NyA4MjguMTA4QzEyMjcuNTIgODI3LjMwMyAxMjI3LjggODI2LjM3MSAxMjI3LjggODI1LjMxNEMxMjI3LjggODIzLjgwNCAxMjI3LjQ0IDgyMi4zNyAxMjI2Ljc0IDgyMS4wMTFDMTIyNi4wOSA4MTkuNjAyIDEyMjUuMzMgODE4LjQ0NCAxMjI0LjQ3IDgxNy41MzhMMTIyOS45MSA4MTcuOTkxQzEyMjcuOCA4MTguNDk0IDEyMjUuOTggODE4Ljg3MiAxMjI0LjQ3IDgxOS4xMjRDMTIyMy4wMSA4MTkuMzc1IDEyMjEuNjMgODE5LjU1MSAxMjIwLjMyIDgxOS42NTJDMTIxOS4wMSA4MTkuNzUzIDEyMTcuNTggODE5LjgwMyAxMjE2LjAyIDgxOS44MDNIMTE3NC4wNEwxMTc4LjQyIDgwOC41NTNIMTIxOC4zNkMxMjIwLjc3IDgwOC41NTMgMTIyMy4xMiA4MDguNTAzIDEyMjUuMzggODA4LjQwMkMxMjI3LjcgODA4LjI1MSAxMjI5LjYxIDgwOCAxMjMxLjEyIDgwNy42NDdIMTIzMi4wMkMxMjMzLjMzIDgwOC45MDYgMTIzNC42NCA4MTAuNDkxIDEyMzUuOTUgODEyLjQwNEMxMjM3LjI2IDgxNC4zMTcgMTIzOC4zNyA4MTYuNDA2IDEyMzkuMjcgODE4LjY3MUMxMjQwLjIzIDgyMC44ODUgMTI0MC43MSA4MjMuMTc1IDEyNDAuNzEgODI1LjU0MUMxMjQwLjcxIDgyNy43NTYgMTI0MC4zNSA4MjkuODQ0IDEyMzkuNjUgODMxLjgwN0MxMjM5IDgzMy43NyAxMjM3LjkxIDgzNS41MzIgMTIzNi40IDgzNy4wOTNDMTIzNC44OSA4MzguNjAzIDEyMzIuODUgODM5LjgxMSAxMjMwLjI5IDg0MC43MTdDMTIyNy43MiA4NDEuNTcyIDEyMjQuNiA4NDIgMTIyMC45MyA4NDJIMTE3My4zNlY4MzAuNzVaTTEyMDAuMTYgODAzLjI2OUMxMTk4LjUgODAzLjI2OSAxMTk3LjA5IDgwMi43NCAxMTk1Ljk0IDgwMS42ODNDMTE5NC43OCA4MDAuNjI2IDExOTQuMiA3OTkuMTQxIDExOTQuMiA3OTcuMjI5QzExOTQuMiA3OTUuMzE2IDExOTQuNzggNzkzLjg1NiAxMTk1Ljk0IDc5Mi44NDlDMTE5Ny4wOSA3OTEuNzkyIDExOTguNSA3OTEuMjY0IDEyMDAuMTYgNzkxLjI2NEMxMjAxLjg3IDc5MS4yNjQgMTIwMy4yOCA3OTEuNzkyIDEyMDQuMzkgNzkyLjg0OUMxMjA1LjU1IDc5My44NTYgMTIwNi4xMyA3OTUuMzE2IDEyMDYuMTMgNzk3LjIyOUMxMjA2LjEzIDc5OS4xNDEgMTIwNS41NSA4MDAuNjI2IDEyMDQuMzkgODAxLjY4M0MxMjAzLjI4IDgwMi43NCAxMjAxLjg3IDgwMy4yNjkgMTIwMC4xNiA4MDMuMjY5Wk0xMTUxLjYyIDg0MlY4MzIuMjZMMTE1My4xMyA4MzAuNzVIMTE2Ny45MkwxMTYzLjU1IDgzMi43ODlDMTE2Mi45NCA4MzIuMTg1IDExNjIuNTEgODMxLjE3OCAxMTYyLjI2IDgyOS43NjlDMTE2Mi4wMSA4MjguMzA5IDExNjEuODggODI2LjUyMiAxMTYxLjg4IDgyNC40MDhWNzg1Ljk3OUwxMTc0LjQyIDc4NC42MkgxMTc1LjI1VjgzNi4yNjJMMTE2OS44MSA4MzAuNzVIMTE4NS4xNFY4NDAuNDlMMTE4My42MyA4NDJIMTE1MS42MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMjQ4LjgzIDgzMC43NUgxMjYzLjAyTDEyNTguNTcgODMyLjc4OUMxMjU3Ljk2IDgzMi4xODUgMTI1Ny41NCA4MzEuMTc4IDEyNTcuMjkgODI5Ljc2OUMxMjU3LjA4IDgyOC4zMDkgMTI1Ni45OCA4MjYuNTIyIDEyNTYuOTggODI0LjQwOFY4MDIuOTY3TDEyNjkuNDQgODAxLjYwOEgxMjcwLjI3VjgzNi4xODdMMTI2NC45MSA4MzAuNzVIMTI4MC4wMVY4NDAuNDlMMTI3OC41IDg0MkgxMjQ3LjMyVjgzMi4yNkwxMjQ4LjgzIDgzMC43NVpNMTI2My40OCA3OTYuMDk2QzEyNjEuODEgNzk2LjA5NiAxMjYwLjQxIDc5NS41NjcgMTI1OS4yNSA3OTQuNTFDMTI1OC4wOSA3OTMuNDUzIDEyNTcuNTEgNzkxLjk2OSAxMjU3LjUxIDc5MC4wNTZDMTI1Ny41MSA3ODguMTQzIDEyNTguMDkgNzg2LjY4NCAxMjU5LjI1IDc4NS42NzdDMTI2MC40MSA3ODQuNjIgMTI2MS44MSA3ODQuMDkyIDEyNjMuNDggNzg0LjA5MkMxMjY1LjE0IDc4NC4wOTIgMTI2Ni41NSA3ODQuNjIgMTI2Ny43IDc4NS42NzdDMTI2OC44NiA3ODYuNjg0IDEyNjkuNDQgNzg4LjE0MyAxMjY5LjQ0IDc5MC4wNTZDMTI2OS40NCA3OTEuOTY5IDEyNjguODYgNzkzLjQ1MyAxMjY3LjcgNzk0LjUxQzEyNjYuNTUgNzk1LjU2NyAxMjY1LjE0IDc5Ni4wOTYgMTI2My40OCA3OTYuMDk2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEyOTMuMDggODMwLjc1TDEyOTYuMTcgODQySDEyNzguNTFWODMyLjI2TDEyODAuMDIgODMwLjc1SDEyOTMuMDhaTTEzMzIuNTYgODQyQzEzMjkuMTQgODQyIDEzMjYuMjcgODQxLjQ5NyAxMzIzLjk2IDg0MC40OUMxMzIxLjY0IDgzOS40ODMgMTMxOS42NSA4MzcuOTQ4IDEzMTcuOTkgODM1Ljg4NUMxMzE2LjM4IDgzMy44MjEgMTMxNC44MiA4MzEuMTUzIDEzMTMuMzEgODI3Ljg4MUwxMzA3LjUgODE0LjIxNkwxMzEyLjAzIDgxNS41QzEzMDkuOTcgODE1LjU1IDEzMDguMDggODE1LjkwMiAxMzA2LjM3IDgxNi41NTdDMTMwNC42NiA4MTcuMTYxIDEzMDMuMTcgODE3Ljk2NiAxMzAxLjkxIDgxOC45NzNDMTMwMC42NSA4MTkuOTc5IDEyOTkuNyA4MjEuMTM3IDEyOTkuMDQgODIyLjQ0NkMxMjk4LjM5IDgyMy43MDQgMTI5OC4wNiA4MjUuMDEyIDEyOTguMDYgODI2LjM3MUMxMjk4LjA2IDgyOC4xMzMgMTI5OC41NiA4MjkuNjE4IDEyOTkuNTcgODMwLjgyNkMxMzAwLjU4IDgzMS45ODQgMTMwMS44OSA4MzIuODY1IDEzMDMuNSA4MzMuNDY5QzEzMDUuMTEgODM0LjA3MyAxMzA2Ljc5IDgzNC4zNzUgMTMwOC41NiA4MzQuMzc1QzEzMTAuNzcgODM0LjM3NSAxMzEyLjg2IDgzNC4xMjMgMTMxNC44MiA4MzMuNjJDMTMxNi44NCA4MzMuMTE2IDEzMTguNDUgODMyLjU2MiAxMzE5LjY1IDgzMS45NThMMTMyMS4xNiA4MzIuNzE0TDEzMTguMDcgODQzLjUxQzEzMTYuMDYgODQ0LjM2NiAxMzE0LjAyIDg0NS4wMiAxMzExLjk1IDg0NS40NzNDMTMwOS45NCA4NDUuOTc2IDEzMDguMDMgODQ2LjIyOCAxMzA2LjIyIDg0Ni4yMjhDMTMwNC42IDg0Ni4yMjggMTMwMi44NCA4NDYuMDI3IDEzMDAuOTMgODQ1LjYyNEMxMjk5LjA3IDg0NS4yNzIgMTI5Ny4yMyA4NDQuNjQyIDEyOTUuNDIgODQzLjczNkMxMjkzLjYxIDg0Mi44ODEgMTI5MS45NSA4NDEuNzQ4IDEyOTAuNDQgODQwLjMzOUMxMjg4Ljk4IDgzOC44NzkgMTI4Ny43OSA4MzcuMDkzIDEyODYuODkgODM0Ljk3OUMxMjg1Ljk4IDgzMi44NjUgMTI4NS41MyA4MzAuMzczIDEyODUuNTMgODI3LjUwNEMxMjg1LjUzIDgyMy41MjggMTI4Ni4zOCA4MjAuMDU1IDEyODguMSA4MTcuMDg1QzEyODkuODYgODE0LjExNSAxMjkyLjIgODExLjYyNCAxMjk1LjEyIDgwOS42MUMxMjk4LjA0IDgwNy41OTcgMTMwMS4yOCA4MDYuMDg3IDEzMDQuODYgODA1LjA4QzEzMDguNDggODA0LjA3NCAxMzEyLjEzIDgwMy41NzEgMTMxNS44IDgwMy41NzFMMTMxNy4yNCA4MDQuNDAxTDEzMjMuNTEgODIwLjkzNkMxMzI0LjcxIDgyNC4xNTcgMTMyNi4yIDgyNi41OTggMTMyNy45NiA4MjguMjU5QzEzMjkuNzIgODI5LjkyIDEzMzEuNzYgODMwLjc1IDEzMzQuMDcgODMwLjc1Vjg0MC40OUwxMzMyLjU2IDg0MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMzMyLjU1IDg0MlY4MzIuMjZMMTMzNC4wNiA4MzAuNzVIMTM0OC4wM0wxMzQzLjY1IDgzMi43ODlDMTM0My4wNSA4MzIuMTg1IDEzNDIuNjIgODMxLjE3OCAxMzQyLjM3IDgyOS43NjlDMTM0Mi4xNyA4MjguMzA5IDEzNDIuMDYgODI2LjUyMiAxMzQyLjA2IDgyNC40MDhWNzg1LjkwM0wxMzU0LjUyIDc4NC41NDVIMTM1NS4zNVY4MjcuOTU3QzEzNTUuMzUgODI4Ljk2NCAxMzU1LjM1IDgzMC4yMjIgMTM1NS4zNSA4MzEuNzMyQzEzNTUuNCA4MzMuMTkyIDEzNTUuNDUgODM0LjY1MSAxMzU1LjUgODM2LjExMUMxMzU1LjYgODM3LjUyIDEzNTUuNzYgODM4LjY3OCAxMzU1Ljk2IDgzOS41ODRWODQwLjE4OEMxMzU0LjQ1IDg0MC43OTIgMTM1Mi42MSA4NDEuMjQ1IDEzNTAuNDQgODQxLjU0N0MxMzQ4LjI4IDg0MS44NDkgMTM0NS42MSA4NDIgMTM0Mi40NCA4NDJIMTMzMi41NVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMzY3LjMxIDc4NS45NzlMMTM4MC45NyA3ODQuNjJMMTM4MS4yIDc4NS4yMjRDMTM4MSA3ODYuMTMgMTM4MC44NSA3ODcuMjYyIDEzODAuNzUgNzg4LjYyMUMxMzgwLjY5IDc4OS45OCAxMzgwLjY0IDc5MS4zNjUgMTM4MC41OSA3OTIuNzc0QzEzODAuNTkgNzk0LjE4MyAxMzgwLjU5IDc5NS4zOTEgMTM4MC41OSA3OTYuMzk4Vjg0MkgxMzY3LjMxVjc4NS45NzlaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTQ3Ni40MyA4NDJWODMwLjc1SDE1MDcuOTlWODQwLjQ5TDE1MDYuNDggODQySDE0NzYuNDNaTTE0MzIuNDkgODMwLjc1SDE0NzguMzlDMTQ4MC41IDgzMC43NSAxNDgyLjE3IDgzMC41MjQgMTQ4My4zNyA4MzAuMDcxQzE0ODQuNjMgODI5LjU2OCAxNDg1LjU0IDgyOC45MTMgMTQ4Ni4wOSA4MjguMTA4QzE0ODYuNjQgODI3LjMwMyAxNDg2LjkyIDgyNi4zNzEgMTQ4Ni45MiA4MjUuMzE0QzE0ODYuOTIgODIzLjgwNCAxNDg2LjU3IDgyMi4zNyAxNDg1Ljg2IDgyMS4wMTFDMTQ4NS4yMSA4MTkuNjAyIDE0ODQuNDMgODE4LjQ0NCAxNDgzLjUyIDgxNy41MzhMMTQ4OS4wNCA4MTcuOTkxQzE0ODYuOTIgODE4LjQ5NCAxNDg1LjExIDgxOC44NzIgMTQ4My42IDgxOS4xMjRDMTQ4Mi4wOSA4MTkuMzc1IDE0ODAuNjggODE5LjU1MSAxNDc5LjM3IDgxOS42NTJDMTQ3OC4xMSA4MTkuNzUzIDE0NzYuNyA4MTkuODAzIDE0NzUuMTQgODE5LjgwM0gxNDMzLjE3TDE0MzcuNDcgODA4LjU1M0gxNDc3LjQ4QzE0NzkuODUgODA4LjU1MyAxNDgyLjE5IDgwOC41MDMgMTQ4NC41MSA4MDguNDAyQzE0ODYuODIgODA4LjI1MSAxNDg4LjczIDgwOCAxNDkwLjI0IDgwNy42NDdIMTQ5MS4xNUMxNDkyLjQ2IDgwOC45MDYgMTQ5My43NyA4MTAuNDkxIDE0OTUuMDggODEyLjQwNEMxNDk2LjM4IDgxNC4zMTcgMTQ5Ny40OSA4MTYuNDA2IDE0OTguNCA4MTguNjcxQzE0OTkuMzUgODIwLjg4NSAxNDk5LjgzIDgyMy4xNzUgMTQ5OS44MyA4MjUuNTQxQzE0OTkuODMgODI3Ljc1NiAxNDk5LjQ4IDgyOS44NDQgMTQ5OC43OCA4MzEuODA3QzE0OTguMTIgODMzLjc3IDE0OTcuMDEgODM1LjUzMiAxNDk1LjQ1IDgzNy4wOTNDMTQ5My45NCA4MzguNjAzIDE0OTEuOSA4MzkuODExIDE0ODkuMzQgODQwLjcxN0MxNDg2LjgyIDg0MS41NzIgMTQ4My43IDg0MiAxNDc5Ljk4IDg0MkgxNDMyLjQ5VjgzMC43NVpNMTQwNC43IDg0MlY4NDEuMTdMMTQwOC41NSA4MzAuNzVIMTQyNy4wNUwxNDIyLjYgODMyLjc4OUMxNDIyLjA0IDgzMi4xODUgMTQyMS42NCA4MzEuMTc4IDE0MjEuMzkgODI5Ljc2OUMxNDIxLjE0IDgyOC4zMDkgMTQyMS4wMSA4MjYuNTIyIDE0MjEuMDEgODI0LjQwOFY3ODUuOTc5TDE0MzMuNTQgNzg0LjYySDE0MzQuM1Y4MzYuMjYyTDE0MjguOTQgODMwLjc1SDE0NDQuMjZWODQwLjQ5TDE0NDIuNzUgODQySDE0MDQuN1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNTA2LjQ4IDg0MlY4MzIuMjZMMTUwNy45OSA4MzAuNzVIMTUyMS45NkwxNTE3LjU4IDgzMi43ODlDMTUxNi45OCA4MzIuMTg1IDE1MTYuNTUgODMxLjEyOCAxNTE2LjMgODI5LjYxOEMxNTE2LjEgODI4LjEwOCAxNTE1Ljk5IDgyNi4yOTYgMTUxNS45OSA4MjQuMTgyVjgwMi45NjdMMTUyOC40NSA4MDEuNjA4SDE1MjkuMjhWODI3Ljk1N0MxNTI5LjI4IDgyOC45NjQgMTUyOS4yOCA4MzAuMjIyIDE1MjkuMjggODMxLjczMkMxNTI5LjMzIDgzMy4xOTIgMTUyOS4zOCA4MzQuNjUxIDE1MjkuNDMgODM2LjExMUMxNTI5LjUzIDgzNy41MiAxNTI5LjY5IDgzOC42NzggMTUyOS44OSA4MzkuNTg0Vjg0MC4xODhDMTUyOC4zOCA4NDAuNzkyIDE1MjYuNTQgODQxLjI0NSAxNTI0LjM4IDg0MS41NDdDMTUyMi4yMSA4NDEuODQ5IDE1MTkuNTQgODQyIDE1MTYuMzcgODQySDE1MDYuNDhaTTE1MTUuNjIgODU0LjIzMUMxNTE1LjYyIDg1Mi4zMTggMTUxNi4yIDg1MC44MzMgMTUxNy4zNSA4NDkuNzc2QzE1MTguNTYgODQ4Ljc3IDE1MjAgODQ4LjI2NiAxNTIxLjY2IDg0OC4yNjZDMTUyMy4zMiA4NDguMjY2IDE1MjQuNzMgODQ4Ljc3IDE1MjUuODkgODQ5Ljc3NkMxNTI3LjA0IDg1MC44MzMgMTUyNy42MiA4NTIuMzE4IDE1MjcuNjIgODU0LjIzMUMxNTI3LjYyIDg1Ni4wOTMgMTUyNy4wNCA4NTcuNTUzIDE1MjUuODkgODU4LjYxQzE1MjQuNzMgODU5LjY2NyAxNTIzLjMyIDg2MC4xOTYgMTUyMS42NiA4NjAuMTk2QzE1MjAgODYwLjE5NiAxNTE4LjU2IDg1OS42NjcgMTUxNy4zNSA4NTguNjFDMTUxNi4yIDg1Ny41NTMgMTUxNS42MiA4NTYuMDkzIDE1MTUuNjIgODU0LjIzMVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNTM1LjQyIDg0OS4zOTlDMTUzNi43MyA4NDkuNzAxIDE1MzguMDQgODQ5Ljk1MyAxNTM5LjM1IDg1MC4xNTRDMTU0MC42NiA4NTAuNDA2IDE1NDEuOTcgODUwLjUzMSAxNTQzLjI3IDg1MC41MzFDMTU0NS4yOSA4NTAuNTMxIDE1NDcuMDggODUwLjI4IDE1NDguNjQgODQ5Ljc3NkMxNTUwLjI1IDg0OS4yNzMgMTU1MS40MyA4NDguNzcgMTU1Mi4xOCA4NDguMjY2TDE1NDkuMDkgODUxLjM2MkMxNTQ5Ljk0IDg1MC4xMDQgMTU1MC42NSA4NDguNDkzIDE1NTEuMiA4NDYuNTNDMTU1MS44MSA4NDQuNjE3IDE1NTIuMjYgODQyLjM1MiAxNTUyLjU2IDgzOS43MzVDMTU1Mi44NiA4MzcuMDY3IDE1NTMuMDEgODM0LjA0NyAxNTUzLjAxIDgzMC42NzVDMTU1My4wMSA4MjYuMzQ2IDE1NTIuODEgODIyLjI0NCAxNTUyLjQxIDgxOC4zNjlDMTU1Mi4wMSA4MTQuNDQzIDE1NTEuNTUgODEwLjc0MyAxNTUxLjA1IDgwNy4yN0wxNTYzLjg5IDgwNS45MTFIMTU2NC43MkMxNTY1LjE3IDgwOS4zMzQgMTU2NS41NSA4MTMuMTA5IDE1NjUuODUgODE3LjIzNkMxNTY2LjE1IDgyMS4zNjMgMTU2Ni4zIDgyNS41NDEgMTU2Ni4zIDgyOS43NjlDMTU2Ni4zIDgzNS41NTcgMTU2NS43MiA4NDAuNDY1IDE1NjQuNTcgODQ0LjQ5MUMxNTYzLjQxIDg0OC41NjggMTU2MS43MiA4NTEuODY1IDE1NTkuNTEgODU0LjM4MkMxNTU3LjM0IDg1Ni44OTkgMTU1NC43IDg1OC43MzYgMTU1MS41OCA4NTkuODk0QzE1NDguNTEgODYxLjA1MSAxNTQ1LjA0IDg2MS42MyAxNTQxLjE2IDg2MS42M0MxNTM5Ljg1IDg2MS42MyAxNTM4LjQ3IDg2MS41MjkgMTUzNy4wMSA4NjEuMzI4QzE1MzUuNiA4NjEuMTc3IDE1MzQuNDIgODYxLjAwMSAxNTMzLjQ2IDg2MC44QzE1MzIuNDUgODYwLjY0OSAxNTMxLjk1IDg2MC41NzMgMTUzMS45NSA4NjAuNTczVjg1OS44MThMMTUzNS40MiA4NDkuMzk5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE2MDYuMyA4NDJWODMwLjc1SDE2MTguNlY4NDAuNDlMMTYxNy4wOSA4NDJIMTYwNi4zWk0xNTk1LjUgNzg1Ljk3OUwxNjA5LjE3IDc4NC42MkwxNjA5LjM5IDc4NS4yMjRDMTYwOS4xOSA3ODYuMTMgMTYwOS4wNCA3ODcuMjYyIDE2MDguOTQgNzg4LjYyMUMxNjA4Ljg5IDc4OS45OCAxNjA4Ljg0IDc5MS4zNjUgMTYwOC43OSA3OTIuNzc0QzE2MDguNzkgNzk0LjE4MyAxNjA4Ljc5IDc5NS4zOTEgMTYwOC43OSA3OTYuMzk4Vjg0MkgxNTk1LjVWNzg1Ljk3OVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNjE4LjU5IDgzMC43NUgxNjMyLjc4TDE2MjguMzMgODMyLjc4OUMxNjI3LjcyIDgzMi4xODUgMTYyNy4zIDgzMS4xNzggMTYyNy4wNCA4MjkuNzY5QzE2MjYuODQgODI4LjMwOSAxNjI2Ljc0IDgyNi41MjIgMTYyNi43NCA4MjQuNDA4VjgwMi45NjdMMTYzOS4yIDgwMS42MDhIMTY0MC4wM1Y4MzYuMTg3TDE2MzQuNjcgODMwLjc1SDE2NDkuNzdWODQwLjQ5TDE2NDguMjYgODQySDE2MTcuMDhWODMyLjI2TDE2MTguNTkgODMwLjc1Wk0xNjMxLjIgODUzLjE3NEMxNjMxLjIgODUxLjI2MSAxNjMxLjc3IDg0OS43NzYgMTYzMi45MyA4NDguNzE5QzE2MzQuMTQgODQ3LjcxMyAxNjM1LjU3IDg0Ny4yMDkgMTYzNy4yNCA4NDcuMjA5QzE2MzguOSA4NDcuMjA5IDE2NDAuMzEgODQ3LjcxMyAxNjQxLjQ2IDg0OC43MTlDMTY0Mi42MiA4NDkuNzc2IDE2NDMuMiA4NTEuMjYxIDE2NDMuMiA4NTMuMTc0QzE2NDMuMiA4NTUuMDM2IDE2NDIuNjIgODU2LjQ5NiAxNjQxLjQ2IDg1Ny41NTNDMTY0MC4zMSA4NTguNjEgMTYzOC45IDg1OS4xMzkgMTYzNy4yNCA4NTkuMTM5QzE2MzUuNTcgODU5LjEzOSAxNjM0LjE0IDg1OC42MSAxNjMyLjkzIDg1Ny41NTNDMTYzMS43NyA4NTYuNDk2IDE2MzEuMiA4NTUuMDM2IDE2MzEuMiA4NTMuMTc0Wk0xNjE3LjUzIDg1NC42ODRDMTYxNy41MyA4NTIuODIyIDE2MTguMTEgODUxLjM2MiAxNjE5LjI3IDg1MC4zMDVDMTYyMC40MiA4NDkuMjk4IDE2MjEuODYgODQ4Ljc5NSAxNjIzLjU3IDg0OC43OTVDMTYyNS4yMyA4NDguNzk1IDE2MjYuNjIgODQ5LjI5OCAxNjI3LjcyIDg1MC4zMDVDMTYyOC44OCA4NTEuMzYyIDE2MjkuNDYgODUyLjgyMiAxNjI5LjQ2IDg1NC42ODRDMTYyOS40NiA4NTYuNTk3IDE2MjguODggODU4LjA4MiAxNjI3LjcyIDg1OS4xMzlDMTYyNi42MiA4NjAuMTk2IDE2MjUuMjEgODYwLjcyNCAxNjIzLjQ5IDg2MC43MjRDMTYyMS44MyA4NjAuNzI0IDE2MjAuNDIgODYwLjE5NiAxNjE5LjI3IDg1OS4xMzlDMTYxOC4xMSA4NTguMDgyIDE2MTcuNTMgODU2LjU5NyAxNjE3LjUzIDg1NC42ODRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTY0OC4yNyA4NDJWODMyLjI2TDE2NDkuNzggODMwLjc1SDE2ODYuMzJMMTY4My40NSA4MzIuMzM2QzE2ODAuNjggODMwLjg3NiAxNjc3Ljc0IDgyOC45MzggMTY3NC42MSA4MjYuNTIyQzE2NzEuNTQgODI0LjA1NiAxNjY4LjM3IDgyMS4yMzggMTY2NS4xIDgxOC4wNjdDMTY2MS44OCA4MTQuODQ1IDE2NTguNjMgODExLjM5NyAxNjU1LjM2IDgwNy43MjNMMTY2Mi45OSA3OTcuNjgySDE2NjMuODJDMTY2OS45MSA4MDQuMDc0IDE2NzUuMTkgODA5LjQzNCAxNjc5LjY3IDgxMy43NjNDMTY4NC4xNSA4MTguMDQxIDE2ODggODIxLjQxNCAxNjkxLjIyIDgyMy44OEMxNjk0LjQ1IDgyNi4zNDYgMTY5Ny4xNiA4MjguMTA4IDE2OTkuMzggODI5LjE2NUMxNzAxLjU5IDgzMC4yMjIgMTcwMy40MyA4MzAuNzUgMTcwNC44OSA4MzAuNzVIMTcxMC43VjgzMS41ODFMMTcwNi43OCA4NDJIMTY0OC4yN1pNMTY2Ni4zMSA4NTQuNzZDMTY2Ni4zMSA4NTIuODQ3IDE2NjYuODkgODUxLjM2MiAxNjY4LjA1IDg1MC4zMDVDMTY2OS4yNSA4NDkuMjk4IDE2NzAuNjkgODQ4Ljc5NSAxNjcyLjM1IDg0OC43OTVDMTY3NC4wMSA4NDguNzk1IDE2NzUuNDIgODQ5LjI5OCAxNjc2LjU4IDg1MC4zMDVDMTY3Ny43NCA4NTEuMzYyIDE2NzguMzEgODUyLjg0NyAxNjc4LjMxIDg1NC43NkMxNjc4LjMxIDg1Ni42MjIgMTY3Ny43NCA4NTguMDgyIDE2NzYuNTggODU5LjEzOUMxNjc1LjQyIDg2MC4xOTYgMTY3NC4wMSA4NjAuNzI0IDE2NzIuMzUgODYwLjcyNEMxNjcwLjY5IDg2MC43MjQgMTY2OS4yNSA4NjAuMTk2IDE2NjguMDUgODU5LjEzOUMxNjY2Ljg5IDg1OC4wODIgMTY2Ni4zMSA4NTYuNjIyIDE2NjYuMzEgODU0Ljc2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE3MTUuNDIgODI0LjcxQzE3MTUuNDIgODIxLjc5MSAxNzE1Ljk1IDgxOS4wNDggMTcxNyA4MTYuNDgxQzE3MTguMTEgODEzLjg2NCAxNzE5LjU5IDgxMS41NzMgMTcyMS40NiA4MDkuNjFDMTcyMy4zMiA4MDcuNjQ3IDE3MjUuNDMgODA2LjExMiAxNzI3LjggODA1LjAwNUMxNzMwLjIyIDgwMy44NDcgMTczMi43NiA4MDMuMjY5IDE3MzUuNDIgODAzLjI2OUMxNzM4LjA0IDgwMy4yNjkgMTc0MC42MSA4MDMuOTQ4IDE3NDMuMTMgODA1LjMwN0MxNzQ1LjY5IDgwNi42MTYgMTc0OC4wMSA4MDguNTAzIDE3NTAuMDcgODEwLjk2OUMxNzUyLjE0IDgxMy40MzYgMTc1My44IDgxNi40MDYgMTc1NS4wNSA4MTkuODc5QzE3NTYuMzEgODIzLjMwMSAxNzU2Ljk0IDgyNy4xMjYgMTc1Ni45NCA4MzEuMzU0QzE3NTYuOTQgODM3Ljg5OCAxNzU1LjkxIDg0My40MzQgMTc1My44NSA4NDcuOTY0QzE3NTEuODMgODUyLjQ5NCAxNzQ4Ljk5IDg1NS45MTcgMTc0NS4zMiA4NTguMjMzQzE3NDEuNjQgODYwLjU0OCAxNzM3LjIxIDg2MS43MDUgMTczMi4wMyA4NjEuNzA1QzE3MjguNzYgODYxLjcwNSAxNzI1Ljg5IDg2MS40MDQgMTcyMy40MiA4NjAuOEMxNzIxIDg2MC4xOTYgMTcxOS4xMiA4NTkuNTkyIDE3MTcuNzYgODU4Ljk4OEMxNzE2LjQgODU4LjM4NCAxNzE1LjcyIDg1OC4wODIgMTcxNS43MiA4NTguMDgyTDE3MTkuNjUgODQ3LjczOEgxNzIwLjQ4QzE3MjIuNTkgODQ4Ljc5NSAxNzI0LjggODQ5LjUyNSAxNzI3LjEyIDg0OS45MjdDMTcyOS40OSA4NTAuMzMgMTczMS40NyA4NTAuNTMxIDE3MzMuMDggODUwLjUzMUMxNzM1LjMgODUwLjUzMSAxNzM3LjI0IDg1MC4zMDUgMTczOC45IDg0OS44NTJDMTc0MC42MSA4NDkuNDQ5IDE3NDIuMTIgODQ4Ljc5NSAxNzQzLjQzIDg0Ny44ODlMMTczOS44OCA4NTEuMDZDMTc0MC43MyA4NTAuMDUzIDE3NDEuNDYgODQ4Ljc3IDE3NDIuMDcgODQ3LjIwOUMxNzQyLjY3IDg0NS42NDkgMTc0My4xMyA4NDMuNjg2IDE3NDMuNDMgODQxLjMyMUMxNzQzLjczIDgzOC45NTUgMTc0My44OCA4MzUuOTYgMTc0My44OCA4MzIuMzM2QzE3NDMuODggODMwLjAyMSAxNzQzLjY1IDgyNy44MDYgMTc0My4yIDgyNS42OTJDMTc0Mi43NSA4MjMuNTI4IDE3NDIuMDIgODIxLjUxNCAxNzQxLjAxIDgxOS42NTJDMTc0MCA4MTcuNzkgMTczOC43MiA4MTYuMTI5IDE3MzcuMTYgODE0LjY2OUMxNzM1LjY1IDgxMy4xNTkgMTczMy44NCA4MTEuOTI2IDE3MzEuNzMgODEwLjk2OUwxNzM3Ljk5IDgxMS4wNDVDMTczNC42NyA4MTEuOTUxIDE3MzIuMTMgODEzLjU2MiAxNzMwLjM3IDgxNS44NzdDMTcyOC42NSA4MTguMTQyIDE3MjcuOCA4MjAuNTgzIDE3MjcuOCA4MjMuMkMxNzI3LjggODI0LjQ1OSAxNzI4LjE1IDgyNS42OTIgMTcyOC44NiA4MjYuOUMxNzI5LjU2IDgyOC4xMDggMTczMC42NCA4MjkuMTE1IDE3MzIuMSA4MjkuOTJDMTczMy41NiA4MzAuNjc1IDE3MzUuNDIgODMxLjA1MiAxNzM3LjY5IDgzMS4wNTJIMTc0NS4xNkwxNzQ1LjY5IDgzMC43NUgxNzYyLjkxVjg0MC40OUwxNzYxLjQgODQyTDE3MzYuOTMgODQyLjA3NUMxNzMyLjgxIDg0Mi4wNzUgMTcyOS4xMSA4NDEuNDIxIDE3MjUuODQgODQwLjExM0MxNzIyLjYxIDgzOC43NTQgMTcyMC4wNyA4MzYuNzkxIDE3MTguMjEgODM0LjIyNEMxNzE2LjM1IDgzMS42MDYgMTcxNS40MiA4MjguNDM1IDE3MTUuNDIgODI0LjcxWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE3NTkuODkgODQyVjgzMi4yNkwxNzYxLjQgODMwLjc1SDE3NzUuMzdMMTc3MC45OSA4MzIuNzg5QzE3NzAuMzkgODMyLjE4NSAxNzY5Ljk2IDgzMS4xNzggMTc2OS43MSA4MjkuNzY5QzE3NjkuNTEgODI4LjMwOSAxNzY5LjQxIDgyNi41MjIgMTc2OS40MSA4MjQuNDA4Vjc4NS45MDNMMTc4MS44NiA3ODQuNTQ1SDE3ODIuNjlWODI3Ljk1N0MxNzgyLjY5IDgyOC45NjQgMTc4Mi42OSA4MzAuMjIyIDE3ODIuNjkgODMxLjczMkMxNzgyLjc0IDgzMy4xOTIgMTc4Mi43OSA4MzQuNjUxIDE3ODIuODUgODM2LjExMUMxNzgyLjk1IDgzNy41MiAxNzgzLjEgODM4LjY3OCAxNzgzLjMgODM5LjU4NFY4NDAuMTg4QzE3ODEuNzkgODQwLjc5MiAxNzc5Ljk1IDg0MS4yNDUgMTc3Ny43OSA4NDEuNTQ3QzE3NzUuNjIgODQxLjg0OSAxNzcyLjk1IDg0MiAxNzY5Ljc4IDg0MkgxNzU5Ljg5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE3OTIuNzYgODI0LjcxQzE3OTIuNzYgODIxLjc5MSAxNzkzLjI5IDgxOS4wNDggMTc5NC4zNSA4MTYuNDgxQzE3OTUuNDUgODEzLjg2NCAxNzk2Ljk0IDgxMS41NzMgMTc5OC44IDgwOS42MUMxODAwLjY2IDgwNy42NDcgMTgwMi43OCA4MDYuMTEyIDE4MDUuMTQgODA1LjAwNUMxODA3LjU2IDgwMy44NDcgMTgxMC4xIDgwMy4yNjkgMTgxMi43NyA4MDMuMjY5QzE4MTUuMzkgODAzLjI2OSAxODE3Ljk1IDgwMy45NDggMTgyMC40NyA4MDUuMzA3QzE4MjMuMDQgODA2LjYxNiAxODI1LjM1IDgwOC41MDMgMTgyNy40MSA4MTAuOTY5QzE4MjkuNDggODEzLjQzNiAxODMxLjE0IDgxNi40MDYgMTgzMi40IDgxOS44NzlDMTgzMy42NiA4MjMuMzAxIDE4MzQuMjkgODI3LjEyNiAxODM0LjI5IDgzMS4zNTRDMTgzNC4yOSA4MzcuODk4IDE4MzMuMjUgODQzLjQzNCAxODMxLjE5IDg0Ny45NjRDMTgyOS4xOCA4NTIuNDk0IDE4MjYuMzMgODU1LjkxNyAxODIyLjY2IDg1OC4yMzNDMTgxOC45OCA4NjAuNTQ4IDE4MTQuNTUgODYxLjcwNSAxODA5LjM3IDg2MS43MDVDMTgwNi4xIDg2MS43MDUgMTgwMy4yMyA4NjEuNDA0IDE4MDAuNzYgODYwLjhDMTc5OC4zNSA4NjAuMTk2IDE3OTYuNDYgODU5LjU5MiAxNzk1LjEgODU4Ljk4OEMxNzkzLjc0IDg1OC4zODQgMTc5My4wNiA4NTguMDgyIDE3OTMuMDYgODU4LjA4MkwxNzk2Ljk5IDg0Ny43MzhIMTc5Ny44MkMxNzk5LjkzIDg0OC43OTUgMTgwMi4xNSA4NDkuNTI1IDE4MDQuNDYgODQ5LjkyN0MxODA2LjgzIDg1MC4zMyAxODA4LjgyIDg1MC41MzEgMTgxMC40MyA4NTAuNTMxQzE4MTIuNjQgODUwLjUzMSAxODE0LjU4IDg1MC4zMDUgMTgxNi4yNCA4NDkuODUyQzE4MTcuOTUgODQ5LjQ0OSAxODE5LjQ2IDg0OC43OTUgMTgyMC43NyA4NDcuODg5TDE4MTcuMjIgODUxLjA2QzE4MTguMDggODUwLjA1MyAxODE4LjgxIDg0OC43NyAxODE5LjQxIDg0Ny4yMDlDMTgyMC4wMiA4NDUuNjQ5IDE4MjAuNDcgODQzLjY4NiAxODIwLjc3IDg0MS4zMjFDMTgyMS4wNyA4MzguOTU1IDE4MjEuMjIgODM1Ljk2IDE4MjEuMjIgODMyLjMzNkMxODIxLjIyIDgzMC4wMjEgMTgyMSA4MjcuODA2IDE4MjAuNTQgODI1LjY5MkMxODIwLjA5IDgyMy41MjggMTgxOS4zNiA4MjEuNTE0IDE4MTguMzUgODE5LjY1MkMxODE3LjM1IDgxNy43OSAxODE2LjA2IDgxNi4xMjkgMTgxNC41IDgxNC42NjlDMTgxMi45OSA4MTMuMTU5IDE4MTEuMTggODExLjkyNiAxODA5LjA3IDgxMC45NjlMMTgxNS4zNCA4MTEuMDQ1QzE4MTIuMDEgODExLjk1MSAxODA5LjQ3IDgxMy41NjIgMTgwNy43MSA4MTUuODc3QzE4MDYgODE4LjE0MiAxODA1LjE0IDgyMC41ODMgMTgwNS4xNCA4MjMuMkMxODA1LjE0IDgyNC40NTkgMTgwNS40OSA4MjUuNjkyIDE4MDYuMiA4MjYuOUMxODA2LjkgODI4LjEwOCAxODA3Ljk5IDgyOS4xMTUgMTgwOS40NSA4MjkuOTJDMTgxMC45MSA4MzAuNjc1IDE4MTIuNzcgODMxLjA1MiAxODE1LjAzIDgzMS4wNTJIMTgyMi41MUwxODIzLjA0IDgzMC43NUgxODQwLjI1Vjg0MC40OUwxODM4Ljc0IDg0MkwxODE0LjI4IDg0Mi4wNzVDMTgxMC4xNSA4NDIuMDc1IDE4MDYuNDUgODQxLjQyMSAxODAzLjE4IDg0MC4xMTNDMTc5OS45NiA4MzguNzU0IDE3OTcuNDIgODM2Ljc5MSAxNzk1LjU1IDgzNC4yMjRDMTc5My42OSA4MzEuNjA2IDE3OTIuNzYgODI4LjQzNSAxNzkyLjc2IDgyNC43MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xODM4Ljc1IDgzMC43NUgxODUyLjk0TDE4NDguNDkgODMyLjc4OUMxODQ3Ljg4IDgzMi4xODUgMTg0Ny40NSA4MzEuMTc4IDE4NDcuMiA4MjkuNzY5QzE4NDcgODI4LjMwOSAxODQ2LjkgODI2LjUyMiAxODQ2LjkgODI0LjQwOFY4MDIuOTY3TDE4NTkuMzYgODAxLjYwOEgxODYwLjE5VjgzNi4xODdMMTg1NC44MyA4MzAuNzVIMTg2OS45M1Y4NDAuNDlMMTg2OC40MiA4NDJIMTgzNy4yNFY4MzIuMjZMMTgzOC43NSA4MzAuNzVaTTE4NTMuMzkgNzk2LjA5NkMxODUxLjczIDc5Ni4wOTYgMTg1MC4zMiA3OTUuNTY3IDE4NDkuMTcgNzk0LjUxQzE4NDguMDEgNzkzLjQ1MyAxODQ3LjQzIDc5MS45NjkgMTg0Ny40MyA3OTAuMDU2QzE4NDcuNDMgNzg4LjE0MyAxODQ4LjAxIDc4Ni42ODQgMTg0OS4xNyA3ODUuNjc3QzE4NTAuMzIgNzg0LjYyIDE4NTEuNzMgNzg0LjA5MiAxODUzLjM5IDc4NC4wOTJDMTg1NS4wNSA3ODQuMDkyIDE4NTYuNDYgNzg0LjYyIDE4NTcuNjIgNzg1LjY3N0MxODU4Ljc4IDc4Ni42ODQgMTg1OS4zNiA3ODguMTQzIDE4NTkuMzYgNzkwLjA1NkMxODU5LjM2IDc5MS45NjkgMTg1OC43OCA3OTMuNDUzIDE4NTcuNjIgNzk0LjUxQzE4NTYuNDYgNzk1LjU2NyAxODU1LjA1IDc5Ni4wOTYgMTg1My4zOSA3OTYuMDk2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE5MzMuNjYgODQyTDE5NDAuNzUgODMwLjc1SDE5NjMuNzFWODQwLjQ5TDE5NjIuMiA4NDJIMTkzMy42NlpNMTg2OC40MiA4NDJMMTg2OC41IDgzMi4yNkwxODcwLjAxIDgzMC43NUgxOTMzLjY2QzE5MzcuMTggODMwLjc1IDE5MzkuNiA4MzAuMjk3IDE5NDAuOSA4MjkuMzkxQzE5NDIuMjEgODI4LjQ4NSAxOTQyLjg3IDgyNy4xMjYgMTk0Mi44NyA4MjUuMzE0QzE5NDIuODcgODIzLjgwNCAxOTQyLjUyIDgyMi4zNyAxOTQxLjgxIDgyMS4wMTFDMTk0MS4xNiA4MTkuNjAyIDE5NDAuMzggODE4LjQ0NCAxOTM5LjQ3IDgxNy41MzhMMTk0NC45OCA4MTcuOTkxQzE5NDIuODcgODE4LjQ5NCAxOTQxLjA2IDgxOC44NzIgMTkzOS41NSA4MTkuMTI0QzE5MzguMDQgODE5LjM3NSAxOTM2LjYzIDgxOS41NTEgMTkzNS4zMiA4MTkuNjUyQzE5MzQuMDYgODE5Ljc1MyAxOTMyLjY1IDgxOS44MDMgMTkzMS4wOSA4MTkuODAzSDE4ODQuNDNDMTg4Mi4wNiA4MTkuODAzIDE4ODAuMDMgODE5LjE3NCAxODc4LjMyIDgxNy45MTZDMTg3Ni42NSA4MTYuNjA3IDE4NzUuNjcgODE0LjM0MiAxODc1LjM3IDgxMS4xMkwxOTA2LjAyIDc4My41NjNIMTkwNi43OEwxOTExLjk5IDc5MS41NjZMMTg4OC42NiA4MTIuMDI2TDE4ODYuNzcgODA4LjU1M0gxOTMzLjQzQzE5MzUuOCA4MDguNTUzIDE5MzguMTQgODA4LjUwMyAxOTQwLjQ1IDgwOC40MDJDMTk0Mi43NyA4MDguMjUxIDE5NDQuNjggODA4IDE5NDYuMTkgODA3LjY0N0gxOTQ3LjFDMTk0OC4zNSA4MDguODA1IDE5NDkuNjEgODEwLjI2NSAxOTUwLjg3IDgxMi4wMjZDMTk1Mi4xOCA4MTMuNzM4IDE5NTMuMjkgODE1LjYyNSAxOTU0LjE5IDgxNy42ODlDMTk1NS4xIDgxOS43NTMgMTk1NS41NSA4MjEuODQxIDE5NTUuNTUgODIzLjk1NUMxOTU1LjU1IDgyNi4yNzEgMTk1NS4wNSA4MjguNDYgMTk1NC4wNCA4MzAuNTI0QzE5NTMuMDMgODMyLjU4OCAxOTUxLjMgODM0LjQyNSAxOTQ4LjgzIDgzNi4wMzZMMTk0NS44OSA4NDAuNDE1QzE5NDQuNTMgODQwLjkxOCAxOTQyLjk3IDg0MS4zMjEgMTk0MS4yMSA4NDEuNjIzQzE5MzkuNDQgODQxLjg3NCAxOTM3LjQ2IDg0MiAxOTM1LjI0IDg0MkgxODY4LjQyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE5NjIuMjEgODQyVjgzMi4yNkwxOTYzLjcyIDgzMC43NUgxOTc3LjY5TDE5NzMuMzEgODMyLjc4OUMxOTcyLjcgODMyLjE4NSAxOTcyLjI4IDgzMS4xMjggMTk3Mi4wMiA4MjkuNjE4QzE5NzEuODIgODI4LjEwOCAxOTcxLjcyIDgyNi4yOTYgMTk3MS43MiA4MjQuMTgyVjgwMi45NjdMMTk4NC4xOCA4MDEuNjA4SDE5ODUuMDFWODI3Ljk1N0MxOTg1LjAxIDgyOC45NjQgMTk4NS4wMSA4MzAuMjIyIDE5ODUuMDEgODMxLjczMkMxOTg1LjA2IDgzMy4xOTIgMTk4NS4xMSA4MzQuNjUxIDE5ODUuMTYgODM2LjExMUMxOTg1LjI2IDgzNy41MiAxOTg1LjQxIDgzOC42NzggMTk4NS42MSA4MzkuNTg0Vjg0MC4xODhDMTk4NC4xIDg0MC43OTIgMTk4Mi4yNyA4NDEuMjQ1IDE5ODAuMSA4NDEuNTQ3QzE5NzcuOTQgODQxLjg0OSAxOTc1LjI3IDg0MiAxOTcyLjEgODQySDE5NjIuMjFaTTE5ODUuNjkgNzk0LjI4NEMxOTg0LjA4IDc5NC4yODQgMTk4Mi42NyA3OTMuNzU1IDE5ODEuNDYgNzkyLjY5OEMxOTgwLjMgNzkxLjY0MSAxOTc5LjczIDc5MC4xODIgMTk3OS43MyA3ODguMzE5QzE5NzkuNzMgNzg2LjQwNyAxOTgwLjMgNzg0Ljk0NyAxOTgxLjQ2IDc4My45NDFDMTk4Mi42NyA3ODIuODg0IDE5ODQuMDggNzgyLjM1NSAxOTg1LjY5IDc4Mi4zNTVDMTk4Ny40IDc4Mi4zNTUgMTk4OC44NCA3ODIuODg0IDE5ODkuOTkgNzgzLjk0MUMxOTkxLjE1IDc4NC45NDcgMTk5MS43MyA3ODYuNDA3IDE5OTEuNzMgNzg4LjMxOUMxOTkxLjczIDc5MC4xODIgMTk5MS4xNSA3OTEuNjQxIDE5ODkuOTkgNzkyLjY5OEMxOTg4Ljg0IDc5My43NTUgMTk4Ny40IDc5NC4yODQgMTk4NS42OSA3OTQuMjg0Wk0xOTcyLjAyIDc5NS44N0MxOTcwLjM2IDc5NS44NyAxOTY4Ljk1IDc5NS4zNDEgMTk2Ny44IDc5NC4yODRDMTk2Ni42NCA3OTMuMjI3IDE5NjYuMDYgNzkxLjc2NyAxOTY2LjA2IDc4OS45MDVDMTk2Ni4wNiA3ODcuOTkyIDE5NjYuNjQgNzg2LjUwNyAxOTY3LjggNzg1LjQ1QzE5NjguOTUgNzg0LjM5MyAxOTcwLjM2IDc4My44NjUgMTk3Mi4wMiA3ODMuODY1QzE5NzMuNjkgNzgzLjg2NSAxOTc1LjA5IDc4NC4zOTMgMTk3Ni4yNSA3ODUuNDVDMTk3Ny40MSA3ODYuNTA3IDE5NzcuOTkgNzg3Ljk5MiAxOTc3Ljk5IDc4OS45MDVDMTk3Ny45OSA3OTEuNzY3IDE5NzcuNDEgNzkzLjIyNyAxOTc2LjI1IDc5NC4yODRDMTk3NS4wOSA3OTUuMzQxIDE5NzMuNjkgNzk1Ljg3IDE5NzIuMDIgNzk1Ljg3WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTc4NS4yNzMgNzIxVjcwMy4yNjlIODM1LjAxNVY3MTguNjJMODMyLjYzNSA3MjFINzg1LjI3M1pNNzAzLjYzOSA2OTUuMjk2SDcwNC45NDhDNzA1LjgyMSA2OTUuNjkzIDcwNy4wNSA2OTYuMjA4IDcwOC42MzcgNjk2Ljg0M0M3MTAuMjI0IDY5Ny4zOTggNzExLjc3MSA2OTcuOTE0IDcxMy4yNzggNjk4LjM5QzcxNC44NjUgNjk4Ljg2NiA3MTYuMDk0IDY5OS4yNjMgNzE2Ljk2NyA2OTkuNThDNzIxLjE3MiA3MDAuNzcgNzI1LjgxMyA3MDEuNjQzIDczMC44OSA3MDIuMTk4QzczNi4wNDcgNzAyLjY3NCA3NDEuMDQ1IDcwMi45OTEgNzQ1Ljg4NCA3MDMuMTVDNzUwLjgwMyA3MDMuMjI5IDc1NC45NjggNzAzLjI2OSA3NTguMzc5IDcwMy4yNjlIODA3LjI4OEw4MDAuMzg2IDcwNi40ODJDNzk5LjQzNCA3MDUuNTMgNzk4Ljc2IDcwMy45NDMgNzk4LjM2MyA3MDEuNzIyQzc5OC4wNDYgNjk5LjQyMSA3OTcuODg3IDY5Ni42MDUgNzk3Ljg4NyA2OTMuMjczVjY1OS40NzdMODE3LjUyMiA2NTcuMzM1SDgxOC44MzFWNjk4Ljg2NkM4MTguODMxIDcwMC40NTMgODE4LjgzMSA3MDIuNDM2IDgxOC44MzEgNzA0LjgxNkM4MTguOTEgNzA3LjExNyA4MTguOTkgNzA5LjQxNyA4MTkuMDY5IDcxMS43MThDODE5LjIyOCA3MTMuOTM5IDgxOS40NjYgNzE1Ljc2NCA4MTkuNzgzIDcxNy4xOTJMODE5LjQyNiA3MTguMTQ0QzgxNy4wNDYgNzE5LjA5NiA4MTMuOTUyIDcxOS44MSA4MTAuMTQ0IDcyMC4yODZDODA2LjMzNiA3MjAuNzYyIDgwMS45MzMgNzIxIDc5Ni45MzUgNzIxSDc1OC4zNzlDNzUxLjIzOSA3MjEgNzQ0LjEzOSA3MjAuODAyIDczNy4wNzggNzIwLjQwNUM3MzAuMDk3IDcxOS45MjkgNzIyLjI4MiA3MTguNjk5IDcxMy42MzUgNzE2LjcxNkM3MTIuMTI4IDcxNi4zMTkgNzEwLjQ2MiA3MTUuODgzIDcwOC42MzcgNzE1LjQwN0M3MDYuODEyIDcxNC44NTIgNzA1LjA2NyA3MTQuMjk2IDcwMy40MDEgNzEzLjc0MUM3MDEuNzM1IDcxMy4xODYgNzAwLjM4NiA3MTIuNjcgNjk5LjM1NSA3MTIuMTk0TDcwMy42MzkgNjk1LjI5NlpNNzU5LjY4OCA2NTEuODYxQzc1Ny4yMjkgNjUxLjg2MSA3NTUuMTY2IDY1MS4xMDcgNzUzLjUgNjQ5LjZDNzUxLjgzNCA2NDguMDkzIDc1MS4wMDEgNjQ1Ljk5IDc1MS4wMDEgNjQzLjI5M0M3NTEuMDAxIDY0MC41MTYgNzUxLjgzNCA2MzguMzc0IDc1My41IDYzNi44NjdDNzU1LjE2NiA2MzUuMzYgNzU3LjIyOSA2MzQuNjA2IDc1OS42ODggNjM0LjYwNkM3NjIuMTQ3IDYzNC42MDYgNzY0LjIxIDYzNS4zNiA3NjUuODc2IDYzNi44NjdDNzY3LjU0MiA2MzguMzc0IDc2OC4zNzUgNjQwLjUxNiA3NjguMzc1IDY0My4yOTNDNzY4LjM3NSA2NDUuOTkgNzY3LjU0MiA2NDguMDkzIDc2NS44NzYgNjQ5LjZDNzY0LjIxIDY1MS4xMDcgNzYyLjE0NyA2NTEuODYxIDc1OS42ODggNjUxLjg2MVpNNzcyLjA2NCA2NjkuODNDNzY5LjUyNSA2NjkuODMgNzY3LjMwNCA2NjguOTk3IDc2NS40IDY2Ny4zMzFDNzYzLjU3NSA2NjUuNjY1IDc2Mi42NjMgNjYzLjMyNSA3NjIuNjYzIDY2MC4zMUM3NjIuNjYzIDY1Ny4zNzUgNzYzLjU3NSA2NTUuMTE0IDc2NS40IDY1My41MjdDNzY3LjMwNCA2NTEuODYxIDc2OS41NjUgNjUxLjAyOCA3NzIuMTgzIDY1MS4wMjhDNzc0LjgwMSA2NTEuMDI4IDc3Ny4wMjIgNjUxLjg2MSA3NzguODQ3IDY1My41MjdDNzgwLjY3MiA2NTUuMTE0IDc4MS41ODQgNjU3LjM3NSA3ODEuNTg0IDY2MC4zMUM3ODEuNTg0IDY2My4zMjUgNzgwLjY3MiA2NjUuNjY1IDc3OC44NDcgNjY3LjMzMUM3NzcuMDIyIDY2OC45OTcgNzc0Ljc2MSA2NjkuODMgNzcyLjA2NCA2NjkuODNaTTc1MC41MjUgNjcyLjA5MUM3NDcuOTA3IDY3Mi4wOTEgNzQ1LjY4NiA2NzEuMjU4IDc0My44NjEgNjY5LjU5MkM3NDIuMDM2IDY2Ny45MjYgNzQxLjEyNCA2NjUuNTg2IDc0MS4xMjQgNjYyLjU3MUM3NDEuMTI0IDY1OS42MzYgNzQyLjAzNiA2NTcuMzM1IDc0My44NjEgNjU1LjY2OUM3NDUuNjg2IDY1NC4wMDMgNzQ3LjkwNyA2NTMuMTcgNzUwLjUyNSA2NTMuMTdDNzUzLjE0MyA2NTMuMTcgNzU1LjM2NCA2NTQuMDAzIDc1Ny4xODkgNjU1LjY2OUM3NTkuMDE0IDY1Ny4zMzUgNzU5LjkyNiA2NTkuNjM2IDc1OS45MjYgNjYyLjU3MUM3NTkuOTI2IDY2NS41ODYgNzU5LjAxNCA2NjcuOTI2IDc1Ny4xODkgNjY5LjU5MkM3NTUuNDQ0IDY3MS4yNTggNzUzLjIyMiA2NzIuMDkxIDc1MC41MjUgNjcyLjA5MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik04MzIuNTg0IDcyMVY3MDUuNjQ5TDgzNC45NjQgNzAzLjI2OUg4NTguMjg4TDg1MS4zODYgNzA2LjQ4MkM4NTAuNDM0IDcwNS41MyA4NDkuNzYgNzAzLjk0MyA4NDkuMzYzIDcwMS43MjJDODQ4Ljk2NiA2OTkuNDIxIDg0OC43NjggNjk2LjYwNSA4NDguNzY4IDY5My4yNzNWNjMyLjcwMkw4NjguNTIyIDYzMC41Nkg4NjkuODMxVjcxMS45NTZMODYxLjI2MyA3MDMuMjY5SDg4NS40MlY3MTguNjJMODgzLjA0IDcyMUg4MzIuNTg0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTg4NS4zOTkgNzAzLjI2OUg5MDcuNzcxTDkwMC43NSA3MDYuNDgyQzg5OS43OTggNzA1LjUzIDg5OS4xMjQgNzAzLjk0MyA4OTguNzI3IDcwMS43MjJDODk4LjQxIDY5OS40MjEgODk4LjI1MSA2OTYuNjA1IDg5OC4yNTEgNjkzLjI3M1Y2NTkuNDc3TDkxNy44ODYgNjU3LjMzNUg5MTkuMTk1VjcxMS44MzdMOTEwLjc0NiA3MDMuMjY5SDkzNC41NDZWNzE4LjYyTDkzMi4xNjYgNzIxSDg4My4wMTlWNzA1LjY0OUw4ODUuMzk5IDcwMy4yNjlaTTkwNS4yNzIgNzM4LjYxMkM5MDUuMjcyIDczNS41OTcgOTA2LjE4NSA3MzMuMjU3IDkwOC4wMDkgNzMxLjU5MUM5MDkuOTEzIDczMC4wMDQgOTEyLjE3NCA3MjkuMjExIDkxNC43OTIgNzI5LjIxMUM5MTcuNDEgNzI5LjIxMSA5MTkuNjMyIDczMC4wMDQgOTIxLjQ1NiA3MzEuNTkxQzkyMy4yODEgNzMzLjI1NyA5MjQuMTkzIDczNS41OTcgOTI0LjE5MyA3MzguNjEyQzkyNC4xOTMgNzQxLjU0NyA5MjMuMjgxIDc0My44NDggOTIxLjQ1NiA3NDUuNTE0QzkxOS42MzIgNzQ3LjE4IDkxNy40MSA3NDguMDEzIDkxNC43OTIgNzQ4LjAxM0M5MTIuMTc0IDc0OC4wMTMgOTA5LjkxMyA3NDcuMTggOTA4LjAwOSA3NDUuNTE0QzkwNi4xODUgNzQzLjg0OCA5MDUuMjcyIDc0MS41NDcgOTA1LjI3MiA3MzguNjEyWk04ODMuNzMzIDc0MC45OTJDODgzLjczMyA3MzguMDU3IDg4NC42NDYgNzM1Ljc1NiA4ODYuNDcgNzM0LjA5Qzg4OC4yOTUgNzMyLjUwMyA4OTAuNTU2IDczMS43MSA4OTMuMjUzIDczMS43MUM4OTUuODcxIDczMS43MSA4OTguMDUzIDczMi41MDMgODk5Ljc5OCA3MzQuMDlDOTAxLjYyMyA3MzUuNzU2IDkwMi41MzUgNzM4LjA1NyA5MDIuNTM1IDc0MC45OTJDOTAyLjUzNSA3NDQuMDA3IDkwMS42MjMgNzQ2LjM0NyA4OTkuNzk4IDc0OC4wMTNDODk4LjA1MyA3NDkuNjc5IDg5NS44MzIgNzUwLjUxMiA4OTMuMTM0IDc1MC41MTJDODkwLjUxNiA3NTAuNTEyIDg4OC4yOTUgNzQ5LjY3OSA4ODYuNDcgNzQ4LjAxM0M4ODQuNjQ2IDc0Ni4zNDcgODgzLjczMyA3NDQuMDA3IDg4My43MzMgNzQwLjk5MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik05MzIuMTc3IDcyMVY3MDUuNjQ5TDkzNC41NTcgNzAzLjI2OUg5NTIuNzY0Qzk1Ny43NjIgNzAzLjI2OSA5NjIuMjg0IDcwMi41NTUgOTY2LjMzIDcwMS4xMjdDOTcwLjM3NiA2OTkuNjk5IDk3My44NjYgNjk3LjgzNSA5NzYuODAyIDY5NS41MzRDOTc5LjczNyA2OTMuMjMzIDk4MS45OTggNjkwLjc3NCA5ODMuNTg1IDY4OC4xNTZDOTg1LjE3MSA2ODUuNDU5IDk4NS45NjUgNjgyLjg4IDk4NS45NjUgNjgwLjQyMUM5ODUuOTY1IDY3OC40MzggOTg1LjIxMSA2NzYuNjEzIDk4My43MDQgNjc0Ljk0N0M5ODIuMjc2IDY3My4yMDIgOTc5LjkzNSA2NzEuODUzIDk3Ni42ODMgNjcwLjkwMUM5NzMuNTA5IDY2OS44NyA5NjkuMzQ0IDY2OS40MzMgOTY0LjE4OCA2NjkuNTkyTDk4MC44NDggNjY3LjA5M0M5NzYuNzIyIDY2OC40NDIgOTczLjM1MSA2NzAuNTg0IDk3MC43MzMgNjczLjUxOUM5NjguMTE1IDY3Ni40NTQgOTY2LjE3MSA2NzkuNjI4IDk2NC45MDIgNjgzLjAzOUM5NjMuNzEyIDY4Ni4zNzEgOTYzLjExNyA2ODkuNTg0IDk2My4xMTcgNjkyLjY3OEM5NjMuMTE3IDY5Ni44ODMgOTY0LjA2OSA3MDAuNTMyIDk2NS45NzMgNzAzLjYyNkM5NjcuODc3IDcwNi43MiA5NzAuNTM0IDcwOS4xNCA5NzMuOTQ2IDcxMC44ODVDOTc3LjM1NyA3MTIuNjMgOTgxLjM2MyA3MTMuNTAzIDk4NS45NjUgNzEzLjUwM0M5ODkuNDU1IDcxMy41MDMgOTkyLjYyOSA3MTIuODY4IDk5NS40ODUgNzExLjU5OUM5OTguNDIgNzEwLjMzIDEwMDEuMTYgNzA4LjgyMiAxMDAzLjcgNzA3LjA3N0w5OTcuNjI3IDcxOS40NTNWNjUyLjIxOEwxMDE1Ljk1IDY1MC41NTJIMTAxNy4yNlY3MjAuNDA1QzEwMTQuNjQgNzIyLjA3MSAxMDExLjcxIDcyMy42NTggMTAwOC40NiA3MjUuMTY1QzEwMDUuMjggNzI2Ljc1MiAxMDAxLjcxIDcyOC4wMjEgOTk3Ljc0NiA3MjguOTczQzk5My44NTggNzMwLjAwNCA5ODkuNDU1IDczMC41MiA5ODQuNTM3IDczMC41MkM5NzguNzQ1IDczMC41MiA5NzMuMzExIDcyOS43MjcgOTY4LjIzNCA3MjguMTRDOTYzLjIzNiA3MjYuNjMzIDk1OC44NzIgNzI0LjM3MiA5NTUuMTQ0IDcyMS4zNTdDOTUxLjQxNSA3MTguNDIyIDk0OC40OCA3MTQuNzcyIDk0Ni4zMzggNzEwLjQwOUM5NDQuMjc1IDcwNi4wNDYgOTQzLjI0NCA3MDEuMDQ4IDk0My4yNDQgNjk1LjQxNUM5NDMuMjQ0IDY5MC4zMzggOTQ0LjE1NiA2ODUuNDU5IDk0NS45ODEgNjgwLjc3OEM5NDcuODg1IDY3Ni4wOTcgOTUwLjQ2MyA2NzEuODkzIDk1My43MTYgNjY4LjE2NEM5NTYuOTY4IDY2NC40MzUgOTYwLjY5NyA2NjEuNSA5NjQuOTAyIDY1OS4zNThDOTY5LjE4NiA2NTcuMTM3IDk3My43MDggNjU2LjAyNiA5NzguNDY4IDY1Ni4wMjZDOTgzLjE0OCA2NTYuMDI2IDk4Ny4xNTUgNjU3LjA5NyA5OTAuNDg3IDY1OS4yMzlDOTkzLjgxOSA2NjEuMzAyIDk5Ni4zNTcgNjY0LjA3OCA5OTguMTAzIDY2Ny41NjlDOTk5Ljg0OCA2NzEuMDYgMTAwMC43MiA2NzQuOTQ3IDEwMDAuNzIgNjc5LjIzMUMxMDAwLjcyIDY4My4yNzcgOTk5Ljg0OCA2ODcuMjgzIDk5OC4xMDMgNjkxLjI1Qzk5Ni40MzcgNjk1LjEzNyA5OTQuMDE3IDY5OC42NjggOTkwLjg0NCA3MDEuODQxQzk4Ny42NyA3MDUuMDE0IDk4My44NjIgNzA3LjY3MiA5NzkuNDIgNzA5LjgxNEM5NzQuOTc3IDcxMS44NzcgOTY5Ljk3OSA3MTMuMjI1IDk2NC40MjYgNzEzLjg2TDk1OS4zMDkgNzIxSDkzMi4xNzdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNOTY5Ljg1OSA1NTNWNTAyLjc4N0gxMTEwLjcyVjU0Ni4yNkwxMTAzLjk4IDU1M0g5NjkuODU5Wk0xMDI0LjQ1IDU1M0g4NjQuMzc4Qzg0NC4xNTggNTUzIDgyMy45MzggNTUyLjQzOCA4MDMuNzE4IDU1MS4zMTVDNzgzLjQ5OCA1NDkuOTY3IDc2Mi4wNDIgNTQ2LjQ4NSA3MzkuMzUxIDU0MC44NjhDNzM1LjA4MiA1MzkuNzQ1IDczMC4zNjQgNTM4LjUwOSA3MjUuMTk3IDUzNy4xNjFDNzIwLjAzIDUzNS41ODggNzE1LjA4NyA1MzQuMDE2IDcxMC4zNjkgNTMyLjQ0M0M3MDUuNjUxIDUzMC44NyA3MDEuODMyIDUyOS40MSA2OTguOTExIDUyOC4wNjJMNzExLjA0MyA0ODAuMjA4SDcxNC43NUM3MTcuMjIxIDQ4MS4zMzEgNzIwLjcwNCA0ODIuNzkyIDcyNS4xOTcgNDg0LjU4OUM3MjkuNjkgNDg2LjE2MiA3MzQuMDcxIDQ4Ny42MjIgNzM4LjM0IDQ4OC45N0M3NDIuODMzIDQ5MC4zMTggNzQ2LjMxNiA0OTEuNDQxIDc0OC43ODcgNDkyLjM0Qzc1Ny4zMjQgNDk1LjAzNiA3NjYuNzYgNDk3LjA1OCA3NzcuMDk1IDQ5OC40MDZDNzg3LjQzIDQ5OS43NTQgNzk3Ljk4OSA1MDAuNzY1IDgwOC43NzMgNTAxLjQzOUM4MTkuNzgyIDUwMi4xMTMgODMwLjQ1MyA1MDIuNTYyIDg0MC43ODggNTAyLjc4N0M4NTEuMTIzIDUwMi43ODcgODYwLjU1OSA1MDIuNzg3IDg2OS4wOTYgNTAyLjc4N0g5ODYuMDM1TDk2Ni44MjYgNTE0LjkxOVYzMDQuMjk0TDEwMjYuMTQgMjk4LjIyOEwxMDI3LjE1IDMwMC45MjRDMTAyNi4yNSAzMDQuOTY4IDEwMjUuNTggMzEwLjAyMyAxMDI1LjEzIDMxNi4wODlDMTAyNC45IDMyMi4xNTUgMTAyNC42OCAzMjguMzMzIDEwMjQuNDUgMzM0LjYyNEMxMDI0LjQ1IDM0MC45MTUgMTAyNC40NSAzNDYuMzA3IDEwMjQuNDUgMzUwLjhWNTUzWk04OTUuNzE5IDM4Ni41MjJDOTAzLjgwNyAzODkuNjY3IDkwOS42NDggMzkzLjU5OSA5MTMuMjQzIDM5OC4zMTdDOTE2LjgzOCA0MDIuODEgOTE4LjYzNSA0MDguNjUyIDkxOC42MzUgNDE1Ljg0MUM5MTguNjM1IDQyNy41MjQgOTEzLjU4IDQzNi43MzUgOTAzLjQ3IDQ0My40NzVDODkzLjU4NSA0NTAuMjE1IDg3OS43NjggNDUzLjU4NSA4NjIuMDE5IDQ1My41ODVIODE5LjIyVjQ0OS41NDFMODI4LjY1NiA0MTkuODg1SDg3MC4xMDdDODc0LjYgNDE5Ljg4NSA4NzYuODQ3IDQxOC43NjIgODc2Ljg0NyA0MTYuNTE1Qzg3Ni44NDcgNDE1LjM5MiA4NzYuMjg1IDQxNC40OTMgODc1LjE2MiA0MTMuODE5Qzg3NC4wMzkgNDEzLjE0NSA4NzIuNDY2IDQxMi4yNDYgODcwLjQ0NCA0MTEuMTIzTDg1NC4yNjggNDAzLjM3MkM4NDcuOTc3IDQwMC4yMjcgODQzLjM3MiAzOTYuNjMyIDg0MC40NTEgMzkyLjU4OEM4MzcuNTMgMzg4LjMxOSA4MzYuMDcgMzgzLjA0IDgzNi4wNyAzNzYuNzQ5QzgzNi4wNyAzNjguMjEyIDgzOS40NCAzNjAuOTEgODQ2LjE4IDM1NC44NDRDODUzLjE0NSAzNDguNTUzIDg2My45MjkgMzQyLjkzNyA4NzguNTMyIDMzNy45OTRMOTA2LjUwMyAzMjguMjIxTDkwOC41MjUgMzMxLjI1NEw5MDYuMTY2IDM2MS41ODRMODg0LjU5OCAzNjguNjYxQzg3OS4yMDYgMzcwLjQ1OCA4NzQuOTM3IDM3Mi4wMzEgODcxLjc5MiAzNzMuMzc5Qzg2OC42NDcgMzc0LjcyNyA4NjUuODM4IDM3Ni40MTIgODYzLjM2NyAzNzguNDM0TDg2My4wMyAzNzAuMzQ2Qzg2NS4yNzcgMzcyLjgxNyA4NjguMDg1IDM3NC44MzkgODcxLjQ1NSAzNzYuNDEyQzg3NS4wNSAzNzcuOTg1IDg3OC45ODEgMzc5LjY3IDg4My4yNSAzODEuNDY3TDg5NS43MTkgMzg2LjUyMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xMTEwLjU5IDUwMi43ODdIMTE3My45NUwxMTU0LjA2IDUxMS44ODZDMTE1MS4zNyA1MDkuMTkgMTE0OS40NiA1MDQuNjk3IDExNDguMzMgNDk4LjQwNkMxMTQ3LjQ0IDQ5MS44OTEgMTE0Ni45OSA0ODMuOTE1IDExNDYuOTkgNDc0LjQ3OVYzNzguNzcxTDEyMDIuNTkgMzcyLjcwNUgxMjA2LjNWNTI3LjA1MUwxMTgyLjM3IDUwMi43ODdIMTI0OS43N1Y1NDYuMjZMMTI0My4wMyA1NTNIMTEwMy44NVY1MDkuNTI3TDExMTAuNTkgNTAyLjc4N1pNMTE2Ni44NyA2MDIuODc2QzExNjYuODcgNTk0LjMzOSAxMTY5LjQ1IDU4Ny43MTEgMTE3NC42MiA1ODIuOTkzQzExODAuMDEgNTc4LjUgMTE4Ni40MiA1NzYuMjUzIDExOTMuODMgNTc2LjI1M0MxMjAxLjI0IDU3Ni4yNTMgMTIwNy41MyA1NzguNSAxMjEyLjcgNTgyLjk5M0MxMjE3Ljg3IDU4Ny43MTEgMTIyMC40NSA1OTQuMzM5IDEyMjAuNDUgNjAyLjg3NkMxMjIwLjQ1IDYxMS4xODkgMTIxNy44NyA2MTcuNzA0IDEyMTIuNyA2MjIuNDIyQzEyMDcuNTMgNjI3LjE0IDEyMDEuMjQgNjI5LjQ5OSAxMTkzLjgzIDYyOS40OTlDMTE4Ni40MiA2MjkuNDk5IDExODAuMDEgNjI3LjE0IDExNzQuNjIgNjIyLjQyMkMxMTY5LjQ1IDYxNy43MDQgMTE2Ni44NyA2MTEuMTg5IDExNjYuODcgNjAyLjg3NlpNMTEwNS44NyA2MDkuNjE2QzExMDUuODcgNjAxLjMwMyAxMTA4LjQ2IDU5NC43ODggMTExMy42MiA1OTAuMDdDMTExOC43OSA1ODUuNTc3IDExMjUuMTkgNTgzLjMzIDExMzIuODMgNTgzLjMzQzExNDAuMjUgNTgzLjMzIDExNDYuNDMgNTg1LjU3NyAxMTUxLjM3IDU5MC4wN0MxMTU2LjU0IDU5NC43ODggMTE1OS4xMiA2MDEuMzAzIDExNTkuMTIgNjA5LjYxNkMxMTU5LjEyIDYxOC4xNTMgMTE1Ni41NCA2MjQuNzgxIDExNTEuMzcgNjI5LjQ5OUMxMTQ2LjQzIDYzNC4yMTcgMTE0MC4xMyA2MzYuNTc2IDExMzIuNSA2MzYuNTc2QzExMjUuMDggNjM2LjU3NiAxMTE4Ljc5IDYzNC4yMTcgMTExMy42MiA2MjkuNDk5QzExMDguNDYgNjI0Ljc4MSAxMTA1Ljg3IDYxOC4xNTMgMTEwNS44NyA2MDkuNjE2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEyNDMuMDYgNTUzVjUwOS41MjdMMTI0OS44IDUwMi43ODdIMTMxMi4xNUwxMjkyLjYgNTExLjg4NkMxMjg5LjkgNTA5LjE5IDEyODcuOTkgNTA0LjQ3MiAxMjg2Ljg3IDQ5Ny43MzJDMTI4NS45NyA0OTAuOTkyIDEyODUuNTIgNDgyLjkwNCAxMjg1LjUyIDQ3My40NjhWMzc4Ljc3MUwxMzQxLjEzIDM3Mi43MDVIMTM0NC44M1Y0OTAuMzE4QzEzNDQuODMgNDk0LjgxMSAxMzQ0LjgzIDUwMC40MjggMTM0NC44MyA1MDcuMTY4QzEzNDUuMDYgNTEzLjY4MyAxMzQ1LjI4IDUyMC4xOTkgMTM0NS41MSA1MjYuNzE0QzEzNDUuOTYgNTMzLjAwNSAxMzQ2LjYzIDUzOC4xNzIgMTM0Ny41MyA1NDIuMjE2VjU0NC45MTJDMTM0MC43OSA1NDcuNjA4IDEzMzIuNTkgNTQ5LjYzIDEzMjIuOTMgNTUwLjk3OEMxMzEzLjI3IDU1Mi4zMjYgMTMwMS4zNiA1NTMgMTI4Ny4yMSA1NTNIMTI0My4wNlpNMTMxMi44MiAzNDguMTA0QzEzMDUuNDEgMzQ4LjEwNCAxMjk5LjExIDM0NS43NDUgMTI5My45NSAzNDEuMDI3QzEyODguNzggMzM2LjMwOSAxMjg2LjIgMzI5LjY4MSAxMjg2LjIgMzIxLjE0NEMxMjg2LjIgMzEyLjYwNyAxMjg4Ljc4IDMwNi4wOTEgMTI5My45NSAzMDEuNTk4QzEyOTkuMTEgMjk2Ljg4IDEzMDUuNDEgMjk0LjUyMSAxMzEyLjgyIDI5NC41MjFDMTMyMC4yMyAyOTQuNTIxIDEzMjYuNTIgMjk2Ljg4IDEzMzEuNjkgMzAxLjU5OEMxMzM2Ljg2IDMwNi4wOTEgMTMzOS40NCAzMTIuNjA3IDEzMzkuNDQgMzIxLjE0NEMxMzM5LjQ0IDMyOS42ODEgMTMzNi44NiAzMzYuMzA5IDEzMzEuNjkgMzQxLjAyN0MxMzI2LjUyIDM0NS43NDUgMTMyMC4yMyAzNDguMTA0IDEzMTIuODIgMzQ4LjEwNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xNDYzLjkxIDY0MC45NTdDMTQ0OS4zIDY0MC45NTcgMTQzNi41IDYzOS42MDkgMTQyNS40OSA2MzYuOTEzQzE0MTQuNyA2MzQuMjE3IDE0MDYuMjggNjMxLjUyMSAxNDAwLjIxIDYyOC44MjVDMTM5NC4xNSA2MjYuMTI5IDEzOTEuMTEgNjI0Ljc4MSAxMzkxLjExIDYyNC43ODFMMTQwOC42NCA1NzguNjEySDE0MTIuMzVDMTQyMS43OCA1ODMuMzMgMTQzMS42NyA1ODYuNTg4IDE0NDIgNTg4LjM4NUMxNDUyLjU2IDU5MC4xODIgMTQ2MS40MyA1OTEuMDgxIDE0NjguNjIgNTkxLjA4MUMxNDc4LjUxIDU5MS4wODEgMTQ4Ny4wNSA1OTAuMjk1IDE0OTQuMjQgNTg4LjcyMkMxNTAxLjQzIDU4Ny4xNDkgMTUwOC4yOCA1ODQuMDA0IDE1MTQuNzkgNTc5LjI4NkwxNDk4Ljk1IDU5My40NEMxNTAyLjc3IDU4OC45NDcgMTUwNi4wMyA1ODMuMjE4IDE1MDguNzMgNTc2LjI1M0MxNTExLjQyIDU2OS4yODggMTUxMy40NSA1NjAuNTI2IDE1MTQuNzkgNTQ5Ljk2N0MxNTE2LjE0IDUzOS40MDggMTUxNi44MiA1MjYuMDQgMTUxNi44MiA1MDkuODY0QzE1MTYuODIgNDk5LjUyOSAxNTE1LjggNDg5LjY0NCAxNTEzLjc4IDQ4MC4yMDhDMTUxMS43NiA0NzAuNTQ3IDE1MDguNSA0NjEuNTYxIDE1MDQuMDEgNDUzLjI0OEMxNDk5LjUyIDQ0NC45MzUgMTQ5My43OSA0MzcuNTIxIDE0ODYuODIgNDMxLjAwNkMxNDgwLjA4IDQyNC4yNjYgMTQ3MS45OSA0MTguNzYyIDE0NjIuNTYgNDE0LjQ5M0wxNDkwLjUzIDQxNC44M0MxNDc1LjcgNDE4Ljg3NCAxNDY0LjM2IDQyNi4wNjMgMTQ1Ni40OSA0MzYuMzk4QzE0NDguODUgNDQ2LjUwOCAxNDQ1LjAzIDQ1Ny40MDQgMTQ0NS4wMyA0NjkuMDg3QzE0NDUuMDMgNDc0LjcwNCAxNDQ2LjYxIDQ4MC4yMDggMTQ0OS43NSA0ODUuNkMxNDUyLjkgNDkwLjk5MiAxNDU3LjczIDQ5NS40ODUgMTQ2NC4yNCA0OTkuMDhDMTQ3MC43NiA1MDIuNDUgMTQ3OS4wNyA1MDQuMTM1IDE0ODkuMTggNTA0LjEzNUMxNDkzLjkgNTA0LjEzNSAxNDk4Ljg0IDUwMy43OTggMTUwNC4wMSA1MDMuMTI0QzE1MDkuNCA1MDIuNDUgMTUxNC41NyA1MDEuMzI3IDE1MTkuNTEgNDk5Ljc1NEwxNTIwLjg2IDU0OC45NTZDMTUxNS4wMiA1NTAuNTI5IDE1MDkuMDYgNTUxLjY1MiAxNTAzIDU1Mi4zMjZDMTQ5Ni45MyA1NTMgMTQ5MS4yIDU1My4zMzcgMTQ4NS44MSA1NTMuMzM3QzE0NjcuMzkgNTUzLjMzNyAxNDUwLjg4IDU1MC40MTYgMTQzNi4yNyA1NDQuNTc1QzE0MjEuODkgNTM4LjUwOSAxNDEwLjU1IDUyOS43NDcgMTQwMi4yNCA1MTguMjg5QzEzOTMuOTIgNTA2LjYwNiAxMzg5Ljc3IDQ5Mi40NTIgMTM4OS43NyA0NzUuODI3QzEzODkuNzcgNDYyLjc5NiAxMzkyLjEzIDQ1MC41NTIgMTM5Ni44NCA0MzkuMDk0QzE0MDEuNzkgNDI3LjQxMSAxNDA4LjQxIDQxNy4xODkgMTQxNi43MyA0MDguNDI3QzE0MjUuMDQgMzk5LjY2NSAxNDM0LjQ3IDM5Mi44MTMgMTQ0NS4wMyAzODcuODdDMTQ1NS44MiAzODIuNzAzIDE0NjcuMTYgMzgwLjExOSAxNDc5LjA3IDM4MC4xMTlDMTQ5MC43NSAzODAuMTE5IDE1MDIuMjEgMzgzLjE1MiAxNTEzLjQ1IDM4OS4yMThDMTUyNC45IDM5NS4wNTkgMTUzNS4yNCA0MDMuNDg0IDE1NDQuNDUgNDE0LjQ5M0MxNTUzLjY2IDQyNS41MDIgMTU2MS4wNyA0MzguNzU3IDE1NjYuNjkgNDU0LjI1OUMxNTcyLjMxIDQ2OS41MzYgMTU3NS4xMiA0ODYuNjExIDE1NzUuMTIgNTA1LjQ4M0MxNTc1LjEyIDUzNC42OSAxNTcwLjUxIDU1OS40MDMgMTU2MS4zIDU3OS42MjNDMTU1Mi4zMSA1OTkuODQzIDE1MzkuNjIgNjE1LjEyIDE1MjMuMjIgNjI1LjQ1NUMxNTA2LjgyIDYzNS43OSAxNDg3LjA1IDY0MC45NTcgMTQ2My45MSA2NDAuOTU3WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE3MjIuNzkgNTUzVjUwMi43ODdIMTc3Ny43MlY1NDYuMjZMMTc3MC45OCA1NTNIMTcyMi43OVpNMTU5NC4wNiA1ODYuMDI2QzE1OTkuOSA1ODcuMzc0IDE2MDUuNzQgNTg4LjQ5NyAxNjExLjU4IDU4OS4zOTZDMTYxNy40MiA1OTAuNTE5IDE2MjMuMjYgNTkxLjA4MSAxNjI5LjEgNTkxLjA4MUMxNjM4LjA5IDU5MS4wODEgMTY0Ni4wNyA1ODkuOTU4IDE2NTMuMDMgNTg3LjcxMUMxNjYwLjIyIDU4NS40NjQgMTY2NS41IDU4My4yMTggMTY2OC44NyA1ODAuOTcxTDE2NTUuMDUgNTk0Ljc4OEMxNjU4Ljg3IDU4OS4xNzEgMTY2Mi4wMiA1ODEuOTgyIDE2NjQuNDkgNTczLjIyQzE2NjcuMTkgNTY0LjY4MyAxNjY5LjIxIDU1NC41NzMgMTY3MC41NiA1NDIuODlDMTY3MS45IDUzMC45ODMgMTY3Mi41OCA1MTcuNTAzIDE2NzIuNTggNTAyLjQ1QzE2NzIuNTggNDgzLjEyOSAxNjcxLjY4IDQ2NC44MTggMTY2OS44OCA0NDcuNTE5QzE2NjguMDggNDI5Ljk5NSAxNjY2LjA2IDQxMy40ODIgMTY2My44MiAzOTcuOThMMTcyMS4xMSAzOTEuOTE0SDE3MjQuODFDMTcyNi44MyA0MDcuMTkxIDE3MjguNTIgNDI0LjA0MSAxNzI5Ljg3IDQ0Mi40NjRDMTczMS4yMiA0NjAuODg3IDE3MzEuODkgNDc5LjUzNCAxNzMxLjg5IDQ5OC40MDZDMTczMS44OSA1MjQuMjQzIDE3MjkuMzEgNTQ2LjE0OCAxNzI0LjE0IDU2NC4xMjFDMTcxOC45NyA1ODIuMzE5IDE3MTEuNDUgNTk3LjAzNSAxNzAxLjU2IDYwOC4yNjhDMTY5MS45IDYxOS41MDEgMTY4MC4xIDYyNy43MDIgMTY2Ni4xNyA2MzIuODY5QzE2NTIuNDcgNjM4LjAzNiAxNjM2Ljk3IDY0MC42MiAxNjE5LjY3IDY0MC42MkMxNjEzLjgzIDY0MC42MiAxNjA3LjY1IDY0MC4xNzEgMTYwMS4xMyA2MzkuMjcyQzE1OTQuODQgNjM4LjU5OCAxNTg5LjU2IDYzNy44MTIgMTU4NS4yOSA2MzYuOTEzQzE1ODAuOCA2MzYuMjM5IDE1NzguNTUgNjM1LjkwMiAxNTc4LjU1IDYzNS45MDJWNjMyLjUzMkwxNTk0LjA2IDU4Ni4wMjZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTc3MC45NCA1NTNWNTA5LjUyN0wxNzc3LjY4IDUwMi43ODdIMTg0MC4wMkwxODIwLjQ4IDUxMS44ODZDMTgxNy43OCA1MDkuMTkgMTgxNS44NyA1MDQuNDcyIDE4MTQuNzUgNDk3LjczMkMxODEzLjg1IDQ5MC45OTIgMTgxMy40IDQ4Mi45MDQgMTgxMy40IDQ3My40NjhWMzc4Ljc3MUwxODY5LjAxIDM3Mi43MDVIMTg3Mi43MVY0OTAuMzE4QzE4NzIuNzEgNDk0LjgxMSAxODcyLjcxIDUwMC40MjggMTg3Mi43MSA1MDcuMTY4QzE4NzIuOTQgNTEzLjY4MyAxODczLjE2IDUyMC4xOTkgMTg3My4zOSA1MjYuNzE0QzE4NzMuODQgNTMzLjAwNSAxODc0LjUxIDUzOC4xNzIgMTg3NS40MSA1NDIuMjE2VjU0NC45MTJDMTg2OC42NyA1NDcuNjA4IDE4NjAuNDcgNTQ5LjYzIDE4NTAuODEgNTUwLjk3OEMxODQxLjE1IDU1Mi4zMjYgMTgyOS4yNCA1NTMgMTgxNS4wOSA1NTNIMTc3MC45NFpNMTgyMi41IDYwMi44NzZDMTgyMi41IDU5NC4zMzkgMTgyNS4wOCA1ODcuNzExIDE4MzAuMjUgNTgyLjk5M0MxODM1LjY0IDU3OC41IDE4NDIuMDUgNTc2LjI1MyAxODQ5LjQ2IDU3Ni4yNTNDMTg1Ni44NyA1NzYuMjUzIDE4NjMuMTcgNTc4LjUgMTg2OC4zMyA1ODIuOTkzQzE4NzMuNSA1ODcuNzExIDE4NzYuMDggNTk0LjMzOSAxODc2LjA4IDYwMi44NzZDMTg3Ni4wOCA2MTEuMTg5IDE4NzMuNSA2MTcuNzA0IDE4NjguMzMgNjIyLjQyMkMxODYzLjE3IDYyNy4xNCAxODU2Ljg3IDYyOS40OTkgMTg0OS40NiA2MjkuNDk5QzE4NDIuMDUgNjI5LjQ5OSAxODM1LjY0IDYyNy4xNCAxODMwLjI1IDYyMi40MjJDMTgyNS4wOCA2MTcuNzA0IDE4MjIuNSA2MTEuMTg5IDE4MjIuNSA2MDIuODc2Wk0xNzYxLjUgNjA5LjYxNkMxNzYxLjUgNjAxLjMwMyAxNzY0LjA5IDU5NC43ODggMTc2OS4yNSA1OTAuMDdDMTc3NC40MiA1ODUuNTc3IDE3ODAuODIgNTgzLjMzIDE3ODguNDYgNTgzLjMzQzE3OTUuODggNTgzLjMzIDE4MDIuMDYgNTg1LjU3NyAxODA3IDU5MC4wN0MxODEyLjE3IDU5NC43ODggMTgxNC43NSA2MDEuMzAzIDE4MTQuNzUgNjA5LjYxNkMxODE0Ljc1IDYxOC4xNTMgMTgxMi4xNyA2MjQuNzgxIDE4MDcgNjI5LjQ5OUMxODAyLjA2IDYzNC4yMTcgMTc5NS43NyA2MzYuNTc2IDE3ODguMTMgNjM2LjU3NkMxNzgwLjcxIDYzNi41NzYgMTc3NC40MiA2MzQuMjE3IDE3NjkuMjUgNjI5LjQ5OUMxNzY0LjA5IDYyNC43ODEgMTc2MS41IDYxOC4xNTMgMTc2MS41IDYwOS42MTZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTkyNi4wNyAzMzYuNjQ2TDE5ODcuMDcgMzMwLjU4TDE5ODguMDggMzMzLjI3NkMxOTg3LjE4IDMzNy4zMiAxOTg2LjUxIDM0Mi4zNzUgMTk4Ni4wNiAzNDguNDQxQzE5ODUuODMgMzU0LjUwNyAxOTg1LjYxIDM2MC42ODUgMTk4NS4zOCAzNjYuOTc2QzE5ODUuMzggMzczLjI2NyAxOTg1LjM4IDM3OC42NTkgMTk4NS4zOCAzODMuMTUyVjU1M0gxOTI2LjA3VjMzNi42NDZaTTE5MTQuMjggMjY0LjUyOEMxOTE0LjI4IDI1NS43NjYgMTkxNi41MiAyNDcuNzkgMTkyMS4wMiAyNDAuNjAxQzE5MjUuNzMgMjMzLjE4NyAxOTMyLjI1IDIyNy4zNDYgMTk0MC41NiAyMjMuMDc3QzE5NDkuMSAyMTguNTg0IDE5NTkuMjEgMjE2LjMzNyAxOTcwLjg5IDIxNi4zMzdIMTk5MS4xMVYyMTkuMzdMMTk4MC42NiAyNTAuMzc0SDE5NzEuMjNDMTk2NC4yNiAyNTAuMzc0IDE5NTguNTMgMjUxLjYxIDE5NTQuMDQgMjU0LjA4MUMxOTQ5LjU1IDI1Ni4zMjggMTk0Ni4yOSAyNjEuMjcgMTk0NC4yNyAyNjguOTA5TDE5NDMuMjYgMjU3Ljc4OEMxOTQ1LjUgMjYzLjQwNSAxOTQ4LjY1IDI2Ny4yMjQgMTk1Mi42OSAyNjkuMjQ2QzE5NTYuOTYgMjcxLjA0MyAxOTYxLjc5IDI3MS45NDIgMTk2Ny4xOCAyNzEuOTQySDE5OTEuMTFWMjc0Ljk3NUwxOTgxIDMwNS4zMDVIMTk1OC4wOUMxOTQ5LjU1IDMwNS4zMDUgMTk0MS45MSAzMDMuNTA4IDE5MzUuMTcgMjk5LjkxM0MxOTI4LjY1IDI5Ni4wOTQgMTkyMy40OSAyOTEuMTUxIDE5MTkuNjcgMjg1LjA4NUMxOTE2LjA3IDI3OC43OTQgMTkxNC4yOCAyNzEuOTQyIDE5MTQuMjggMjY0LjUyOFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=" alt="iRonic Health Logo Arabic">
+      </div>
+      <div class="header-meta">
+        <span class="lbl">مقدَّم إلى</span>
+        الجهاز المصري لحماية الملكية الفكرية (EIPA)<br>
+        وجميع الجهات التنظيمية والقانونية المختصة
+        <span class="lbl">المُعِدّ</span>
+        م. شريف شوقي — رئيس مجلس الإدارة والمدير التنفيذي<br>
+        د. إسلام الميداني — المؤسس والمدير الطبي
+        <span class="lbl">التاريخ</span>
+        مايو ٢٠٢٦ — النسخة الثالثة المُحدَّثة
+      </div>
+    </div>
+    <div class="header-title-block">
+      <div class="header-title">وصف المشروع الرسمي الكامل — iRonic Health</div>
+      <div class="header-subtitle">وثيقة رسمية لأغراض تسجيل العلامة التجارية · تفويض المحامي · التقدم أمام الجهات التنظيمية والتمويلية</div>
+    </div>
+  </div>
+  <div class="gold-bar"></div>
+
+  <div class="content">
+
+    <!-- ===== 1. ENTITY ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١</span> بيانات الكيان القانوني</div>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-label">الكيان القانوني المُسجَّل</div>
+          <div class="info-value">Ironic Group (إيرونيك جروب)</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">العلامة التجارية / الذراع الصحية</div>
+          <div class="info-value">iRonic Health (أيرونيك هيلث)</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">رئيس مجلس الإدارة والمدير التنفيذي</div>
+          <div class="info-value">م. شريف شوقي</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">المؤسس والمدير الطبي</div>
+          <div class="info-value">د. إسلام الميداني</div>
+        </div>
+        <div class="info-card" style="grid-column:span 2">
+          <div class="info-label">مقر الشركة الرسمي</div>
+          <div class="info-value">أبراج نايل سيتي، البرج الشمالي، كورنيش النيل، القاهرة، جمهورية مصر العربية</div>
+        </div>
+      </div>
+      <div class="blue-box">
+        <strong>التصنيف القانوني الجوهري:</strong> لا تُصدر iRonic Health وثائق تأمينية، ولا تتلقى أقساطًا، ولا تعمل بوصفها شركة تأمين أو وكيلًا للتأمين أو شركة لإدارة المطالبات (TPA). تُصنَّف قانونًا كـ<strong>"مزوِّد برمجيات دعم قرار كخدمة (SaaS)"</strong> — بنية تحتية رقمية للقطاع الصحي.
+      </div>
+    </div>
+
+    <!-- ===== 2. VISION ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">٢</span> الرؤية والتعريف الاستراتيجي</div>
+      <div class="section-intro">
+        <strong>iRonic Health</strong> هي منصة رقمية متكاملة تربط جميع عناصر المنظومة الصحية وتدخل مباشرةً داخل الخطة العلاجية للمريض. هدفها الاستراتيجي أن تكون <strong>نظام التشغيل الصحي الرقمي (Healthcare Operating System)</strong> — البنية التحتية الذكية التي تجمع في منصة واحدة كل أطراف المنظومة الصحية في مصر ومنطقة الشرق الأوسط وشمال أفريقيا، وتضمن تدفق البيانات والعلاج عبر الذكاء الاصطناعي.
+      </div>
+      <p>
+        تعمل iRonic Health بوصفها <strong>منصة B2B SaaS</strong> موجَّهة للمؤسسات، وتُدمج بين الذكاء الاصطناعي التنبؤي، وتنسيق مطالبات التأمين، وتحليلات البيانات الصحية، وإدارة الخطة العلاجية، لتحويل منظومة صحية مجزَّأة إلى نظام موحَّد مترابط وقابل للقياس.
+      </p>
+    </div>
+
+    <!-- ===== 3. PROBLEM ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">٣</span> المشكلة — تشخيص دقيق للواقع</div>
+      <p>
+        <strong>النظام الصحي في مصر يعاني من تفكك هيكلي حاد</strong> على مستوى جميع أطراف المنظومة:
+      </p>
+
+      <table>
+        <tr><th>الطرف</th><th>المشكلة الجوهرية</th><th>الأثر</th></tr>
+        <tr><td><strong>الطبيب</strong></td><td>يعمل بمعزل عن باقي الأطراف — لا رؤية للصيدلية ولا للتأمين ولا لنتائج التحاليل في الوقت الفعلي</td><td>قرارات سريرية منقوصة المعلومات</td></tr>
+        <tr><td><strong>المريض</strong></td><td>لا توجد متابعة حقيقية بعد التشخيص — لا تنبيهات ولا التزام بالعلاج</td><td>أكثر من ٥٠٪ من المرضى لا يلتزمون بالخطة العلاجية</td></tr>
+        <tr><td><strong>الصيدليات</strong></td><td>تعمل بدون رؤية للخطة العلاجية الكاملة</td><td>صرف أدوية غير متوافقة، إفراط في وصف المضادات الحيوية</td></tr>
+        <tr><td><strong>شركات التأمين</strong></td><td>فواتير ورقية، احتيال، إفراط في العلاج، لا ذكاء اصطناعي للكشف</td><td>خسائر ٢–١٠٪ من المطالبات، نسبة خسائر ارتفعت ٥٠–٦٠٪</td></tr>
+        <tr><td><strong>شركات الأدوية</strong></td><td>لا يوجد ربط مباشر مع الخطة العلاجية أو المريض</td><td>برامج دعم المرضى لا تصل لمن يحتاجها</td></tr>
+        <tr><td><strong>المستشفيات ومراكز التحاليل</strong></td><td>تعمل بشكل منفصل دون تدفق بيانات مشترك</td><td>تكرار الفحوصات، هدر في الوقت والتكلفة</td></tr>
+      </table>
+
+      <div class="kpi-row" style="margin-top:16px;">
+        <div class="kpi-box">
+          <div class="kpi-num">+٩٠٪</div>
+          <div class="kpi-lbl">من المطالبات والوصفات تُعالَج يدويًا على الورق</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-num">٢–١٠٪</div>
+          <div class="kpi-lbl">من المطالبات تُهدَر بسبب الاحتيال والتلاعب</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-num">٧–٢١</div>
+          <div class="kpi-lbl">يوم عمل متوسط دورة الموافقة على المطالبة</div>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:14px;">
+        <strong>النتيجة الإجمالية:</strong> هدر مالي وجهد وضياع وقت ضخم · ضعف الالتزام بالعلاج (أكثر من ٥٠٪ من المرضى) · نتائج صحية غير فعّالة · احتيال وهدر منهجي يُكبِّد القطاع مئات الملايين سنويًا
+      </div>
+    </div>
+
+    <!-- ===== 4. SOLUTION OVERVIEW ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">٤</span> الحل — منصة واحدة تربط ٨ أطراف</div>
+
+      <p>تقدم iRonic Health <strong>نظامًا موحَّدًا</strong> يجمع كل أطراف المنظومة الصحية في بيئة رقمية واحدة مدعومة بالذكاء الاصطناعي:</p>
+
+      <div class="party-grid">
+        <div class="party-card"><div class="party-icon">🏥</div><div class="party-name">المستشفيات</div></div>
+        <div class="party-card"><div class="party-icon">🛡</div><div class="party-name">شركات التأمين</div></div>
+        <div class="party-card"><div class="party-icon">💊</div><div class="party-name">الصيدليات</div></div>
+        <div class="party-card"><div class="party-icon">👨‍⚕️</div><div class="party-name">الأطباء</div></div>
+        <div class="party-card"><div class="party-icon">👤</div><div class="party-name">المرضى</div></div>
+        <div class="party-card"><div class="party-icon">🧪</div><div class="party-name">مراكز التحاليل</div></div>
+        <div class="party-card"><div class="party-icon">📷</div><div class="party-name">مراكز الأشعة</div></div>
+        <div class="party-card"><div class="party-icon">🏭</div><div class="party-name">شركات الأدوية</div></div>
+      </div>
+
+      <div class="blue-box">
+        <strong>الابتكار الجوهري — محرك العلاج المتكامل (Integrated Treatment Engine):</strong><br>
+        الطبيب يضع الخطة العلاجية الكاملة داخل التطبيق → يتم ربط الدواء + التحاليل + الأشعة تلقائيًا → شركات الأدوية تقدم بدائل علاجية وبرامج دعم المرضى مباشرةً عبر المنصة → التطبيق يصبح جزءًا لا يتجزأ من رحلة العلاج نفسها.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== 5. AI MODULES ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">٥</span> وحدات الذكاء الاصطناعي — الابتكارات السبعة</div>
+
+      <div class="ins-grid">
+
+        <div class="ins-card">
+          <div class="ins-card-head">🧠 ١ — درجة الصحة التأمينية (Insurance Health Score)</div>
+          <div class="ins-card-body">
+            تمامًا مثل الـ Credit Score المالي — <strong>رقم واحد يُخبر شركة التأمين بالتكلفة المتوقعة لهذا الشخص خلال العام القادم.</strong><br>
+            يعتمد على: السجل الطبي، الأنماط السلوكية، الأمراض المزمنة، معدلات الاستخدام السابقة.
+            <div style="margin-top:6px;"><span class="tag">تقييم المخاطر</span><span class="tag">تسعير دقيق</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">🔮 ٢ — التنبؤ بالمطالبات قبل حدوثها (AI Claim Predictor)</div>
+          <div class="ins-card-body">
+            نظام ذكاء اصطناعي تنبؤي <strong>(AI Predictive Risk)</strong> يحلل بيانات المستخدم ويتوقع احتمالية المطالبات المستقبلية.<br>
+            يتيح لشركة التأمين التحكم في مصاريفها بدقة عالية وتخصيص الاحتياطيات المالية بشكل مدروس.
+            <div style="margin-top:6px;"><span class="tag">تحليل predictive</span><span class="tag">إدارة احتياطيات</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">🛡 ٣ — برنامج الرعاية الوقائية (Preventive Care Program)</div>
+          <div class="ins-card-body">
+            برنامج وقائي مدعوم بالذكاء الاصطناعي يُرسل للمستخدم <strong>تحذيرات مبكرة وتنبيهات قبل حدوث مضاعفات.</strong><br>
+            الهدف: <strong>تقليل معدلات الدخول للمستشفى (Hospitalization Rate) بنسبة ٤٠٪.</strong>
+            <div style="margin-top:6px;"><span class="tag gold">وقاية استباقية</span><span class="tag gold">توفير تكاليف</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">🕵️ ٤ — كشف الاحتيال الطبي (Fraud Detection AI)</div>
+          <div class="ins-card-body">
+            يرصد ٢٥–٤٠ نمطًا من الاحتيال المصري المُوثَّق:<br>
+            <strong>Diagnostic Upcoding · طلبات وهمية · فواتير مضخمة · تكرار أدوية غير ضروري · وصفات مزورة · أدوية مزيفة (Unictam) · تجاوز ICU · تزوير عابر للحدود</strong><br>
+            جميع المخرجات = دعم قرار يستوجب مراجعة طبيب مرخَّص.
+            <div style="margin-top:6px;"><span class="tag">٢–١٠٪ وفورات</span><span class="tag">نماذج مصرية مخصصة</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">💰 ٥ — التسعير الديناميكي (Dynamic Premiums)</div>
+          <div class="ins-card-body">
+            تسعير أقساط التأمين حسب السلوك الصحي الفعلي للمستخدم.<br>
+            <strong>"ادفع أقل إذا كنت تتصرف صحيًا"</strong> — مفهوم بدأت فيه شركات التأمين العالمية الكبرى.<br>
+            يُعزز الالتزام بالعلاج ويُقلل من التكاليف طويلة الأجل.
+            <div style="margin-top:6px;"><span class="tag gold">تسعير سلوكي</span><span class="tag gold">تحفيز الوقاية</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">🏥 ٦ — التوجيه الآلي للمستشفيات (Auto Hospital Routing)</div>
+          <div class="ins-card-body">
+            عندما يحتاج المستخدم علاجًا، تختار iRonic Health له آليًا:<br>
+            <strong>✓ المستشفى الأرخص ✓ الأعلى جودة ✓ الأقرب موقعًا ✓ أسرع وقت انتظار</strong><br>
+            يُقلل تكلفة المطالبة (Claim) بنسبة <strong>٢٠–٣٥٪</strong> — ميزة لا يملكها أي تطبيق عربي حاليًا.
+            <div style="margin-top:6px;"><span class="tag">توفير ٢٠–٣٥٪</span><span class="tag">تحسين الجودة</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card" style="grid-column:span 2">
+          <div class="ins-card-head">📊 ٧ — لوحة التقارير الذهبية (Golden Insurance Dashboard)</div>
+          <div class="ins-card-body">
+            <strong>لوحة تحكم شاملة لشركات التأمين تتضمن في الوقت الفعلي:</strong><br><br>
+            🔹 نسبة التزام المرضى بالخطة العلاجية &nbsp;|&nbsp; 🔹 التوقعات الصحية لقاعدة المؤمَّنين<br>
+            🔹 التكلفة المتوقعة للشهر القادم &nbsp;|&nbsp; 🔹 الأمراض الأكثر تكلفةً<br>
+            🔹 الحالات التي تحتاج تدخلًا مبكرًا &nbsp;|&nbsp; 🔹 تحليل سلوك المرضى حسب العمر والمكان<br>
+            🔹 مصاريف الطوارئ والمستشفيات<br><br>
+            <div class="green-box" style="margin:8px 0 0;">
+              <strong>🔥 Data → Insights → Cost Reduction</strong> — هذا أهم ما تحتاجه شركات التأمين لاتخاذ قرارات استراتيجية دقيقة. بدون هذه اللوحة، شركات التأمين تتحرك عمياءً.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== 6. WHY INSURANCE ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">٦</span> لماذا تستهدف شركات التأمين هذا الحل؟</div>
+      <p>تُجذَب شركات التأمين لـ iRonic Health لأنها:</p>
+      <div class="info-grid-3">
+        <div class="info-card" style="text-align:center;">✔ تقلل التكلفة الإجمالية</div>
+        <div class="info-card" style="text-align:center;">✔ تكشف وتمنع الاحتيال</div>
+        <div class="info-card" style="text-align:center;">✔ تمنع المرض قبل وقوعه</div>
+        <div class="info-card" style="text-align:center;">✔ توفر شفافية كاملة في البيانات</div>
+        <div class="info-card" style="text-align:center;">✔ تساعد على التسعير الدقيق</div>
+        <div class="info-card" style="text-align:center;">✔ تقدم رؤية مستقبلية للمطالبات</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== 7. PLATFORM MODULES ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">٧</span> وحدات المنصة التشغيلية الكاملة</div>
+
+      <ul class="module-list">
+        <li>
+          <div>
+            <span class="mod-title">محرك الكشف عن الاحتيال بالذكاء الاصطناعي (AI Fraud Detection Engine)</span>
+            <span class="mod-desc">يرصد أنماط المطالبات الاحتيالية في الوقت الفعلي قبل صرف أي مبلغ. مدرَّب على ٢٥–٤٠ نمطًا احتياليًا مُوثَّقًا في السوق المصري (وصفات وهمية، Upcoding، أدوية مزيفة Unictam، إفراط في المضادات الحيوية — دراسة أسيوط ٢٠٢٤، تزوير عابر للحدود، Phantom ICU Stays). جميع المخرجات = دعم قرار يستوجب توقيع مدير طبي مرخَّص.</span>
+            <div><span class="mod-tag">نماذج مصرية مخصصة</span><span class="mod-tag">كشف فوري</span><span class="mod-tag">حوكمة سريرية</span></div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="mod-title">طبقة تنسيق المطالبات الرقمية (Claims Orchestration Layer)</span>
+            <span class="mod-desc">تُرقمن وتُؤتمت دورة حياة المطالبة كاملةً — من لحظة تقديم الطبيب للخطة العلاجية حتى البت النهائي من شركة التأمين. تربط جميع الأطراف (شركات التأمين، TPAs، مزودي الرعاية، الصيدليات) عبر واجهات برمجية (APIs) متكاملة. تُقلص دورة الموافقة من ٧–٢١ يومًا إلى أقل من ٤ ساعات.</span>
+            <div><span class="mod-tag">API-First</span><span class="mod-tag">٤ ساعات بدلًا من ٢١ يومًا</span></div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="mod-title">وحدة الموافقة المسبقة الفورية (Real-Time Pre-Authorization)</span>
+            <span class="mod-desc">موافقة مسبقة آنية على الإجراءات الطبية وصرف الأدوية. تتلقى الطلب، تتحقق من التغطية، وتُصدر القرار خلال دقائق — مقارنةً بأيام في النظام الورقي الحالي.</span>
+            <div><span class="mod-tag">موافقة فورية</span><span class="mod-tag">تكامل مع التأمين</span></div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="mod-title">وحدة الاستخبارات السريرية وإدارة الاستخدام (Clinical Intelligence & UM)</span>
+            <span class="mod-desc">ترصد حالات الإفراط في العلاج والمسارات السريرية غير الملائمة والتفاعلات الدوائية الخطرة. تستخدم تشفير ICD/CPT والبروتوكولات السريرية المصرية المعتمدة. تُدار تحت إشراف مباشر من مدير طبي مرخَّص (CMO) مرتبط بنقابة الأطباء المصرية.</span>
+            <div><span class="mod-tag">بروتوكولات مصرية</span><span class="mod-tag gold">CMO governance</span></div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="mod-title">وحدة مراجعة الصيدليات والتحقق الفوري من التغطية</span>
+            <span class="mod-desc">تربط شبكات الصيدليات مباشرةً بمنصة التأمين للتحقق الآني من أهلية المريض، ومطابقة قوائم الأدوية المعتمدة (Formulary)، وكشف التلاعب عند نقطة الصرف. رسوم لكل عملية صرف: ٠.٠٥–٠.٢٠ دولار / وصفة.</span>
+            <div><span class="mod-tag">Formulary Check</span><span class="mod-tag">كشف احتيال الصيدليات</span></div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="mod-title">تطبيق المريض — رحلة العلاج الرقمية</span>
+            <span class="mod-desc">تطبيق iOS/Android يتيح للمريض: معرفة التغطية التأمينية الكاملة · حجز كشف وتحاليل وأشعة · رفع طلب موافقة تأمينية · التحقق من الهوية بكود QR · متابعة المطالبات والفواتير · تلقي تنبيهات الالتزام العلاجي والوقاية.</span>
+            <div><span class="mod-tag">iOS + Android</span><span class="mod-tag">QR Code</span><span class="mod-tag gold">التزام علاجي</span></div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="mod-title">واجهة الأطباء والمراكز الطبية</span>
+            <span class="mod-desc">تسجيل الكشوفات · رفع التقارير الطبية · طلب الموافقات التأمينية · الفوترة الإلكترونية · اقتراح بدائل علاجية من شركات الأدوية · تحذيرات ذكية غير مزعجة عن التفاعلات الدوائية والجرعات.</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span class="mod-title">واجهة الصيدلي (Drug Safety Layer)</span>
+            <span class="mod-desc">تحذير صرف عند وجود تعارض دوائي · تأكيد مزدوج قبل التسليم · صرف إلكتروني مرتبط مباشرةً بالتأمين · Drug Interaction Checker · Dose Validator · NLP لتحليل الوصفات العربية.</span>
+            <div><span class="mod-tag">Medication Safety</span><span class="mod-tag">NLP عربي</span></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ===== 8. TECH ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">٨</span> البنية التقنية</div>
+
+      <table>
+        <tr><th>المكوّن</th><th>التفاصيل التقنية</th></tr>
+        <tr><td><strong>التطبيق</strong></td><td>Flutter (iOS + Android) + تطبيق ويب + Dashboard إداري</td></tr>
+        <tr><td><strong>الخلفية التقنية</strong></td><td>Backend + قاعدة بيانات + Frontend متكاملة</td></tr>
+        <tr><td><strong>الذكاء الاصطناعي</strong></td><td>NLP لتحليل الوصفات العربية · Machine Learning للكشف عن الأنماط الشاذة · Decision Support Engine · Drug Interaction Checker · Dose Validator</td></tr>
+        <tr><td><strong>التكامل — المرحلة الأولى</strong></td><td>ربط مع ٣ أطراف: صيدليات + شركات تأمين + مستشفى</td></tr>
+        <tr><td><strong>البنية السحابية</strong></td><td>مراكز بيانات مصرية/إقليمية متوافقة مع PDPL 151/2020</td></tr>
+        <tr><td><strong>الأمان</strong></td><td>تشفير كامل للبيانات الصحية · معالجة وفق قانون حماية البيانات الشخصية · موافقة صريحة من المستخدم</td></tr>
+        <tr><td><strong>الحوكمة السريرية</strong></td><td>كل مخرجات عالية الأثر تستوجب توقيع CMO مرخَّص — لا قرارات مستقلة</td></tr>
+      </table>
+
+      <div class="note-box" style="margin-top:12px;">
+        <strong>ملاحظة قانونية مهمة:</strong> وفق الميثاق المصري للذكاء الاصطناعي المسؤول (٢٠٢٣)، تُصنَّف جميع مخرجات المنصة كـ"دعم قرار" وليس قرارًا طبيًا مستقلًا. كل قرار رفض أو موافقة ذو أثر عالٍ يستلزم توقيع طبيب مرخَّص مُسمَّى.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== 9. MARKET ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">٩</span> حجم السوق — مصر</div>
+
+      <table>
+        <tr><th>القطاع</th><th>الحجم التقديري</th><th>الملاحظة</th></tr>
+        <tr><td><strong>الصيدليات</strong></td><td>٤٣٠ مليار جنيه</td><td>السوق الصيدلاني المصري ٢٠٢٤ — نمو ٤٢٪ سنويًا</td></tr>
+        <tr><td><strong>التأمين الصحي الخاص</strong></td><td>٢٨٠ مليار جنيه (≈ ٣٧٣ م.د.)</td><td>الهيئة العامة للرقابة المالية / Statista 2024</td></tr>
+        <tr><td><strong>شركات الأدوية</strong></td><td>٣٠٠+ مليار جنيه</td><td>السوق الدوائي المحلي والمستورد</td></tr>
+        <tr><td><strong>المستشفيات والأطباء</strong></td><td>٤٠٠+ مليار جنيه</td><td>الرعاية الصحية الخاصة والعامة</td></tr>
+        <tr><td><strong>التحاليل والأشعة</strong></td><td>١٠٠+ مليار جنيه</td><td>مراكز التشخيص والمختبرات</td></tr>
+        <tr><td style="font-weight:800;background:var(--bg-gold)"><strong>إجمالي السوق الصحي الموثَّق</strong></td><td style="font-weight:800;background:var(--bg-gold)"><strong>٤٠٠ – ٧٠٠ مليار جنيه</strong></td><td style="background:var(--bg-gold)">المصدر: الجهاز المركزي للتعبئة العامة والإحصاء · مركز معلومات مجلس الوزراء · الهيئة العامة للرعاية الصحية</td></tr>
+      </table>
+
+      <div class="fin-grid" style="margin-top:14px;">
+        <div class="fin-card blue">
+          <div class="fin-num">$373M</div>
+          <div class="fin-label">TAM — إجمالي سوق التأمين الصحي الخاص في مصر ٢٠٢٤</div>
+        </div>
+        <div class="fin-card">
+          <div class="fin-num">$550M</div>
+          <div class="fin-label">SAM — ٦–٨ مليون مؤمَّن × ٣–٨ دولار PMPM</div>
+        </div>
+        <div class="fin-card gold">
+          <div class="fin-num">$18M</div>
+          <div class="fin-label">SOM — هدف ٣ سنوات ARR عبر ٣–٤ عملاء رئيسيين</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 10. CLIENTS ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١٠</span> العملاء المستهدفون</div>
+
+      <table>
+        <tr><th>الشريحة</th><th>الجهات المستهدفة</th><th>دور المنصة</th></tr>
+        <tr>
+          <td><strong>شركات التأمين الصحي الخاص</strong></td>
+          <td>مصر للتأمين · بوبا مصر · AXA مصر · MetLife مصر · Allianz · GIG · قناة السويس · Orient Takaful · AMIG · Royal</td>
+          <td>كشف احتيال، تنسيق مطالبات، لوحات تحكم ذهبية</td>
+        </tr>
+        <tr>
+          <td><strong>شركات إدارة المطالبات (TPAs)</strong></td>
+          <td><strong>GlobeMed Egypt (١.٢ مليون مؤمَّن عبر ١٨ شركة تأمين)</strong> — الهدف الأول الاستراتيجي. Limitless Care · AMC · المرخَّصون الجدد (FRA أبريل ٢٠٢٦)</td>
+          <td>تكامل شامل — صفقة واحدة = وصول لـ ١٨ شركة تأمين</td>
+        </tr>
+        <tr>
+          <td><strong>برامج الرعاية الذاتية المؤسسية</strong></td>
+          <td>البنوك الكبرى · شركات الاتصالات · المجموعات الصناعية · سلاسل المستشفيات الخاصة</td>
+          <td>إدارة التغطية وفق قانون ١٥٥/٢٠٢٤</td>
+        </tr>
+        <tr>
+          <td><strong>شبكات المستشفيات والصيدليات</strong></td>
+          <td>مجموعة كليوباترا · السلام الدولي · الأندلسية · المختبر (IDH) · مجمع الصيدليات</td>
+          <td>تقديم بيانات، التحقق الآني، ربط المطالبات</td>
+        </tr>
+        <tr>
+          <td><strong>شركات الأدوية</strong></td>
+          <td>Eva Pharma · GSK Egypt · Sanofi · شركات المستحضرات الصيدلانية المرخَّصة</td>
+          <td>برامج دعم المرضى · Data Insights · بدائل علاجية</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ===== 11. BUSINESS MODEL ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١١</span> نموذج العمل التجاري وتدفقات الإيراد</div>
+
+      <table>
+        <tr><th>مصدر الإيراد</th><th>التفاصيل</th><th>المرحلة</th></tr>
+        <tr>
+          <td><strong>رسوم مشروطة بالوفورات</strong></td>
+          <td>١٥–٢٥٪ من المطالبات الاحتيالية المسترَدة والهدر المُجنَّب — صفر تكلفة مقدمة على العميل</td>
+          <td><span class="tag">الدخول التجاري</span></td>
+        </tr>
+        <tr>
+          <td><strong>اشتراك شهري للعضو (PMPM)</strong></td>
+          <td>٠.٧٥–٥.٠٠ دولار / عضو / شهر حسب الوحدات المُفعَّلة</td>
+          <td><span class="tag">التوسع</span></td>
+        </tr>
+        <tr>
+          <td><strong>عمولات الصيدليات</strong></td>
+          <td>رسوم لكل عملية صرف دواء: ٥–١٥ جنيه / وصفة عبر المنصة</td>
+          <td><span class="tag">النظام البيئي</span></td>
+        </tr>
+        <tr>
+          <td><strong>اشتراكات شهرية بعد الاعتماد</strong></td>
+          <td>اشتراك ثابت للمستخدمين والمراكز الطبية بعد انتشار التطبيق</td>
+          <td><span class="tag gold">الاستدامة</span></td>
+        </tr>
+        <tr>
+          <td><strong>إيراد شركات الأدوية</strong></td>
+          <td>Data Insights · Patient Programs · رسوم ترويج بدائل علاجية عبر المنصة</td>
+          <td><span class="tag gold">النظام البيئي</span></td>
+        </tr>
+        <tr>
+          <td><strong>برامج الرعاية الذاتية المؤسسية</strong></td>
+          <td>٤–٨ دولار PMPM للشركات ذاتية التأمين وفق قانون ١٥٥/٢٠٢٤</td>
+          <td><span class="tag">قناة جديدة</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ===== 12. GTM ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١٢</span> خطة الدخول للسوق — المراحل الاستراتيجية</div>
+
+      <ul class="stage-list">
+        <li class="stage-item">
+          <div class="stage-dot">شهر ١–٣</div>
+          <div class="stage-content">
+            <span class="stage-title">مرحلة MVP — البناء والتحقق</span>
+            <span class="mod-desc">إطلاق MVP بتكلفة ٧٠٠,٠٠٠–١,٠٠٠,٠٠٠ جنيه. يشمل: تطبيق Flutter (ويب + موبايل) · Backend + قاعدة بيانات · تكامل مع ٣ أطراف (صيدليات + تأمين + مستشفى) · AI Detection أساسي لمنع الاحتيال.</span>
+          </div>
+        </li>
+        <li class="stage-item">
+          <div class="stage-dot">شهر ٣–٦</div>
+          <div class="stage-content">
+            <span class="stage-title">الطيار الأول — GlobeMed Egypt (١.٢ مليون مؤمَّن / ١٨ شركة تأمين)</span>
+            <span class="mod-desc">تسعير مشروط بالوفورات — صفر تكلفة مقدمة. الهدف: توثيق تحسين ٢–٤٪ في نسبة الخسائر على كتلة فرعية ١٠٠,٠٠٠ مؤمَّن خلال ٩٠ يومًا.</span>
+          </div>
+        </li>
+        <li class="stage-item">
+          <div class="stage-dot gold">شهر ٦–١٢</div>
+          <div class="stage-content">
+            <span class="stage-title">أول عقد PMPM — بداية الإيراد المتكرر</span>
+            <span class="mod-desc">بعد توثيق الوفورات: التحول لعقد ٠.٧٥–٢ دولار PMPM + ١٥٪ من الوفورات الإضافية. هدف: ٣٠٠,٠٠٠+ مؤمَّن على المنصة — استهداف Bupa مصر أو AXA مصر كعميل ثانٍ.</span>
+          </div>
+        </li>
+        <li class="stage-item">
+          <div class="stage-dot gold">شهر ١٢–٢٤</div>
+          <div class="stage-content">
+            <span class="stage-title">التوسع — القطاع المؤسسي + الصيدليات + إعداد MENA</span>
+            <span class="mod-desc">فتح قناة برامج الرعاية الذاتية المؤسسية (قانون ١٥٥/٢٠٢٤) · تكامل شبكة الصيدليات · تحضير الدخول لسوق المملكة العربية السعودية (NPHIES). هدف ARR: ٣.٥ مليون دولار.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ===== 13. COMPETITION ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١٣</span> تحليل المنافسين والتمييز التنافسي</div>
+
+      <table class="comp-table">
+        <tr><th>المنافس</th><th>السوق</th><th>نقاط القوة</th><th>الفجوة التنافسية</th></tr>
+        <tr>
+          <td><strong>Yodawy</strong></td><td>مصر</td>
+          <td>شبكة صيدليات قوية، تعاقدات مع تأمين، Series B ($34.5M)</td>
+          <td class="comp-gap">لا يدير الخطة العلاجية · لا كشف احتيال مخصص · لا ذكاء اصطناعي تنبؤي</td>
+        </tr>
+        <tr>
+          <td><strong>Vezeeta</strong></td><td>مصر/MENA</td>
+          <td>قاعدة مستخدمين ضخمة ($73M total)، Telemedicine</td>
+          <td class="comp-gap">لا ربط تأمين + صيدليات بشكل متكامل · B2C فقط</td>
+        </tr>
+        <tr>
+          <td><strong>Altibbi</strong></td><td>MENA</td>
+          <td>AI + محتوى طبي، مستخدمون كثيرون</td>
+          <td class="comp-gap">لا يتحكم في رحلة العلاج · استشارات فقط</td>
+        </tr>
+        <tr>
+          <td><strong>Chefaa</strong></td><td>مصر</td>
+          <td>تركيز على الأمراض المزمنة، توصيل أدوية</td>
+          <td class="comp-gap">لا تكامل مع التأمين · D2C فقط</td>
+        </tr>
+        <tr>
+          <td><strong>Insight (TPA)</strong></td><td>مصر</td>
+          <td>إدارة مطالبات تأمين، تحكم في الموافقات</td>
+          <td class="comp-gap">تقليدي · لا واجهة للمريض · لا ذكاء اصطناعي</td>
+        </tr>
+        <tr>
+          <td><strong>Ada Health</strong></td><td>عالمي</td>
+          <td>AI تشخيصي قوي جدًا (AXA مصر يستخدمه)</td>
+          <td class="comp-gap">لا يقدم خدمات تشغيلية · لا كشف احتيال · لا تأمين</td>
+        </tr>
+        <tr style="background:rgba(65,121,173,0.07);">
+          <td><strong style="color:var(--green);">✅ iRonic Health</strong></td><td>مصر/MENA</td>
+          <td class="comp-win">المنصة الوحيدة التي تجمع: كشف احتيال + تنسيق مطالبات + رحلة علاج كاملة + ٨ أطراف + AI تنبؤي + نماذج مصرية مخصصة</td>
+          <td style="color:var(--green);font-weight:700;">لا منافس مباشر في هذا التموضع</td>
+        </tr>
+      </table>
+    </div>
+
+
+
+    <div class="divider"></div>
+
+    <!-- ===== 18. AI MEDICATION SAFETY ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١٤</span> طبقة سلامة الأدوية بالذكاء الاصطناعي (AI Medication Safety Layer)</div>
+
+      <div class="section-intro">
+        نظام ذكاء اصطناعي متخصص يهدف إلى <strong>تقليل الأخطاء الطبية والدوائية، وحماية شركات التأمين من الهدر والاحتيال</strong>، وتحسين سلامة المريض عبر ثلاث واجهات متكاملة في آنٍ واحد.
+      </div>
+
+      <div class="ins-grid">
+
+        <div class="ins-card">
+          <div class="ins-card-head">👨‍⚕️ الواجهة الطبية — عند كتابة الوصفة</div>
+          <div class="ins-card-body">
+            باستخدام الذكاء الاصطناعي، يتم على الفور:<br>
+            • <strong>مقارنة الدواء بتاريخ المريض</strong> ومعرفة وجود تعارض دوائي<br>
+            • <strong>ضبط الجرعة</strong> حسب: العمر، الوزن، الحالة الصحية الراهنة، الأمراض المزمنة<br>
+            • تنبيه فوري في حال وجود <strong>تداخل دوائي خطر</strong> مع الأدوية الحالية<br>
+            • <strong>تقليل صرف أدوية</strong> خارج التغطية أو غير مناسبة<br>
+            • حماية شركة التأمين من الهدر والاحتيال
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">💊 الواجهة الصيدلانية — عند الصرف</div>
+          <div class="ins-card-body">
+            فحص ثانٍ مستقل بواسطة الذكاء الاصطناعي:<br>
+            • <strong>مطابقة الوصفة</strong> مع المريض وبنود التغطية التأمينية<br>
+            • كشف وجود خطر والإبلاغ عنه وإيقاف الصرف فورًا<br>
+            • <strong>تسجيل سبب التجاوز</strong> إن وُجد<br>
+            • تأكيد مزدوج قبل التسليم يقلل الأخطاء البشرية بشكل جذري
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">🛡 واجهة شركات التأمين</div>
+          <div class="ins-card-body">
+            • تحليل أنماط الاحتيال الدوائي وتحديد الأنماط المشبوهة<br>
+            • اقتراح <strong>بدائل علاجية (Therapeutic Alternatives)</strong> بنفس الفعالية وتكلفة أقل<br>
+            • كشف الوصفات غير المنطقية أو غير المغطاة<br>
+            • <strong>خفض التكاليف الطبية</strong> بنسبة ملموسة من خلال منع الهدر الدوائي
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">🗄️ مصادر بيانات الذكاء الاصطناعي</div>
+          <div class="ins-card-body">
+            • قواعد بيانات التداخلات الدوائية المُعتمدة<br>
+            • بروتوكولات العلاج المحلية (مصرية)<br>
+            • التاريخ الطبي الكامل للمريض<br>
+            • سياسات شركات التأمين<br>
+            • مقارنات الاستخدام السابقة
+          </div>
+        </div>
+
+      </div>
+
+      <div class="blue-box" style="margin-top:6px;">
+        <strong>أنواع الأخطاء التي يعالجها النظام:</strong><br>
+        صرف دواء مع حساسية مسجلة · جرعات خاطئة للأطفال أو كبار السن · تداخلات خطرة مثل (QT Prolongation) · ازدواجية العلاج الفعّالة · الصرف خارج البروتوكول · حالات تستوجب مراجعة طبية قبل الصرف
+      </div>
+
+      <div class="ins-grid" style="margin-top:14px;">
+        <div class="ins-card" style="grid-column:span 2">
+          <div class="ins-card-head">🎯 الميزة التنافسية الفريدة (USP)</div>
+          <div class="ins-card-body">
+            <strong>✅ ذكاء اصطناعي لحظي (Real-time)</strong> يعمل قبل الموافقة وبعدها<br>
+            <strong>✅ يقلل الأخطاء البشرية</strong> بنسبة قياسية موثَّقة<br>
+            <strong>✅ يخفض تكاليف التأمين الطبي</strong> بنسبة ملموسة<br>
+            <strong>✅ يزيد ثقة المريض</strong> والجهات الرقابية<br>
+            <strong>✅ النطاق المرحلة الأولى:</strong> Decision Support · Drug Interaction Checker · Dose Validator — <em>لا يشمل تشخيصًا طبيًا مستقلًا تجنبًا للمخاطر القانونية</em>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>الخلاصة:</strong> "AI-powered Medication Safety Layer reduces medical errors, lowers insurance costs, and saves lives" — طبقة سلامة الأدوية بالذكاء الاصطناعي تقلل الأخطاء الطبية، تخفض تكاليف التأمين، وتنقذ أرواحًا.
+      </div>
+    </div>
+
+    <!-- ===== 19. MEDICAL COST CONTROL ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١٥</span> نظام التحكم الذكي في التكلفة الطبية (Medical Cost Control AI)</div>
+
+      <div class="section-intro">
+        <strong>المشكلة التي تعاني منها شركات التأمين (Medical Cost Leakage):</strong> تخسر شركات التأمين ملايين سنويًا بسبب علاج غير ضروري، فحوصات مكررة، وصف أدوية بلا مبرر طبي، وإفراط مزودي الخدمة في الفوترة. الأنظمة التقليدية لا تراقب ولا تتحكم في الوقت الفعلي — <em>iRonic Health تُغيِّر هذه المعادلة كليًا بنظام ذكاء اصطناعي يعمل داخل دورة المطالبة قبل صرف أي مبلغ.</em>
+      </div>
+
+      <div class="ins-grid">
+
+        <div class="ins-card">
+          <div class="ins-card-head">🔬 ١ — مراجعة طلبات الأطباء بالذكاء الاصطناعي</div>
+          <div class="ins-card-body">
+            عند تقديم الطبيب لطلب إجراء طبي أو وصف دواء، يقوم النظام فورًا بـ:<br>
+            • <strong>مقارنة الطلب بالبروتوكولات الطبية المعيارية</strong> (مصرية وعالمية)<br>
+            • تحديد ما إذا كان الإجراء <strong>ضروريًا سريريًا</strong> أم لا<br>
+            • <strong>إظهار تنبيه واضح</strong> للطبيب مع شرح السبب والبدائل<br>
+            • <strong>تسجيل كل قرار</strong> لأغراض المراجعة والحوكمة<br>
+            • حماية الطبيب من المطالبات المشبوهة التي قد تضر بسمعته
+            <div style="margin-top:6px;"><span class="tag">تقليل الإفراط الطبي</span><span class="tag">Evidence-based</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">💊 ٢ — اقتراح البدائل العلاجية الأقل تكلفة</div>
+          <div class="ins-card-body">
+            يقترح النظام تلقائيًا <strong>بدائل علاجية (Therapeutic Alternatives)</strong> بنفس الفعالية الطبية وتكلفة أقل:<br>
+            • الجنيسات بدلًا من الأدوية المرجعية باهظة الثمن<br>
+            • بروتوكولات علاج بديلة ذات نتائج مماثلة<br>
+            • تقليص الجرعة أو المدة حيث تكون البيانات تدعم ذلك<br>
+            • <strong>إشراك شركات الأدوية</strong> لتقديم بدائل وبرامج دعم مرضى مباشرةً<br>
+            • المقترحات مرتبة حسب الفعالية والتكلفة والتوافر في السوق المصري
+            <div style="margin-top:6px;"><span class="tag">خفض تكلفة الدواء</span><span class="tag gold">Therapeutic Alternatives</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">🔁 ٣ — كشف تكرار الفحوصات والإجراءات</div>
+          <div class="ins-card-body">
+            النظام يراقب السجل الطبي الكامل للمريض ويكشف:<br>
+            • فحوصات مطلوبة <strong>أُجريت لنفس المريض لنفس الغرض</strong> مؤخرًا<br>
+            • إجراءات طبية متكررة بفترة أقل من المُوصى به سريريًا<br>
+            • تداخل في الطلبات بين أطباء متعددين على نفس الحالة<br>
+            • <strong>تنبيه فوري</strong> للطبيب ولشركة التأمين قبل الموافقة<br>
+            • تقليص الهدر الناجم عن غياب التنسيق بين الأطراف
+            <div style="margin-top:6px;"><span class="tag">إلغاء التكرار</span><span class="tag">توفير فوري</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">🕵️ ٤ — كشف الاحتيال في الفوترة والمطالبات</div>
+          <div class="ins-card-body">
+            رصد متواصل للأنماط المشبوهة لدى مزودي الخدمة:<br>
+            • <strong>Diagnostic Upcoding:</strong> فوترة بتشخيصات أكثر تعقيدًا من الحالة الفعلية<br>
+            • <strong>Phantom Services:</strong> طلب خدمات لم تُقدَّم فعليًا<br>
+            • <strong>Over-utilization:</strong> تكرار غير مبرر لأدوية أو إجراءات مكلفة<br>
+            • مقارنة سلوك كل مزود خدمة بالمتوسط الإقليمي والوطني<br>
+            • <strong>تصنيف المزودين</strong> بدرجة مخاطر يتم تحديثها تلقائيًا<br>
+            • تنبيهات فورية قبل دفع أي مطالبة مشبوهة
+            <div style="margin-top:6px;"><span class="tag">منع الاحتيال المنظَّم</span><span class="tag">Provider Scoring</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">📊 ٥ — تحليل أنماط الإنفاق والتنبؤ بالتكاليف</div>
+          <div class="ins-card-body">
+            لوحة تحكم تحليلية متكاملة لشركات التأمين:<br>
+            • <strong>تحليل Loss Ratio</strong> حسب المزود والمنطقة الجغرافية وفئة العمر<br>
+            • <strong>نماذج تنبؤية</strong> بالتكاليف المتوقعة للشهر/الربع القادم<br>
+            • رصد أكثر الإجراءات والأدوية تكلفةً وتكرارًا<br>
+            • مقارنة أداء كل شبكة مزودين بالمعايير الصناعية<br>
+            • <strong>اقتراحات قابلة للتنفيذ</strong> لتقليص التكاليف بناءً على البيانات
+            <div style="margin-top:6px;"><span class="tag gold">Predictive Analytics</span><span class="tag gold">Loss Ratio Control</span></div>
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">⚙️ ٦ — التكامل مع دورة الموافقة المسبقة</div>
+          <div class="ins-card-body">
+            نظام التحكم في التكلفة لا يعمل منفصلًا — إنه مدمج في كل خطوة من خطوات الموافقة:<br>
+            • <strong>Pre-Authorization:</strong> يُنفَّذ تحليل التكلفة قبل إصدار الموافقة<br>
+            • <strong>Auto-Routing:</strong> توجيه المريض لأقل مزود تكلفةً مع ضمان الجودة<br>
+            • <strong>Real-time Alerts:</strong> تنبيهات فورية لمسؤولي التأمين عند تجاوز حدود التكلفة<br>
+            • <strong>Audit Trail:</strong> سجل تدقيق كامل لكل قرار موافقة أو رفض<br>
+            • جميع القرارات تستوجب مراجعة CMO عند الأثر العالي
+            <div style="margin-top:6px;"><span class="tag">Pre-auth Integration</span><span class="tag">Audit Trail</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <table style="margin-top:16px;">
+        <tr><th>آلية التحكم</th><th>كيف تعمل</th><th>الأثر المتوقع</th><th>الجهة المستفيدة</th></tr>
+        <tr>
+          <td><strong>مراجعة طلبات الأطباء</strong></td>
+          <td>مقارنة فورية بالبروتوكولات المعيارية + تنبيه وشرح</td>
+          <td>تقليل الإفراط الطبي غير المبرر بنسبة 15–25٪</td>
+          <td>التأمين + الطبيب + المريض</td>
+        </tr>
+        <tr>
+          <td><strong>اقتراح بدائل أرخص</strong></td>
+          <td>بدائل بنفس الفعالية وتكلفة أقل من قاعدة بيانات الأدوية المصرية</td>
+          <td>خفض تكلفة الدواء بنسبة 10–30٪ لكل وصفة</td>
+          <td>التأمين + المريض</td>
+        </tr>
+        <tr>
+          <td><strong>كشف تكرار الفحوصات</strong></td>
+          <td>مراقبة السجل الطبي + تنبيه فوري قبل الموافقة</td>
+          <td>إلغاء 20–40٪ من الفحوصات المكررة غير الضرورية</td>
+          <td>التأمين + المريض</td>
+        </tr>
+        <tr>
+          <td><strong>كشف احتيال الفوترة</strong></td>
+          <td>مقارنة سلوك المزود بالمتوسط + تصنيف المخاطر</td>
+          <td>تقليل خسائر الاحتيال بنسبة 2–10٪ من إجمالي المطالبات</td>
+          <td>التأمين</td>
+        </tr>
+        <tr>
+          <td><strong>التنبؤ بالتكاليف</strong></td>
+          <td>نماذج ML تحلل أنماط الإنفاق وتتوقع التكاليف المستقبلية</td>
+          <td>تحسين دقة احتياطيات شركة التأمين ±5٪</td>
+          <td>التأمين</td>
+        </tr>
+      </table>
+
+      <div class="fin-grid" style="margin-top:16px;">
+        <div class="fin-card blue">
+          <div class="fin-num">٢٠–٤٠٪</div>
+          <div class="fin-label">توفير محتمل في إجمالي التكاليف الطبية لشركات التأمين عند تطبيق المنظومة الكاملة</div>
+        </div>
+        <div class="fin-card">
+          <div class="fin-num">٣٠٪</div>
+          <div class="fin-label">متوسط تقليل تكلفة العلاج عند استخدام البدائل الدوائية والتوجيه الآلي للمستشفيات</div>
+        </div>
+        <div class="fin-card gold">
+          <div class="fin-num">الأول</div>
+          <div class="fin-label">لا يوجد أي منافس محلي (Vezeeta أو Yodawy أو Insight) يتحكم في تكلفة العلاج بهذا المستوى</div>
+        </div>
+      </div>
+
+      <div class="green-box" style="margin-top:14px;">
+        <strong>الخلاصة الاستراتيجية:</strong> النموذج الواحد الجامع لهذا النظام هو: <em>"AI system that controls and optimizes medical spending at the point of care"</em> — نظام ذكاء اصطناعي يتحكم في الإنفاق الطبي ويُحسِّنه لحظة تقديم الخدمة، قبل أن يتحول إلى مطالبة مكلفة. هذا ما تحتاجه شركات التأمين وهذا ما تبيعه iRonic Health.
+      </div>
+
+      <div class="note-box" style="margin-top:12px;">
+        <strong>ملاحظة قانونية:</strong> جميع قرارات الرفض أو التعديل ذات الأثر العالي تستوجب مراجعة وتوقيع مدير طبي مرخَّص (CMO). النظام يُصنَّف كـ"دعم قرار" وليس قرارًا مستقلًا وفق الميثاق المصري للذكاء الاصطناعي المسؤول (٢٠٢٣).
+      </div>
+    </div>
+
+
+    <!-- ===== 14. FINANCIALS ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١٦</span> المؤشرات المالية والعوائد المتوقعة</div>
+
+      <table>
+        <tr><th>المؤشر</th><th>السنة الأولى</th><th>السنة الثانية</th><th>السنة الثالثة</th></tr>
+        <tr><td><strong>ARR (الإيراد السنوي المتكرر)</strong></td><td>$500K</td><td>$3.5M</td><td>$12M</td></tr>
+        <tr><td><strong>العملاء الرئيسيون</strong></td><td>١–٢ عميل</td><td>٣–٤ عملاء</td><td>٦–٨ عملاء</td></tr>
+        <tr><td><strong>الوضع المالي</strong></td><td>استثمار (Burn ~$1.5M)</td><td>طريق للتعادل</td><td>EBITDA إيجابي</td></tr>
+      </table>
+
+      <div class="fin-grid" style="margin-top:14px;">
+        <div class="fin-card blue">
+          <div class="fin-num">٢٠–٣٠×</div>
+          <div class="fin-label">نسبة LTV/CAC — ذهب B2B SaaS هو ٣–٥×</div>
+        </div>
+        <div class="fin-card">
+          <div class="fin-num">٧٠٪+</div>
+          <div class="fin-label">هامش إجمالي مستهدَف</div>
+        </div>
+        <div class="fin-card gold">
+          <div class="fin-num">٤–٦</div>
+          <div class="fin-label">أشهر استرداد رأس المال (Payback)</div>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:12px;">
+        <strong>العائد على الاستثمار المتوقع:</strong> بعد ٣ سنوات: ٥٠–١٥٠ مليون جنيه (معتمد على عدد المستخدمين + معدل الاستخدام + الربح من كل عملية). تقييم بعد ٥ سنوات: ١–٢ مليار جنيه.
+      </div>
+    </div>
+
+    <!-- ===== 15. TEAM ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١٧</span> الفريق</div>
+
+      <div class="team-grid">
+        <div class="team-card"><div class="team-role">CEO</div><div class="team-name">الرئيس التنفيذي</div></div>
+        <div class="team-card"><div class="team-role">CTO</div><div class="team-name">المدير التقني</div></div>
+        <div class="team-card"><div class="team-role">COO</div><div class="team-name">مدير العمليات</div></div>
+        <div class="team-card"><div class="team-role">Medical Director</div><div class="team-name">المدير الطبي</div></div>
+      </div>
+      <p style="margin-top:8px;"><strong>الفريق التشغيلي:</strong> ٥ مطورين برمجيات · ٢ مهندسي ذكاء اصطناعي · ٤ موظفي مبيعات وعلاقات · ٢ دعم تقني.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== 16. NICE ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١٨</span> تصنيف نيس — الفئات المُسجَّلة</div>
+      <div class="class-grid">
+        <div class="class-card">
+          <div class="class-head">الفئة ٣٥ — إدارة الأعمال والتحليلات</div>
+          <div class="class-body">إدارة بيانات الأعمال، تحليلات الغش والمخاطر، الاستعانة بالمصادر الخارجية لعمليات الرعاية الصحية، إعداد تقارير الأداء التجاري، لوحات تحكم البيانات الصحية</div>
+        </div>
+        <div class="class-card">
+          <div class="class-head">الفئة ٣٦ — الخدمات المالية والتأمينية</div>
+          <div class="class-body">الخدمات المرتبطة بالتأمين، تقييم المخاطر المالية، دعم معالجة مطالبات التأمين، تقدير الوفورات الناجمة عن منع الغش، خدمات الدعم الاكتواري</div>
+        </div>
+        <div class="class-card">
+          <div class="class-head">الفئة ٤٢ — خدمات التكنولوجيا والبرمجيات (SaaS)</div>
+          <div class="class-body">برمجيات كخدمة (SaaS)، منصات الذكاء الاصطناعي، تحليل البيانات الصحية، برمجيات تكنولوجيا المعلومات الصحية (Health IT)، خدمات البحث والتطوير التكنولوجي، واجهات API الصحية</div>
+        </div>
+        <div class="class-card">
+          <div class="class-head">الفئة ٤٤ — الخدمات الطبية والرعاية الصحية</div>
+          <div class="class-body">خدمات الرعاية الصحية الرقمية، المعلومات الطبية، دعم القرار السريري، خدمات التشاور الطبي عبر التكنولوجيا، إدارة الخطة العلاجية الرقمية</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 17. MARKS ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">١٩</span> العلامات التجارية المطلوب تسجيلها</div>
+      <div class="mark-item">
+        <div class="mark-num">١</div>
+        <div class="mark-text"><strong>علامة لفظية (إنجليزي): "iRonic Health"</strong>الاسم التجاري الرئيسي للذراع الصحية لمجموعة Ironic Group</div>
+      </div>
+      <div class="mark-item">
+        <div class="mark-num">٢</div>
+        <div class="mark-text"><strong>علامة لفظية (عربي): "أيرونيك هيلث"</strong>النسخة العربية الرسمية المعتمدة لاسم العلامة التجارية</div>
+      </div>
+      <div class="mark-item">
+        <div class="mark-num">٣</div>
+        <div class="mark-text"><strong>علامة لفظية (إنجليزي): "Ironic Group"</strong>اسم الشركة الأم — الكيان القانوني المُسجَّل</div>
+      </div>
+      <div class="mark-item">
+        <div class="mark-num">٤</div>
+        <div class="mark-text"><strong>علامة شكلية مركبة: "//i" + "ronic" + شارة H</strong>الشعار المرئي الكامل — شعار الشرطة المائلة الذهبية "//i" مع كلمة "ronic" وشارة H (مستطيل دائري أزرق #4179AD بداخله حرف H أبيض)</div>
+      </div>
+      <div class="mark-item">
+        <div class="mark-num">٥</div>
+        <div class="mark-text"><strong>علامة شكلية مستقلة: شارة H (H Badge)</strong>الشعار التعبيري المستقل — مستطيل دائري أزرق (#4179AD) بداخله حرف H أبيض — يُستخدم كعلامة مستقلة لـ iRonic Health</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== 20. CONCLUSION ===== -->
+    <div class="section">
+      <div class="section-title"><span class="num">٢٠</span> الخاتمة — التزام قانوني وإقرار رسمي</div>
+
+      <div class="section-intro">
+        تُقدَّم هذه الوثيقة وثيقةً رسميةً داعمةً لإجراءات تسجيل العلامة التجارية لـ <strong>iRonic Health / أيرونيك هيلث</strong> وشركتها الأم <strong>Ironic Group</strong> أمام الجهاز المصري لحماية الملكية الفكرية (EIPA) وجميع الجهات التنظيمية والقانونية المختصة في جمهورية مصر العربية.
+      </div>
+
+      <div class="ins-grid">
+
+        <div class="ins-card">
+          <div class="ins-card-head">📋 نطاق التفويض الممنوح للمحامي</div>
+          <div class="ins-card-body">
+            يُفوَّض المحامي المُعيَّن بالتصرف الكامل بالنيابة عن الشركة أمام:<br>
+            • <strong>EIPA</strong> — التقديم، الفحص، الردود، استلام الشهادات<br>
+            • <strong>السجل التجاري / GAFI</strong> — أي تحديثات أو تعديلات تجارية<br>
+            • <strong>مركز حماية البيانات (PDPC)</strong> — ترخيص معالجة البيانات الصحية<br>
+            • <strong>الهيئة العامة للرقابة المالية (FRA)</strong> — أي مراسلات تنظيمية<br>
+            • <strong>المحاكم المصرية بجميع درجاتها</strong> — للدفاع عن حقوق الملكية الفكرية<br>
+            • <strong>جميع الجهات الإدارية والقضائية</strong> ذات الصلة بموضوع التوكيل
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">✅ صحة المعلومات وإقرار المسؤولية</div>
+          <div class="ins-card-body">
+            نؤكد بموجب هذه الوثيقة ما يلي:<br>
+            • جميع البيانات والمعلومات الواردة <strong>صحيحة وكاملة ودقيقة</strong> وفق علمنا<br>
+            • الشركة كيان قانوني مسجَّل في مصر، جاهز للتشغيل من اليوم الأول<br>
+            • العلامات التجارية المطلوب تسجيلها <strong>أصيلة وغير منقوصة</strong><br>
+            • نتحمل المسؤولية القانونية الكاملة عن دقة البيانات أمام الجهات المختصة<br>
+            • هذه الوثيقة مُعدَّة بحسن نية وتعكس الواقع التشغيلي والاستراتيجي الفعلي
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">🎯 الهدف الاستراتيجي من التسجيل</div>
+          <div class="ins-card-body">
+            تسجيل العلامة التجارية يحقق للشركة الأهداف التالية:<br>
+            • <strong>الحماية القانونية</strong> من الانتحال أو الاستخدام غير المرخَّص<br>
+            • <strong>تعزيز مصداقية المستثمرين</strong> والشركاء الاستراتيجيين<br>
+            • <strong>التأهل للتوسع الإقليمي</strong> عبر اتفاقية مدريد للتسجيل الدولي<br>
+            • حماية الاستثمار في بناء العلامة قبيل إطلاق المنتج وجولة التمويل<br>
+            • <strong>الامتثال التنظيمي</strong> أمام FRA والجهات الصحية المرخِّصة
+          </div>
+        </div>
+
+        <div class="ins-card">
+          <div class="ins-card-head">📅 الجدول الزمني والخطوات التالية</div>
+          <div class="ins-card-body">
+            • <strong>الأسبوع الأول:</strong> تقديم طلبات تسجيل العلامات الخمس (الفئات ٣٥، ٣٦، ٤٢، ٤٤)<br>
+            • <strong>الشهر الأول:</strong> الرد على أي استفسارات من EIPA وإكمال متطلبات الفحص<br>
+            • <strong>الشهر ٣–٦:</strong> استلام شهادات التسجيل المبدئية<br>
+            • <strong>موازٍ:</strong> إطلاق MVP ومفاوضات GlobeMed Egypt<br>
+            • <strong>السنة الثانية:</strong> التقدم لتسجيل دولي عبر WIPO (مدريد) للتوسع في MENA
+          </div>
+        </div>
+
+      </div>
+
+      <div class="highlight-box" style="margin-top:16px;">
+        <strong>رسالتنا الختامية:</strong> iRonic Health ليست مجرد فكرة — إنها كيان قانوني مسجَّل، بفريق طبي وتقني متكامل، وعلامة تجارية واضحة الهوية، تعمل في لحظة تاريخية دقيقة يفتحها قانون التأمين الموحد رقم ١٥٥/٢٠٢٤ وتراخيص FRA (أبريل ٢٠٢٦). <strong>نافذة ١٨–٣٦ شهرًا غير محتكَرة تنتظر من يملأها بحل حقيقي — وهذا ما نبنيه.</strong>
+      </div>
+
+      <div class="note-box" style="margin-top:12px;">
+        <strong>إقرار ختامي رسمي:</strong> أُفيد بصحة جميع ما ورد في هذه الوثيقة وأتحمل المسؤولية القانونية الكاملة عن دقة بياناتها أمام جميع الجهات الرسمية في جمهورية مصر العربية. صدر هذا الإقرار بتاريخ مايو ٢٠٢٦ من مقر الشركة بأبراج نايل سيتي، القاهرة.
+      </div>
+    </div>
+
+  </div><!-- end content -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <div style="font-weight:800;color:var(--blue);font-family:'Kufam',sans-serif;font-size:15px;margin-bottom:4px;">iRonic Health — Ironic Group</div>
+      <div>أبراج نايل سيتي، البرج الشمالي، كورنيش النيل، القاهرة، مصر</div>
+      <div style="margin-top:3px;">chairman@ironicgmi.com &nbsp;|&nbsp; +20 155 555 6697 &nbsp;|&nbsp; islam@ironicigmi.com &nbsp;|&nbsp; +20 150 828 1948</div>
+    </div>
+    <div style="display:flex;gap:32px;">
+      <div>
+        <div class="sig-line"></div>
+        <div style="font-size:11px;color:var(--text-light);">توقيع المفوِّض — د. إسلام الميداني (المؤسس والمدير الطبي)</div>
+      </div>
+      <div>
+        <div class="sig-line"></div>
+        <div style="font-size:11px;color:var(--text-light);">ختم الشركة الرسمي</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
