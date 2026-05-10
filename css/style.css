@@ -35,12 +35,13 @@ img{max-width:100%;display:block}
 .logo-wordmark strong{font-weight:700}
 .logo-tagline{font-size:8.5px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase}
 /* fallback logo parts */
-.slash-group{display:flex;align-items:flex-end;gap:3px;margin-right:2px}
-.s-bar{width:5px;height:18px;background:var(--gold);border-radius:2px;transform:skewX(-10deg)}
-.s-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);margin-bottom:12px}
-.s-bar2{width:5px;height:12px;background:var(--gold);border-radius:2px;transform:skewX(-10deg)}
+.nav-logo-icon{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.slash-group{display:flex;align-items:flex-end;gap:3px;margin-right:2px;flex-shrink:0}
+.s-bar{display:block;width:5px;height:18px;background:var(--gold);border-radius:2px;transform:skewX(-10deg);flex-shrink:0}
+.s-dot{display:block;width:4px;height:4px;border-radius:50%;background:var(--gold);margin-bottom:10px;flex-shrink:0}
+.s-bar2{display:block;width:5px;height:12px;background:var(--gold);border-radius:2px;transform:skewX(-10deg);flex-shrink:0}
 .logo-name{font-size:20px;font-weight:500;color:var(--blue-dark)}
-.logo-badge{width:28px;height:34px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff}
+.logo-badge{display:flex;align-items:center;justify-content:center;width:28px;height:34px;background:var(--blue);border-radius:7px;font-weight:700;font-size:14px;color:#fff;flex-shrink:0}
 
 .nav-center{display:flex;gap:24px}
 .nav-center a{font-size:13.5px;color:var(--ink-3);text-decoration:none;font-weight:400;transition:color .18s;padding:4px 0;position:relative}
