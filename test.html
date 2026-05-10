@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Ubuntu',sans-serif;padding:40px;background:#f0f4f8}
+.test-box{background:white;padding:24px;border-radius:12px;margin-bottom:24px;border:1px solid #e2eaf3}
+h3{color:#2d5a8a;margin-bottom:12px}
+
+/* PASTE YOUR EXACT CSS HERE */
+.nav-logo-icon{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.slash-group{display:flex;align-items:flex-end;gap:3px;margin-right:2px;flex-shrink:0}
+.s-bar{display:block;width:5px;height:18px;background:#CAB164;border-radius:2px;transform:skewX(-10deg);flex-shrink:0}
+.s-dot{display:block;width:4px;height:4px;border-radius:50%;background:#CAB164;margin-bottom:10px;flex-shrink:0}
+.s-bar2{display:block;width:5px;height:12px;background:#CAB164;border-radius:2px;transform:skewX(-10deg);flex-shrink:0}
+.logo-badge{display:flex;align-items:center;justify-content:center;width:28px;height:34px;background:#4179AD;border-radius:7px;font-weight:700;font-size:14px;color:#fff;flex-shrink:0}
+.logo-wordmark{font-size:17px;font-weight:400;color:#2d5a8a}
+.logo-wordmark strong{font-weight:700}
+.logo-tagline{font-size:8.5px;color:#6b7f96;letter-spacing:.5px;text-transform:uppercase}
+.nav-logo-text{display:flex;flex-direction:column;gap:1px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="test-box">
+  <h3>✅ Test 1 — CSS Logo Elements Directly</h3>
+  <div class="nav-logo-icon">
+    <div class="slash-group">
+      <div class="s-bar"></div>
+      <div class="s-dot"></div>
+      <div class="s-bar2"></div>
+    </div>
+    <div class="logo-badge">H</div>
+  </div>
+  <p style="margin-top:12px;font-size:12px;color:#6b7f96">
+    You should see: gold slashes + blue H badge above
+  </p>
+</div>
+
+<div class="test-box">
+  <h3>✅ Test 2 — Full Nav Logo Combined</h3>
+  <a class="nav-logo">
+    <div class="nav-logo-icon">
+      <div class="slash-group">
+        <div class="s-bar"></div>
+        <div class="s-dot"></div>
+        <div class="s-bar2"></div>
+      </div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">Health System Integration Technology</span>
+    </div>
+  </a>
+</div>
+
+<div class="test-box">
+  <h3>✅ Test 3 — Image Badge</h3>
+  <img src="assets/H_Badge_icon.png" style="height:36px" alt="badge">
+  <p style="margin-top:8px;font-size:12px;color:#6b7f96">
+    You should see the H badge image above (or broken image if file missing)
+  </p>
+</div>
+
+</body>
+</html>
