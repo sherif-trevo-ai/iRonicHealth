@@ -23,6 +23,7 @@ img{max-width:100%;display:block}
 .nav{background:rgba(255,255,255,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 56px;height:70px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;transition:box-shadow .2s}
 .nav.scrolled{box-shadow:0 1px 24px rgba(13,27,46,.09)}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;user-select:none}
+.nav-logo-icon{display:flex;align-items:center;gap:6px}
 .nav-logo-badge{height:36px;width:auto;display:block}
 .nav-logo-text{display:flex;flex-direction:column;gap:1px}
 .logo-wordmark{font-size:17px;font-weight:400;color:var(--blue-dark);letter-spacing:-.1px;line-height:1}
