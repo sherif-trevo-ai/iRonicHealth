@@ -34,7 +34,8 @@ img{max-width:100%;display:block}
 .logo-wordmark{font-size:17px;font-weight:400;color:var(--blue-dark);letter-spacing:-.1px;line-height:1}
 .logo-wordmark strong{font-weight:700}
 .logo-tagline{font-size:8.5px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase}
-/* fallback logo parts */
+
+/* logo parts */
 .nav-logo-icon{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .slash-group{display:flex;align-items:flex-end;gap:3px;margin-right:2px;flex-shrink:0}
 .s-bar{display:block;width:5px;height:18px;background:var(--gold);border-radius:2px;transform:skewX(-10deg);flex-shrink:0}
