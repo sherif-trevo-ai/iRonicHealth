@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact iRonic Health — Request a demo, investor meeting, partnership, or integration discussion. We respond within 24 hours.">
+<meta property="og:title" content="Contact — iRonic Health · Get in Touch">
+<meta property="og:url" content="https://sherif-trevo-ai.github.io/iRonicHealth/contact.html">
+<meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/H_Badge_icon.svg">
+<meta property="og:type" content="website">
+<title>Contact — iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+/* ════ TOKENS ════ */
+:root {
+  --dk1:#060f1c; --dk2:#0a1628; --dk3:#0d1b2e;
+  --lt1:#ffffff; --lt2:#f8fafc; --lt3:#eef3fa; --lt4:#e8f0fb;
+  --ink1:#0a1628; --ink2:#1e3a5f; --ink3:#374151; --ink4:#6b7a94;
+  --blue:#185fa5; --bluel:#378add; --gold:#c9a84c; --green:#1d9e75;
+}
+
+/* ════ HERO  (dark) ════ */
+.ch-hero {
+  padding:130px 5% 4.5rem; position:relative; overflow:hidden;
+  background:linear-gradient(145deg,var(--dk1) 0%,var(--dk2) 65%,#0c1e35 100%);
+}
+.ch-hero-bg { position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(circle 600px at 75% 40%, rgba(24,95,165,.1) 0%,transparent 60%),
+             radial-gradient(circle 400px at 10% 80%, rgba(201,168,76,.06) 0%,transparent 55%); }
+.ch-hero-grid { position:absolute; inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:42px 42px; pointer-events:none; }
+.ch-inner { position:relative; z-index:1; max-width:1180px; margin:0 auto; }
+.ch-row { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.ch-left {}
+.ch-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(29,158,117,.1); border:1px solid rgba(29,158,117,.25); border-radius:100px; padding:5px 16px; margin-bottom:1.5rem; font-size:.72rem; font-weight:700; color:var(--green); letter-spacing:.1em; text-transform:uppercase; font-family:'Ubuntu',sans-serif; }
+.ch-h1 { font-size:clamp(2.4rem,4.5vw,3.6rem); font-weight:900; line-height:1.05; color:#fff; letter-spacing:-.03em; margin-bottom:1.1rem; font-family:'Kufam',sans-serif; }
+.ch-h1 em { color:var(--gold); font-style:normal; }
+.ch-sub { font-size:.95rem; color:rgba(255,255,255,.52); line-height:1.75; margin-bottom:2rem; font-family:'Ubuntu',sans-serif; }
+/* SLA pill row */
+.ch-sla { display:flex; gap:1rem; flex-wrap:wrap; }
+.ch-sla-pill { display:flex; align-items:center; gap:7px; padding:7px 14px; border-radius:8px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); }
+.csp-ico { font-size:.95rem; }
+.csp-txt { font-size:.76rem; color:rgba(255,255,255,.7); font-family:'Ubuntu',sans-serif; font-weight:600; }
+/* Right: direct contact mini-strip */
+.ch-right {}
+.ch-direct-title { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.3); margin-bottom:1rem; font-family:'Ubuntu',sans-serif; }
+.ch-dir-cards { display:flex; flex-direction:column; gap:.625rem; }
+.ch-dir-card { display:flex; align-items:center; gap:.875rem; padding:.875rem 1.1rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; cursor:pointer; text-decoration:none; transition:background .2s,border-color .2s; }
+.ch-dir-card:hover { background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.16); }
+.cdc-avatar { width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:900; font-family:'Kufam',sans-serif; color:#fff; flex-shrink:0; }
+.cdc-info { flex:1; min-width:0; }
+.cdc-name { font-size:.85rem; font-weight:700; color:rgba(255,255,255,.85); font-family:'Ubuntu',sans-serif; margin-bottom:1px; }
+.cdc-role { font-size:.7rem; color:rgba(255,255,255,.4); font-family:'Ubuntu',sans-serif; }
+.cdc-email { font-size:.7rem; color:var(--bluel); font-family:'Ubuntu',sans-serif; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.cdc-arr { font-size:.8rem; color:rgba(255,255,255,.25); flex-shrink:0; }
+
+/* ════ INQUIRY TYPE SELECTOR  (light) ════ */
+.inquiry-sel-sec { background:var(--lt2); border-bottom:1px solid #e5ecf6; padding:4rem 5%; }
+.is-inner { max-width:1180px; margin:0 auto; }
+.is-label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--blue); margin-bottom:1.25rem; font-family:'Ubuntu',sans-serif; text-align:center; }
+.is-h2 { font-size:1.6rem; font-weight:900; color:var(--ink1); text-align:center; margin-bottom:.625rem; font-family:'Kufam',sans-serif; letter-spacing:-.02em; }
+.is-sub { font-size:.88rem; color:var(--ink4); text-align:center; margin-bottom:2rem; font-family:'Ubuntu',sans-serif; }
+.inquiry-types { display:grid; grid-template-columns:repeat(5,1fr); gap:.875rem; }
+.it-card { border-radius:14px; padding:1.5rem 1.1rem; text-align:center; cursor:pointer; transition:all .2s; border:2px solid #dde8f5; background:var(--lt1); position:relative; overflow:hidden; user-select:none; }
+.it-card:hover { border-color:var(--blue); transform:translateY(-2px); box-shadow:0 8px 24px rgba(24,95,165,.1); }
+.it-card.selected { border-color:var(--blue); background:rgba(24,95,165,.06); box-shadow:0 0 0 3px rgba(24,95,165,.15); }
+.it-card.selected::after { content:'✓'; position:absolute; top:8px; right:10px; font-size:.65rem; color:var(--blue); font-weight:800; font-family:'Ubuntu',sans-serif; }
+.it-ico { font-size:1.6rem; margin-bottom:.625rem; }
+.it-label { font-size:.82rem; font-weight:700; color:var(--ink1); font-family:'Ubuntu',sans-serif; margin-bottom:.25rem; }
+.it-desc { font-size:.7rem; color:var(--ink4); font-family:'Ubuntu',sans-serif; line-height:1.45; }
+
+/* ════ FORM SECTION  (dark) ════ */
+.form-sec { background:var(--dk2); padding:5.5rem 5%; }
+.form-inner { max-width:1180px; margin:0 auto; }
+.form-layout { display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:start; }
+/* Left: context */
+.form-ctx {}
+.fctx-type-display { display:flex; align-items:center; gap:.75rem; padding:.875rem 1.1rem; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:10px; margin-bottom:1.75rem; }
+.fcd-ico { font-size:1.2rem; }
+.fcd-label { font-size:.8rem; font-weight:700; color:rgba(255,255,255,.75); font-family:'Ubuntu',sans-serif; }
+.fcd-hint { font-size:.7rem; color:rgba(255,255,255,.35); font-family:'Ubuntu',sans-serif; }
+.fctx-eyebrow { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:rgba(255,255,255,.3); margin-bottom:.625rem; font-family:'Ubuntu',sans-serif; }
+.fctx-h { font-size:1.6rem; font-weight:900; color:#fff; font-family:'Kufam',sans-serif; line-height:1.15; margin-bottom:.75rem; letter-spacing:-.02em; }
+.fctx-h em { color:var(--gold); font-style:normal; }
+.fctx-desc { font-size:.84rem; color:rgba(255,255,255,.5); line-height:1.75; font-family:'Ubuntu',sans-serif; margin-bottom:1.75rem; }
+.fctx-points { display:flex; flex-direction:column; gap:.625rem; }
+.fcp-item { display:flex; gap:.75rem; align-items:flex-start; padding:.75rem 1rem; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06); border-radius:8px; }
+.fcp-ico { font-size:.9rem; flex-shrink:0; margin-top:2px; }
+.fcp-txt { font-size:.8rem; color:rgba(255,255,255,.58); font-family:'Ubuntu',sans-serif; line-height:1.55; }
+.fcp-txt strong { color:rgba(255,255,255,.85); }
+/* Right: form */
+.form-box { background:#0d1b2e; border:1px solid rgba(255,255,255,.09); border-radius:16px; overflow:hidden; }
+.form-box-bar { background:rgba(0,0,0,.25); padding:.7rem 1.25rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.06); }
+.fbb-title { font-size:.75rem; font-weight:700; color:rgba(255,255,255,.55); font-family:'Ubuntu',sans-serif; }
+.fbb-sla { display:flex; align-items:center; gap:5px; }
+.fbb-dot { width:6px; height:6px; border-radius:50%; background:var(--green); animation:pdot 2s infinite; }
+.fbb-txt { font-size:.65rem; font-weight:700; color:var(--green); font-family:'Ubuntu',sans-serif; letter-spacing:.05em; }
+.form-body { padding:1.5rem; }
+.fg { display:flex; flex-direction:column; gap:.375rem; margin-bottom:.875rem; }
+.fg-2 { display:grid; grid-template-columns:1fr 1fr; gap:.875rem; margin-bottom:.875rem; }
+.fg-lbl { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:rgba(255,255,255,.42); font-family:'Ubuntu',sans-serif; }
+.fg-inp, .fg-sel, .fg-ta {
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+  border-radius:8px; padding:.675rem .9rem; font-size:.875rem;
+  color:rgba(255,255,255,.82); font-family:'Ubuntu',sans-serif;
+  outline:none; transition:border-color .2s, background .2s; width:100%;
+}
+.fg-inp:focus, .fg-sel:focus, .fg-ta:focus { border-color:var(--blue); background:rgba(24,95,165,.07); }
+.fg-inp::placeholder, .fg-ta::placeholder { color:rgba(255,255,255,.2); }
+.fg-sel { appearance:none; cursor:pointer; }
+.fg-sel option { background:#0a1628; color:#fff; }
+.fg-ta { min-height:88px; resize:vertical; }
+/* Conditional form sections */
+.form-conditional { display:none; }
+.form-conditional.show { display:contents; }
+.form-submit-btn {
+  width:100%; padding:.95rem; margin-top:.5rem;
+  border:none; border-radius:9px; font-size:.92rem; font-weight:700;
+  font-family:'Ubuntu',sans-serif; cursor:pointer; transition:all .2s;
+  background:linear-gradient(135deg,var(--blue),#0c447c);
+  color:#fff;
+}
+.form-submit-btn:hover { transform:translateY(-1px); box-shadow:0 8px 24px rgba(24,95,165,.35); }
+.form-submit-btn.gold-btn { background:linear-gradient(135deg,var(--gold),#9a7820); color:var(--dk1); }
+.form-submit-btn.gold-btn:hover { box-shadow:0 8px 24px rgba(201,168,76,.3); }
+.fg-note { text-align:center; font-size:.68rem; color:rgba(255,255,255,.22); margin-top:.625rem; font-family:'Ubuntu',sans-serif; }
+.form-success { display:none; padding:2.5rem 1.5rem; text-align:center; }
+.fsucc-ico { font-size:3rem; margin-bottom:.875rem; }
+.fsucc-ttl { font-size:1rem; font-weight:700; color:var(--green); font-family:'Ubuntu',sans-serif; margin-bottom:.375rem; }
+.fsucc-sub { font-size:.82rem; color:rgba(255,255,255,.42); font-family:'Ubuntu',sans-serif; }
+
+/* ════ WHAT HAPPENS NEXT  (white) ════ */
+.next-sec { background:var(--lt1); border-bottom:1px solid #e5ecf6; padding:5.5rem 5%; }
+.next-inner { max-width:1180px; margin:0 auto; }
+.next-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; margin-top:2.5rem; position:relative; }
+.next-steps::before { content:''; position:absolute; top:28px; left:10%; right:10%; height:1px; background:linear-gradient(90deg,transparent,#c8daf0,#c8daf0,transparent); z-index:0; }
+.ns-item { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 .5rem; position:relative; z-index:1; }
+.ns-node { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; border:2px solid #c8daf0; background:var(--lt1); margin-bottom:1rem; box-shadow:0 0 0 6px var(--lt1); }
+.ns-node.active { border-color:var(--blue); background:rgba(24,95,165,.06); box-shadow:0 0 0 6px var(--lt1), 0 4px 16px rgba(24,95,165,.12); }
+.ns-node.green { border-color:var(--green); background:rgba(29,158,117,.06); box-shadow:0 0 0 6px var(--lt1), 0 4px 16px rgba(29,158,117,.12); }
+.ns-time { font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--blue); font-family:'Ubuntu',sans-serif; margin-bottom:.375rem; }
+.ns-title { font-size:.88rem; font-weight:700; color:var(--ink1); font-family:'Ubuntu',sans-serif; margin-bottom:.375rem; }
+.ns-desc { font-size:.74rem; color:var(--ink4); line-height:1.55; font-family:'Ubuntu',sans-serif; }
+
+/* ════ DIRECT CONTACTS  (light blue) ════ */
+.contacts-sec { background:var(--lt4); border-top:1px solid #c8daf0; border-bottom:1px solid #c8daf0; padding:5.5rem 5%; }
+.contacts-inner { max-width:1180px; margin:0 auto; }
+.contacts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+.contact-person-card { background:var(--lt1); border:1px solid #c8daf0; border-radius:16px; overflow:hidden; box-shadow:0 2px 16px rgba(10,22,40,.06); transition:transform .2s,box-shadow .2s; }
+.contact-person-card:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(10,22,40,.1); }
+.cpc-header { padding:1.75rem 1.75rem 1.25rem; }
+.cpc-header-sherif { background:linear-gradient(135deg,var(--dk2),#0d2a4a); }
+.cpc-header-islam  { background:linear-gradient(135deg,#0c3d1a,#0f5227); }
+.cpc-header-gen    { background:linear-gradient(135deg,#1a0c3d,#2a1464); }
+.cpc-avatar { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.95rem; font-weight:900; font-family:'Kufam',sans-serif; color:#fff; margin-bottom:.875rem; }
+.cpca-blue  { background:rgba(55,138,221,.2); border:2px solid var(--bluel); }
+.cpca-green { background:rgba(29,158,117,.2); border:2px solid var(--green); }
+.cpca-purple{ background:rgba(83,74,183,.2); border:2px solid #7f77dd; }
+.cpc-name  { font-size:1rem; font-weight:700; color:#fff; font-family:'Ubuntu',sans-serif; margin-bottom:2px; }
+.cpc-title { font-size:.72rem; color:rgba(255,255,255,.5); font-family:'Ubuntu',sans-serif; }
+.cpc-body { padding:1.25rem 1.75rem 1.75rem; }
+.cpc-for { font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--blue); margin-bottom:.75rem; font-family:'Ubuntu',sans-serif; }
+.cpc-links { display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.25rem; }
+.cpc-link { display:flex; align-items:center; gap:.625rem; font-size:.8rem; font-family:'Ubuntu',sans-serif; color:var(--ink3); text-decoration:none; padding:.5rem .75rem; border-radius:7px; background:var(--lt2); border:1px solid #dde8f5; transition:background .15s; }
+.cpc-link:hover { background:var(--lt3); }
+.cpc-link-ico { font-size:.9rem; flex-shrink:0; }
+.cpc-link-txt { color:var(--blue); font-weight:600; }
+.cpc-topics { display:flex; flex-wrap:wrap; gap:.375rem; }
+.cpc-topic { font-size:.68rem; padding:3px 9px; border-radius:4px; background:var(--lt3); color:var(--ink2); font-family:'Ubuntu',sans-serif; border:1px solid #dde8f5; }
+
+/* ════ OFFICE  (dark) ════ */
+.office-sec { background:var(--dk1); padding:5.5rem 5%; }
+.office-inner { max-width:1180px; margin:0 auto; }
+.office-layout { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-top:2.5rem; }
+.office-card { background:var(--dk3); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:2rem; }
+.oc-label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.32); margin-bottom:1.25rem; font-family:'Ubuntu',sans-serif; }
+.oc-rows { display:flex; flex-direction:column; gap:.75rem; }
+.oc-row { display:flex; gap:.875rem; align-items:flex-start; }
+.oc-ico { font-size:1rem; flex-shrink:0; margin-top:2px; }
+.oc-body { }
+.oc-key { font-size:.7rem; color:rgba(255,255,255,.3); font-family:'Ubuntu',sans-serif; margin-bottom:2px; text-transform:uppercase; letter-spacing:.06em; }
+.oc-val { font-size:.84rem; color:rgba(255,255,255,.78); font-family:'Ubuntu',sans-serif; font-weight:600; line-height:1.5; }
+.oc-val a { color:var(--bluel); text-decoration:none; }
+/* Map visual */
+.office-map-visual { border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.08); background:var(--dk3); position:relative; min-height:300px; display:flex; flex-direction:column; }
+.omv-map { flex:1; position:relative; background:linear-gradient(145deg,#0a1a2e,#0d2040); display:flex; align-items:center; justify-content:center; min-height:220px; overflow:hidden; }
+.omv-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(24,95,165,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(24,95,165,.08) 1px,transparent 1px); background-size:32px 32px; }
+.omv-nile { position:absolute; width:60%; height:12px; background:rgba(24,95,165,.25); border-radius:20px; transform:rotate(-12deg); top:45%; left:20%; }
+.omv-dot { position:relative; z-index:2; }
+.omv-pin { width:14px; height:14px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 4px rgba(201,168,76,.25), 0 0 0 8px rgba(201,168,76,.1); }
+.omv-ring { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:40px; height:40px; border-radius:50%; border:1px solid rgba(201,168,76,.3); animation:omv-pulse 2.5s infinite; }
+.omv-ring2 { width:64px; height:64px; animation-delay:.8s; }
+@keyframes omv-pulse { 0%{transform:translate(-50%,-50%) scale(.5);opacity:.8} 100%{transform:translate(-50%,-50%) scale(1.5);opacity:0} }
+.omv-label { position:absolute; top:-28px; left:50%; transform:translateX(-50%); white-space:nowrap; background:var(--gold); color:var(--dk1); font-size:.65rem; font-weight:800; padding:3px 10px; border-radius:20px; font-family:'Ubuntu',sans-serif; }
+.omv-footer { padding:1rem 1.25rem; border-top:1px solid rgba(255,255,255,.06); }
+.omv-addr { font-size:.78rem; color:rgba(255,255,255,.55); font-family:'Ubuntu',sans-serif; line-height:1.55; }
+.omv-addr strong { color:rgba(255,255,255,.82); display:block; margin-bottom:2px; }
+.omv-map-link { display:inline-flex; align-items:center; gap:4px; margin-top:.5rem; font-size:.7rem; color:var(--bluel); font-family:'Ubuntu',sans-serif; text-decoration:none; }
+
+/* ════ FAQ  (light) ════ */
+.faq-sec { background:var(--lt2); border-top:1px solid #e5ecf6; padding:5.5rem 5%; }
+.faq-inner { max-width:1180px; margin:0 auto; }
+.faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2.5rem; }
+.faq-item { background:var(--lt1); border:1px solid #dde8f5; border-radius:12px; overflow:hidden; cursor:pointer; transition:box-shadow .2s; }
+.faq-item:hover { box-shadow:0 4px 20px rgba(10,22,40,.07); }
+.faq-q { display:flex; align-items:center; justify-content:space-between; padding:1.25rem 1.5rem; gap:1rem; }
+.faq-q-txt { font-size:.88rem; font-weight:700; color:var(--ink1); font-family:'Ubuntu',sans-serif; line-height:1.4; }
+.faq-arr { font-size:.9rem; color:var(--ink4); flex-shrink:0; transition:transform .2s; }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .3s ease; }
+.faq-a-inner { padding:0 1.5rem 1.25rem; font-size:.82rem; color:var(--ink3); line-height:1.7; font-family:'Ubuntu',sans-serif; }
+.faq-item.open .faq-arr { transform:rotate(90deg); }
+.faq-item.open .faq-a { max-height:300px; }
+.faq-item.open .faq-q { border-bottom:1px solid #e5ecf6; }
+
+/* ════ FOOTER BOTTOM FIX + SCROLL TOP ════ */
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; padding:1.1rem 5%; border-top:1px solid rgba(255,255,255,.08); flex-wrap:nowrap; gap:1rem; }
+.footer-copy { font-size:.78rem; color:rgba(255,255,255,.35); white-space:nowrap; }
+.footer-legal { display:flex; gap:1.5rem; align-items:center; }
+.footer-legal a { font-size:.78rem; color:rgba(255,255,255,.35); text-decoration:none; transition:color .2s; }
+.footer-legal a:hover { color:rgba(255,255,255,.75); }
+#scroll-top { position:fixed; bottom:2rem; right:2rem; width:44px; height:44px; border-radius:50%; background:var(--blue); color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.1rem; opacity:0; transform:translateY(12px); transition:opacity .3s,transform .3s; z-index:999; pointer-events:none; }
+#scroll-top.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
+#scroll-top:hover { background:#0c447c; }
+
+/* ════ RESPONSIVE ════ */
+@media(max-width:900px){
+  .ch-row,.form-layout,.office-layout { grid-template-columns:1fr; gap:2.5rem; }
+  .inquiry-types { grid-template-columns:repeat(3,1fr); }
+  .next-steps { grid-template-columns:1fr 1fr; }
+  .next-steps::before { display:none; }
+  .contacts-grid { grid-template-columns:1fr; }
+  .faq-grid { grid-template-columns:1fr; }
+}
+@media(max-width:600px){
+  .inquiry-types { grid-template-columns:1fr 1fr; }
+  .next-steps { grid-template-columns:1fr; }
+  .fg-2 { grid-template-columns:1fr; }
+  .ch-sla { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav" role="banner">
+  <a href="index.html#home" class="nav-logo" aria-label="iRonic Health Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">Health System Integration Technology</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="Main navigation">
+    <a href="index.html#problem">Problem</a>
+    <a href="platform.html">Platform</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="index.html#dashboard">Dashboard</a>
+    <a href="index.html#market">Market</a>
+    <a href="index.html#model">Revenue</a>
+    <a href="team.html">Team</a>
+    <a href="investors.html">Investors</a>
+  </nav>
+  <div class="nav-right">
+    <a href="ar/index.html" class="btn-lang">🌐 عربي</a>
+    <a href="contact.html" class="btn-demo nav-active">Contact →</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html#problem">Problem</a>
+  <a href="platform.html">Platform</a>
+  <a href="ecosystem.html">Ecosystem</a>
+  <a href="index.html#dashboard">Dashboard</a>
+  <a href="index.html#market">Market</a>
+  <a href="index.html#model">Revenue</a>
+  <a href="team.html">Team</a>
+  <a href="investors.html">Investors</a>
+  <a href="contact.html" class="mobile-demo-btn">Contact Us →</a>
+</div>
+
+<main>
+
+<!-- ══════════════════════════════════════
+   SECTION 1 · HERO   ░ dark
+══════════════════════════════════════ -->
+<section class="ch-hero" id="contact-top" aria-label="Contact overview">
+  <div class="ch-hero-bg" aria-hidden="true"></div>
+  <div class="ch-hero-grid" aria-hidden="true"></div>
+  <div class="ch-inner">
+    <div class="ch-row reveal">
+      <div class="ch-left">
+        <div class="ch-badge">📬 We Respond in 24 Hours</div>
+        <h1 class="ch-h1">Get in Touch.<br><em>Let's Build Together.</em></h1>
+        <p class="ch-sub">Whether you're an insurer exploring our 90-day pilot, an investor reviewing our $1M seed round, or a pharmacy network asking about integration — there's a right channel for your inquiry and a person who will respond personally.</p>
+        <div class="ch-sla">
+          <div class="ch-sla-pill"><div class="csp-ico">⚡</div><div class="csp-txt">24h response · All inquiries</div></div>
+          <div class="ch-sla-pill"><div class="csp-ico">🔒</div><div class="csp-txt">PDPL 151/2020 · Data protection</div></div>
+          <div class="ch-sla-pill"><div class="csp-ico">🗣️</div><div class="csp-txt">Arabic & English · عربي وإنجليزي</div></div>
+        </div>
+      </div>
+      <div class="ch-right">
+        <div class="ch-direct-title">Direct contacts — click to email</div>
+        <div class="ch-dir-cards">
+          <a href="mailto:chairman@ironicgmi.com" class="ch-dir-card">
+            <div class="cdc-avatar" style="background:rgba(55,138,221,.2);border:2px solid #378add">SH</div>
+            <div class="cdc-info">
+              <div class="cdc-name">Eng. Sherif Shawqi</div>
+              <div class="cdc-role">Chairman &amp; CEO · Demo &amp; Investor inquiries</div>
+              <div class="cdc-email">chairman@ironicgmi.com · +20 155 555 6697</div>
+            </div>
+            <div class="cdc-arr">→</div>
+          </a>
+          <a href="mailto:islam@ironicigmi.com" class="ch-dir-card">
+            <div class="cdc-avatar" style="background:rgba(29,158,117,.2);border:2px solid #1d9e75">DI</div>
+            <div class="cdc-info">
+              <div class="cdc-name">Dr. Islam Al-Midani</div>
+              <div class="cdc-role">Medical Director · Clinical &amp; compliance inquiries</div>
+              <div class="cdc-email">islam@ironicigmi.com · +20 150 828 1948</div>
+            </div>
+            <div class="cdc-arr">→</div>
+          </a>
+          <a href="mailto:investor@ironicigmi.com" class="ch-dir-card">
+            <div class="cdc-avatar" style="background:rgba(201,168,76,.15);border:2px solid #c9a84c">💼</div>
+            <div class="cdc-info">
+              <div class="cdc-name">Investor Relations</div>
+              <div class="cdc-role">Seed round · Deck &amp; data room requests</div>
+              <div class="cdc-email">investor@ironicigmi.com</div>
+            </div>
+            <div class="cdc-arr">→</div>
+          </a>
+          <a href="mailto:info@ironicgmi.com" class="ch-dir-card">
+            <div class="cdc-avatar" style="background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.2)">📧</div>
+            <div class="cdc-info">
+              <div class="cdc-name">General Inquiries</div>
+              <div class="cdc-role">Press · Partnerships · All other questions</div>
+              <div class="cdc-email">info@ironicgmi.com · +44 7308 892741</div>
+            </div>
+            <div class="cdc-arr">→</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+   SECTION 2 · INQUIRY TYPE   ░ light
+══════════════════════════════════════ -->
+<section class="inquiry-sel-sec" id="inquiry-type" aria-labelledby="it-heading">
+  <div class="is-inner">
+    <div class="reveal">
+      <div class="is-label">Step 1 — Select Your Inquiry</div>
+      <h2 class="is-h2" id="it-heading">What Can We Help You With?</h2>
+      <p class="is-sub">Select a category to tailor the form and direct your message to the right person automatically.</p>
+    </div>
+    <div class="inquiry-types reveal">
+      <div class="it-card selected" onclick="selectType(this,'demo')" id="it-demo">
+        <div class="it-ico">🚀</div>
+        <div class="it-label">Request a Demo</div>
+        <div class="it-desc">90-day pilot · Loss ratio improvement · Claims automation</div>
+      </div>
+      <div class="it-card" onclick="selectType(this,'investor')" id="it-investor">
+        <div class="it-ico">💼</div>
+        <div class="it-label">Investor Inquiry</div>
+        <div class="it-desc">$1M seed round · Deck request · Data room access</div>
+      </div>
+      <div class="it-card" onclick="selectType(this,'partner')" id="it-partner">
+        <div class="it-ico">🤝</div>
+        <div class="it-label">Partnership</div>
+        <div class="it-desc">TPA · Hospital · Pharmacy network · Lab integration</div>
+      </div>
+      <div class="it-card" onclick="selectType(this,'media')" id="it-media">
+        <div class="it-ico">📰</div>
+        <div class="it-label">Press &amp; Media</div>
+        <div class="it-desc">Interviews · Data requests · Story collaboration</div>
+      </div>
+      <div class="it-card" onclick="selectType(this,'general')" id="it-general">
+        <div class="it-ico">💬</div>
+        <div class="it-label">General Question</div>
+        <div class="it-desc">Platform · Compliance · Anything else</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+   SECTION 3 · FORM   ░ dark
+══════════════════════════════════════ -->
+<section class="form-sec" id="contact-form" aria-labelledby="form-heading">
+  <div class="form-inner">
+    <div class="form-layout reveal">
+
+      <!-- Left context -->
+      <div class="form-ctx">
+        <div class="fctx-type-display" id="form-type-display">
+          <div class="fcd-ico" id="fcd-ico">🚀</div>
+          <div>
+            <div class="fcd-label" id="fcd-label">Requesting a Demo</div>
+            <div class="fcd-hint" id="fcd-hint">Sherif Shawqi will respond personally within 24 hours</div>
+          </div>
+        </div>
+        <div class="fctx-eyebrow" id="form-eyebrow">90-Day Pilot · Zero Risk</div>
+        <h2 class="fctx-h" id="form-heading"><span id="fctx-h-txt">See iRonic Health<br>in Your <em>Environment</em></span></h2>
+        <div class="fctx-desc" id="form-desc">We earn only when fraud is validated — 25% of savings, no platform fee during the pilot. Every claim decision comes with a full FRA audit trail and CMO oversight. Your team is live in 4 weeks.</div>
+        <div class="fctx-points" id="form-points">
+          <div class="fcp-item"><div class="fcp-ico">🎯</div><div class="fcp-txt"><strong>Zero upfront cost</strong> — 25% of validated fraud savings only, no platform fee during pilot</div></div>
+          <div class="fcp-item"><div class="fcp-ico">⚡</div><div class="fcp-txt"><strong>Live in under 4 weeks</strong> — API integration with GlobeMed, Bupa, AXA already mapped</div></div>
+          <div class="fcp-item"><div class="fcp-ico">📊</div><div class="fcp-txt"><strong>Real-time ROI dashboard</strong> — every fraud detection documented, loss ratio improvement visible</div></div>
+          <div class="fcp-item"><div class="fcp-ico">🛡️</div><div class="fcp-txt"><strong>FRA compliant from day one</strong> — CMO sign-off on every AI decision, full audit trail</div></div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div>
+        <div class="form-box">
+          <div class="form-box-bar">
+            <span class="fbb-title" id="form-box-title">Request a Demo · iRonic Health</span>
+            <div class="fbb-sla"><div class="fbb-dot"></div><span class="fbb-txt">24H RESPONSE</span></div>
+          </div>
+          <div class="form-body" id="contact-form-body">
+
+            <!-- Always-visible fields -->
+            <div class="fg-2">
+              <div class="fg"><label class="fg-lbl">Full Name *</label><input type="text" class="fg-inp" id="cf-name" placeholder="Your name"></div>
+              <div class="fg"><label class="fg-lbl">Organisation *</label><input type="text" class="fg-inp" id="cf-org" placeholder="Company or fund"></div>
+            </div>
+            <div class="fg-2">
+              <div class="fg"><label class="fg-lbl">Email *</label><input type="email" class="fg-inp" id="cf-email" placeholder="you@org.com"></div>
+              <div class="fg"><label class="fg-lbl">Phone</label><input type="tel" class="fg-inp" placeholder="+20 or +44..."></div>
+            </div>
+
+            <!-- DEMO-specific -->
+            <div class="form-conditional show" id="fc-demo">
+              <div class="fg-2">
+                <div class="fg"><label class="fg-lbl">Your Role *</label>
+                  <select class="fg-sel" id="cf-role">
+                    <option value="" disabled selected>Select role</option>
+                    <option>Health Insurer (Egypt)</option>
+                    <option>TPA — Third Party Administrator</option>
+                    <option>Corporate HR / Self-Funded Plan</option>
+                    <option>Hospital / Healthcare Provider</option>
+                    <option>Pharmacy Network</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="fg"><label class="fg-lbl">Members / Lives</label>
+                  <select class="fg-sel">
+                    <option value="" disabled selected>Approximate size</option>
+                    <option>Under 10,000</option>
+                    <option>10,000 – 50,000</option>
+                    <option>50,000 – 200,000</option>
+                    <option>200,000 – 1M</option>
+                    <option>1M+</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- INVESTOR-specific -->
+            <div class="form-conditional" id="fc-investor">
+              <div class="fg-2">
+                <div class="fg"><label class="fg-lbl">Investor Type *</label>
+                  <select class="fg-sel" id="cf-inv-type">
+                    <option value="" disabled selected>Select type</option>
+                    <option>Angel Investor</option>
+                    <option>Venture Capital</option>
+                    <option>Family Office</option>
+                    <option>Corporate VC / CVC</option>
+                    <option>Impact Investor</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="fg"><label class="fg-lbl">Ticket Size</label>
+                  <select class="fg-sel">
+                    <option value="" disabled selected>Range (optional)</option>
+                    <option>Under $25K</option>
+                    <option>$25K – $100K</option>
+                    <option>$100K – $250K</option>
+                    <option>$250K – $500K</option>
+                    <option>$500K+</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- PARTNER-specific -->
+            <div class="form-conditional" id="fc-partner">
+              <div class="fg"><label class="fg-lbl">Organisation Type *</label>
+                <select class="fg-sel" id="cf-partner-type">
+                  <option value="" disabled selected>What kind of organisation?</option>
+                  <option>TPA (Third Party Administrator)</option>
+                  <option>Hospital / Clinic Network</option>
+                  <option>Pharmacy Chain</option>
+                  <option>Lab / Diagnostics Centre</option>
+                  <option>Technology Provider</option>
+                  <option>Insurer seeking technology partner</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- MEDIA-specific -->
+            <div class="form-conditional" id="fc-media">
+              <div class="fg"><label class="fg-lbl">Publication / Outlet *</label>
+                <input type="text" class="fg-inp" id="cf-media-pub" placeholder="e.g. Wamda, MENAbytes, Reuters Health">
+              </div>
+            </div>
+
+            <!-- Message - always visible -->
+            <div class="fg" style="margin-top:.25rem">
+              <label class="fg-lbl" id="cf-msg-label">Message</label>
+              <textarea class="fg-ta" id="cf-msg" placeholder="Tell us what you're looking to achieve, or ask anything about the platform..."></textarea>
+            </div>
+
+            <button class="form-submit-btn" id="cf-submit-btn" onclick="submitContactForm(event)">
+              Send Request → We'll Respond in 24 Hours
+            </button>
+            <div class="fg-note">🔒 Your information is never shared. PDPL 151/2020 compliant.</div>
+
+          </div>
+          <div class="form-success" id="contact-success">
+            <div class="fsucc-ico">✅</div>
+            <div class="fsucc-ttl">Message Sent Successfully!</div>
+            <div class="fsucc-sub">We'll respond to you personally within 24 hours.<br>Check your inbox for confirmation.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+   SECTION 4 · WHAT HAPPENS NEXT   ░ white
+══════════════════════════════════════ -->
+<section style="background:#fff;padding:5.5rem 5%;border-bottom:1px solid #e5ecf6" id="next-steps" aria-labelledby="next-heading">
+  <div style="max-width:1180px;margin:0 auto">
+    <div class="reveal" style="text-align:center">
+      <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif">After You Submit</div>
+      <h2 style="font-size:1.9rem;font-weight:900;color:var(--ink1);font-family:'Kufam',sans-serif;letter-spacing:-.02em;margin-bottom:.5rem" id="next-heading">What Happens <span style="color:var(--blue)">Next</span></h2>
+      <p style="font-size:.88rem;color:var(--ink4);font-family:'Ubuntu',sans-serif;max-width:480px;margin:0 auto">Every inquiry follows a clear, predictable process. No black boxes, no auto-responses, no delays beyond what we promise.</p>
+    </div>
+    <div class="next-steps reveal" style="margin-top:3rem">
+      <div class="ns-item">
+        <div class="ns-node active">📨</div>
+        <div class="ns-time">Immediately</div>
+        <div class="ns-title">Auto-Confirmation</div>
+        <div class="ns-desc">You receive an automated email confirming your message was received and which team member will respond.</div>
+      </div>
+      <div class="ns-item">
+        <div class="ns-node active">👤</div>
+        <div class="ns-time">Within 24 Hours</div>
+        <div class="ns-title">Personal Response</div>
+        <div class="ns-desc">Sherif or Dr. Islam responds personally — not a template. They'll address your specific questions directly.</div>
+      </div>
+      <div class="ns-item">
+        <div class="ns-node">📅</div>
+        <div class="ns-time">Within 48 Hours</div>
+        <div class="ns-title">Scoping Call</div>
+        <div class="ns-desc">For Demo and Partnership inquiries, a focused 30-minute call is scheduled to scope the pilot or integration.</div>
+      </div>
+      <div class="ns-item">
+        <div class="ns-node green">🚀</div>
+        <div class="ns-time">Within 4 Weeks</div>
+        <div class="ns-title">Pilot Live</div>
+        <div class="ns-desc">For qualified Demo inquiries, the 90-day pilot can be live within 4 weeks of the scoping call and data agreement.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+   SECTION 5 · DIRECT CONTACTS   ░ light blue
+══════════════════════════════════════ -->
+<section class="contacts-sec" id="team-contacts" aria-labelledby="contacts-heading">
+  <div class="contacts-inner">
+    <div class="reveal">
+      <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif">The Right Inbox, First Time</div>
+      <h2 style="font-size:1.9rem;font-weight:900;color:var(--ink1);font-family:'Kufam',sans-serif;letter-spacing:-.02em;margin-bottom:.5rem" id="contacts-heading">Contact the Right Person <span style="color:var(--blue)">Directly</span></h2>
+      <p style="font-size:.88rem;color:var(--ink4);font-family:'Ubuntu',sans-serif;max-width:520px">We don't have a support ticket system. Every inquiry goes to a person who can answer it — and that person responds.</p>
+    </div>
+    <div class="contacts-grid">
+
+      <div class="contact-person-card reveal">
+        <div class="cpc-header cpc-header-sherif">
+          <div class="cpc-avatar cpca-blue">SH</div>
+          <div class="cpc-name">Eng. Sherif Shawqi</div>
+          <div class="cpc-title">Chairman &amp; Executive Director</div>
+        </div>
+        <div class="cpc-body">
+          <div class="cpc-for">For: Demo · Investment · Partnerships · GTM</div>
+          <div class="cpc-links">
+            <a class="cpc-link" href="mailto:chairman@ironicgmi.com">
+              <span class="cpc-link-ico">📧</span><span class="cpc-link-txt">chairman@ironicgmi.com</span>
+            </a>
+            <a class="cpc-link" href="tel:+201555556697">
+              <span class="cpc-link-ico">📞</span><span class="cpc-link-txt">+20 155 555 6697</span>
+            </a>
+          </div>
+          <div class="cpc-topics">
+            <span class="cpc-topic">90-Day Pilot</span><span class="cpc-topic">Investor Deck</span>
+            <span class="cpc-topic">GlobeMed</span><span class="cpc-topic">Series A</span><span class="cpc-topic">Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-person-card reveal reveal-d1">
+        <div class="cpc-header cpc-header-islam">
+          <div class="cpc-avatar cpca-green">DI</div>
+          <div class="cpc-name">Dr. Islam Al-Midani</div>
+          <div class="cpc-title">Co-Founder &amp; Medical Director</div>
+        </div>
+        <div class="cpc-body">
+          <div class="cpc-for">For: Clinical · Compliance · FRA · CMO queries</div>
+          <div class="cpc-links">
+            <a class="cpc-link" href="mailto:islam@ironicigmi.com">
+              <span class="cpc-link-ico">📧</span><span class="cpc-link-txt">islam@ironicigmi.com</span>
+            </a>
+            <a class="cpc-link" href="tel:+201508281948">
+              <span class="cpc-link-ico">📞</span><span class="cpc-link-txt">+20 150 828 1948</span>
+            </a>
+          </div>
+          <div class="cpc-topics">
+            <span class="cpc-topic">FRA Compliance</span><span class="cpc-topic">CMO Governance</span>
+            <span class="cpc-topic">Fraud Taxonomy</span><span class="cpc-topic">PDPL</span><span class="cpc-topic">AI Ethics</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-person-card reveal reveal-d2">
+        <div class="cpc-header cpc-header-gen">
+          <div class="cpc-avatar cpca-purple">📬</div>
+          <div class="cpc-name">General &amp; Investor Inbox</div>
+          <div class="cpc-title">All other inquiries · UK &amp; International</div>
+        </div>
+        <div class="cpc-body">
+          <div class="cpc-for">For: Press · General · UK enquiries · Investor deck</div>
+          <div class="cpc-links">
+            <a class="cpc-link" href="mailto:investor@ironicigmi.com">
+              <span class="cpc-link-ico">💼</span><span class="cpc-link-txt">investor@ironicigmi.com</span>
+            </a>
+            <a class="cpc-link" href="mailto:info@ironicgmi.com">
+              <span class="cpc-link-ico">📧</span><span class="cpc-link-txt">info@ironicgmi.com</span>
+            </a>
+            <a class="cpc-link" href="tel:+447308892741">
+              <span class="cpc-link-ico">📞</span><span class="cpc-link-txt">+44 7308 892741</span>
+            </a>
+          </div>
+          <div class="cpc-topics">
+            <span class="cpc-topic">Investor Relations</span><span class="cpc-topic">Press</span>
+            <span class="cpc-topic">Accelerators</span><span class="cpc-topic">General</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+   SECTION 6 · OFFICE   ░ dark
+══════════════════════════════════════ -->
+<section class="office-sec" id="office" aria-labelledby="office-heading">
+  <div class="office-inner">
+    <div class="reveal">
+      <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.32);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif">Where to Find Us</div>
+      <h2 style="font-size:1.9rem;font-weight:900;color:#fff;font-family:'Kufam',sans-serif;letter-spacing:-.02em;margin-bottom:.5rem" id="office-heading">Our Office &amp;<br><span style="color:var(--gold)">Location</span></h2>
+    </div>
+    <div class="office-layout">
+      <div class="reveal">
+        <div class="office-card">
+          <div class="oc-label">Primary Office</div>
+          <div class="oc-rows">
+            <div class="oc-row"><div class="oc-ico">📍</div><div class="oc-body"><div class="oc-key">Address</div><div class="oc-val">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</div></div></div>
+            <div class="oc-row"><div class="oc-ico">📧</div><div class="oc-body"><div class="oc-key">General Email</div><div class="oc-val"><a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a></div></div></div>
+            <div class="oc-row"><div class="oc-ico">📞</div><div class="oc-body"><div class="oc-key">Cairo (CEO)</div><div class="oc-val"><a href="tel:+201555556697">+20 155 555 6697</a></div></div></div>
+            <div class="oc-row"><div class="oc-ico">📞</div><div class="oc-body"><div class="oc-key">UK / International</div><div class="oc-val"><a href="tel:+447308892741">+44 7308 892741</a></div></div></div>
+            <div class="oc-row"><div class="oc-ico">🕐</div><div class="oc-body"><div class="oc-key">Office Hours</div><div class="oc-val">Sunday – Thursday · 9am – 6pm EET (UTC+2)</div></div></div>
+            <div class="oc-row"><div class="oc-ico">🌍</div><div class="oc-body"><div class="oc-key">Response Languages</div><div class="oc-val">English · Arabic (عربي)</div></div></div>
+          </div>
+        </div>
+        <div class="office-card" style="margin-top:1.25rem">
+          <div class="oc-label">Legal Entity</div>
+          <div class="oc-rows">
+            <div class="oc-row"><div class="oc-ico">🏢</div><div class="oc-body"><div class="oc-key">Registered Name</div><div class="oc-val">Ironic Group (إيرونيك جروب)</div></div></div>
+            <div class="oc-row"><div class="oc-ico">⚖️</div><div class="oc-body"><div class="oc-key">Classification</div><div class="oc-val">B2B SaaS · Decision-Support Software</div></div></div>
+            <div class="oc-row"><div class="oc-ico">🔒</div><div class="oc-body"><div class="oc-key">Compliance</div><div class="oc-val">FRA · PDPL 151/2020 · Egyptian AI Charter</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="office-map-visual">
+          <div class="omv-map">
+            <div class="omv-grid"></div>
+            <div class="omv-nile"></div>
+            <div class="omv-dot">
+              <div class="omv-label">iRonic Health HQ</div>
+              <div class="omv-ring"></div>
+              <div class="omv-ring omv-ring2"></div>
+              <div class="omv-pin"></div>
+            </div>
+          </div>
+          <div class="omv-footer">
+            <div class="omv-addr">
+              <strong>Nile City Towers · North Tower</strong>
+              Corniche El Nile, Cairo, Egypt · Nile-side landmark · 20 minutes from Cairo Airport
+            </div>
+            <a class="omv-map-link" href="https://maps.google.com/?q=Nile+City+Towers+Cairo" target="_blank" rel="noopener">Open in Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+   SECTION 7 · FAQ   ░ light
+══════════════════════════════════════ -->
+<section class="faq-sec" id="faq" aria-labelledby="faq-heading">
+  <div class="faq-inner">
+    <div class="reveal">
+      <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif">Common Questions</div>
+      <h2 style="font-size:1.9rem;font-weight:900;color:var(--ink1);font-family:'Kufam',sans-serif;letter-spacing:-.02em;margin-bottom:.5rem" id="faq-heading">Before You Reach Out —<br><span style="color:var(--blue)">Quick Answers</span></h2>
+      <p style="font-size:.88rem;color:var(--ink4);font-family:'Ubuntu',sans-serif;max-width:500px;margin-bottom:0">These are the questions we receive most often. If your question isn't here, the form above is the fastest path to an answer.</p>
+    </div>
+    <div class="faq-grid reveal">
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-txt">What's included in the 90-day pilot?</span><span class="faq-arr">›</span></div>
+        <div class="faq-a"><div class="faq-a-inner">The pilot includes: full AI fraud detection deployment on a sub-book of your claims (50K–500K lives), zero platform fee (we earn 25% of validated savings only), a live iRonic Health dashboard for your operations and CMO teams, FRA-compliant audit trails on every claim decision, CMO governance layer activated from day one, and a documented ROI report at the 90-day mark showing exact fraud recovered, loss ratio change, and approval time improvement.</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-txt">How quickly can we go live?</span><span class="faq-arr">›</span></div>
+        <div class="faq-a"><div class="faq-a-inner">4 weeks from a signed pilot agreement and data access grant to the first live claim being scored. The process: Week 1 — API mapping and sandbox setup. Week 2 — historical data validation and model calibration. Week 3 — production API connection. Week 4 — dashboard live, CMO layer active, pilot clock starts. Pre-built connectors for GlobeMed, Bupa Egypt, and AXA One Health shorten this further for those TPAs and insurers.</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-txt">Do you work with smaller insurers (under 100K lives)?</span><span class="faq-arr">›</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We structure pilots by sub-book, not full portfolio. A 50K-life pilot on a specific product line (e.g., group medical claims) is a valid and common starting point. The pilot is designed to prove ROI on a manageable scope, then expand. Many insurers start with their pharmacy claims sub-book — the highest-fraud channel — before expanding to full claims orchestration.</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-txt">Is iRonic Health a licensed insurer or TPA?</span><span class="faq-arr">›</span></div>
+        <div class="faq-a"><div class="faq-a-inner">No — and this is important. iRonic Health is legally classified as a Decision-Support Software Provider (SaaS). Ironic Group does not issue insurance policies, receive premiums, act as a TPA, or process claims on behalf of members. This means: no FRA insurance licence is required for our clients to deploy us, no SLA risk for us being treated as an insurer, and a much faster procurement path than a regulated financial product. We are software that insurers and TPAs use to make their decisions smarter.</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-txt">What data do we need to share to start the pilot?</span><span class="faq-arr">›</span></div>
+        <div class="faq-a"><div class="faq-a-inner">For the sandbox phase (Week 1–2): 3 months of historical claims data (anonymized is acceptable for model calibration), your provider network roster and pricing benchmarks, and member enrollment records for the sub-book. For the production phase (Week 3+): API access to your live claims workflow (REST or batch feed), provider ID mapping, and member eligibility data. A Data Processing Agreement (PDPL-compliant) is signed before any data exchange.</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-txt">Do you have references or pilot results to share?</span><span class="faq-arr">›</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Pilot metrics are available to qualified prospects after signing an NDA — which we execute within 24 hours. We can share anonymized case evidence (specific fraud archetypes detected, EGP recovered, approval time reduction) on a confidential basis with CFOs, CMOs, and CIOs during scoping calls. We do not publicly share client names or specific results without explicit consent.</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-txt">Can you integrate with our existing TPA or claims system?</span><span class="faq-arr">›</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. iRonic Health is API-first — we plug into your existing workflow, not replace it. We support REST APIs, webhooks, and batch feed integrations. We have pre-built connectors for GlobeMed Egypt, Bupa Egypt, and AXA One Health. For other systems, a custom integration is completed during Week 2–3 of the onboarding process. No rip-and-replace, no disruption to your operations team.</div></div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-q-txt">I'm an investor — how do I get the full investor deck?</span><span class="faq-arr">›</span></div>
+        <div class="faq-a"><div class="faq-a-inner">Use the form above (select "Investor Inquiry") or email investor@ironicigmi.com directly. Include your name, fund/firm name, and investor type. We respond within 24 hours with the full investor deck, 3-year financial model, and data room access instructions. NDA available on request. Our $1M seed round is open — SAFE Note or Convertible Note, range $800K–$1.2M.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
+        <img src="assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'">
+      </a>
+      <p class="footer-brand-desc">Egypt's first AI-powered health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="#contact-top">Get in Touch</a>
+        <a href="#inquiry-type">Inquiry Types</a>
+        <a href="#contact-form">Contact Form</a>
+        <a href="#team-contacts">Direct Contacts</a>
+        <a href="#office">Office &amp; Location</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="platform.html">Platform</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="team.html">Team</a>
+        <a href="investors.html">Investors</a>
+        <a href="ar/index.html">Arabic (عربي)</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Reach Us</div>
+        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+        <span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · All rights reserved</div>
+    <div class="footer-legal">
+      <a href="#">Privacy (PDPL 151/2020)</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FRA Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── CONFIG per inquiry type ── */
+var typeConfig = {
+  demo: {
+    ico:'🚀', label:'Requesting a Demo', hint:'Sherif Shawqi will respond personally within 24 hours',
+    eyebrow:'90-Day Pilot · Zero Risk', title:'See iRonic Health<br>in Your <em>Environment</em>',
+    desc:'We earn only when fraud is validated — 25% of savings, no platform fee during the pilot. Every decision comes with a full FRA audit trail and CMO oversight.',
+    btnClass:'', btnTxt:'Send Demo Request → Respond in 24h',
+    boxTitle:'Request a Demo · iRonic Health',
+    points:['🎯|<strong>Zero upfront cost</strong> — 25% of validated savings only, no platform fee','⚡|<strong>Live in under 4 weeks</strong> — API connectors for GlobeMed, Bupa, AXA mapped','📊|<strong>Real-time ROI</strong> — every fraud flag documented, loss ratio visible daily','🛡️|<strong>FRA compliant</strong> — CMO sign-off on every AI decision, full audit trail']
+  },
+  investor: {
+    ico:'💼', label:'Investor Inquiry', hint:'investor@ironicigmi.com — deck within 24 hours',
+    eyebrow:'$1M Seed · SAFE Note', title:'Request the Full<br><em>Investor Deck</em>',
+    desc:'$1M seed round open. SAFE Note or Convertible Note. 70% gross margins, 20–30× LTV/CAC, 18-month runway. Full deck, 3-year model, and data room sent within 24 hours.',
+    btnClass:'gold-btn', btnTxt:'Request Investor Deck →',
+    boxTitle:'Investor Inquiry · iRonic Health',
+    points:['📈|<strong>$1M seed · SAFE Note</strong> — range $800K–$1.2M · target close Q3 2026','💰|<strong>70% gross margin</strong> — 20–30× LTV/CAC · 4–6 month CAC payback','📅|<strong>Series A at Month 12</strong> — $500K ARR milestone · 2–3 anchor clients','📄|<strong>Full data room</strong> — 3-year model, pilot metrics, FRA compliance docs']
+  },
+  partner: {
+    ico:'🤝', label:'Partnership Inquiry', hint:'We respond to partnership inquiries within 24 hours',
+    eyebrow:'Ecosystem Integration', title:'Join the iRonic<br><em>Health Network</em>',
+    desc:'Hospitals, TPAs, pharmacy chains, and labs that integrate with iRonic Health get faster payment, pre-verified eligibility, and access to 1.2M insured lives across 18 insurers.',
+    btnClass:'', btnTxt:'Send Partnership Inquiry →',
+    boxTitle:'Partnership Inquiry · iRonic Health',
+    points:['🏥|<strong>Hospitals</strong> — pre-auth in &lt;4h, guaranteed 48h payment, routing ranking boost','💊|<strong>Pharmacies</strong> — instant eligibility check, counterfeit protection, faster payment','🔬|<strong>Labs</strong> — pre-verified test orders, zero fraudulent referral risk','⚙️|<strong>TPAs</strong> — AI upgrade to your existing claims stack, zero disruption']
+  },
+  media: {
+    ico:'📰', label:'Press & Media Inquiry', hint:'info@ironicgmi.com — press kit available immediately',
+    eyebrow:'Media & Press', title:'Tell Egypt\'s<br><em>Healthcare Story</em>',
+    desc:'iRonic Health is the first company in Egypt\'s history to deploy AI fraud detection in private health insurance at scale. We welcome investigative journalism, data-driven stories, and thought leadership partnerships.',
+    btnClass:'', btnTxt:'Send Press Inquiry →',
+    boxTitle:'Press Inquiry · iRonic Health',
+    points:['📊|<strong>Data available</strong> — Egypt fraud rates, market sizing, regulatory context','🎙️|<strong>Interviews</strong> — CEO and Medical Director available for comment','📁|<strong>Press kit</strong> — logos, fact sheet, company background sent immediately','📰|<strong>Exclusive stories</strong> — we work with journalists on embargo basis']
+  },
+  general: {
+    ico:'💬', label:'General Question', hint:'info@ironicgmi.com — all questions welcome',
+    eyebrow:'General Inquiry', title:'We\'re Happy to<br><em>Answer Anything</em>',
+    desc:'No question is too small or too early-stage. Whether you\'re a student researching Egypt\'s insurtech market or a hospital CFO trying to understand our pricing — ask.',
+    btnClass:'', btnTxt:'Send Your Question →',
+    boxTitle:'General Inquiry · iRonic Health',
+    points:['💬|<strong>No filter</strong> — any question about the platform, market, or team','🎓|<strong>Student research</strong> — happy to contribute to academic work on Egypt\'s healthcare','🌍|<strong>International inquiries</strong> — KSA, UAE, global insurtech interest welcome','⚡|<strong>Quick answers</strong> — check the FAQ above for common questions']
+  }
+};
+
+var currentType = 'demo';
+
+function selectType(card, type) {
+  document.querySelectorAll('.it-card').forEach(function(c){ c.classList.remove('selected'); });
+  card.classList.add('selected');
+  currentType = type;
+  var cfg = typeConfig[type];
+  /* Update display */
+  document.getElementById('fcd-ico').textContent    = cfg.ico;
+  document.getElementById('fcd-label').textContent  = cfg.label;
+  document.getElementById('fcd-hint').textContent   = cfg.hint;
+  document.getElementById('form-eyebrow').textContent = cfg.eyebrow;
+  document.getElementById('fctx-h-txt').innerHTML   = cfg.title;
+  document.getElementById('form-desc').textContent  = cfg.desc;
+  document.getElementById('form-box-title').textContent = cfg.boxTitle;
+  /* Points */
+  var ptsEl = document.getElementById('form-points');
+  ptsEl.innerHTML = cfg.points.map(function(p){
+    var parts = p.split('|');
+    return '<div class="fcp-item"><div class="fcp-ico">'+parts[0]+'</div><div class="fcp-txt">'+parts[1]+'</div></div>';
+  }).join('');
+  /* Conditional sections */
+  ['demo','investor','partner','media'].forEach(function(t){
+    var el = document.getElementById('fc-'+t);
+    if(el) el.classList.toggle('show', t===type);
+  });
+  /* Submit button */
+  var btn = document.getElementById('cf-submit-btn');
+  btn.className = 'form-submit-btn' + (cfg.btnClass ? ' '+cfg.btnClass : '');
+  btn.textContent = cfg.btnTxt;
+  /* Scroll to form */
+  document.getElementById('contact-form').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* ── Form submission ── */
+function submitContactForm(e) {
+  e.preventDefault();
+  var name  = document.getElementById('cf-name').value.trim();
+  var org   = document.getElementById('cf-org').value.trim();
+  var email = document.getElementById('cf-email').value.trim();
+  var msg   = document.getElementById('cf-msg').value.trim();
+  if(!name || !org || !email){ alert('Please fill in Name, Organisation, and Email.'); return; }
+  var cfg = typeConfig[currentType];
+  var subj = encodeURIComponent(cfg.label + ' — ' + name + ' · ' + org);
+  var body = encodeURIComponent('Type: '+cfg.label+'\nName: '+name+'\nOrg: '+org+'\nEmail: '+email+(msg?'\n\nMessage:\n'+msg:''));
+  var to = (currentType==='investor') ? 'investor@ironicigmi.com' : 'chairman@ironicgmi.com';
+  window.location.href = 'mailto:'+to+'?subject='+subj+'&body='+body;
+  document.getElementById('contact-form-body').style.display = 'none';
+  document.getElementById('contact-success').style.display = 'block';
+}
+
+/* ── FAQ accordion ── */
+function toggleFaq(item) {
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!isOpen) item.classList.add('open');
+}
+
+/* ── Reveal + scroll-top ── */
+(function(){
+  var btn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', function(){ btn.classList.toggle('visible', window.scrollY > 400); }, {passive:true});
+  function initReveal(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('up'); }); return; }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); } });
+    }, {threshold:0.07, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ obs.observe(el); });
+  }
+  window.addEventListener('load', function(){ setTimeout(initReveal, 80); });
+})();
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
