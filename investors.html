@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="iRonic Health Seed Round — $1M SAFE Note. Egypt's first AI health insurance orchestration platform. 70% gross margin, 18-month runway, FRA-licensed.">
+<meta property="og:title" content="Investor Relations — iRonic Health $1M Seed Round">
+<meta property="og:description" content="$1M Seed Round open. Egypt-native AI fraud detection, TPA-first GTM, 18–36 month uncontested regulatory window. 70% gross margins.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sherif-trevo-ai.github.io/iRonicHealth/investors.html">
+<meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/H_Badge_icon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<title>Investor Relations — iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ══ INVESTOR HERO ══ */
+.inv-hero {
+  min-height: 80vh; display: flex; flex-direction: column; justify-content: center;
+  padding: 140px 5% 80px; position: relative; overflow: hidden;
+  background: linear-gradient(145deg, #060f1c 0%, #070e1b 50%, #0a1628 100%);
+}
+.inv-hero-glow {
+  position: absolute; pointer-events: none;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,.08) 0%, transparent 70%);
+  top: -100px; right: -100px;
+}
+.inv-hero-glow2 {
+  position: absolute; pointer-events: none;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(24,95,165,.06) 0%, transparent 70%);
+  bottom: 0; left: 5%;
+}
+.inv-hero-grid {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 40px 40px; pointer-events: none;
+}
+.inv-hero-inner { position: relative; z-index: 1; max-width: 900px; }
+.inv-round-badge {
+  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 1.75rem;
+  background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.3);
+  border-radius: 100px; padding: 6px 18px;
+}
+.irb-dot { width: 8px; height: 8px; border-radius: 50%; background: #c9a84c; animation: pdot 2s infinite; }
+.irb-txt { font-size: .75rem; font-weight: 700; color: #c9a84c; letter-spacing: .1em; text-transform: uppercase; font-family: 'Ubuntu', sans-serif; }
+.inv-h1 {
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem); font-weight: 900; line-height: 1.02;
+  color: #fff; letter-spacing: -.03em; margin-bottom: 1.25rem; font-family: 'Kufam', sans-serif;
+}
+.inv-h1 em { color: #c9a84c; font-style: normal; }
+.inv-h1 .blue-t { color: #378add; }
+.inv-sub { font-size: 1.05rem; color: rgba(255,255,255,.55); line-height: 1.75; max-width: 640px; margin-bottom: 2.5rem; font-family: 'Ubuntu', sans-serif; }
+.inv-hero-cards {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: .875rem; margin-bottom: 2.5rem;
+}
+.ihc {
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px; padding: 1rem 1.25rem;
+}
+.ihc.gold-border { border-color: rgba(201,168,76,.3); background: rgba(201,168,76,.06); }
+.ihc-val { font-size: 1.6rem; font-weight: 900; font-family: 'Kufam', sans-serif; color: #fff; line-height: 1; margin-bottom: .25rem; }
+.ihc-val.gold { color: #c9a84c; }
+.ihc-val.green { color: #1d9e75; }
+.ihc-val.blue { color: #378add; }
+.ihc-lbl { font-size: .68rem; color: rgba(255,255,255,.38); text-transform: uppercase; letter-spacing: .07em; font-family: 'Ubuntu', sans-serif; }
+.inv-hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-deck {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #c9a84c; color: #060f1c; padding: .875rem 2rem;
+  border-radius: 8px; font-size: .92rem; font-weight: 700;
+  font-family: 'Ubuntu', sans-serif; text-decoration: none; transition: all .2s;
+}
+.btn-deck:hover { background: #dfc06a; transform: translateY(-1px); }
+.btn-meeting {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.06); color: rgba(255,255,255,.8); padding: .875rem 2rem;
+  border-radius: 8px; font-size: .92rem; font-weight: 700; border: 1px solid rgba(255,255,255,.15);
+  font-family: 'Ubuntu', sans-serif; text-decoration: none; transition: all .2s;
+}
+.btn-meeting:hover { background: rgba(255,255,255,.1); }
+.inv-confidential { margin-top: 1.25rem; font-size: .72rem; color: rgba(255,255,255,.25); font-family: 'Ubuntu', sans-serif; }
+
+/* ══ SHARED SECTION STYLES ══ */
+.inv-sec { padding: 5.5rem 5%; border-bottom: 1px solid rgba(255,255,255,.05); }
+.inv-sec:nth-child(odd) { background: #060f1c; }
+.inv-sec:nth-child(even) { background: #0a1628; }
+.inv-sec-inner { max-width: 1200px; margin: 0 auto; }
+.inv-eyebrow { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: .625rem; font-family: 'Ubuntu', sans-serif; }
+.inv-h2 { font-size: 2.1rem; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: .875rem; font-family: 'Kufam', sans-serif; letter-spacing: -.02em; }
+.inv-h2 em { color: #c9a84c; font-style: normal; }
+.inv-lead { font-size: .92rem; color: rgba(255,255,255,.5); line-height: 1.78; margin-bottom: 2.5rem; max-width: 600px; font-family: 'Ubuntu', sans-serif; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.three-col { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+
+/* ══ INVESTMENT THESIS CARDS ══ */
+.thesis-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-top: 2.5rem; }
+.thesis-card {
+  background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px; padding: 1.75rem; position: relative; overflow: hidden;
+}
+.thesis-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.tc-blue::before { background: linear-gradient(90deg, #185fa5, #378add); }
+.tc-gold::before { background: linear-gradient(90deg, #c9a84c, #dfc06a); }
+.tc-green::before { background: linear-gradient(90deg, #0f6e56, #1d9e75); }
+.thesis-ico { font-size: 1.6rem; margin-bottom: 1rem; }
+.thesis-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .5rem; font-family: 'Ubuntu', sans-serif; }
+.thesis-desc { font-size: .82rem; color: rgba(255,255,255,.52); line-height: 1.72; font-family: 'Ubuntu', sans-serif; }
+.thesis-proof { margin-top: .875rem; padding: .625rem .875rem; border-radius: 6px; font-size: .76rem; font-family: 'Ubuntu', sans-serif; font-weight: 600; }
+.tp-blue { background: rgba(24,95,165,.12); color: #7fb3e8; }
+.tp-gold { background: rgba(201,168,76,.1); color: #c9a84c; }
+.tp-green { background: rgba(29,158,117,.1); color: #5dcaa5; }
+
+/* ══ MARKET OPPORTUNITY ══ */
+.tam-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; margin-bottom: 2rem; }
+.tam-card {
+  border-radius: 14px; padding: 2rem; text-align: center;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.tam-card.tam-t { background: rgba(24,95,165,.08); border-color: rgba(24,95,165,.2); }
+.tam-card.tam-s { background: rgba(29,158,117,.06); border-color: rgba(29,158,117,.18); }
+.tam-card.tam-o { background: rgba(201,168,76,.08); border-color: rgba(201,168,76,.25); }
+.tam-lbl { font-size: .68rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .5rem; font-family: 'Ubuntu', sans-serif; }
+.tam-t .tam-lbl { color: #7fb3e8; }
+.tam-s .tam-lbl { color: #5dcaa5; }
+.tam-o .tam-lbl { color: #c9a84c; }
+.tam-val { font-size: 2.6rem; font-weight: 900; font-family: 'Kufam', sans-serif; margin-bottom: .375rem; }
+.tam-t .tam-val { color: #378add; }
+.tam-s .tam-val { color: #1d9e75; }
+.tam-o .tam-val { color: #c9a84c; }
+.tam-desc { font-size: .76rem; color: rgba(255,255,255,.45); font-family: 'Ubuntu', sans-serif; line-height: 1.5; }
+.market-signals { display: grid; grid-template-columns: repeat(2,1fr); gap: .875rem; }
+.ms-item { display: flex; gap: .75rem; padding: 1rem 1.1rem; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; }
+.ms-ico { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.ms-body { }
+.ms-title { font-size: .83rem; font-weight: 700; color: rgba(255,255,255,.82); margin-bottom: 3px; font-family: 'Ubuntu', sans-serif; }
+.ms-desc { font-size: .76rem; color: rgba(255,255,255,.42); line-height: 1.5; font-family: 'Ubuntu', sans-serif; }
+
+/* ══ FINANCIALS ══ */
+.fin-table-wrap { overflow-x: auto; margin-bottom: 2rem; }
+.fin-table { width: 100%; border-collapse: collapse; font-family: 'Ubuntu', sans-serif; }
+.fin-table th { padding: .75rem 1.25rem; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.4); border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; white-space: nowrap; }
+.fin-table td { padding: .875rem 1.25rem; font-size: .85rem; border-bottom: 1px solid rgba(255,255,255,.05); color: rgba(255,255,255,.72); white-space: nowrap; }
+.fin-table tr:last-child td { border-bottom: none; }
+.fin-table .row-highlight td { background: rgba(201,168,76,.06); }
+.fin-table .val-gold { color: #c9a84c; font-weight: 700; }
+.fin-table .val-green { color: #1d9e75; font-weight: 700; }
+.fin-table .val-red { color: #f0997b; }
+.fin-table .val-white { color: #fff; font-weight: 700; }
+.arr-bars { display: flex; flex-direction: column; gap: .875rem; }
+.arr-bar-row { display: flex; align-items: center; gap: 1rem; }
+.arr-yr { font-size: .78rem; font-weight: 700; color: rgba(255,255,255,.6); font-family: 'Ubuntu', sans-serif; width: 36px; flex-shrink: 0; }
+.arr-track { flex: 1; background: rgba(255,255,255,.06); border-radius: 4px; height: 36px; position: relative; overflow: hidden; }
+.arr-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; padding: 0 .875rem; font-size: .78rem; font-weight: 700; color: #fff; font-family: 'Ubuntu', sans-serif; white-space: nowrap; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+.arr-fill.y1 { background: linear-gradient(90deg,rgba(24,95,165,.6),rgba(55,138,221,.6)); width: 0; }
+.arr-fill.y2 { background: linear-gradient(90deg,rgba(29,158,117,.6),rgba(29,158,117,.8)); width: 0; }
+.arr-fill.y3 { background: linear-gradient(90deg,rgba(201,168,76,.6),rgba(201,168,76,.9)); width: 0; }
+.arr-fill.y1.animated { width: 6.5%; }
+.arr-fill.y2.animated { width: 33%; }
+.arr-fill.y3.animated { width: 100%; }
+.arr-val { font-size: .82rem; font-weight: 700; font-family: 'Ubuntu', sans-serif; width: 70px; text-align: right; flex-shrink: 0; }
+
+/* ══ UNIT ECONOMICS ══ */
+.ue-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+.ue-card {
+  padding: 1.5rem; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px; position: relative;
+}
+.ue-card.highlight { border-color: rgba(201,168,76,.3); background: rgba(201,168,76,.05); }
+.ue-label { font-size: .68rem; font-weight: 700; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .5rem; font-family: 'Ubuntu', sans-serif; }
+.ue-val { font-size: 2rem; font-weight: 900; font-family: 'Kufam', sans-serif; margin-bottom: .25rem; }
+.ue-val.gold { color: #c9a84c; }
+.ue-val.green { color: #1d9e75; }
+.ue-val.blue { color: #378add; }
+.ue-sub { font-size: .76rem; color: rgba(255,255,255,.4); font-family: 'Ubuntu', sans-serif; line-height: 1.5; }
+.benchmark-badge { display: inline-block; margin-top: .5rem; font-size: .65rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-family: 'Ubuntu', sans-serif; }
+.bb-good { background: rgba(29,158,117,.15); color: #5dcaa5; }
+.bb-great { background: rgba(201,168,76,.15); color: #c9a84c; }
+
+/* ══ USE OF FUNDS ══ */
+.funds-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.fund-bars { display: flex; flex-direction: column; gap: 1.25rem; }
+.fund-row { }
+.fund-top { display: flex; justify-content: space-between; margin-bottom: .5rem; }
+.fund-name { font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.8); font-family: 'Ubuntu', sans-serif; }
+.fund-pct { font-size: .85rem; font-weight: 700; font-family: 'Ubuntu', sans-serif; }
+.fund-track { height: 8px; background: rgba(255,255,255,.06); border-radius: 4px; overflow: hidden; }
+.fund-fill { height: 100%; border-radius: 4px; width: 0; transition: width 1s cubic-bezier(.4,0,.2,1); }
+.ff-gold { background: linear-gradient(90deg, #c9a84c, #dfc06a); }
+.ff-blue { background: linear-gradient(90deg, #185fa5, #378add); }
+.ff-teal { background: linear-gradient(90deg, #0f6e56, #1d9e75); }
+.ff-gray { background: linear-gradient(90deg, rgba(255,255,255,.2), rgba(255,255,255,.35)); }
+.fund-desc { font-size: .76rem; color: rgba(255,255,255,.38); margin-top: .375rem; font-family: 'Ubuntu', sans-serif; }
+.fund-total-box {
+  background: rgba(201,168,76,.08); border: 1px solid rgba(201,168,76,.2);
+  border-radius: 14px; padding: 2rem; text-align: center;
+}
+.ftb-label { font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(201,168,76,.7); margin-bottom: .5rem; font-family: 'Ubuntu', sans-serif; }
+.ftb-val { font-size: 3rem; font-weight: 900; color: #c9a84c; font-family: 'Kufam', sans-serif; line-height: 1; margin-bottom: .375rem; }
+.ftb-type { font-size: .82rem; color: rgba(255,255,255,.5); font-family: 'Ubuntu', sans-serif; margin-bottom: 1.25rem; }
+.ftb-detail { font-size: .78rem; color: rgba(255,255,255,.45); line-height: 1.65; font-family: 'Ubuntu', sans-serif; }
+.ftb-runway { margin-top: 1rem; padding: .625rem; background: rgba(29,158,117,.1); border-radius: 6px; font-size: .76rem; color: #5dcaa5; font-family: 'Ubuntu', sans-serif; font-weight: 600; }
+
+/* ══ MILESTONE TIMELINE ══ */
+.timeline { position: relative; padding-top: 2rem; }
+.timeline::before { content: ''; position: absolute; top: 64px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, rgba(24,95,165,.3), rgba(201,168,76,.5), rgba(29,158,117,.4)); }
+.tl-steps { display: grid; grid-template-columns: repeat(5,1fr); gap: 0; }
+.tl-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 .5rem; }
+.tl-node { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 800; font-family: 'Ubuntu', sans-serif; position: relative; z-index: 1; margin-bottom: .875rem; box-shadow: 0 0 0 8px #060f1c; }
+.tn-1 { background: rgba(24,95,165,.3); color: #7fb3e8; border: 2px solid #185fa5; }
+.tn-2 { background: rgba(201,168,76,.2); color: #c9a84c; border: 2px solid #c9a84c; }
+.tn-3 { background: rgba(29,158,117,.2); color: #5dcaa5; border: 2px solid #1d9e75; }
+.tn-4 { background: rgba(29,158,117,.3); color: #5dcaa5; border: 2px solid #1d9e75; }
+.tn-5 { background: rgba(201,168,76,.35); color: #c9a84c; border: 2px solid #c9a84c; box-shadow: 0 0 0 8px #060f1c, 0 0 20px rgba(201,168,76,.3); }
+.tl-month { font-size: .68rem; font-weight: 700; color: rgba(255,255,255,.4); margin-bottom: .375rem; font-family: 'Ubuntu', sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+.tl-title { font-size: .8rem; font-weight: 700; color: rgba(255,255,255,.82); margin-bottom: .375rem; font-family: 'Ubuntu', sans-serif; line-height: 1.3; }
+.tl-desc { font-size: .7rem; color: rgba(255,255,255,.38); line-height: 1.5; font-family: 'Ubuntu', sans-serif; }
+.tl-sig { display: inline-block; margin-top: .375rem; font-size: .65rem; font-weight: 700; padding: 2px 7px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; }
+.ts-blue { background: rgba(24,95,165,.15); color: #7fb3e8; }
+.ts-gold { background: rgba(201,168,76,.15); color: #c9a84c; }
+.ts-green { background: rgba(29,158,117,.15); color: #5dcaa5; }
+
+/* ══ COMPETITIVE MOAT ══ */
+.moat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; }
+.moat-item {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.25rem 1.5rem; background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07); border-radius: 12px;
+}
+.moat-ico { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.moat-body { }
+.moat-title { font-size: .88rem; font-weight: 700; color: rgba(255,255,255,.85); font-family: 'Ubuntu', sans-serif; margin-bottom: .35rem; }
+.moat-desc { font-size: .78rem; color: rgba(255,255,255,.45); line-height: 1.6; font-family: 'Ubuntu', sans-serif; }
+.moat-proof { margin-top: .5rem; font-size: .7rem; font-weight: 600; padding: 2px 8px; border-radius: 3px; display: inline-block; background: rgba(201,168,76,.12); color: #c9a84c; font-family: 'Ubuntu', sans-serif; }
+
+/* ══ RISK & MITIGATION ══ */
+.risk-table { width: 100%; border-collapse: collapse; font-family: 'Ubuntu', sans-serif; }
+.risk-table th { padding: .75rem 1.25rem; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.35); border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; }
+.risk-table td { padding: .875rem 1.25rem; font-size: .82rem; border-bottom: 1px solid rgba(255,255,255,.05); color: rgba(255,255,255,.65); vertical-align: top; line-height: 1.55; }
+.risk-table tr:last-child td { border-bottom: none; }
+.risk-level { display: inline-block; font-size: .65rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; }
+.rl-med { background: rgba(201,168,76,.15); color: #c9a84c; }
+.rl-low { background: rgba(29,158,117,.15); color: #5dcaa5; }
+
+/* ══ INVESTOR CTA SECTION ══ */
+.inv-cta-sec { background: linear-gradient(135deg, #060f1c 0%, #0a1f3a 50%, #060f1c 100%); padding: 7rem 5%; text-align: center; }
+.inv-cta-inner { max-width: 700px; margin: 0 auto; }
+.inv-cta-round { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.25); border-radius: 100px; padding: 6px 18px; margin-bottom: 1.75rem; font-size: .72rem; font-weight: 700; color: #c9a84c; letter-spacing: .08em; text-transform: uppercase; font-family: 'Ubuntu', sans-serif; }
+.inv-cta-h { font-size: clamp(2rem,4vw,3rem); font-weight: 900; color: #fff; font-family: 'Kufam', sans-serif; line-height: 1.1; margin-bottom: .875rem; letter-spacing: -.02em; }
+.inv-cta-h em { color: #c9a84c; font-style: normal; }
+.inv-cta-sub { font-size: .92rem; color: rgba(255,255,255,.48); line-height: 1.72; margin-bottom: 2.5rem; font-family: 'Ubuntu', sans-serif; }
+.inv-cta-form { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; text-align: left; }
+.icf-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .25rem; font-family: 'Ubuntu', sans-serif; }
+.icf-sub { font-size: .78rem; color: rgba(255,255,255,.38); margin-bottom: 1.25rem; font-family: 'Ubuntu', sans-serif; }
+.icf-row { display: grid; grid-template-columns: 1fr 1fr; gap: .875rem; margin-bottom: .875rem; }
+.icf-grp { display: flex; flex-direction: column; gap: .35rem; margin-bottom: .875rem; }
+.icf-lbl { font-size: .68rem; font-weight: 600; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .06em; font-family: 'Ubuntu', sans-serif; }
+.icf-inp, .icf-sel {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px; padding: .675rem .9rem; font-size: .875rem;
+  color: rgba(255,255,255,.82); font-family: 'Ubuntu', sans-serif; outline: none;
+  transition: border-color .2s; width: 100%;
+}
+.icf-inp:focus, .icf-sel:focus { border-color: #c9a84c; }
+.icf-inp::placeholder { color: rgba(255,255,255,.2); }
+.icf-sel { appearance: none; cursor: pointer; }
+.icf-sel option { background: #0a1628; color: #fff; }
+.icf-submit {
+  width: 100%; padding: .95rem; background: #c9a84c; border: none; border-radius: 8px;
+  color: #060f1c; font-size: .95rem; font-weight: 700; font-family: 'Ubuntu', sans-serif;
+  cursor: pointer; transition: all .2s; margin-top: .25rem;
+}
+.icf-submit:hover { background: #dfc06a; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,168,76,.3); }
+.icf-note { text-align: center; font-size: .68rem; color: rgba(255,255,255,.22); margin-top: .625rem; font-family: 'Ubuntu', sans-serif; }
+.icf-success { display: none; text-align: center; padding: 2rem; }
+.icf-success-ico { font-size: 2.5rem; margin-bottom: .75rem; }
+.icf-success-ttl { font-size: 1rem; font-weight: 700; color: #c9a84c; font-family: 'Ubuntu', sans-serif; margin-bottom: .375rem; }
+.icf-success-sub { font-size: .82rem; color: rgba(255,255,255,.4); font-family: 'Ubuntu', sans-serif; }
+.inv-direct-contact { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 1.25rem; }
+.idc-item { font-size: .82rem; color: rgba(255,255,255,.45); font-family: 'Ubuntu', sans-serif; }
+.idc-item a { color: #7fb3e8; text-decoration: none; }
+
+/* ══ FOOTER-BOTTOM FIX ══ */
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; padding:1.1rem 5%; border-top:1px solid rgba(255,255,255,.08); flex-wrap:nowrap; gap:1rem; }
+.footer-copy { font-size:.78rem; color:rgba(255,255,255,.35); white-space:nowrap; }
+.footer-legal { display:flex; gap:1.5rem; align-items:center; }
+.footer-legal a { font-size:.78rem; color:rgba(255,255,255,.35); text-decoration:none; transition:color .2s; }
+.footer-legal a:hover { color:rgba(255,255,255,.75); }
+
+/* ══ SCROLL TOP ══ */
+#scroll-top { position:fixed; bottom:2rem; right:2rem; width:44px; height:44px; border-radius:50%; background:#c9a84c; color:#060f1c; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.1rem; opacity:0; transform:translateY(12px); transition:opacity .3s,transform .3s; z-index:999; pointer-events:none; }
+#scroll-top.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
+#scroll-top:hover { background:#dfc06a; }
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  .inv-hero-cards { grid-template-columns:repeat(2,1fr); }
+  .thesis-grid { grid-template-columns:1fr; }
+  .tam-grid { grid-template-columns:1fr; }
+  .two-col, .funds-layout { grid-template-columns:1fr; gap:2.5rem; }
+  .ue-grid { grid-template-columns:1fr 1fr; }
+  .tl-steps { grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+  .timeline::before { display:none; }
+  .moat-grid { grid-template-columns:1fr; }
+  .market-signals { grid-template-columns:1fr; }
+  .icf-row { grid-template-columns:1fr; }
+}
+@media(max-width:600px){
+  .inv-h1 { font-size:2.4rem; }
+  .inv-hero-cards { grid-template-columns:1fr 1fr; }
+  .ue-grid { grid-template-columns:1fr; }
+  .tl-steps { grid-template-columns:1fr 1fr; }
+  .inv-hero-btns { flex-direction:column; }
+  .btn-deck, .btn-meeting { justify-content:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav" role="banner">
+  <a href="index.html#home" class="nav-logo" aria-label="iRonic Health Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">Health System Integration Technology</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="Main navigation">
+    <a href="index.html#problem">Problem</a>
+    <a href="platform.html">Platform</a>
+    <a href="index.html#ecosystem">Ecosystem</a>
+    <a href="index.html#dashboard">Dashboard</a>
+    <a href="index.html#market">Market</a>
+    <a href="index.html#model">Revenue</a>
+    <a href="index.html#about">Team</a>
+    <a href="investors.html" class="nav-active">Investors</a>
+  </nav>
+  <div class="nav-right">
+    <a href="ar/index.html" class="btn-lang">🌐 عربي</a>
+    <a href="#inv-deck" class="btn-demo">Request Deck →</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html#problem">Problem</a>
+  <a href="platform.html">Platform</a>
+  <a href="index.html#ecosystem">Ecosystem</a>
+  <a href="index.html#dashboard">Dashboard</a>
+  <a href="index.html#market">Market</a>
+  <a href="index.html#model">Revenue</a>
+  <a href="index.html#about">Team</a>
+  <a href="investors.html">Investors</a>
+  <a href="#inv-deck" class="mobile-demo-btn">Request Investor Deck →</a>
+</div>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="inv-hero" aria-label="Investor overview">
+  <div class="inv-hero-glow" aria-hidden="true"></div>
+  <div class="inv-hero-glow2" aria-hidden="true"></div>
+  <div class="inv-hero-grid" aria-hidden="true"></div>
+  <div class="inv-hero-inner reveal">
+    <div class="inv-round-badge"><div class="irb-dot"></div><span class="irb-txt">Seed Round — Open Now · 2026</span></div>
+    <h1 class="inv-h1">Egypt's First AI<br>Health Insurance Platform<br><em>Is Raising $1M.</em></h1>
+    <p class="inv-sub">SAFE Note · 18–36 month uncontested regulatory window · FRA-licensed · 70% gross margin · Zero incumbent competitor. One TPA partnership covers 1.2M insured lives across 18 insurers — before we sign a single insurer directly.</p>
+    <div class="inv-hero-cards">
+      <div class="ihc gold-border"><div class="ihc-val gold">$1M</div><div class="ihc-lbl">Seed Round Ask</div></div>
+      <div class="ihc"><div class="ihc-val green">70%</div><div class="ihc-lbl">Gross Margin</div></div>
+      <div class="ihc"><div class="ihc-val blue">20–30×</div><div class="ihc-lbl">LTV / CAC Ratio</div></div>
+      <div class="ihc"><div class="ihc-val">18 mo</div><div class="ihc-lbl">Runway Target</div></div>
+    </div>
+    <div class="inv-hero-btns">
+      <a href="#inv-deck" class="btn-deck">📄 Request Investor Deck →</a>
+      <a href="mailto:investor@ironicigmi.com" class="btn-meeting">📅 Schedule a Call</a>
+    </div>
+    <p class="inv-confidential">🔒 This page is for accredited investors and institutional partners. Information is confidential and subject to NDA.</p>
+  </div>
+</section>
+
+<!-- ═══ INVESTMENT THESIS ═══ -->
+<section class="inv-sec" id="thesis" aria-labelledby="thesis-heading">
+  <div class="inv-sec-inner">
+    <div class="reveal">
+      <div class="inv-eyebrow">Why iRonic Health</div>
+      <h2 class="inv-h2" id="thesis-heading">Three Reasons This <em>Investment Works</em></h2>
+      <p class="inv-lead">Market timing, regulatory tailwind, and a capital-efficient model that reaches breakeven on $1M — not $10M.</p>
+    </div>
+    <div class="thesis-grid">
+      <div class="thesis-card tc-gold reveal">
+        <div class="thesis-ico">⏰</div>
+        <div class="thesis-title">The 18–36 Month Window</div>
+        <div class="thesis-desc">The FRA licensed 6 TPAs in April 2026. This opens a channel that didn't exist before — and creates an 18–36 month window before incumbents realize what happened and mobilize. No Egyptian insurer deploys AI fraud detection at scale today. First-mover locks the market.</div>
+        <div class="thesis-proof tp-gold">FRA Decision 229/2025 · April 2026 · 6 TPAs licensed</div>
+      </div>
+      <div class="thesis-card tc-blue reveal reveal-d1">
+        <div class="thesis-ico">🎯</div>
+        <div class="thesis-title">One Deal = 18 Insurers</div>
+        <div class="thesis-desc">GlobeMed Egypt manages 1.2M insured lives across 18 insurance companies. A single TPA partnership replaces 18 separate insurer sales cycles — each of which takes 6–12 months. Our TPA-first GTM compresses 5 years of sales work into 3–6 months. No competitor can replicate this without a pre-existing relationship.</div>
+        <div class="thesis-proof tp-blue">GlobeMed Egypt · 1.2M lives · 18 insurers · Strategic target</div>
+      </div>
+      <div class="thesis-card tc-green reveal reveal-d2">
+        <div class="thesis-ico">💰</div>
+        <div class="thesis-title">Capital-Efficient Path</div>
+        <div class="thesis-desc">Contingent pricing means we earn 25% of validated fraud savings — zero upfront cost for the insurer, zero financial risk in the pilot. This removes the #1 sales objection and means we generate revenue from Month 5, reach $500K ARR by Month 12, and approach breakeven by Month 18 — all on $1M of seed capital.</div>
+        <div class="thesis-proof tp-green">$1M seed → $500K ARR Month 12 → Series A ready</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARKET OPPORTUNITY ═══ -->
+<section class="inv-sec" id="market" aria-labelledby="market-heading">
+  <div class="inv-sec-inner">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="inv-eyebrow">Market Sizing</div>
+        <h2 class="inv-h2" id="market-heading">A $373M Market<br><em>With Zero AI Competition</em></h2>
+        <p class="inv-lead">Egypt's private health insurance market is growing 15% YoY with 6–8M insured lives and rising loss ratios. Not a single insurer deploys AI fraud detection at scale.</p>
+        <div class="tam-grid" style="grid-template-columns:1fr;">
+          <div class="tam-card tam-t">
+            <div class="tam-lbl">TAM</div>
+            <div class="tam-val">$373M</div>
+            <div class="tam-desc">Egypt private health GWP 2024 · growing +15% YoY · FRA / Statista</div>
+          </div>
+          <div class="tam-card tam-s">
+            <div class="tam-lbl">SAM</div>
+            <div class="tam-val">$550M</div>
+            <div class="tam-desc">6–8M insured lives × $3–8 PMPM (orchestration + fraud + pharmacy modules)</div>
+          </div>
+          <div class="tam-card tam-o">
+            <div class="tam-lbl">SOM · 3-Year Target</div>
+            <div class="tam-val">$18M</div>
+            <div class="tam-desc">3–4 anchor clients · 1.5–2.5M lives · $4–6 PMPM + fraud recovery share</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="inv-eyebrow" style="margin-top:0">Market Signals</div>
+        <div class="market-signals">
+          <div class="ms-item"><div class="ms-ico">📈</div><div class="ms-body"><div class="ms-title">Loss Ratios at Record Highs</div><div class="ms-desc">Egyptian private insurer loss ratios at 70–85% and rising 50–60% YoY. Every CFO is looking for a solution now — not in 2 years.</div></div></div>
+          <div class="ms-item"><div class="ms-ico">⚖️</div><div class="ms-body"><div class="ms-title">FRA Licensed 6 TPAs (April 2026)</div><div class="ms-desc">First regulatory opening for TPA-based AI fraud detection. A compliance path that didn't exist before April 2026.</div></div></div>
+          <div class="ms-item"><div class="ms-ico">🏛️</div><div class="ms-body"><div class="ms-title">Unified Insurance Law 155/2024</div><div class="ms-desc">Opens self-funded corporate schemes as a new insurance channel — an entirely new buyer segment for iRonic Health.</div></div></div>
+          <div class="ms-item"><div class="ms-ico">🧪</div><div class="ms-body"><div class="ms-title">Documented Fraud Problem</div><div class="ms-desc">2–10% fraud / abuse loss rate documented by RGA Middle East across 37 Egyptian insurers. At $373M GWP, that's $7–37M lost annually — before our solution exists.</div></div></div>
+          <div class="ms-item"><div class="ms-ico">🌍</div><div class="ms-body"><div class="ms-title">MENA Expansion Ready (Y3)</div><div class="ms-desc">KSA NPHIES certification in roadmap. Saudi market: 5–10M insured lives at $2–5 PMPM = $12–50M additional ARR potential.</div></div></div>
+          <div class="ms-item"><div class="ms-ico">🏥</div><div class="ms-body"><div class="ms-title">GlobeMed Egypt Partnership</div><div class="ms-desc">TPA partner manages 1.2M insured lives across 18 insurers. One signed agreement = immediate multi-insurer deployment path.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINANCIAL PROJECTIONS ═══ -->
+<section class="inv-sec" id="financials" aria-labelledby="fin-heading">
+  <div class="inv-sec-inner">
+    <div class="reveal">
+      <div class="inv-eyebrow">3-Year Forecast</div>
+      <h2 class="inv-h2" id="fin-heading">From $475K to $7.35M ARR<br><em>In 36 Months</em></h2>
+      <p class="inv-lead">Anchored by PMPM platform fees and a 15% fraud recovery share. 70% gross margin throughout. Breakeven on $1M of capital by Month 18.</p>
+    </div>
+    <div class="two-col">
+      <div class="reveal">
+        <div class="arr-bars" id="arr-bars">
+          <div class="arr-bar-row">
+            <div class="arr-yr">Y1</div>
+            <div class="arr-track"><div class="arr-fill y1" id="bar-y1">$475K ARR</div></div>
+            <div class="arr-val" style="color:#378add">$475K</div>
+          </div>
+          <div class="arr-bar-row">
+            <div class="arr-yr">Y2</div>
+            <div class="arr-track"><div class="arr-fill y2" id="bar-y2">$2.45M ARR</div></div>
+            <div class="arr-val" style="color:#1d9e75">$2.45M</div>
+          </div>
+          <div class="arr-bar-row">
+            <div class="arr-yr">Y3</div>
+            <div class="arr-track"><div class="arr-fill y3" id="bar-y3">$7.35M ARR</div></div>
+            <div class="arr-val" style="color:#c9a84c">$7.35M</div>
+          </div>
+        </div>
+        <div style="margin-top:2rem;">
+          <div class="fin-table-wrap">
+            <table class="fin-table">
+              <thead><tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr></thead>
+              <tbody>
+                <tr><td>Anchor Customers</td><td>1–2</td><td>3–4</td><td>6–8</td></tr>
+                <tr><td>Total Lives on Platform</td><td>375K</td><td>1.4M</td><td>4.2M</td></tr>
+                <tr><td>Platform PMPM Revenue</td><td>$225K</td><td>$1.05M</td><td>$3.78M</td></tr>
+                <tr><td>Recovery Share (15%)</td><td>$250K</td><td>$1.05M</td><td>$2.52M</td></tr>
+                <tr><td>Pharmacy Module</td><td>—</td><td>$350K</td><td>$1.05M</td></tr>
+                <tr class="row-highlight"><td><strong>Total ARR</strong></td><td class="val-white">$475K</td><td class="val-green">$2.45M</td><td class="val-gold">$7.35M</td></tr>
+                <tr><td>Gross Margin</td><td class="val-green">70%</td><td class="val-green">70%</td><td class="val-green">70%</td></tr>
+                <tr><td>EBITDA</td><td class="val-red">($975K)</td><td class="val-red">($485K)</td><td class="val-green">+$1.95M</td></tr>
+                <tr><td>Annual Burn</td><td>~$1.5M</td><td>~$800K</td><td class="val-green">Positive</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="inv-eyebrow">Series A Path</div>
+        <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);border-radius:14px;padding:1.5rem;margin-bottom:1.25rem;">
+          <div style="font-size:.72rem;font-weight:700;color:rgba(201,168,76,.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;font-family:'Ubuntu',sans-serif">Series A Target</div>
+          <div style="font-size:2.2rem;font-weight:900;color:#c9a84c;font-family:'Kufam',sans-serif;line-height:1;margin-bottom:.375rem">$2–3M</div>
+          <div style="font-size:.8rem;color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif">Month 12–15 · Upon $500K ARR milestone · 2–3 anchor customers</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.625rem;margin-bottom:1.5rem;">
+          <div style="padding:.875rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;font-size:.8rem;color:rgba(255,255,255,.6);font-family:'Ubuntu',sans-serif;line-height:1.55">
+            <strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:3px">Series A use of funds</strong>
+            Sales team expansion (10+ enterprise reps) · Product: pharmacy audit, spend optimization · Regional hiring (KSA / UAE expansion)
+          </div>
+          <div style="padding:.875rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;font-size:.8rem;color:rgba(255,255,255,.6);font-family:'Ubuntu',sans-serif;line-height:1.55">
+            <strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:3px">Acquisition scenarios (Y2–Y3)</strong>
+            Tier-1 insurers (Misr, AXA, Bupa) seeking AI capability → $20–30M · Global health-tech platforms seeking Egypt entry → $30–50M · Regional consolidators (GIG, Allianz) → $15–25M
+          </div>
+        </div>
+        <div style="background:rgba(24,95,165,.08);border:1px solid rgba(24,95,165,.2);border-radius:10px;padding:1rem 1.25rem;">
+          <div style="font-size:.72rem;font-weight:700;color:#7fb3e8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;font-family:'Ubuntu',sans-serif">Breakeven Analysis</div>
+          <div style="font-size:.82rem;color:rgba(255,255,255,.6);font-family:'Ubuntu',sans-serif;line-height:1.65">
+            Month 18 breakeven with disciplined spending · $1M seed provides full 18-month runway · Contingent pricing model generates revenue from Month 5 without upfront capital outlay
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ UNIT ECONOMICS ═══ -->
+<section class="inv-sec" id="unit-economics" aria-labelledby="ue-heading">
+  <div class="inv-sec-inner">
+    <div class="reveal">
+      <div class="inv-eyebrow">Unit Economics</div>
+      <h2 class="inv-h2" id="ue-heading">Best-in-Class Metrics<br><em>From Month One</em></h2>
+      <p class="inv-lead">Contingent pricing means CAC payback starts immediately. A 20–30× LTV/CAC ratio — when the benchmark for top-tier SaaS is 3× — is not a typo.</p>
+    </div>
+    <div class="ue-grid">
+      <div class="ue-card reveal">
+        <div class="ue-label">Customer Acquisition Cost (CAC)</div>
+        <div class="ue-val gold">$30–50K</div>
+        <div class="ue-sub">Per insurer or TPA · Includes sales cycles, product setup, and onboarding. Enterprise SaaS benchmark: $50–100K.</div>
+        <div class="benchmark-badge bb-good">↓ Below benchmark</div>
+      </div>
+      <div class="ue-card reveal reveal-d1">
+        <div class="ue-label">LTV (3-Year, Per Customer)</div>
+        <div class="ue-val green">$500K–$1.5M</div>
+        <div class="ue-sub">PMPM recurring + 15% fraud recovery share over 3 years. Large TPA (1.2M lives) at higher end.</div>
+        <div class="benchmark-badge bb-great">↑↑ High LTV</div>
+      </div>
+      <div class="ue-card highlight reveal reveal-d2">
+        <div class="ue-label">LTV / CAC Ratio</div>
+        <div class="ue-val gold">20–30×</div>
+        <div class="ue-sub">Gold standard SaaS benchmark is 3×. We're 7–10× above it — driven by high LTV and low acquisition cost via TPA channel.</div>
+        <div class="benchmark-badge bb-great">🏆 Gold standard: 3× — we're at 20–30×</div>
+      </div>
+      <div class="ue-card reveal reveal-d3">
+        <div class="ue-label">Gross Margin</div>
+        <div class="ue-val green">70%</div>
+        <div class="ue-sub">COGS = 30% (cloud infra + AI model maintenance + processing). Best-in-class SaaS target is 70%+.</div>
+        <div class="benchmark-badge bb-good">✓ Meets best-in-class target</div>
+      </div>
+      <div class="ue-card reveal">
+        <div class="ue-label">CAC Payback Period</div>
+        <div class="ue-val blue">4–6 mo</div>
+        <div class="ue-sub">Contingent model: we earn 25% of savings immediately — cost recovery starts Month 1–2. Full payback by Month 4–6.</div>
+        <div class="benchmark-badge bb-great">↓↓ Typical SaaS: 12–18 months</div>
+      </div>
+      <div class="ue-card reveal reveal-d1">
+        <div class="ue-label">Average Contract Value (ACV)</div>
+        <div class="ue-val">$225K+</div>
+        <div class="ue-sub">Y1 per anchor insurer. Scales to $500K–$1M+ as lives increase and modules expand (pharmacy, dynamic premiums, routing).</div>
+        <div class="benchmark-badge bb-good">Expands 2–4× by Y3</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USE OF FUNDS ═══ -->
+<section class="inv-sec" id="funds" aria-labelledby="funds-heading">
+  <div class="inv-sec-inner">
+    <div class="funds-layout">
+      <div class="reveal">
+        <div class="inv-eyebrow">Capital Allocation</div>
+        <h2 class="inv-h2" id="funds-heading">How <em>$1M</em><br>Gets Deployed</h2>
+        <p class="inv-lead" style="margin-bottom:2rem">Every dollar mapped to a specific output — no vague "general expenses." GTM-heavy allocation because the product is largely designed; we need to sell and prove it.</p>
+        <div class="fund-bars" id="fund-bars">
+          <div class="fund-row">
+            <div class="fund-top"><span class="fund-name">GTM &amp; Partnerships</span><span class="fund-pct" style="color:#c9a84c">40% · $400K</span></div>
+            <div class="fund-track"><div class="fund-fill ff-gold" data-w="40"></div></div>
+            <div class="fund-desc">VP Sales hire · GlobeMed engagement · Insurer meetings · Accelerator applications (Flat6Labs, AUC Venture Lab)</div>
+          </div>
+          <div class="fund-row" style="margin-top:1rem">
+            <div class="fund-top"><span class="fund-name">Product &amp; AI Engineering</span><span class="fund-pct" style="color:#378add">35% · $350K</span></div>
+            <div class="fund-track"><div class="fund-fill ff-blue" data-w="35"></div></div>
+            <div class="fund-desc">Fraud model build · FRA-compliant API layer · Flutter patient app · GlobeMed API integration</div>
+          </div>
+          <div class="fund-row" style="margin-top:1rem">
+            <div class="fund-top"><span class="fund-name">Compliance &amp; Legal</span><span class="fund-pct" style="color:#5dcaa5">15% · $150K</span></div>
+            <div class="fund-track"><div class="fund-fill ff-teal" data-w="15"></div></div>
+            <div class="fund-desc">FRA regulatory engagement · PDPL 151/2020 compliance · EIPA trademark registration (Classes 35, 36, 42, 44)</div>
+          </div>
+          <div class="fund-row" style="margin-top:1rem">
+            <div class="fund-top"><span class="fund-name">Operating Runway</span><span class="fund-pct" style="color:rgba(255,255,255,.5)">10% · $100K</span></div>
+            <div class="fund-track"><div class="fund-fill ff-gray" data-w="10"></div></div>
+            <div class="fund-desc">18-month runway reserve · Finance, accounting, office costs</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="fund-total-box">
+          <div class="ftb-label">Seed Round Size</div>
+          <div class="ftb-val">$1M</div>
+          <div class="ftb-type">SAFE Note · Convertible Note<br>Range: USD $800K – $1.2M</div>
+          <div style="border-top:1px solid rgba(201,168,76,.15);padding-top:1rem;margin-top:1rem">
+            <div class="ftb-detail">
+              <strong style="color:rgba(255,255,255,.75)">Instrument:</strong> SAFE Note or Simple Convertible Note<br><br>
+              <strong style="color:rgba(255,255,255,.75)">Target investors:</strong> Healthcare / Fintech angels · MENA-focused VCs (Flat6Labs, Sayt VC) · Impact VCs · Insurer CVCs · Cairo Angels<br><br>
+              <strong style="color:rgba(255,255,255,.75)">Pro-rata rights:</strong> Available for investors $100K+<br><br>
+              <strong style="color:rgba(255,255,255,.75)">Board observer seat:</strong> Available for lead investor
+            </div>
+          </div>
+          <div class="ftb-runway">✓ 18-month runway · Breakeven Month 18</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MILESTONE TIMELINE ═══ -->
+<section class="inv-sec" id="milestones" aria-labelledby="ms-heading">
+  <div class="inv-sec-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:0">
+      <div class="inv-eyebrow" style="text-align:center">Seed → Series A</div>
+      <h2 class="inv-h2" id="ms-heading" style="text-align:center">12-Month Milestone<br><em>Roadmap</em></h2>
+      <p class="inv-lead" style="text-align:center;max-width:500px;margin:0 auto 3rem">Each milestone unlocks the next. Clear, measurable, investor-reportable.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-steps">
+        <div class="tl-step">
+          <div class="tl-node tn-1">M2</div>
+          <div class="tl-month">Month 2</div>
+          <div class="tl-title">MVP Live</div>
+          <div class="tl-desc">AI fraud detection deployed · FRA-compliant API · Dashboard live</div>
+          <div class="tl-sig ts-blue">Technical PoC</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node tn-2">M3</div>
+          <div class="tl-month">Month 3</div>
+          <div class="tl-title">First Pilot Signed</div>
+          <div class="tl-desc">50K–100K lives · Contingent pricing · GlobeMed or mid-tier insurer</div>
+          <div class="tl-sig ts-gold">Commercial Validation</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node tn-3">M6</div>
+          <div class="tl-month">Month 6</div>
+          <div class="tl-title">ROI Documented</div>
+          <div class="tl-desc">&gt;10% fraud savings validated · Reference case ready · Revenue begins</div>
+          <div class="tl-sig ts-green">Anchor Reference</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node tn-4">M9</div>
+          <div class="tl-month">Month 9</div>
+          <div class="tl-title">First PMPM Contract</div>
+          <div class="tl-desc">300K+ lives · Recurring ARR begins · Full platform deployed</div>
+          <div class="tl-sig ts-green">Recurring Revenue</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node tn-5">M12</div>
+          <div class="tl-month">Month 12</div>
+          <div class="tl-title">$500K ARR</div>
+          <div class="tl-desc">1–2 anchor clients · Series A criteria met · MENA expansion prep</div>
+          <div class="tl-sig ts-gold">Series A Ready</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMPETITIVE MOAT ═══ -->
+<section class="inv-sec" id="moat" aria-labelledby="moat-heading">
+  <div class="inv-sec-inner">
+    <div class="reveal">
+      <div class="inv-eyebrow">Defensibility</div>
+      <h2 class="inv-h2" id="moat-heading">Why Competitors<br><em>Can't Catch Up</em></h2>
+      <p class="inv-lead">Five compounding moats — any one is hard to replicate. Together they create a durable competitive position for 3–5 years.</p>
+    </div>
+    <div class="moat-grid">
+      <div class="moat-item reveal">
+        <div class="moat-ico">🧠</div>
+        <div class="moat-body">
+          <div class="moat-title">Egypt-Native AI Models</div>
+          <div class="moat-desc">Trained on Egypt-specific fraud archetypes, ICD/CPT codes, local pharmacy patterns, and FRA-defined fraud categories. A competitor importing a global model misses 60–70% of Egypt's specific fraud patterns — Unictam counterfeits, Egyptian prescription forgery methods, local ICU billing games.</div>
+          <div class="moat-proof">25–40 archetypes · No global model has these</div>
+        </div>
+      </div>
+      <div class="moat-item reveal reveal-d1">
+        <div class="moat-ico">🏛️</div>
+        <div class="moat-body">
+          <div class="moat-title">FRA First-Mover Advantage</div>
+          <div class="moat-desc">We're building the regulatory precedent — not just complying with it. By the time competitors understand the FRA's TPA licensing framework and navigate the CMO oversight requirement, we'll have 12–18 months of live data, validated accuracy, and an insurer reference case that no new entrant can replicate.</div>
+          <div class="moat-proof">FRA Decision 229/2025 · 18–36 month window</div>
+        </div>
+      </div>
+      <div class="moat-item reveal reveal-d2">
+        <div class="moat-ico">🔗</div>
+        <div class="moat-body">
+          <div class="moat-title">TPA-Native Distribution</div>
+          <div class="moat-desc">GlobeMed Egypt covers 1.2M lives across 18 insurers. Our competitors must sign 18 separate insurer deals — each 6–12 months. We compress that into one TPA partnership. This distribution moat is structural: TPAs have contractual exclusivity windows that prevent insurers from deploying competing solutions without TPA consent.</div>
+          <div class="moat-proof">1 TPA deal = 18 insurer deals · 3–6 month vs. 5+ years</div>
+        </div>
+      </div>
+      <div class="moat-item reveal reveal-d3">
+        <div class="moat-ico">💼</div>
+        <div class="moat-body">
+          <div class="moat-title">Contingent Pricing Lock-In</div>
+          <div class="moat-desc">Once an insurer is in our pilot — earning fraud recoveries with zero upfront cost — switching to a competitor means paying a platform fee upfront, risking performance uncertainty, and losing the CMO governance layer they've come to rely on for FRA compliance. Switching cost = high. Inertia = our friend.</div>
+          <div class="moat-proof">Zero-risk entry · High switching cost after pilot</div>
+        </div>
+      </div>
+      <div class="moat-item reveal">
+        <div class="moat-ico">🩺</div>
+        <div class="moat-body">
+          <div class="moat-title">CMO Clinical Governance Layer</div>
+          <div class="moat-desc">Every AI decision has a licensed Egyptian Medical Syndicate CMO as oversight. This is not optional — it's FRA-mandated for high-severity claim denials. Building and training a CMO oversight process takes 6–12 months for any new entrant, and requires a CMO willing to stake their license on the AI's accuracy.</div>
+          <div class="moat-proof">Egyptian Medical Syndicate CMO · FRA-mandated</div>
+        </div>
+      </div>
+      <div class="moat-item reveal reveal-d1">
+        <div class="moat-ico">📊</div>
+        <div class="moat-body">
+          <div class="moat-title">Data Network Effect</div>
+          <div class="moat-desc">Every claim processed makes our fraud models smarter. At 375K lives in Year 1 growing to 4.2M in Year 3, we're accumulating Egypt's largest private claims dataset. A new entrant starting in Year 2 will be training their models on 3–4 years less data — with no benchmark against which to validate.</div>
+          <div class="moat-proof">375K → 4.2M lives · Largest Egypt claims dataset</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RISK & MITIGATION ═══ -->
+<section class="inv-sec" id="risk" aria-labelledby="risk-heading">
+  <div class="inv-sec-inner">
+    <div class="reveal">
+      <div class="inv-eyebrow">Transparent Risk Assessment</div>
+      <h2 class="inv-h2" id="risk-heading">Known Risks &amp;<br><em>How We Address Them</em></h2>
+      <p class="inv-lead">We don't hide risk. We've mapped every material risk, its probability, and our specific mitigation. This is the same analysis we share with our legal and compliance team.</p>
+    </div>
+    <div class="fin-table-wrap reveal">
+      <table class="risk-table">
+        <thead><tr><th>Risk</th><th>Level</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:rgba(255,255,255,.82)">Sales cycle longer than 3 months</strong><br><span style="font-size:.76rem">Insurer procurement takes 6–12 months in Egypt</span></td>
+            <td><div class="risk-level rl-med">Medium</div></td>
+            <td>Contingent pricing eliminates budget approval barrier · CEO has existing insurer relationships · GlobeMed TPA route bypasses insurer procurement entirely</td>
+          </tr>
+          <tr>
+            <td><strong style="color:rgba(255,255,255,.82)">AI false positive rate too high</strong><br><span style="font-size:.76rem">Incorrectly flagging valid claims damages insurer trust</span></td>
+            <td><div class="risk-level rl-low">Low–Med</div></td>
+            <td>Conservative threshold settings in pilot phase · CMO reviews all high-value flags · False positive rate monitored monthly · Insurers only see clean evidence before rejection</td>
+          </tr>
+          <tr>
+            <td><strong style="color:rgba(255,255,255,.82)">FRA regulatory change</strong><br><span style="font-size:.76rem">FRA modifies TPA licensing or AI decision rules</span></td>
+            <td><div class="risk-level rl-low">Low</div></td>
+            <td>Proactive FRA engagement in progress · CMO governance layer built for regulatory flexibility · PDPL and FRA compliance embedded in product architecture from day 1</td>
+          </tr>
+          <tr>
+            <td><strong style="color:rgba(255,255,255,.82)">Technical execution risk</strong><br><span style="font-size:.76rem">MVP delayed beyond Month 2</span></td>
+            <td><div class="risk-level rl-low">Low</div></td>
+            <td>MVP scope locked to fraud detection only (not full platform) · 2–3 FTE engineers · Existing fraud frameworks adapted, not built from zero · Yodawy integration explored as fallback pharmacy data source</td>
+          </tr>
+          <tr>
+            <td><strong style="color:rgba(255,255,255,.82)">Incumbent competition emerges</strong><br><span style="font-size:.76rem">Global insurer-tech or pharma company enters Egypt</span></td>
+            <td><div class="risk-level rl-low">Low</div></td>
+            <td>Egypt-native AI models take 12–18 months to build · FRA regulatory precedent takes 6–12 months to navigate · TPA partnerships are exclusive during pilot · Data moat grows monthly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INVESTOR CTA ═══ -->
+<section class="inv-cta-sec" id="inv-deck" aria-labelledby="cta-heading">
+  <div class="inv-cta-inner">
+    <div class="reveal">
+      <div class="inv-cta-round"><div class="irb-dot"></div>Seed Round Open · 2026</div>
+      <h2 class="inv-cta-h" id="cta-heading">Join the <em>$1M Round</em></h2>
+      <p class="inv-cta-sub">Request the full investor deck, financial model, and data room access. We respond to all qualified investors within 24 hours.</p>
+    </div>
+    <div class="reveal reveal-d1">
+      <div class="inv-cta-form">
+        <div class="icf-title">Request Investor Materials</div>
+        <div class="icf-sub">Full deck · 3-year financial model · Data room access · Available to qualified investors</div>
+        <div id="icf-inner">
+          <div class="icf-row">
+            <div class="icf-grp"><label class="icf-lbl">Full Name *</label><input type="text" class="icf-inp" id="icf-name" placeholder="Your name"></div>
+            <div class="icf-grp"><label class="icf-lbl">Fund / Firm *</label><input type="text" class="icf-inp" id="icf-firm" placeholder="Fund or company name"></div>
+          </div>
+          <div class="icf-row">
+            <div class="icf-grp"><label class="icf-lbl">Email *</label><input type="email" class="icf-inp" id="icf-email" placeholder="you@fund.com"></div>
+            <div class="icf-grp"><label class="icf-lbl">Phone</label><input type="tel" class="icf-inp" placeholder="+20 or +44..."></div>
+          </div>
+          <div class="icf-grp">
+            <label class="icf-lbl">Investor Type *</label>
+            <select class="icf-sel" id="icf-type">
+              <option value="" disabled selected>Select investor type</option>
+              <option>Angel Investor</option>
+              <option>Venture Capital (VC)</option>
+              <option>Family Office</option>
+              <option>Corporate Venture / CVC</option>
+              <option>Impact Investor</option>
+              <option>Healthcare Strategist</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="icf-grp">
+            <label class="icf-lbl">Typical Ticket Size</label>
+            <select class="icf-sel">
+              <option value="" disabled selected>Select range (optional)</option>
+              <option>Under $25K</option>
+              <option>$25K – $100K</option>
+              <option>$100K – $250K</option>
+              <option>$250K – $500K</option>
+              <option>$500K+</option>
+            </select>
+          </div>
+          <button class="icf-submit" onclick="submitInvestorForm(event)">📄 Request Full Investor Deck →</button>
+          <div class="icf-note">🔒 Confidential. NDA available on request. PDPL 151/2020 compliant data handling.</div>
+        </div>
+        <div class="icf-success" id="icf-success">
+          <div class="icf-success-ico">✅</div>
+          <div class="icf-success-ttl">Request Received — Thank You</div>
+          <div class="icf-success-sub">We'll send the investor deck and data room access within 24 hours. Check your inbox.</div>
+        </div>
+      </div>
+      <div class="inv-direct-contact">
+        <div class="idc-item">📧 <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a></div>
+        <div class="idc-item">📞 <a href="tel:+447308892741">+44 7308 892741</a></div>
+        <div class="idc-item">📍 Nile City Towers, North Tower, Cairo, Egypt</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
+        <img src="assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'">
+      </a>
+      <p class="footer-brand-desc">Egypt's first AI-powered health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <div class="footer-col-title">Investor Materials</div>
+        <a href="#thesis">Investment Thesis</a>
+        <a href="#financials">Financials</a>
+        <a href="#unit-economics">Unit Economics</a>
+        <a href="#funds">Use of Funds</a>
+        <a href="#milestones">Milestones</a>
+        <a href="#inv-deck">Request Deck</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="index.html#about">Team</a>
+        <a href="platform.html">Platform</a>
+        <a href="index.html#ecosystem">Ecosystem</a>
+        <a href="index.html#market">Market</a>
+        <a href="ar/index.html">Arabic (عربي)</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+        <span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · All rights reserved</div>
+    <div class="footer-legal">
+      <a href="#">Privacy (PDPL 151/2020)</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FRA Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+(function(){
+  /* Scroll-to-top */
+  var btn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, {passive:true});
+
+  /* Universal reveal */
+  function initReveal(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('up'); }); return; }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); } });
+    }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ obs.observe(el); });
+  }
+
+  /* Animate ARR bars when in view */
+  function initArrBars(){
+    var wrap = document.getElementById('arr-bars');
+    if(!wrap || !('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){
+        setTimeout(function(){ document.getElementById('bar-y1').classList.add('animated'); }, 100);
+        setTimeout(function(){ document.getElementById('bar-y2').classList.add('animated'); }, 350);
+        setTimeout(function(){ document.getElementById('bar-y3').classList.add('animated'); }, 600);
+        obs.disconnect();
+      }
+    }, {threshold:0.3});
+    obs.observe(wrap);
+  }
+
+  /* Animate fund bars when in view */
+  function initFundBars(){
+    var wrap = document.getElementById('fund-bars');
+    if(!wrap || !('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){
+        var fills = wrap.querySelectorAll('.fund-fill');
+        fills.forEach(function(f, i){
+          setTimeout(function(){
+            f.style.width = f.getAttribute('data-w') + '%';
+          }, i * 150);
+        });
+        obs.disconnect();
+      }
+    }, {threshold:0.3});
+    obs.observe(wrap);
+  }
+
+  window.addEventListener('load', function(){
+    setTimeout(initReveal, 80);
+    setTimeout(initArrBars, 200);
+    setTimeout(initFundBars, 200);
+  });
+})();
+
+/* Investor form submission */
+function submitInvestorForm(e) {
+  e.preventDefault();
+  var name  = document.getElementById('icf-name').value.trim();
+  var firm  = document.getElementById('icf-firm').value.trim();
+  var email = document.getElementById('icf-email').value.trim();
+  var type  = document.getElementById('icf-type').value;
+
+  if(!name || !firm || !email){
+    var missing = [];
+    if(!name) missing.push('Full Name');
+    if(!firm) missing.push('Fund / Firm');
+    if(!email) missing.push('Email');
+    alert('Please fill in: ' + missing.join(', '));
+    return;
+  }
+
+  var subject = encodeURIComponent('Investor Deck Request — ' + name + ' · ' + firm + (type ? ' · ' + type : ''));
+  var body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Fund / Firm: ' + firm + '\n' +
+    'Email: ' + email + '\n' +
+    (type ? 'Investor Type: ' + type : '')
+  );
+  window.location.href = 'mailto:investor@ironicigmi.com?subject=' + subject + '&body=' + body;
+
+  document.getElementById('icf-inner').style.display = 'none';
+  document.getElementById('icf-success').style.display = 'block';
+}
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
