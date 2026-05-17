@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="iRonic Health Ecosystem — 8 connected parties: Insurers, TPAs, Hospitals, Doctors, Pharmacies, Labs, Corporates, and Patients. One AI intelligence layer.">
+<meta property="og:title" content="Ecosystem — iRonic Health · 8 Parties. One Intelligence Layer.">
+<meta property="og:description" content="How iRonic Health connects Egypt's fragmented healthcare and insurance ecosystem through a single AI orchestration layer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sherif-trevo-ai.github.io/iRonicHealth/ecosystem.html">
+<meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/H_Badge_icon.svg">
+<title>Ecosystem — iRonic Health · 8 Parties. One AI Layer.</title>
+<link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ══ ECOSYSTEM HERO ══ */
+.eco-hero {
+  min-height: 78vh; display: flex; flex-direction: column; justify-content: center;
+  padding: 140px 5% 80px; position: relative; overflow: hidden;
+  background: linear-gradient(155deg, #060f1c 0%, #0a1628 55%, #0d1f3a 100%);
+}
+.eco-hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle 800px at 70% 30%, rgba(24,95,165,.1) 0%, transparent 60%),
+    radial-gradient(circle 500px at 20% 80%, rgba(29,158,117,.06) 0%, transparent 50%);
+}
+.eco-grid-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.eco-hero-inner { position: relative; z-index: 1; max-width: 780px; }
+.eco-badge {
+  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 1.75rem;
+  background: rgba(29,158,117,.1); border: 1px solid rgba(29,158,117,.25);
+  border-radius: 100px; padding: 6px 18px;
+  font-size: .72rem; font-weight: 700; color: #1d9e75; letter-spacing: .09em;
+  text-transform: uppercase; font-family: 'Ubuntu', sans-serif;
+}
+.eco-h1 {
+  font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.03;
+  color: #fff; letter-spacing: -.03em; margin-bottom: 1.25rem; font-family: 'Kufam', sans-serif;
+}
+.eco-h1 em { color: #c9a84c; font-style: normal; }
+.eco-h1 .bl { color: #378add; }
+.eco-sub { font-size: 1.05rem; color: rgba(255,255,255,.55); line-height: 1.75; max-width: 600px; margin-bottom: 2.5rem; font-family: 'Ubuntu', sans-serif; }
+.eco-hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
+.ehs { }
+.ehs-val { font-size: 1.8rem; font-weight: 900; color: #fff; font-family: 'Kufam', sans-serif; line-height: 1; }
+.ehs-val.gold { color: #c9a84c; }
+.ehs-val.green { color: #1d9e75; }
+.ehs-val.blue { color: #378add; }
+.ehs-lbl { font-size: .68rem; color: rgba(255,255,255,.38); margin-top: .25rem; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: .07em; }
+
+/* ══ SHARED SECTION ══ */
+.e-sec { padding: 6rem 5%; border-bottom: 1px solid rgba(255,255,255,.05); }
+.e-sec-odd { background: #060f1c; }
+.e-sec-even { background: #0a1628; }
+.e-inner { max-width: 1200px; margin: 0 auto; }
+.e-eyebrow { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.32); margin-bottom: .625rem; font-family: 'Ubuntu', sans-serif; }
+.e-h2 { font-size: 2.1rem; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: .875rem; font-family: 'Kufam', sans-serif; letter-spacing: -.02em; }
+.e-h2 em { color: #c9a84c; font-style: normal; }
+.e-lead { font-size: .92rem; color: rgba(255,255,255,.5); line-height: 1.78; margin-bottom: 2.5rem; font-family: 'Ubuntu', sans-serif; }
+
+/* ══ BEFORE / AFTER ══ */
+.ba-grid { display: grid; grid-template-columns: 1fr 80px 1fr; gap: 0; align-items: center; margin-top: 2.5rem; }
+.ba-col { border-radius: 14px; padding: 2rem; }
+.ba-before { background: rgba(216,90,48,.06); border: 1px solid rgba(216,90,48,.15); }
+.ba-after  { background: rgba(29,158,117,.06); border: 1px solid rgba(29,158,117,.2); }
+.ba-label { font-size: .68rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1rem; font-family: 'Ubuntu', sans-serif; }
+.ba-before .ba-label { color: #f0997b; }
+.ba-after  .ba-label { color: #5dcaa5; }
+.ba-title { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 1rem; font-family: 'Ubuntu', sans-serif; }
+.ba-items { display: flex; flex-direction: column; gap: .5rem; }
+.ba-item { display: flex; align-items: flex-start; gap: .625rem; font-size: .82rem; font-family: 'Ubuntu', sans-serif; color: rgba(255,255,255,.6); line-height: 1.5; }
+.ba-ico { flex-shrink: 0; margin-top: 1px; }
+.ba-arrow { display: flex; align-items: center; justify-content: center; font-size: 2rem; color: rgba(255,255,255,.2); }
+
+/* ══ HUB DIAGRAM ══ */
+.hub-wrap { margin-top: 3rem; }
+.hub-diagram {
+  display: grid;
+  grid-template-columns: 1fr 280px 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 1.25rem;
+  align-items: center;
+}
+.hub-col-left  { display: flex; flex-direction: column; gap: 1.25rem; }
+.hub-col-right { display: flex; flex-direction: column; gap: 1.25rem; }
+.hub-center { display: flex; flex-direction: column; align-items: center; justify-content: center; grid-row: 1 / 4; }
+.hub-core {
+  background: linear-gradient(135deg, #0a1f3a, #0d2a4a);
+  border: 2px solid rgba(201,168,76,.4);
+  border-radius: 20px; padding: 2rem 1.5rem; text-align: center;
+  box-shadow: 0 0 60px rgba(201,168,76,.12), 0 0 0 8px rgba(201,168,76,.04);
+  width: 100%;
+}
+.hub-core-ico { font-size: 2rem; margin-bottom: .75rem; }
+.hub-core-name { font-size: 1.1rem; font-weight: 900; color: #c9a84c; font-family: 'Kufam', sans-serif; margin-bottom: .375rem; letter-spacing: -.01em; }
+.hub-core-sub { font-size: .72rem; color: rgba(255,255,255,.45); font-family: 'Ubuntu', sans-serif; line-height: 1.5; margin-bottom: 1rem; }
+.hub-core-pulse { display: flex; align-items: center; gap: 6px; justify-content: center; }
+.hcp-dot { width: 7px; height: 7px; border-radius: 50%; background: #1d9e75; animation: pdot 2s infinite; }
+.hcp-txt { font-size: .68rem; color: #1d9e75; font-weight: 700; font-family: 'Ubuntu', sans-serif; letter-spacing: .07em; }
+.hub-connector-h {
+  height: 2px; background: linear-gradient(90deg, transparent, rgba(201,168,76,.3), transparent);
+  margin: .5rem 0; position: relative;
+}
+.hub-connector-h::after { content: ''; position: absolute; right: -1px; top: -4px; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid rgba(201,168,76,.4); }
+.hub-connector-hl::after { right: auto; left: -1px; transform: scaleX(-1); }
+/* Party cards */
+.party-card {
+  background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px; padding: 1.1rem 1.25rem; position: relative; overflow: hidden;
+  transition: border-color .2s, background .2s;
+}
+.party-card:hover { border-color: rgba(255,255,255,.15); background: rgba(255,255,255,.05); }
+.party-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; }
+.pc-blue::before   { background: #185fa5; }
+.pc-gold::before   { background: #c9a84c; }
+.pc-green::before  { background: #1d9e75; }
+.pc-teal::before   { background: #0f6e56; }
+.pc-coral::before  { background: #d85a30; }
+.pc-purple::before { background: #534ab7; }
+.pc-pink::before   { background: #d4537e; }
+.pc-gray::before   { background: #5f5e5a; }
+.party-top { display: flex; align-items: center; gap: .625rem; margin-bottom: .5rem; }
+.party-ico { font-size: 1.1rem; flex-shrink: 0; }
+.party-name { font-size: .9rem; font-weight: 700; color: rgba(255,255,255,.85); font-family: 'Ubuntu', sans-serif; }
+.party-num { font-size: .62rem; font-weight: 800; padding: 1px 6px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; background: rgba(255,255,255,.08); color: rgba(255,255,255,.4); margin-left: auto; }
+.party-desc { font-size: .76rem; color: rgba(255,255,255,.42); line-height: 1.55; font-family: 'Ubuntu', sans-serif; }
+
+/* ══ PARTY DEEP DIVES ══ */
+.party-tabs { display: flex; gap: 0; overflow-x: auto; border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 2rem; scrollbar-width: none; }
+.party-tabs::-webkit-scrollbar { display: none; }
+.pt-tab {
+  padding: .75rem 1.1rem; font-size: .78rem; font-weight: 500; color: rgba(255,255,255,.35);
+  text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap;
+  transition: all .2s; font-family: 'Ubuntu', sans-serif; cursor: pointer; display: flex; gap: 6px; align-items: center;
+}
+.pt-tab:hover { color: rgba(255,255,255,.7); }
+.pt-tab.active { color: #c9a84c; border-bottom-color: #c9a84c; }
+.party-panels { }
+.party-panel { display: none; }
+.party-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+.pp-left { }
+.pp-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 100px; font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem; font-family: 'Ubuntu', sans-serif; }
+.pp-h3 { font-size: 1.6rem; font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: .875rem; font-family: 'Kufam', sans-serif; }
+.pp-h3 em { color: #c9a84c; font-style: normal; }
+.pp-desc { font-size: .88rem; color: rgba(255,255,255,.52); line-height: 1.78; margin-bottom: 1.5rem; font-family: 'Ubuntu', sans-serif; }
+.pp-section-title { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.28); margin-bottom: .625rem; font-family: 'Ubuntu', sans-serif; }
+.pp-list { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.5rem; }
+.pp-item { display: flex; align-items: flex-start; gap: .625rem; font-size: .82rem; color: rgba(255,255,255,.62); line-height: 1.5; font-family: 'Ubuntu', sans-serif; }
+.pp-item-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.pp-examples { display: flex; flex-wrap: wrap; gap: .4rem; }
+.pp-ex { font-size: .72rem; padding: 3px 10px; border-radius: 4px; background: rgba(255,255,255,.06); color: rgba(255,255,255,.5); font-family: 'Ubuntu', sans-serif; }
+/* Stats strip */
+.pp-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: .625rem; margin-bottom: 1.5rem; }
+.pp-stat { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 8px; padding: .875rem 1rem; }
+.pp-stat-val { font-size: 1.4rem; font-weight: 900; font-family: 'Kufam', sans-serif; color: #fff; margin-bottom: .2rem; }
+.pp-stat-lbl { font-size: .65rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; }
+/* Right card */
+.pp-right { }
+.pp-card { background: #0d1b2e; border: 1px solid rgba(255,255,255,.09); border-radius: 14px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+.pp-card-bar { background: #060f1c; padding: .625rem 1.1rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.06); }
+.pp-card-title { font-size: .72rem; font-weight: 700; color: rgba(255,255,255,.55); font-family: 'Ubuntu', sans-serif; }
+.pp-card-badge { font-size: .62rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; }
+.pp-card-body { padding: 1.25rem; }
+/* Pain → Gain cards */
+.pain-gain { display: flex; flex-direction: column; gap: .625rem; }
+.pg-item { padding: .875rem 1rem; border-radius: 8px; }
+.pg-before { background: rgba(216,90,48,.08); border: 1px solid rgba(216,90,48,.15); }
+.pg-after  { background: rgba(29,158,117,.08); border: 1px solid rgba(29,158,117,.18); }
+.pg-lbl { font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .4rem; font-family: 'Ubuntu', sans-serif; }
+.pg-before .pg-lbl { color: #f0997b; }
+.pg-after  .pg-lbl { color: #5dcaa5; }
+.pg-txt { font-size: .78rem; color: rgba(255,255,255,.65); font-family: 'Ubuntu', sans-serif; line-height: 1.55; }
+
+/* ══ DATA FLOW ══ */
+.flow-track { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; }
+.flow-step-row { display: grid; grid-template-columns: 120px 1fr; gap: 2rem; align-items: stretch; }
+.fsr-left { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.fsr-node { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; position: relative; z-index: 1; }
+.fsr-line { flex: 1; width: 2px; background: rgba(255,255,255,.07); margin: 4px 0; min-height: 24px; }
+.fsr-right { padding: 0 0 2rem 0; }
+.fsr-step-num { font-size: .65rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.28); margin-bottom: .375rem; font-family: 'Ubuntu', sans-serif; }
+.fsr-title { font-size: 1rem; font-weight: 700; color: rgba(255,255,255,.88); margin-bottom: .4rem; font-family: 'Ubuntu', sans-serif; }
+.fsr-desc { font-size: .82rem; color: rgba(255,255,255,.48); line-height: 1.65; font-family: 'Ubuntu', sans-serif; }
+.fsr-tags { display: flex; flex-wrap: wrap; gap: .375rem; margin-top: .625rem; }
+.fsr-tag { font-size: .65rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; }
+.fst-blue   { background: rgba(24,95,165,.15); color: #7fb3e8; }
+.fst-gold   { background: rgba(201,168,76,.15); color: #c9a84c; }
+.fst-green  { background: rgba(29,158,117,.15); color: #5dcaa5; }
+.fst-coral  { background: rgba(216,90,48,.15); color: #f0997b; }
+
+/* ══ NAMED PARTNERS ══ */
+.partners-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2.5rem; }
+.partner-group { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 14px; padding: 1.5rem; }
+.partner-group-title { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.3); margin-bottom: 1rem; font-family: 'Ubuntu', sans-serif; padding-bottom: .625rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+.partner-list { display: flex; flex-direction: column; gap: .5rem; }
+.partner-item { display: flex; align-items: flex-start; gap: .625rem; }
+.pi-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.pi-body { }
+.pi-name { font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.78); font-family: 'Ubuntu', sans-serif; }
+.pi-note { font-size: .7rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; }
+.pi-badge { font-size: .6rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; margin-left: 4px; }
+.pib-target { background: rgba(201,168,76,.2); color: #c9a84c; }
+.pib-active { background: rgba(29,158,117,.2); color: #5dcaa5; }
+
+/* ══ INTEGRATION ══ */
+.integ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-top: 2.5rem; }
+.integ-steps { display: flex; flex-direction: column; gap: 1rem; }
+.integ-step { display: flex; gap: 1rem; padding: 1.1rem 1.25rem; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 10px; }
+.is-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(24,95,165,.2); border: 1px solid rgba(24,95,165,.3); color: #7fb3e8; font-size: .75rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Ubuntu', sans-serif; }
+.is-body { }
+.is-title { font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.82); margin-bottom: 3px; font-family: 'Ubuntu', sans-serif; }
+.is-desc { font-size: .76rem; color: rgba(255,255,255,.42); line-height: 1.55; font-family: 'Ubuntu', sans-serif; }
+.is-time { display: inline-flex; align-items: center; gap: 4px; margin-top: .375rem; font-size: .65rem; font-weight: 700; padding: 1px 7px; border-radius: 3px; background: rgba(29,158,117,.12); color: #5dcaa5; font-family: 'Ubuntu', sans-serif; }
+/* Code block */
+.code-block { background: #060f1c; border: 1px solid rgba(255,255,255,.08); border-radius: 12px; overflow: hidden; }
+.cb-bar { background: rgba(255,255,255,.04); padding: .5rem 1rem; display: flex; align-items: center; gap: .5rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+.cb-dot { width: 10px; height: 10px; border-radius: 50%; }
+.cb-title { font-size: .72rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; margin-left: .5rem; }
+.cb-body { padding: 1.25rem; font-size: .78rem; font-family: monospace; color: rgba(255,255,255,.7); line-height: 1.7; overflow-x: auto; }
+.cb-key { color: #7fb3e8; }
+.cb-str { color: #5dcaa5; }
+.cb-num { color: #c9a84c; }
+.cb-cmt { color: rgba(255,255,255,.3); }
+.cb-tag { color: #f0997b; }
+
+/* ══ MENA EXPANSION ══ */
+.mena-phases { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2.5rem; }
+.mena-phase { border-radius: 14px; padding: 2rem; position: relative; overflow: hidden; }
+.mp-1 { background: rgba(29,158,117,.07); border: 1px solid rgba(29,158,117,.2); }
+.mp-2 { background: rgba(24,95,165,.07); border: 1px solid rgba(24,95,165,.2); }
+.mp-3 { background: rgba(201,168,76,.06); border: 1px solid rgba(201,168,76,.18); }
+.mp-phase-label { font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .375rem; font-family: 'Ubuntu', sans-serif; }
+.mp-1 .mp-phase-label { color: #5dcaa5; }
+.mp-2 .mp-phase-label { color: #7fb3e8; }
+.mp-3 .mp-phase-label { color: #c9a84c; }
+.mp-country { font-size: 1.4rem; font-weight: 900; color: #fff; font-family: 'Kufam', sans-serif; margin-bottom: .25rem; }
+.mp-timeline { font-size: .75rem; color: rgba(255,255,255,.4); font-family: 'Ubuntu', sans-serif; margin-bottom: 1rem; }
+.mp-items { display: flex; flex-direction: column; gap: .375rem; }
+.mp-item { font-size: .78rem; color: rgba(255,255,255,.58); font-family: 'Ubuntu', sans-serif; display: flex; gap: .5rem; }
+.mp-stat { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.07); font-size: .78rem; font-weight: 700; font-family: 'Ubuntu', sans-serif; }
+.mp-1 .mp-stat { color: #5dcaa5; }
+.mp-2 .mp-stat { color: #7fb3e8; }
+.mp-3 .mp-stat { color: #c9a84c; }
+
+/* ══ FOOTER-BOTTOM FIX ══ */
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; padding:1.1rem 5%; border-top:1px solid rgba(255,255,255,.08); flex-wrap:nowrap; gap:1rem; }
+.footer-copy { font-size:.78rem; color:rgba(255,255,255,.35); white-space:nowrap; }
+.footer-legal { display:flex; gap:1.5rem; align-items:center; }
+.footer-legal a { font-size:.78rem; color:rgba(255,255,255,.35); text-decoration:none; transition:color .2s; }
+.footer-legal a:hover { color:rgba(255,255,255,.75); }
+
+/* ══ SCROLL TOP ══ */
+#scroll-top { position:fixed; bottom:2rem; right:2rem; width:44px; height:44px; border-radius:50%; background:#185fa5; color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.1rem; opacity:0; transform:translateY(12px); transition:opacity .3s,transform .3s; z-index:999; pointer-events:none; }
+#scroll-top.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
+#scroll-top:hover { background:#0c447c; }
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1000px){
+  .hub-diagram { grid-template-columns: 1fr 220px 1fr; }
+}
+@media(max-width:860px){
+  .hub-diagram { grid-template-columns:1fr; }
+  .hub-center { grid-row:auto; }
+  .hub-col-left, .hub-col-right { display:grid; grid-template-columns:1fr 1fr; }
+  .hub-connector-h { display:none; }
+  .party-panel.active { grid-template-columns:1fr; gap:2rem; }
+  .ba-grid { grid-template-columns:1fr; }
+  .ba-arrow { display:none; }
+  .partners-grid { grid-template-columns:1fr 1fr; }
+  .integ-grid { grid-template-columns:1fr; }
+  .mena-phases { grid-template-columns:1fr; }
+  .pp-stats { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:600px){
+  .hub-col-left, .hub-col-right { grid-template-columns:1fr; }
+  .partners-grid { grid-template-columns:1fr; }
+  .eco-h1 { font-size:2.2rem; }
+  .flow-step-row { grid-template-columns:60px 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav" role="banner">
+  <a href="index.html#home" class="nav-logo" aria-label="iRonic Health Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">Health System Integration Technology</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="Main navigation">
+    <a href="index.html#problem">Problem</a>
+    <a href="platform.html">Platform</a>
+    <a href="ecosystem.html" class="nav-active">Ecosystem</a>
+    <a href="index.html#dashboard">Dashboard</a>
+    <a href="index.html#market">Market</a>
+    <a href="index.html#model">Revenue</a>
+    <a href="index.html#about">Team</a>
+    <a href="investors.html">Investors</a>
+  </nav>
+  <div class="nav-right">
+    <a href="ar/index.html" class="btn-lang">🌐 عربي</a>
+    <a href="index.html#contact" class="btn-demo">Request Demo →</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html#problem">Problem</a>
+  <a href="platform.html">Platform</a>
+  <a href="ecosystem.html">Ecosystem</a>
+  <a href="index.html#dashboard">Dashboard</a>
+  <a href="index.html#market">Market</a>
+  <a href="index.html#model">Revenue</a>
+  <a href="index.html#about">Team</a>
+  <a href="investors.html">Investors</a>
+  <a href="index.html#contact" class="mobile-demo-btn">Request Demo →</a>
+</div>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="eco-hero" aria-label="Ecosystem overview">
+  <div class="eco-hero-bg" aria-hidden="true"></div>
+  <div class="eco-grid-bg" aria-hidden="true"></div>
+  <div class="eco-hero-inner reveal">
+    <div class="eco-badge">🔗 The iRonic Health Network</div>
+    <h1 class="eco-h1">8 Parties.<br><em>One Intelligence Layer.</em><br><span class="bl">Zero Fragmentation.</span></h1>
+    <p class="eco-sub">Egypt's healthcare insurance ecosystem has 8 critical parties — all operating in silos, all losing money because of it. iRonic Health is the first AI platform to connect all 8 in real time, eliminating the gaps where fraud hides and costs inflate.</p>
+    <div class="eco-hero-stats">
+      <div class="ehs"><div class="ehs-val gold">8</div><div class="ehs-lbl">Connected Parties</div></div>
+      <div class="ehs"><div class="ehs-val green">1.2M</div><div class="ehs-lbl">Lives via GlobeMed</div></div>
+      <div class="ehs"><div class="ehs-val blue">18</div><div class="ehs-lbl">Insurers Connected</div></div>
+      <div class="ehs"><div class="ehs-val">340+</div><div class="ehs-lbl">Network Providers</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BEFORE / AFTER ═══ -->
+<section class="e-sec e-sec-odd" id="before-after" aria-labelledby="ba-heading">
+  <div class="e-inner">
+    <div class="reveal">
+      <div class="e-eyebrow">The Problem We Solve</div>
+      <h2 class="e-h2" id="ba-heading">Egypt's Ecosystem Is <em>Broken by Design</em></h2>
+      <p class="e-lead">90% of prescriptions and claims are on paper. 8 parties that must work together — but don't. Every gap in the chain is where fraud enters and money leaks.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-col ba-before reveal">
+        <div class="ba-label">❌ Before iRonic Health</div>
+        <div class="ba-title">Siloed. Manual. Fragmented.</div>
+        <div class="ba-items">
+          <div class="ba-item"><div class="ba-ico">📄</div>90%+ of claims processed on paper — 7 to 21 day approval cycles</div>
+          <div class="ba-item"><div class="ba-ico">💸</div>2–10% of all claims are fraudulent — $7–37M lost annually with no detection system</div>
+          <div class="ba-item"><div class="ba-ico">🏥</div>Hospitals wait 60–90 days for payment — cash-flow crisis forces under-service of insured patients</div>
+          <div class="ba-item"><div class="ba-ico">💊</div>60,000 pharmacies using legacy POS — no real-time prescription verification or counterfeit drug detection</div>
+          <div class="ba-item"><div class="ba-ico">👤</div>Members carry paper cards — no digital identity, no claims transparency, no benefit navigation</div>
+          <div class="ba-item"><div class="ba-ico">📈</div>20% premium uplift from overtreatment — unnecessary tests, medically unjustified ICU stays</div>
+          <div class="ba-item"><div class="ba-ico">🔍</div>Zero AI fraud detection deployed at scale across any Egyptian insurer today</div>
+        </div>
+      </div>
+      <div class="ba-arrow">→</div>
+      <div class="ba-col ba-after reveal reveal-d2">
+        <div class="ba-label">✅ With iRonic Health</div>
+        <div class="ba-title">Connected. Automated. Intelligent.</div>
+        <div class="ba-items">
+          <div class="ba-item"><div class="ba-ico">⚡</div>Claims scored by AI in 4.3 seconds — 87% auto-approved with full audit trail</div>
+          <div class="ba-item"><div class="ba-ico">🔍</div>25–40 Egypt-native fraud archetypes catching phantom prescriptions, ICU over-stays, counterfeit drugs in real time</div>
+          <div class="ba-item"><div class="ba-ico">💳</div>Hospitals get pre-authorization in &lt;4 hours — faster payment, better cash flow, higher-quality care</div>
+          <div class="ba-item"><div class="ba-ico">💊</div>Pharmacies verify eligibility and detect counterfeit drugs in seconds — paid within 48 hours, not 90 days</div>
+          <div class="ba-item"><div class="ba-ico">📱</div>Members get a QR digital health card — real-time claims tracking, benefit navigation, preventive care alerts</div>
+          <div class="ba-item"><div class="ba-ico">📉</div>15% loss ratio improvement — validated in pilot, documented in FRA-compliant audit trail</div>
+          <div class="ba-item"><div class="ba-ico">📊</div>All 8 parties see their real-time data — one dashboard, zero information gaps</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HUB DIAGRAM ═══ -->
+<section class="e-sec e-sec-even" id="network" aria-labelledby="network-heading">
+  <div class="e-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:0">
+      <div class="e-eyebrow" style="text-align:center">The Network</div>
+      <h2 class="e-h2" id="network-heading" style="text-align:center">Every Party.<br><em>One Connection Point.</em></h2>
+      <p class="e-lead" style="text-align:center;max-width:540px;margin:0 auto">iRonic Health sits at the center — not replacing any party, but making every interaction between them instant, intelligent, and fraud-proof.</p>
+    </div>
+    <div class="hub-wrap reveal">
+      <div class="hub-diagram">
+        <!-- Left column: Payers -->
+        <div class="hub-col-left">
+          <div class="party-card pc-blue">
+            <div class="party-top"><div class="party-ico">🏛️</div><div class="party-name">Health Insurers</div><div class="party-num">01</div></div>
+            <div class="party-desc">10+ Egyptian insurers — Misr, AXA, Bupa, MetLife, Allianz, GIG and more. They pay the bills. We reduce what they pay fraudulently.</div>
+          </div>
+          <div class="party-card pc-gold">
+            <div class="party-top"><div class="party-ico">📋</div><div class="party-name">TPAs</div><div class="party-num">02</div></div>
+            <div class="party-desc">GlobeMed (1.2M lives, 18 insurers), MedNet, AMC, Limitless Care. They process the claims. We make that processing intelligent.</div>
+          </div>
+          <div class="party-card pc-purple">
+            <div class="party-top"><div class="party-ico">🏢</div><div class="party-name">Corporate HR</div><div class="party-num">03</div></div>
+            <div class="party-desc">Self-funded corporates under Law 155/2024. Banque Misr, Telecom Egypt, industrial groups. Fast procurement, cleaner data.</div>
+          </div>
+          <div class="party-card pc-gray">
+            <div class="party-top"><div class="party-ico">⚖️</div><div class="party-name">Regulators</div><div class="party-num">04</div></div>
+            <div class="party-desc">FRA (Financial Regulatory Authority). PDPL 151/2020. Egyptian Medical Syndicate. We are built for them — not around them.</div>
+          </div>
+        </div>
+
+        <!-- Center: iRonic AI -->
+        <div class="hub-center">
+          <div class="hub-connector-h" style="width:100%;margin-bottom:.5rem"></div>
+          <div class="hub-core">
+            <div class="hub-core-ico">⚕️</div>
+            <div class="hub-core-name">iRonic Health AI</div>
+            <div class="hub-core-sub">Egypt's AI Orchestration Layer · API-first · FRA-licensed · PDPL compliant</div>
+            <div class="hub-core-pulse"><div class="hcp-dot"></div><span class="hcp-txt">Live</span></div>
+          </div>
+          <div class="hub-connector-h hub-connector-hl" style="width:100%;margin-top:.5rem"></div>
+        </div>
+
+        <!-- Right column: Providers -->
+        <div class="hub-col-right">
+          <div class="party-card pc-green">
+            <div class="party-top"><div class="party-ico">🏥</div><div class="party-name">Hospitals &amp; Clinics</div><div class="party-num">05</div></div>
+            <div class="party-desc">Cleopatra Group, As-Salam, Saudi German Cairo, Andalusia. They deliver care. We get them paid faster and fairly.</div>
+          </div>
+          <div class="party-card pc-teal">
+            <div class="party-top"><div class="party-ico">👨‍⚕️</div><div class="party-name">Doctors &amp; Clinicians</div><div class="party-num">06</div></div>
+            <div class="party-desc">Prescribing physicians and specialists. Their names are forged in phantom prescriptions. We verify and protect their professional identity.</div>
+          </div>
+          <div class="party-card pc-coral">
+            <div class="party-top"><div class="party-ico">💊</div><div class="party-name">Pharmacies</div><div class="party-num">07</div></div>
+            <div class="party-desc">El Ezaby (250+ branches), Pharmacy Marts (12,000 pharmacies), 19011, Yodawy. They dispense. We verify every script in real time.</div>
+          </div>
+          <div class="party-card pc-pink">
+            <div class="party-top"><div class="party-ico">🔬</div><div class="party-name">Labs &amp; Diagnostics</div><div class="party-num">08</div></div>
+            <div class="party-desc">Mokhtabar (IDH), Alfa Labs, radiology centers. They diagnose. We verify test necessity and prevent duplicate billing.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom: Patient layer -->
+      <div style="margin-top:1.25rem;padding:1.5rem;background:rgba(55,138,221,.06);border:1px solid rgba(55,138,221,.18);border-radius:14px;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+        <div style="font-size:1.5rem;flex-shrink:0">👤</div>
+        <div style="flex:1;min-width:200px">
+          <div style="font-size:.9rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:.25rem;font-family:'Ubuntu',sans-serif">Patients &amp; Members · The 8th Party</div>
+          <div style="font-size:.78rem;color:rgba(255,255,255,.45);font-family:'Ubuntu',sans-serif;line-height:1.55">1.2M+ insured Egyptians who gain a QR digital health card, real-time claims tracking, faster approvals, preventive care alerts, and transparent benefit navigation — for the first time.</div>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">iOS App</span>
+          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">Android App</span>
+          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">QR Digital Card</span>
+          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">Claims Tracker</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PARTY DEEP DIVES ═══ -->
+<section class="e-sec e-sec-odd" id="parties" aria-labelledby="parties-heading">
+  <div class="e-inner">
+    <div class="reveal">
+      <div class="e-eyebrow">Party Deep Dives</div>
+      <h2 class="e-h2" id="parties-heading">What Each Party <em>Provides &amp; Gains</em></h2>
+      <p class="e-lead">Every party in the ecosystem has a role. Every party gets a measurable return. No party is asked to take a risk they don't understand.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="party-tabs reveal" role="tablist">
+      <div class="pt-tab active" role="tab" onclick="showParty('insurers')">🏛️ Insurers</div>
+      <div class="pt-tab" role="tab" onclick="showParty('tpa')">📋 TPAs</div>
+      <div class="pt-tab" role="tab" onclick="showParty('hospitals')">🏥 Hospitals</div>
+      <div class="pt-tab" role="tab" onclick="showParty('pharmacies')">💊 Pharmacies</div>
+      <div class="pt-tab" role="tab" onclick="showParty('labs')">🔬 Labs</div>
+      <div class="pt-tab" role="tab" onclick="showParty('doctors')">👨‍⚕️ Doctors</div>
+      <div class="pt-tab" role="tab" onclick="showParty('corporate')">🏢 Corporate HR</div>
+      <div class="pt-tab" role="tab" onclick="showParty('patients')">👤 Patients</div>
+    </div>
+
+    <div class="party-panels reveal">
+
+      <!-- INSURERS -->
+      <div class="party-panel active" id="panel-insurers">
+        <div class="pp-left">
+          <div class="pp-tag" style="background:rgba(24,95,165,.15);color:#7fb3e8">🏛️ Party 01 — Health Insurers</div>
+          <div class="pp-h3">The <em>Payers</em> Who<br>Need Fraud to Stop</div>
+          <div class="pp-desc">Egyptian private insurers are running loss ratios of 70–85% and rising. Every 1% improvement in loss ratio is worth millions. iRonic Health is the first platform that makes fraud detection measurable, FRA-compliant, and deployable in 4 weeks without upfront cost.</div>
+          <div class="pp-section-title">What they provide</div>
+          <div class="pp-list">
+            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Historical claims data for AI model training and baseline benchmarking</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Policy and member enrollment data for eligibility verification</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Provider network contracts and pricing benchmarks</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Approval authority for high-value claim decisions</div>
+          </div>
+          <div class="pp-section-title">What they gain</div>
+          <div class="pp-stats">
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">−15%</div><div class="pp-stat-lbl">Loss ratio improvement</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">25–40%</div><div class="pp-stat-lbl">Fraud recovery rate</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">4.3s</div><div class="pp-stat-lbl">Claim decision time</div></div>
+            <div class="pp-stat"><div class="pp-stat-val">100%</div><div class="pp-stat-lbl">FRA audit coverage</div></div>
+          </div>
+          <div class="pp-section-title">Target organisations</div>
+          <div class="pp-examples">
+            <span class="pp-ex">Misr Insurance Holding</span><span class="pp-ex">AXA Egypt</span><span class="pp-ex">Bupa Egypt</span>
+            <span class="pp-ex">MetLife Egypt</span><span class="pp-ex">Allianz / NEXtCARE</span><span class="pp-ex">GIG Egypt</span>
+            <span class="pp-ex">Suez Canal Insurance</span><span class="pp-ex">Orient Takaful</span><span class="pp-ex">AMIG</span>
+          </div>
+        </div>
+        <div class="pp-right">
+          <div class="pp-card">
+            <div class="pp-card-bar"><span class="pp-card-title">Insurer CFO View — AXA Egypt</span><span class="pp-card-badge" style="background:rgba(29,158,117,.2);color:#5dcaa5">Live Pilot</span></div>
+            <div class="pp-card-body">
+              <div class="pain-gain">
+                <div class="pg-item pg-before"><div class="pg-lbl">Before — The Problem</div><div class="pg-txt">Loss ratio at 78% — rising 12% YoY. 90% of claims reviewed manually by a 12-person team. 2-week approval cycle. No visibility into fraud vs. legitimate high-cost claims. Boards asking hard questions.</div></div>
+                <div class="pg-item pg-after"><div class="pg-lbl">After — With iRonic Health</div><div class="pg-txt">Loss ratio falls to 63% — 15-point improvement in 6 months. 87% of claims auto-approved in 4.3 seconds. Review team focuses only on flagged cases. FRA-compliant audit trail on every decision. Board sees real-time ROI dashboard.</div></div>
+              </div>
+              <div style="margin-top:1rem;padding:.75rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;font-size:.76rem;color:#c9a84c;font-family:'Ubuntu',sans-serif;font-weight:600">
+                💰 Pilot ROI: EGP 2.4M fraud recovered in 90 days on a 200K-life sub-book. No platform fee paid.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TPA -->
+      <div class="party-panel" id="panel-tpa">
+        <div class="pp-left">
+          <div class="pp-tag" style="background:rgba(201,168,76,.12);color:#c9a84c">📋 Party 02 — TPAs</div>
+          <div class="pp-h3">The <em>Scale Multipliers</em><br>We Go Through First</div>
+          <div class="pp-desc">One TPA partnership replaces 18 separate insurer sales cycles. GlobeMed Egypt manages 1.2M insured lives across 18 insurance companies. Our TPA-first GTM strategy compresses years of sales work into months — and gives TPAs a powerful AI upgrade to their legacy claims stack.</div>
+          <div class="pp-section-title">What they provide</div>
+          <div class="pp-list">
+            <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>Multi-insurer claims workflow — existing processing infrastructure</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>Provider network management and contract data across all connected insurers</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>Member enrollment data for 18 insurers — 1.2M lives in one integration</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>Distribution reach — iRonic deploys to all 18 connected insurers via one API</div>
+          </div>
+          <div class="pp-section-title">What they gain</div>
+          <div class="pp-stats">
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">18</div><div class="pp-stat-lbl">Insurers served via 1 deal</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">AI upgrade</div><div class="pp-stat-lbl">No rebuild needed</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">87%</div><div class="pp-stat-lbl">Claims automated</div></div>
+            <div class="pp-stat"><div class="pp-stat-val">New revenue</div><div class="pp-stat-lbl">Recovery share income</div></div>
+          </div>
+          <div class="pp-section-title">Target organisations</div>
+          <div class="pp-examples">
+            <span class="pp-ex" style="background:rgba(201,168,76,.12);color:#c9a84c;border:1px solid rgba(201,168,76,.25)">★ GlobeMed Egypt</span>
+            <span class="pp-ex">MedNet (Munich Re)</span><span class="pp-ex">AMC</span><span class="pp-ex">Limitless Care</span>
+            <span class="pp-ex">6 FRA-Licensed TPAs (Apr 2026)</span>
+          </div>
+        </div>
+        <div class="pp-right">
+          <div class="pp-card">
+            <div class="pp-card-bar"><span class="pp-card-title">GlobeMed Egypt — Integration Overview</span><span class="pp-card-badge" style="background:rgba(201,168,76,.2);color:#c9a84c">Strategic Target</span></div>
+            <div class="pp-card-body">
+              <div class="pain-gain">
+                <div class="pg-item pg-before"><div class="pg-lbl">Current State</div><div class="pg-txt">1.2M lives, 18 insurers, legacy claims processing stack. Rules-based fraud detection. Manual review bottleneck. Insurers pushing for cost containment — GlobeMed needs to show innovation or risk losing contracts.</div></div>
+                <div class="pg-item pg-after"><div class="pg-lbl">With iRonic Health</div><div class="pg-txt">AI-powered fraud scoring plugs directly into GlobeMed's existing workflow. All 18 connected insurers get upgraded simultaneously. GlobeMed becomes the first TPA in Egypt to offer AI-native fraud detection — a retention and acquisition tool for new insurer mandates.</div></div>
+              </div>
+              <div style="margin-top:1rem;padding:.75rem;background:rgba(55,138,221,.08);border:1px solid rgba(55,138,221,.2);border-radius:8px;font-size:.76rem;color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">
+                ⚡ One GlobeMed API integration = immediate 1.2M lives on platform. 18 insurer deals in 1 contract.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOSPITALS -->
+      <div class="party-panel" id="panel-hospitals">
+        <div class="pp-left">
+          <div class="pp-tag" style="background:rgba(29,158,117,.12);color:#5dcaa5">🏥 Party 05 — Hospitals &amp; Clinics</div>
+          <div class="pp-h3">Providers Who <em>Need<br>Faster Payment</em></div>
+          <div class="pp-desc">Egyptian private hospitals wait 60–90 days for insurer payment on average — creating chronic cash-flow pressure that drives them to favor cash patients over insured ones. iRonic Health gives hospitals pre-authorization in under 4 hours and processes payments within 48 hours of approved claims.</div>
+          <div class="pp-section-title">What they provide</div>
+          <div class="pp-list">
+            <div class="pp-item"><div class="pp-item-dot" style="background:#1d9e75"></div>Clinical records, admission data, treatment plans, ICD/CPT diagnosis codes</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#1d9e75"></div>Real-time bed availability and specialty availability for routing decisions</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#1d9e75"></div>Quality metrics data for provider scoring and routing ranking</div>
+          </div>
+          <div class="pp-section-title">What they gain</div>
+          <div class="pp-stats">
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">&lt;4h</div><div class="pp-stat-lbl">Pre-authorization</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">48h</div><div class="pp-stat-lbl">Payment processing</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">↑ Ranked</div><div class="pp-stat-lbl">In routing algorithm</div></div>
+            <div class="pp-stat"><div class="pp-stat-val">Lower</div><div class="pp-stat-lbl">Audit friction</div></div>
+          </div>
+          <div class="pp-section-title">Target organisations</div>
+          <div class="pp-examples">
+            <span class="pp-ex">Cleopatra Hospital Group</span><span class="pp-ex">As-Salam International</span>
+            <span class="pp-ex">Saudi German Hospital Cairo</span><span class="pp-ex">Andalusia</span><span class="pp-ex">Cairo Medical Centre</span>
+          </div>
+        </div>
+        <div class="pp-right">
+          <div class="pp-card">
+            <div class="pp-card-bar"><span class="pp-card-title">Hospital Pre-Auth — Cleopatra Heliopolis</span><span class="pp-card-badge" style="background:rgba(29,158,117,.2);color:#5dcaa5">Approved · 2h 14m</span></div>
+            <div class="pp-card-body">
+              <div class="pain-gain">
+                <div class="pg-item pg-before"><div class="pg-lbl">Before — Manual Pre-Auth</div><div class="pg-txt">Admission pre-authorization takes 48–72 hours by fax and phone. Patient waits in hospital with uncertainty. Hospital risks treating without confirmed approval — creating write-off risk on every high-cost admission.</div></div>
+                <div class="pg-item pg-after"><div class="pg-lbl">After — iRonic Pre-Auth</div><div class="pg-txt">Pre-auth request submitted via API. AI scores clinical necessity against ICD codes and network pricing benchmarks. Approved in 2h 14m. Payment guaranteed within 48 hours of discharged and coded claim. Zero write-off risk.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHARMACIES -->
+      <div class="party-panel" id="panel-pharmacies">
+        <div class="pp-left">
+          <div class="pp-tag" style="background:rgba(216,90,48,.12);color:#f0997b">💊 Party 07 — Pharmacies</div>
+          <div class="pp-h3">The <em>Last Line</em> of<br>Fraud Defence</div>
+          <div class="pp-desc">Egypt has 60,000 pharmacies using legacy paper POS systems. Counterfeit drug billing (Unictam, antibiotics), prescription forgery in real doctors' names, and brand upcoding cost insurers hundreds of millions annually. iRonic Health verifies every prescription in real time — and pays pharmacies 10× faster.</div>
+          <div class="pp-section-title">What they provide</div>
+          <div class="pp-list">
+            <div class="pp-item"><div class="pp-item-dot" style="background:#d85a30"></div>Real-time prescription dispensing data — drug name, quantity, prescribing doctor, patient ID</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#d85a30"></div>Drug database integration for formulary compliance and counterfeit detection</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#d85a30"></div>QR scan of patient digital health card for instant eligibility verification</div>
+          </div>
+          <div class="pp-section-title">What they gain</div>
+          <div class="pp-stats">
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#f0997b">48h</div><div class="pp-stat-lbl">vs 60–90 day payments</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">Instant</div><div class="pp-stat-lbl">Eligibility check</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">Protected</div><div class="pp-stat-lbl">From counterfeit risk</div></div>
+            <div class="pp-stat"><div class="pp-stat-val">Audit</div><div class="pp-stat-lbl">Dispute protection</div></div>
+          </div>
+          <div class="pp-section-title">Target organisations</div>
+          <div class="pp-examples">
+            <span class="pp-ex">El Ezaby (250+ branches)</span><span class="pp-ex">Pharmacy Marts (12,000 pharmacies)</span>
+            <span class="pp-ex">19011 (Roshdy)</span><span class="pp-ex">Yodawy network</span>
+          </div>
+        </div>
+        <div class="pp-right">
+          <div class="pp-card">
+            <div class="pp-card-bar"><span class="pp-card-title">Pharmacy Verification — El Ezaby Branch #47</span><span class="pp-card-badge" style="background:rgba(216,90,48,.2);color:#f0997b">⚠ Flagged</span></div>
+            <div class="pp-card-body">
+              <div class="pain-gain">
+                <div class="pg-item pg-before"><div class="pg-lbl">Prescription Received</div><div class="pg-txt">Member presents prescription for Unictam 375mg × 3 boxes. QR card scanned. Doctor name: Dr. Ahmed Mostafa. Claim: EGP 2,100.</div></div>
+                <div class="pg-item pg-after"><div class="pg-lbl">iRonic Verification Result</div><div class="pg-txt">AI cross-references against Egyptian drug database. Unictam batch verified as counterfeit — Uppsala Reports alert active. Prescription signature pattern doesn't match Dr. Mostafa's known script style. Claim flagged. Pharmacy protected from liability. Case escalated to CMO.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LABS -->
+      <div class="party-panel" id="panel-labs">
+        <div class="pp-left">
+          <div class="pp-tag" style="background:rgba(83,74,183,.15);color:#afa9ec">🔬 Party 08 — Labs &amp; Diagnostics</div>
+          <div class="pp-h3">Diagnostics That<br><em>Prove Their Necessity</em></div>
+          <div class="pp-desc">Unnecessary lab tests and duplicate diagnostic orders are a significant fraud vector — and labs often bear audit risk for tests ordered by referring physicians. iRonic Health verifies clinical necessity against ICD codes before the test is run, protecting labs from fraudulent referrals.</div>
+          <div class="pp-section-title">What they provide</div>
+          <div class="pp-list">
+            <div class="pp-item"><div class="pp-item-dot" style="background:#afa9ec"></div>Test results data for clinical record completion and claims substantiation</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#afa9ec"></div>Imaging and pathology reports linked to patient episode of care</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#afa9ec"></div>Real-time test capacity data for routing and scheduling optimization</div>
+          </div>
+          <div class="pp-section-title">What they gain</div>
+          <div class="pp-stats">
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#afa9ec">Pre-verified</div><div class="pp-stat-lbl">Every test order</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">48h</div><div class="pp-stat-lbl">Payment</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">Zero</div><div class="pp-stat-lbl">Fraudulent referral risk</div></div>
+            <div class="pp-stat"><div class="pp-stat-val">API</div><div class="pp-stat-lbl">Direct integration</div></div>
+          </div>
+          <div class="pp-section-title">Target organisations</div>
+          <div class="pp-examples">
+            <span class="pp-ex">Mokhtabar (IDH Group)</span><span class="pp-ex">Alfa Labs</span>
+            <span class="pp-ex">Al Borg Laboratories</span><span class="pp-ex">Scan &amp; Imaging Co.</span>
+          </div>
+        </div>
+        <div class="pp-right">
+          <div class="pp-card">
+            <div class="pp-card-bar"><span class="pp-card-title">Lab Test Order — Mokhtabar Nasr City</span><span class="pp-card-badge" style="background:rgba(29,158,117,.2);color:#5dcaa5">✓ Verified</span></div>
+            <div class="pp-card-body">
+              <div class="pain-gain">
+                <div class="pg-item pg-before"><div class="pg-lbl">Before — Lab's Risk</div><div class="pg-txt">Physician orders 14 tests for routine follow-up. Lab runs them all. Insurer audits 3 months later — flags 6 tests as clinically unnecessary. Lab bears dispute cost and delayed payment while investigation runs.</div></div>
+                <div class="pg-item pg-after"><div class="pg-lbl">After — Pre-verified</div><div class="pg-txt">iRonic checks test order against patient's ICD codes and clinical episode before the test runs. 11 of 14 verified as clinically necessary. 3 flagged for CMO review. Lab runs verified 11 with guaranteed payment. Zero audit risk on verified tests.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DOCTORS -->
+      <div class="party-panel" id="panel-doctors">
+        <div class="pp-left">
+          <div class="pp-tag" style="background:rgba(29,158,117,.12);color:#5dcaa5">👨‍⚕️ Party 06 — Doctors &amp; Clinicians</div>
+          <div class="pp-h3">Clinicians Whose<br><em>Names Are Forged</em></div>
+          <div class="pp-desc">Egyptian prescription fraud is often committed in real doctors' names — without their knowledge. Counterfeit Unictam prescriptions, phantom consultation billings, and ghost referrals use legitimate physician IDs. iRonic Health builds a verification layer that protects doctor identities and clinical reputations.</div>
+          <div class="pp-section-title">What they provide</div>
+          <div class="pp-list">
+            <div class="pp-item"><div class="pp-item-dot" style="background:#1d9e75"></div>Treatment plans, prescriptions, and clinical notes for claims substantiation</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#1d9e75"></div>ICD/CPT coding for clinical decision support validation</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#1d9e75"></div>Prescription signature profiles for fraud pattern matching</div>
+          </div>
+          <div class="pp-section-title">What they gain</div>
+          <div class="pp-stats">
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">Protected</div><div class="pp-stat-lbl">Identity &amp; licence</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">AI support</div><div class="pp-stat-lbl">Clinical decision aid</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">Formulary</div><div class="pp-stat-lbl">Real-time guidance</div></div>
+            <div class="pp-stat"><div class="pp-stat-val">Zero</div><div class="pp-stat-lbl">False liability</div></div>
+          </div>
+        </div>
+        <div class="pp-right">
+          <div class="pp-card">
+            <div class="pp-card-bar"><span class="pp-card-title">Doctor Identity Protection</span><span class="pp-card-badge" style="background:rgba(29,158,117,.2);color:#5dcaa5">🛡️ Active</span></div>
+            <div class="pp-card-body">
+              <div class="pain-gain">
+                <div class="pg-item pg-before"><div class="pg-lbl">The Real Problem</div><div class="pg-txt">A Sharjah case documented an Egyptian pharmacist and drug-company employee forging prescriptions in a real doctor's name — defrauding an insurer of Dh375,000. The doctor had no knowledge. This happens in Egypt too — just rarely prosecuted.</div></div>
+                <div class="pg-item pg-after"><div class="pg-lbl">iRonic Protection Layer</div><div class="pg-txt">Doctor prescription patterns are profiled over time. Any prescription that deviates significantly from a doctor's known pattern triggers a CMO verification step before dispensing — protecting the doctor's Medical Syndicate licence and eliminating false attribution fraud.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CORPORATE -->
+      <div class="party-panel" id="panel-corporate">
+        <div class="pp-left">
+          <div class="pp-tag" style="background:rgba(83,74,183,.15);color:#afa9ec">🏢 Party 03 — Corporate HR</div>
+          <div class="pp-h3">Self-Funded Plans<br><em>That Finally Have Data</em></div>
+          <div class="pp-desc">Law 155/2024 (Unified Insurance Law) opened self-funded corporate health schemes as a new channel. Large corporates — Banque Misr, Telecom Egypt, industrial groups — now manage their own health benefit pools. iRonic Health gives them for the first time what insurers have never given them: real-time visibility into how their health budget is spent.</div>
+          <div class="pp-section-title">What they provide</div>
+          <div class="pp-list">
+            <div class="pp-item"><div class="pp-item-dot" style="background:#afa9ec"></div>Employee enrollment and payroll data — pre-verified demographics at onboarding</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#afa9ec"></div>Annual health budget and benefit plan design</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#afa9ec"></div>Faster procurement cycle — 4–6 weeks vs 10–12 for insurers</div>
+          </div>
+          <div class="pp-section-title">What they gain</div>
+          <div class="pp-stats">
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#afa9ec">$5</div><div class="pp-stat-lbl">PMPM all-in pricing</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">Real-time</div><div class="pp-stat-lbl">Spend analytics</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">Full</div><div class="pp-stat-lbl">Claims transparency</div></div>
+            <div class="pp-stat"><div class="pp-stat-val">Health</div><div class="pp-stat-lbl">Pool risk scoring</div></div>
+          </div>
+          <div class="pp-section-title">Target organisations</div>
+          <div class="pp-examples">
+            <span class="pp-ex">Banque Misr</span><span class="pp-ex">Telecom Egypt</span>
+            <span class="pp-ex">Cleopatra Hospital Group</span><span class="pp-ex">Industrial Groups</span><span class="pp-ex">Large NGOs</span>
+          </div>
+        </div>
+        <div class="pp-right">
+          <div class="pp-card">
+            <div class="pp-card-bar"><span class="pp-card-title">Corporate Health Dashboard — 5,000 Employees</span><span class="pp-card-badge" style="background:rgba(83,74,183,.2);color:#afa9ec">Self-Funded</span></div>
+            <div class="pp-card-body">
+              <div class="pain-gain">
+                <div class="pg-item pg-before"><div class="pg-lbl">Before — Zero Visibility</div><div class="pg-txt">HR receives a monthly PDF from their TPA showing total claims spent. No breakdown by department, no individual risk scores, no fraud alerts, no benchmarks. Budget overruns discovered only at year-end renewal.</div></div>
+                <div class="pg-item pg-after"><div class="pg-lbl">After — Full Transparency</div><div class="pg-txt">Real-time dashboard: PMPM cost by department, top 10 highest-utilization employees (anonymized), fraud flags caught this month, health risk score distribution across the pool, year-to-date spend vs. budget — all live, all auditable.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PATIENTS -->
+      <div class="party-panel" id="panel-patients">
+        <div class="pp-left">
+          <div class="pp-tag" style="background:rgba(55,138,221,.15);color:#7fb3e8">👤 Party 08 — Patients &amp; Members</div>
+          <div class="pp-h3">1.2M Egyptians Who<br><em>Deserve Better</em></div>
+          <div class="pp-desc">Egypt's 6–8 million insured members carry paper cards, wait days for approvals, have no idea what their policy covers, and often pay out-of-pocket because the insurer approval didn't come through in time. iRonic Health gives every insured member a digital identity, a real-time view of their benefits, and faster access to care.</div>
+          <div class="pp-section-title">What they provide</div>
+          <div class="pp-list">
+            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Biometric verification for digital health card enrollment</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Health behavior data (with consent) for Health Score and Dynamic Premiums modules</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>QR presentation at hospitals, pharmacies, and labs for instant eligibility check</div>
+          </div>
+          <div class="pp-section-title">What they gain</div>
+          <div class="pp-stats">
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">QR Card</div><div class="pp-stat-lbl">Digital health identity</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">Real-time</div><div class="pp-stat-lbl">Claims tracking</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">−25%</div><div class="pp-stat-lbl">Premium via healthy living</div></div>
+            <div class="pp-stat"><div class="pp-stat-val">&lt;4h</div><div class="pp-stat-lbl">Pre-authorization</div></div>
+          </div>
+        </div>
+        <div class="pp-right">
+          <div class="pp-card">
+            <div class="pp-card-bar"><span class="pp-card-title">iRonic Patient App — Member View</span><span class="pp-card-badge" style="background:rgba(55,138,221,.2);color:#7fb3e8">iOS + Android</span></div>
+            <div class="pp-card-body">
+              <div class="pain-gain">
+                <div class="pg-item pg-before"><div class="pg-lbl">Before — Paper &amp; Uncertainty</div><div class="pg-txt">Laminated insurance card. 3-day approval wait. No idea what's covered. Out-of-pocket payment because the approval didn't arrive. Annual renewal without understanding what you paid for.</div></div>
+                <div class="pg-item pg-after"><div class="pg-lbl">After — Digital &amp; Transparent</div><div class="pg-txt">QR health card on phone. 4.3-second eligibility verification at hospital. Push notification when claim is approved. Full benefit breakdown in Arabic and English. Preventive care reminders. Health score tracker. Premium discount tracker.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /party-panels -->
+  </div>
+</section>
+
+<!-- ═══ DATA FLOW ═══ -->
+<section class="e-sec e-sec-even" id="data-flow" aria-labelledby="flow-heading">
+  <div class="e-inner">
+    <div class="reveal">
+      <div class="e-eyebrow">End-to-End Journey</div>
+      <h2 class="e-h2" id="flow-heading">How Data Flows<br><em>Across the Ecosystem</em></h2>
+      <p class="e-lead">From patient presentation to payment confirmation — every party is updated in real time, every decision is logged, every payment is tracked.</p>
+    </div>
+    <div class="flow-track reveal">
+      <div class="flow-step-row">
+        <div class="fsr-left"><div class="fsr-node" style="background:rgba(55,138,221,.2);border:2px solid rgba(55,138,221,.5)">🪪</div><div class="fsr-line"></div></div>
+        <div class="fsr-right"><div class="fsr-step-num">Step 01</div><div class="fsr-title">Member QR Scan at Provider</div><div class="fsr-desc">Patient presents QR digital health card at hospital, pharmacy, or lab. Provider scans QR — eligibility, benefit limits, and active coverage verified in under 1 second against insurer/TPA policy data.</div><div class="fsr-tags"><span class="fsr-tag fst-blue">Patient App</span><span class="fsr-tag fst-blue">QR Card</span><span class="fsr-tag fst-green">⚡ &lt;1 second</span></div></div>
+      </div>
+      <div class="flow-step-row">
+        <div class="fsr-left"><div class="fsr-node" style="background:rgba(201,168,76,.2);border:2px solid rgba(201,168,76,.5)">📤</div><div class="fsr-line"></div></div>
+        <div class="fsr-right"><div class="fsr-step-num">Step 02</div><div class="fsr-title">Claim Submitted via API</div><div class="fsr-desc">Hospital, pharmacy, or lab submits claim via iRonic REST API — including ICD/CPT codes, drug codes, test codes, provider ID, and episode of care data. Batch feed alternative available for legacy systems.</div><div class="fsr-tags"><span class="fsr-tag fst-blue">REST API</span><span class="fsr-tag fst-blue">Batch Feed</span><span class="fsr-tag fst-blue">ICD/CPT Codes</span></div></div>
+      </div>
+      <div class="flow-step-row">
+        <div class="fsr-left"><div class="fsr-node" style="background:rgba(216,90,48,.2);border:2px solid rgba(216,90,48,.5)">🔍</div><div class="fsr-line"></div></div>
+        <div class="fsr-right"><div class="fsr-step-num">Step 03</div><div class="fsr-title">AI Fraud Scoring (4.3 seconds)</div><div class="fsr-desc">Every claim scored simultaneously against 25–40 Egypt-specific fraud archetypes. Confidence score (0–100) assigned. Decision pathway: Auto-approve (&lt;30) · CMO review queue (30–70) · Auto-reject (&gt;70). Full reasoning logged.</div><div class="fsr-tags"><span class="fsr-tag fst-coral">25–40 Archetypes</span><span class="fsr-tag fst-gold">4.3s Decision</span><span class="fsr-tag fst-green">94.2% Accuracy</span></div></div>
+      </div>
+      <div class="flow-step-row">
+        <div class="fsr-left"><div class="fsr-node" style="background:rgba(83,74,183,.2);border:2px solid rgba(83,74,183,.5)">⚖️</div><div class="fsr-line"></div></div>
+        <div class="fsr-right"><div class="fsr-step-num">Step 04</div><div class="fsr-title">CMO Review (Flagged Claims Only)</div><div class="fsr-desc">Claims scoring 30–70 enter the CMO review queue. Licensed Chief Medical Officer (Egyptian Medical Syndicate) reviews AI reasoning and makes the final decision. All decisions logged with CMO identifier — full FRA audit trail.</div><div class="fsr-tags"><span class="fsr-tag fst-blue">CMO Decision</span><span class="fsr-tag fst-gold">FRA Compliant</span><span class="fsr-tag fst-green">&lt;4h SLA</span></div></div>
+      </div>
+      <div class="flow-step-row">
+        <div class="fsr-left"><div class="fsr-node" style="background:rgba(29,158,117,.2);border:2px solid rgba(29,158,117,.5)">✅</div><div class="fsr-line"></div></div>
+        <div class="fsr-right"><div class="fsr-step-num">Step 05</div><div class="fsr-title">Approval Notification to All Parties</div><div class="fsr-desc">Approved claims notify the provider (hospital/pharmacy/lab) instantly. Member receives push notification via app. TPA and insurer dashboards update in real time. Clean claims trigger automated payment processing within 48 hours.</div><div class="fsr-tags"><span class="fsr-tag fst-green">Real-time notify</span><span class="fsr-tag fst-green">48h Payment</span><span class="fsr-tag fst-blue">All 8 parties updated</span></div></div>
+      </div>
+      <div class="flow-step-row">
+        <div class="fsr-left"><div class="fsr-node" style="background:rgba(201,168,76,.2);border:2px solid rgba(201,168,76,.5)">📊</div><div class="fsr-line"></div></div>
+        <div class="fsr-right"><div class="fsr-step-num">Step 06</div><div class="fsr-title">Dashboard &amp; FRA Reporting</div><div class="fsr-desc">Every claim, decision, payment, and fraud flag flows into the Golden Dashboard — updating insurer KPIs, TPA operations, provider payment status, and member claim history in real time. Monthly FRA regulatory reports auto-generated with zero manual effort.</div><div class="fsr-tags"><span class="fsr-tag fst-gold">Golden Dashboard</span><span class="fsr-tag fst-gold">Auto FRA Report</span><span class="fsr-tag fst-green">Real-time</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NAMED PARTNERS ═══ -->
+<section class="e-sec e-sec-odd" id="partners" aria-labelledby="partners-heading">
+  <div class="e-inner">
+    <div class="reveal">
+      <div class="e-eyebrow">The Network by Name</div>
+      <h2 class="e-h2" id="partners-heading">Egypt's Healthcare<br><em>Key Organisations</em></h2>
+      <p class="e-lead">These are the organisations that make up Egypt's private health insurance ecosystem — and the ones iRonic Health is connecting, one integration at a time.</p>
+    </div>
+    <div class="partners-grid reveal">
+      <div class="partner-group">
+        <div class="partner-group-title">🏛️ Insurers (Primary Targets)</div>
+        <div class="partner-list">
+          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">Misr Insurance Holding <span class="pi-badge pib-target">Target Y2</span></div><div class="pi-note">~41% non-life market share · State-owned · Largest in Egypt</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">AXA Egypt <span class="pi-badge pib-target">Target Y1</span></div><div class="pi-note">1M+ customers · Digital-first · Ada Health AI partnership</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">Bupa Egypt <span class="pi-badge pib-target">Target Y1</span></div><div class="pi-note">Premium segment · Fastest sales cycle (6–8 weeks)</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">MetLife Egypt</div><div class="pi-note">1M+ customers · Uses MedNet TPA</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">Allianz Egypt / NEXtCARE</div><div class="pi-note">4M+ regional members · USD 1bn claims/yr</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">GIG Egypt · Orient Takaful · AMIG</div><div class="pi-note">Mid-tier · 100–400K lives each</div></div></div>
+        </div>
+      </div>
+      <div class="partner-group">
+        <div class="partner-group-title">📋 TPAs (Strategic Partners)</div>
+        <div class="partner-list">
+          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">GlobeMed Egypt <span class="pi-badge pib-target">Primary Target</span></div><div class="pi-note">1.2M lives · 18 insurers · #1 TPA in Egypt</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">MedNet Egypt (Munich Re)</div><div class="pi-note">Services MetLife Egypt · Regional scale</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">AMC</div><div class="pi-note">75,000+ beneficiaries</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">Limitless Care (Eva Pharma)</div><div class="pi-note">TPA + pharma group synergy</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">6 FRA-Licensed TPAs (April 2026)</div><div class="pi-note">Names TBD · FRA Decision 229/2025</div></div></div>
+        </div>
+      </div>
+      <div class="partner-group">
+        <div class="partner-group-title">🏥 Hospitals · 💊 Pharmacies · 🔬 Labs</div>
+        <div class="partner-list">
+          <div class="partner-item"><div class="pi-dot" style="background:#1d9e75"></div><div class="pi-body"><div class="pi-name">Cleopatra Hospital Group</div><div class="pi-note">UHI Authority partnership · 11 insurers · 1.35M members</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#1d9e75"></div><div class="pi-body"><div class="pi-name">As-Salam International · Saudi German Cairo</div><div class="pi-note">Major private hospital networks</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#d85a30"></div><div class="pi-body"><div class="pi-name">El Ezaby Pharmacies</div><div class="pi-note">250+ branches · Sovereign Fund partnership</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#d85a30"></div><div class="pi-body"><div class="pi-name">Pharmacy Marts</div><div class="pi-note">12,000 pharmacies digitised</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#534ab7"></div><div class="pi-body"><div class="pi-name">Mokhtabar (IDH Group) · Alfa Labs</div><div class="pi-note">Leading diagnostics networks in Egypt</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#534ab7"></div><div class="pi-body"><div class="pi-name">Yodawy Network</div><div class="pi-note">3,000+ pharmacies integrated · potential complement</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INTEGRATION ═══ -->
+<section class="e-sec e-sec-even" id="integration" aria-labelledby="integ-heading">
+  <div class="e-inner">
+    <div class="reveal">
+      <div class="e-eyebrow">Technical Integration</div>
+      <h2 class="e-h2" id="integ-heading">Live in <em>Under 4 Weeks.</em><br>No Legacy Disruption.</h2>
+      <p class="e-lead">API-first architecture means iRonic Health plugs into existing insurer and TPA systems — no rip-and-replace, no workflow disruption, no re-training of operations staff.</p>
+    </div>
+    <div class="integ-grid">
+      <div class="reveal">
+        <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:1rem;font-family:'Ubuntu',sans-serif">Integration Steps</div>
+        <div class="integ-steps">
+          <div class="integ-step"><div class="is-num">1</div><div class="is-body"><div class="is-title">Discovery &amp; API Mapping</div><div class="is-desc">Joint workshop with TPA/insurer tech team to map existing claims workflow, data formats, and integration points. No commitment required.</div><div class="is-time">⏱ Week 1</div></div></div>
+          <div class="integ-step"><div class="is-num">2</div><div class="is-body"><div class="is-title">Sandbox &amp; Data Validation</div><div class="is-desc">3 months of historical claims processed through fraud models in sandbox. Output: baseline fraud rate, false positive rate, projected savings. FRA documentation initiated.</div><div class="is-time">⏱ Week 1–2</div></div></div>
+          <div class="integ-step"><div class="is-num">3</div><div class="is-body"><div class="is-title">Production API Go-Live</div><div class="is-desc">REST API or batch feed connected to production claims workflow. Pre-built connectors available for GlobeMed, Bupa Egypt, and AXA One Health. Custom integration for others.</div><div class="is-time">⏱ Week 2–3</div></div></div>
+          <div class="integ-step"><div class="is-num">4</div><div class="is-body"><div class="is-title">Dashboard Live &amp; Pilot Starts</div><div class="is-desc">Operations team trained on dashboard. CMO governance layer activated. First live claims scored. Pilot clock starts — ROI measured from day one.</div><div class="is-time">⏱ Week 4</div></div></div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="code-block">
+          <div class="cb-bar">
+            <div class="cb-dot" style="background:#f0997b"></div>
+            <div class="cb-dot" style="background:#c9a84c"></div>
+            <div class="cb-dot" style="background:#5dcaa5"></div>
+            <span class="cb-title">POST /v1/claims/score · iRonic Health API</span>
+          </div>
+          <div class="cb-body">
+<span class="cb-cmt">// Claim submission — scored in 4.3s</span>
+{
+  <span class="cb-key">"claim_id"</span>: <span class="cb-str">"IRH-4821"</span>,
+  <span class="cb-key">"provider_id"</span>: <span class="cb-str">"HOSP-CLX-042"</span>,
+  <span class="cb-key">"member_id"</span>: <span class="cb-str">"GBM-2026-00101"</span>,
+  <span class="cb-key">"claim_type"</span>: <span class="cb-str">"pharmacy"</span>,
+  <span class="cb-key">"amount_egp"</span>: <span class="cb-num">3200</span>,
+  <span class="cb-key">"drug_code"</span>: <span class="cb-str">"UNICTAM-375"</span>,
+  <span class="cb-key">"prescriber_id"</span>: <span class="cb-str">"DR-MSY-00892"</span>,
+  <span class="cb-key">"icd_code"</span>: <span class="cb-str">"J06.9"</span>
+}
+
+<span class="cb-cmt">// Response — 4.3 seconds</span>
+{
+  <span class="cb-key">"fraud_score"</span>: <span class="cb-num">87</span>,
+  <span class="cb-key">"decision"</span>: <span class="cb-str">"CMO_REVIEW"</span>,
+  <span class="cb-key">"archetypes"</span>: [
+    { <span class="cb-key">"type"</span>: <span class="cb-str">"phantom_prescription"</span>, <span class="cb-key">"confidence"</span>: <span class="cb-num">0.82</span> },
+    { <span class="cb-key">"type"</span>: <span class="cb-str">"unictam_counterfeit"</span>, <span class="cb-key">"confidence"</span>: <span class="cb-num">0.71</span> }
+  ],
+  <span class="cb-key">"audit_trail_id"</span>: <span class="cb-str">"FRA-2026-8821"</span>
+}
+          </div>
+        </div>
+        <div style="margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap">
+          <span style="font-size:.72rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif">REST API</span>
+          <span style="font-size:.72rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif">Webhooks</span>
+          <span style="font-size:.72rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif">Batch Feed</span>
+          <span style="font-size:.72rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif">JWT Auth</span>
+          <span style="font-size:.72rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif">PDPL Compliant</span>
+          <span style="font-size:.72rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif">AES-256</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MENA EXPANSION ═══ -->
+<section class="e-sec e-sec-odd" id="mena" aria-labelledby="mena-heading">
+  <div class="e-inner">
+    <div class="reveal">
+      <div class="e-eyebrow">Geographic Expansion</div>
+      <h2 class="e-h2" id="mena-heading">Egypt First.<br><em>MENA Next.</em></h2>
+      <p class="e-lead">Egypt is the proving ground — 18–36 month uncontested window. Once the model is validated, the same AI core expands into KSA and UAE with regional compliance layers added, not rebuilt.</p>
+    </div>
+    <div class="mena-phases reveal">
+      <div class="mena-phase mp-1">
+        <div class="mp-phase-label">Phase 1 · Active</div>
+        <div class="mp-country">🇪🇬 Egypt</div>
+        <div class="mp-timeline">Year 1–2 · 2026–2027</div>
+        <div class="mp-items">
+          <div class="mp-item"><span>→</span>GlobeMed TPA: 1.2M lives, 18 insurers</div>
+          <div class="mp-item"><span>→</span>Bupa Egypt and AXA Egypt: anchor insurer pilots</div>
+          <div class="mp-item"><span>→</span>FRA TPA licensing framework: first mover</div>
+          <div class="mp-item"><span>→</span>Law 155/2024: self-funded corporate channel open</div>
+          <div class="mp-item"><span>→</span>6–8M insured lives · +15% YoY growth</div>
+        </div>
+        <div class="mp-stat">TAM: $373M · SOM Y3: $18M ARR</div>
+      </div>
+      <div class="mena-phase mp-2">
+        <div class="mp-phase-label">Phase 2 · Roadmap</div>
+        <div class="mp-country">🇸🇦 Saudi Arabia</div>
+        <div class="mp-timeline">Year 3–4 · 2028–2029</div>
+        <div class="mp-items">
+          <div class="mp-item"><span>→</span>NPHIES (National Health Exchange) integration</div>
+          <div class="mp-item"><span>→</span>AI fraud add-on layer — not a competing claims engine</div>
+          <div class="mp-item"><span>→</span>Bupa Arabia (28.9% market share) and Tawuniya (26.1%)</div>
+          <div class="mp-item"><span>→</span>Insurance Authority unified regulator since March 2024</div>
+          <div class="mp-item"><span>→</span>Egypt reference case + FRA precedent = credibility</div>
+        </div>
+        <div class="mp-stat">Market: $7.8B · 5–10M lives · $2–5 PMPM</div>
+      </div>
+      <div class="mena-phase mp-3">
+        <div class="mp-phase-label">Phase 3 · Vision</div>
+        <div class="mp-country">🇦🇪 UAE</div>
+        <div class="mp-timeline">Year 4–5 · 2029–2030</div>
+        <div class="mp-items">
+          <div class="mp-item"><span>→</span>DHA / DoH Abu Dhabi compliance layer</div>
+          <div class="mp-item"><span>→</span>eClaimLink (Dubai) and Malaffi (Abu Dhabi) integration</div>
+          <div class="mp-item"><span>→</span>Mandatory employer-funded coverage: 88.5% expat population</div>
+          <div class="mp-item"><span>→</span>DoH Dh1M fraud fines create urgent compliance demand</div>
+          <div class="mp-item"><span>→</span>Potential Klaim partnership (provider-side complement)</div>
+        </div>
+        <div class="mp-stat">Market: $8.7B · Growing to $12.7B by 2030</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-sec" aria-label="Call to action">
+  <div class="cta-bg-ring" aria-hidden="true"></div>
+  <div class="cta-bg-ring2" aria-hidden="true"></div>
+  <div class="cta-inner reveal">
+    <div class="cta-eyebrow">Join the Network</div>
+    <h2 class="cta-h">Connect Your Organisation<br><span>to the Intelligence Layer</span></h2>
+    <p class="cta-sub">Whether you're an insurer, TPA, hospital, or pharmacy network — integrating with iRonic Health takes 4 weeks and starts generating measurable returns from day one.</p>
+    <div class="cta-btns">
+      <a href="index.html#contact" class="cta-btn-g">Request Integration Demo →</a>
+      <a href="investors.html" class="cta-btn-w">Investor Information</a>
+    </div>
+    <div class="cta-metrics">8 Parties · 1.2M Lives · 18 Insurers · 4-Week Integration · FRA Licensed · PDPL 151/2020</div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
+        <img src="assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'">
+      </a>
+      <p class="footer-brand-desc">Egypt's first AI-powered health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <div class="footer-col-title">Ecosystem</div>
+        <a href="#network">The Network</a>
+        <a href="#parties">8 Parties</a>
+        <a href="#data-flow">Data Flow</a>
+        <a href="#partners">Named Partners</a>
+        <a href="#integration">Integration</a>
+        <a href="#mena">MENA Expansion</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="platform.html">Platform</a>
+        <a href="investors.html">Investors</a>
+        <a href="index.html#about">Team</a>
+        <a href="index.html#market">Market</a>
+        <a href="ar/index.html">Arabic (عربي)</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+        <span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · All rights reserved</div>
+    <div class="footer-legal">
+      <a href="#">Privacy (PDPL 151/2020)</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FRA Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+(function(){
+  /* Scroll-to-top */
+  var btn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, {passive:true});
+
+  /* Universal reveal */
+  function initReveal(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('up'); }); return; }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); } });
+    }, {threshold:0.07, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ obs.observe(el); });
+  }
+
+  window.addEventListener('load', function(){ setTimeout(initReveal, 80); });
+})();
+
+/* Party tab switcher */
+function showParty(id) {
+  /* Deactivate all tabs and panels */
+  document.querySelectorAll('.pt-tab').forEach(function(t){ t.classList.remove('active'); });
+  document.querySelectorAll('.party-panel').forEach(function(p){ p.classList.remove('active'); });
+  /* Activate selected */
+  var panel = document.getElementById('panel-' + id);
+  if(panel) panel.classList.add('active');
+  /* Find and activate tab */
+  var tabs = document.querySelectorAll('.pt-tab');
+  var map = {
+    'insurers': 0, 'tpa': 1, 'hospitals': 2, 'pharmacies': 3,
+    'labs': 4, 'doctors': 5, 'corporate': 6, 'patients': 7
+  };
+  if(tabs[map[id]]) tabs[map[id]].classList.add('active');
+}
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
