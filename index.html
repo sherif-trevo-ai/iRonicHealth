@@ -18,6 +18,164 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
+/* ══════════════════════════════════════════════
+   DASHBOARD SECTION
+══════════════════════════════════════════════ */
+.dashboard-sec { background: linear-gradient(180deg,#060f1c 0%,#0a1628 100%); }
+.dash-pro-wrap { background:#0d1b2e; border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; margin-top:2.5rem; box-shadow:0 24px 80px rgba(0,0,0,.5); }
+.dash-pro-bar { background:#060f1c; padding:.7rem 1.5rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.06); gap:1rem; flex-wrap:wrap; }
+.dash-pro-title { font-size:.82rem; font-weight:700; color:rgba(255,255,255,.85); font-family:'Ubuntu',sans-serif; }
+.dash-pro-live { display:flex; align-items:center; gap:6px; }
+.dash-live-dot { width:7px; height:7px; border-radius:50%; background:#1d9e75; animation:pdot 2s infinite; }
+.dash-live-txt { font-size:.7rem; color:#1d9e75; font-weight:700; font-family:'Ubuntu',sans-serif; letter-spacing:.06em; }
+.dash-pro-actions { display:flex; gap:.5rem; }
+.dash-pro-btn { font-size:.7rem; padding:4px 10px; border-radius:5px; border:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.4); background:transparent; font-family:'Ubuntu',sans-serif; }
+.dash-pro-btn.act { border-color:#185fa5; color:#7fb3e8; background:rgba(24,95,165,.1); }
+/* KPI row */
+.dash-kpi-row { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid rgba(255,255,255,.06); }
+.dash-kpi { padding:1.2rem 1.5rem; border-right:1px solid rgba(255,255,255,.06); }
+.dash-kpi:last-child { border-right:none; }
+.dash-kpi-lbl { font-size:.68rem; color:rgba(255,255,255,.38); text-transform:uppercase; letter-spacing:.08em; margin-bottom:.4rem; font-family:'Ubuntu',sans-serif; }
+.dash-kpi-num { font-size:1.55rem; font-weight:700; line-height:1; margin-bottom:.3rem; font-family:'Kufam',sans-serif; color:#fff; }
+.dash-kpi-num.gold { color:#c9a84c; }
+.dash-kpi-num.green { color:#1d9e75; }
+.dash-kpi-num.blue { color:#378add; }
+.dash-kpi-trend { font-size:.68rem; font-family:'Ubuntu',sans-serif; color:rgba(255,255,255,.38); }
+.dash-kpi-trend.up { color:#1d9e75; }
+/* Body */
+.dash-pro-body { display:grid; grid-template-columns:1fr 320px; }
+.dash-d-left { border-right:1px solid rgba(255,255,255,.06); }
+.dash-panel { padding:1.2rem 1.5rem; border-bottom:1px solid rgba(255,255,255,.06); }
+.dash-panel:last-child { border-bottom:none; }
+.dash-panel-ttl { font-size:.7rem; font-weight:700; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.08em; margin-bottom:1rem; font-family:'Ubuntu',sans-serif; }
+/* Bar chart */
+.pro-chart { display:flex; align-items:flex-end; gap:5px; height:110px; padding-bottom:4px; }
+.pro-bar-col { display:flex; flex-direction:column; align-items:center; gap:4px; flex:1; }
+.pro-bar { width:100%; border-radius:3px 3px 0 0; min-height:4px; }
+.pro-bar.fraud { background:linear-gradient(180deg,#d85a30,#9a3a1c); }
+.pro-bar.saved { background:linear-gradient(180deg,#1d9e75,#0f6e56); }
+.pro-bar-lbl { font-size:.58rem; color:rgba(255,255,255,.28); font-family:'Ubuntu',sans-serif; }
+.chart-legend { display:flex; gap:1.25rem; margin-top:.75rem; }
+.cl-item { display:flex; align-items:center; gap:5px; font-size:.7rem; color:rgba(255,255,255,.45); font-family:'Ubuntu',sans-serif; }
+.cl-dot { width:8px; height:8px; border-radius:2px; flex-shrink:0; }
+/* Activity feed */
+.act-feed { display:flex; flex-direction:column; gap:.65rem; }
+.act-row { display:flex; align-items:flex-start; gap:.75rem; }
+.act-ico { width:28px; height:28px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:.75rem; flex-shrink:0; }
+.act-ico.red { background:rgba(216,90,48,.15); }
+.act-ico.green { background:rgba(29,158,117,.15); }
+.act-ico.amber { background:rgba(201,168,76,.15); }
+.act-body { flex:1; min-width:0; }
+.act-ttl { font-size:.76rem; font-weight:600; color:rgba(255,255,255,.78); font-family:'Ubuntu',sans-serif; margin-bottom:1px; }
+.act-sub { font-size:.67rem; color:rgba(255,255,255,.33); font-family:'Ubuntu',sans-serif; }
+.act-t { font-size:.63rem; color:rgba(255,255,255,.22); font-family:'Ubuntu',sans-serif; flex-shrink:0; padding-top:2px; }
+/* Right panel */
+.ft-list { display:flex; flex-direction:column; gap:.75rem; }
+.ft-row {}
+.ft-top { display:flex; justify-content:space-between; margin-bottom:4px; }
+.ft-name { font-size:.74rem; color:rgba(255,255,255,.58); font-family:'Ubuntu',sans-serif; }
+.ft-pct { font-size:.74rem; font-weight:700; color:rgba(255,255,255,.8); font-family:'Ubuntu',sans-serif; }
+.ft-bg { height:5px; background:rgba(255,255,255,.06); border-radius:3px; }
+.ft-fill { height:5px; border-radius:3px; background:linear-gradient(90deg,#d85a30,#c9a84c); }
+/* Quick stats */
+.qs-list { display:flex; flex-direction:column; gap:.5rem; }
+.qs-row { display:flex; justify-content:space-between; align-items:center; padding:.55rem .75rem; background:rgba(255,255,255,.03); border-radius:6px; border:1px solid rgba(255,255,255,.05); }
+.qs-lbl { font-size:.72rem; color:rgba(255,255,255,.42); font-family:'Ubuntu',sans-serif; }
+.qs-val { font-size:.76rem; font-weight:700; color:rgba(255,255,255,.78); font-family:'Ubuntu',sans-serif; }
+.qs-val.green { color:#1d9e75; }
+.qs-val.gold { color:#c9a84c; }
+@media(max-width:900px){
+  .dash-kpi-row { grid-template-columns:repeat(2,1fr); }
+  .dash-pro-body { grid-template-columns:1fr; }
+  .dash-d-left { border-right:none; }
+}
+ 
+/* ══════════════════════════════════════════════
+   CONTACT / DEMO REQUEST SECTION
+══════════════════════════════════════════════ */
+.contact-sec { background:#060f1c; }
+.contact-sec .sec-h2 { color:#fff !important; }
+.contact-sec .sec-eyebrow { color:rgba(255,255,255,.45) !important; }
+.contact-sec .sec-lead { color:rgba(255,255,255,.5) !important; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-top:3rem; }
+.contact-pts { display:flex; flex-direction:column; gap:1.1rem; margin:1.75rem 0; }
+.cp-row { display:flex; gap:.875rem; align-items:flex-start; }
+.cp-ico { width:36px; height:36px; border-radius:8px; background:rgba(24,95,165,.15); border:1px solid rgba(24,95,165,.2); display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; margin-top:2px; }
+.cp-txt { font-size:.855rem; color:rgba(255,255,255,.55); line-height:1.65; }
+.cp-txt strong { color:rgba(255,255,255,.88); display:block; margin-bottom:2px; font-size:.875rem; }
+.contact-direct { margin-top:1.75rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,.08); }
+.cd-lbl { font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.3); margin-bottom:.75rem; font-family:'Ubuntu',sans-serif; }
+.cd-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.5rem; font-size:.845rem; color:rgba(255,255,255,.5); font-family:'Ubuntu',sans-serif; }
+.cd-row a { color:#7fb3e8; text-decoration:none; transition:color .2s; }
+.cd-row a:hover { color:#378add; }
+/* Form */
+.form-wrap { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:2rem; }
+.form-ttl { font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:.35rem; font-family:'Ubuntu',sans-serif; }
+.form-sub-txt { font-size:.8rem; color:rgba(255,255,255,.4); margin-bottom:1.5rem; }
+.form-2col { display:grid; grid-template-columns:1fr 1fr; gap:.875rem; margin-bottom:.875rem; }
+.f-grp { display:flex; flex-direction:column; gap:.375rem; margin-bottom:.875rem; }
+.f-lbl { font-size:.7rem; font-weight:600; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.06em; font-family:'Ubuntu',sans-serif; }
+.f-inp, .f-sel, .f-ta {
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:8px;
+  padding:.675rem .9rem; font-size:.875rem; color:rgba(255,255,255,.82);
+  font-family:'Ubuntu',sans-serif; outline:none; transition:border-color .2s; width:100%;
+}
+.f-inp:focus, .f-sel:focus, .f-ta:focus { border-color:#185fa5; background:rgba(24,95,165,.08); }
+.f-inp::placeholder, .f-ta::placeholder { color:rgba(255,255,255,.22); }
+.f-sel { appearance:none; cursor:pointer; }
+.f-sel option { background:#0a1628; color:#fff; }
+.f-ta { min-height:88px; resize:vertical; }
+.f-submit {
+  width:100%; padding:.9rem; margin-top:.375rem;
+  background:linear-gradient(135deg,#185fa5,#0c447c);
+  border:none; border-radius:8px; color:#fff; font-size:.92rem; font-weight:700;
+  font-family:'Ubuntu',sans-serif; cursor:pointer; transition:all .2s;
+}
+.f-submit:hover { transform:translateY(-1px); box-shadow:0 8px 24px rgba(24,95,165,.4); }
+.f-note { text-align:center; font-size:.7rem; color:rgba(255,255,255,.25); margin-top:.65rem; font-family:'Ubuntu',sans-serif; }
+.f-success { display:none; text-align:center; padding:2.5rem 1rem; }
+.f-success-ico { font-size:2.5rem; margin-bottom:.75rem; }
+.f-success-ttl { font-size:1rem; font-weight:700; color:#1d9e75; margin-bottom:.375rem; font-family:'Ubuntu',sans-serif; }
+.f-success-sub { font-size:.82rem; color:rgba(255,255,255,.4); font-family:'Ubuntu',sans-serif; }
+@media(max-width:900px){
+  .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .form-2col { grid-template-columns:1fr; }
+}
+ 
+/* ══════════════════════════════════════════════
+   ACTIVE NAV HIGHLIGHT
+══════════════════════════════════════════════ */
+.nav-center a { position:relative; transition:color .2s; }
+.nav-center a.nav-active { color:#c9a84c !important; }
+ 
+/* ══════════════════════════════════════════════
+   MOBILE RESPONSIVE FIXES
+══════════════════════════════════════════════ */
+@media(max-width:768px){
+  .prob-cards { grid-template-columns:1fr 1fr; }
+  .modules-grid { grid-template-columns:1fr; }
+  .pricing-row { grid-template-columns:1fr; }
+  .model-numbers { grid-template-columns:repeat(2,1fr); }
+  .team-layout { grid-template-columns:1fr; }
+  .team-cards { grid-template-columns:1fr; }
+  .footer-top { grid-template-columns:1fr; gap:2rem; }
+  .footer-links-grid { grid-template-columns:1fr 1fr; }
+  .eco-layout { grid-template-columns:1fr; }
+  .audiences-grid { grid-template-columns:1fr; }
+  .screens-row { grid-template-columns:1fr; }
+  .sec-h2 { font-size:2rem !important; }
+  .hero-h1 { font-size:2.4rem; }
+  .why-grid { grid-template-columns:1fr; }
+}
+@media(max-width:480px){
+  .prob-cards { grid-template-columns:1fr; }
+  .dash-kpi-row { grid-template-columns:1fr 1fr; }
+  .footer-links-grid { grid-template-columns:1fr; }
+  .trust-inner { flex-wrap:wrap; }
+  .hero-h1 { font-size:2rem; }
+  .form-2col { grid-template-columns:1fr; }
+}
+ 
 /* ── SEC-H2 COLOR FIX FOR DARK SECTIONS ──
    The sec-h2 base color from style.css is dark (works on light sections).
    audiences-sec and appscreens-sec have dark backgrounds — force white. */
@@ -181,15 +339,15 @@
     <a href="#problem">Problem</a>
     <a href="#product">Platform</a>
     <a href="#ecosystem">Ecosystem</a>
+    <a href="#dashboard">Dashboard</a>
     <a href="#market">Market</a>
     <a href="#model">Revenue</a>
-    <a href="#roi">ROI</a>
     <a href="#about">Team</a>
     <a href="#investors">Investors</a>
   </nav>
   <div class="nav-right">
     <a href="ar/index.html" class="btn-lang">🌐 عربي</a>
-    <a href="#investors" class="btn-demo">Request Demo →</a>
+    <a href="#contact" class="btn-demo">Request Demo →</a>
   </div>
   <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -200,12 +358,12 @@
   <a href="#problem">Problem</a>
   <a href="#product">Platform</a>
   <a href="#ecosystem">Ecosystem</a>
+  <a href="#dashboard">Dashboard</a>
   <a href="#market">Market</a>
   <a href="#model">Revenue</a>
-  <a href="#roi">ROI</a>
   <a href="#about">Team</a>
   <a href="#investors">Investors</a>
-  <a href="#investors" class="mobile-demo-btn">Request Demo →</a>
+  <a href="#contact" class="mobile-demo-btn">Request Demo →</a>
 </div>
  
 <!-- HERO -->
@@ -218,7 +376,7 @@
     <h1 class="hero-h1">Every Claim<br><span class="accent">Verified.</span><br>Every <span class="gold-t">Pound Saved.</span></h1>
     <p class="hero-desc">iRonic Health eliminates fraud, automates approvals, and connects Egypt's fragmented health insurance ecosystem — powered by Egypt-native AI trained on 25–40 local fraud archetypes.</p>
     <div class="hero-btns">
-      <a href="#investors" class="hbtn-p">Request a Demo →</a>
+      <a href="#contact" class="hbtn-p">Request a Demo →</a>
       <a href="#product" class="hbtn-s">See How It Works</a>
     </div>
     <div class="hero-kpis" role="list">
@@ -534,6 +692,126 @@
  
 <!-- ROI CALCULATOR -->
  
+<!-- DASHBOARD -->
+<section class="sec dashboard-sec" id="dashboard" aria-labelledby="dashboard-heading">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-rule" aria-hidden="true"></div>
+      <div class="sec-eyebrow" style="color:rgba(255,255,255,.45)">Live Platform Demo</div>
+      <h2 class="sec-h2" id="dashboard-heading" style="color:#fff">The Intelligence<br><em>Command Center</em></h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,.52)">Real-time fraud detection, claims analytics, and loss ratio management — all in one view. This is what your operations team sees every day.</p>
+    </div>
+ 
+    <div class="dash-pro-wrap reveal">
+      <!-- Top bar -->
+      <div class="dash-pro-bar">
+        <span class="dash-pro-title">⚕ Claims Intelligence Platform — GlobeMed Egypt TPA · 18 Insurers</span>
+        <div class="dash-pro-live"><div class="dash-live-dot"></div><span class="dash-live-txt">LIVE</span></div>
+        <div class="dash-pro-actions">
+          <span class="dash-pro-btn">Last 30 days ▾</span>
+          <span class="dash-pro-btn act">↓ Export PDF</span>
+        </div>
+      </div>
+ 
+      <!-- KPI Row -->
+      <div class="dash-kpi-row">
+        <div class="dash-kpi">
+          <div class="dash-kpi-lbl">Fraud Detected (MTD)</div>
+          <div class="dash-kpi-num gold">EGP 2.4M</div>
+          <div class="dash-kpi-trend up">↑ +18% vs last month</div>
+        </div>
+        <div class="dash-kpi">
+          <div class="dash-kpi-lbl">Claims Processed Today</div>
+          <div class="dash-kpi-num">1,247</div>
+          <div class="dash-kpi-trend up">⚡ Avg. 4.3s per decision</div>
+        </div>
+        <div class="dash-kpi">
+          <div class="dash-kpi-lbl">Loss Ratio Improvement</div>
+          <div class="dash-kpi-num green">−15.3%</div>
+          <div class="dash-kpi-trend up">↑ Target −12% · Exceeded ✓</div>
+        </div>
+        <div class="dash-kpi">
+          <div class="dash-kpi-lbl">Active Member Lives</div>
+          <div class="dash-kpi-num blue">1.2M</div>
+          <div class="dash-kpi-trend up">18 insurers · FRA Licensed</div>
+        </div>
+      </div>
+ 
+      <!-- Body -->
+      <div class="dash-pro-body">
+        <!-- Left -->
+        <div class="dash-d-left">
+          <!-- Chart -->
+          <div class="dash-panel">
+            <div class="dash-panel-ttl">Monthly Fraud Recovery (EGP) — Jan to Dec 2026</div>
+            <div class="pro-chart">
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:38%"></div><div class="pro-bar-lbl">Jan</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:45%"></div><div class="pro-bar-lbl">Feb</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:42%"></div><div class="pro-bar-lbl">Mar</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:58%"></div><div class="pro-bar-lbl">Apr</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:63%"></div><div class="pro-bar-lbl">May</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:71%"></div><div class="pro-bar-lbl">Jun</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:67%"></div><div class="pro-bar-lbl">Jul</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:79%"></div><div class="pro-bar-lbl">Aug</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:74%"></div><div class="pro-bar-lbl">Sep</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:88%"></div><div class="pro-bar-lbl">Oct</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:93%"></div><div class="pro-bar-lbl">Nov</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:100%"></div><div class="pro-bar-lbl">Dec</div></div>
+            </div>
+            <div class="chart-legend">
+              <div class="cl-item"><div class="cl-dot" style="background:#d85a30"></div>Fraud Recovered (EGP)</div>
+              <div class="cl-item"><div class="cl-dot" style="background:#1d9e75"></div>Target Threshold</div>
+            </div>
+          </div>
+ 
+          <!-- Activity feed -->
+          <div class="dash-panel">
+            <div class="dash-panel-ttl">Live Claims Activity Feed</div>
+            <div class="act-feed">
+              <div class="act-row"><div class="act-ico red">🚨</div><div class="act-body"><div class="act-ttl">Fraud Flagged — Phantom Prescription</div><div class="act-sub">Claim #IRH-4821 · Cairo Medical Centre · EGP 3,200 · Unictam archetype</div></div><div class="act-t" id="at1">2m ago</div></div>
+              <div class="act-row"><div class="act-ico green">✅</div><div class="act-body"><div class="act-ttl">Claim Auto-Approved — Outpatient Visit</div><div class="act-sub">Claim #IRH-4820 · Dr. Amr Clinic · EGP 1,100 · AI confidence 98.4%</div></div><div class="act-t" id="at2">5m ago</div></div>
+              <div class="act-row"><div class="act-ico red">⚠️</div><div class="act-body"><div class="act-ttl">ICU Over-Stay Detected</div><div class="act-sub">Claim #IRH-4819 · Cleopatra Hospital · EGP 28,000 · Sent for review</div></div><div class="act-t" id="at3">8m ago</div></div>
+              <div class="act-row"><div class="act-ico green">✅</div><div class="act-body"><div class="act-ttl">Lab Tests Verified &amp; Paid</div><div class="act-sub">Claim #IRH-4818 · Alpha Medical Labs · EGP 650 · 3.9s decision</div></div><div class="act-t" id="at4">12m ago</div></div>
+              <div class="act-row"><div class="act-ico amber">⏳</div><div class="act-body"><div class="act-ttl">Radiology Pre-Auth — Pending CMO</div><div class="act-sub">Claim #IRH-4817 · Scan &amp; Imaging Co. · EGP 5,400 · High-cost review</div></div><div class="act-t" id="at5">15m ago</div></div>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Right -->
+        <div class="dash-d-right">
+          <!-- Fraud types -->
+          <div class="dash-panel">
+            <div class="dash-panel-ttl">Top Fraud Archetypes (MTD)</div>
+            <div class="ft-list">
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Phantom Prescriptions</span><span class="ft-pct">82%</span></div><div class="ft-bg"><div class="ft-fill" style="width:82%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">ICU Over-Stay</span><span class="ft-pct">67%</span></div><div class="ft-bg"><div class="ft-fill" style="width:67%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Brand Upcoding</span><span class="ft-pct">54%</span></div><div class="ft-bg"><div class="ft-fill" style="width:54%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Counterfeit Drugs (Unictam)</span><span class="ft-pct">41%</span></div><div class="ft-bg"><div class="ft-fill" style="width:41%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Duplicate Claims</span><span class="ft-pct">29%</span></div><div class="ft-bg"><div class="ft-fill" style="width:29%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Unnecessary Procedures</span><span class="ft-pct">18%</span></div><div class="ft-bg"><div class="ft-fill" style="width:18%"></div></div></div>
+            </div>
+          </div>
+ 
+          <!-- Quick stats -->
+          <div class="dash-panel">
+            <div class="dash-panel-ttl">Platform Performance</div>
+            <div class="qs-list">
+              <div class="qs-row"><span class="qs-lbl">AI Detection Accuracy</span><span class="qs-val green">94.2%</span></div>
+              <div class="qs-row"><span class="qs-lbl">Avg. Claim Decision Time</span><span class="qs-val">4.3 sec</span></div>
+              <div class="qs-row"><span class="qs-lbl">Claims Fully Automated</span><span class="qs-val green">87%</span></div>
+              <div class="qs-row"><span class="qs-lbl">FRA Audit Compliance</span><span class="qs-val green">100%</span></div>
+              <div class="qs-row"><span class="qs-lbl">Pharmacies Connected</span><span class="qs-val">340+</span></div>
+              <div class="qs-row"><span class="qs-lbl">Pilot ROI Payback</span><span class="qs-val gold">4–6 months</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ROI CALCULATOR -->
+ 
 <section class="sec roi-sec" id="roi" aria-labelledby="roi-heading">
   <div class="sec-inner">
     <div class="reveal"><div class="sec-rule"></div><div class="sec-eyebrow">ROI Calculator</div><h2 class="sec-h2" id="roi-heading">See Your <em>Savings Potential</em></h2><p class="sec-lead">Estimate what iRonic Health saves your organization. Adjust the sliders — the model does the rest.</p></div>
@@ -666,6 +944,81 @@
   </div>
 </section>
  
+<!-- CONTACT / DEMO REQUEST -->
+<section class="sec contact-sec" id="contact" aria-labelledby="contact-heading">
+  <div class="sec-inner">
+    <div class="contact-grid">
+      <!-- Left: value proposition -->
+      <div class="reveal">
+        <div class="sec-rule" aria-hidden="true"></div>
+        <div class="sec-eyebrow">Request a Demo</div>
+        <h2 class="sec-h2" id="contact-heading">Ready to Eliminate<br>Fraud &amp; Accelerate<br><em>Claims?</em></h2>
+        <div class="contact-pts">
+          <div class="cp-row"><div class="cp-ico">🎯</div><div class="cp-txt"><strong>90-Day Pilot — Zero Upfront Cost</strong>We earn only on validated fraud recoveries. No platform fee, no financial risk during the pilot.</div></div>
+          <div class="cp-row"><div class="cp-ico">⚡</div><div class="cp-txt"><strong>Live in Under 4 Weeks</strong>API integration with GlobeMed, Bupa Egypt, and AXA already mapped. Your pilot can go live within a month of signing.</div></div>
+          <div class="cp-row"><div class="cp-ico">📊</div><div class="cp-txt"><strong>Measurable ROI from Day One</strong>Every claim decision has a full AI audit trail. See exact fraud savings and loss ratio improvement in real time.</div></div>
+          <div class="cp-row"><div class="cp-ico">🛡️</div><div class="cp-txt"><strong>FRA-Compliant by Design</strong>Licensed CMO oversight on every AI decision. Full regulatory documentation provided — your compliance team stays in control.</div></div>
+        </div>
+        <div class="contact-direct">
+          <div class="cd-lbl">Direct Contact</div>
+          <div class="cd-row">📧 <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a></div>
+          <div class="cd-row">📧 <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a></div>
+          <div class="cd-row">📞 <a href="tel:+447308892741">+44 7308 892741</a></div>
+          <div class="cd-row">📍 Nile City Towers, North Tower, Cairo, Egypt</div>
+        </div>
+      </div>
+ 
+      <!-- Right: form -->
+      <div class="reveal reveal-d2">
+        <div class="form-wrap">
+          <div class="form-ttl">Request a Demo or Investor Meeting</div>
+          <div class="form-sub-txt">We respond within 24 hours. No pressure — just a focused conversation about your needs.</div>
+          <div id="contact-form-inner">
+            <div class="form-2col">
+              <div class="f-grp"><label class="f-lbl">Full Name *</label><input type="text" class="f-inp" id="f-name" placeholder="Your name"></div>
+              <div class="f-grp"><label class="f-lbl">Company *</label><input type="text" class="f-inp" id="f-company" placeholder="Your organization"></div>
+            </div>
+            <div class="form-2col">
+              <div class="f-grp"><label class="f-lbl">Email *</label><input type="email" class="f-inp" id="f-email" placeholder="you@company.com"></div>
+              <div class="f-grp"><label class="f-lbl">Phone</label><input type="tel" class="f-inp" placeholder="+20 or +44..."></div>
+            </div>
+            <div class="f-grp"><label class="f-lbl">I Am A *</label>
+              <select class="f-sel" id="f-role">
+                <option value="" disabled selected>Select your role</option>
+                <option>Health Insurer (Egypt)</option>
+                <option>TPA — Third Party Administrator</option>
+                <option>Corporate HR / Self-Funded Plan</option>
+                <option>Investor / VC / Family Office</option>
+                <option>Hospital / Healthcare Provider</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="f-grp"><label class="f-lbl">Members / Lives Covered</label>
+              <select class="f-sel">
+                <option value="" disabled selected>Approximate size (optional)</option>
+                <option>Under 10,000</option>
+                <option>10,000 – 50,000</option>
+                <option>50,000 – 200,000</option>
+                <option>200,000 – 1M</option>
+                <option>1M+</option>
+                <option>N/A (Investor inquiry)</option>
+              </select>
+            </div>
+            <div class="f-grp"><label class="f-lbl">Message</label><textarea class="f-ta" placeholder="Tell us what you're looking to solve, or ask anything about the platform..."></textarea></div>
+            <button class="f-submit" onclick="submitDemoForm(event)">Send Request → We'll Respond in 24h</button>
+            <div class="f-note">🔒 Your data is never shared. PDPL 151/2020 compliant.</div>
+          </div>
+          <div class="f-success" id="form-success-msg">
+            <div class="f-success-ico">✅</div>
+            <div class="f-success-ttl">Request Sent Successfully!</div>
+            <div class="f-success-sub">Check your email — we'll respond within 24 hours with next steps.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
 <!-- CTA -->
 <section class="cta-sec" id="investors" aria-labelledby="cta-heading">
   <div class="cta-bg-ring" aria-hidden="true"></div><div class="cta-bg-ring2" aria-hidden="true"></div>
@@ -680,7 +1033,7 @@
 </main>
  
 <!-- FOOTER -->
-<footer class="footer" id="contact" role="contentinfo">
+<footer class="footer" role="contentinfo">
   <div class="footer-top">
     <div class="footer-brand">
       <a href="#home" class="footer-logo-link" aria-label="iRonic Health">
@@ -711,39 +1064,101 @@
  
 <script>
 (function(){
+ 
   /* ── Scroll-to-top ── */
   var btn = document.getElementById('scroll-top');
   window.addEventListener('scroll', function(){
     btn.classList.toggle('visible', window.scrollY > 400);
-  }, {passive: true});
+  }, {passive:true});
  
   /* ── Universal reveal fallback ──
-     Ensures ALL .reveal elements animate in regardless of whether
-     their parent section is linked from the nav (main.js may only
-     observe nav-linked sections, leaving orphaned sections invisible) */
+     Ensures ALL .reveal elements animate regardless of nav linkage */
   function initReveal() {
     var els = document.querySelectorAll('.reveal');
     if (!('IntersectionObserver' in window)) {
       els.forEach(function(el){ el.classList.add('up'); });
       return;
     }
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          entry.target.classList.add('up');
-          observer.unobserve(entry.target);
-        }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); }
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
- 
-    els.forEach(function(el){ observer.observe(el); });
+    els.forEach(function(el){ obs.observe(el); });
   }
  
-  /* Run after main.js has had a chance to set up its own observer */
+  /* ── Active nav highlight on scroll ── */
+  function initNavHighlight() {
+    var sections = document.querySelectorAll('section[id]');
+    var links = document.querySelectorAll('.nav-center a[href^="#"]');
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          var id = e.target.id;
+          links.forEach(function(l){
+            l.classList.toggle('nav-active', l.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+ 
+  /* ── Live feed time ticker ── */
+  function initFeedTicker() {
+    var ids = ['at1','at2','at3','at4','at5'];
+    var mins = [2,5,8,12,15];
+    setInterval(function(){
+      mins = mins.map(function(m){ return m+1; });
+      ids.forEach(function(id,i){
+        var el = document.getElementById(id);
+        if (el) el.textContent = mins[i]+'m ago';
+      });
+    }, 60000);
+  }
+ 
   window.addEventListener('load', function(){
-    setTimeout(initReveal, 100);
+    setTimeout(initReveal, 80);
+    setTimeout(initNavHighlight, 120);
+    setTimeout(initFeedTicker, 200);
   });
+ 
 })();
+ 
+/* ── Demo form submission ── */
+function submitDemoForm(e) {
+  e.preventDefault();
+  var name    = document.getElementById('f-name').value.trim();
+  var company = document.getElementById('f-company').value.trim();
+  var email   = document.getElementById('f-email').value.trim();
+  var role    = document.getElementById('f-role').value;
+  var ta      = document.querySelector('.f-ta');
+  var msg     = ta ? ta.value.trim() : '';
+ 
+  if (!name || !company || !email) {
+    var missing = [];
+    if (!name) missing.push('Full Name');
+    if (!company) missing.push('Company');
+    if (!email) missing.push('Email');
+    alert('Please fill in: ' + missing.join(', '));
+    return;
+  }
+ 
+  var subject = encodeURIComponent('Demo Request — ' + name + ' · ' + company + (role ? ' · ' + role : ''));
+  var body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Company: ' + company + '\n' +
+    'Email: ' + email + '\n' +
+    (role  ? 'Role: ' + role + '\n' : '') +
+    (msg   ? '\nMessage:\n' + msg : '')
+  );
+  window.location.href = 'mailto:chairman@ironicgmi.com?subject=' + subject + '&body=' + body;
+ 
+  document.getElementById('contact-form-inner').style.display = 'none';
+  document.getElementById('form-success-msg').style.display   = 'block';
+}
+</script>
 </script>
  
 <script src="js/main.js"></script>
