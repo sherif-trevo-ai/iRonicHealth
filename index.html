@@ -18,6 +18,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
+/* ── SEC-H2 COLOR FIX FOR DARK SECTIONS ──
+   The sec-h2 base color from style.css is dark (works on light sections).
+   audiences-sec and appscreens-sec have dark backgrounds — force white. */
+.audiences-sec .sec-h2,
+.appscreens-sec .sec-h2 {
+  color: #ffffff !important;
+}
+.audiences-sec .sec-eyebrow,
+.appscreens-sec .sec-eyebrow {
+  color: rgba(255,255,255,0.55) !important;
+}
+.audiences-sec .sec-lead,
+.appscreens-sec .sec-lead {
+  color: rgba(255,255,255,0.55) !important;
+}
+ 
 /* ── SCROLL TO TOP ── */
 #scroll-top {
   position: fixed;
