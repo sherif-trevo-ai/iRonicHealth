@@ -10,14 +10,109 @@
 <meta property="og:url" content="https://ironichealth.netlify.app">
 <meta name="twitter:card" content="summary_large_image">
 <title>iRonic Health — Health System Integration Technology</title>
-<link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
+<link rel="icon" type="image/png" href="assets/H_Badge_icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+/* ── FOR INSURERS / FOR PATIENTS ── */
+.audiences-sec { background: var(--bg-alt, #0d1b2e); }
+.audiences-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.aud-card { border-radius: 16px; overflow: hidden; }
+.aud-card-head { padding: 2rem 2rem 1.75rem; }
+.aud-insurer-head { background: linear-gradient(135deg, #060f1c 0%, #0d1f3a 100%); border-top: 3px solid #c9a84c; }
+.aud-patients-head { background: linear-gradient(135deg, #0f3460 0%, #185fa5 100%); border-top: 3px solid #378add; }
+.aud-tag { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 4px 13px; border-radius: 100px; margin-bottom: .875rem; }
+.aud-tag-g { background: rgba(201,168,76,.2); color: #c9a84c; }
+.aud-tag-b { background: rgba(55,138,221,.2); color: #7fb3e8; }
+.aud-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.aud-title { font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: .6rem; }
+.aud-sub { font-size: .85rem; color: rgba(255,255,255,.58); line-height: 1.72; }
+.aud-card-body { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-top: none; padding: 1.75rem 2rem; border-radius: 0 0 16px 16px; }
+.aud-feature { display: flex; gap: .875rem; margin-bottom: 1rem; align-items: flex-start; }
+.aud-feature:last-child { margin-bottom: 0; }
+.aud-dot { width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: .7rem; margin-top: 2px; }
+.aud-dot-b { background: rgba(55,138,221,.18); color: #7fb3e8; }
+.aud-dot-g { background: rgba(29,158,117,.18); color: #1d9e75; }
+.aud-feat-text { font-size: .84rem; color: rgba(255,255,255,.62); line-height: 1.65; }
+.aud-feat-text strong { color: rgba(255,255,255,.9); font-weight: 600; }
+@media(max-width:860px){ .audiences-grid{ grid-template-columns:1fr; } }
+ 
+/* ── APP SCREENS ── */
+.appscreens-sec { background: linear-gradient(170deg, #060f1c 0%, #0a1628 100%); }
+.screens-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; margin-top: 3rem; align-items: start; }
+.screen-wrap { display: flex; flex-direction: column; align-items: center; }
+.phone-frame { background: #111c2e; border-radius: 22px; overflow: hidden; border: 1.5px solid rgba(255,255,255,.1); box-shadow: 0 24px 60px rgba(0,0,0,.55); width: 100%; max-width: 200px; }
+.phone-notch-bar { height: 8px; background: rgba(255,255,255,.04); display: flex; justify-content: center; align-items: center; }
+.phone-pill-bar { width: 26px; height: 3px; background: rgba(255,255,255,.18); border-radius: 2px; }
+.ph-topbar { background: #fff; padding: 8px 11px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid #e8eef6; }
+.ph-badge { width: 20px; height: 20px; border-radius: 5px; background: #185fa5; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ph-ttl { font-size: 11px; font-weight: 700; color: #0a1628; flex: 1; font-family: 'Ubuntu', sans-serif; }
+.ph-bell { font-size: 13px; }
+.ph-hero-card { background: linear-gradient(135deg, #185fa5, #0a3567); border-radius: 11px; padding: 11px; margin: 9px; }
+.phc-name { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 1px; font-family: 'Ubuntu', sans-serif; }
+.phc-id { font-size: 7.5px; color: rgba(255,255,255,.45); margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
+.phc-bar-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.phc-bar-row span { font-size: 8.5px; color: rgba(255,255,255,.7); font-family: 'Ubuntu', sans-serif; }
+.phc-bar-row strong { font-size: 9px; color: #c9a84c; font-weight: 700; font-family: 'Ubuntu', sans-serif; }
+.phc-track { height: 5px; background: rgba(255,255,255,.18); border-radius: 3px; }
+.phc-fill { height: 5px; width: 23%; background: #c9a84c; border-radius: 3px; }
+.ph-actions { display: grid; grid-template-columns: repeat(4,1fr); gap: 5px; padding: 0 9px 8px; }
+.ph-act { background: #f5f8fc; border-radius: 7px; padding: 6px 3px; text-align: center; border: 1px solid #e8eef6; }
+.ph-act-icon { font-size: 12px; margin-bottom: 2px; }
+.ph-act-lbl { font-size: 6.5px; color: #0a1628; font-weight: 600; font-family: 'Ubuntu', sans-serif; }
+.ph-sec-lbl { font-size: 8.5px; font-weight: 700; color: #0a1628; padding: 0 9px; margin-bottom: 5px; font-family: 'Ubuntu', sans-serif; }
+.ph-claim { background: #fff; border-radius: 7px; margin: 0 9px 5px; padding: 7px 8px; border: 1px solid #e8eef6; display: flex; justify-content: space-between; align-items: center; }
+.phcl-l .phcl-type { font-size: 7.5px; font-weight: 600; color: #0a1628; font-family: 'Ubuntu', sans-serif; }
+.phcl-l .phcl-prov { font-size: 6.5px; color: #6b7fa0; font-family: 'Ubuntu', sans-serif; }
+.phcl-r .phcl-amt { font-size: 8.5px; font-weight: 700; color: #0a1628; text-align: right; font-family: 'Ubuntu', sans-serif; }
+.ph-pill { font-size: 6px; font-weight: 700; padding: 2px 6px; border-radius: 20px; margin-top: 2px; display: inline-block; font-family: 'Ubuntu', sans-serif; }
+.ph-green { background: #e8f7f2; color: #1d9e75; }
+.ph-amber { background: #fef3e0; color: #d97706; }
+.ph-red { background: #faeae5; color: #d85a30; }
+.ph-qr-bg { background: #f5f8fc; padding: 9px; }
+.ph-qr-ttl { font-size: 9.5px; font-weight: 700; color: #0a1628; text-align: center; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-sub { font-size: 7px; color: #6b7fa0; text-align: center; margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-card { background: #fff; border-radius: 11px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+.ph-qr-head { background: linear-gradient(135deg,#185fa5,#0a3567); padding: 9px 11px; display: flex; justify-content: space-between; align-items: center; }
+.ph-qr-brand { font-size: 9.5px; font-weight: 700; color: #fff; font-family: 'Ubuntu', sans-serif; }
+.ph-class-badge { background: #c9a84c; padding: 2px 7px; border-radius: 4px; font-size: 6.5px; font-weight: 700; color: #fff; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-body { padding: 11px; text-align: center; }
+.ph-qr-name { font-size: 11px; font-weight: 700; color: #0a1628; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-id { font-size: 7px; color: #6b7fa0; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-plan { font-size: 7.5px; color: #185fa5; font-weight: 600; margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-code { width: 78px; height: 78px; margin: 0 auto 7px; background: #f5f8fc; border-radius: 6px; border: 1px solid #e8eef6; display: grid; grid-template-columns: repeat(9,1fr); gap: 1.5px; padding: 5px; }
+.qc1 { background: #185fa5; border-radius: 1px; } .qc0 { background: transparent; }
+.ph-qr-hint { font-size: 7px; color: #6b7fa0; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-footer { border-top: 1px solid #e8eef6; padding: 8px 11px; display: flex; justify-content: space-between; }
+.ph-qr-flbl { font-size: 6.5px; color: #6b7fa0; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-fval { font-size: 8px; font-weight: 600; color: #0a1628; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-status { display: flex; align-items: center; gap: 5px; margin-top: 7px; justify-content: center; }
+.ph-qr-dot { width: 5px; height: 5px; border-radius: 50%; background: #1d9e75; }
+.ph-qr-stxt { font-size: 7.5px; color: #1d9e75; font-weight: 600; font-family: 'Ubuntu', sans-serif; }
+.ph-filters { background: #fff; border-bottom: 1px solid #e8eef6; padding: 6px 9px; display: flex; gap: 4px; }
+.ph-filter { font-size: 7px; padding: 3px 8px; border-radius: 20px; border: 1px solid #e8eef6; color: #6b7fa0; font-weight: 500; font-family: 'Ubuntu', sans-serif; }
+.ph-filter.on { background: #185fa5; border-color: #185fa5; color: #fff; font-weight: 700; }
+.ph-claims-list { padding: 7px 9px; background: #f5f8fc; }
+.ph-clm { background: #fff; border-radius: 7px; padding: 8px; margin-bottom: 5px; border: 1px solid #e8eef6; }
+.ph-clm-top { display: flex; justify-content: space-between; margin-bottom: 2px; }
+.ph-clm-type { font-size: 8px; font-weight: 700; color: #0a1628; font-family: 'Ubuntu', sans-serif; }
+.ph-clm-amt { font-size: 8.5px; font-weight: 700; color: #0a1628; font-family: 'Ubuntu', sans-serif; }
+.ph-clm-prov { font-size: 7px; color: #6b7fa0; margin-bottom: 4px; font-family: 'Ubuntu', sans-serif; }
+.ph-clm-bot { display: flex; justify-content: space-between; align-items: center; }
+.ph-clm-date { font-size: 6.5px; color: #6b7fa0; font-family: 'Ubuntu', sans-serif; }
+.ph-tabbar { background: #fff; border-top: 1px solid #e8eef6; padding: 5px; display: flex; justify-content: space-around; }
+.ph-tab { text-align: center; font-size: 6px; color: #6b7fa0; font-weight: 500; font-family: 'Ubuntu', sans-serif; }
+.ph-tab.on { color: #185fa5; font-weight: 700; }
+.ph-tab-icon { font-size: 11px; display: block; margin-bottom: 1px; }
+.screen-label { margin-top: .875rem; font-size: .9rem; font-weight: 700; color: rgba(255,255,255,.9); text-align: center; font-family: 'Ubuntu', sans-serif; }
+.screen-sub { font-size: .75rem; color: rgba(255,255,255,.4); text-align: center; margin-top: .2rem; font-family: 'Ubuntu', sans-serif; }
+@media(max-width:860px){ .screens-row{ grid-template-columns:1fr; } .phone-frame{ max-width:260px; } }
+</style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <header class="nav" id="nav" role="banner">
   <a href="#home" class="nav-logo" aria-label="iRonic Health Home">
@@ -36,7 +131,9 @@
 </a>
   <nav class="nav-center" aria-label="Main navigation">
     <a href="#product">Product</a>
+    <a href="#audiences">For Insurers</a>
     <a href="#ecosystem">Ecosystem</a>
+    <a href="#appscreens">App</a>
     <a href="#market">Market</a>
     <a href="#model">Model</a>
     <a href="#investors">Investors</a>
@@ -50,14 +147,14 @@
     <span></span><span></span><span></span>
   </button>
 </header>
-
+ 
 <div class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="#product">Product</a><a href="#ecosystem">Ecosystem</a>
-  <a href="#market">Market</a><a href="#model">Model</a>
+  <a href="#product">Product</a><a href="#audiences">For Insurers</a><a href="#ecosystem">Ecosystem</a>
+  <a href="#appscreens">App</a><a href="#market">Market</a><a href="#model">Model</a>
   <a href="#investors">Investors</a><a href="#about">About</a>
   <a href="#contact" class="mobile-demo-btn">Request Demo →</a>
 </div>
-
+ 
 <!-- HERO -->
 <main id="home">
 <section class="hero" aria-label="Hero">
@@ -104,7 +201,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- TRUST BAR -->
 <div class="trust-bar" aria-label="Platform statistics">
   <div class="trust-inner">
@@ -121,7 +218,7 @@
     <div class="trust-item"><span class="trust-val">70%+</span><span class="trust-lbl">Gross Margin</span></div>
   </div>
 </div>
-
+ 
 <!-- PROBLEM -->
 <section class="prob-sec" id="problem" aria-labelledby="problem-heading">
   <div class="prob-inner">
@@ -137,8 +234,56 @@
     </div>
   </div>
 </section>
-
+ 
+<!-- AUDIENCES — FOR INSURERS / FOR PATIENTS -->
+<section class="sec audiences-sec" id="audiences" aria-labelledby="audiences-heading">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-rule" aria-hidden="true"></div>
+      <div class="sec-eyebrow">Who We Serve</div>
+      <h2 class="sec-h2" id="audiences-heading">B2B Infrastructure.<br><em>B2C Experience.</em></h2>
+      <p class="sec-lead">Insurers and TPAs pay for the platform. Policyholders use it every day. Both sides win — and the insurer gets all the ROI data to prove it.</p>
+    </div>
+    <div class="audiences-grid">
+ 
+      <!-- For Insurers -->
+      <div class="aud-card reveal">
+        <div class="aud-card-head aud-insurer-head">
+          <span class="aud-icon">🏛️</span>
+          <div class="aud-tag aud-tag-g">For Insurers &amp; TPAs</div>
+          <div class="aud-title">Stop losing money to fraud you can't see.</div>
+          <div class="aud-sub">Egypt's insurance sector loses EGP 1.6B+ annually to fraud. Our AI detects it before claims are paid — not after. Zero upfront cost in the pilot.</div>
+        </div>
+        <div class="aud-card-body">
+          <div class="aud-feature"><div class="aud-dot aud-dot-b">🔍</div><p class="aud-feat-text"><strong>Real-time fraud scoring</strong> on every claim — 25–40 Egypt-specific archetypes including Unictam counterfeits, phantom claims, and antibiotic over-prescription</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-b">⚡</div><p class="aud-feat-text"><strong>Claims automation</strong> cuts 7–21 day approval cycles to under 4 hours with full FRA-compliant audit trail and zero extra headcount</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-b">💰</div><p class="aud-feat-text"><strong>Pilot pricing: 25% of validated fraud savings</strong> — zero platform fee, zero financial risk. We earn only when you save.</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-b">⚖️</div><p class="aud-feat-text"><strong>Medical Syndicate CMO oversight</strong> on every AI decision — removes clinical liability risk from your team entirely</p></div>
+        </div>
+      </div>
+ 
+      <!-- For Patients -->
+      <div class="aud-card reveal reveal-d2">
+        <div class="aud-card-head aud-patients-head">
+          <span class="aud-icon">📱</span>
+          <div class="aud-tag aud-tag-b">For Policyholders</div>
+          <div class="aud-title">Your entire insurance relationship in your pocket.</div>
+          <div class="aud-sub">No phone calls. No paper. No waiting. iRonic Health gives policyholders a premium digital experience — white-labelled for your insurer at no extra cost.</div>
+        </div>
+        <div class="aud-card-body">
+          <div class="aud-feature"><div class="aud-dot aud-dot-g">🪪</div><p class="aud-feat-text"><strong>Digital health card with live QR code</strong> — scan at any network provider to verify coverage in under 1 second, replacing paper entirely</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-g">📋</div><p class="aud-feat-text"><strong>Real-time claims tracking</strong> — know the status of every claim the moment it updates, with full AI decision audit trail</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-g">🛡️</div><p class="aud-feat-text"><strong>Coverage dashboard</strong> showing annual limits, used amounts, and remaining benefits by category — always live and accurate</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-g">📅</div><p class="aud-feat-text"><strong>Appointment booking</strong> with specialty browse and provider search within the insured network</p></div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
 <!-- MODULES -->
+ 
 <section class="sec" id="product" aria-labelledby="product-heading">
   <div class="sec-inner">
     <div class="sec-header reveal">
@@ -160,7 +305,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ECOSYSTEM -->
 <section class="sec eco-sec" id="ecosystem" aria-labelledby="ecosystem-heading">
   <div class="sec-inner">
@@ -180,7 +325,7 @@
         <div class="eco-visual">
           <div class="eco-center-ring" role="img" aria-label="8-party ecosystem orbit diagram">
             <div class="eco-hub">
-              <img src="assets/H_Badge_icon.svg" alt="iRonic Health AI Core" class="eco-hub-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="assets/H_Badge_icon.png" alt="iRonic Health AI Core" class="eco-hub-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="eco-hub-fallback" style="display:none;flex-direction:column;align-items:center;justify-content:center"><span class="eco-hub-h">iH</span><span class="eco-hub-s">AI CORE</span></div>
             </div>
             <div class="eco-orbit" aria-hidden="true">
@@ -215,8 +360,127 @@
     </div>
   </div>
 </section>
-
+ 
+<!-- APP SCREENS -->
+<section class="sec appscreens-sec" id="appscreens" aria-labelledby="appscreens-heading">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-rule" aria-hidden="true"></div>
+      <div class="sec-eyebrow">The Patient App</div>
+      <h2 class="sec-h2" id="appscreens-heading">What Policyholders<br><em>Actually See.</em></h2>
+      <p class="sec-lead">Available on iOS and Android. White-labelled for your insurer. The app is a direct extension of the platform — every screen is live data, not a mockup.</p>
+    </div>
+    <div class="screens-row">
+ 
+      <!-- Phone 1: Home -->
+      <div class="screen-wrap reveal">
+        <div class="phone-frame">
+          <div class="phone-notch-bar"><div class="phone-pill-bar"></div></div>
+          <div class="ph-topbar"><div class="ph-badge">H</div><span class="ph-ttl">Home</span><span class="ph-bell">🔔</span></div>
+          <div class="ph-hero-card">
+            <div class="phc-name">Sara Mahmoud</div>
+            <div class="phc-id">IRH-2026-00101</div>
+            <div class="phc-bar-row"><span>Coverage Used</span><strong>23%</strong></div>
+            <div class="phc-track"><div class="phc-fill"></div></div>
+          </div>
+          <div class="ph-actions">
+            <div class="ph-act"><div class="ph-act-icon">🆔</div><div class="ph-act-lbl">My Card</div></div>
+            <div class="ph-act"><div class="ph-act-icon">📋</div><div class="ph-act-lbl">Claim</div></div>
+            <div class="ph-act"><div class="ph-act-icon">📅</div><div class="ph-act-lbl">Book</div></div>
+            <div class="ph-act"><div class="ph-act-icon">📞</div><div class="ph-act-lbl">Support</div></div>
+          </div>
+          <div class="ph-sec-lbl">Recent Claims</div>
+          <div class="ph-claim"><div class="phcl-l"><div class="phcl-type">Outpatient Visit</div><div class="phcl-prov">Cairo Medical Centre</div></div><div class="phcl-r"><div class="phcl-amt">EGP 1,200</div><div class="ph-pill ph-green">Approved</div></div></div>
+          <div class="ph-claim"><div class="phcl-l"><div class="phcl-type">Lab Tests</div><div class="phcl-prov">Alpha Medical Labs</div></div><div class="phcl-r"><div class="phcl-amt">EGP 850</div><div class="ph-pill ph-amber">Pending</div></div></div>
+          <div class="ph-claim"><div class="phcl-l"><div class="phcl-type">Radiology</div><div class="phcl-prov">Scan &amp; Imaging Co.</div></div><div class="phcl-r"><div class="phcl-amt">EGP 2,100</div><div class="ph-pill ph-red">⚠ Flagged</div></div></div>
+          <div class="ph-tabbar">
+            <div class="ph-tab on"><span class="ph-tab-icon">🏠</span>Home</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🛡️</span>Cover</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🪪</span>Card</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📅</span>Appts</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📋</span>Claims</div>
+          </div>
+        </div>
+        <div class="screen-label">Coverage Dashboard</div>
+        <div class="screen-sub">Full insurance view at a glance</div>
+      </div>
+ 
+      <!-- Phone 2: QR Card -->
+      <div class="screen-wrap reveal reveal-d2">
+        <div class="phone-frame">
+          <div class="phone-notch-bar"><div class="phone-pill-bar"></div></div>
+          <div class="ph-topbar"><div class="ph-badge">H</div><span class="ph-ttl">Digital Card</span><span class="ph-bell">🔔</span></div>
+          <div class="ph-qr-bg">
+            <div class="ph-qr-ttl">Digital Health Card</div>
+            <div class="ph-qr-sub">Show at any network provider</div>
+            <div class="ph-qr-card">
+              <div class="ph-qr-head"><span class="ph-qr-brand">iRonic Health</span><span class="ph-class-badge">CLASS A</span></div>
+              <div class="ph-qr-body">
+                <div class="ph-qr-name">Sara Mahmoud</div>
+                <div class="ph-qr-id">IRH-2026-00101</div>
+                <div class="ph-qr-plan">Premium Plus · Class A</div>
+                <div class="ph-qr-code">
+                  <div class="qc1" style="grid-column:1/4;grid-row:1/4"></div><div class="qc0" style="grid-column:2/3;grid-row:2/3;background:#fff"></div>
+                  <div class="qc1" style="grid-column:5;grid-row:1"></div><div class="qc1" style="grid-column:7;grid-row:1"></div><div class="qc1" style="grid-column:9;grid-row:1"></div>
+                  <div class="qc1" style="grid-column:5;grid-row:3"></div><div class="qc1" style="grid-column:6;grid-row:3"></div><div class="qc1" style="grid-column:8;grid-row:2"></div>
+                  <div class="qc1" style="grid-column:7/10;grid-row:7/10"></div><div class="qc0" style="grid-column:8/9;grid-row:8/9;background:#fff"></div>
+                  <div class="qc1" style="grid-column:1/4;grid-row:7/10"></div><div class="qc0" style="grid-column:2/3;grid-row:8/9;background:#fff"></div>
+                  <div class="qc1" style="grid-column:5;grid-row:5"></div><div class="qc1" style="grid-column:7;grid-row:5"></div>
+                  <div class="qc1" style="grid-column:4;grid-row:6"></div><div class="qc1" style="grid-column:6;grid-row:8"></div>
+                </div>
+                <div class="ph-qr-hint">Scan to verify coverage instantly</div>
+              </div>
+              <div class="ph-qr-footer"><div><div class="ph-qr-flbl">Insurer</div><div class="ph-qr-fval">iRonic Health</div></div><div><div class="ph-qr-flbl">Valid Until</div><div class="ph-qr-fval">31 Dec 2026</div></div></div>
+            </div>
+            <div class="ph-qr-status"><div class="ph-qr-dot"></div><span class="ph-qr-stxt">Coverage Active · AI Verified</span></div>
+          </div>
+          <div class="ph-tabbar">
+            <div class="ph-tab"><span class="ph-tab-icon">🏠</span>Home</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🛡️</span>Cover</div>
+            <div class="ph-tab on"><span class="ph-tab-icon">🪪</span>Card</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📅</span>Appts</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📋</span>Claims</div>
+          </div>
+        </div>
+        <div class="screen-label">Digital Health Card</div>
+        <div class="screen-sub">Replaces paper card entirely</div>
+      </div>
+ 
+      <!-- Phone 3: Claims -->
+      <div class="screen-wrap reveal reveal-d3">
+        <div class="phone-frame">
+          <div class="phone-notch-bar"><div class="phone-pill-bar"></div></div>
+          <div class="ph-topbar"><div class="ph-badge">H</div><span class="ph-ttl">My Claims</span><span class="ph-bell">🔔</span></div>
+          <div class="ph-filters">
+            <div class="ph-filter on">All</div>
+            <div class="ph-filter">Approved</div>
+            <div class="ph-filter">Pending</div>
+            <div class="ph-filter">Flagged</div>
+          </div>
+          <div class="ph-claims-list">
+            <div class="ph-clm"><div class="ph-clm-top"><span class="ph-clm-type">Outpatient Visit</span><span class="ph-clm-amt">EGP 1,200</span></div><div class="ph-clm-prov">Cairo Medical Centre</div><div class="ph-clm-bot"><span class="ph-clm-date">12 May 2026</span><span class="ph-pill ph-green">Approved</span></div></div>
+            <div class="ph-clm"><div class="ph-clm-top"><span class="ph-clm-type">Lab Tests</span><span class="ph-clm-amt">EGP 850</span></div><div class="ph-clm-prov">Alpha Medical Labs</div><div class="ph-clm-bot"><span class="ph-clm-date">08 May 2026</span><span class="ph-pill ph-amber">Pending</span></div></div>
+            <div class="ph-clm"><div class="ph-clm-top"><span class="ph-clm-type">Radiology</span><span class="ph-clm-amt">EGP 2,100</span></div><div class="ph-clm-prov">Scan &amp; Imaging Co.</div><div class="ph-clm-bot"><span class="ph-clm-date">28 Apr 2026</span><span class="ph-pill ph-red">⚠ Flagged</span></div></div>
+            <div class="ph-clm"><div class="ph-clm-top"><span class="ph-clm-type">Pharmacy</span><span class="ph-clm-amt">EGP 320</span></div><div class="ph-clm-prov">El-Ezaby Pharmacy</div><div class="ph-clm-bot"><span class="ph-clm-date">03 May 2026</span><span class="ph-pill ph-green">Approved</span></div></div>
+          </div>
+          <div class="ph-tabbar">
+            <div class="ph-tab"><span class="ph-tab-icon">🏠</span>Home</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🛡️</span>Cover</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🪪</span>Card</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📅</span>Appts</div>
+            <div class="ph-tab on"><span class="ph-tab-icon">📋</span>Claims</div>
+          </div>
+        </div>
+        <div class="screen-label">Claims Tracker</div>
+        <div class="screen-sub">AI fraud flag visible in real time</div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
 <!-- ROI CALCULATOR -->
+ 
 <section class="sec roi-sec" id="roi" aria-labelledby="roi-heading">
   <div class="sec-inner">
     <div class="reveal"><div class="sec-rule"></div><div class="sec-eyebrow">ROI Calculator</div><h2 class="sec-h2" id="roi-heading">See Your <em>Savings Potential</em></h2><p class="sec-lead">Estimate what iRonic Health saves your organization. Adjust the sliders — the model does the rest.</p></div>
@@ -257,7 +521,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- WHY NOW -->
 <section class="sec why-sec" id="market" aria-labelledby="market-heading">
   <div class="sec-inner">
@@ -289,7 +553,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- BUSINESS MODEL -->
 <section class="sec model-sec" id="model" aria-labelledby="model-heading">
   <div class="sec-inner">
@@ -308,7 +572,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- TEAM -->
 <section class="sec team-sec" id="about" aria-labelledby="team-heading">
   <div class="sec-inner">
@@ -316,14 +580,21 @@
     <div class="team-layout">
       <div class="team-cards">
         <div class="team-card reveal">
-          <div class="t-avatar">SS</div>
-          <div class="t-info"><div class="t-name">Eng. Sherif Shawqi</div><div class="t-role-en">Chairman & CEO</div><div class="t-role-ar">رئيس مجلس الإدارة والرئيس التنفيذي</div><div class="t-contact"><a href="mailto:chairman@ironicgmi.com" class="t-email">chairman@ironicgmi.com</a><span class="t-phone">+44 7308 892741</span></div></div>
+          <div class="t-avatar">ش</div>
+          <div class="t-name">Eng. Sherif Shawqi</div>
+          <div class="t-role-en">Chairman & CEO</div>
+          <div class="t-contact">
+            <a href="mailto:chairman@ironicgmi.com" class="t-email">chairman@ironicgmi.com</a>
+          </div>
         </div>
         <div class="team-card reveal reveal-d1">
-          <div class="t-avatar t-avatar-gold">IM</div>
-          <div class="t-info"><div class="t-name">Dr. Islam Almeidany</div><div class="t-role-en">Founder & Chief Medical Officer</div><div class="t-role-ar">المؤسس والمدير الطبي التنفيذي</div><div class="t-contact"><a href="mailto:islam@ironicigmi.com" class="t-email">islam@ironicigmi.com</a><span class="t-phone">+44 7424 907088</span></div></div>
+          <div class="t-avatar t-avatar-gold">إ</div>
+          <div class="t-name">Dr. Islam Almeidany</div>
+          <div class="t-role-en">Founder & Chief Medical Officer</div>
+          <div class="t-contact">
+            <a href="mailto:islam@ironicigmi.com" class="t-email">islam@ironicigmi.com</a>
+          </div>
         </div>
-      </div>
       <div class="company-panel reveal reveal-d2">
         <div class="company-info">
           <div class="ci-label">About the Company</div>
@@ -348,7 +619,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CTA -->
 <section class="cta-sec" id="investors" aria-labelledby="cta-heading">
   <div class="cta-bg-ring" aria-hidden="true"></div><div class="cta-bg-ring2" aria-hidden="true"></div>
@@ -361,13 +632,13 @@
   </div>
 </section>
 </main>
-
+ 
 <!-- FOOTER -->
 <footer class="footer" id="contact" role="contentinfo">
   <div class="footer-top">
     <div class="footer-brand">
       <a href="#home" class="footer-logo-link" aria-label="iRonic Health">
-        <img src="assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'">
+        <img src="assets/iRonic_Health_H_White_version.png" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'">
       </a>
       <p class="footer-brand-desc">Egypt's first AI-powered health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.</p>
       <div class="footer-social"><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a><a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a></div>
@@ -375,13 +646,12 @@
     <div class="footer-links-grid">
       <div class="footer-col"><div class="footer-col-title">Platform</div><a href="#product">Fraud Detection AI</a><a href="#product">Health Score</a><a href="#product">Claim Predictor</a><a href="#product">Hospital Routing</a><a href="#product">Dashboard</a></div>
       <div class="footer-col"><div class="footer-col-title">Company</div><a href="#about">About Us</a><a href="#ecosystem">Ecosystem</a><a href="#market">Market</a><a href="#investors">Investors</a><a href="ar/index.html">Arabic (عربي)</a></div>
-      <div class="footer-col"><div class="footer-col-title">Contact</div><a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a><a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a><a href="tel:+447308892741">+44 7308 892741</a>
-<span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
+      <div class="footer-col"><div class="footer-col-title">Contact</div><a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a><a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a><span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span></div>
     </div>
   </div>
   <div class="footer-bottom"><div class="footer-copy">© 2026 Ironic Group · iRonic Health · All rights reserved</div><div class="footer-legal"><a href="#">Privacy (PDPL 151/2020)</a><a href="#">Terms of Service</a><a href="#">FRA Compliance</a></div></div>
 </footer>
-
+ 
 <script src="js/main.js"></script>
 </body>
 </html>
