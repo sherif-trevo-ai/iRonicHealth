@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="iRonic Health Platform — 7 AI modules for fraud detection, claims automation, and health insurance orchestration in Egypt.">
+<meta property="og:title" content="Platform — iRonic Health AI Modules">
+<meta property="og:description" content="7 Egypt-native AI modules. Fraud Detection, Health Score, Claim Predictor, Hospital Routing, Preventive Care, Dynamic Premiums, and the Golden Dashboard.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sherif-trevo-ai.github.io/iRonicHealth/platform.html">
+<meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/H_Badge_icon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<title>Platform — iRonic Health AI Modules</title>
+<link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ══ PLATFORM HERO ══ */
+.plat-hero {
+  min-height: 72vh;
+  background: linear-gradient(145deg, #060f1c 0%, #0a1628 60%, #0d1f3a 100%);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 140px 5% 80px; position: relative; overflow: hidden;
+}
+.plat-hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(circle 700px at 80% 40%, rgba(24,95,165,.12) 0%, transparent 60%),
+                    radial-gradient(circle 400px at 10% 80%, rgba(201,168,76,.06) 0%, transparent 50%);
+}
+.plat-hero-grid {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.plat-hero-inner { position: relative; z-index: 1; max-width: 760px; }
+.plat-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.25);
+  border-radius: 100px; padding: 5px 16px; margin-bottom: 1.5rem;
+  font-size: .72rem; font-weight: 700; color: #c9a84c; letter-spacing: .08em; text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+}
+.plat-h1 {
+  font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 900; line-height: 1.05;
+  color: #fff; letter-spacing: -.03em; margin-bottom: 1.25rem;
+  font-family: 'Kufam', sans-serif;
+}
+.plat-h1 em { color: #c9a84c; font-style: normal; }
+.plat-sub {
+  font-size: 1.05rem; color: rgba(255,255,255,.58); line-height: 1.75;
+  max-width: 600px; margin-bottom: 2.5rem; font-family: 'Ubuntu', sans-serif;
+}
+.plat-hero-stats {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+}
+.phs { }
+.phs-val { font-size: 1.8rem; font-weight: 900; color: #fff; font-family: 'Kufam', sans-serif; line-height: 1; }
+.phs-val.gold { color: #c9a84c; }
+.phs-val.green { color: #1d9e75; }
+.phs-val.blue { color: #378add; }
+.phs-lbl { font-size: .72rem; color: rgba(255,255,255,.4); margin-top: .25rem; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: .06em; }
+
+/* ══ MODULE STICKY NAV ══ */
+.mod-sticky-nav {
+  position: sticky; top: 70px; z-index: 90;
+  background: rgba(10,22,40,.96); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  padding: 0 5%; display: flex; gap: 0; overflow-x: auto;
+  scrollbar-width: none;
+}
+.mod-sticky-nav::-webkit-scrollbar { display: none; }
+.msn-link {
+  padding: .85rem 1.1rem; font-size: .78rem; color: rgba(255,255,255,.38);
+  text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent;
+  transition: all .2s; font-family: 'Ubuntu', sans-serif; font-weight: 500;
+  display: flex; align-items: center; gap: 6px;
+}
+.msn-link:hover { color: rgba(255,255,255,.72); }
+.msn-link.msn-active { color: #c9a84c; border-bottom-color: #c9a84c; }
+.msn-num { font-size: .65rem; opacity: .6; }
+
+/* ══ MODULE SECTIONS ══ */
+.mod-section {
+  padding: 6rem 5%; border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.mod-section:nth-child(odd)  { background: #060f1c; }
+.mod-section:nth-child(even) { background: #0a1628; }
+.mod-layout {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+.mod-layout.rev { direction: rtl; }
+.mod-layout.rev > * { direction: ltr; }
+.mod-eyebrow {
+  font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.35); margin-bottom: .625rem; font-family: 'Ubuntu', sans-serif;
+  display: flex; align-items: center; gap: 8px;
+}
+.mod-num-pill {
+  background: rgba(24,95,165,.2); color: #7fb3e8;
+  padding: 2px 8px; border-radius: 4px; font-size: .65rem; font-weight: 800;
+}
+.mod-h2 {
+  font-size: 2rem; font-weight: 900; color: #fff; line-height: 1.1;
+  margin-bottom: .875rem; font-family: 'Kufam', sans-serif; letter-spacing: -.02em;
+}
+.mod-h2 em { color: #c9a84c; font-style: normal; }
+.mod-desc {
+  font-size: .92rem; color: rgba(255,255,255,.55); line-height: 1.78;
+  margin-bottom: 1.75rem; font-family: 'Ubuntu', sans-serif;
+}
+/* How it works */
+.how-it-works { margin-bottom: 1.75rem; }
+.hiw-title {
+  font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.3); margin-bottom: .875rem; font-family: 'Ubuntu', sans-serif;
+}
+.hiw-steps { display: flex; flex-direction: column; gap: .5rem; }
+.hiw-step {
+  display: flex; gap: .75rem; align-items: flex-start;
+  padding: .625rem .875rem; background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.05); border-radius: 8px;
+}
+.hiw-n {
+  width: 22px; height: 22px; border-radius: 50%; background: rgba(24,95,165,.2);
+  border: 1px solid rgba(24,95,165,.3); color: #7fb3e8; font-size: .7rem;
+  font-weight: 700; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px; font-family: 'Ubuntu', sans-serif;
+}
+.hiw-txt { font-size: .82rem; color: rgba(255,255,255,.6); line-height: 1.55; font-family: 'Ubuntu', sans-serif; }
+.hiw-txt strong { color: rgba(255,255,255,.85); }
+/* Metrics */
+.mod-metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: .625rem; }
+.mod-metric {
+  background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06);
+  border-radius: 10px; padding: .875rem 1rem;
+}
+.mod-metric-val { font-size: 1.35rem; font-weight: 900; font-family: 'Kufam', sans-serif; color: #fff; line-height: 1; margin-bottom: .25rem; }
+.mod-metric-val.gold { color: #c9a84c; }
+.mod-metric-val.green { color: #1d9e75; }
+.mod-metric-val.blue { color: #378add; }
+.mod-metric-lbl { font-size: .7rem; color: rgba(255,255,255,.38); font-family: 'Ubuntu', sans-serif; }
+
+/* ══ MODULE MOCKUPS ══ */
+.mock-wrap {
+  background: #0d1b2e; border: 1px solid rgba(255,255,255,.09);
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,.5);
+}
+.mock-topbar {
+  background: #060f1c; padding: .6rem 1rem;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.mock-tb-title { font-size: .72rem; font-weight: 700; color: rgba(255,255,255,.6); font-family: 'Ubuntu', sans-serif; }
+.mock-tb-badge {
+  font-size: .62rem; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.badge-red { background: rgba(216,90,48,.2); color: #f0997b; }
+.badge-green { background: rgba(29,158,117,.2); color: #5dcaa5; }
+.badge-gold { background: rgba(201,168,76,.2); color: #c9a84c; }
+.badge-blue { background: rgba(55,138,221,.2); color: #7fb3e8; }
+.mock-body { padding: 1.25rem; }
+/* Score gauge */
+.score-gauge-wrap { text-align: center; margin-bottom: 1rem; }
+.score-ring {
+  width: 90px; height: 90px; border-radius: 50%;
+  border: 5px solid rgba(255,255,255,.06);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  margin: 0 auto .5rem; position: relative;
+}
+.score-ring.high { border-color: rgba(216,90,48,.4); box-shadow: 0 0 20px rgba(216,90,48,.15); }
+.score-ring.med { border-color: rgba(201,168,76,.4); box-shadow: 0 0 20px rgba(201,168,76,.15); }
+.score-ring.low { border-color: rgba(29,158,117,.4); box-shadow: 0 0 20px rgba(29,158,117,.15); }
+.score-num { font-size: 1.6rem; font-weight: 900; font-family: 'Kufam', sans-serif; }
+.score-num.high { color: #d85a30; }
+.score-num.med { color: #c9a84c; }
+.score-num.low { color: #1d9e75; }
+.score-label { font-size: .68rem; color: rgba(255,255,255,.4); font-family: 'Ubuntu', sans-serif; }
+/* Archetype tags */
+.arch-list { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1rem; }
+.arch-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .5rem .75rem; background: rgba(216,90,48,.08);
+  border: 1px solid rgba(216,90,48,.15); border-radius: 6px;
+}
+.arch-name { font-size: .75rem; color: rgba(255,255,255,.72); font-family: 'Ubuntu', sans-serif; }
+.arch-pct { font-size: .7rem; font-weight: 700; color: #f0997b; font-family: 'Ubuntu', sans-serif; }
+/* Action buttons */
+.mock-actions { display: flex; gap: .5rem; }
+.ma-btn {
+  flex: 1; padding: .5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.04); color: rgba(255,255,255,.5);
+  font-size: .7rem; font-weight: 600; font-family: 'Ubuntu', sans-serif;
+  text-align: center; cursor: default;
+}
+.ma-btn.primary { background: rgba(24,95,165,.2); border-color: rgba(24,95,165,.3); color: #7fb3e8; }
+.ma-btn.danger  { background: rgba(216,90,48,.15); border-color: rgba(216,90,48,.25); color: #f0997b; }
+.ma-btn.success { background: rgba(29,158,117,.15); border-color: rgba(29,158,117,.25); color: #5dcaa5; }
+/* Claim info row */
+.claim-info { display: flex; justify-content: space-between; margin-bottom: 1rem; }
+.ci-field { }
+.ci-lbl { font-size: .63rem; color: rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
+.ci-val { font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.78); font-family: 'Ubuntu', sans-serif; }
+/* Health score member card */
+.member-row { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; padding-bottom: .875rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+.mem-avatar { width: 36px; height: 36px; border-radius: 50%; background: rgba(24,95,165,.25); display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; color: #7fb3e8; font-family: 'Ubuntu', sans-serif; flex-shrink: 0; }
+.mem-name { font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.85); font-family: 'Ubuntu', sans-serif; }
+.mem-id { font-size: .68rem; color: rgba(255,255,255,.3); font-family: 'Ubuntu', sans-serif; }
+/* Risk factors */
+.risk-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+.risk-tag { font-size: .67rem; padding: 3px 8px; border-radius: 4px; font-family: 'Ubuntu', sans-serif; font-weight: 600; }
+.rt-red { background: rgba(216,90,48,.15); color: #f0997b; }
+.rt-amber { background: rgba(201,168,76,.15); color: #c9a84c; }
+.rt-blue { background: rgba(55,138,221,.15); color: #7fb3e8; }
+/* Hospital routing cards */
+.hosp-cards { display: flex; flex-direction: column; gap: .5rem; }
+.hosp-card {
+  display: flex; align-items: center; gap: .75rem; padding: .7rem .875rem;
+  border-radius: 8px; border: 1px solid rgba(255,255,255,.07);
+  background: rgba(255,255,255,.03);
+}
+.hosp-card.recommended { border-color: rgba(29,158,117,.3); background: rgba(29,158,117,.06); }
+.hosp-rank { width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,.06); display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 800; color: rgba(255,255,255,.5); flex-shrink: 0; font-family: 'Ubuntu', sans-serif; }
+.hosp-rank.top { background: rgba(29,158,117,.2); color: #5dcaa5; }
+.hosp-info { flex: 1; }
+.hosp-name { font-size: .8rem; font-weight: 700; color: rgba(255,255,255,.8); font-family: 'Ubuntu', sans-serif; }
+.hosp-detail { font-size: .67rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; }
+.hosp-cost { text-align: right; }
+.hosp-amt { font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.8); font-family: 'Ubuntu', sans-serif; }
+.hosp-savings { font-size: .65rem; color: #5dcaa5; font-family: 'Ubuntu', sans-serif; }
+/* Prediction timeline */
+.pred-timeline { display: flex; flex-direction: column; gap: .5rem; }
+.pred-item { display: flex; align-items: center; gap: .75rem; padding: .6rem .875rem; border-radius: 8px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); }
+.pred-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.pd-red { background: #d85a30; }
+.pd-amber { background: #c9a84c; }
+.pd-green { background: #1d9e75; }
+.pred-info { flex: 1; }
+.pred-name { font-size: .78rem; font-weight: 600; color: rgba(255,255,255,.78); font-family: 'Ubuntu', sans-serif; }
+.pred-risk { font-size: .67rem; color: rgba(255,255,255,.38); font-family: 'Ubuntu', sans-serif; }
+.pred-days { font-size: .72rem; font-weight: 700; font-family: 'Ubuntu', sans-serif; }
+/* Care plan */
+.care-steps { display: flex; flex-direction: column; gap: .4rem; }
+.care-step { display: flex; align-items: center; gap: .625rem; padding: .5rem .75rem; border-radius: 6px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.05); }
+.care-ico { font-size: .9rem; }
+.care-txt { font-size: .75rem; color: rgba(255,255,255,.62); font-family: 'Ubuntu', sans-serif; flex: 1; }
+.care-status { font-size: .62rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; }
+.cs-done { background: rgba(29,158,117,.15); color: #5dcaa5; }
+.cs-pend { background: rgba(201,168,76,.15); color: #c9a84c; }
+/* Premium card */
+.prem-breakdown { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1rem; }
+.pb-row { display: flex; align-items: center; justify-content: space-between; padding: .5rem .75rem; background: rgba(255,255,255,.03); border-radius: 6px; border: 1px solid rgba(255,255,255,.05); }
+.pb-lbl { font-size: .75rem; color: rgba(255,255,255,.55); font-family: 'Ubuntu', sans-serif; }
+.pb-val { font-size: .75rem; font-weight: 700; font-family: 'Ubuntu', sans-serif; }
+.pb-val.pos { color: #5dcaa5; }
+.prem-total { background: rgba(201,168,76,.08); border: 1px solid rgba(201,168,76,.2); border-radius: 8px; padding: .75rem 1rem; text-align: center; }
+.pt-lbl { font-size: .68rem; color: rgba(201,168,76,.7); text-transform: uppercase; letter-spacing: .08em; font-family: 'Ubuntu', sans-serif; margin-bottom: .25rem; }
+.pt-val { font-size: 1.4rem; font-weight: 900; color: #c9a84c; font-family: 'Kufam', sans-serif; }
+/* Mini dashboard */
+.mini-kpi-row { display: grid; grid-template-columns: repeat(2,1fr); gap: .5rem; margin-bottom: .875rem; }
+.mkpi { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 8px; padding: .7rem .875rem; }
+.mkpi-val { font-size: 1.1rem; font-weight: 900; color: #fff; font-family: 'Kufam', sans-serif; }
+.mkpi-val.gold { color: #c9a84c; }
+.mkpi-val.green { color: #1d9e75; }
+.mkpi-lbl { font-size: .62rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; }
+.mini-bar-chart { display: flex; align-items: flex-end; gap: 4px; height: 50px; }
+.mbc-bar { flex: 1; border-radius: 2px 2px 0 0; background: rgba(24,95,165,.4); min-height: 4px; }
+.mbc-bar.active { background: #c9a84c; }
+
+/* ══ CLAIM FLOW SECTION ══ */
+.flow-sec { background: #060f1c; padding: 6rem 5%; }
+.flow-inner { max-width: 1200px; margin: 0 auto; }
+.flow-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 3rem; position: relative; }
+.flow-steps::before {
+  content: ''; position: absolute; top: 36px; left: 10%; right: 10%;
+  height: 1px; background: linear-gradient(90deg, transparent, rgba(24,95,165,.4), rgba(201,168,76,.4), rgba(29,158,117,.4), transparent);
+}
+.flow-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1rem; position: relative; }
+.flow-step-num {
+  width: 72px; height: 72px; border-radius: 50%; border: 2px solid rgba(24,95,165,.4);
+  background: #0a1628; display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 1rem; position: relative; z-index: 1;
+  box-shadow: 0 0 0 6px rgba(6,15,28,.8);
+}
+.flow-step-num.gold-ring { border-color: rgba(201,168,76,.5); box-shadow: 0 0 16px rgba(201,168,76,.1), 0 0 0 6px rgba(6,15,28,.8); }
+.flow-step-num.green-ring { border-color: rgba(29,158,117,.5); box-shadow: 0 0 16px rgba(29,158,117,.1), 0 0 0 6px rgba(6,15,28,.8); }
+.flow-step-title { font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.85); margin-bottom: .375rem; font-family: 'Ubuntu', sans-serif; }
+.flow-step-desc { font-size: .75rem; color: rgba(255,255,255,.38); line-height: 1.55; font-family: 'Ubuntu', sans-serif; }
+.flow-step-time {
+  display: inline-flex; align-items: center; gap: 4px; margin-top: .5rem;
+  font-size: .65rem; font-weight: 700; padding: 2px 8px; border-radius: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.flow-step-time.fast { background: rgba(29,158,117,.15); color: #5dcaa5; }
+.flow-step-time.med  { background: rgba(201,168,76,.15); color: #c9a84c; }
+
+/* ══ TECH & COMPLIANCE SECTION ══ */
+.tech-sec { background: #0a1628; padding: 6rem 5%; }
+.tech-inner { max-width: 1200px; margin: 0 auto; }
+.tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+.tech-col-title { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.3); margin-bottom: 1.25rem; font-family: 'Ubuntu', sans-serif; }
+.tech-items { display: flex; flex-direction: column; gap: .75rem; }
+.tech-item { display: flex; gap: .875rem; align-items: flex-start; padding: .875rem 1rem; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); border-radius: 10px; }
+.tech-ico { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+.tech-body { }
+.tech-item-title { font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.82); font-family: 'Ubuntu', sans-serif; margin-bottom: 3px; }
+.tech-item-desc { font-size: .78rem; color: rgba(255,255,255,.42); line-height: 1.55; font-family: 'Ubuntu', sans-serif; }
+/* Compliance badges */
+.compliance-badges { display: grid; grid-template-columns: repeat(2,1fr); gap: .625rem; }
+.comp-badge {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 1.25rem .875rem; background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07); border-radius: 12px;
+}
+.comp-badge.active { border-color: rgba(29,158,117,.3); background: rgba(29,158,117,.06); }
+.comp-ico { font-size: 1.5rem; margin-bottom: .5rem; }
+.comp-name { font-size: .78rem; font-weight: 700; color: rgba(255,255,255,.8); font-family: 'Ubuntu', sans-serif; margin-bottom: .25rem; }
+.comp-desc { font-size: .67rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; }
+.comp-status { font-size: .62rem; font-weight: 700; padding: 2px 7px; border-radius: 3px; margin-top: .5rem; font-family: 'Ubuntu', sans-serif; }
+.cs-active { background: rgba(29,158,117,.15); color: #5dcaa5; }
+.cs-planned { background: rgba(201,168,76,.12); color: #c9a84c; }
+
+/* ══ FOOTER-BOTTOM FIX ══ */
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; padding:1.1rem 5%; border-top:1px solid rgba(255,255,255,.08); flex-wrap:nowrap; gap:1rem; }
+.footer-copy { font-size:.78rem; color:rgba(255,255,255,.35); white-space:nowrap; }
+.footer-legal { display:flex; gap:1.5rem; align-items:center; }
+.footer-legal a { font-size:.78rem; color:rgba(255,255,255,.35); text-decoration:none; white-space:nowrap; transition:color .2s; }
+.footer-legal a:hover { color:rgba(255,255,255,.75); }
+
+/* ══ SCROLL TOP ══ */
+#scroll-top { position:fixed; bottom:2rem; right:2rem; width:44px; height:44px; border-radius:50%; background:#185fa5; color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.1rem; box-shadow:0 4px 20px rgba(24,95,165,.4); opacity:0; transform:translateY(12px); transition:opacity .3s,transform .3s; z-index:999; pointer-events:none; }
+#scroll-top.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
+#scroll-top:hover { background:#0c447c; }
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  .mod-layout, .mod-layout.rev { grid-template-columns:1fr; direction:ltr; }
+  .flow-steps { grid-template-columns:repeat(2,1fr); gap:2rem; }
+  .flow-steps::before { display:none; }
+  .tech-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .plat-hero-stats { gap:1.5rem; }
+}
+@media(max-width:600px){
+  .flow-steps { grid-template-columns:1fr; }
+  .compliance-badges { grid-template-columns:1fr 1fr; }
+  .plat-h1 { font-size:2.2rem; }
+  .mod-h2 { font-size:1.7rem; }
+  .mod-metrics { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav" role="banner">
+  <a href="index.html#home" class="nav-logo" aria-label="iRonic Health Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">Health System Integration Technology</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="Main navigation">
+    <a href="index.html#problem">Problem</a>
+    <a href="platform.html" class="nav-active">Platform</a>
+    <a href="index.html#ecosystem">Ecosystem</a>
+    <a href="index.html#dashboard">Dashboard</a>
+    <a href="index.html#market">Market</a>
+    <a href="index.html#model">Revenue</a>
+    <a href="index.html#about">Team</a>
+    <a href="index.html#investors">Investors</a>
+  </nav>
+  <div class="nav-right">
+    <a href="ar/index.html" class="btn-lang">🌐 عربي</a>
+    <a href="index.html#contact" class="btn-demo">Request Demo →</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html#problem">Problem</a>
+  <a href="platform.html">Platform</a>
+  <a href="index.html#ecosystem">Ecosystem</a>
+  <a href="index.html#dashboard">Dashboard</a>
+  <a href="index.html#market">Market</a>
+  <a href="index.html#model">Revenue</a>
+  <a href="index.html#about">Team</a>
+  <a href="index.html#investors">Investors</a>
+  <a href="index.html#contact" class="mobile-demo-btn">Request Demo →</a>
+</div>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="plat-hero" aria-label="Platform overview">
+  <div class="plat-hero-bg" aria-hidden="true"></div>
+  <div class="plat-hero-grid" aria-hidden="true"></div>
+  <div class="plat-hero-inner reveal">
+    <div class="plat-badge">⚙ Platform Deep Dive</div>
+    <h1 class="plat-h1">7 AI Modules.<br><em>One Intelligence Layer.</em></h1>
+    <p class="plat-sub">Deploy individually or as a full platform. Each module is Egypt-native, FRA-compliant, and delivers measurable ROI from day one — with zero upfront cost in the pilot.</p>
+    <div class="plat-hero-stats">
+      <div class="phs"><div class="phs-val gold">7</div><div class="phs-lbl">AI Modules</div></div>
+      <div class="phs"><div class="phs-val">25–40</div><div class="phs-lbl">Fraud Archetypes</div></div>
+      <div class="phs"><div class="phs-val green">94.2%</div><div class="phs-lbl">Detection Accuracy</div></div>
+      <div class="phs"><div class="phs-val blue">&lt;5s</div><div class="phs-lbl">Claim Decision</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE STICKY NAV ═══ -->
+<div class="mod-sticky-nav" role="navigation" aria-label="Module navigation">
+  <a href="#mod-1" class="msn-link msn-active"><span class="msn-num">01</span>Fraud Detection</a>
+  <a href="#mod-2" class="msn-link"><span class="msn-num">02</span>Health Score</a>
+  <a href="#mod-3" class="msn-link"><span class="msn-num">03</span>Claim Predictor</a>
+  <a href="#mod-4" class="msn-link"><span class="msn-num">04</span>Hospital Routing</a>
+  <a href="#mod-5" class="msn-link"><span class="msn-num">05</span>Preventive Care</a>
+  <a href="#mod-6" class="msn-link"><span class="msn-num">06</span>Dynamic Premiums</a>
+  <a href="#mod-7" class="msn-link"><span class="msn-num">07</span>Dashboard</a>
+</div>
+
+<!-- ═══ MODULE 1 — FRAUD DETECTION AI ═══ -->
+<section class="mod-section" id="mod-1" aria-labelledby="mod1-heading">
+  <div class="mod-layout">
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">MODULE 01</span>Egypt-native AI</div>
+      <h2 class="mod-h2" id="mod1-heading">Fraud Detection <em>AI</em></h2>
+      <p class="mod-desc">Real-time AI scoring on every claim using 25–40 Egypt-specific fraud archetypes. The only system trained on Egyptian claims data, ICD/CPT codes, local pharmacy patterns, and FRA-defined fraud categories.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">How it works</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>Claim submitted</strong> — hospital or pharmacy sends claim via API in real time</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>AI scores simultaneously</strong> against all 25–40 archetypes within 4.3 seconds</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>Decision assigned:</strong> Auto-approve (&lt;30) · CMO review (30–70) · Auto-reject (&gt;70)</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>CMO reviews</strong> flagged claims with full AI reasoning and archetype evidence</div></div>
+          <div class="hiw-step"><div class="hiw-n">5</div><div class="hiw-txt"><strong>FRA audit trail</strong> auto-generated for every decision — 100% regulatory compliant</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val green">94.2%</div><div class="mod-metric-lbl">Detection accuracy</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">4.3s</div><div class="mod-metric-lbl">Avg. scoring time</div></div>
+        <div class="mod-metric"><div class="mod-metric-val gold">25–40%</div><div class="mod-metric-lbl">Fraud recovery rate</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">100%</div><div class="mod-metric-lbl">FRA audit coverage</div></div>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-title">🔍 Fraud Analysis — Claim #IRH-4821</span>
+          <span class="mock-tb-badge badge-red">⚠ HIGH RISK</span>
+        </div>
+        <div class="mock-body">
+          <div class="claim-info">
+            <div class="ci-field"><div class="ci-lbl">Provider</div><div class="ci-val">Cairo Medical Centre</div></div>
+            <div class="ci-field"><div class="ci-lbl">Amount</div><div class="ci-val">EGP 3,200</div></div>
+            <div class="ci-field"><div class="ci-lbl">Type</div><div class="ci-val">Pharmacy</div></div>
+          </div>
+          <div class="score-gauge-wrap">
+            <div class="score-ring high"><span class="score-num high">87</span></div>
+            <div class="score-label">Fraud Risk Score (out of 100)</div>
+          </div>
+          <div class="arch-list">
+            <div class="arch-item"><span class="arch-name">🔴 Phantom Prescription</span><span class="arch-pct">82% match</span></div>
+            <div class="arch-item"><span class="arch-name">🔴 Unictam Counterfeit</span><span class="arch-pct">71% match</span></div>
+            <div class="arch-item"><span class="arch-name">🟡 Brand Upcoding</span><span class="arch-pct">44% match</span></div>
+          </div>
+          <div class="mock-actions">
+            <div class="ma-btn success">✓ Approve</div>
+            <div class="ma-btn primary">⚐ CMO Review</div>
+            <div class="ma-btn danger">✗ Reject</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 2 — HEALTH SCORE ═══ -->
+<section class="mod-section" id="mod-2" aria-labelledby="mod2-heading">
+  <div class="mod-layout rev">
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-title">🧠 Insurance Health Score</span>
+          <span class="mock-tb-badge badge-red">High Risk</span>
+        </div>
+        <div class="mock-body">
+          <div class="member-row">
+            <div class="mem-avatar">SM</div>
+            <div><div class="mem-name">Sara Mahmoud</div><div class="mem-id">IRH-2026-00101 · Class A</div></div>
+          </div>
+          <div class="score-gauge-wrap">
+            <div class="score-ring high"><span class="score-num high">742</span></div>
+            <div class="score-label">Health Risk Score (0 = best · 1000 = critical)</div>
+          </div>
+          <div style="margin-bottom:.75rem;">
+            <div class="ci-lbl" style="margin-bottom:.5rem;">Primary Risk Factors</div>
+            <div class="risk-tags">
+              <span class="risk-tag rt-red">Type 2 Diabetes</span>
+              <span class="risk-tag rt-red">Medication Non-Adherence</span>
+              <span class="risk-tag rt-amber">High ER Frequency</span>
+              <span class="risk-tag rt-blue">Hypertension</span>
+            </div>
+          </div>
+          <div class="ma-btn primary" style="text-align:center;padding:.6rem;">→ Enroll in Preventive Care Program</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">MODULE 02</span>Predictive underwriting</div>
+      <h2 class="mod-h2" id="mod2-heading">Insurance <em>Health Score</em></h2>
+      <p class="mod-desc">A continuous, ML-driven risk score per member — updated after every claim, pharmacy interaction, and clinical event. Enables dynamic underwriting, case management triggers, and proactive intervention before costs occur.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">How it works</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>Multi-source data ingestion:</strong> claims history, pharmacy, demographics, chronic disease markers</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>ML model scores each member</strong> on a 0–1000 scale, updated continuously after every interaction</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>Segments assigned:</strong> Green (0–300) · Amber (301–600) · Red (601–800) · Critical (801–1000)</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>Insurer action:</strong> adjust premium, trigger care management, flag for preventive protocol</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val blue">30–60</div><div class="mod-metric-lbl">Day prediction horizon</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">Real-time</div><div class="mod-metric-lbl">Score updates</div></div>
+        <div class="mod-metric"><div class="mod-metric-val gold">5×</div><div class="mod-metric-lbl">Risk stratification depth</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">1.2M</div><div class="mod-metric-lbl">Members scored</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 3 — AI CLAIM PREDICTOR ═══ -->
+<section class="mod-section" id="mod-3" aria-labelledby="mod3-heading">
+  <div class="mod-layout">
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">MODULE 03</span>Pre-loss intervention</div>
+      <h2 class="mod-h2" id="mod3-heading">AI Claim <em>Predictor</em></h2>
+      <p class="mod-desc">Forecasts high-cost claims 30–60 days before they occur — giving insurers and TPAs advance notice to intervene with preventive protocols, care management, and budget provisioning before a costly event happens.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">How it works</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>Signal monitoring:</strong> tracks pharmacy refill patterns, specialist visit frequency, ER usage trends</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>Pattern recognition:</strong> identifies deteriorating chronic disease markers and care-seeking escalation</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>High-cost claim predicted</strong> with estimated cost range 30–60 days in advance</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>Insurer activates:</strong> care coordinator outreach, preventive protocol, and budget reserve</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">30–60</div><div class="mod-metric-lbl">Day advance warning</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">40%</div><div class="mod-metric-lbl">Fewer preventable admissions</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">EGP 15K+</div><div class="mod-metric-lbl">Avg. cost averted per event</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">87%</div><div class="mod-metric-lbl">Prediction precision</div></div>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-title">📊 High-Cost Claim Predictions</span>
+          <span class="mock-tb-badge badge-gold">3 Flagged</span>
+        </div>
+        <div class="mock-body">
+          <div class="ci-lbl" style="margin-bottom:.75rem;">Members predicted to submit high-cost claims within 60 days</div>
+          <div class="pred-timeline">
+            <div class="pred-item">
+              <div class="pred-dot pd-red"></div>
+              <div class="pred-info"><div class="pred-name">Ahmed Hassan — IRH-2026-00204</div><div class="pred-risk">Cardiac event risk · EGP 45,000–80,000 predicted</div></div>
+              <div class="pred-days" style="color:#f0997b">14 days</div>
+            </div>
+            <div class="pred-item">
+              <div class="pred-dot pd-red"></div>
+              <div class="pred-info"><div class="pred-name">Fatma Ibrahim — IRH-2026-00389</div><div class="pred-risk">Diabetes complication · EGP 18,000–35,000 predicted</div></div>
+              <div class="pred-days" style="color:#f0997b">28 days</div>
+            </div>
+            <div class="pred-item">
+              <div class="pred-dot pd-amber"></div>
+              <div class="pred-info"><div class="pred-name">Mohamed Ali — IRH-2026-00512</div><div class="pred-risk">Renal deterioration · EGP 12,000–22,000 predicted</div></div>
+              <div class="pred-days" style="color:#c9a84c">45 days</div>
+            </div>
+            <div class="pred-item">
+              <div class="pred-dot pd-green"></div>
+              <div class="pred-info"><div class="pred-name">Nour Khalid — IRH-2026-00601</div><div class="pred-risk">Low risk · Stable · No intervention needed</div></div>
+              <div class="pred-days" style="color:#5dcaa5">Clear</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 4 — AUTO HOSPITAL ROUTING ═══ -->
+<section class="mod-section" id="mod-4" aria-labelledby="mod4-heading">
+  <div class="mod-layout rev">
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-title">🏥 Hospital Routing — Orthopedic Referral</span>
+          <span class="mock-tb-badge badge-blue">3 Options</span>
+        </div>
+        <div class="mock-body">
+          <div class="ci-lbl" style="margin-bottom:.75rem;">Ranked by Value Score (cost + quality + availability)</div>
+          <div class="hosp-cards">
+            <div class="hosp-card recommended">
+              <div class="hosp-rank top">1</div>
+              <div class="hosp-info"><div class="hosp-name">Cleopatra Hospital — Heliopolis</div><div class="hosp-detail">Quality: 9.1/10 · 4.2km · Pre-auth: Ready</div></div>
+              <div class="hosp-cost"><div class="hosp-amt">EGP 8,200</div><div class="hosp-savings">↓ 28% below avg.</div></div>
+            </div>
+            <div class="hosp-card">
+              <div class="hosp-rank">2</div>
+              <div class="hosp-info"><div class="hosp-name">As-Salam International</div><div class="hosp-detail">Quality: 8.8/10 · 7.1km · Pre-auth: 2h</div></div>
+              <div class="hosp-cost"><div class="hosp-amt">EGP 9,600</div><div class="hosp-savings" style="color:rgba(255,255,255,.35)">↓ 17% below avg.</div></div>
+            </div>
+            <div class="hosp-card">
+              <div class="hosp-rank">3</div>
+              <div class="hosp-info"><div class="hosp-name">Cairo Medical Centre</div><div class="hosp-detail">Quality: 8.4/10 · 2.8km · Pre-auth: 4h</div></div>
+              <div class="hosp-cost"><div class="hosp-amt">EGP 11,400</div><div class="hosp-savings" style="color:rgba(255,255,255,.35)">Near avg. cost</div></div>
+            </div>
+          </div>
+          <div class="ma-btn primary" style="text-align:center;margin-top:.875rem;padding:.6rem;">→ Send Pre-Auth to Cleopatra Hospital</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">MODULE 04</span>Network optimization</div>
+      <h2 class="mod-h2" id="mod4-heading">Auto Hospital <em>Routing</em></h2>
+      <p class="mod-desc">Intelligently routes patients to the most cost-effective, clinically appropriate provider in real time. Combines quality scores, network pricing benchmarks, and patient proximity to deliver the best value per claim.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">How it works</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>Referral request received</strong> — doctor or member requests admission or specialist</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>Platform queries network</strong> for available providers, quality scores, pricing vs. benchmarks</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>Top 3 ranked</strong> by Value Score: clinical quality + cost + proximity + bed availability</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>Pre-authorization triggered</strong> automatically to selected provider — approved in &lt;4 hours</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">20–35%</div><div class="mod-metric-lbl">Per-claim cost reduction</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">&lt;4h</div><div class="mod-metric-lbl">Pre-authorization time</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">340+</div><div class="mod-metric-lbl">Network providers</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">9.1</div><div class="mod-metric-lbl">Avg. quality score / 10</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 5 — PREVENTIVE CARE ═══ -->
+<section class="mod-section" id="mod-5" aria-labelledby="mod5-heading">
+  <div class="mod-layout">
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">MODULE 05</span>Chronic disease management</div>
+      <h2 class="mod-h2" id="mod5-heading">Preventive Care <em>Program</em></h2>
+      <p class="mod-desc">Proactive chronic disease management and early intervention for high-risk members — reducing preventable hospitalizations by up to 40% across the insured pool. Care coordinators are supported by AI-generated protocol recommendations.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">How it works</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>High-risk members identified</strong> via Health Score module (score &gt;600)</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>Care coordinator assigned</strong> — AI recommends condition-specific protocol (Diabetes · Cardiac · Renal · Hypertension)</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>Member enrolled</strong> in program via patient app — reminders, screenings, medication adherence tracking</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>Outcomes tracked</strong> against baseline — insurer sees hospitalizations avoided and cost impact in real time</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">40%</div><div class="mod-metric-lbl">Fewer preventable admissions</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">5</div><div class="mod-metric-lbl">Chronic conditions managed</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">EGP 22K</div><div class="mod-metric-lbl">Avg. hospitalization cost avoided</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">Patient app</div><div class="mod-metric-lbl">iOS + Android</div></div>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-title">❤️ Care Plan — Sara Mahmoud</span>
+          <span class="mock-tb-badge badge-red">Type 2 Diabetes</span>
+        </div>
+        <div class="mock-body">
+          <div class="member-row">
+            <div class="mem-avatar">SM</div>
+            <div><div class="mem-name">Care Coordinator: Dr. Amr Farouk</div><div class="mem-id">Protocol: Diabetes Intensive Management</div></div>
+          </div>
+          <div class="ci-lbl" style="margin-bottom:.75rem;">Active Care Steps</div>
+          <div class="care-steps">
+            <div class="care-step"><div class="care-ico">💊</div><div class="care-txt">Daily medication adherence check via app</div><div class="care-status cs-done">✓ Done</div></div>
+            <div class="care-step"><div class="care-ico">🩺</div><div class="care-txt">Monthly HbA1c blood test at Alpha Labs</div><div class="care-status cs-done">✓ Done</div></div>
+            <div class="care-step"><div class="care-ico">👁️</div><div class="care-txt">Quarterly ophthalmology screening</div><div class="care-status cs-pend">Scheduled</div></div>
+            <div class="care-step"><div class="care-ico">🥗</div><div class="care-txt">Nutrition counseling — 2 sessions booked</div><div class="care-status cs-pend">Pending</div></div>
+            <div class="care-step"><div class="care-ico">📊</div><div class="care-txt">Endocrinologist review — 6-month</div><div class="care-status cs-pend">Upcoming</div></div>
+          </div>
+          <div style="margin-top:.875rem;padding:.625rem .875rem;background:rgba(29,158,117,.08);border:1px solid rgba(29,158,117,.2);border-radius:8px;font-size:.75rem;color:#5dcaa5;font-family:'Ubuntu',sans-serif;">
+            ↓ Predicted hospital admission risk reduced by 38% since enrollment
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 6 — DYNAMIC PREMIUMS ═══ -->
+<section class="mod-section" id="mod-6" aria-labelledby="mod6-heading">
+  <div class="mod-layout rev">
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-title">💰 Premium Adjustment — Renewal 2027</span>
+          <span class="mock-tb-badge badge-gold">−18% Discount Earned</span>
+        </div>
+        <div class="mock-body">
+          <div class="member-row">
+            <div class="mem-avatar" style="background:rgba(201,168,76,.15);color:#c9a84c;">YM</div>
+            <div><div class="mem-name">Youssef Mostafa · Health Points: 1,820</div><div class="mem-id">Annual renewal · Class B Premium</div></div>
+          </div>
+          <div class="ci-lbl" style="margin-bottom:.75rem;">Behavioral Discount Breakdown</div>
+          <div class="prem-breakdown">
+            <div class="pb-row"><span class="pb-lbl">✓ Annual health check completed</span><span class="pb-val pos">−5%</span></div>
+            <div class="pb-row"><span class="pb-lbl">✓ Medication adherence &gt;90%</span><span class="pb-val pos">−3%</span></div>
+            <div class="pb-row"><span class="pb-lbl">✓ Preventive screening × 2</span><span class="pb-val pos">−6%</span></div>
+            <div class="pb-row"><span class="pb-lbl">✓ BMI improvement (−3 points)</span><span class="pb-val pos">−4%</span></div>
+            <div class="pb-row"><span class="pb-lbl">Base premium (Class B)</span><span class="pb-val">EGP 14,400 / yr</span></div>
+          </div>
+          <div class="prem-total">
+            <div class="pt-lbl">Your 2027 Premium</div>
+            <div class="pt-val">EGP 11,808 / yr</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">MODULE 06</span>First in Egypt</div>
+      <h2 class="mod-h2" id="mod6-heading">Dynamic <em>Premiums</em></h2>
+      <p class="mod-desc">Members earn lower premiums through verified healthy behaviors — the first behavior-linked premium system in Egypt's private health insurance market. Insurers gain a healthier risk pool, higher engagement, and a powerful retention tool.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">How it works</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>Insurer sets incentive rules:</strong> which behaviors earn points and what discounts they unlock at renewal</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>Member tracks behaviors</strong> via patient app: check-ups, medication adherence, screenings, lifestyle</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>Health Points accumulated</strong> throughout the policy year with verified evidence per action</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>Premium adjusted at renewal</strong> — up to 25% discount for highest-performing members</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">−25%</div><div class="mod-metric-lbl">Max premium discount</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">5+</div><div class="mod-metric-lbl">Tracked healthy behaviors</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">First</div><div class="mod-metric-lbl">In Egypt's insurance market</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">↑ 34%</div><div class="mod-metric-lbl">Member retention improvement</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 7 — GOLDEN DASHBOARD ═══ -->
+<section class="mod-section" id="mod-7" aria-labelledby="mod7-heading">
+  <div class="mod-layout">
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">MODULE 07</span>Single source of truth</div>
+      <h2 class="mod-h2" id="mod7-heading">Golden Insurance <em>Dashboard</em></h2>
+      <p class="mod-desc">Real-time intelligence across all 8 ecosystem parties in a single command center. Every insurer, TPA, and hospital CFO gets their own role-specific view — from executive KPIs to claims operations to FRA regulatory reporting, all auto-generated.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">How it works</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>Real-time data aggregation</strong> from all 8 connected parties — hospitals, insurers, pharmacies, labs</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>Role-based views:</strong> Executive · Claims Ops · Risk Management · Compliance · Pharmacy</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>Anomaly alerts</strong> triggered for fraud spikes, cost overruns, and compliance gaps</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>FRA reports auto-generated</strong> — monthly, quarterly, and annual — with full CMO sign-off trail</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val blue">8</div><div class="mod-metric-lbl">Ecosystem parties connected</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">Real-time</div><div class="mod-metric-lbl">Data refresh rate</div></div>
+        <div class="mod-metric"><div class="mod-metric-val gold">Auto</div><div class="mod-metric-lbl">FRA report generation</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">5</div><div class="mod-metric-lbl">Role-based dashboard views</div></div>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-title">📈 Executive Dashboard — GlobeMed TPA</span>
+          <span class="mock-tb-badge badge-green">● Live</span>
+        </div>
+        <div class="mock-body">
+          <div class="mini-kpi-row">
+            <div class="mkpi"><div class="mkpi-val gold">EGP 2.4M</div><div class="mkpi-lbl">Fraud recovered MTD</div></div>
+            <div class="mkpi"><div class="mkpi-val green">−15.3%</div><div class="mkpi-lbl">Loss ratio improvement</div></div>
+            <div class="mkpi"><div class="mkpi-val">1,247</div><div class="mkpi-lbl">Claims today</div></div>
+            <div class="mkpi"><div class="mkpi-val">87%</div><div class="mkpi-lbl">Auto-approved</div></div>
+          </div>
+          <div class="ci-lbl" style="margin-bottom:.5rem;">Fraud Recovery Trend (Jan–May)</div>
+          <div class="mini-bar-chart">
+            <div class="mbc-bar" style="height:38%"></div>
+            <div class="mbc-bar" style="height:52%"></div>
+            <div class="mbc-bar" style="height:61%"></div>
+            <div class="mbc-bar" style="height:78%"></div>
+            <div class="mbc-bar active" style="height:100%"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:.35rem;font-size:.6rem;color:rgba(255,255,255,.25);font-family:'Ubuntu',sans-serif;">
+            <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May ↑</span>
+          </div>
+          <div style="display:flex;gap:.5rem;margin-top:.875rem;">
+            <div class="ma-btn primary" style="flex:1;text-align:center;">📄 FRA Report</div>
+            <div class="ma-btn" style="flex:1;text-align:center;">↓ Export CSV</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW A CLAIM FLOWS ═══ -->
+<section class="flow-sec" id="claim-flow" aria-labelledby="flow-heading">
+  <div class="flow-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:0">
+      <div class="sec-rule" style="margin:0 auto 1rem"></div>
+      <div class="sec-eyebrow" style="color:rgba(255,255,255,.4);text-align:center">End-to-end journey</div>
+      <h2 class="sec-h2" style="color:#fff;text-align:center">How a Claim Flows<br><em>Through the Platform</em></h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,.45);text-align:center;max-width:540px;margin:0 auto">From patient presentation to payment — every step automated, audited, and FRA-compliant.</p>
+    </div>
+    <div class="flow-steps reveal" style="margin-top:3.5rem">
+      <div class="flow-step">
+        <div class="flow-step-num">🪪</div>
+        <div class="flow-step-title">QR Verification</div>
+        <div class="flow-step-desc">Member scans digital health card at provider. Eligibility verified in &lt;1 second.</div>
+        <div class="flow-step-time fast">⚡ &lt;1 second</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num gold-ring">🔍</div>
+        <div class="flow-step-title">AI Fraud Scoring</div>
+        <div class="flow-step-desc">Claim scored against 25–40 archetypes. Confidence score assigned instantly.</div>
+        <div class="flow-step-time fast">⚡ 4.3 seconds</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num gold-ring">⚖️</div>
+        <div class="flow-step-title">Decision Layer</div>
+        <div class="flow-step-desc">Clean claims auto-approved. Flagged claims routed to CMO review queue.</div>
+        <div class="flow-step-time med">🕐 &lt;4 hours</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num green-ring">✅</div>
+        <div class="flow-step-title">Payment + Audit</div>
+        <div class="flow-step-desc">Payment processed. FRA audit trail auto-generated. Dashboard updated.</div>
+        <div class="flow-step-time fast">⚡ Automated</div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:2.5rem;text-align:center">
+      <div style="display:inline-flex;gap:.5rem;flex-wrap:wrap;justify-content:center">
+        <span style="font-size:.78rem;padding:6px 14px;border-radius:20px;background:rgba(29,158,117,.12);border:1px solid rgba(29,158,117,.2);color:#5dcaa5;font-family:'Ubuntu',sans-serif;">✓ 87% of claims fully automated</span>
+        <span style="font-size:.78rem;padding:6px 14px;border-radius:20px;background:rgba(24,95,165,.12);border:1px solid rgba(24,95,165,.2);color:#7fb3e8;font-family:'Ubuntu',sans-serif;">✓ 100% FRA audit trail</span>
+        <span style="font-size:.78rem;padding:6px 14px;border-radius:20px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);color:#c9a84c;font-family:'Ubuntu',sans-serif;">✓ Zero paper. Zero manual entry.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TECH & COMPLIANCE ═══ -->
+<section class="tech-sec" id="tech" aria-labelledby="tech-heading">
+  <div class="tech-inner">
+    <div class="reveal">
+      <div class="sec-rule" aria-hidden="true"></div>
+      <div class="sec-eyebrow" style="color:rgba(255,255,255,.4)">Built for Production</div>
+      <h2 class="sec-h2" style="color:#fff">Technical Architecture<br><em>&amp; Compliance</em></h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,.45)">Enterprise-grade infrastructure designed for Egypt's regulatory environment. API-first, PDPL-compliant, and built to integrate with existing insurer and TPA stacks in under 4 weeks.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="reveal">
+        <div class="tech-col-title">Technical Stack</div>
+        <div class="tech-items">
+          <div class="tech-item"><div class="tech-ico">🔌</div><div class="tech-body"><div class="tech-item-title">API-First Architecture</div><div class="tech-item-desc">REST APIs with webhooks and real-time event streaming. Pre-built connectors for GlobeMed, Bupa Egypt, and AXA One Health. Custom integration support for all Egyptian insurers.</div></div></div>
+          <div class="tech-item"><div class="tech-ico">🔒</div><div class="tech-body"><div class="tech-item-title">Security &amp; Encryption</div><div class="tech-item-desc">AES-256 encryption at rest and in transit. JWT authentication, role-based access control (RBAC), and multi-factor authentication for all admin users.</div></div></div>
+          <div class="tech-item"><div class="tech-ico">☁️</div><div class="tech-body"><div class="tech-item-title">Cloud Infrastructure</div><div class="tech-item-desc">Cloud-hosted with 99.9% uptime SLA. Auto-scaling to handle peak claims periods (Ramadan, major hospital events). Full data residency in Egypt.</div></div></div>
+          <div class="tech-item"><div class="tech-ico">📱</div><div class="tech-body"><div class="tech-item-title">Patient App</div><div class="tech-item-desc">Flutter-based iOS and Android app. White-labelled for each insurer. QR verification, claims tracking, benefit navigation, and appointment booking.</div></div></div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="tech-col-title">Compliance &amp; Regulation</div>
+        <div class="compliance-badges">
+          <div class="comp-badge active"><div class="comp-ico">⚖️</div><div class="comp-name">FRA Licensed</div><div class="comp-desc">Financial Regulatory Authority compliance for all AI-driven insurance decisions</div><div class="comp-status cs-active">Active</div></div>
+          <div class="comp-badge active"><div class="comp-ico">🔐</div><div class="comp-name">PDPL 151/2020</div><div class="comp-desc">Full compliance with Egypt's Personal Data Protection Law — data localization, consent management</div><div class="comp-status cs-active">Active</div></div>
+          <div class="comp-badge active"><div class="comp-ico">🩺</div><div class="comp-name">CMO Oversight</div><div class="comp-desc">Licensed Chief Medical Officer (Egyptian Medical Syndicate) reviews all AI-flagged decisions</div><div class="comp-status cs-active">Active</div></div>
+          <div class="comp-badge active"><div class="comp-ico">📋</div><div class="comp-name">ICD / CPT Coding</div><div class="comp-desc">All AI models trained on Egyptian-approved ICD-10 and CPT coding standards</div><div class="comp-status cs-active">Active</div></div>
+          <div class="comp-badge"><div class="comp-ico">🏆</div><div class="comp-name">ISO 27001</div><div class="comp-desc">Information security management certification in progress for Series A milestone</div><div class="comp-status cs-planned">In Progress</div></div>
+          <div class="comp-badge"><div class="comp-ico">🌍</div><div class="comp-name">NPHIES Ready</div><div class="comp-desc">Saudi Arabia's national health exchange protocol — ready for KSA MENA expansion</div><div class="comp-status cs-planned">MENA Phase</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-sec" aria-label="Call to action">
+  <div class="cta-bg-ring" aria-hidden="true"></div>
+  <div class="cta-bg-ring2" aria-hidden="true"></div>
+  <div class="cta-inner reveal">
+    <div class="cta-eyebrow">Zero Risk · 90-Day Pilot</div>
+    <h2 class="cta-h">See the Platform<br><span>In Your Environment</span></h2>
+    <p class="cta-sub">Deploy Fraud Detection AI in a 90-day pilot — we earn only on validated recoveries. No upfront cost, no platform fee, full FRA compliance from day one.</p>
+    <div class="cta-btns">
+      <a href="index.html#contact" class="cta-btn-g">Request a Demo →</a>
+      <a href="index.html#investors" class="cta-btn-w">Investor Deck</a>
+    </div>
+    <div class="cta-metrics">94.2% Detection Accuracy · &lt;5s Claim Decision · 25–40% Fraud Recovery · FRA Compliant · PDPL 151/2020</div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
+        <img src="assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'">
+      </a>
+      <p class="footer-brand-desc">Egypt's first AI-powered health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <div class="footer-col-title">Platform</div>
+        <a href="#mod-1">Fraud Detection AI</a>
+        <a href="#mod-2">Health Score</a>
+        <a href="#mod-3">Claim Predictor</a>
+        <a href="#mod-4">Hospital Routing</a>
+        <a href="#mod-7">Dashboard</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="index.html#about">Team</a>
+        <a href="index.html#problem">Problem</a>
+        <a href="index.html#ecosystem">Ecosystem</a>
+        <a href="index.html#market">Market</a>
+        <a href="index.html#investors">Investors</a>
+        <a href="ar/index.html">Arabic (عربي)</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+        <span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · All rights reserved</div>
+    <div class="footer-legal">
+      <a href="#">Privacy (PDPL 151/2020)</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FRA Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+(function(){
+  /* Scroll-to-top */
+  var btn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, {passive:true});
+
+  /* Universal reveal */
+  function initReveal(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('up'); }); return; }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); } });
+    }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ obs.observe(el); });
+  }
+
+  /* Module sticky nav highlight */
+  function initModuleNav(){
+    var secs = document.querySelectorAll('.mod-section');
+    var links = document.querySelectorAll('.msn-link');
+    if(!secs.length || !('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var id = e.target.id;
+          links.forEach(function(l){ l.classList.toggle('msn-active', l.getAttribute('href')==='#'+id); });
+        }
+      });
+    }, {rootMargin:'-30% 0px -60% 0px', threshold:0});
+    secs.forEach(function(s){ obs.observe(s); });
+  }
+
+  window.addEventListener('load', function(){
+    setTimeout(initReveal, 80);
+    setTimeout(initModuleNav, 120);
+  });
+})();
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
