@@ -7,8 +7,10 @@
 <meta property="og:title" content="iRonic Health — Health System Integration Technology">
 <meta property="og:description" content="Egypt's first AI health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ironichealth.netlify.app">
+<meta property="og:url" content="https://sherif-trevo-ai.github.io/iRonicHealth/">
+<meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/H_Badge_icon.svg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/H_Badge_icon.svg">
 <title>iRonic Health — Health System Integration Technology</title>
 <link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +18,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
+/* ── SCROLL TO TOP ── */
+#scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #185fa5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(24,95,165,.4);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .3s, transform .3s;
+  z-index: 999;
+  pointer-events: none;
+}
+#scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#scroll-top:hover { background: #0c447c; }
+ 
 /* ── FOR INSURERS / FOR PATIENTS ── */
 .audiences-sec { background: var(--bg-alt, #0d1b2e); }
 .audiences-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
@@ -38,7 +70,7 @@
 .aud-feat-text { font-size: .84rem; color: rgba(255,255,255,.62); line-height: 1.65; }
 .aud-feat-text strong { color: rgba(255,255,255,.9); font-weight: 600; }
 @media(max-width:860px){ .audiences-grid{ grid-template-columns:1fr; } }
-
+ 
 /* ── APP SCREENS ── */
 .appscreens-sec { background: linear-gradient(170deg, #060f1c 0%, #0a1628 100%); }
 .screens-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; margin-top: 3rem; align-items: start; }
@@ -112,7 +144,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <header class="nav" id="nav" role="banner">
   <a href="#home" class="nav-logo" aria-label="iRonic Health Home">
@@ -130,31 +162,36 @@
   </div>
 </a>
   <nav class="nav-center" aria-label="Main navigation">
-    <a href="#product">Product</a>
-    <a href="#audiences">For Insurers</a>
+    <a href="#problem">Problem</a>
+    <a href="#product">Platform</a>
     <a href="#ecosystem">Ecosystem</a>
-    <a href="#appscreens">App</a>
     <a href="#market">Market</a>
-    <a href="#model">Model</a>
+    <a href="#model">Revenue</a>
+    <a href="#roi">ROI</a>
+    <a href="#about">Team</a>
     <a href="#investors">Investors</a>
-    <a href="#about">About</a>
   </nav>
   <div class="nav-right">
     <a href="ar/index.html" class="btn-lang">🌐 عربي</a>
-    <a href="#contact" class="btn-demo">Request Demo →</a>
+    <a href="#investors" class="btn-demo">Request Demo →</a>
   </div>
   <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
-
+ 
 <div class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="#product">Product</a><a href="#audiences">For Insurers</a><a href="#ecosystem">Ecosystem</a>
-  <a href="#appscreens">App</a><a href="#market">Market</a><a href="#model">Model</a>
-  <a href="#investors">Investors</a><a href="#about">About</a>
-  <a href="#contact" class="mobile-demo-btn">Request Demo →</a>
+  <a href="#problem">Problem</a>
+  <a href="#product">Platform</a>
+  <a href="#ecosystem">Ecosystem</a>
+  <a href="#market">Market</a>
+  <a href="#model">Revenue</a>
+  <a href="#roi">ROI</a>
+  <a href="#about">Team</a>
+  <a href="#investors">Investors</a>
+  <a href="#investors" class="mobile-demo-btn">Request Demo →</a>
 </div>
-
+ 
 <!-- HERO -->
 <main id="home">
 <section class="hero" aria-label="Hero">
@@ -165,7 +202,7 @@
     <h1 class="hero-h1">Every Claim<br><span class="accent">Verified.</span><br>Every <span class="gold-t">Pound Saved.</span></h1>
     <p class="hero-desc">iRonic Health eliminates fraud, automates approvals, and connects Egypt's fragmented health insurance ecosystem — powered by Egypt-native AI trained on 25–40 local fraud archetypes.</p>
     <div class="hero-btns">
-      <a href="#contact" class="hbtn-p">Request a Demo →</a>
+      <a href="#investors" class="hbtn-p">Request a Demo →</a>
       <a href="#product" class="hbtn-s">See How It Works</a>
     </div>
     <div class="hero-kpis" role="list">
@@ -201,7 +238,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- TRUST BAR -->
 <div class="trust-bar" aria-label="Platform statistics">
   <div class="trust-inner">
@@ -218,7 +255,7 @@
     <div class="trust-item"><span class="trust-val">70%+</span><span class="trust-lbl">Gross Margin</span></div>
   </div>
 </div>
-
+ 
 <!-- PROBLEM -->
 <section class="prob-sec" id="problem" aria-labelledby="problem-heading">
   <div class="prob-inner">
@@ -234,7 +271,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- AUDIENCES — FOR INSURERS / FOR PATIENTS -->
 <section class="sec audiences-sec" id="audiences" aria-labelledby="audiences-heading">
   <div class="sec-inner">
@@ -245,7 +282,7 @@
       <p class="sec-lead">Insurers and TPAs pay for the platform. Policyholders use it every day. Both sides win — and the insurer gets all the ROI data to prove it.</p>
     </div>
     <div class="audiences-grid">
-
+ 
       <!-- For Insurers -->
       <div class="aud-card reveal">
         <div class="aud-card-head aud-insurer-head">
@@ -261,7 +298,7 @@
           <div class="aud-feature"><div class="aud-dot aud-dot-b">⚖️</div><p class="aud-feat-text"><strong>Medical Syndicate CMO oversight</strong> on every AI decision — removes clinical liability risk from your team entirely</p></div>
         </div>
       </div>
-
+ 
       <!-- For Patients -->
       <div class="aud-card reveal reveal-d2">
         <div class="aud-card-head aud-patients-head">
@@ -277,13 +314,13 @@
           <div class="aud-feature"><div class="aud-dot aud-dot-g">📅</div><p class="aud-feat-text"><strong>Appointment booking</strong> with specialty browse and provider search within the insured network</p></div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- MODULES -->
-
+ 
 <section class="sec" id="product" aria-labelledby="product-heading">
   <div class="sec-inner">
     <div class="sec-header reveal">
@@ -305,7 +342,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- ECOSYSTEM -->
 <section class="sec eco-sec" id="ecosystem" aria-labelledby="ecosystem-heading">
   <div class="sec-inner">
@@ -360,7 +397,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- APP SCREENS -->
 <section class="sec appscreens-sec" id="appscreens" aria-labelledby="appscreens-heading">
   <div class="sec-inner">
@@ -371,7 +408,7 @@
       <p class="sec-lead">Available on iOS and Android. White-labelled for your insurer. The app is a direct extension of the platform — every screen is live data, not a mockup.</p>
     </div>
     <div class="screens-row">
-
+ 
       <!-- Phone 1: Home -->
       <div class="screen-wrap reveal">
         <div class="phone-frame">
@@ -404,7 +441,7 @@
         <div class="screen-label">Coverage Dashboard</div>
         <div class="screen-sub">Full insurance view at a glance</div>
       </div>
-
+ 
       <!-- Phone 2: QR Card -->
       <div class="screen-wrap reveal reveal-d2">
         <div class="phone-frame">
@@ -445,7 +482,7 @@
         <div class="screen-label">Digital Health Card</div>
         <div class="screen-sub">Replaces paper card entirely</div>
       </div>
-
+ 
       <!-- Phone 3: Claims -->
       <div class="screen-wrap reveal reveal-d3">
         <div class="phone-frame">
@@ -474,11 +511,11 @@
         <div class="screen-label">Claims Tracker</div>
         <div class="screen-sub">AI fraud flag visible in real time</div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- ROI CALCULATOR -->
  
 <section class="sec roi-sec" id="roi" aria-labelledby="roi-heading">
@@ -516,12 +553,12 @@
           <div class="roi-rc"><div class="roi-rc-val" id="roi-prev-savings">EGP 30M</div><div class="roi-rc-lbl">Preventive care</div></div>
         </div>
         <div class="roi-payback"><span class="roi-payback-label">Estimated payback period</span><span class="roi-payback-val">4–6 months</span></div>
-        <a href="#contact" class="roi-cta-btn">Get a Precise ROI Analysis →</a>
+        <a href="#investors" class="roi-cta-btn">Get a Precise ROI Analysis →</a>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- WHY NOW -->
 <section class="sec why-sec" id="market" aria-labelledby="market-heading">
   <div class="sec-inner">
@@ -553,7 +590,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- BUSINESS MODEL -->
 <section class="sec model-sec" id="model" aria-labelledby="model-heading">
   <div class="sec-inner">
@@ -572,9 +609,9 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- TEAM -->
-<section class="sec team-sec" id="about" aria-labelledby="team-heading">
+<section class="sec team-sec" id="about" aria-labelledby="team-heading" data-section="team">
   <div class="sec-inner">
     <div class="reveal"><div class="sec-rule"></div><div class="sec-eyebrow">The Team</div><h2 class="sec-h2" id="team-heading">Built by People Who<br><em>Know This Market</em></h2><p class="sec-lead">Clinical expertise meets strategic leadership, with deep roots in Egypt's healthcare landscape.</p></div>
     <div class="team-layout">
@@ -612,7 +649,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- CTA -->
 <section class="cta-sec" id="investors" aria-labelledby="cta-heading">
   <div class="cta-bg-ring" aria-hidden="true"></div><div class="cta-bg-ring2" aria-hidden="true"></div>
@@ -625,7 +662,7 @@
   </div>
 </section>
 </main>
-
+ 
 <!-- FOOTER -->
 <footer class="footer" id="contact" role="contentinfo">
   <div class="footer-top">
@@ -638,7 +675,7 @@
     </div>
     <div class="footer-links-grid">
       <div class="footer-col"><div class="footer-col-title">Platform</div><a href="#product">Fraud Detection AI</a><a href="#product">Health Score</a><a href="#product">Claim Predictor</a><a href="#product">Hospital Routing</a><a href="#product">Dashboard</a></div>
-      <div class="footer-col"><div class="footer-col-title">Company</div><a href="#about">About Us</a><a href="#ecosystem">Ecosystem</a><a href="#market">Market</a><a href="#investors">Investors</a><a href="ar/index.html">Arabic (عربي)</a></div>
+      <div class="footer-col"><div class="footer-col-title">Company</div><a href="#about">Team</a><a href="#problem">Problem</a><a href="#ecosystem">Ecosystem</a><a href="#market">Market</a><a href="#investors">Investors</a><a href="ar/index.html">Arabic (عربي)</a></div>
       <div class="footer-col"><div class="footer-col-title">Contact</div><a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a><a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a><a href="tel:+447308892741">+44 7308 892741</a>
 <span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
       </div>
@@ -653,6 +690,45 @@
     </div>
   </div>
 </footer>
+ 
+<button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+ 
+<script>
+(function(){
+  /* ── Scroll-to-top ── */
+  var btn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, {passive: true});
+ 
+  /* ── Universal reveal fallback ──
+     Ensures ALL .reveal elements animate in regardless of whether
+     their parent section is linked from the nav (main.js may only
+     observe nav-linked sections, leaving orphaned sections invisible) */
+  function initReveal() {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('up'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+ 
+    els.forEach(function(el){ observer.observe(el); });
+  }
+ 
+  /* Run after main.js has had a chance to set up its own observer */
+  window.addEventListener('load', function(){
+    setTimeout(initReveal, 100);
+  });
+})();
+</script>
  
 <script src="js/main.js"></script>
 </body>
