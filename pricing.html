@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="iRonic Health Revenue Model — Contingent pricing, PMPM subscriptions, 70% gross margin. We earn only when you save. 4-6 month payback.">
+<meta property="og:title" content="Revenue Model — iRonic Health · We Earn When You Save">
+<meta property="og:url" content="https://sherif-trevo-ai.github.io/iRonicHealth/pricing.html">
+<meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/H_Badge_icon.svg">
+<meta property="og:type" content="website">
+<title>Revenue Model — iRonic Health · We Earn When You Save</title>
+<link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ══ TOKENS ══ */
+:root{
+  --dk1:#060f1c;--dk2:#0a1628;--dk3:#0d1b2e;
+  --lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--lt4:#e8f0fb;
+  --ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94;
+  --blue:#185fa5;--bluel:#378add;--gold:#c9a84c;--green:#1d9e75;
+}
+
+/* ══ HERO  (dark) ══ */
+.rev-hero{
+  min-height:74vh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:135px 5% 5rem;position:relative;overflow:hidden;
+  background:linear-gradient(148deg,var(--dk1) 0%,var(--dk2) 55%,#081422 100%);
+}
+.rh-glow{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle 650px at 75% 25%,rgba(201,168,76,.09) 0%,transparent 60%),
+             radial-gradient(circle 400px at 10% 75%,rgba(24,95,165,.07) 0%,transparent 55%);}
+.rh-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:40px 40px;}
+.rh-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;}
+.rh-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.28);border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-family:'Ubuntu',sans-serif;}
+.rh-h1{font-size:clamp(2.6rem,5vw,4.3rem);font-weight:900;line-height:1.02;color:#fff;letter-spacing:-.03em;margin-bottom:1.25rem;font-family:'Kufam',sans-serif;}
+.rh-h1 em{color:var(--gold);font-style:normal;}
+.rh-sub{font-size:1rem;color:rgba(255,255,255,.52);line-height:1.78;max-width:600px;margin-bottom:2.5rem;font-family:'Ubuntu',sans-serif;}
+.rh-kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:.875rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.07);}
+.rhk{padding:.875rem 1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;}
+.rhk-val{font-size:1.4rem;font-weight:900;color:#fff;font-family:'Kufam',sans-serif;line-height:1;margin-bottom:.25rem;}
+.rhk-val.gold{color:var(--gold);}.rhk-val.green{color:var(--green);}.rhk-val.blue{color:var(--bluel);}
+.rhk-lbl{font-size:.63rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.07em;font-family:'Ubuntu',sans-serif;}
+
+/* ══ SHARED ══ */
+.s{padding:6rem 5%;}.si{max-width:1180px;margin:0 auto;}
+.dey{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif;}
+.dh2{font-size:2.2rem;font-weight:900;color:#fff;line-height:1.08;margin-bottom:.875rem;font-family:'Kufam',sans-serif;letter-spacing:-.025em;}
+.dh2 em{color:var(--gold);font-style:normal;}
+.dlead{font-size:.92rem;color:rgba(255,255,255,.5);line-height:1.8;font-family:'Ubuntu',sans-serif;}
+.ley{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif;}
+.lh2{font-size:2.2rem;font-weight:900;color:var(--ink1);line-height:1.08;margin-bottom:.875rem;font-family:'Kufam',sans-serif;letter-spacing:-.025em;}
+.lh2 em{color:var(--blue);font-style:normal;}.lh2 .em-gold{color:var(--gold);font-style:normal;}
+.llead{font-size:.92rem;color:var(--ink3);line-height:1.8;font-family:'Ubuntu',sans-serif;}
+
+/* ══ PHILOSOPHY  (light) ══ */
+.phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3rem;}
+.phil-quote{background:var(--lt3);border-left:4px solid var(--blue);border-radius:0 14px 14px 0;padding:2rem;}
+.pq-label{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.875rem;font-family:'Ubuntu',sans-serif;}
+.pq-text{font-size:1.1rem;font-weight:700;color:var(--ink1);line-height:1.6;font-family:'Ubuntu',sans-serif;margin-bottom:.875rem;font-style:italic;}
+.pq-attr{font-size:.78rem;color:var(--ink4);font-family:'Ubuntu',sans-serif;}
+.phil-points{display:flex;flex-direction:column;gap:1rem;}
+.pp-item{display:flex;gap:.875rem;align-items:flex-start;padding:1.1rem 1.25rem;background:var(--lt1);border:1px solid #dde8f5;border-radius:12px;box-shadow:0 1px 4px rgba(10,22,40,.04);}
+.pp-ico{font-size:1.1rem;flex-shrink:0;margin-top:2px;}
+.pp-body{}
+.pp-title{font-size:.88rem;font-weight:700;color:var(--ink1);font-family:'Ubuntu',sans-serif;margin-bottom:3px;}
+.pp-desc{font-size:.78rem;color:var(--ink4);line-height:1.6;font-family:'Ubuntu',sans-serif;}
+.pp-proof{font-size:.68rem;font-weight:600;padding:2px 8px;border-radius:3px;margin-top:.375rem;display:inline-block;font-family:'Ubuntu',sans-serif;background:rgba(24,95,165,.08);color:var(--blue);}
+
+/* ══ REVENUE PHASES  (dark) ══ */
+.phases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem;}
+.phase-card{border-radius:16px;padding:1.75rem;border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;transition:transform .2s;}
+.phase-card:hover{transform:translateY(-3px);}
+.phase-card.featured{border-color:rgba(201,168,76,.4);background:linear-gradient(145deg,rgba(201,168,76,.1),rgba(201,168,76,.05));}
+.phase-card:not(.featured){background:rgba(255,255,255,.03);}
+.phase-feat-label{position:absolute;top:0;right:0;background:var(--gold);color:var(--dk1);font-size:.6rem;font-weight:900;padding:4px 12px;border-radius:0 14px 0 8px;letter-spacing:.08em;font-family:'Ubuntu',sans-serif;}
+.phase-num{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.75rem;font-family:'Ubuntu',sans-serif;}
+.phase-card.featured .phase-num{color:var(--gold);}.phase-card:not(.featured) .phase-num{color:rgba(255,255,255,.35);}
+.phase-ico{font-size:1.5rem;margin-bottom:.875rem;}
+.phase-name{font-size:1rem;font-weight:700;color:#fff;margin-bottom:.375rem;font-family:'Ubuntu',sans-serif;}
+.phase-price{font-size:1.8rem;font-weight:900;font-family:'Kufam',sans-serif;line-height:1;margin-bottom:.25rem;}
+.phase-card.featured .phase-price{color:var(--gold);}
+.phase-card:not(.featured) .phase-price{color:rgba(255,255,255,.9);}
+.phase-unit{font-size:.72rem;color:rgba(255,255,255,.45);font-family:'Ubuntu',sans-serif;margin-bottom:.875rem;}
+.phase-desc{font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.65;font-family:'Ubuntu',sans-serif;margin-bottom:1rem;}
+.phase-items{display:flex;flex-direction:column;gap:.35rem;}
+.phase-item{display:flex;gap:.5rem;font-size:.74rem;color:rgba(255,255,255,.55);font-family:'Ubuntu',sans-serif;line-height:1.45;}
+.phase-item-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.phase-card.featured .phase-item-dot{background:var(--gold);}
+.phase-card:not(.featured) .phase-item-dot{background:rgba(255,255,255,.25);}
+.phase-badge{margin-top:1rem;padding:.5rem .875rem;border-radius:6px;font-size:.7rem;font-weight:600;font-family:'Ubuntu',sans-serif;display:block;text-align:center;}
+.phase-card.featured .phase-badge{background:rgba(201,168,76,.2);color:var(--gold);}
+.ph-2 .phase-badge{background:rgba(24,95,165,.15);color:var(--bluel);}
+.ph-3 .phase-badge{background:rgba(29,158,117,.12);color:#5dcaa5;}
+.ph-4 .phase-badge{background:rgba(83,74,183,.15);color:#afa9ec;}
+/* Phase arrow flow */
+.phase-flow{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.5rem;flex-wrap:wrap;}
+.pf-step{font-size:.72rem;color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif;padding:4px 12px;background:rgba(255,255,255,.04);border-radius:20px;border:1px solid rgba(255,255,255,.08);}
+.pf-arr{color:rgba(255,255,255,.25);font-size:.9rem;}
+
+/* ══ PMPM TIERS  (white) ══ */
+.tier-table-wrap{overflow-x:auto;margin-top:2.5rem;border-radius:14px;border:1px solid #dde8f5;box-shadow:0 2px 16px rgba(10,22,40,.06);}
+.tier-table{width:100%;border-collapse:collapse;font-family:'Ubuntu',sans-serif;}
+.tier-table th{padding:1rem 1.25rem;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink4);background:var(--lt2);border-bottom:2px solid #dde8f5;text-align:left;white-space:nowrap;}
+.tier-table td{padding:.875rem 1.25rem;font-size:.84rem;border-bottom:1px solid #f0f5fb;color:var(--ink3);vertical-align:middle;}
+.tier-table tr:last-child td{border-bottom:none;}
+.tier-table tr.featured-tier td{background:rgba(24,95,165,.04);}
+.tier-table tr.featured-tier td:first-child{border-left:3px solid var(--blue);}
+.tier-name{font-weight:700;color:var(--ink1);}
+.tier-price{font-size:1rem;font-weight:900;font-family:'Kufam',sans-serif;}
+.tp-entry{color:var(--gold);}.tp-core{color:var(--blue);}.tp-full{color:var(--green);}.tp-corp{color:#534ab7;}
+.tier-check{color:var(--green);font-weight:700;}
+.tier-dash{color:#c8daf0;}
+.tier-badge{display:inline-block;font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:3px;font-family:'Ubuntu',sans-serif;}
+.tb-entry{background:rgba(201,168,76,.1);color:#7a5e0d;}
+.tb-pop{background:rgba(24,95,165,.1);color:var(--blue);}
+.tb-full{background:rgba(29,158,117,.1);color:var(--green);}
+.tb-corp{background:rgba(83,74,183,.1);color:#534ab7;}
+/* Module pricing grid */
+.module-pricing{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;}
+.mp-card{padding:1.25rem;border-radius:12px;background:var(--lt2);border:1px solid #dde8f5;text-align:center;}
+.mp-ico{font-size:1.2rem;margin-bottom:.5rem;}
+.mp-module{font-size:.78rem;font-weight:700;color:var(--ink1);font-family:'Ubuntu',sans-serif;margin-bottom:.25rem;}
+.mp-price{font-size:1rem;font-weight:900;font-family:'Kufam',sans-serif;margin-bottom:.25rem;}
+.mp-price.blue{color:var(--blue);}.mp-price.green{color:var(--green);}.mp-price.gold{color:var(--gold);}
+.mp-unit{font-size:.65rem;color:var(--ink4);font-family:'Ubuntu',sans-serif;}
+
+/* ══ PILOT TERMS  (light gray) ══ */
+.pilot-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem;}
+.pilot-card{background:var(--lt1);border:1px solid #c8daf0;border-radius:16px;overflow:hidden;box-shadow:0 2px 20px rgba(10,22,40,.07);}
+.pc-header{padding:1.5rem 1.75rem;background:linear-gradient(135deg,var(--dk2),#0d2a4a);}
+.pch-badge{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:.5rem;font-family:'Ubuntu',sans-serif;}
+.pch-title{font-size:1.1rem;font-weight:700;color:#fff;font-family:'Ubuntu',sans-serif;margin-bottom:.25rem;}
+.pch-sub{font-size:.76rem;color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif;}
+.pc-body{padding:1.5rem 1.75rem;}
+.pc-rows{display:flex;flex-direction:column;gap:0;}
+.pc-row{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem 0;border-bottom:1px solid #f0f5fb;}
+.pc-row:last-child{border-bottom:none;}
+.pc-row-ico{font-size:.9rem;flex-shrink:0;margin-top:2px;}
+.pc-row-body{}
+.pc-row-key{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink4);margin-bottom:2px;font-family:'Ubuntu',sans-serif;}
+.pc-row-val{font-size:.84rem;font-weight:600;color:var(--ink1);font-family:'Ubuntu',sans-serif;}
+/* Pilot timeline */
+.pilot-timeline{display:flex;flex-direction:column;gap:0;}
+.pt-step{display:flex;gap:1.25rem;align-items:flex-start;padding-bottom:1.5rem;position:relative;}
+.pt-step:not(:last-child)::after{content:'';position:absolute;left:19px;top:40px;bottom:0;width:1px;background:linear-gradient(180deg,#c8daf0,transparent);}
+.pt-node{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;border:2px solid #c8daf0;background:var(--lt1);box-shadow:0 0 0 4px rgba(24,95,165,.06);}
+.pt-node.active{border-color:var(--blue);box-shadow:0 0 0 4px rgba(24,95,165,.1);}
+.pt-node.gold{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,168,76,.1);}
+.pt-body{padding-top:8px;}
+.pt-when{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);font-family:'Ubuntu',sans-serif;margin-bottom:.25rem;}
+.pt-when.gold-t{color:var(--gold);}
+.pt-title{font-size:.92rem;font-weight:700;color:var(--ink1);font-family:'Ubuntu',sans-serif;margin-bottom:.375rem;}
+.pt-desc{font-size:.78rem;color:var(--ink4);line-height:1.6;font-family:'Ubuntu',sans-serif;}
+
+/* ══ UNIT ECONOMICS  (dark) ══ */
+.ue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;}
+.ue-card{padding:2rem;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);}
+.ue-card.highlight{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.06);}
+.ue-label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.35);margin-bottom:.5rem;font-family:'Ubuntu',sans-serif;}
+.ue-val{font-size:2rem;font-weight:900;font-family:'Kufam',sans-serif;margin-bottom:.375rem;}
+.ue-val.gold{color:var(--gold);}.ue-val.green{color:var(--green);}.ue-val.blue{color:var(--bluel);}
+.ue-sub{font-size:.78rem;color:rgba(255,255,255,.42);line-height:1.6;font-family:'Ubuntu',sans-serif;margin-bottom:.625rem;}
+.ue-bench{display:inline-block;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:3px;font-family:'Ubuntu',sans-serif;}
+.ub-great{background:rgba(201,168,76,.15);color:var(--gold);}
+.ub-good{background:rgba(29,158,117,.12);color:#5dcaa5;}
+/* COGS breakdown */
+.cogs-breakdown{margin-top:2rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.5rem;}
+.cogs-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:1.25rem;font-family:'Ubuntu',sans-serif;}
+.cogs-bars{display:flex;flex-direction:column;gap:.875rem;}
+.cogs-row{}
+.cogs-top{display:flex;justify-content:space-between;margin-bottom:.375rem;}
+.cogs-name{font-size:.78rem;color:rgba(255,255,255,.7);font-family:'Ubuntu',sans-serif;}
+.cogs-pct{font-size:.78rem;font-weight:700;font-family:'Ubuntu',sans-serif;}
+.cogs-track{height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;}
+.cogs-fill{height:100%;border-radius:3px;}
+.cf-revenue{background:linear-gradient(90deg,var(--green),#15c18e);}
+.cf-cloud{background:linear-gradient(90deg,var(--blue),var(--bluel));}
+.cf-ai{background:linear-gradient(90deg,#534ab7,#7f77dd);}
+.cf-ops{background:linear-gradient(90deg,var(--gold),#dfc06a);}
+
+/* ══ ROI CALCULATOR  (white) ══ */
+.calc-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem;}
+.calc-card{background:var(--lt1);border:1px solid #dde8f5;border-radius:16px;padding:2rem;box-shadow:0 2px 16px rgba(10,22,40,.06);}
+.calc-title{font-size:1rem;font-weight:700;color:var(--ink1);margin-bottom:.25rem;font-family:'Ubuntu',sans-serif;}
+.calc-sub-txt{font-size:.78rem;color:var(--ink4);margin-bottom:1.5rem;font-family:'Ubuntu',sans-serif;}
+.calc-group{margin-bottom:1.25rem;}
+.calc-label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink4);margin-bottom:.5rem;font-family:'Ubuntu',sans-serif;display:flex;justify-content:space-between;align-items:center;}
+.calc-val-display{font-size:.85rem;font-weight:700;color:var(--blue);font-family:'Ubuntu',sans-serif;}
+.calc-slider{width:100%;height:6px;border-radius:3px;appearance:none;background:var(--lt3);outline:none;cursor:pointer;}
+.calc-slider::-webkit-slider-thumb{appearance:none;width:18px;height:18px;border-radius:50%;background:var(--blue);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 6px rgba(24,95,165,.4);}
+/* Results */
+.calc-results{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem;}
+.cr-item{display:flex;justify-content:space-between;align-items:center;padding:.875rem 1rem;border-radius:8px;}
+.cr-item.total{background:rgba(29,158,117,.08);border:1px solid rgba(29,158,117,.2);}
+.cr-item.fee{background:rgba(24,95,165,.06);border:1px solid rgba(24,95,165,.15);}
+.cr-item.net{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);}
+.cr-item.neutral{background:var(--lt3);border:1px solid #dde8f5;}
+.cr-label{font-size:.78rem;color:var(--ink3);font-family:'Ubuntu',sans-serif;}
+.cr-val{font-size:.92rem;font-weight:700;font-family:'Ubuntu',sans-serif;}
+.cr-val.green{color:var(--green);}.cr-val.blue{color:var(--blue);}.cr-val.gold{color:var(--gold);}.cr-val.ink{color:var(--ink1);}
+.calc-note{font-size:.68rem;color:var(--ink4);font-family:'Ubuntu',sans-serif;margin-top:.875rem;text-align:center;font-style:italic;}
+/* Results right side */
+.roi-context{display:flex;flex-direction:column;gap:1rem;}
+.roi-big{padding:2rem;background:var(--lt3);border-radius:14px;border:1px solid #c8daf0;text-align:center;margin-bottom:.5rem;}
+.rb-eyebrow{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.5rem;font-family:'Ubuntu',sans-serif;}
+.rb-val{font-size:2.5rem;font-weight:900;font-family:'Kufam',sans-serif;color:var(--green);line-height:1;margin-bottom:.25rem;}
+.rb-sub{font-size:.78rem;color:var(--ink4);font-family:'Ubuntu',sans-serif;}
+.roi-point{display:flex;gap:.75rem;align-items:flex-start;padding:.875rem 1rem;background:var(--lt1);border:1px solid #dde8f5;border-radius:10px;}
+.roi-p-ico{font-size:.9rem;flex-shrink:0;margin-top:2px;}
+.roi-p-txt{font-size:.78rem;color:var(--ink3);font-family:'Ubuntu',sans-serif;line-height:1.55;}
+.roi-p-txt strong{color:var(--ink1);}
+
+/* ══ 3-YEAR PROJECTION  (dark) ══ */
+.fin-table-wrap{overflow-x:auto;margin-top:2rem;border-radius:14px;border:1px solid rgba(255,255,255,.08);}
+.fin-table{width:100%;border-collapse:collapse;font-family:'Ubuntu',sans-serif;}
+.fin-table th{padding:.875rem 1.25rem;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.35);border-bottom:1px solid rgba(255,255,255,.08);text-align:left;background:rgba(255,255,255,.02);white-space:nowrap;}
+.fin-table td{padding:.875rem 1.25rem;font-size:.84rem;border-bottom:1px solid rgba(255,255,255,.05);color:rgba(255,255,255,.62);}
+.fin-table tr:last-child td{border-bottom:none;}
+.fin-table tr.row-highlight td{background:rgba(201,168,76,.06);}
+.fv-gold{color:var(--gold);font-weight:700;}.fv-green{color:var(--green);font-weight:700;}.fv-red{color:#f0997b;}.fv-white{color:#fff;font-weight:700;}
+/* Revenue build bars */
+.rev-build{margin-top:2.5rem;}
+.rb-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:1.25rem;font-family:'Ubuntu',sans-serif;}
+.rb-bars{display:flex;flex-direction:column;gap:1rem;}
+.rb-row{display:grid;grid-template-columns:80px 1fr 80px;gap:1rem;align-items:center;}
+.rb-yr{font-size:.78rem;font-weight:700;color:rgba(255,255,255,.6);font-family:'Ubuntu',sans-serif;}
+.rb-track{height:40px;background:rgba(255,255,255,.04);border-radius:6px;overflow:hidden;display:flex;}
+.rb-seg{height:100%;display:flex;align-items:center;padding:0 .5rem;font-size:.62rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+.rb-pmpm{background:rgba(24,95,165,.7);}
+.rb-recov{background:rgba(29,158,117,.7);}
+.rb-pharma{background:rgba(83,74,183,.7);}
+.rb-total{font-size:.84rem;font-weight:700;font-family:'Ubuntu',sans-serif;text-align:right;}
+.rb-legend{display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:.875rem;}
+.rbl-item{display:flex;align-items:center;gap:5px;font-size:.7rem;color:rgba(255,255,255,.45);font-family:'Ubuntu',sans-serif;}
+.rbl-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0;}
+
+/* ══ WHY THIS MODEL WINS  (light) ══ */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;}
+.compare-card{border-radius:14px;overflow:hidden;}
+.cc-header{padding:1.25rem 1.5rem;}
+.cc-header.traditional{background:#f0f5fb;}
+.cc-header.ironic{background:rgba(24,95,165,.08);}
+.cc-title{font-size:1rem;font-weight:700;font-family:'Ubuntu',sans-serif;margin-bottom:.25rem;}
+.cc-header.traditional .cc-title{color:var(--ink4);}
+.cc-header.ironic .cc-title{color:var(--blue);}
+.cc-sub{font-size:.75rem;font-family:'Ubuntu',sans-serif;}
+.cc-header.traditional .cc-sub{color:var(--ink4);}
+.cc-header.ironic .cc-sub{color:var(--blue);}
+.cc-body{background:var(--lt1);border:1px solid #dde8f5;border-top:none;border-radius:0 0 14px 14px;padding:1.25rem 1.5rem;}
+.cc-items{display:flex;flex-direction:column;gap:.5rem;}
+.cc-item{display:flex;gap:.625rem;font-size:.8rem;font-family:'Ubuntu',sans-serif;align-items:flex-start;line-height:1.5;}
+.cc-item.bad{color:#d85a30;}
+.cc-item.good{color:var(--green);}
+
+/* ══ FOOTER-BOTTOM + SCROLL ══ */
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 5%;border-top:1px solid rgba(255,255,255,.08);flex-wrap:nowrap;gap:1rem;}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.35);white-space:nowrap;}
+.footer-legal{display:flex;gap:1.5rem;align-items:center;}
+.footer-legal a{font-size:.78rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+.footer-legal a:hover{color:rgba(255,255,255,.75);}
+#scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--dk1);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:999;pointer-events:none;}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+#scroll-top:hover{background:#dfc06a;}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  .rh-kpis{grid-template-columns:repeat(3,1fr);}
+  .phases-grid{grid-template-columns:1fr 1fr;}
+  .phil-grid,.pilot-layout,.calc-layout,.compare-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .ue-grid{grid-template-columns:1fr 1fr;}
+  .module-pricing{grid-template-columns:1fr 1fr;}
+  .rb-row{grid-template-columns:60px 1fr 70px;}
+}
+@media(max-width:600px){
+  .rh-kpis{grid-template-columns:1fr 1fr;}
+  .phases-grid{grid-template-columns:1fr;}
+  .ue-grid,.module-pricing{grid-template-columns:1fr;}
+  .rh-h1{font-size:2.4rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav" role="banner">
+  <a href="index.html#home" class="nav-logo" aria-label="iRonic Health Home">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">Health System Integration Technology</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="Main navigation">
+    <a href="index.html#problem">Problem</a>
+    <a href="platform.html">Platform</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="index.html#dashboard">Dashboard</a>
+    <a href="market.html">Market</a>
+    <a href="pricing.html" class="nav-active">Revenue</a>
+    <a href="team.html">Team</a>
+    <a href="investors.html">Investors</a>
+  </nav>
+  <div class="nav-right">
+    <a href="ar/index.html" class="btn-lang">&#127760; &#1593;&#1585;&#1576;&#1610;</a>
+    <a href="contact.html" class="btn-demo">Request Demo &#8594;</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html#problem">Problem</a>
+  <a href="platform.html">Platform</a>
+  <a href="ecosystem.html">Ecosystem</a>
+  <a href="index.html#dashboard">Dashboard</a>
+  <a href="market.html">Market</a>
+  <a href="pricing.html">Revenue</a>
+  <a href="team.html">Team</a>
+  <a href="investors.html">Investors</a>
+  <a href="contact.html" class="mobile-demo-btn">Request Demo &#8594;</a>
+</div>
+
+<main>
+
+<!-- ═══ HERO  (dark) ═══ -->
+<section class="rev-hero" aria-label="Revenue model overview">
+  <div class="rh-glow" aria-hidden="true"></div>
+  <div class="rh-grid" aria-hidden="true"></div>
+  <div class="rh-inner">
+    <div class="reveal">
+      <div class="rh-badge">&#128200; Revenue Model &#183; Pricing &#183; Unit Economics</div>
+      <h1 class="rh-h1">We Earn When<br><em>You Save.</em></h1>
+      <p class="rh-sub">No platform fee until value is proven. We take 25% of validated fraud savings during the pilot &#8212; then transition to a PMPM subscription once ROI is documented. Aligned incentives, not sales pressure.</p>
+      <div class="rh-kpis">
+        <div class="rhk"><div class="rhk-val gold">25%</div><div class="rhk-lbl">Of fraud savings (pilot)</div></div>
+        <div class="rhk"><div class="rhk-val blue">$0.75&#8211;$5</div><div class="rhk-lbl">PMPM subscription</div></div>
+        <div class="rhk"><div class="rhk-val green">70%</div><div class="rhk-lbl">Gross margin</div></div>
+        <div class="rhk"><div class="rhk-val">4&#8211;6 mo</div><div class="rhk-lbl">CAC payback</div></div>
+        <div class="rhk"><div class="rhk-val gold">20&#8211;30&#215;</div><div class="rhk-lbl">LTV / CAC ratio</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PHILOSOPHY  (light white) ═══ -->
+<section class="s" style="background:var(--lt1);border-bottom:1px solid #e5ecf6" id="philosophy" aria-labelledby="phil-h">
+  <div class="si">
+    <div class="reveal">
+      <div class="ley">The Pricing Philosophy</div>
+      <h2 class="lh2" id="phil-h">Revenue That Proves<br><em>Value First</em></h2>
+      <p class="llead" style="max-width:600px">Most B2B SaaS companies charge a platform fee and hope the customer sees value. We do the opposite &#8212; we prove value first, then charge. This is not a marketing tactic. It's the only model that makes sense when your AI has to earn trust in Egypt's healthcare market.</p>
+    </div>
+    <div class="phil-grid">
+      <div class="reveal">
+        <div class="phil-quote">
+          <div class="pq-label">The Principle</div>
+          <div class="pq-text">"An insurer CFO does not need to approve a budget to start our pilot. The pilot pays for itself from Day 1 &#8212; and we only invoice against what we recover. That's not a sales pitch. That's a legal contract."</div>
+          <div class="pq-attr">&#8212; Eng. Sherif Shawqi, Chairman &amp; CEO, iRonic Health</div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="phil-points">
+          <div class="pp-item">
+            <div class="pp-ico">&#128175;</div>
+            <div class="pp-body">
+              <div class="pp-title">Zero Budget Approval Required</div>
+              <div class="pp-desc">The pilot starts at zero cost to the insurer. No procurement cycle, no CFO sign-off on a budget line, no quarterly approval wait. The first invoice arrives only when fraud is validated &#8212; and it's paid from the savings we generated.</div>
+              <div class="pp-proof">Result: 6&#8211;8 week pilot close vs 6&#8211;12 month traditional SaaS sale</div>
+            </div>
+          </div>
+          <div class="pp-item">
+            <div class="pp-ico">&#9878;&#65039;</div>
+            <div class="pp-body">
+              <div class="pp-title">Aligned Incentives by Design</div>
+              <div class="pp-desc">We earn 25% of validated fraud savings. If we detect $1M in fraud, the insurer keeps $750K and we earn $250K. If we detect nothing, we earn nothing. This forces us to train better models, be honest about false positives, and focus on real recoveries &#8212; not just impressive dashboards.</div>
+              <div class="pp-proof">Incentive alignment: we only profit from actual fraud, not claimed fraud</div>
+            </div>
+          </div>
+          <div class="pp-item">
+            <div class="pp-ico">&#128200;</div>
+            <div class="pp-body">
+              <div class="pp-title">PMPM Transition: Value Already Proven</div>
+              <div class="pp-desc">After a 90-day pilot with documented ROI, the commercial conversation shifts: "We've shown you a 4% loss ratio improvement. The PMPM subscription costs $0.75 per member per month. At 500K lives, that's $375K/year &#8212; and we've already shown you $1M+ in annual savings." The sale writes itself.</div>
+              <div class="pp-proof">PMPM transition happens only after documented ROI &#8212; never before</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 REVENUE PHASES  (dark) ═══ -->
+<section class="s" style="background:var(--dk1)" id="phases" aria-labelledby="phases-h">
+  <div class="si">
+    <div class="reveal">
+      <div class="dey">Revenue Architecture</div>
+      <h2 class="dh2" id="phases-h">4 Revenue Streams.<br><em>Each Unlocks the Next.</em></h2>
+      <p class="dlead" style="max-width:600px">Start with fraud recovery (zero risk). Prove value. Move to PMPM. Add pharmacy. Add corporate. Each phase compounds ARR without replacing the previous stream &#8212; they stack.</p>
+    </div>
+    <div class="phases-grid">
+      <div class="phase-card featured reveal">
+        <div class="phase-feat-label">Start Here</div>
+        <div class="phase-num">Phase 01 &#183; Entry</div>
+        <div class="phase-ico">&#127919;</div>
+        <div class="phase-name">Contingent Savings</div>
+        <div class="phase-price">15&#8211;25%</div>
+        <div class="phase-unit">of validated fraud recoveries</div>
+        <div class="phase-desc">Zero platform fee during the pilot. We invoice only on validated savings &#8212; claims that were fraudulent, confirmed by CMO review, and recovered from the provider. 25% during pilot; 15% on Year 1 PMPM contract + recovery hybrid.</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="phase-item-dot"></div>Zero financial risk for insurer</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Invoice against savings only</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>No budget approval cycle needed</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>CMO-validated every claim</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>FRA audit trail on every recovery</div>
+        </div>
+        <div class="phase-badge">Pilot: 90 days &#183; Live in 4 weeks</div>
+      </div>
+      <div class="phase-card ph-2 reveal reveal-d1">
+        <div class="phase-num">Phase 02 &#183; Core</div>
+        <div class="phase-ico">&#128260;</div>
+        <div class="phase-name">PMPM Subscription</div>
+        <div class="phase-price">$0.75&#8211;$5</div>
+        <div class="phase-unit">per member per month</div>
+        <div class="phase-desc">After pilot ROI is documented, transition to Per-Member-Per-Month recurring subscription. Priced per AI module deployed &#8212; start with Fraud Detection at $0.75 PMPM, add modules as the relationship matures. Scales linearly with member lives.</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="phase-item-dot"></div>Fraud Detection only: $0.75 PMPM</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Fraud + Claims Orchestration: $2.00</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Full platform (7 modules): $5.00</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Annual contract, monthly billing</div>
+          <div class="phase-item"><div class="phase-item-dot"></div">+ 15% recovery share continues</div>
+        </div>
+        <div class="phase-badge">Unlocked: Month 4&#8211;6 post-pilot</div>
+      </div>
+      <div class="phase-card ph-3 reveal reveal-d2">
+        <div class="phase-num">Phase 03 &#183; Ecosystem</div>
+        <div class="phase-ico">&#128138;</div>
+        <div class="phase-name">Pharmacy Network Fee</div>
+        <div class="phase-price">$0.05&#8211;$0.20</div>
+        <div class="phase-unit">per verified prescription</div>
+        <div class="phase-desc">Volume-based transaction fee on every prescription verified through the iRonic Health pharmacy network. At 340+ connected pharmacies processing millions of scripts annually, this becomes high-margin recurring revenue without additional sales effort.</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="phase-item-dot"></div>$0.05 basic eligibility check</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>$0.20 full fraud + counterfeit check</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>340+ pharmacies at launch</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>El Ezaby (250+ branches) priority</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>High-margin, near-zero incremental cost</div>
+        </div>
+        <div class="phase-badge">Unlocked: Year 2 &#183; Pharmacy network live</div>
+      </div>
+      <div class="phase-card ph-4 reveal reveal-d3">
+        <div class="phase-num">Phase 04 &#183; Enterprise</div>
+        <div class="phase-ico">&#127970;</div>
+        <div class="phase-name">Corporate Self-Funded</div>
+        <div class="phase-price">$4&#8211;$8</div>
+        <div class="phase-unit">PMPM all-in enterprise</div>
+        <div class="phase-desc">Self-funded corporate health programmes under Law 155/2024. Higher PMPM than insurer channel reflects all-in pricing (no separate recovery fee), cleaner data (employer payroll = verified demographics), and faster 4&#8211;6 week procurement cycle. 3&#8211;5 corporates by Month 12.</div>
+        <div class="phase-items">
+          <div class="phase-item"><div class="phase-item-dot"></div>$5 PMPM all-in standard tier</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>$8 PMPM with analytics add-on</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>No recovery share (cleaner pricing)</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Banque Misr, Telecom Egypt targets</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>10&#8211;50K lives per corporate</div>
+        </div>
+        <div class="phase-badge">Unlocked: Year 1 Month 6&#8211;12</div>
+      </div>
+    </div>
+    <div class="phase-flow reveal">
+      <div class="pf-step">Pilot signed</div>
+      <div class="pf-arr">&#8594;</div>
+      <div class="pf-step">Fraud detected &amp; validated</div>
+      <div class="pf-arr">&#8594;</div>
+      <div class="pf-step">First invoice (25% of savings)</div>
+      <div class="pf-arr">&#8594;</div>
+      <div class="pf-step">90-day ROI report</div>
+      <div class="pf-arr">&#8594;</div>
+      <div class="pf-step">PMPM contract signed</div>
+      <div class="pf-arr">&#8594;</div>
+      <div class="pf-step">Pharmacy + corporate added</div>
+      <div class="pf-arr">&#8594;</div>
+      <div class="pf-step">ARR compounds</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PMPM TIERS  (white) ═══ -->
+<section class="s" style="background:var(--lt1)" id="pricing-tiers" aria-labelledby="tier-h">
+  <div class="si">
+    <div class="reveal">
+      <div class="ley">Pricing Tiers</div>
+      <h2 class="lh2" id="tier-h">Modular Pricing.<br><em>Pay for What You Use.</em></h2>
+      <p class="llead" style="max-width:600px">Every insurer starts with Fraud Detection only. As the relationship matures, additional modules are added to the contract &#8212; each adding PMPM and compounding LTV without replacing the core subscription.</p>
+    </div>
+    <div class="tier-table-wrap reveal">
+      <table class="tier-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>PMPM Price</th>
+            <th>Fraud Detection AI</th>
+            <th>Claims Orchestration</th>
+            <th>Hospital Routing</th>
+            <th>Preventive Care</th>
+            <th>Dynamic Premiums</th>
+            <th>Recovery Share</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tier-name">Entry &#8212; Fraud Only</span><br><span class="tier-badge tb-entry">&#9733; Start Here</span></td>
+            <td><span class="tier-price tp-entry">$0.75</span></td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-dash">&#8212;</td>
+            <td class="tier-dash">&#8212;</td>
+            <td class="tier-dash">&#8212;</td>
+            <td class="tier-dash">&#8212;</td>
+            <td>+25% pilot / +15% contract</td>
+            <td>Post-pilot insurer contracts</td>
+          </tr>
+          <tr class="featured-tier">
+            <td><span class="tier-name">Core Orchestration</span><br><span class="tier-badge tb-pop">Most Popular</span></td>
+            <td><span class="tier-price tp-core">$2.00</span></td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-dash">&#8212;</td>
+            <td class="tier-dash">&#8212;</td>
+            <td>+15% recovery share</td>
+            <td>Anchor insurers Year 1&#8211;2</td>
+          </tr>
+          <tr>
+            <td><span class="tier-name">Full Platform</span><br><span class="tier-badge tb-full">All 7 Modules</span></td>
+            <td><span class="tier-price tp-full">$5.00</span></td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-check">&#10003; Full</td>
+            <td>+10% recovery share</td>
+            <td>TPA channel, Year 2+</td>
+          </tr>
+          <tr>
+            <td><span class="tier-name">Corporate Self-Funded</span><br><span class="tier-badge tb-corp">All-Inclusive</span></td>
+            <td><span class="tier-price tp-corp">$4&#8211;$8</span></td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-check">&#10003; Full</td>
+            <td class="tier-check">&#10003;</td>
+            <td class="tier-check">&#10003;</td>
+            <td class="tier-check">&#10003;</td>
+            <td>Included in PMPM</td>
+            <td>Law 155/2024 corporates</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal" style="margin-top:2rem">
+      <div class="ley" style="margin-bottom:.875rem">Per-Module Pricing (Add-On Rates)</div>
+      <div class="module-pricing">
+        <div class="mp-card"><div class="mp-ico">&#128269;</div><div class="mp-module">Fraud Detection AI</div><div class="mp-price blue">$0.75</div><div class="mp-unit">PMPM &#183; Always included</div></div>
+        <div class="mp-card"><div class="mp-ico">&#9889;</div><div class="mp-module">Claims Orchestration</div><div class="mp-price blue">+$0.50</div><div class="mp-unit">PMPM add-on</div></div>
+        <div class="mp-card"><div class="mp-ico">&#127973;</div><div class="mp-module">Hospital Routing</div><div class="mp-price blue">+$0.40</div><div class="mp-unit">PMPM add-on</div></div>
+        <div class="mp-card"><div class="mp-ico">&#129505;</div><div class="mp-module">Preventive Care</div><div class="mp-price green">+$1.25</div><div class="mp-unit">PMPM add-on</div></div>
+        <div class="mp-card"><div class="mp-ico">&#128200;</div><div class="mp-module">Dynamic Premiums</div><div class="mp-price green">+$1.10</div><div class="mp-unit">PMPM add-on</div></div>
+        <div class="mp-card"><div class="mp-ico">&#129504;</div><div class="mp-module">Health Score</div><div class="mp-price blue">+$0.30</div><div class="mp-unit">PMPM add-on</div></div>
+        <div class="mp-card"><div class="mp-ico">&#128202;</div><div class="mp-module">Golden Dashboard</div><div class="mp-price gold">Included</div><div class="mp-unit">All tiers &#183; Free</div></div>
+        <div class="mp-card"><div class="mp-ico">&#128138;</div><div class="mp-module">Pharmacy Verification</div><div class="mp-price gold">$0.05&#8211;0.20</div><div class="mp-unit">Per script &#183; Volume-based</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PILOT TERMS  (light gray) ═══ -->
+<section class="s" style="background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6" id="pilot" aria-labelledby="pilot-h">
+  <div class="si">
+    <div class="reveal">
+      <div class="ley">The 90-Day Pilot</div>
+      <h2 class="lh2" id="pilot-h">From Signed Agreement<br>to Live in <em>4 Weeks</em></h2>
+      <p class="llead" style="max-width:600px">Every new insurer or TPA starts with a 90-day pilot. The pilot is designed to generate documented ROI by Day 30 and a signed Year 1 contract before Day 90.</p>
+    </div>
+    <div class="pilot-layout">
+      <div class="reveal">
+        <div class="pilot-card">
+          <div class="pc-header">
+            <div class="pch-badge">Pilot Commercial Terms</div>
+            <div class="pch-title">90-Day Fraud Detection Pilot</div>
+            <div class="pch-sub">Zero platform fee &#183; Contingent pricing only &#183; FRA-compliant</div>
+          </div>
+          <div class="pc-body">
+            <div class="pc-rows">
+              <div class="pc-row"><div class="pc-row-ico">&#128176;</div><div class="pc-row-body"><div class="pc-row-key">Platform Fee</div><div class="pc-row-val">EGP 0 &#8212; Zero upfront cost</div></div></div>
+              <div class="pc-row"><div class="pc-row-ico">&#129519;</div><div class="pc-row-body"><div class="pc-row-key">Revenue Model</div><div class="pc-row-val">25% of validated fraud savings only</div></div></div>
+              <div class="pc-row"><div class="pc-row-ico">&#128337;</div><div class="pc-row-body"><div class="pc-row-key">Go-Live Timeline</div><div class="pc-row-val">Under 4 weeks from signed agreement</div></div></div>
+              <div class="pc-row"><div class="pc-row-ico">&#128101;</div><div class="pc-row-body"><div class="pc-row-key">Pilot Scope</div><div class="pc-row-val">50K&#8211;500K lives sub-book (not full portfolio)</div></div></div>
+              <div class="pc-row"><div class="pc-row-ico">&#129514;</div><div class="pc-row-body"><div class="pc-row-key">Success Threshold</div><div class="pc-row-val">&#8805;2% loss ratio improvement in 90 days</div></div></div>
+              <div class="pc-row"><div class="pc-row-ico">&#128274;</div><div class="pc-row-body"><div class="pc-row-key">Data Agreement</div><div class="pc-row-val">PDPL-compliant DPA signed pre-data-sharing</div></div></div>
+              <div class="pc-row"><div class="pc-row-ico">&#9878;&#65039;</div><div class="pc-row-body"><div class="pc-row-key">Regulatory</div><div class="pc-row-val">FRA audit trail + CMO sign-off on all decisions</div></div></div>
+              <div class="pc-row"><div class="pc-row-ico">&#128221;</div><div class="pc-row-body"><div class="pc-row-key">Exit / Expansion</div><div class="pc-row-val">SOW includes Year 1 contract expansion terms</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="ley" style="margin-bottom:1rem">Pilot Journey &#8212; Week by Week</div>
+        <div class="pilot-timeline">
+          <div class="pt-step">
+            <div class="pt-node active">&#128221;</div>
+            <div class="pt-body">
+              <div class="pt-when">Week 0 &#8212; Kickoff</div>
+              <div class="pt-title">Agreement Signed + Data Access Granted</div>
+              <div class="pt-desc">PDPL DPA executed. API credentials shared. 3 months historical claims data provided for sandbox model calibration. CMO named and engaged.</div>
+            </div>
+          </div>
+          <div class="pt-step">
+            <div class="pt-node active">&#128300;</div>
+            <div class="pt-body">
+              <div class="pt-when">Week 1&#8211;2 &#8212; Sandbox</div>
+              <div class="pt-title">AI Model Calibration + Baseline Set</div>
+              <div class="pt-desc">Historical claims run through fraud models. Baseline fraud rate established. False positive threshold agreed with CMO. FRA documentation prepared.</div>
+            </div>
+          </div>
+          <div class="pt-step">
+            <div class="pt-node active">&#9889;</div>
+            <div class="pt-body">
+              <div class="pt-when">Week 3&#8211;4 &#8212; Go-Live</div>
+              <div class="pt-title">Production API Live &#8212; First Claims Scored</div>
+              <div class="pt-desc">REST API connected to live claims workflow. Dashboard live for insurer ops team. CMO review queue activated. First claim scored and logged.</div>
+            </div>
+          </div>
+          <div class="pt-step">
+            <div class="pt-node gold">&#128202;</div>
+            <div class="pt-body">
+              <div class="pt-when gold-t">Day 30 &#8212; First Invoice</div>
+              <div class="pt-title">First Fraud Recovery Invoiced (25%)</div>
+              <div class="pt-desc">First invoice raised against validated recoveries from Days 1&#8211;30. Insurer CFO sees real money recovered. First ROI data point established.</div>
+            </div>
+          </div>
+          <div class="pt-step">
+            <div class="pt-node gold">&#9989;</div>
+            <div class="pt-body">
+              <div class="pt-when gold-t">Day 90 &#8212; ROI Report</div>
+              <div class="pt-title">Documented ROI &#8594; Year 1 Contract Signed</div>
+              <div class="pt-desc">Full 90-day report: total fraud recovered, loss ratio change, approval time improvement, FRA compliance summary. Year 1 PMPM contract presented and signed before pilot closes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ UNIT ECONOMICS  (dark) ═══ -->
+<section class="s" style="background:var(--dk2)" id="unit-economics" aria-labelledby="ue-h">
+  <div class="si">
+    <div class="reveal">
+      <div class="dey">Unit Economics</div>
+      <h2 class="dh2" id="ue-h">Best-in-Class Metrics<br><em>From Month One</em></h2>
+      <p class="dlead" style="max-width:600px">Contingent pricing means CAC payback starts in Month 1&#8211;2. A 20&#8211;30&#215; LTV/CAC ratio &#8212; when the SaaS gold standard is 3&#215; &#8212; is not a typo. It's what happens when contingent pricing meets enterprise LTV.</p>
+    </div>
+    <div class="ue-grid">
+      <div class="ue-card reveal">
+        <div class="ue-label">Customer Acquisition Cost (CAC)</div>
+        <div class="ue-val gold">$30&#8211;50K</div>
+        <div class="ue-sub">Per insurer or TPA. Includes full sales cycle, pilot setup, onboarding, and CMO governance activation. Enterprise SaaS benchmark: $50&#8211;100K per customer.</div>
+        <div class="ue-bench ub-good">&#8595; Below enterprise SaaS benchmark</div>
+      </div>
+      <div class="ue-card reveal reveal-d1">
+        <div class="ue-label">3-Year LTV Per Customer</div>
+        <div class="ue-val green">$500K&#8211;$1.5M</div>
+        <div class="ue-sub">PMPM recurring + 15% fraud recovery share over 3 years. Large TPA (1.2M lives) at $1.5M upper end. Mid-tier insurer (300K lives) at $500K lower end.</div>
+        <div class="ue-bench ub-great">&#8593;&#8593; High absolute LTV</div>
+      </div>
+      <div class="ue-card highlight reveal reveal-d2">
+        <div class="ue-label">LTV / CAC Ratio</div>
+        <div class="ue-val gold">20&#8211;30&#215;</div>
+        <div class="ue-sub">Gold standard SaaS benchmark is 3&#215;. We're 7&#8211;10&#215; above it &#8212; driven by high LTV from large enterprise accounts and low CAC through TPA channel leverage.</div>
+        <div class="ue-bench ub-great">&#127942; 7&#8211;10&#215; above gold standard (3&#215;)</div>
+      </div>
+      <div class="ue-card reveal">
+        <div class="ue-label">Gross Margin</div>
+        <div class="ue-val green">70%</div>
+        <div class="ue-sub">COGS = 30%. Breakdown: cloud infrastructure (12%), AI model maintenance (10%), CMO governance layer (5%), customer success (3%). Scales as lives increase.</div>
+        <div class="ue-bench ub-good">&#10003; Meets best-in-class SaaS target (70%+)</div>
+      </div>
+      <div class="ue-card reveal reveal-d1">
+        <div class="ue-label">CAC Payback Period</div>
+        <div class="ue-val blue">4&#8211;6 mo</div>
+        <div class="ue-sub">Contingent model: we earn 25% of savings from Month 1&#8211;2. Full CAC recovery by Month 4&#8211;6. Typical enterprise SaaS payback: 12&#8211;18 months. We're 3&#215; faster.</div>
+        <div class="ue-bench ub-great">&#8595;&#8595; 3&#215; faster than typical SaaS (12&#8211;18mo)</div>
+      </div>
+      <div class="ue-card reveal reveal-d2">
+        <div class="ue-label">Average Contract Value (ACV)</div>
+        <div class="ue-val gold">$225K+</div>
+        <div class="ue-sub">Year 1 per anchor insurer at $0.75 PMPM on 250K lives. Scales to $500K&#8211;$1M+ as modules expand and lives grow. GlobeMed TPA at $1M+ ACV.</div>
+        <div class="ue-bench ub-great">Expands 2&#8211;4&#215; by Year 3</div>
+      </div>
+    </div>
+    <div class="cogs-breakdown reveal">
+      <div class="cogs-title">Gross Margin Breakdown &#8212; 70% Gross / 30% COGS</div>
+      <div class="cogs-bars">
+        <div class="cogs-row">
+          <div class="cogs-top"><span class="cogs-name" style="color:#5dcaa5">Revenue &#8212; Gross Margin</span><span class="cogs-pct" style="color:#5dcaa5">70%</span></div>
+          <div class="cogs-track"><div class="cogs-fill cf-revenue" style="width:70%"></div></div>
+        </div>
+        <div class="cogs-row">
+          <div class="cogs-top"><span class="cogs-name" style="color:var(--bluel)">Cloud Infrastructure &amp; Hosting</span><span class="cogs-pct" style="color:var(--bluel)">12%</span></div>
+          <div class="cogs-track"><div class="cogs-fill cf-cloud" style="width:12%"></div></div>
+        </div>
+        <div class="cogs-row">
+          <div class="cogs-top"><span class="cogs-name" style="color:#afa9ec">AI Model Maintenance &amp; Retraining</span><span class="cogs-pct" style="color:#afa9ec">10%</span></div>
+          <div class="cogs-track"><div class="cogs-fill cf-ai" style="width:10%"></div></div>
+        </div>
+        <div class="cogs-row">
+          <div class="cogs-top"><span class="cogs-name" style="color:var(--gold)">CMO Governance + Customer Success</span><span class="cogs-pct" style="color:var(--gold)">8%</span></div>
+          <div class="cogs-track"><div class="cogs-fill cf-ops" style="width:8%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROI CALCULATOR  (white) ═══ -->
+<section class="s" style="background:var(--lt1);border-bottom:1px solid #e5ecf6" id="roi-calc" aria-labelledby="calc-h">
+  <div class="si">
+    <div class="reveal">
+      <div class="ley">Interactive ROI Calculator</div>
+      <h2 class="lh2" id="calc-h">Calculate Your<br><em>Potential Savings</em></h2>
+      <p class="llead" style="max-width:600px">Adjust the inputs below to see your organisation's estimated fraud leakage, iRonic Health's fee, and your net savings. All assumptions are documented and conservative.</p>
+    </div>
+    <div class="calc-layout">
+      <div class="reveal">
+        <div class="calc-card">
+          <div class="calc-title">Your Organisation Profile</div>
+          <div class="calc-sub-txt">Slide to adjust &#8212; results update instantly.</div>
+          <div class="calc-group">
+            <label class="calc-label">
+              <span>Insured Lives on Platform</span>
+              <span class="calc-val-display" id="lives-display">250,000</span>
+            </label>
+            <input type="range" class="calc-slider" id="slider-lives" min="50000" max="1200000" step="10000" value="250000" oninput="updateCalc()">
+          </div>
+          <div class="calc-group">
+            <label class="calc-label">
+              <span>Avg. Monthly Claim Value (EGP)</span>
+              <span class="calc-val-display" id="claim-display">EGP 3,000</span>
+            </label>
+            <input type="range" class="calc-slider" id="slider-claim" min="1000" max="8000" step="500" value="3000" oninput="updateCalc()">
+          </div>
+          <div class="calc-group">
+            <label class="calc-label">
+              <span>Estimated Fraud Rate (% of claims)</span>
+              <span class="calc-val-display" id="fraud-display">4%</span>
+            </label>
+            <input type="range" class="calc-slider" id="slider-fraud" min="2" max="10" step="0.5" value="4" oninput="updateCalc()">
+          </div>
+          <div class="calc-group">
+            <label class="calc-label">
+              <span>Claims Frequency (claims/member/year)</span>
+              <span class="calc-val-display" id="freq-display">4</span>
+            </label>
+            <input type="range" class="calc-slider" id="slider-freq" min="2" max="10" step="0.5" value="4" oninput="updateCalc()">
+          </div>
+          <div class="calc-results" id="calc-results">
+            <div class="cr-item neutral">
+              <span class="cr-label">Total Annual Claims Pool</span>
+              <span class="cr-val ink" id="res-pool">EGP 3.0B</span>
+            </div>
+            <div class="cr-item total">
+              <span class="cr-label">Annual Fraud Leakage (estimated)</span>
+              <span class="cr-val green" id="res-fraud">EGP 120M</span>
+            </div>
+            <div class="cr-item total">
+              <span class="cr-label">iRonic Recoveries (at 85% detection)</span>
+              <span class="cr-val green" id="res-recovery">EGP 102M</span>
+            </div>
+            <div class="cr-item fee">
+              <span class="cr-label">iRonic Fee (25% of recoveries)</span>
+              <span class="cr-val blue" id="res-fee">EGP 25.5M</span>
+            </div>
+            <div class="cr-item net">
+              <span class="cr-label">Your Net Annual Saving</span>
+              <span class="cr-val gold" id="res-net">EGP 76.5M</span>
+            </div>
+          </div>
+          <div class="calc-note">Assumes 85% detection rate &#183; Conservative fraud recovery estimate &#183; Excludes PMPM savings from overtreatment reduction</div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="roi-big">
+          <div class="rb-eyebrow">Net ROI Multiplier</div>
+          <div class="rb-val" id="roi-multiplier">3.0&#215;</div>
+          <div class="rb-sub">You keep EGP 3.00 for every EGP 1.00 paid to iRonic Health</div>
+        </div>
+        <div class="roi-context">
+          <div class="roi-point">
+            <div class="roi-p-ico">&#9889;</div>
+            <div class="roi-p-txt"><strong>4-6 month payback on CAC</strong> &#8212; the contingent model means your first invoice arrives after the first recovery, not before. Payback from Day 30.</div>
+          </div>
+          <div class="roi-point">
+            <div class="roi-p-ico">&#128200;</div>
+            <div class="roi-p-txt"><strong>Loss ratio impact compounds</strong> &#8212; beyond direct fraud recovery, iRonic Health's pre-authorization and hospital routing modules reduce overtreatment by ~20%, adding to total loss ratio improvement.</div>
+          </div>
+          <div class="roi-point">
+            <div class="roi-p-ico">&#128202;</div>
+            <div class="roi-p-txt"><strong>PMPM adds predictable savings</strong> &#8212; Year 1 PMPM at $0.75/member/month = $2.25M/year at 250K lives. Combined with recovery share, total iRonic value to you exceeds our fee by 3&#8211;6&#215;.</div>
+          </div>
+          <div class="roi-point">
+            <div class="roi-p-ico">&#9878;&#65039;</div>
+            <div class="roi-p-txt"><strong>Every recovery is FRA-documented</strong> &#8212; every fraud amount we invoice has a corresponding FRA audit trail, CMO sign-off, and claim ID. You can audit every EGP we bill.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3-YEAR PROJECTIONS  (dark) ═══ -->
+<section class="s" style="background:var(--dk1)" id="projections" aria-labelledby="proj-h">
+  <div class="si">
+    <div class="reveal">
+      <div class="dey">3-Year Financial Model</div>
+      <h2 class="dh2" id="proj-h">From $475K to <em>$7.35M ARR</em><br>In 36 Months</h2>
+      <p class="dlead" style="max-width:580px">Conservative model anchored by real milestone assumptions: one anchor insurer by Month 3, PMPM by Month 6, pharmacy module by Month 18. 70% gross margin throughout. Breakeven at Month 18.</p>
+    </div>
+    <div class="fin-table-wrap reveal">
+      <table class="fin-table">
+        <thead>
+          <tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Anchor Customers</td><td>1&#8211;2</td><td>3&#8211;4</td><td>6&#8211;8</td></tr>
+          <tr><td>Total Lives on Platform</td><td>375K</td><td>1.4M</td><td>4.2M</td></tr>
+          <tr><td>Platform PMPM Revenue</td><td class="fv-white">$225K</td><td class="fv-white">$1.05M</td><td class="fv-white">$3.78M</td></tr>
+          <tr><td>Recovery Share (15%)</td><td class="fv-white">$250K</td><td class="fv-white">$1.05M</td><td class="fv-white">$2.52M</td></tr>
+          <tr><td>Pharmacy Module Revenue</td><td>&#8212;</td><td class="fv-white">$350K</td><td class="fv-white">$1.05M</td></tr>
+          <tr class="row-highlight"><td><strong>Total ARR</strong></td><td class="fv-white">$475K</td><td class="fv-green">$2.45M</td><td class="fv-gold">$7.35M</td></tr>
+          <tr><td>Gross Margin</td><td class="fv-green">70%</td><td class="fv-green">70%</td><td class="fv-green">70%</td></tr>
+          <tr><td>EBITDA</td><td class="fv-red">($975K)</td><td class="fv-red">($485K)</td><td class="fv-green">+$1.95M</td></tr>
+          <tr><td>Annual Burn Rate</td><td>~$1.5M</td><td>~$800K</td><td class="fv-green">Positive</td></tr>
+          <tr><td>Breakeven Month</td><td colspan="3" style="color:var(--gold);font-weight:700">Month 18 &#8212; Series A preparation starts Month 12</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rev-build reveal" id="rev-bars">
+      <div class="rb-title">ARR Build by Revenue Stream</div>
+      <div class="rb-bars">
+        <div class="rb-row">
+          <div class="rb-yr">Y1</div>
+          <div class="rb-track">
+            <div class="rb-seg rb-pmpm" id="y1-pmpm" style="width:0">PMPM</div>
+            <div class="rb-seg rb-recov" id="y1-recov" style="width:0">Recovery</div>
+          </div>
+          <div class="rb-total" style="color:var(--bluel)">$475K</div>
+        </div>
+        <div class="rb-row">
+          <div class="rb-yr">Y2</div>
+          <div class="rb-track">
+            <div class="rb-seg rb-pmpm" id="y2-pmpm" style="width:0">PMPM</div>
+            <div class="rb-seg rb-recov" id="y2-recov" style="width:0">Recovery</div>
+            <div class="rb-seg rb-pharma" id="y2-pharma" style="width:0">Pharmacy</div>
+          </div>
+          <div class="rb-total" style="color:var(--green)">$2.45M</div>
+        </div>
+        <div class="rb-row">
+          <div class="rb-yr">Y3</div>
+          <div class="rb-track">
+            <div class="rb-seg rb-pmpm" id="y3-pmpm" style="width:0">PMPM $3.78M</div>
+            <div class="rb-seg rb-recov" id="y3-recov" style="width:0">Recovery $2.52M</div>
+            <div class="rb-seg rb-pharma" id="y3-pharma" style="width:0">Pharmacy $1.05M</div>
+          </div>
+          <div class="rb-total" style="color:var(--gold)">$7.35M</div>
+        </div>
+      </div>
+      <div class="rb-legend">
+        <div class="rbl-item"><div class="rbl-dot" style="background:rgba(24,95,165,.7)"></div>PMPM Subscription</div>
+        <div class="rbl-item"><div class="rbl-dot" style="background:rgba(29,158,117,.7)"></div>Recovery Share (15%)</div>
+        <div class="rbl-item"><div class="rbl-dot" style="background:rgba(83,74,183,.7)"></div>Pharmacy Module</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY THIS MODEL WINS  (light) ═══ -->
+<section class="s" style="background:var(--lt2);border-top:1px solid #e5ecf6" id="comparison" aria-labelledby="comp-h">
+  <div class="si">
+    <div class="reveal">
+      <div class="ley">Model Comparison</div>
+      <h2 class="lh2" id="comp-h">Why Contingent Pricing<br>Wins Every Time in <span class="em-gold">Healthcare</span></h2>
+      <p class="llead" style="max-width:600px">Traditional B2B SaaS pricing assumes a working procurement cycle. Egyptian healthcare doesn't have that. Contingent pricing turns a procurement battle into a simple business decision.</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card reveal">
+        <div class="cc-header traditional">
+          <div class="cc-title" style="color:var(--ink4)">&#10007; Traditional SaaS Pricing</div>
+          <div class="cc-sub">Platform fee upfront, ROI proven later</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-items">
+            <div class="cc-item bad">&#10007; Requires CFO budget approval before any value is demonstrated</div>
+            <div class="cc-item bad">&#10007; 6&#8211;12 month procurement cycle at every insurer</div>
+            <div class="cc-item bad">&#10007; Platform earns whether or not fraud is detected</div>
+            <div class="cc-item bad">&#10007; Customer bears full financial risk of adoption</div>
+            <div class="cc-item bad">&#10007; Platform incentivised to show impressive demos, not real results</div>
+            <div class="cc-item bad">&#10007; ROI must be proven retrospectively, after contract is signed</div>
+            <div class="cc-item bad">&#10007; Churn risk if value doesn't materialise in Year 1</div>
+          </div>
+        </div>
+      </div>
+      <div class="compare-card reveal reveal-d2">
+        <div class="cc-header ironic">
+          <div class="cc-title">&#10003; iRonic Health Contingent Pricing</div>
+          <div class="cc-sub">Value first, invoice after</div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-items">
+            <div class="cc-item good">&#10003; Zero budget approval needed &#8212; insurer pays from savings generated</div>
+            <div class="cc-item good">&#10003; 6&#8211;8 week pilot close &#8212; no procurement battle required</div>
+            <div class="cc-item good">&#10003; We earn only when fraud is validated by CMO and recovered</div>
+            <div class="cc-item good">&#10003; Zero financial risk for insurer &#8212; the pilot literally pays itself</div>
+            <div class="cc-item good">&#10003; Perfectly aligned &#8212; we only profit from actual fraud, not dashboards</div>
+            <div class="cc-item good">&#10003; ROI is proven by Day 30 &#8212; Year 1 contract signed before Day 90</div>
+            <div class="cc-item good">&#10003; Near-zero churn risk &#8212; switching means losing proven savings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:2rem;padding:1.5rem 2rem;background:var(--lt1);border:1px solid #c8daf0;border-radius:14px">
+      <div class="ley" style="margin-bottom:.625rem">The CFO Conversation &#8212; Traditional vs iRonic</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+        <div>
+          <div style="font-size:.75rem;font-weight:700;color:var(--ink4);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif">Traditional vendor pitch to CFO:</div>
+          <div style="font-size:.82rem;color:var(--ink3);font-family:'Ubuntu',sans-serif;line-height:1.65;padding:1rem;background:var(--lt3);border-radius:8px;font-style:italic">"Sign a 12-month contract at $500K/year. We believe our platform will reduce your loss ratio. You'll see the results in 6&#8211;9 months."</div>
+          <div style="font-size:.72rem;color:#d85a30;font-family:'Ubuntu',sans-serif;margin-top:.5rem">&#10007; CFO: "I need board approval. Come back in Q3."</div>
+        </div>
+        <div>
+          <div style="font-size:.75rem;font-weight:700;color:var(--blue);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif">iRonic Health pitch to CFO:</div>
+          <div style="font-size:.82rem;color:var(--ink3);font-family:'Ubuntu',sans-serif;line-height:1.65;padding:1rem;background:rgba(24,95,165,.06);border-radius:8px;border:1px solid rgba(24,95,165,.15);font-style:italic">"Sign a 90-day pilot. Zero platform fee. We take 25% of the fraud we recover. If we recover nothing, you pay nothing."</div>
+          <div style="font-size:.72rem;color:var(--green);font-family:'Ubuntu',sans-serif;margin-top:.5rem">&#10003; CFO: "That sounds like a reasonable pilot. Let's start."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-sec" aria-label="Call to action">
+  <div class="cta-bg-ring" aria-hidden="true"></div>
+  <div class="cta-bg-ring2" aria-hidden="true"></div>
+  <div class="cta-inner reveal">
+    <div class="cta-eyebrow">Zero Risk &#183; 90-Day Pilot &#183; 4 Weeks to Live</div>
+    <h2 class="cta-h">See the Numbers<br><span>In Your Environment</span></h2>
+    <p class="cta-sub">Use the calculator above to estimate your savings &#8212; then request a demo to see iRonic Health's fraud models working on your actual claims data. No commitment, no platform fee, no risk.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="cta-btn-g">Request a Demo &#8594;</a>
+      <a href="investors.html" class="cta-btn-w">Investor Information</a>
+    </div>
+    <div class="cta-metrics">25% Contingent &#183; $0.75&#8211;$5 PMPM &#183; 70% Gross Margin &#183; 4&#8211;6 Month Payback &#183; 20&#8211;30&#215; LTV/CAC</div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="iRonic Health"><img src="assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'"></a>
+      <p class="footer-brand-desc">Egypt's first AI-powered health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">&#120143;</a>
+      </div>
+    </div>
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <div class="footer-col-title">Revenue Model</div>
+        <a href="#philosophy">Pricing Philosophy</a>
+        <a href="#phases">4 Revenue Phases</a>
+        <a href="#pricing-tiers">PMPM Tiers</a>
+        <a href="#pilot">90-Day Pilot</a>
+        <a href="#unit-economics">Unit Economics</a>
+        <a href="#roi-calc">ROI Calculator</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="platform.html">Platform</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="market.html">Market</a>
+        <a href="team.html">Team</a>
+        <a href="investors.html">Investors</a>
+        <a href="ar/index.html">Arabic (&#1593;&#1585;&#1576;&#1610;)</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+        <span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&#169; 2026 Ironic Group &#183; iRonic Health &#183; All rights reserved</div>
+    <div class="footer-legal">
+      <a href="#">Privacy (PDPL 151/2020)</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">FRA Compliance</a>
+    </div>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+<script>
+/* ROI Calculator */
+function fmt(n){ return 'EGP '+Math.round(n).toLocaleString('en-EG'); }
+function fmtUSD(n){ return '$'+Math.round(n).toLocaleString('en'); }
+
+function updateCalc(){
+  var lives = parseInt(document.getElementById('slider-lives').value);
+  var claimVal = parseInt(document.getElementById('slider-claim').value);
+  var fraudPct = parseFloat(document.getElementById('slider-fraud').value)/100;
+  var freq = parseFloat(document.getElementById('slider-freq').value);
+
+  document.getElementById('lives-display').textContent = lives.toLocaleString('en');
+  document.getElementById('claim-display').textContent = 'EGP '+claimVal.toLocaleString('en');
+  document.getElementById('fraud-display').textContent = (fraudPct*100).toFixed(1)+'%';
+  document.getElementById('freq-display').textContent = freq.toFixed(1);
+
+  var pool = lives * claimVal * freq;
+  var fraudAmt = pool * fraudPct;
+  var recovery = fraudAmt * 0.85;
+  var fee = recovery * 0.25;
+  var net = recovery - fee;
+  var multiplier = net / fee;
+
+  document.getElementById('res-pool').textContent = fmt(pool);
+  document.getElementById('res-fraud').textContent = fmt(fraudAmt);
+  document.getElementById('res-recovery').textContent = fmt(recovery);
+  document.getElementById('res-fee').textContent = fmt(fee);
+  document.getElementById('res-net').textContent = fmt(net);
+  document.getElementById('roi-multiplier').textContent = multiplier.toFixed(1)+'x';
+}
+
+/* Rev bars animation */
+function initRevBars(){
+  var wrap = document.getElementById('rev-bars');
+  if(!wrap || !('IntersectionObserver' in window)) return;
+  var obs = new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){
+      /* Y1: $475K total — PMPM $225K (47%), Recovery $250K (53%) */
+      setTimeout(function(){ document.getElementById('y1-pmpm').style.width='6.1%'; },100);
+      setTimeout(function(){ document.getElementById('y1-recov').style.width='6.8%'; },300);
+      /* Y2: $2.45M total — PMPM $1.05M (43%), Recovery $1.05M (43%), Pharma $350K (14%) */
+      setTimeout(function(){ document.getElementById('y2-pmpm').style.width='29%'; },100);
+      setTimeout(function(){ document.getElementById('y2-recov').style.width='29%'; },300);
+      setTimeout(function(){ document.getElementById('y2-pharma').style.width='9.6%'; },500);
+      /* Y3: $7.35M total — PMPM $3.78M (51%), Recovery $2.52M (34%), Pharma $1.05M (14%) */
+      setTimeout(function(){ document.getElementById('y3-pmpm').style.width='51.4%'; },100);
+      setTimeout(function(){ document.getElementById('y3-recov').style.width='34.3%'; },300);
+      setTimeout(function(){ document.getElementById('y3-pharma').style.width='14.3%'; },500);
+      obs.disconnect();
+    }
+  },{threshold:0.3});
+  obs.observe(wrap);
+}
+
+/* Universal reveal */
+(function(){
+  var btn = document.getElementById('scroll-top');
+  window.addEventListener('scroll',function(){ btn.classList.toggle('visible',window.scrollY>400); },{passive:true});
+  function initReveal(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('up'); }); return; }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); } });
+    },{threshold:0.07,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ obs.observe(el); });
+  }
+  window.addEventListener('load',function(){
+    setTimeout(initReveal,80);
+    setTimeout(initRevBars,200);
+    updateCalc();
+  });
+})();
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
