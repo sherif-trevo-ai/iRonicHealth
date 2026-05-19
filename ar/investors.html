@@ -3,42 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="iRonic Health — جولة بذرة بقيمة مليون دولار. أول منصة ذكاء اصطناعي للتأمين الصحي في مصر. هامش ربح 70%. بدون منافس.">
-<title>المستثمرون — iRonic Health · جولة البذرة 2026</title>
+<meta name="description" content="iRonic Health — جولة أولى بقيمة مليون دولار. أول منصة ذكاء اصطناعي للتأمين الصحي في مصر. هامش ربح 70%. بدون منافس.">
+<title>المستثمرون — iRonic Health · جولة البداية 2026</title>
 <link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/arabic-theme.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;overflow-x:hidden}
+body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 
 /* ══ DESIGN TOKENS ══ */
-:root{--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94}
+/* light theme now via arabic-theme.css */
 
-/* ══ THESIS SECTION — LIGHT ══ */
-#thesis{background:var(--lt2)!important;border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
-#thesis .inv-eyebrow{color:rgba(10,22,40,.4)}
-#thesis .inv-h2{color:var(--ink1)}
-#thesis .inv-h2 em{color:#c9a84c}
-#thesis .inv-lead{color:var(--ink3)}
-#thesis .thesis-card{background:var(--lt1);border-color:#dde8f5;box-shadow:0 2px 12px rgba(10,22,40,.06)}
-#thesis .thesis-ico{color:var(--ink2)}
-#thesis .thesis-title{color:var(--ink1)}
-#thesis .thesis-desc{color:var(--ink3)}
+/* handled by arabic-theme.css */
+#thesis .thesis-desc{color:var(--muted)}
 
-/* ══ UNIT ECONOMICS — LIGHT ══ */
-#unit-economics{background:var(--lt2)!important;border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
-#unit-economics .inv-eyebrow{color:rgba(10,22,40,.4)}
-#unit-economics .inv-h2{color:var(--ink1)}
-#unit-economics .inv-lead{color:var(--ink3)}
-#unit-economics .ue-card{background:var(--lt1);border-color:#dde8f5;box-shadow:0 2px 8px rgba(10,22,40,.05)}
-#unit-economics .ue-card.highlight{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.04)}
-#unit-economics .ue-label{color:var(--ink4)}
-#unit-economics .ue-val{color:var(--ink1)}
-#unit-economics .ue-note{color:var(--ink3)}
-#unit-economics .ue-divider{border-color:#e5ecf6}
+/* handled by arabic-theme.css */
 .nav{direction:rtl}
 .nav-center a,.btn-lang,.btn-demo,.logo-wordmark,.logo-tagline{font-family:'Cairo',sans-serif}
 
@@ -189,23 +172,16 @@ body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;
 
 /* FOOTER */
 .footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;font-family:'Cairo',sans-serif;direction:rtl}
-.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
-.footer-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.375rem}
-.footer-brand-tag{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:1rem}
-.footer-col-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem}
-.footer-links{display:flex;flex-direction:column;gap:.5rem}
-.footer-links a{font-size:.8rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+
 .footer-links a:hover{color:#c9a84c}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.75rem}
-.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
-.footer-badge{font-size:.65rem;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35)}
+
 #scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;background:#c9a84c;color:#060f1c;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;box-shadow:0 4px 20px rgba(201,168,76,.4);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:999;pointer-events:none}
 #scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .reveal.visible{opacity:1;transform:none}
 .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
-@media(max-width:900px){.thesis-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.ue-grid{grid-template-columns:1fr 1fr}.df-2col{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.inv-h1{font-size:2.1rem}.ue-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}}
+@media(max-width:900px){.thesis-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.ue-grid{grid-template-columns:1fr 1fr}.df-2col{grid-template-columns:1fr}}
+@media(max-width:480px){.inv-h1{font-size:2.1rem}.ue-grid{grid-template-columns:1fr}}
 
 /* ══ LANGUAGE SWITCHER ══ */
 .lang-switcher{position:relative;display:inline-flex;align-items:center}
@@ -236,6 +212,9 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 .lang-badge{font-size:.58rem;padding:2px 6px;border-radius:20px;
   background:rgba(255,255,255,.07);color:rgba(255,255,255,.4);
   font-weight:600;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+
+/* footer styles now via arabic-theme.css */
+.footer-logo-img{max-height:44px;width:auto;display:block}
 
 </style>
 </head>
@@ -292,7 +271,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   <div class="inv-hero-glow2" aria-hidden="true"></div>
   <div class="inv-hero-grid" aria-hidden="true"></div>
   <div class="inv-hero-inner reveal">
-    <div class="inv-round-badge"><div class="irb-dot"></div><span class="irb-txt">جولة البذرة — مفتوحة الآن · 2026</span></div>
+    <div class="inv-round-badge"><div class="irb-dot"></div><span class="irb-txt">جولة البداية — مفتوحة الآن · 2026</span></div>
     <h1 class="inv-h1">أول منصة ذكاء اصطناعي<br>للتأمين الصحي في مصر<br><em>تجمع مليون دولار.</em></h1>
     <p class="inv-sub">SAFE Note · نافذة تنظيمية غير متنازع عليها 18–36 شهرًا · مُرخَّصة من الهيئة المالية · هامش ربح 70% · لا منافس مباشر. شراكة TPA واحدة تغطي 1.2M حياة مؤمَّنة عبر 18 شركة — قبل أن نوقّع مع أي شركة تأمين مباشرة.</p>
     <div class="inv-hero-cards">
@@ -575,7 +554,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
           <div class="df-grp"><label class="df-lbl">نوع المستثمر *</label>
             <select class="df-sel">
               <option value="" disabled selected>اختر النوع</option>
-              <option>مستثمر ملاك</option>
+              <option>مستثمر مَلَكي</option>
               <option>رأس مال مخاطر</option>
               <option>مكتب عائلي</option>
               <option>صندوق استثمار مباشر CVC</option>
@@ -607,29 +586,52 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer" role="contentinfo" style="font-family:'Cairo',sans-serif">
   <div class="footer-top">
-    <div>
-      <div class="footer-brand-name">iRonic Health</div>
-      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر.</div>
-      <div style="display:flex;gap:.5rem;flex-wrap:wrap"><span class="footer-badge">مُرخَّصة من الهيئة المالية</span><span class="footer-badge">PDPL</span></div>
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
+        <img src="../assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'" style="max-height:44px;width:auto">
+      </a>
+      <p class="footer-brand-desc" style="font-family:'Cairo',sans-serif">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تُلغي الاحتيال. تُسرّع المطالبات.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
+      </div>
     </div>
-    <div>
-      <div class="footer-col-title">المنصة</div>
-      <div class="footer-links"><a href="platform.html">الوحدات</a><a href="ecosystem.html">النظام البيئي</a><a href="dashboard.html">لوحة التحكم</a><a href="pricing.html">الإيرادات</a></div>
-    </div>
-    <div>
-      <div class="footer-col-title">الشركة</div>
-      <div class="footer-links"><a href="team.html">الفريق</a><a href="market.html">السوق</a><a href="contact.html">تواصل معنا</a></div>
-    </div>
-    <div>
-      <div class="footer-col-title">تواصل مع المستثمرين</div>
-      <div class="footer-links"><a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a><a href="tel:+447308892741">+44 7308 892741</a><a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a></div>
+    <div class="footer-links-grid" style="font-family:'Cairo',sans-serif">
+      <div class="footer-col">
+        <div class="footer-col-title">الشركة</div>
+        <a href="team.html">الفريق</a>
+        <a href="index.html#problem">المشكلة</a>
+        <a href="ecosystem.html">النظام البيئي</a>
+        <a href="market.html">السوق</a>
+        <a href="investors.html">المستثمرون</a>
+        <a href="../index.html">🇬🇧 English</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">المنصة</div>
+        <a href="platform.html">كشف الاحتيال AI</a>
+        <a href="platform.html">النقاط الصحية</a>
+        <a href="platform.html">توقع المطالبات</a>
+        <a href="platform.html">توجيه المستشفيات</a>
+        <a href="dashboard.html">لوحة التحكم</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">تواصل</div>
+        <a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="tel:+447308892741" dir="ltr">+44 7308 892741</a>
+        <span class="footer-address-txt" style="font-family:'Cairo',sans-serif">أبراج النايل سيتي، البرج الشمالي<br>كورنيش النيل، القاهرة، مصر</span>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
-    <a href="../investors.html" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none">🌐 English</a>
+  <div class="footer-bottom" style="font-family:'Cairo',sans-serif">
+    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · جميع الحقوق محفوظة</div>
+    <div class="footer-legal">
+      <a href="#">الخصوصية (PDPL 151/2020)</a>
+      <a href="#">شروط الخدمة</a>
+      <a href="#">امتثال الهيئة المالية</a>
+    </div>
   </div>
 </footer>
 </main>
