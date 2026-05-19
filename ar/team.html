@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="تعرّف على فريق iRonic Health — القيادة التنفيذية وراء أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر.">
+<meta property="og:title" content="الفريق — iRonic Health">
+<meta property="og:type" content="website">
+<title>الفريق — القيادة التنفيذية · iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;overflow-x:hidden}
+
+/* ══ DESIGN TOKENS ══ */
+:root{--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94}
+
+/* ══ FOUNDERS — LIGHT ══ */
+.founders{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+.founders .sec-label{color:rgba(10,22,40,.4)}
+.founders .sec-h2{color:var(--ink1)}
+.founders .sec-h2 em{color:#1d9e75}
+.founders .sec-lead{color:var(--ink3)}
+.founders .founder-card{background:var(--lt1);border-color:#dde8f5;box-shadow:0 2px 12px rgba(10,22,40,.06)}
+.founders .founder-card::before{display:none}
+.founders .founder-card:hover{border-color:rgba(29,158,117,.3);transform:translateY(-4px)}
+.founders .fc-name{color:var(--ink1)}
+.founders .fc-title{color:#1d9e75}
+.founders .fc-bio{color:var(--ink3)}
+.founders .fc-tag{background:rgba(29,158,117,.08);border-color:rgba(29,158,117,.18);color:#178a64}
+.founders .fc-tag.blue{background:rgba(24,95,165,.08);border-color:rgba(24,95,165,.18);color:#185fa5}
+.founders .fc-tag.gold{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.22);color:#8a6a20}
+.founders .fc-contact{border-top-color:#e5ecf6}
+.founders .fc-contact a{color:var(--ink4)}
+.founders .fc-contact a:hover{color:#1d9e75}
+
+/* ══ ADVISORS — LIGHT ══ */
+.advisors{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+.advisors .sec-label{color:rgba(10,22,40,.4)}
+.advisors .sec-h2{color:var(--ink1)}
+.advisors .sec-h2 em{color:#1d9e75}
+.advisors .sec-lead{color:var(--ink3)}
+.advisors .adv-card{background:var(--lt1);border-color:#dde8f5;box-shadow:0 2px 8px rgba(10,22,40,.05)}
+.advisors .adv-card:hover{border-color:rgba(24,95,165,.25)}
+.advisors .adv-initials{background:rgba(24,95,165,.1);border-color:rgba(24,95,165,.2);color:#185fa5}
+.advisors .adv-name{color:var(--ink1)}
+.advisors .adv-role{color:#185fa5}
+.advisors .adv-desc{color:var(--ink3)}
+.nav{direction:rtl}
+.nav-center a{font-family:'Cairo',sans-serif}
+.nav-logo-text{text-align:right}
+.logo-wordmark,.logo-tagline{font-family:'Cairo',sans-serif}
+.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
+
+/* ══ HERO ══ */
+.team-hero{
+  min-height:62vh;
+  background:linear-gradient(145deg,#060f1c 0%,#0a1628 60%,#0d1f3a 100%);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 5% 80px;position:relative;overflow:hidden;
+}
+.th-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle 600px at 80% 30%,rgba(29,158,117,.1) 0%,transparent 60%),
+                   radial-gradient(circle 400px at 10% 70%,rgba(201,168,76,.07) 0%,transparent 50%);}
+.th-grid{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:40px 40px;}
+.th-inner{position:relative;z-index:1;max-width:720px}
+.th-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.25);
+  border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;
+  font-size:.82rem;font-weight:700;color:#1d9e75;letter-spacing:.04em;}
+.th-h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;line-height:1.1;
+  color:#fff;margin-bottom:1.25rem;}
+.th-h1 em{color:#1d9e75;font-style:normal}
+.th-sub{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.85;max-width:600px}
+
+/* ══ FOUNDERS ══ */
+.founders{padding:6rem 5%}
+.founders-inner{max-width:1100px;margin:0 auto}
+.sec-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin-bottom:.75rem;}
+.sec-h2{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;color:#fff;margin-bottom:.75rem}
+.sec-h2 em{color:#1d9e75;font-style:normal}
+.sec-lead{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.8;max-width:580px;margin-bottom:3.5rem}
+
+.founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.founder-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;
+  transition:border-color .3s,transform .3s}
+.founder-card:hover{border-color:rgba(29,158,117,.3);transform:translateY(-4px)}
+.founder-card::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle 300px at 80% 0%,rgba(29,158,117,.06) 0%,transparent 60%)}
+
+.fc-avatar{width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,#1d9e75,#185fa5);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:1.5rem;
+  border:3px solid rgba(29,158,117,.3)}
+.fc-name{font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:.25rem}
+.fc-title{font-size:.85rem;color:#1d9e75;font-weight:700;margin-bottom:1.25rem}
+.fc-bio{font-size:.9rem;color:rgba(255,255,255,.52);line-height:1.9;margin-bottom:1.75rem}
+.fc-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.fc-tag{font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:20px;
+  background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.2);color:#1d9e75}
+.fc-tag.blue{background:rgba(24,95,165,.1);border-color:rgba(24,95,165,.25);color:#378add}
+.fc-tag.gold{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.25);color:#c9a84c}
+
+.fc-contact{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;
+  padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+.fc-contact a{font-size:.82rem;color:rgba(255,255,255,.4);text-decoration:none;
+  display:flex;align-items:center;gap:.5rem;transition:color .2s}
+.fc-contact a:hover{color:#1d9e75}
+.fc-contact-icon{font-size:.9rem}
+
+/* ══ STORY TIMELINE ══ */
+.story{padding:6rem 5%;background:#0a1628}
+.story-inner{max-width:900px;margin:0 auto}
+.timeline{position:relative;padding-right:2rem;margin-top:3rem}
+.timeline::before{content:'';position:absolute;right:0;top:0;bottom:0;
+  width:2px;background:linear-gradient(to bottom,#1d9e75,rgba(29,158,117,.1))}
+.tl-item{position:relative;margin-bottom:3rem;padding-right:2.5rem}
+.tl-dot{position:absolute;right:-9px;top:6px;width:18px;height:18px;border-radius:50%;
+  background:#060f1c;border:3px solid #1d9e75;z-index:1}
+.tl-dot.gold{border-color:#c9a84c}
+.tl-dot.blue{border-color:#185fa5}
+.tl-date{font-size:.75rem;font-weight:700;color:#1d9e75;text-transform:uppercase;
+  letter-spacing:.08em;margin-bottom:.375rem}
+.tl-date.gold{color:#c9a84c}
+.tl-date.blue{color:#378add}
+.tl-h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.tl-p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.8}
+
+/* ══ VALUES ══ */
+.values{padding:6rem 5%;background:#060f1c}
+.values-inner{max-width:1100px;margin:0 auto}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.val-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:2rem 1.5rem;text-align:center;
+  transition:border-color .3s,transform .3s}
+.val-card:hover{border-color:rgba(201,168,76,.25);transform:translateY(-3px)}
+.val-icon{font-size:2.2rem;margin-bottom:1rem;display:block}
+.val-h3{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:.625rem}
+.val-p{font-size:.83rem;color:rgba(255,255,255,.45);line-height:1.75}
+
+/* ══ ADVISORS ══ */
+.advisors{padding:6rem 5%}
+.advisors-inner{max-width:1100px;margin:0 auto}
+.advisor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.adv-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.75rem;transition:border-color .3s}
+.adv-card:hover{border-color:rgba(24,95,165,.25)}
+.adv-initials{width:50px;height:50px;border-radius:50%;
+  background:rgba(24,95,165,.2);border:2px solid rgba(24,95,165,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;font-weight:800;color:#378add;margin-bottom:1rem}
+.adv-name{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.25rem}
+.adv-role{font-size:.78rem;color:#378add;font-weight:600;margin-bottom:.75rem}
+.adv-desc{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.75}
+
+/* ══ JOIN CTA ══ */
+.join-cta{padding:6rem 5%;background:linear-gradient(135deg,#060f1c,#0a1628);
+  text-align:center}
+.join-cta-inner{max-width:700px;margin:0 auto}
+.cta-h2{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;margin-bottom:1rem}
+.cta-h2 em{color:#1d9e75;font-style:normal}
+.cta-p{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:2.5rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btn-primary{background:#1d9e75;color:#fff;padding:.9rem 2rem;
+  border-radius:8px;text-decoration:none;font-weight:700;font-size:.95rem;
+  transition:background .2s}
+.cta-btn-primary:hover{background:#178a64}
+.cta-btn-sec{background:transparent;color:#fff;padding:.9rem 2rem;
+  border-radius:8px;text-decoration:none;font-weight:700;font-size:.95rem;
+  border:1px solid rgba(255,255,255,.2);transition:border-color .2s}
+.cta-btn-sec:hover{border-color:rgba(255,255,255,.4)}
+
+/* ══ FOOTER ══ */
+.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;font-family:'Cairo',sans-serif;direction:rtl}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.375rem}
+.footer-brand-tag{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:1rem}
+.footer-col-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem}
+.footer-links{display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#1d9e75}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.75rem}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
+.footer-badges{display:flex;gap:.75rem;flex-wrap:wrap}
+.footer-badge{font-size:.65rem;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35)}
+
+#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
+  background:#1d9e75;color:#fff;border:none;cursor:pointer;font-size:1.1rem;
+  opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:999}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#scroll-top:hover{background:#178a64}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  .founder-cards{grid-template-columns:1fr}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .advisor-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .values-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav" role="banner">
+  <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">تقنية تكامل المنظومة الصحية</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="التنقل الرئيسي">
+    <a href="index.html#problem">المشكلة</a>
+    <a href="platform.html">المنصة</a>
+    <a href="ecosystem.html">النظام البيئي</a>
+    <a href="dashboard.html">لوحة التحكم</a>
+    <a href="market.html">السوق</a>
+    <a href="pricing.html">الإيرادات</a>
+    <a href="team.html" class="nav-active">الفريق</a>
+    <a href="investors.html">المستثمرون</a>
+  </nav>
+  <div class="nav-right">
+    <a href="../team.html" class="btn-lang">🌐 English</a>
+    <a href="contact.html" class="btn-demo">طلب عرض تجريبي ←</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="فتح القائمة" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="التنقل المحمول" aria-hidden="true">
+  <a href="index.html#problem">المشكلة</a>
+  <a href="platform.html">المنصة</a>
+  <a href="ecosystem.html">النظام البيئي</a>
+  <a href="dashboard.html">لوحة التحكم</a>
+  <a href="market.html">السوق</a>
+  <a href="pricing.html">الإيرادات</a>
+  <a href="team.html">الفريق</a>
+  <a href="investors.html">المستثمرون</a>
+  <a href="contact.html" class="mobile-demo-btn">طلب عرض تجريبي ←</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="team-hero">
+  <div class="th-bg"></div>
+  <div class="th-grid"></div>
+  <div class="th-inner">
+    <div class="th-badge">👥 الفريق التنفيذي</div>
+    <h1 class="th-h1">بُنيت على <em>خبرة حقيقية</em><br>وقيادة متخصصة</h1>
+    <p class="th-sub">يجمع فريق iRonic Health بين الخبرة التقنية العميقة والمعرفة الطبية المتخصصة والرؤية الاستراتيجية لإعادة هيكلة منظومة التأمين الصحي في مصر.</p>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="founders">
+  <div class="founders-inner">
+    <div class="reveal">
+      <div class="sec-label">القيادة التنفيذية</div>
+      <h2 class="sec-h2">المؤسسون <em>يقودون التغيير</em></h2>
+      <p class="sec-lead">مؤسسان تجمعهما رؤية واحدة: بناء منظومة صحية أكثر عدالة وكفاءة لملايين المصريين.</p>
+    </div>
+
+    <div class="founder-cards">
+
+      <!-- Sherif -->
+      <div class="founder-card reveal">
+        <div class="fc-avatar">ش</div>
+        <div class="fc-name">م. شريف شوقي</div>
+        <div class="fc-title">الرئيس التنفيذي والمؤسس</div>
+        <p class="fc-bio">
+          قائد تقني ومبتكر استراتيجي بخبرة تمتد لأكثر من 15 عامًا في بناء حلول التكنولوجيا المالية والرعاية الصحية. أسس وأدار مشاريع تقنية ناجحة في مصر والمنطقة، مع خبرة متعمقة في تكامل الأنظمة وهندسة البيانات وتطوير نماذج أعمال B2B قابلة للتوسع.
+        </p>
+        <div class="fc-tags">
+          <span class="fc-tag">تكنولوجيا المالية</span>
+          <span class="fc-tag blue">هندسة الأنظمة</span>
+          <span class="fc-tag gold">استراتيجية النمو</span>
+          <span class="fc-tag">B2B SaaS</span>
+        </div>
+        <div class="fc-contact">
+          <a href="mailto:chairman@ironicgmi.com"><span class="fc-contact-icon">✉</span> chairman@ironicgmi.com</a>
+          <a href="tel:+201555556697"><span class="fc-contact-icon">📞</span> +20 155 555 6697</a>
+        </div>
+      </div>
+
+      <!-- Dr. Islam -->
+      <div class="founder-card reveal">
+        <div class="fc-avatar" style="background:linear-gradient(135deg,#185fa5,#1d9e75)">إ</div>
+        <div class="fc-name">د. إسلام المدني</div>
+        <div class="fc-title">نائب الرئيس للشؤون الطبية والمؤسس المشارك</div>
+        <p class="fc-bio">
+          طبيب متخصص ذو خبرة تشغيلية نادرة في منظومة التأمين الصحي المصرية. عمل على مدار سنوات طويلة مع شركات التأمين والمستشفيات وجهات TPA، مما منحه فهمًا استثنائيًا للفجوات الحقيقية في المنظومة وكيفية سدّها بالتكنولوجيا.
+        </p>
+        <div class="fc-tags">
+          <span class="fc-tag blue">التأمين الصحي</span>
+          <span class="fc-tag">طب سريري</span>
+          <span class="fc-tag gold">التشغيل الطبي</span>
+          <span class="fc-tag blue">إدارة المطالبات</span>
+        </div>
+        <div class="fc-contact">
+          <a href="mailto:islam@ironicigmi.com"><span class="fc-contact-icon">✉</span> islam@ironicigmi.com</a>
+          <a href="tel:+201508281948"><span class="fc-contact-icon">📞</span> +20 150 828 1948</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STORY TIMELINE -->
+<section class="story">
+  <div class="story-inner">
+    <div class="reveal">
+      <div class="sec-label">قصة iRonic Health</div>
+      <h2 class="sec-h2">من <em>المشكلة</em> إلى الحل</h2>
+      <p class="sec-lead">رحلة بُنيت على خبرة ميدانية حقيقية وإيمان راسخ بالتغيير.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot gold"></div>
+        <div class="tl-date gold">التأسيس — 2023</div>
+        <h3 class="tl-h3">اكتشاف الفجوة</h3>
+        <p class="tl-p">بعد سنوات من العمل المشترك في منظومة التأمين الصحي، لاحظ المؤسسان أن معدل الاحتيال يصل إلى 30% من المطالبات بينما يستغرق اتخاذ القرار أسابيع. كانت المشكلة واضحة: المنظومة تعمل يدويًا في عصر البيانات.</p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot blue"></div>
+        <div class="tl-date blue">البناء — 2024</div>
+        <h3 class="tl-h3">بناء المنصة الأولى</h3>
+        <p class="tl-p">تطوير 7 وحدات ذكاء اصطناعي متكاملة تغطي كشف الاحتيال، توقع المطالبات، توجيه المستشفيات، والتسعير الديناميكي. إثبات المفهوم مع أول شريك تجريبي في السوق المصرية.</p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date">الترخيص — 2025</div>
+        <h3 class="tl-h3">ترخيص الهيئة المالية والتوافق التنظيمي</h3>
+        <p class="tl-p">الحصول على ترخيص هيئة الرقابة المالية (FRA) وتحقيق التوافق الكامل مع قانون حماية البيانات الشخصية (PDPL) وتسجيل نقابة أطباء مصر — بناء الأساس التنظيمي الصلب للتوسع.</p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="border-color:#c9a84c"></div>
+        <div class="tl-date gold">النمو — 2026</div>
+        <h3 class="tl-h3">جولة التمويل الأولى والتوسع</h3>
+        <p class="tl-p">إطلاق جولة تمويل بقيمة مليون دولار (SAFE Note) لتسريع الانتشار في السوق المصرية، وبناء الفريق، وتطوير المنصة نحو خدمة 375 ألف مؤمَّن في السنة الأولى.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="values-inner">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 1rem">
+      <div class="sec-label">قيمنا</div>
+      <h2 class="sec-h2">ما <em>يقودنا</em> كل يوم</h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="val-card reveal">
+        <span class="val-icon">🤖</span>
+        <h3 class="val-h3">الابتكار أولًا</h3>
+        <p class="val-p">نؤمن أن الذكاء الاصطناعي يمكنه حل مشاكل حقيقية معقدة — لا مجرد أتمتة العمليات القديمة.</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">🛡️</span>
+        <h3 class="val-h3">الثقة والشفافية</h3>
+        <p class="val-p">نبني علاقات طويلة الأمد مع شركائنا قائمة على الشفافية الكاملة في البيانات والنتائج.</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">⚡</span>
+        <h3 class="val-h3">السرعة والكفاءة</h3>
+        <p class="val-p">4.3 ثانية لكشف الاحتيال بدلًا من أسابيع — هذا معيارنا في كل ما نبنيه.</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">🌍</span>
+        <h3 class="val-h3">الأثر الاجتماعي</h3>
+        <p class="val-p">كل دولار نوفره من الاحتيال هو دولار يعود إلى رعاية صحية أفضل لملايين المصريين.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORS -->
+<section class="advisors">
+  <div class="advisors-inner">
+    <div class="reveal">
+      <div class="sec-label">المستشارون</div>
+      <h2 class="sec-h2">خبراء يدعمون <em>رؤيتنا</em></h2>
+      <p class="sec-lead" style="margin-bottom:0">شبكة من المستشارين الاستراتيجيين في مجالات التأمين الصحي والتكنولوجيا المالية والأسواق الناشئة.</p>
+    </div>
+
+    <div class="advisor-grid">
+      <div class="adv-card reveal">
+        <div class="adv-initials">TPA</div>
+        <div class="adv-name">خبير TPA استراتيجي</div>
+        <div class="adv-role">مستشار — إدارة الطرف الثالث</div>
+        <p class="adv-desc">خبرة 20 عامًا في إدارة شركات TPA الكبرى في مصر والشرق الأوسط. يُرشد استراتيجية الانتشار والتسعير.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-initials">AI</div>
+        <div class="adv-name">مستشار ذكاء اصطناعي</div>
+        <div class="adv-role">مستشار — هندسة البيانات والنماذج</div>
+        <p class="adv-desc">متخصص في نماذج الذكاء الاصطناعي للرعاية الصحية وكشف الاحتيال، عمل مع مؤسسات مالية إقليمية كبرى.</p>
+      </div>
+      <div class="adv-card reveal">
+        <div class="adv-initials">VC</div>
+        <div class="adv-name">مستشار استثماري</div>
+        <div class="adv-role">مستشار — جمع التمويل والنمو</div>
+        <p class="adv-desc">مستثمر متمرس في تكنولوجيا الرعاية الصحية والأسواق الناشئة في أفريقيا والشرق الأوسط.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN CTA -->
+<section class="join-cta">
+  <div class="join-cta-inner reveal">
+    <h2 class="cta-h2">هل تريد الانضمام إلى <em>رحلتنا؟</em></h2>
+    <p class="cta-p">نبحث عن مواهب استثنائية وشركاء استراتيجيين يؤمنون بمستقبل الرعاية الصحية الرقمية في مصر.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="cta-btn-primary">تواصل معنا</a>
+      <a href="investors.html" class="cta-btn-sec">فرصة الاستثمار</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">iRonic Health</div>
+      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تكتشف الاحتيال في 4.3 ثانية. مُرخَّصة من الهيئة المالية. متوافقة مع PDPL.</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <span class="footer-badge">مُرخَّصة من الهيئة المالية</span>
+        <span class="footer-badge">متوافقة مع PDPL</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">المنصة</div>
+      <div class="footer-links">
+        <a href="platform.html">وحدات الذكاء الاصطناعي</a>
+        <a href="ecosystem.html">النظام البيئي</a>
+        <a href="dashboard.html">لوحة التحكم</a>
+        <a href="pricing.html">نموذج الإيرادات</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">الشركة</div>
+      <div class="footer-links">
+        <a href="team.html">الفريق</a>
+        <a href="investors.html">المستثمرون</a>
+        <a href="market.html">السوق</a>
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">تواصل</div>
+      <div class="footer-links">
+        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="tel:+201555556697">+20 155 555 6697</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
+    <a href="../team.html" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none">🌐 English</a>
+  </div>
+</footer>
+
+</main>
+
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+
+<script>
+const toggle = document.querySelector('.nav-mobile-toggle');
+const mNav = document.querySelector('.mobile-nav');
+if(toggle && mNav){
+  toggle.addEventListener('click',()=>{
+    const open = mNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    mNav.setAttribute('aria-hidden', !open);
+  });
+}
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav = document.getElementById('nav');
+if(nav) window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY>40); });
+const st = document.getElementById('scroll-top');
+if(st){
+  window.addEventListener('scroll',()=>{ st.classList.toggle('visible', window.scrollY>400); });
+  st.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+}
+</script>
+</body>
+</html>

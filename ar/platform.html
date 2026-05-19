@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="منصة iRonic Health — 7 وحدات ذكاء اصطناعي لكشف الاحتيال وأتمتة المطالبات وتنسيق التأمين الصحي في مصر.">
+<meta property="og:title" content="المنصة — وحدات الذكاء الاصطناعي لـ iRonic Health">
+<meta property="og:type" content="website">
+<title>المنصة — وحدات الذكاء الاصطناعي · iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;overflow-x:hidden}
+
+/* ══ DESIGN TOKENS ══ */
+:root{--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94}
+
+/* ══ MODULE EVEN SECTIONS — LIGHT ══ */
+.mod-section:nth-child(even){background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+.mod-section:nth-child(even) .mod-h2{color:var(--ink1)}
+.mod-section:nth-child(even) .mod-h2 em{color:#c9a84c}
+.mod-section:nth-child(even) .mod-eyebrow{color:rgba(10,22,40,.4)}
+.mod-section:nth-child(even) .mod-p{color:var(--ink3)}
+.mod-section:nth-child(even) .mod-feature{color:var(--ink3)}
+.mod-section:nth-child(even) .mod-feature strong{color:var(--ink1)}
+.mod-section:nth-child(even) .mod-metric-val{color:var(--ink1)}
+.mod-section:nth-child(even) .mod-metric-lbl{color:var(--ink4)}
+.mod-section:nth-child(even) .mod-ui-mock{background:var(--lt1);border-color:#dde8f5;box-shadow:0 4px 20px rgba(10,22,40,.08)}
+
+/* ══ NAV RTL ══ */
+.nav{direction:rtl}
+.nav-center a{font-family:'Cairo',sans-serif}
+.nav-logo-text{text-align:right}
+.logo-wordmark,.logo-tagline{font-family:'Cairo',sans-serif}
+.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
+
+/* ══ HERO ══ */
+.plat-hero{
+  min-height:72vh;
+  background:linear-gradient(145deg,#060f1c 0%,#0a1628 60%,#0d1f3a 100%);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 5% 80px;position:relative;overflow:hidden;
+}
+.plat-hero-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle 700px at 20% 40%,rgba(24,95,165,.12) 0%,transparent 60%),
+                   radial-gradient(circle 400px at 90% 80%,rgba(201,168,76,.06) 0%,transparent 50%);}
+.plat-hero-grid{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:40px 40px;}
+.plat-hero-inner{position:relative;z-index:1;max-width:760px}
+.plat-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);
+  border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;
+  font-size:.82rem;font-weight:700;color:#c9a84c;letter-spacing:.04em;
+  font-family:'Cairo',sans-serif;}
+.plat-h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;line-height:1.1;
+  color:#fff;margin-bottom:1.25rem;font-family:'Cairo',sans-serif;}
+.plat-h1 em{color:#c9a84c;font-style:normal}
+.plat-sub{font-size:1.05rem;color:rgba(255,255,255,.58);line-height:1.85;
+  max-width:600px;margin-bottom:2.5rem;font-family:'Cairo',sans-serif;}
+.plat-hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.phs-val{font-size:1.8rem;font-weight:900;color:#fff;font-family:'Cairo',sans-serif;line-height:1}
+.phs-val.gold{color:#c9a84c}.phs-val.green{color:#1d9e75}.phs-val.blue{color:#378add}
+.phs-lbl{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.25rem;font-family:'Cairo',sans-serif}
+
+/* ══ MODULE STICKY NAV ══ */
+.mod-sticky-nav{position:sticky;top:70px;z-index:90;
+  background:rgba(10,22,40,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  padding:0 5%;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;direction:rtl}
+.mod-sticky-nav::-webkit-scrollbar{display:none}
+.msn-link{padding:.85rem 1.1rem;font-size:.82rem;color:rgba(255,255,255,.38);
+  text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;
+  transition:all .2s;font-family:'Cairo',sans-serif;font-weight:600;
+  display:flex;align-items:center;gap:6px}
+.msn-link:hover{color:rgba(255,255,255,.72)}
+.msn-link.msn-active{color:#c9a84c;border-bottom-color:#c9a84c}
+
+/* ══ MODULE SECTIONS ══ */
+.mod-section{padding:6rem 5%;border-bottom:1px solid rgba(255,255,255,.05)}
+.mod-section:nth-child(odd){background:#060f1c}
+/* even sections — light, handled by token overrides above */
+.mod-layout{max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.mod-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin-bottom:.625rem;font-family:'Cairo',sans-serif;
+  display:flex;align-items:center;gap:8px}
+.mod-num-pill{background:rgba(201,168,76,.15);color:#c9a84c;border:1px solid rgba(201,168,76,.25);
+  border-radius:4px;padding:2px 8px;font-size:.65rem;font-weight:700}
+.mod-h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.15;color:#fff;
+  margin-bottom:1rem;font-family:'Cairo',sans-serif}
+.mod-h2 em{color:#c9a84c;font-style:normal}
+.mod-desc{font-size:.9rem;color:rgba(255,255,255,.55);line-height:1.85;margin-bottom:1.5rem}
+
+/* How it works */
+.how-it-works{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+.hiw-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);
+  text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem;font-family:'Cairo',sans-serif}
+.hiw-steps{display:flex;flex-direction:column;gap:.625rem}
+.hiw-step{display:flex;align-items:flex-start;gap:.75rem}
+.hiw-n{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,.2);
+  color:#c9a84c;font-size:.72rem;font-weight:700;display:flex;align-items:center;
+  justify-content:center;flex-shrink:0;margin-top:1px}
+.hiw-txt{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.65;font-family:'Cairo',sans-serif}
+.hiw-txt strong{color:rgba(255,255,255,.85);font-weight:600}
+
+/* Metrics */
+.mod-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+.mod-metric{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+  border-radius:10px;padding:1rem 1.1rem}
+.mod-metric-val{font-size:1.5rem;font-weight:900;line-height:1;margin-bottom:.25rem;font-family:'Cairo',sans-serif}
+.mod-metric-val.gold{color:#c9a84c}.mod-metric-val.green{color:#1d9e75}.mod-metric-val.blue{color:#378add}
+.mod-metric-lbl{font-size:.72rem;color:rgba(255,255,255,.38);font-family:'Cairo',sans-serif}
+
+/* Mock UI */
+.mock-wrap{background:#0d1b2e;border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden}
+.mock-topbar{background:#060f1c;padding:.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);flex-direction:row-reverse}
+.mock-tb-title{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.7);font-family:'Cairo',sans-serif}
+.mock-tb-badge{font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px;font-family:'Cairo',sans-serif}
+.badge-red{background:rgba(216,90,48,.2);color:#e07050}.badge-green{background:rgba(29,158,117,.2);color:#5dcaa5}.badge-amber{background:rgba(201,168,76,.2);color:#c9a84c}.badge-blue{background:rgba(24,95,165,.2);color:#7fb3e8}
+.mock-body{padding:1.25rem}
+.claim-info{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-bottom:1rem}
+.ci-field{background:rgba(255,255,255,.04);border-radius:8px;padding:.625rem .75rem}
+.ci-lbl{font-size:.65rem;color:rgba(255,255,255,.3);margin-bottom:2px;font-family:'Cairo',sans-serif}
+.ci-val{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.8);font-family:'Cairo',sans-serif}
+.score-gauge-wrap{text-align:center;margin:1rem 0}
+.score-ring{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .5rem;font-family:'Cairo',sans-serif}
+.score-ring.high{background:rgba(216,90,48,.15);border:3px solid rgba(216,90,48,.5)}
+.score-ring.medium{background:rgba(201,168,76,.15);border:3px solid rgba(201,168,76,.5)}
+.score-num{font-size:1.5rem;font-weight:900}
+.score-num.high{color:#e07050}.score-num.medium{color:#c9a84c}
+.score-label{font-size:.72rem;color:rgba(255,255,255,.4);font-family:'Cairo',sans-serif}
+.arch-list{display:flex;flex-direction:column;gap:.375rem;margin-bottom:1rem}
+.arch-item{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.04);padding:.5rem .75rem;border-radius:7px}
+.arch-name{font-size:.76rem;color:rgba(255,255,255,.7);font-family:'Cairo',sans-serif}
+.arch-pct{font-size:.72rem;font-weight:700;color:#e07050;font-family:'Cairo',sans-serif}
+.mock-actions{display:flex;gap:.5rem}
+.ma-btn{flex:1;padding:.6rem;border-radius:7px;font-size:.76rem;font-weight:700;text-align:center;cursor:pointer;font-family:'Cairo',sans-serif}
+.ma-btn.success{background:rgba(29,158,117,.2);color:#5dcaa5;border:1px solid rgba(29,158,117,.3)}
+.ma-btn.primary{background:rgba(24,95,165,.2);color:#7fb3e8;border:1px solid rgba(24,95,165,.3)}
+.ma-btn.danger{background:rgba(216,90,48,.2);color:#e07050;border:1px solid rgba(216,90,48,.3)}
+
+/* Health score mock */
+.member-row{display:flex;align-items:center;gap:.875rem;margin-bottom:1rem;flex-direction:row-reverse}
+.mem-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#185fa5,#0c447c);color:#fff;font-size:.9rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mem-name{font-size:.9rem;font-weight:700;color:#fff;font-family:'Cairo',sans-serif}
+.mem-id{font-size:.72rem;color:rgba(255,255,255,.38);font-family:'Cairo',sans-serif}
+.risk-bar-wrap{margin:1rem 0}
+.rb-label{display:flex;justify-content:space-between;margin-bottom:.375rem}
+.rb-txt{font-size:.72rem;color:rgba(255,255,255,.45);font-family:'Cairo',sans-serif}
+.rb-val{font-size:.72rem;font-weight:700;color:#e07050;font-family:'Cairo',sans-serif}
+.rb-track{height:8px;background:rgba(255,255,255,.08);border-radius:4px}
+.rb-fill{height:8px;border-radius:4px;background:linear-gradient(90deg,#1d9e75,#c9a84c,#e07050)}
+.score-factors{display:flex;flex-direction:column;gap:.5rem}
+.sf-row{display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(255,255,255,.03);border-radius:7px}
+.sf-name{font-size:.76rem;color:rgba(255,255,255,.6);font-family:'Cairo',sans-serif}
+.sf-impact{font-size:.72rem;font-weight:700;font-family:'Cairo',sans-serif}
+.sf-impact.bad{color:#e07050}.sf-impact.warn{color:#c9a84c}.sf-impact.good{color:#1d9e75}
+
+/* Routing mock */
+.route-list{display:flex;flex-direction:column;gap:.5rem}
+.route-item{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.04);border-radius:8px;padding:.75rem 1rem}
+.route-rank{width:24px;height:24px;border-radius:50%;background:rgba(201,168,76,.2);color:#c9a84c;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.route-name{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.8);font-family:'Cairo',sans-serif}
+.route-dist{font-size:.68rem;color:rgba(255,255,255,.35);font-family:'Cairo',sans-serif}
+.route-score{font-size:.85rem;font-weight:700;color:#1d9e75;font-family:'Cairo',sans-serif}
+
+/* FOOTER */
+.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;font-family:'Cairo',sans-serif;direction:rtl}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.375rem}
+.footer-brand-tag{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:1rem}
+.footer-col-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem}
+.footer-links{display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#c9a84c}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.75rem}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
+.footer-badges{display:flex;gap:.75rem;flex-wrap:wrap}
+.footer-badge{font-size:.65rem;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35)}
+
+/* SCROLL TOP */
+#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
+  background:#185fa5;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;font-size:1.1rem;box-shadow:0 4px 20px rgba(24,95,165,.4);
+  opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:999;pointer-events:none}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#scroll-top:hover{background:#0c447c}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+
+@media(max-width:860px){
+  .mod-layout{grid-template-columns:1fr;gap:2rem}
+  .plat-hero{padding:120px 5% 60px}
+  .mod-metrics{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .plat-h1{font-size:2rem}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav" role="banner">
+  <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">تقنية تكامل المنظومة الصحية</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="التنقل الرئيسي">
+    <a href="index.html#problem">المشكلة</a>
+    <a href="platform.html" class="nav-active">المنصة</a>
+    <a href="ecosystem.html">النظام البيئي</a>
+    <a href="dashboard.html">لوحة التحكم</a>
+    <a href="market.html">السوق</a>
+    <a href="pricing.html">الإيرادات</a>
+    <a href="team.html">الفريق</a>
+    <a href="investors.html">المستثمرون</a>
+  </nav>
+  <div class="nav-right">
+    <a href="../platform.html" class="btn-lang">🌐 English</a>
+    <a href="contact.html" class="btn-demo">طلب عرض تجريبي ←</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="فتح القائمة" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="التنقل المحمول" aria-hidden="true">
+  <a href="index.html#problem">المشكلة</a>
+  <a href="platform.html">المنصة</a>
+  <a href="ecosystem.html">النظام البيئي</a>
+  <a href="dashboard.html">لوحة التحكم</a>
+  <a href="market.html">السوق</a>
+  <a href="pricing.html">الإيرادات</a>
+  <a href="team.html">الفريق</a>
+  <a href="investors.html">المستثمرون</a>
+  <a href="contact.html" class="mobile-demo-btn">طلب عرض تجريبي ←</a>
+</div>
+
+<main>
+
+<!-- ═══ HERO ═══ -->
+<section class="plat-hero" aria-label="نظرة عامة على المنصة">
+  <div class="plat-hero-bg" aria-hidden="true"></div>
+  <div class="plat-hero-grid" aria-hidden="true"></div>
+  <div class="plat-hero-inner reveal">
+    <div class="plat-badge">⚙ استعراض تفصيلي للمنصة</div>
+    <h1 class="plat-h1">7 وحدات ذكاء اصطناعي.<br><em>طبقة ذكاء واحدة.</em></h1>
+    <p class="plat-sub">نشرها بشكل فردي أو كمنصة متكاملة. كل وحدة مصممة للسوق المصري، متوافقة مع هيئة الرقابة المالية، وتحقق عائدًا ملموسًا من اليوم الأول — بدون تكلفة مقدمة في مرحلة التجريب.</p>
+    <div class="plat-hero-stats">
+      <div class="phs"><div class="phs-val gold">7</div><div class="phs-lbl">وحدات ذكاء اصطناعي</div></div>
+      <div class="phs"><div class="phs-val">25–40</div><div class="phs-lbl">نمطاً للاحتيال</div></div>
+      <div class="phs"><div class="phs-val green">94.2%</div><div class="phs-lbl">دقة الكشف</div></div>
+      <div class="phs"><div class="phs-val blue">&lt;5ث</div><div class="phs-lbl">قرار المطالبة</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE STICKY NAV ═══ -->
+<div class="mod-sticky-nav" role="navigation" aria-label="التنقل بين الوحدات">
+  <a href="#mod-1" class="msn-link msn-active">كشف الاحتيال</a>
+  <a href="#mod-2" class="msn-link">النقاط الصحية</a>
+  <a href="#mod-3" class="msn-link">توقع المطالبات</a>
+  <a href="#mod-4" class="msn-link">توجيه المستشفيات</a>
+  <a href="#mod-5" class="msn-link">الرعاية الوقائية</a>
+  <a href="#mod-6" class="msn-link">الأقساط الديناميكية</a>
+  <a href="#mod-7" class="msn-link">لوحة التحكم</a>
+</div>
+
+<!-- ═══ MODULE 1 — FRAUD DETECTION ═══ -->
+<section class="mod-section" id="mod-1" aria-labelledby="mod1-heading">
+  <div class="mod-layout">
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">الوحدة 01</span>ذكاء اصطناعي مصري</div>
+      <h2 class="mod-h2" id="mod1-heading">وحدة كشف <em>الاحتيال بالذكاء الاصطناعي</em></h2>
+      <p class="mod-desc">تسجيل آني بالذكاء الاصطناعي لكل مطالبة باستخدام 25–40 نمطًا للاحتيال خاصًا بمصر. النظام الوحيد المدرّب على بيانات المطالبات المصرية، ورموز ICD/CPT، وأنماط الصيدليات المحلية، وفئات الاحتيال التي تحددها الهيئة المالية.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">كيف يعمل النظام</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>تقديم المطالبة</strong> — يُرسل المستشفى أو الصيدلية المطالبة عبر API في الوقت الفعلي</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>تسجيل الذكاء الاصطناعي</strong> — يعالج النظام جميع 25–40 نمطًا خلال 4.3 ثانية فقط</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>اتخاذ القرار تلقائيًا:</strong> موافقة تلقائية (&lt;30) · مراجعة الطبيب (30–70) · رفض تلقائي (&gt;70)</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>مراجعة الطبيب</strong> للمطالبات المُبلَّغ عنها مع منطق الذكاء الاصطناعي الكامل وأدلة النمط</div></div>
+          <div class="hiw-step"><div class="hiw-n">5</div><div class="hiw-txt"><strong>مسار تدقيق الهيئة المالية</strong> يُولَّد تلقائيًا لكل قرار — امتثال تنظيمي 100%</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val green">94.2%</div><div class="mod-metric-lbl">دقة الكشف</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">4.3ث</div><div class="mod-metric-lbl">متوسط وقت التسجيل</div></div>
+        <div class="mod-metric"><div class="mod-metric-val gold">25–40%</div><div class="mod-metric-lbl">معدل استرداد الاحتيال</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">100%</div><div class="mod-metric-lbl">تغطية تدقيق الهيئة المالية</div></div>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-badge badge-red">⚠ مخاطرة عالية</span>
+          <span class="mock-tb-title">🔍 تحليل الاحتيال — مطالبة #IRH-4821</span>
+        </div>
+        <div class="mock-body">
+          <div class="claim-info">
+            <div class="ci-field"><div class="ci-lbl">المزود</div><div class="ci-val">المركز الطبي القاهرة</div></div>
+            <div class="ci-field"><div class="ci-lbl">المبلغ</div><div class="ci-val">3,200 ج.م</div></div>
+            <div class="ci-field"><div class="ci-lbl">النوع</div><div class="ci-val">صيدلية</div></div>
+          </div>
+          <div class="score-gauge-wrap">
+            <div class="score-ring high"><span class="score-num high">87</span></div>
+            <div class="score-label">درجة مخاطر الاحتيال (من 100)</div>
+          </div>
+          <div class="arch-list">
+            <div class="arch-item"><span class="arch-name">🔴 وصفة وهمية</span><span class="arch-pct">82% تطابق</span></div>
+            <div class="arch-item"><span class="arch-name">🔴 تزوير يونيكتام</span><span class="arch-pct">71% تطابق</span></div>
+            <div class="arch-item"><span class="arch-name">🟡 ترميز علامة تجارية</span><span class="arch-pct">44% تطابق</span></div>
+          </div>
+          <div class="mock-actions">
+            <div class="ma-btn success">✓ موافقة</div>
+            <div class="ma-btn primary">⚐ مراجعة طبية</div>
+            <div class="ma-btn danger">✗ رفض</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 2 — HEALTH SCORE ═══ -->
+<section class="mod-section" id="mod-2" aria-labelledby="mod2-heading">
+  <div class="mod-layout">
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-badge badge-red">مخاطرة عالية</span>
+          <span class="mock-tb-title">🧠 درجة التأمين الصحي</span>
+        </div>
+        <div class="mock-body">
+          <div class="member-row">
+            <div class="mem-avatar">سم</div>
+            <div><div class="mem-name">سارة محمود</div><div class="mem-id">IRH-2026-00101 · الفئة أ</div></div>
+          </div>
+          <div class="risk-bar-wrap">
+            <div class="rb-label"><span class="rb-txt">درجة المخاطرة</span><span class="rb-val">78/100</span></div>
+            <div class="rb-track"><div class="rb-fill" style="width:78%"></div></div>
+          </div>
+          <div class="score-factors">
+            <div class="sf-row"><span class="sf-name">زيارات مكررة للطوارئ</span><span class="sf-impact bad">+22 نقطة</span></div>
+            <div class="sf-row"><span class="sf-name">عدم الالتزام بالأدوية</span><span class="sf-impact warn">+15 نقطة</span></div>
+            <div class="sf-row"><span class="sf-name">الفحوصات الوقائية</span><span class="sf-impact good">−8 نقاط</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">الوحدة 02</span>ذكاء اكتواري</div>
+      <h2 class="mod-h2" id="mod2-heading">درجة الصحة <em>التأمينية</em></h2>
+      <p class="mod-desc">يُنشئ الذكاء الاصطناعي درجة صحية تنبؤية لكل مؤمَّن — لا درجة عامة للرفاهية، بل درجة للمطالبات. يُحدد الأعضاء عالي التكلفة قبل تصعيد مطالباتهم، ويُمكّن التدخل الاستباقي.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">عوامل المخاطرة</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>نمط الاستخدام الطبي</strong> — زيارات الطوارئ، ومعدل الاستشفاء، ومتوسط تكلفة المطالبات</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>بيانات الوصفات</strong> — الالتزام بالأدوية، والأدوية المزمنة، وبروتوكولات الأمراض</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>ملف المزود</strong> — أنماط إحالة الأطباء، والمرافق عالية التكلفة</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>خوارزمية الحساب</strong> — يُحدّث النظام الدرجات في الوقت الفعلي مع كل مطالبة</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">أعلى 20%</div><div class="mod-metric-lbl">مسؤولون عن 80% من التكاليف</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">−15%</div><div class="mod-metric-lbl">تحسّن نسبة الخسائر</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">فوري</div><div class="mod-metric-lbl">تحديث درجة آني</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">الكل</div><div class="mod-metric-lbl">إمكانية قراءة الأعضاء</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 3 — CLAIM PREDICTOR ═══ -->
+<section class="mod-section" id="mod-3" aria-labelledby="mod3-heading">
+  <div class="mod-layout">
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">الوحدة 03</span>ذكاء اكتواري</div>
+      <h2 class="mod-h2" id="mod3-heading">منظومة التنبؤ <em>بالمطالبات</em></h2>
+      <p class="mod-desc">يتوقع الذكاء الاصطناعي حجم المطالبات وتوزيعها لـ 30 و90 و180 يومًا مقبلة، مما يمكّن شركات التأمين من ضبط الاحتياطيات بدقة وتحسين التدفق النقدي، وتخطيط إعادة التأمين بصورة آنية.</p>
+      <div class="how-it-works">
+        <div class="hiw-title">المنهجية التحليلية</div>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-n">1</div><div class="hiw-txt"><strong>المدخلات التاريخية</strong> — 24 شهرًا من بيانات المطالبات بحسب الخدمة والمزود والنوع</div></div>
+          <div class="hiw-step"><div class="hiw-n">2</div><div class="hiw-txt"><strong>التعديلات الموسمية</strong> — موجات الإنفلونزا، ومواسم الأعياد، وبيانات خدمات الطوارئ</div></div>
+          <div class="hiw-step"><div class="hiw-n">3</div><div class="hiw-txt"><strong>درجات المحفظة</strong> — تصاعد مخاطر أفراد المحفظة يُوجّه التوقعات بشكل مستمر</div></div>
+          <div class="hiw-step"><div class="hiw-n">4</div><div class="hiw-txt"><strong>المخرجات الاكتوارية</strong> — خطة تحتياطيات أسبوعية وتوصيات إعادة التأمين</div></div>
+        </div>
+      </div>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">±8%</div><div class="mod-metric-lbl">دقة التوقع لـ 90 يومًا</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">−18%</div><div class="mod-metric-lbl">تحسّن احتياطيات رأس المال</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">30/90/180</div><div class="mod-metric-lbl">أُفق التوقع (أيام)</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">الكل</div><div class="mod-metric-lbl">محاكاة إعادة التأمين</div></div>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-badge badge-amber">تنبؤ الربع القادم</span>
+          <span class="mock-tb-title">📊 توقعات المطالبات — Q3 2026</span>
+        </div>
+        <div class="mock-body">
+          <div style="display:flex;flex-direction:column;gap:.75rem">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem .875rem;background:rgba(255,255,255,.04);border-radius:8px">
+              <span style="font-size:.78rem;color:rgba(255,255,255,.6);font-family:'Cairo',sans-serif">30 يومًا</span>
+              <span style="font-size:.9rem;font-weight:700;color:#1d9e75;font-family:'Cairo',sans-serif">2.4 مليون ج.م</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem .875rem;background:rgba(255,255,255,.04);border-radius:8px">
+              <span style="font-size:.78rem;color:rgba(255,255,255,.6);font-family:'Cairo',sans-serif">90 يومًا</span>
+              <span style="font-size:.9rem;font-weight:700;color:#c9a84c;font-family:'Cairo',sans-serif">7.1 مليون ج.م</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:.625rem .875rem;background:rgba(255,255,255,.04);border-radius:8px">
+              <span style="font-size:.78rem;color:rgba(255,255,255,.6);font-family:'Cairo',sans-serif">180 يومًا</span>
+              <span style="font-size:.9rem;font-weight:700;color:#378add;font-family:'Cairo',sans-serif">13.8 مليون ج.م</span>
+            </div>
+          </div>
+          <div style="margin-top:1rem;padding:.75rem;background:rgba(29,158,117,.08);border:1px solid rgba(29,158,117,.2);border-radius:8px;font-size:.76rem;color:#5dcaa5;font-family:'Cairo',sans-serif">
+            ✓ التحليل: الموجات الموسمية تتوقع ارتفاعًا في خدمات الأطفال بنسبة +12% — يُوصى بزيادة إعادة التأمين
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 4 — HOSPITAL ROUTING ═══ -->
+<section class="mod-section" id="mod-4" aria-labelledby="mod4-heading">
+  <div class="mod-layout">
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-badge badge-green">العثور على 5 مزودين</span>
+          <span class="mock-tb-title">🏥 توجيه المريض</span>
+        </div>
+        <div class="mock-body">
+          <div style="margin-bottom:.75rem;font-size:.76rem;color:rgba(255,255,255,.45);font-family:'Cairo',sans-serif">التشخيص: جراحة الركبة · موقع المريض: المعادي، القاهرة</div>
+          <div class="route-list">
+            <div class="route-item">
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <div class="route-name">المركز الطبي السعودي الألماني</div>
+                <div class="route-dist">2.3 كم · تقييم الجودة: ممتاز</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:.5rem">
+                <div class="route-score">94</div>
+                <div class="route-rank">1</div>
+              </div>
+            </div>
+            <div class="route-item">
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <div class="route-name">مجموعة كليوباترا</div>
+                <div class="route-dist">4.1 كم · تقييم الجودة: جيد جداً</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:.5rem">
+                <div class="route-score">87</div>
+                <div class="route-rank">2</div>
+              </div>
+            </div>
+            <div class="route-item">
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <div class="route-name">مستشفى السلام</div>
+                <div class="route-dist">6.7 كم · تقييم الجودة: جيد</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:.5rem">
+                <div class="route-score">79</div>
+                <div class="route-rank">3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">الوحدة 04</span>ذكاء الشبكة</div>
+      <h2 class="mod-h2" id="mod4-heading">توجيه المريض <em>نحو المستشفيات</em></h2>
+      <p class="mod-desc">يُوجّه المرضى تلقائيًا إلى أفضل مزود في شبكتهم بناءً على التشخيص والتخصص والموقع وبيانات الجودة وتكلفة المطالبات السابقة — مُحقِّقًا توازنًا بين خيار المريض وضبط تكاليف المؤمِّن.</p>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">−12%</div><div class="mod-metric-lbl">تكلفة المطالبات عبر التوجيه</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">آني</div><div class="mod-metric-lbl">توافر الأسرة والمواعيد</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">100+</div><div class="mod-metric-lbl">مستشفى في الشبكة</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">5+</div><div class="mod-metric-lbl">معايير التقييم</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 5 — PREVENTIVE CARE ═══ -->
+<section class="mod-section" id="mod-5" aria-labelledby="mod5-heading">
+  <div class="mod-layout">
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">الوحدة 05</span>ذكاء السكان</div>
+      <h2 class="mod-h2" id="mod5-heading">منصة الرعاية <em>الوقائية</em></h2>
+      <p class="mod-desc">تُرسل تنبيهات مخصصة للأعضاء في مراحل المخاطرة العالية: تذكيرات الفحص الدوري، وتنبيهات الالتزام بالأدوية المزمنة، وإرشادات إدارة الحالات — مما يُقلل التداخل الوقائي القابل للتجنب قبل تصاعده إلى مطالبات مكلفة.</p>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">−23%</div><div class="mod-metric-lbl">تراجع الاستشفاء القابل للتجنب</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">+34%</div><div class="mod-metric-lbl">الالتزام بالأدوية المزمنة</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">آني</div><div class="mod-metric-lbl">إشعارات المخاطرة العالية</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">6 أشهر</div><div class="mod-metric-lbl">أُفق الاستباق</div></div>
+      </div>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-badge badge-amber">3 تنبيهات نشطة</span>
+          <span class="mock-tb-title">💊 تنبيهات الرعاية الوقائية</span>
+        </div>
+        <div class="mock-body">
+          <div style="display:flex;flex-direction:column;gap:.625rem">
+            <div style="padding:.75rem;background:rgba(216,90,48,.08);border:1px solid rgba(216,90,48,.2);border-radius:8px">
+              <div style="font-size:.78rem;font-weight:700;color:#e07050;margin-bottom:3px;font-family:'Cairo',sans-serif">⚠ مخاطرة عالية — 12 عضوًا</div>
+              <div style="font-size:.72rem;color:rgba(255,255,255,.5);font-family:'Cairo',sans-serif">غير ملتزمين بعلاج السكري — احتمال 78% للتنويم خلال 90 يومًا</div>
+            </div>
+            <div style="padding:.75rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px">
+              <div style="font-size:.78rem;font-weight:700;color:#c9a84c;margin-bottom:3px;font-family:'Cairo',sans-serif">📋 مخاطرة متوسطة — 38 عضوًا</div>
+              <div style="font-size:.72rem;color:rgba(255,255,255,.5);font-family:'Cairo',sans-serif">تأخر أكثر من 6 أشهر عن فحص ضغط الدم المجدول</div>
+            </div>
+            <div style="padding:.75rem;background:rgba(29,158,117,.08);border:1px solid rgba(29,158,117,.2);border-radius:8px">
+              <div style="font-size:.78rem;font-weight:700;color:#5dcaa5;margin-bottom:3px;font-family:'Cairo',sans-serif">✓ تدخل ناجح — 7 أعضاء</div>
+              <div style="font-size:.72rem;color:rgba(255,255,255,.5);font-family:'Cairo',sans-serif">انتهوا من الفحوصات الدورية — توفير متوقع 18,400 ج.م</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 6 — DYNAMIC PREMIUMS ═══ -->
+<section class="mod-section" id="mod-6" aria-labelledby="mod6-heading">
+  <div class="mod-layout">
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-badge badge-blue">تجديد تعاقد Q4</span>
+          <span class="mock-tb-title">💰 توصية القسط الديناميكي</span>
+        </div>
+        <div class="mock-body">
+          <div style="display:flex;flex-direction:column;gap:.625rem">
+            <div style="display:flex;justify-content:space-between;padding:.625rem .875rem;background:rgba(255,255,255,.04);border-radius:8px">
+              <span style="font-size:.78rem;color:rgba(255,255,255,.55);font-family:'Cairo',sans-serif">المجموعة أ (مخاطرة منخفضة)</span>
+              <span style="font-size:.82rem;font-weight:700;color:#1d9e75;font-family:'Cairo',sans-serif">−5% تعديل قسط</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:.625rem .875rem;background:rgba(255,255,255,.04);border-radius:8px">
+              <span style="font-size:.78rem;color:rgba(255,255,255,.55);font-family:'Cairo',sans-serif">المجموعة ب (مخاطرة متوسطة)</span>
+              <span style="font-size:.82rem;font-weight:700;color:#c9a84c;font-family:'Cairo',sans-serif">+3% تعديل قسط</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:.625rem .875rem;background:rgba(255,255,255,.04);border-radius:8px">
+              <span style="font-size:.78rem;color:rgba(255,255,255,.55);font-family:'Cairo',sans-serif">المجموعة ج (مخاطرة عالية)</span>
+              <span style="font-size:.82rem;font-weight:700;color:#e07050;font-family:'Cairo',sans-serif">+18% تعديل قسط</span>
+            </div>
+            <div style="margin-top:.5rem;padding:.75rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;font-size:.76rem;color:#c9a84c;font-family:'Cairo',sans-serif">
+              💡 التوقع: تحسّن نسبة الخسائر 4.2 نقطة في الدورة الجديدة
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">الوحدة 06</span>ذكاء التسعير</div>
+      <h2 class="mod-h2" id="mod6-heading">نظام الأقساط <em>الديناميكية</em></h2>
+      <p class="mod-desc">يُنشئ الذكاء الاصطناعي توصيات تعديل أقساط قابلة للتدقيق استنادًا إلى الملف الفعلي لمحافظ العملاء — مما يُمكّن شركات التأمين من تسعير المخاطر بدقة أكبر وتحسين نسب الخسائر في وقت التجديد.</p>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">+4.2 نقطة</div><div class="mod-metric-lbl">تحسّن نسبة الخسائر</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">تجديد</div><div class="mod-metric-lbl">توصيات الأقساط التلقائية</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">PDPL</div><div class="mod-metric-lbl">متوافق مع حماية البيانات</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">FRA</div><div class="mod-metric-lbl">مسار تدقيق كامل</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODULE 7 — GOLDEN DASHBOARD ═══ -->
+<section class="mod-section" id="mod-7" aria-labelledby="mod7-heading">
+  <div class="mod-layout">
+    <div class="reveal">
+      <div class="mod-eyebrow"><span class="mod-num-pill">الوحدة 07</span>حوكمة البيانات</div>
+      <h2 class="mod-h2" id="mod7-heading">لوحة التحكم <em>الذهبية</em></h2>
+      <p class="mod-desc">لوحة تحليلات مركزية تمنح كل طرف من الأطراف الثمانية رؤية شاملة لبياناته في الوقت الفعلي — من نسبة خسائر المؤمِّن، إلى معدلات دفع الصيدلية، إلى مؤشرات أداء المستشفى. لا مزيد من الثغرات المعلوماتية.</p>
+      <div class="mod-metrics">
+        <div class="mod-metric"><div class="mod-metric-val gold">8</div><div class="mod-metric-lbl">أطراف متصلة</div></div>
+        <div class="mod-metric"><div class="mod-metric-val green">آني</div><div class="mod-metric-lbl">تحديث البيانات</div></div>
+        <div class="mod-metric"><div class="mod-metric-val blue">FRA</div><div class="mod-metric-lbl">تقارير متوافقة</div></div>
+        <div class="mod-metric"><div class="mod-metric-val">100%</div><div class="mod-metric-lbl">مسار تدقيق كامل</div></div>
+      </div>
+      <a href="dashboard.html" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:1.5rem;padding:.75rem 1.5rem;background:linear-gradient(135deg,#185fa5,#0c447c);border-radius:8px;color:#fff;font-family:'Cairo',sans-serif;font-size:.9rem;font-weight:700;text-decoration:none">
+        استعراض لوحة التحكم المباشرة ←
+      </a>
+    </div>
+    <div class="reveal reveal-d2">
+      <div class="mock-wrap">
+        <div class="mock-topbar">
+          <span class="mock-tb-badge badge-green">● مباشر</span>
+          <span class="mock-tb-title">📊 لوحة التحكم الذهبية</span>
+        </div>
+        <div class="mock-body">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:.75rem">
+            <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:.75rem;text-align:center"><div style="font-size:1.2rem;font-weight:900;color:#c9a84c;font-family:'Cairo',sans-serif">73%</div><div style="font-size:.68rem;color:rgba(255,255,255,.38);font-family:'Cairo',sans-serif">نسبة الخسائر</div></div>
+            <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:.75rem;text-align:center"><div style="font-size:1.2rem;font-weight:900;color:#1d9e75;font-family:'Cairo',sans-serif">87%</div><div style="font-size:.68rem;color:rgba(255,255,255,.38);font-family:'Cairo',sans-serif">موافقة تلقائية</div></div>
+            <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:.75rem;text-align:center"><div style="font-size:1.2rem;font-weight:900;color:#378add;font-family:'Cairo',sans-serif">4.3ث</div><div style="font-size:.68rem;color:rgba(255,255,255,.38);font-family:'Cairo',sans-serif">وقت القرار</div></div>
+            <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:.75rem;text-align:center"><div style="font-size:1.2rem;font-weight:900;color:#e07050;font-family:'Cairo',sans-serif">2.4M</div><div style="font-size:.68rem;color:rgba(255,255,255,.38);font-family:'Cairo',sans-serif">احتيال مُستَرَد (ج.م)</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">iRonic Health</div>
+      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تكتشف الاحتيال في 4.3 ثانية. مُرخَّصة من الهيئة المالية. متوافقة مع PDPL.</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <span class="footer-badge">مُرخَّصة من الهيئة المالية</span>
+        <span class="footer-badge">متوافقة مع PDPL</span>
+        <span class="footer-badge">نقابة أطباء مصر</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">المنصة</div>
+      <div class="footer-links">
+        <a href="platform.html">وحدات الذكاء الاصطناعي</a>
+        <a href="ecosystem.html">النظام البيئي</a>
+        <a href="dashboard.html">لوحة التحكم</a>
+        <a href="pricing.html">نموذج الإيرادات</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">الشركة</div>
+      <div class="footer-links">
+        <a href="team.html">الفريق</a>
+        <a href="investors.html">المستثمرون</a>
+        <a href="market.html">السوق</a>
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">تواصل</div>
+      <div class="footer-links">
+        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="tel:+201555556697">+20 155 555 6697</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
+    <a href="../platform.html" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none">🌐 English</a>
+  </div>
+</footer>
+
+</main>
+
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+
+<script>
+// Mobile nav
+const toggle = document.querySelector('.nav-mobile-toggle');
+const mNav = document.querySelector('.mobile-nav');
+if(toggle && mNav){
+  toggle.addEventListener('click',()=>{
+    const open = mNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    mNav.setAttribute('aria-hidden', !open);
+  });
+}
+// Reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Nav scroll
+const nav = document.getElementById('nav');
+if(nav) window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY>40); });
+// Scroll top
+const st = document.getElementById('scroll-top');
+if(st){
+  window.addEventListener('scroll',()=>{ st.classList.toggle('visible', window.scrollY>400); });
+  st.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+}
+// Module sticky nav active
+const msnLinks = document.querySelectorAll('.msn-link');
+const modSections = document.querySelectorAll('.mod-section');
+const modObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id = e.target.id;
+      msnLinks.forEach(l=>l.classList.remove('msn-active'));
+      const al = document.querySelector(`.msn-link[href="#${id}"]`);
+      if(al) al.classList.add('msn-active');
+    }
+  });
+},{threshold:.4});
+modSections.forEach(s=>modObs.observe(s));
+</script>
+</body>
+</html>

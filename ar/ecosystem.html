@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="النظام البيئي لـ iRonic Health — ربط 8 أطراف في منظومة التأمين الصحي المصرية.">
+<title>النظام البيئي — iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;overflow-x:hidden}
+
+/* ══ DESIGN TOKENS ══ */
+:root{--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94}
+
+/* ══ BEFORE/AFTER SECTION — LIGHT ══ */
+#before-after{background:var(--lt2)!important;border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+#before-after .e-eyebrow{color:rgba(10,22,40,.4)}
+#before-after .e-h2{color:var(--ink1)}
+#before-after .e-h2 em{color:#c9a84c}
+#before-after .e-lead{color:var(--ink3)}
+#before-after .ba-before{background:rgba(231,76,60,.05);border-color:rgba(231,76,60,.15)}
+#before-after .ba-after{background:rgba(29,158,117,.05);border-color:rgba(29,158,117,.2)}
+#before-after .ba-label{color:var(--ink4)}
+#before-after .ba-title{color:var(--ink1)}
+#before-after .ba-item{color:var(--ink3)}
+#before-after .ba-arrow{color:rgba(10,22,40,.2)}
+.nav{direction:rtl}
+.nav-center a,.btn-lang,.btn-demo,.logo-wordmark,.logo-tagline{font-family:'Cairo',sans-serif}
+
+/* HERO */
+.eco-hero{min-height:70vh;background:linear-gradient(145deg,#060f1c 0%,#0a1628 70%,#0d1f3a 100%);
+  display:flex;flex-direction:column;justify-content:center;padding:140px 5% 80px;position:relative;overflow:hidden}
+.eco-hero-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle 600px at 20% 50%,rgba(29,158,117,.1) 0%,transparent 60%),
+                   radial-gradient(circle 400px at 85% 20%,rgba(201,168,76,.07) 0%,transparent 50%)}
+.eco-hero-grid{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px);background-size:44px 44px}
+.eco-inner{position:relative;z-index:1;max-width:800px}
+.eco-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.25);
+  border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;
+  font-size:.82rem;font-weight:700;color:#1d9e75;font-family:'Cairo',sans-serif}
+.eco-h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;line-height:1.1;color:#fff;margin-bottom:1.25rem;font-family:'Cairo',sans-serif}
+.eco-h1 em{color:#1d9e75;font-style:normal}
+.eco-sub{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.85;max-width:620px;margin-bottom:2.5rem}
+.eco-hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.ehs-val{font-size:1.8rem;font-weight:900;font-family:'Cairo',sans-serif;line-height:1}
+.ehs-val.gold{color:#c9a84c}.ehs-val.green{color:#1d9e75}.ehs-val.blue{color:#378add}.ehs-val.white{color:#fff}
+.ehs-lbl{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.25rem}
+
+/* SECTIONS */
+.e-sec{padding:5.5rem 5%}
+.e-inner{max-width:1200px;margin:0 auto}
+.e-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.5rem}
+.e-h2{font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:900;line-height:1.15;color:#fff;margin-bottom:1rem;font-family:'Cairo',sans-serif}
+.e-h2 em{color:#c9a84c;font-style:normal}
+.e-lead{font-size:.95rem;color:rgba(255,255,255,.52);line-height:1.85;max-width:660px;margin-bottom:2.5rem}
+
+/* BEFORE / AFTER */
+.ba-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:start;margin-top:2.5rem}
+.ba-col{background:rgba(255,255,255,.03);border-radius:14px;padding:1.75rem;border:1px solid rgba(255,255,255,.07)}
+.ba-before{border-top:3px solid rgba(216,90,48,.5)}
+.ba-after{border-top:3px solid rgba(29,158,117,.5)}
+.ba-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;color:rgba(255,255,255,.5)}
+.ba-title{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:1rem}
+.ba-items{display:flex;flex-direction:column;gap:.75rem}
+.ba-item{display:flex;gap:.75rem;align-items:flex-start;font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.65}
+.ba-ico{font-size:1rem;flex-shrink:0;margin-top:1px}
+.ba-arrow{display:flex;align-items:center;font-size:2rem;color:rgba(255,255,255,.2);padding-top:4rem}
+
+/* HUB */
+.hub-wrap{margin-top:2.5rem}
+.hub-diagram{display:grid;grid-template-columns:1fr auto 1fr;gap:1.5rem;align-items:center}
+.hub-col-left,.hub-col-right{display:flex;flex-direction:column;gap:.875rem}
+.party-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1rem 1.25rem;transition:all .3s}
+.party-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.pc-blue{border-right:3px solid #185fa5}.pc-gold{border-right:3px solid #c9a84c}
+.pc-purple{border-right:3px solid #534ab7}.pc-gray{border-right:3px solid rgba(255,255,255,.2)}
+.pc-green{border-right:3px solid #1d9e75}.pc-teal{border-right:3px solid #10b981}
+.pc-orange{border-right:3px solid #d85a30}.pc-pink{border-right:3px solid #ec4899}
+.party-top{display:flex;align-items:center;gap:.625rem;margin-bottom:.375rem;flex-direction:row-reverse;justify-content:flex-end}
+.party-ico{font-size:1.1rem}
+.party-name{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.88)}
+.party-num{margin-right:auto;font-size:.65rem;font-weight:700;color:rgba(255,255,255,.25);background:rgba(255,255,255,.06);padding:2px 7px;border-radius:4px}
+.party-desc{font-size:.75rem;color:rgba(255,255,255,.42);line-height:1.6}
+.hub-center{display:flex;flex-direction:column;align-items:center;gap:.75rem}
+.hub-core{background:linear-gradient(135deg,#0d1f3a,#1a3456);border:2px solid rgba(201,168,76,.35);border-radius:18px;padding:1.75rem 1.5rem;text-align:center;box-shadow:0 0 60px rgba(201,168,76,.12);min-width:180px}
+.hub-core-ico{font-size:2.5rem;margin-bottom:.5rem}
+.hub-core-name{font-size:1rem;font-weight:900;color:#fff;margin-bottom:.375rem;font-family:'Cairo',sans-serif}
+.hub-core-sub{font-size:.68rem;color:rgba(255,255,255,.4);line-height:1.55;margin-bottom:.875rem}
+.hub-core-pulse{display:flex;align-items:center;gap:6px;justify-content:center}
+.hcp-dot{width:7px;height:7px;border-radius:50%;background:#1d9e75;animation:pdot 2s infinite}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.hcp-txt{font-size:.68rem;color:#1d9e75;font-weight:700;letter-spacing:.06em}
+.hub-connector-h{width:2px;height:40px;background:linear-gradient(180deg,rgba(201,168,76,.4),rgba(201,168,76,.1))}
+
+/* PARTY PANELS */
+.party-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:2.5rem;margin-bottom:1.25rem}
+.pt-btn{padding:.5rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:transparent;
+  color:rgba(255,255,255,.45);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Cairo',sans-serif}
+.pt-btn.active{background:rgba(24,95,165,.2);border-color:#185fa5;color:#7fb3e8}
+.party-panel{display:none;margin-top:1.5rem}
+.party-panel.show{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.pp-tag{display:inline-block;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:6px;margin-bottom:1rem}
+.pp-h3{font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:1rem;line-height:1.25;font-family:'Cairo',sans-serif}
+.pp-h3 em{color:#c9a84c;font-style:normal}
+.pp-desc{font-size:.85rem;color:rgba(255,255,255,.52);line-height:1.8;margin-bottom:1.25rem}
+.pp-section-title{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);margin-bottom:.625rem}
+.pp-list{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem}
+.pp-item{display:flex;gap:.625rem;align-items:flex-start;font-size:.8rem;color:rgba(255,255,255,.52);line-height:1.6}
+.pp-item-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:.45rem}
+.pp-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.625rem;margin-bottom:1.25rem}
+.pp-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:.875rem 1rem;text-align:center}
+.pp-stat-val{font-size:1.25rem;font-weight:900;font-family:'Cairo',sans-serif;margin-bottom:.25rem}
+.pp-stat-lbl{font-size:.68rem;color:rgba(255,255,255,.38)}
+.pp-examples{display:flex;flex-wrap:wrap;gap:.375rem}
+.pp-ex{font-size:.72rem;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.1)}
+.pp-card{background:#0d1b2e;border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden}
+.pp-card-bar{background:#060f1c;padding:.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);flex-direction:row-reverse}
+.pp-card-title{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.7);font-family:'Cairo',sans-serif}
+.pp-card-badge{font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:20px}
+.pp-card-body{padding:1.25rem}
+.pain-gain{display:flex;flex-direction:column;gap:.875rem}
+.pg-item{padding:.875rem 1rem;border-radius:10px}
+.pg-before{background:rgba(216,90,48,.06);border:1px solid rgba(216,90,48,.2)}
+.pg-after{background:rgba(29,158,117,.06);border:1px solid rgba(29,158,117,.2)}
+.pg-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.375rem;color:rgba(255,255,255,.4)}
+.pg-txt{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.65}
+
+/* FOOTER */
+.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;font-family:'Cairo',sans-serif;direction:rtl}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.375rem}
+.footer-brand-tag{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:1rem}
+.footer-col-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem}
+.footer-links{display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#c9a84c}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.75rem}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
+.footer-badge{font-size:.65rem;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35)}
+
+#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;background:#1d9e75;color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 20px rgba(29,158,117,.4);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:999;pointer-events:none}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+
+@media(max-width:900px){
+  .ba-grid{grid-template-columns:1fr;gap:1rem}.ba-arrow{display:none}
+  .hub-diagram{grid-template-columns:1fr;gap:1rem}.hub-center{flex-direction:row;flex-wrap:wrap;justify-content:center}
+  .hub-connector-h{width:40px;height:2px}
+  .party-panel.show{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .eco-h1{font-size:2.1rem}.footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav" role="banner">
+  <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">تقنية تكامل المنظومة الصحية</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="التنقل الرئيسي">
+    <a href="index.html#problem">المشكلة</a>
+    <a href="platform.html">المنصة</a>
+    <a href="ecosystem.html" class="nav-active">النظام البيئي</a>
+    <a href="dashboard.html">لوحة التحكم</a>
+    <a href="market.html">السوق</a>
+    <a href="pricing.html">الإيرادات</a>
+    <a href="team.html">الفريق</a>
+    <a href="investors.html">المستثمرون</a>
+  </nav>
+  <div class="nav-right">
+    <a href="../ecosystem.html" class="btn-lang">🌐 English</a>
+    <a href="contact.html" class="btn-demo">طلب عرض تجريبي ←</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+<div class="mobile-nav" role="dialog" aria-label="التنقل المحمول" aria-hidden="true">
+  <a href="index.html#problem">المشكلة</a><a href="platform.html">المنصة</a><a href="ecosystem.html">النظام البيئي</a>
+  <a href="dashboard.html">لوحة التحكم</a><a href="market.html">السوق</a><a href="pricing.html">الإيرادات</a>
+  <a href="team.html">الفريق</a><a href="investors.html">المستثمرون</a>
+  <a href="contact.html" class="mobile-demo-btn">طلب عرض تجريبي ←</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="eco-hero" aria-label="النظام البيئي">
+  <div class="eco-hero-bg" aria-hidden="true"></div>
+  <div class="eco-hero-grid" aria-hidden="true"></div>
+  <div class="eco-inner reveal">
+    <div class="eco-badge">🌐 النظام البيئي المتكامل</div>
+    <h1 class="eco-h1">8 أطراف.<br><em>منصة واحدة للذكاء الاصطناعي.</em></h1>
+    <p class="eco-sub">iRonic Health لا تستبدل أي طرف — بل تجعل كل تفاعل بينهم فوريًا وذكيًا ومحصّنًا من الاحتيال. من شركة التأمين إلى الصيدلية، من المستشفى إلى المؤمَّن.</p>
+    <div class="eco-hero-stats">
+      <div><div class="ehs-val white">8</div><div class="ehs-lbl">أطراف متصلة</div></div>
+      <div><div class="ehs-val gold">1.2M</div><div class="ehs-lbl">حياة عبر GlobeMed</div></div>
+      <div><div class="ehs-val green">90%+</div><div class="ehs-lbl">مطالبات على ورق حاليًا</div></div>
+      <div><div class="ehs-val blue">4.3ث</div><div class="ehs-lbl">القرار بعد iRonic</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="e-sec" id="before-after">
+  <div class="e-inner">
+    <div class="reveal">
+      <div class="e-eyebrow">المشكلة التي نحلها</div>
+      <h2 class="e-h2">منظومة مصر <em>مكسورة بحكم التصميم</em></h2>
+      <p class="e-lead">أكثر من 90% من الوصفات والمطالبات على ورق. 8 أطراف يجب أن تتعاون — لكنها لا تفعل. كل ثغرة في السلسلة هي باب يدخل منه الاحتيال وتتسرب منه الأموال.</p>
+    </div>
+    <div class="ba-grid reveal">
+      <div class="ba-col ba-before">
+        <div class="ba-label">❌ قبل iRonic Health</div>
+        <div class="ba-title">مجزأة. يدوية. منفصلة.</div>
+        <div class="ba-items">
+          <div class="ba-item"><div class="ba-ico">📄</div>أكثر من 90% من المطالبات تُعالَج ورقيًا — دورة موافقة من 7 إلى 21 يومًا</div>
+          <div class="ba-item"><div class="ba-ico">💸</div>2–10% من جميع المطالبات احتيال — 7–37 مليون دولار خسائر سنوية بلا نظام للكشف</div>
+          <div class="ba-item"><div class="ba-ico">🏥</div>المستشفيات تنتظر 60–90 يومًا للدفع — أزمة تدفق نقدي تدفعها لتفضيل مرضى النقد</div>
+          <div class="ba-item"><div class="ba-ico">💊</div>60,000 صيدلية بأنظمة قديمة — لا تحقق فوري من الوصفات أو كشف للأدوية المزيفة</div>
+          <div class="ba-item"><div class="ba-ico">👤</div>الأعضاء يحملون بطاقات ورقية — بلا هوية رقمية أو شفافية في المطالبات</div>
+          <div class="ba-item"><div class="ba-ico">📈</div>20% زيادة في الأقساط بسبب المعالجة المفرطة — فحوصات غير ضرورية وإقامة وهمية في العناية المركزة</div>
+        </div>
+      </div>
+      <div class="ba-arrow">←</div>
+      <div class="ba-col ba-after">
+        <div class="ba-label">✅ مع iRonic Health</div>
+        <div class="ba-title">متصلة. آلية. ذكية.</div>
+        <div class="ba-items">
+          <div class="ba-item"><div class="ba-ico">⚡</div>المطالبات تُسجَّل بالذكاء الاصطناعي في 4.3 ثانية — 87% موافقة تلقائية مع مسار تدقيق كامل</div>
+          <div class="ba-item"><div class="ba-ico">🔍</div>25–40 نمطًا مصريًا للاحتيال تكشف الوصفات الوهمية والعناية المركزة المبالغ فيها والأدوية المزيفة</div>
+          <div class="ba-item"><div class="ba-ico">💳</div>المستشفيات تحصل على الموافقة المسبقة خلال &lt;4 ساعات — دفع أسرع ورعاية أفضل</div>
+          <div class="ba-item"><div class="ba-ico">💊</div>الصيدليات تتحقق من الأهلية وتكشف التزوير في ثوانٍ — الدفع خلال 48 ساعة</div>
+          <div class="ba-item"><div class="ba-ico">📱</div>الأعضاء يحصلون على بطاقة صحية رقمية QR — تتبع المطالبات، وتنبيهات الرعاية الوقائية</div>
+          <div class="ba-item"><div class="ba-ico">📉</div>تحسين 15% في نسبة الخسائر — موثق في مرحلة التجريب بمسار تدقيق الهيئة المالية</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HUB DIAGRAM -->
+<section class="e-sec" style="background:#060f1c" id="network">
+  <div class="e-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:2rem">
+      <div class="e-eyebrow" style="text-align:center">الشبكة</div>
+      <h2 class="e-h2" style="text-align:center">كل طرف.<br><em>نقطة اتصال واحدة.</em></h2>
+      <p class="e-lead" style="text-align:center;max-width:540px;margin:0 auto">iRonic Health في المركز — لا تستبدل أي طرف، بل تجعل كل تفاعل بينهم فوريًا وذكيًا ومحصّنًا من الاحتيال.</p>
+    </div>
+    <div class="hub-wrap reveal">
+      <div class="hub-diagram">
+        <div class="hub-col-right">
+          <div class="party-card pc-blue">
+            <div class="party-top"><div class="party-ico">🏛️</div><div class="party-name">شركات التأمين الصحي</div><div class="party-num">01</div></div>
+            <div class="party-desc">أكثر من 10 شركات مصرية — مصر، AXA، بوبا، ميتلايف، أليانز، GIG وغيرها. يدفعون الفواتير. نُقلل ما يدفعونه احتيالًا.</div>
+          </div>
+          <div class="party-card pc-gold">
+            <div class="party-top"><div class="party-ico">📋</div><div class="party-name">إدارات الطرف الثالث (TPA)</div><div class="party-num">02</div></div>
+            <div class="party-desc">GlobeMed مصر (1.2M حياة، 18 شركة)، MedNet، AMC، Limitless Care. يعالجون المطالبات. نجعل هذه المعالجة ذكية.</div>
+          </div>
+          <div class="party-card pc-purple">
+            <div class="party-top"><div class="party-ico">🏢</div><div class="party-name">موارد بشرية الشركات</div><div class="party-num">03</div></div>
+            <div class="party-desc">شركات ذاتية التمويل وفق القانون 155/2024. بنك مصر، اتصالات مصر، المجموعات الصناعية. شراء أسرع وبيانات أنظف.</div>
+          </div>
+          <div class="party-card pc-gray">
+            <div class="party-top"><div class="party-ico">⚖️</div><div class="party-name">الجهات التنظيمية</div><div class="party-num">04</div></div>
+            <div class="party-desc">الهيئة المالية (FRA). PDPL 151/2020. نقابة الأطباء المصريين. بنينا المنصة وفق متطلباتهم — لا حولها.</div>
+          </div>
+        </div>
+        <div class="hub-center">
+          <div class="hub-connector-h"></div>
+          <div class="hub-core">
+            <div class="hub-core-ico">⚕️</div>
+            <div class="hub-core-name">iRonic Health AI</div>
+            <div class="hub-core-sub">طبقة التنسيق المصرية بالذكاء الاصطناعي · API-first · مُرخَّصة من الهيئة المالية · متوافقة مع PDPL</div>
+            <div class="hub-core-pulse"><div class="hcp-dot"></div><span class="hcp-txt">مباشر</span></div>
+          </div>
+          <div class="hub-connector-h"></div>
+        </div>
+        <div class="hub-col-left">
+          <div class="party-card pc-green">
+            <div class="party-top"><div class="party-ico">🏥</div><div class="party-name">المستشفيات والعيادات</div><div class="party-num">05</div></div>
+            <div class="party-desc">مجموعة كليوباترا، السلام، السعودي الألماني، الأندلس. يقدمون الرعاية. نضمن حصولهم على الدفع بشكل أسرع وعادل.</div>
+          </div>
+          <div class="party-card pc-teal">
+            <div class="party-top"><div class="party-ico">👨‍⚕️</div><div class="party-name">الأطباء والكوادر الطبية</div><div class="party-num">06</div></div>
+            <div class="party-desc">الحارس الطبي لكل قرار. نقدم لهم رؤى للمطالبات في الوقت الفعلي وسير عمل موافقة مسبقة — مُدمج في بيئة عملهم.</div>
+          </div>
+          <div class="party-card pc-orange">
+            <div class="party-top"><div class="party-ico">💊</div><div class="party-name">شبكات الصيدليات</div><div class="party-num">07</div></div>
+            <div class="party-desc">60,000+ صيدلية. تحقق فوري من الأهلية، وكشف التزوير، ودفع خلال 48 ساعة بدلًا من 90 يومًا.</div>
+          </div>
+          <div class="party-card pc-pink">
+            <div class="party-top"><div class="party-ico">🏷️</div><div class="party-name">الأعضاء المؤمَّن عليهم</div><div class="party-num">08</div></div>
+            <div class="party-desc">6–8 مليون مؤمَّن عليهم. بطاقة QR رقمية للهوية الصحية، وتتبع المطالبات، وتنبيهات الرعاية الوقائية — كلها في هواتفهم.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTY DEEP DIVES -->
+<section class="e-sec" style="background:#0a1628" id="parties">
+  <div class="e-inner">
+    <div class="reveal">
+      <div class="e-eyebrow">قراءة معمّقة لكل طرف</div>
+      <h2 class="e-h2">ماذا يُقدّم كل طرف.<br><em>وماذا يكسب.</em></h2>
+      <p class="e-lead">كل طرف في النظام البيئي له مشكلة محددة لا تُحلّ حاليًا. iRonic Health تحلّها بشكل مختلف لكل طرف — وهذا ما يجعل التبني متعدد الجوانب وسريعًا.</p>
+    </div>
+    <div class="party-tabs reveal">
+      <button class="pt-btn active" onclick="showParty('insurer',this)">🏛️ شركات التأمين</button>
+      <button class="pt-btn" onclick="showParty('tpa',this)">📋 TPA</button>
+      <button class="pt-btn" onclick="showParty('hospital',this)">🏥 المستشفيات</button>
+      <button class="pt-btn" onclick="showParty('pharmacy',this)">💊 الصيدليات</button>
+      <button class="pt-btn" onclick="showParty('member',this)">👤 المؤمَّنون</button>
+    </div>
+
+    <!-- INSURER PANEL -->
+    <div class="party-panel show" id="panel-insurer">
+      <div class="reveal">
+        <div class="pp-tag" style="background:rgba(24,95,165,.12);color:#7fb3e8">🏛️ الطرف 01 — شركات التأمين</div>
+        <div class="pp-h3">الدافع الأول <em>نحو التبني</em></div>
+        <div class="pp-desc">نسبة خسائر عند 70–85% وترتفع 50–60% سنويًا. لا توجد حلول. iRonic Health هي الاستجابة الوحيدة المباشرة القابلة للتدقيق لأزمة نسبة الخسائر في مصر اليوم.</div>
+        <div class="pp-section-title">ما يقدمونه</div>
+        <div class="pp-list">
+          <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>بيانات السياسة والتسجيل للتحقق من الأهلية</div>
+          <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>عقود شبكة المزودين وأسعار المرجعية</div>
+          <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>سلطة الموافقة على قرارات المطالبات عالية القيمة</div>
+        </div>
+        <div class="pp-section-title">ما يكسبونه</div>
+        <div class="pp-stats">
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">−15%</div><div class="pp-stat-lbl">تحسن نسبة الخسائر</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">25–40%</div><div class="pp-stat-lbl">معدل استرداد الاحتيال</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">4.3ث</div><div class="pp-stat-lbl">وقت قرار المطالبة</div></div>
+          <div class="pp-stat"><div class="pp-stat-val">100%</div><div class="pp-stat-lbl">تغطية تدقيق الهيئة المالية</div></div>
+        </div>
+        <div class="pp-section-title">المنظمات المستهدفة</div>
+        <div class="pp-examples">
+          <span class="pp-ex">مصر للتأمين</span><span class="pp-ex">AXA مصر</span><span class="pp-ex">بوبا مصر</span>
+          <span class="pp-ex">ميتلايف مصر</span><span class="pp-ex">أليانز / NEXtCARE</span><span class="pp-ex">GIG مصر</span>
+          <span class="pp-ex">تأمين قناة السويس</span><span class="pp-ex">AMIG</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="pp-card">
+          <div class="pp-card-bar"><span class="pp-card-badge" style="background:rgba(29,158,117,.2);color:#5dcaa5">تجريب مباشر</span><span class="pp-card-title">رؤية المدير المالي — AXA مصر</span></div>
+          <div class="pp-card-body">
+            <div class="pain-gain">
+              <div class="pg-item pg-before"><div class="pg-lbl">قبل — المشكلة</div><div class="pg-txt">نسبة الخسائر عند 78% — ترتفع 12% سنويًا. 90% من المطالبات تُراجَع يدويًا بفريق مؤلف من 12 شخصًا. دورة موافقة أسبوعين. لا رؤية للاحتيال مقابل المطالبات المشروعة عالية التكلفة.</div></div>
+              <div class="pg-item pg-after"><div class="pg-lbl">بعد — مع iRonic Health</div><div class="pg-txt">نسبة الخسائر تنخفض إلى 63% — تحسن 15 نقطة في 6 أشهر. 87% من المطالبات موافقة تلقائية في 4.3 ثانية. الفريق يركز فقط على الحالات المُبلَّغ عنها. لوحة عائد استثمار مباشرة للمجلس.</div></div>
+            </div>
+            <div style="margin-top:1rem;padding:.75rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;font-size:.78rem;color:#c9a84c;font-family:'Cairo',sans-serif;font-weight:600">
+              💰 عائد التجريب: 2.4 مليون ج.م احتيال مُستَرَد في 90 يومًا. بدون رسوم منصة.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TPA PANEL -->
+    <div class="party-panel" id="panel-tpa">
+      <div class="reveal">
+        <div class="pp-tag" style="background:rgba(201,168,76,.12);color:#c9a84c">📋 الطرف 02 — TPA</div>
+        <div class="pp-h3">مضاعفات النطاق — <em>نبدأ بهم أولًا</em></div>
+        <div class="pp-desc">شراكة TPA واحدة تُغني عن 18 دورة مبيعات منفصلة مع شركات التأمين. GlobeMed مصر يدير 1.2 مليون مؤمَّن عليه عبر 18 شركة تأمين. استراتيجيتنا TPA-أولًا تضغط سنوات من المبيعات في أشهر.</div>
+        <div class="pp-section-title">ما يقدمونه</div>
+        <div class="pp-list">
+          <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>سير عمل معالجة المطالبات متعدد شركات التأمين — البنية التحتية الحالية</div>
+          <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>بيانات تسجيل الأعضاء لـ 18 شركة تأمين — 1.2M حياة في تكامل واحد</div>
+          <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>النطاق التوزيعي — iRonic تنتشر عبر جميع شركات 18 التأمين المتصلة</div>
+        </div>
+        <div class="pp-section-title">ما يكسبونه</div>
+        <div class="pp-stats">
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">18</div><div class="pp-stat-lbl">شركة تأمين عبر صفقة واحدة</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">ترقية ذكاء اصطناعي</div><div class="pp-stat-lbl">بدون إعادة بناء</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">87%</div><div class="pp-stat-lbl">أتمتة المطالبات</div></div>
+          <div class="pp-stat"><div class="pp-stat-val">إيرادات جديدة</div><div class="pp-stat-lbl">حصة من الاسترداد</div></div>
+        </div>
+        <div class="pp-section-title">المنظمات المستهدفة</div>
+        <div class="pp-examples">
+          <span class="pp-ex" style="background:rgba(201,168,76,.12);color:#c9a84c;border:1px solid rgba(201,168,76,.25)">★ GlobeMed مصر</span>
+          <span class="pp-ex">MedNet (Munich Re)</span><span class="pp-ex">AMC</span><span class="pp-ex">Limitless Care</span>
+          <span class="pp-ex">6 TPA مُرخَّصة من الهيئة المالية (أبريل 2026)</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="pp-card">
+          <div class="pp-card-bar"><span class="pp-card-badge" style="background:rgba(201,168,76,.2);color:#c9a84c">هدف استراتيجي</span><span class="pp-card-title">GlobeMed مصر — نظرة على التكامل</span></div>
+          <div class="pp-card-body">
+            <div class="pain-gain">
+              <div class="pg-item pg-before"><div class="pg-lbl">الوضع الحالي</div><div class="pg-txt">1.2M حياة، 18 شركة تأمين، منصة معالجة مطالبات قديمة. كشف احتيال يعتمد على القواعد. شركات التأمين تضغط للحد من التكاليف — GlobeMed تحتاج لإثبات التجديد وإلا تفقد العقود.</div></div>
+              <div class="pg-item pg-after"><div class="pg-lbl">مع iRonic Health</div><div class="pg-txt">تسجيل الاحتيال بالذكاء الاصطناعي يتصل مباشرة بسير عمل GlobeMed الحالي. جميع 18 شركة تأمين تُرقَّى في وقت واحد. GlobeMed تصبح أول TPA في مصر يقدم كشف الاحتيال المدعوم بالذكاء الاصطناعي.</div></div>
+            </div>
+            <div style="margin-top:1rem;padding:.75rem;background:rgba(55,138,221,.08);border:1px solid rgba(55,138,221,.2);border-radius:8px;font-size:.78rem;color:#7fb3e8;font-family:'Cairo',sans-serif;font-weight:600">
+              ⚡ تكامل GlobeMed API واحد = 1.2M حياة فورية على المنصة. 18 صفقة تأمين في عقد واحد.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOSPITAL PANEL -->
+    <div class="party-panel" id="panel-hospital">
+      <div class="reveal">
+        <div class="pp-tag" style="background:rgba(29,158,117,.12);color:#5dcaa5">🏥 الطرف 05 — المستشفيات والعيادات</div>
+        <div class="pp-h3">مقدمو الخدمة الذين <em>يحتاجون دفعًا أسرع</em></div>
+        <div class="pp-desc">المستشفيات الخاصة المصرية تنتظر 60–90 يومًا لاستلام مدفوعات شركات التأمين — مما يخلق ضغطًا نقديًا مزمنًا يدفعها لتفضيل مرضى النقد على المؤمَّنين. iRonic Health تمنح المستشفيات موافقة مسبقة في أقل من 4 ساعات ومدفوعات خلال 48 ساعة.</div>
+        <div class="pp-section-title">ما يقدمونه</div>
+        <div class="pp-list">
+          <div class="pp-item"><div class="pp-item-dot" style="background:#1d9e75"></div>السجلات السريرية وبيانات الدخول وخطط العلاج ورموز ICD/CPT</div>
+          <div class="pp-item"><div class="pp-item-dot" style="background:#1d9e75"></div>توافر الأسرة والتخصصات في الوقت الفعلي لقرارات التوجيه</div>
+          <div class="pp-item"><div class="pp-item-dot" style="background:#1d9e75"></div>بيانات الجودة لتقييم المزود وترتيب التوجيه</div>
+        </div>
+        <div class="pp-section-title">ما يكسبونه</div>
+        <div class="pp-stats">
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">&lt;4 ساعات</div><div class="pp-stat-lbl">الموافقة المسبقة</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">48 ساعة</div><div class="pp-stat-lbl">معالجة الدفع</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">↑ ترتيب أعلى</div><div class="pp-stat-lbl">في خوارزمية التوجيه</div></div>
+          <div class="pp-stat"><div class="pp-stat-val">تدفق نقدي</div><div class="pp-stat-lbl">تحسّن جوهري</div></div>
+        </div>
+        <div class="pp-section-title">المنظمات المستهدفة</div>
+        <div class="pp-examples">
+          <span class="pp-ex">مجموعة كليوباترا</span><span class="pp-ex">مستشفى السلام</span>
+          <span class="pp-ex">السعودي الألماني القاهرة</span><span class="pp-ex">مجموعة الأندلس</span>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="pp-card">
+          <div class="pp-card-bar"><span class="pp-card-badge" style="background:rgba(29,158,117,.2);color:#5dcaa5">تحليل التأثير</span><span class="pp-card-title">مجموعة كليوباترا — رؤية المدير المالي</span></div>
+          <div class="pp-card-body">
+            <div class="pain-gain">
+              <div class="pg-item pg-before"><div class="pg-lbl">قبل — المشكلة</div><div class="pg-txt">متوسط انتظار 73 يومًا للدفع من شركات التأمين. ذمم مدينة بـ 12M ج.م. الإدارة تدرس تحديد حصة المرضى المؤمَّنين بسبب ضغط التدفق النقدي.</div></div>
+              <div class="pg-item pg-after"><div class="pg-lbl">بعد — مع iRonic Health</div><div class="pg-txt">الموافقة المسبقة في &lt;4 ساعات. الدفع خلال 48 ساعة من الموافقة. الذمم المدينة تنخفض 85%. الإدارة تزيد حصة المرضى المؤمَّنين — تدفق إيرادات أكثر استقرارًا.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHARMACY PANEL -->
+    <div class="party-panel" id="panel-pharmacy">
+      <div class="reveal">
+        <div class="pp-tag" style="background:rgba(216,90,48,.12);color:#e07050">💊 الطرف 07 — شبكات الصيدليات</div>
+        <div class="pp-h3">التحقق الفوري. <em>الدفع الفوري.</em></div>
+        <div class="pp-desc">60,000 صيدلية في مصر تعمل بأنظمة POS قديمة — لا تحقق آني من الوصفات، ولا كشف للأدوية المزيفة، ولا معالجة مطالبات آنية. مشكلة يونيكتام المزيفة وحدها تُكلّف النظام مئات الملايين سنويًا.</div>
+        <div class="pp-section-title">ما يقدمونه</div>
+        <div class="pp-list">
+          <div class="pp-item"><div class="pp-item-dot" style="background:#d85a30"></div>بيانات الوصفة والصرف في الوقت الفعلي — تدفق بيانات الأدوية</div>
+          <div class="pp-item"><div class="pp-item-dot" style="background:#d85a30"></div>التحقق من هوية المريض وأهليته في نقطة الصرف</div>
+          <div class="pp-item"><div class="pp-item-dot" style="background:#d85a30"></div>رقم المنتج الوطني (NPN) للتحقق من صحة الدواء ومكافحة التزوير</div>
+        </div>
+        <div class="pp-section-title">ما يكسبونه</div>
+        <div class="pp-stats">
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">&lt;3ث</div><div class="pp-stat-lbl">التحقق من الأهلية</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">48 ساعة</div><div class="pp-stat-lbl">الدفع (بدلًا من 90 يومًا)</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">آني</div><div class="pp-stat-lbl">كشف التزوير</div></div>
+          <div class="pp-stat"><div class="pp-stat-val">صفر</div><div class="pp-stat-lbl">خطر تسوية مطالبات مزيفة</div></div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="pp-card">
+          <div class="pp-card-bar"><span class="pp-card-badge" style="background:rgba(216,90,48,.2);color:#e07050">مشكلة موثقة</span><span class="pp-card-title">مشكلة مصر في التزوير الدوائي</span></div>
+          <div class="pp-card-body">
+            <div class="pain-gain">
+              <div class="pg-item pg-before"><div class="pg-lbl">المشكلة الموثقة</div><div class="pg-txt">أدوية يونيكتام المزيفة: عملية تزوير موثقة حيث تُباع بدائل مقلدة كدواء أصلي. الصيدلي لا يستطيع الكشف بصريًا. شركة التأمين تدفع ثمن المنتج الأصلي مقابل بديل رخيص. لا يوجد نظام تحقق في مصر.</div></div>
+              <div class="pg-item pg-after"><div class="pg-lbl">مع iRonic Health</div><div class="pg-txt">يقرأ الصيدلي الرمز الشريطي — يتحقق iRonic API من رقم المنتج الوطني خلال &lt;3 ثوانٍ. تُرفض الأدوية المزيفة. الوصفات الوهمية تُكتشف فورًا. الصيدلي محمي، والمؤمِّن محمي، والمريض يحصل على الدواء الصحيح.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEMBER PANEL -->
+    <div class="party-panel" id="panel-member">
+      <div class="reveal">
+        <div class="pp-tag" style="background:rgba(55,138,221,.12);color:#7fb3e8">👤 الطرف 08 — الأعضاء المؤمَّنون</div>
+        <div class="pp-h3">المستخدم النهائي <em>يستحق أكثر من بطاقة ورقية</em></div>
+        <div class="pp-desc">6–8 مليون مؤمَّن عليه في مصر يحملون بطاقات ورقية — لا تتبع للمطالبات، ولا تنبيهات رعاية، ولا رؤية لمزايا التغطية. iRonic Health تُحوّل كل عضو إلى مشارك نشط في صحته ومزاياه التأمينية.</div>
+        <div class="pp-section-title">ما يقدمونه</div>
+        <div class="pp-list">
+          <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>البيانات الصحية ونمط استخدام الخدمات لضبط الدرجات ودعم التدخل الوقائي</div>
+          <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>التحقق من الهوية والموافقة عند نقطة الرعاية</div>
+        </div>
+        <div class="pp-section-title">ما يكسبونه</div>
+        <div class="pp-stats">
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">QR</div><div class="pp-stat-lbl">بطاقة هوية رقمية</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">آني</div><div class="pp-stat-lbl">تتبع المطالبات</div></div>
+          <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">استباقي</div><div class="pp-stat-lbl">تنبيهات الرعاية الوقائية</div></div>
+          <div class="pp-stat"><div class="pp-stat-val">مزايا واضحة</div><div class="pp-stat-lbl">دليل تغطية مدمج</div></div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="pp-card">
+          <div class="pp-card-bar"><span class="pp-card-badge" style="background:rgba(55,138,221,.2);color:#7fb3e8">تجربة المستخدم</span><span class="pp-card-title">ما يبدو عليه تجربة العضو</span></div>
+          <div class="pp-card-body">
+            <div style="display:flex;flex-direction:column;gap:.75rem">
+              <div style="padding:.875rem 1rem;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.07)">
+                <div style="font-size:.78rem;font-weight:700;color:#7fb3e8;margin-bottom:.375rem;font-family:'Cairo',sans-serif">📱 التحقق في الصيدلية</div>
+                <div style="font-size:.78rem;color:rgba(255,255,255,.55);font-family:'Cairo',sans-serif">يفتح العضو التطبيق → يمسح رمز QR الصيدلية → التحقق من الأهلية في &lt;3 ثوانٍ → الدواء يُصرف مباشرة. لا بطاقات ورقية، لا مكالمات هاتفية.</div>
+              </div>
+              <div style="padding:.875rem 1rem;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.07)">
+                <div style="font-size:.78rem;font-weight:700;color:#1d9e75;margin-bottom:.375rem;font-family:'Cairo',sans-serif">🔔 تنبيه وقائي</div>
+                <div style="font-size:.78rem;color:rgba(255,255,255,.55);font-family:'Cairo',sans-serif">"أحمد — التحليل الدوري لضغط الدم متأخر 3 أشهر. يمكنك حجز موعد مجاني في عيادة مجاورة." تنبيه ذكي يمنع مطالبة مستقبلية مكلفة.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">iRonic Health</div>
+      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. مُرخَّصة من الهيئة المالية. متوافقة مع PDPL.</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <span class="footer-badge">مُرخَّصة من الهيئة المالية</span>
+        <span class="footer-badge">متوافقة مع PDPL</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">المنصة</div>
+      <div class="footer-links"><a href="platform.html">وحدات الذكاء الاصطناعي</a><a href="ecosystem.html">النظام البيئي</a><a href="dashboard.html">لوحة التحكم</a><a href="pricing.html">الإيرادات</a></div>
+    </div>
+    <div>
+      <div class="footer-col-title">الشركة</div>
+      <div class="footer-links"><a href="team.html">الفريق</a><a href="investors.html">المستثمرون</a><a href="market.html">السوق</a><a href="contact.html">تواصل معنا</a></div>
+    </div>
+    <div>
+      <div class="footer-col-title">تواصل</div>
+      <div class="footer-links"><a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a><a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a><a href="tel:+201555556697">+20 155 555 6697</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
+    <a href="../ecosystem.html" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none">🌐 English</a>
+  </div>
+</footer>
+</main>
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+<script>
+const toggle=document.querySelector('.nav-mobile-toggle'),mNav=document.querySelector('.mobile-nav');
+if(toggle&&mNav){toggle.addEventListener('click',()=>{const o=mNav.classList.toggle('open');toggle.setAttribute('aria-expanded',o);mNav.setAttribute('aria-hidden',!o)});}
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+const st=document.getElementById('scroll-top');
+if(st){window.addEventListener('scroll',()=>{st.classList.toggle('visible',window.scrollY>400)});st.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});}
+function showParty(id,btn){
+  document.querySelectorAll('.party-panel').forEach(p=>p.classList.remove('show'));
+  document.querySelectorAll('.pt-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('show');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

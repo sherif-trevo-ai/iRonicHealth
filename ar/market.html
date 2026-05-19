@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="حجم السوق المصري لتكنولوجيا التأمين الصحي — TAM $373M · SAM $550M · SOM $18M ARR — وفرصة iRonic Health.">
+<meta property="og:title" content="السوق — iRonic Health">
+<title>تحليل السوق · iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;overflow-x:hidden}
+
+/* ══ DESIGN TOKENS ══ */
+:root{--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94}
+
+/* ══ TAM SECTION — LIGHT ══ */
+.tam{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+.tam .sec-label{color:rgba(10,22,40,.4)}
+.tam .sec-h2{color:var(--ink1)}
+.tam .sec-h2 em{color:#378add}
+.tam .sec-lead{color:var(--ink3)}
+.tam .tam-circle.c1{background:rgba(24,95,165,.08);border-color:rgba(24,95,165,.2)}
+.tam .tam-circle.c2{background:rgba(29,158,117,.08);border-color:rgba(29,158,117,.2)}
+.tam .tam-circle.c3{background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.28)}
+.tam .tc-val{color:var(--ink1)}
+.tam .tc-desc{color:var(--ink4)}
+.tam .tam-arrow{color:rgba(10,22,40,.2)}
+.tam .tdd-card{background:var(--lt1);border-color:#dde8f5;box-shadow:0 2px 8px rgba(10,22,40,.05)}
+.tam .tdd-val{color:var(--ink1)}
+.tam .tdd-basis{color:var(--ink3)}
+
+/* ══ PAIN SECTION — LIGHT ══ */
+.pain{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+.pain .sec-label{color:rgba(10,22,40,.4)}
+.pain .sec-h2{color:var(--ink1)}
+.pain .pain-card{background:var(--lt1);border-color:#dde8f5;box-shadow:0 2px 8px rgba(10,22,40,.05)}
+.pain .pain-h3{color:var(--ink1)}
+.pain .pain-p{color:var(--ink3)}
+
+/* ══ COMPETITION — LIGHT ══ */
+.competition{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+.competition .sec-label{color:rgba(10,22,40,.4)}
+.competition .sec-h2{color:var(--ink1)}
+.competition .sec-lead{color:var(--ink3)}
+.competition .comp-table-wrap{border-color:#dde8f5}
+.competition .comp-table th{background:var(--lt3);color:var(--ink4);border-bottom-color:#dde8f5}
+.competition .comp-table td{color:var(--ink3);border-bottom-color:#e5ecf6}
+.competition .comp-table tr.ironic-row td{background:rgba(29,158,117,.06);color:var(--ink1)}
+.competition .comp-table tr.ironic-row td:first-child{color:#1d9e75;font-weight:800}
+.nav{direction:rtl}
+.nav-center a{font-family:'Cairo',sans-serif}
+.nav-logo-text{text-align:right}
+.logo-wordmark,.logo-tagline,.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
+
+/* HERO */
+.mkt-hero{
+  min-height:62vh;background:linear-gradient(145deg,#060f1c,#0a1628 55%,#0d1f3a);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 5% 80px;position:relative;overflow:hidden;
+}
+.mh-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle 600px at 85% 30%,rgba(24,95,165,.12),transparent 60%),
+                   radial-gradient(circle 400px at 10% 65%,rgba(29,158,117,.08),transparent 55%);}
+.mh-grid{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:40px 40px;}
+.mh-inner{position:relative;z-index:1;max-width:760px}
+.mh-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(24,95,165,.1);border:1px solid rgba(24,95,165,.3);
+  border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;
+  font-size:.82rem;font-weight:700;color:#378add;}
+.mh-h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;line-height:1.1;
+  color:#fff;margin-bottom:1.25rem;}
+.mh-h1 em{color:#378add;font-style:normal}
+.mh-sub{font-size:1.05rem;color:rgba(255,255,255,.52);line-height:1.85;max-width:600px;margin-bottom:2.5rem}
+.mh-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.mhs-val{font-size:1.8rem;font-weight:900;color:#378add;line-height:1}
+.mhs-val.green{color:#1d9e75}.mhs-val.gold{color:#c9a84c}
+.mhs-lbl{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.25rem}
+
+/* COMMON */
+.sec-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem}
+.sec-h2{font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;color:#fff;margin-bottom:.75rem}
+.sec-h2 em{font-style:normal}
+.sec-lead{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;max-width:680px;margin-bottom:3rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* TAM SAM SOM */
+.tam{padding:6rem 5%}
+.tam-inner{max-width:1100px;margin:0 auto}
+.tam-circles{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;margin:3rem 0}
+.tam-circle{border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;flex-shrink:0}
+.tam-circle.c1{width:260px;height:260px;background:rgba(24,95,165,.15);border:2px solid rgba(24,95,165,.3)}
+.tam-circle.c2{width:200px;height:200px;background:rgba(29,158,117,.15);border:2px solid rgba(29,158,117,.3)}
+.tam-circle.c3{width:140px;height:140px;background:rgba(201,168,76,.15);border:2px solid rgba(201,168,76,.35)}
+.tc-val{font-size:1.6rem;font-weight:900;color:#fff;line-height:1}
+.tc-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem}
+.tc-desc{font-size:.65rem;color:rgba(255,255,255,.4);margin-top:.25rem;text-align:center;padding:0 .5rem}
+.tc-label.blue{color:#378add}.tc-label.green{color:#1d9e75}.tc-label.gold{color:#c9a84c}
+.tam-arrow{font-size:1.5rem;color:rgba(255,255,255,.2)}
+
+.tam-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.tdd-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.75rem}
+.tdd-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.75rem}
+.tdd-val{font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:.375rem}
+.tdd-basis{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.7}
+
+/* WHY NOW */
+.why-now{padding:6rem 5%;background:#0a1628}
+.wn-inner{max-width:1100px;margin:0 auto}
+.wn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.wn-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:18px;padding:2rem;transition:border-color .3s}
+.wn-card:hover{border-color:rgba(24,95,165,.3)}
+.wn-num{font-size:2.5rem;font-weight:900;color:rgba(55,138,221,.15);line-height:1;margin-bottom:.75rem}
+.wn-h3{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:.625rem}
+.wn-p{font-size:.87rem;color:rgba(255,255,255,.48);line-height:1.8}
+.wn-badge{display:inline-block;font-size:.7rem;font-weight:700;padding:3px 10px;
+  border-radius:20px;margin-top:.75rem;
+  background:rgba(24,95,165,.1);border:1px solid rgba(24,95,165,.25);color:#378add}
+
+/* PAIN POINTS */
+.pain{padding:6rem 5%}
+.pain-inner{max-width:1100px;margin:0 auto}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.pain-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.75rem;position:relative;overflow:hidden}
+.pain-card::after{content:'';position:absolute;bottom:0;right:0;left:0;height:3px;
+  background:linear-gradient(90deg,#185fa5,#1d9e75)}
+.pain-icon{font-size:1.8rem;margin-bottom:1rem;display:block}
+.pain-h3{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.pain-stat{font-size:1.5rem;font-weight:900;color:#185fa5;margin-bottom:.375rem}
+.pain-p{font-size:.83rem;color:rgba(255,255,255,.45);line-height:1.75}
+
+/* COMPETITION */
+.competition{padding:6rem 5%}
+.comp-inner{max-width:1100px;margin:0 auto}
+.comp-table-wrap{overflow-x:auto;margin-top:3rem;border-radius:16px;
+  border:1px solid rgba(255,255,255,.08)}
+.comp-table{width:100%;border-collapse:collapse;min-width:700px}
+.comp-table th{background:rgba(255,255,255,.04);padding:1rem 1.25rem;
+  font-size:.78rem;font-weight:700;color:rgba(255,255,255,.5);
+  text-align:right;border-bottom:1px solid rgba(255,255,255,.07)}
+.comp-table td{padding:.9rem 1.25rem;font-size:.85rem;color:rgba(255,255,255,.65);
+  border-bottom:1px solid rgba(255,255,255,.05);text-align:right}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr.ironic-row td{background:rgba(29,158,117,.05);color:#fff}
+.comp-table tr.ironic-row td:first-child{color:#1d9e75;font-weight:800}
+.check-yes{color:#1d9e75;font-weight:700}
+.check-no{color:rgba(255,255,255,.25)}
+.check-partial{color:#c9a84c}
+
+/* MOAT */
+.moat{padding:6rem 5%;background:#060f1c}
+.moat-inner{max-width:1100px;margin:0 auto}
+.moat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.moat-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.75rem;text-align:center;
+  transition:border-color .3s,transform .3s}
+.moat-card:hover{border-color:rgba(29,158,117,.3);transform:translateY(-3px)}
+.moat-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.moat-h3{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.moat-p{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.75}
+
+/* CTA */
+.mkt-cta{padding:5rem 5%;background:linear-gradient(135deg,#060f1c,#0a1628);text-align:center}
+.mkt-cta-inner{max-width:640px;margin:0 auto}
+.cta-h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:1rem}
+.cta-h2 em{color:#378add;font-style:normal}
+.cta-p{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:2.5rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btn-primary{background:#185fa5;color:#fff;padding:.9rem 2rem;border-radius:8px;
+  text-decoration:none;font-weight:700;font-size:.95rem;transition:background .2s}
+.cta-btn-primary:hover{background:#0c447c}
+.cta-btn-sec{color:#fff;padding:.9rem 2rem;border-radius:8px;text-decoration:none;
+  font-weight:700;font-size:.95rem;border:1px solid rgba(255,255,255,.2);transition:border-color .2s}
+.cta-btn-sec:hover{border-color:rgba(255,255,255,.4)}
+
+/* FOOTER */
+.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;direction:rtl}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.375rem}
+.footer-brand-tag{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:1rem}
+.footer-col-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem}
+.footer-links{display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#378add}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.75rem}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
+.footer-badge{font-size:.65rem;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35)}
+#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
+  background:#185fa5;color:#fff;border:none;cursor:pointer;font-size:1.1rem;
+  opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:999}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#scroll-top:hover{background:#0c447c}
+@media(max-width:768px){
+  .wn-grid,.pain-grid,.moat-grid,.tam-detail-grid{grid-template-columns:1fr}
+  .tam-circles{flex-direction:column}
+  .tam-arrow{transform:rotate(90deg)}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav" role="banner">
+  <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">تقنية تكامل المنظومة الصحية</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="التنقل الرئيسي">
+    <a href="index.html#problem">المشكلة</a>
+    <a href="platform.html">المنصة</a>
+    <a href="ecosystem.html">النظام البيئي</a>
+    <a href="dashboard.html">لوحة التحكم</a>
+    <a href="market.html" class="nav-active">السوق</a>
+    <a href="pricing.html">الإيرادات</a>
+    <a href="team.html">الفريق</a>
+    <a href="investors.html">المستثمرون</a>
+  </nav>
+  <div class="nav-right">
+    <a href="../market.html" class="btn-lang">🌐 English</a>
+    <a href="contact.html" class="btn-demo">طلب عرض تجريبي ←</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="فتح القائمة" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="التنقل المحمول" aria-hidden="true">
+  <a href="index.html#problem">المشكلة</a>
+  <a href="platform.html">المنصة</a>
+  <a href="ecosystem.html">النظام البيئي</a>
+  <a href="dashboard.html">لوحة التحكم</a>
+  <a href="market.html">السوق</a>
+  <a href="pricing.html">الإيرادات</a>
+  <a href="team.html">الفريق</a>
+  <a href="investors.html">المستثمرون</a>
+  <a href="contact.html" class="mobile-demo-btn">طلب عرض تجريبي ←</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="mkt-hero">
+  <div class="mh-bg"></div>
+  <div class="mh-grid"></div>
+  <div class="mh-inner">
+    <div class="mh-badge">📊 تحليل السوق</div>
+    <h1 class="mh-h1">سوق ضخم<br><em>غير مُرقمَن بعد</em></h1>
+    <p class="mh-sub">منظومة التأمين الصحي في مصر تمتلك 100 مليون مستهلك، مليارات الجنيهات في إهدار يمكن تفاديه، وغياب شبه تام لحلول التكنولوجيا المتكاملة — هذه هي فرصة iRonic Health.</p>
+    <div class="mh-stats">
+      <div><div class="mhs-val blue">$373M</div><div class="mhs-lbl">إجمالي حجم السوق TAM</div></div>
+      <div><div class="mhs-val green">$550M</div><div class="mhs-lbl">السوق المستهدف SAM</div></div>
+      <div><div class="mhs-val gold">$18M ARR</div><div class="mhs-lbl">السوق المنال SOM — السنة 3</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TAM SAM SOM -->
+<section class="tam">
+  <div class="tam-inner">
+    <div class="reveal">
+      <div class="sec-label">حجم السوق</div>
+      <h2 class="sec-h2 "><em style="color:#378add">TAM · SAM · SOM</em> — فرصة مُثبَتة بالأرقام</h2>
+      <p class="sec-lead">التأمين الصحي في مصر قطاع يتوسع بسرعة بدعم حكومي مباشر ومنظومة تأمين صحي شامل — بينما البنية التحتية التقنية لا تزال في المرحلة الأولى.</p>
+    </div>
+
+    <div class="tam-circles reveal">
+      <div class="tam-circle c1">
+        <div class="tc-val">$373M</div>
+        <div class="tc-label blue">TAM</div>
+        <div class="tc-desc">إجمالي إنفاق التأمين الصحي الخاص في مصر</div>
+      </div>
+      <div class="tam-arrow">←</div>
+      <div class="tam-circle c2">
+        <div class="tc-val">$550M</div>
+        <div class="tc-label green">SAM</div>
+        <div class="tc-desc">القطاع القابل للخدمة مع التأمين الصحي الشامل</div>
+      </div>
+      <div class="tam-arrow">←</div>
+      <div class="tam-circle c3">
+        <div class="tc-val">$18M</div>
+        <div class="tc-label gold">SOM</div>
+        <div class="tc-desc">السنة 3 — ARR متوقع</div>
+      </div>
+    </div>
+
+    <div class="tam-detail-grid reveal">
+      <div class="tdd-card">
+        <div class="tdd-label" style="color:#378add">TAM — إجمالي السوق</div>
+        <div class="tdd-val">$373M</div>
+        <p class="tdd-basis">إجمالي أقساط التأمين الصحي الخاص في مصر. 100 مليون مستهلك. قطاع ينمو بـ 18–22% سنويًا بدعم التوسع في التأمين الصحي الشامل الحكومي.</p>
+      </div>
+      <div class="tdd-card">
+        <div class="tdd-label" style="color:#1d9e75">SAM — السوق المستهدف</div>
+        <div class="tdd-val">$550M</div>
+        <p class="tdd-basis">يشمل التأمين الصحي الشامل + القطاع الخاص. مؤسسات قادرة على تطبيق حلول AI تشكّل 60–70% من قاعدة العملاء المحتملة.</p>
+      </div>
+      <div class="tdd-card">
+        <div class="tdd-label" style="color:#c9a84c">SOM — السوق المنال</div>
+        <div class="tdd-val">$18M ARR</div>
+        <p class="tdd-basis">مبني على 3 شركات تأمين + 2 TPA + 200 مستشفى في السنة الثالثة. يمثل 5–6% من SAM — هدف محافظ وقابل للتحقق.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section class="why-now">
+  <div class="wn-inner">
+    <div class="reveal">
+      <div class="sec-label">لماذا الآن؟</div>
+      <h2 class="sec-h2"><em style="color:#378add">4 محفزات</em> تجعل 2026 هو التوقيت المثالي</h2>
+      <p class="sec-lead">التقاء فرص السوق مع البيئة التنظيمية وتسارع التكنولوجيا يخلق نافذة استثمارية نادرة.</p>
+    </div>
+    <div class="wn-grid">
+      <div class="wn-card reveal">
+        <div class="wn-num">01</div>
+        <h3 class="wn-h3">التأمين الصحي الشامل يُغيّر قواعد اللعبة</h3>
+        <p class="wn-p">قانون التأمين الصحي الشامل (رقم 2 لسنة 2018) يُلزم بتوسيع تدريجي يُضخّ معه ملايين المشتركين الجدد في المنظومة. هذا يعني حجمًا متصاعدًا من المطالبات يتطلب أتمتة فورية.</p>
+        <span class="wn-badge">قانون نافذ 2026</span>
+      </div>
+      <div class="wn-card reveal">
+        <div class="wn-num">02</div>
+        <h3 class="wn-h3">الهيئة المالية تدفع نحو الرقمنة</h3>
+        <p class="wn-p">مبادرات الهيئة المالية (FRA) لإلزام شركات التأمين بأنظمة إلكترونية للمطالبات والتقارير تخلق طلبًا مباشرًا على حلول من نوع iRonic Health.</p>
+        <span class="wn-badge">التزام تنظيمي</span>
+      </div>
+      <div class="wn-card reveal">
+        <div class="wn-num">03</div>
+        <h3 class="wn-h3">نضج الذكاء الاصطناعي في الرعاية الصحية</h3>
+        <p class="wn-p">نماذج الذكاء الاصطناعي للكشف عن الاحتيال وتصنيف المطالبات وصلت إلى مستوى نضج عالٍ يجعل التطبيق الإنتاجي ممكنًا بتكلفة معقولة لأول مرة.</p>
+        <span class="wn-badge">تكنولوجيا ناضجة</span>
+      </div>
+      <div class="wn-card reveal">
+        <div class="wn-num">04</div>
+        <h3 class="wn-h3">غياب المنافسة المتكاملة</h3>
+        <p class="wn-p">لا توجد حاليًا منصة واحدة تجمع كشف الاحتيال + أتمتة المطالبات + توجيه المستشفيات + PMPM analytics في حزمة واحدة مصممة للسوق المصري.</p>
+        <span class="wn-badge">فراغ السوق</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain">
+  <div class="pain-inner">
+    <div class="reveal">
+      <div class="sec-label">نقاط الألم</div>
+      <h2 class="sec-h2">مشاكل <em style="color:#185fa5">تُكلّف المليارات</em> سنويًا</h2>
+      <p class="sec-lead">منظومة التأمين الصحي في مصر تعاني من إهدار هيكلي ممنهج يمكن حله بالتكنولوجيا الصحيحة.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <span class="pain-icon">🚨</span>
+        <h3 class="pain-h3">معدل احتيال مرتفع</h3>
+        <div class="pain-stat">30%</div>
+        <p class="pain-p">من إجمالي المطالبات مشبوهة أو مزورة — تُهدر ما يزيد على 100 مليون دولار سنويًا من أقساط التأمين.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">⏳</span>
+        <h3 class="pain-h3">بطء معالجة المطالبات</h3>
+        <div class="pain-stat">14–21 يوم</div>
+        <p class="pain-p">متوسط الوقت لمعالجة مطالبة واحدة يدويًا، بينما iRonic Health تُنجزها في 4.3 ثانية بدقة 94%.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">📊</span>
+        <h3 class="pain-h3">غياب البيانات الموحدة</h3>
+        <div class="pain-stat">8 أنظمة</div>
+        <p class="pain-p">منفصلة لا تتحدث مع بعضها — شركات التأمين والمستشفيات والصيدليات وTPA تعمل في جُزر بيانات معزولة.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">💸</span>
+        <h3 class="pain-h3">تضخم التكاليف التشغيلية</h3>
+        <div class="pain-stat">40–60%</div>
+        <p class="pain-p">من تكاليف التأمين ترتبط بمعالجة المطالبات والتدقيق اليدوي — نسبة يمكن تخفيضها إلى أقل من 20% بالأتمتة.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">🏥</span>
+        <h3 class="pain-h3">توجيه المرضى العشوائي</h3>
+        <div class="pain-stat">65%</div>
+        <p class="pain-p">من المرضى يُحوَّلون إلى مستشفيات غير مثالية لحالتهم، مما يرفع التكاليف ويُخفض جودة الرعاية.</p>
+      </div>
+      <div class="pain-card reveal">
+        <span class="pain-icon">📉</span>
+        <h3 class="pain-h3">تسعير الأقساط العشوائي</h3>
+        <div class="pain-stat">غياب كامل</div>
+        <p class="pain-p">لا توجد أدوات لتسعير الأقساط بناءً على البيانات الفعلية لكل فئة ديموغرافية — كل شركات التأمين تعتمد على معادلات متقادمة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETITION -->
+<section class="competition">
+  <div class="comp-inner">
+    <div class="reveal">
+      <div class="sec-label">المشهد التنافسي</div>
+      <h2 class="sec-h2">iRonic Health مقارنةً <em style="color:#378add">بالبدائل الحالية</em></h2>
+      <p class="sec-lead">الحلول القائمة في السوق تعالج أجزاء من المشكلة — iRonic Health هي الوحيدة التي تحل المنظومة بالكامل.</p>
+    </div>
+    <div class="comp-table-wrap reveal">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>الحل / الشركة</th>
+            <th>كشف الاحتيال AI</th>
+            <th>أتمتة المطالبات</th>
+            <th>توجيه المستشفيات</th>
+            <th>PMPM Analytics</th>
+            <th>مُصمَّم لمصر</th>
+            <th>ترخيص FRA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="ironic-row">
+            <td>✦ iRonic Health</td>
+            <td><span class="check-yes">✓ 4.3 ثانية</span></td>
+            <td><span class="check-yes">✓ 94% دقة</span></td>
+            <td><span class="check-yes">✓ AI-Driven</span></td>
+            <td><span class="check-yes">✓ Real-time</span></td>
+            <td><span class="check-yes">✓ بالكامل</span></td>
+            <td><span class="check-yes">✓ مُرخَّص</span></td>
+          </tr>
+          <tr>
+            <td>أنظمة TPA التقليدية</td>
+            <td><span class="check-no">✗ يدوي</span></td>
+            <td><span class="check-partial">~ جزئي</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-partial">~ نسبيًا</span></td>
+            <td><span class="check-partial">~ بعضها</span></td>
+          </tr>
+          <tr>
+            <td>حلول ERP الطبية</td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-partial">~ أساسي</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-partial">~ مُعدَّل</span></td>
+            <td><span class="check-no">✗</span></td>
+          </tr>
+          <tr>
+            <td>حلول Global InsurTech</td>
+            <td><span class="check-yes">✓ متقدم</span></td>
+            <td><span class="check-yes">✓</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-yes">✓</span></td>
+            <td><span class="check-no">✗ غير مُكيَّف</span></td>
+            <td><span class="check-no">✗</span></td>
+          </tr>
+          <tr>
+            <td>الحلول اليدوية / Excel</td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-no">✗</span></td>
+            <td><span class="check-partial">~ بيانات محلية</span></td>
+            <td><span class="check-no">✗</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- MOAT -->
+<section class="moat">
+  <div class="moat-inner">
+    <div class="reveal">
+      <div class="sec-label">المزايا الدفاعية</div>
+      <h2 class="sec-h2">ستة حواجز <em style="color:#1d9e75">يصعب تجاوزها</em></h2>
+    </div>
+    <div class="moat-grid">
+      <div class="moat-card reveal">
+        <span class="moat-icon">📜</span>
+        <h3 class="moat-h3">ترخيص الهيئة المالية</h3>
+        <p class="moat-p">استغرق الحصول عليه شهورًا من العمل التنظيمي — لا يمكن للمنافسين الجدد نسخه في أسابيع.</p>
+      </div>
+      <div class="moat-card reveal">
+        <span class="moat-icon">🏛️</span>
+        <h3 class="moat-h3">تكاليف التحول العالية</h3>
+        <p class="moat-p">بمجرد دمج نظام TPA أو شركة تأمين مع منصتنا، تكلفة الانتقال لمنافس أخرى تكون مرتفعة جدًا.</p>
+      </div>
+      <div class="moat-card reveal">
+        <span class="moat-icon">📊</span>
+        <h3 class="moat-h3">بيانات تراكمية فريدة</h3>
+        <p class="moat-p">كل مطالبة معالجة تُحسّن نماذج الذكاء الاصطناعي — الميزة التنافسية تتعمق مع الوقت.</p>
+      </div>
+      <div class="moat-card reveal">
+        <span class="moat-icon">🔗</span>
+        <h3 class="moat-h3">شبكة تأثيرات متشابكة</h3>
+        <p class="moat-p">كل طرف جديد ينضم للمنصة يضيف قيمة لبقية الأطراف — مستشفيات أكثر تعني بيانات أفضل لشركات التأمين.</p>
+      </div>
+      <div class="moat-card reveal">
+        <span class="moat-icon">👨‍⚕️</span>
+        <h3 class="moat-h3">خبرة ميدانية عميقة</h3>
+        <p class="moat-p">فريقنا يفهم المنظومة المصرية من الداخل — لغة، ثقافة، تعقيدات تنظيمية لا يمكن اكتسابها سريعًا.</p>
+      </div>
+      <div class="moat-card reveal">
+        <span class="moat-icon">🚀</span>
+        <h3 class="moat-h3">ميزة الأوَّل في السوق</h3>
+        <p class="moat-p">النمو في سوق ناشئ يعني أن الشركة الأولى تبني علاقات وبيانات تُشكّل حواجز طبيعية أمام الداخلين الجدد.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="mkt-cta">
+  <div class="mkt-cta-inner reveal">
+    <h2 class="cta-h2">استعد للاستثمار في<br><em>فرصة نادرة</em></h2>
+    <p class="cta-p">السوق جاهز، التنظيم يُدفع نحو الرقمنة، والفريق يملك الخبرة. نافذة الاستثمار المبكر مفتوحة الآن.</p>
+    <div class="cta-btns">
+      <a href="investors.html" class="cta-btn-primary">حزمة المستثمرين</a>
+      <a href="contact.html" class="cta-btn-sec">طلب عرض تجريبي</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">iRonic Health</div>
+      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تكتشف الاحتيال في 4.3 ثانية.</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <span class="footer-badge">مُرخَّصة FRA</span>
+        <span class="footer-badge">متوافقة PDPL</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">المنصة</div>
+      <div class="footer-links">
+        <a href="platform.html">وحدات الذكاء الاصطناعي</a>
+        <a href="ecosystem.html">النظام البيئي</a>
+        <a href="dashboard.html">لوحة التحكم</a>
+        <a href="pricing.html">نموذج الإيرادات</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">الشركة</div>
+      <div class="footer-links">
+        <a href="team.html">الفريق</a>
+        <a href="investors.html">المستثمرون</a>
+        <a href="market.html">السوق</a>
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">تواصل</div>
+      <div class="footer-links">
+        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="tel:+201555556697">+20 155 555 6697</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
+    <a href="../market.html" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none">🌐 English</a>
+  </div>
+</footer>
+</main>
+
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+
+<script>
+const toggle = document.querySelector('.nav-mobile-toggle');
+const mNav = document.querySelector('.mobile-nav');
+if(toggle && mNav){
+  toggle.addEventListener('click',()=>{
+    const open = mNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    mNav.setAttribute('aria-hidden', !open);
+  });
+}
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav = document.getElementById('nav');
+if(nav) window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY>40); });
+const st = document.getElementById('scroll-top');
+if(st){
+  window.addEventListener('scroll',()=>{ st.classList.toggle('visible', window.scrollY>400); });
+  st.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+}
+</script>
+</body>
+</html>

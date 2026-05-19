@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="لوحة تحكم iRonic Health — مراقبة لحظية للمطالبات، كشف الاحتيال، والنقاط الصحية بالذكاء الاصطناعي.">
+<meta property="og:title" content="لوحة التحكم — iRonic Health">
+<title>لوحة التحكم · iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;overflow-x:hidden}
+
+/* ══ DESIGN TOKENS ══ */
+:root{--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94}
+
+/* ══ HEALTH SCORE — LIGHT ══ */
+.health-score{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+.health-score .sec-label{color:rgba(10,22,40,.4)}
+.health-score .sec-h2{color:var(--ink1)}
+.health-score p{color:var(--ink3)}
+.health-score .hs-num{color:var(--ink1)}
+.health-score .hs-subtitle{color:var(--ink4)}
+.health-score .hs-label{color:#1d9e75}
+.health-score .hf-name{color:var(--ink1)}
+.health-score .hf-bar-track{background:rgba(10,22,40,.1)}
+.nav{direction:rtl}
+.nav-center a{font-family:'Cairo',sans-serif}
+.nav-logo-text{text-align:right}
+.logo-wordmark,.logo-tagline,.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
+
+/* HERO */
+.dash-hero{
+  min-height:55vh;background:linear-gradient(145deg,#060f1c,#0a1628 55%,#0d1f3a);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 5% 70px;position:relative;overflow:hidden;
+}
+.dh-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle 600px at 80% 30%,rgba(29,158,117,.1),transparent 60%),
+                   radial-gradient(circle 400px at 5% 70%,rgba(24,95,165,.08),transparent 55%);}
+.dh-grid{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:40px 40px;}
+.dh-inner{position:relative;z-index:1;max-width:720px}
+.dh-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.25);
+  border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;
+  font-size:.82rem;font-weight:700;color:#1d9e75;letter-spacing:.04em;}
+.dh-live{display:inline-flex;align-items:center;gap:6px;margin-right:.75rem}
+.dh-live-dot{width:8px;height:8px;border-radius:50%;background:#1d9e75;
+  animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.dh-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;
+  color:#fff;margin-bottom:1.25rem;}
+.dh-h1 em{color:#1d9e75;font-style:normal}
+.dh-sub{font-size:1rem;color:rgba(255,255,255,.52);line-height:1.85;max-width:580px}
+
+/* COMMON */
+.sec-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem}
+.sec-h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:#fff;margin-bottom:.75rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ══ MAIN DASHBOARD ══ */
+.dash-main{padding:4rem 5%;background:#060f1c}
+.dm-inner{max-width:1300px;margin:0 auto}
+
+/* Top bar */
+.dash-topbar{display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:1rem 1.5rem;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.dtb-title{font-size:1rem;font-weight:800;color:#fff}
+.dtb-subtitle{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.2rem}
+.dtb-status{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#1d9e75;font-weight:700}
+.dtb-dot{width:8px;height:8px;border-radius:50%;background:#1d9e75;animation:pulse 2s infinite}
+.dtb-time{font-size:.75rem;color:rgba(255,255,255,.35);font-weight:400}
+
+/* KPI Grid */
+.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:2rem}
+.kpi-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;padding:1.25rem 1rem;position:relative;overflow:hidden}
+.kpi-card::after{content:'';position:absolute;bottom:0;right:0;left:0;height:2px}
+.kpi-card.k-green::after{background:#1d9e75}
+.kpi-card.k-gold::after{background:#c9a84c}
+.kpi-card.k-blue::after{background:#185fa5}
+.kpi-card.k-red::after{background:#e74c3c}
+.kpi-card.k-purple::after{background:#9b59b6}
+.kpi-label{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.38);
+  text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+.kpi-val{font-size:1.6rem;font-weight:900;line-height:1;margin-bottom:.3rem}
+.kpi-val.green{color:#1d9e75}.kpi-val.gold{color:#c9a84c}
+.kpi-val.blue{color:#378add}.kpi-val.red{color:#e74c3c}.kpi-val.purple{color:#b97fe8}
+.kpi-change{font-size:.72rem;color:rgba(255,255,255,.35)}
+.kpi-change.up{color:#1d9e75}.kpi-change.down{color:#e74c3c}
+
+/* Main Dashboard Grid */
+.dash-body{display:grid;grid-template-columns:1fr 1fr 380px;gap:1.5rem}
+
+/* Chart area */
+.chart-panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:1.5rem;grid-column:span 2}
+.panel-title{font-size:.88rem;font-weight:800;color:#fff;margin-bottom:.375rem}
+.panel-sub{font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:1.5rem}
+.chart-container{height:180px;position:relative;display:flex;align-items:flex-end;gap:6px}
+.chart-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.chart-bar{width:100%;border-radius:4px 4px 0 0;position:relative;transition:height .5s ease;min-height:4px}
+.chart-bar.fraud{background:linear-gradient(to top,#e74c3c,rgba(231,76,60,.5))}
+.chart-bar.legit{background:linear-gradient(to top,#1d9e75,rgba(29,158,117,.5))}
+.chart-x-label{font-size:.62rem;color:rgba(255,255,255,.3);text-align:center}
+.chart-legend{display:flex;gap:1.5rem;margin-top:1rem}
+.cleg{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:rgba(255,255,255,.5)}
+.cleg-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.cleg-dot.fraud{background:#e74c3c}.cleg-dot.legit{background:#1d9e75}
+
+/* Fraud detection panel */
+.fraud-panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:1.5rem}
+.fraud-gauge{position:relative;width:150px;height:80px;margin:0 auto 1rem;overflow:hidden}
+.gauge-bg{fill:none;stroke:rgba(255,255,255,.08);stroke-width:14}
+.gauge-fill{fill:none;stroke-width:14;stroke-linecap:round;
+  stroke-dasharray:282;stroke-dashoffset:282;
+  transition:stroke-dashoffset 1.5s cubic-bezier(.16,1,.3,1)}
+.gauge-fill.active{stroke-dashoffset:85}
+.gauge-green{stroke:#1d9e75}
+.gauge-center-text{position:absolute;bottom:0;left:0;right:0;
+  text-align:center;font-size:1.4rem;font-weight:900;color:#1d9e75}
+.gauge-label{font-size:.65rem;color:rgba(255,255,255,.35)}
+.fraud-stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
+.fs-item{background:rgba(255,255,255,.04);border-radius:8px;padding:.75rem;text-align:center}
+.fs-val{font-size:1.1rem;font-weight:900;color:#fff}
+.fs-val.red{color:#e74c3c}.fs-val.green{color:#1d9e75}
+.fs-lbl{font-size:.65rem;color:rgba(255,255,255,.35);margin-top:.2rem}
+
+/* Activity Feed */
+.activity-feed{display:flex;flex-direction:column;gap:0}
+.feed-wrap{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:1.5rem;max-height:600px;overflow-y:auto;grid-row:span 2;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent}
+.feed-item{display:flex;align-items:flex-start;gap:.875rem;
+  padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.feed-item:last-child{border-bottom:none}
+.fi-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.fi-dot.green{background:#1d9e75}.fi-dot.red{background:#e74c3c}
+.fi-dot.gold{background:#c9a84c}.fi-dot.blue{background:#378add}
+.fi-content{flex:1}
+.fi-title{font-size:.8rem;font-weight:700;color:#fff}
+.fi-meta{font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.15rem;line-height:1.5}
+.fi-time{font-size:.65rem;color:rgba(255,255,255,.25);flex-shrink:0;margin-top:2px}
+
+/* Claims Table */
+.claims-panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:1.5rem;margin-top:1.5rem;grid-column:span 3}
+.claims-table-wrap{overflow-x:auto}
+.claims-table{width:100%;border-collapse:collapse;min-width:700px}
+.claims-table th{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);
+  padding:.625rem .875rem;border-bottom:1px solid rgba(255,255,255,.07);
+  text-align:right;white-space:nowrap}
+.claims-table td{font-size:.8rem;color:rgba(255,255,255,.65);
+  padding:.625rem .875rem;border-bottom:1px solid rgba(255,255,255,.04);text-align:right}
+.claims-table tr:last-child td{border-bottom:none}
+.cl-status{display:inline-flex;align-items:center;gap:.375rem;
+  font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px}
+.cls-approved{background:rgba(29,158,117,.15);color:#1d9e75}
+.cls-flagged{background:rgba(231,76,60,.15);color:#e74c3c}
+.cls-pending{background:rgba(201,168,76,.12);color:#c9a84c}
+.cls-review{background:rgba(24,95,165,.15);color:#378add}
+.cl-score{font-weight:800}
+.cl-score.high{color:#1d9e75}.cl-score.medium{color:#c9a84c}.cl-score.low{color:#e74c3c}
+
+/* AI Health Score */
+.health-score{padding:5rem 5%}
+.hs-inner{max-width:1100px;margin:0 auto}
+.hs-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3rem}
+.hs-left{}
+.hs-score-big{position:relative;width:200px;height:200px;margin:0 auto}
+.hsc-svg{transform:rotate(-90deg)}
+.hsc-track{fill:none;stroke:rgba(255,255,255,.08);stroke-width:16}
+.hsc-fill{fill:none;stroke:#1d9e75;stroke-width:16;stroke-linecap:round;
+  stroke-dasharray:502;stroke-dashoffset:502;
+  transition:stroke-dashoffset 1.8s cubic-bezier(.16,1,.3,1)}
+.hsc-fill.active{stroke-dashoffset:88}
+.hs-center{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center}
+.hs-num{font-size:3rem;font-weight:900;color:#fff;line-height:1}
+.hs-num span{color:#1d9e75}
+.hs-subtitle{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.25rem}
+.hs-label{text-align:center;font-size:.9rem;font-weight:700;color:#1d9e75;margin-top:1rem}
+
+.hs-right{}
+.hs-factors{display:flex;flex-direction:column;gap:1.25rem}
+.hf-item{}
+.hf-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.hf-name{font-size:.85rem;font-weight:700;color:#fff}
+.hf-score{font-size:.85rem;font-weight:800}
+.hf-score.green{color:#1d9e75}.hf-score.gold{color:#c9a84c}.hf-score.blue{color:#378add}
+.hf-bar-track{height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
+.hf-bar-fill{height:100%;border-radius:4px;transition:width 1s ease}
+
+/* Modules Status */
+.modules-status{padding:5rem 5%;background:#060f1c}
+.ms-inner{max-width:1100px;margin:0 auto}
+.ms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
+.ms-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:14px;padding:1.5rem;transition:border-color .3s}
+.ms-card:hover{border-color:rgba(29,158,117,.25)}
+.ms-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.ms-icon{font-size:1.5rem}
+.ms-status-pill{font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:20px;
+  background:rgba(29,158,117,.12);color:#1d9e75;border:1px solid rgba(29,158,117,.2)}
+.ms-name{font-size:.88rem;font-weight:800;color:#fff;margin-bottom:.375rem}
+.ms-val{font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:.25rem}
+.ms-val em{font-style:normal}
+.ms-val .green{color:#1d9e75}.ms-val .gold{color:#c9a84c}
+.ms-meta{font-size:.7rem;color:rgba(255,255,255,.35)}
+
+/* CTA */
+.dash-cta{padding:5rem 5%;background:linear-gradient(135deg,#060f1c,#0a1628);text-align:center}
+.dc-inner{max-width:640px;margin:0 auto}
+.cta-h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:1rem}
+.cta-h2 em{color:#1d9e75;font-style:normal}
+.cta-p{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:2.5rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btn-green{background:#1d9e75;color:#fff;padding:.9rem 2rem;border-radius:8px;
+  text-decoration:none;font-weight:700;font-size:.95rem;transition:background .2s}
+.cta-btn-green:hover{background:#178a64}
+.cta-btn-sec{color:#fff;padding:.9rem 2rem;border-radius:8px;text-decoration:none;
+  font-weight:700;font-size:.95rem;border:1px solid rgba(255,255,255,.2)}
+
+/* FOOTER */
+.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;direction:rtl}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.375rem}
+.footer-brand-tag{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:1rem}
+.footer-col-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem}
+.footer-links{display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#1d9e75}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.75rem}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
+.footer-badge{font-size:.65rem;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35)}
+#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
+  background:#1d9e75;color:#fff;border:none;cursor:pointer;font-size:1.1rem;
+  opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:999}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#scroll-top:hover{background:#178a64}
+@media(max-width:1100px){.dash-body{grid-template-columns:1fr 1fr}.activity-feed{display:none}.claims-panel{grid-column:span 2}}
+@media(max-width:768px){.kpi-grid{grid-template-columns:repeat(3,1fr)}.dash-body{grid-template-columns:1fr}.chart-panel{grid-column:span 1}.ms-grid{grid-template-columns:1fr 1fr}.hs-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.kpi-grid{grid-template-columns:1fr 1fr}.ms-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav" role="banner">
+  <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">تقنية تكامل المنظومة الصحية</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="التنقل الرئيسي">
+    <a href="index.html#problem">المشكلة</a>
+    <a href="platform.html">المنصة</a>
+    <a href="ecosystem.html">النظام البيئي</a>
+    <a href="dashboard.html" class="nav-active">لوحة التحكم</a>
+    <a href="market.html">السوق</a>
+    <a href="pricing.html">الإيرادات</a>
+    <a href="team.html">الفريق</a>
+    <a href="investors.html">المستثمرون</a>
+  </nav>
+  <div class="nav-right">
+    <a href="../dashboard.html" class="btn-lang">🌐 English</a>
+    <a href="contact.html" class="btn-demo">طلب عرض تجريبي ←</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="فتح القائمة" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="التنقل المحمول" aria-hidden="true">
+  <a href="index.html#problem">المشكلة</a>
+  <a href="platform.html">المنصة</a>
+  <a href="ecosystem.html">النظام البيئي</a>
+  <a href="dashboard.html">لوحة التحكم</a>
+  <a href="market.html">السوق</a>
+  <a href="pricing.html">الإيرادات</a>
+  <a href="team.html">الفريق</a>
+  <a href="investors.html">المستثمرون</a>
+  <a href="contact.html" class="mobile-demo-btn">طلب عرض تجريبي ←</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="dash-hero">
+  <div class="dh-bg"></div>
+  <div class="dh-grid"></div>
+  <div class="dh-inner">
+    <div class="dh-badge">
+      <span class="dh-live"><span class="dh-live-dot"></span>مباشر</span>
+      لوحة التحكم الذكية
+    </div>
+    <h1 class="dh-h1">كل المنظومة في<br><em>لوحة واحدة</em></h1>
+    <p class="dh-sub">مراقبة لحظية للمطالبات، كشف الاحتيال فور حدوثه، ونقاط صحية لكل مؤمَّن — كل ذلك في واجهة واحدة مُصمَّمة للقرار السريع.</p>
+  </div>
+</section>
+
+<!-- MAIN DASHBOARD -->
+<section class="dash-main">
+  <div class="dm-inner reveal">
+
+    <!-- Top Bar -->
+    <div class="dash-topbar">
+      <div>
+        <div class="dtb-title">iRonic Health — لوحة التحكم الموحدة</div>
+        <div class="dtb-subtitle">شركة التأمين الوطنية — Q2 2026 · <span class="dtb-time" id="live-time"></span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+        <div class="dtb-status"><span class="dtb-dot"></span> جميع الأنظمة تعمل</div>
+        <div style="font-size:.78rem;color:rgba(255,255,255,.35)">آخر تحديث: الآن</div>
+      </div>
+    </div>
+
+    <!-- KPI Grid -->
+    <div class="kpi-grid">
+      <div class="kpi-card k-green">
+        <div class="kpi-label">مطالبات اليوم</div>
+        <div class="kpi-val green" id="kpi-claims">2,847</div>
+        <div class="kpi-change up">↑ 12% عن أمس</div>
+      </div>
+      <div class="kpi-card k-red">
+        <div class="kpi-label">مطالبات مشبوهة</div>
+        <div class="kpi-val red" id="kpi-fraud">43</div>
+        <div class="kpi-change down">1.5% من الإجمالي</div>
+      </div>
+      <div class="kpi-card k-gold">
+        <div class="kpi-label">متوسط وقت المعالجة</div>
+        <div class="kpi-val gold">4.3 ث</div>
+        <div class="kpi-change up">↓ 99.2% أسرع</div>
+      </div>
+      <div class="kpi-card k-blue">
+        <div class="kpi-label">مؤمَّنون نشطون</div>
+        <div class="kpi-val blue">375K</div>
+        <div class="kpi-change up">↑ 8.3% هذا الشهر</div>
+      </div>
+      <div class="kpi-card k-purple">
+        <div class="kpi-label">توفير محقق اليوم</div>
+        <div class="kpi-val purple">$18.4K</div>
+        <div class="kpi-change up">↑ 94% دقة الكشف</div>
+      </div>
+    </div>
+
+    <!-- Dashboard Body -->
+    <div class="dash-body">
+
+      <!-- Fraud Chart -->
+      <div class="chart-panel">
+        <div class="panel-title">تحليل المطالبات — الأيام السبعة الأخيرة</div>
+        <div class="panel-sub">مطالبات مشروعة مقابل مشبوهة مكتشفة بالذكاء الاصطناعي</div>
+        <div class="chart-container" id="main-chart">
+          <!-- Generated by JS -->
+        </div>
+        <div class="chart-legend">
+          <div class="cleg"><span class="cleg-dot legit"></span> مطالبات مشروعة</div>
+          <div class="cleg"><span class="cleg-dot fraud"></span> مطالبات مشبوهة</div>
+        </div>
+      </div>
+
+      <!-- Fraud Gauge -->
+      <div class="fraud-panel">
+        <div class="panel-title">نسبة كشف الاحتيال</div>
+        <div class="panel-sub">دقة وحدة كشف الاحتيال AI</div>
+        <div class="fraud-gauge">
+          <svg viewBox="0 0 100 50" width="150" height="80">
+            <path class="gauge-bg" d="M10,50 A40,40 0 0,1 90,50" />
+            <path class="gauge-fill gauge-green" id="gauge-fill" d="M10,50 A40,40 0 0,1 90,50" />
+          </svg>
+          <div class="gauge-center-text">94%</div>
+        </div>
+        <div style="text-align:center;font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:1rem">دقة كشف الاحتيال</div>
+        <div class="fraud-stats">
+          <div class="fs-item">
+            <div class="fs-val green">43</div>
+            <div class="fs-lbl">مكتشفة اليوم</div>
+          </div>
+          <div class="fs-item">
+            <div class="fs-val">4.3ث</div>
+            <div class="fs-lbl">وقت الكشف</div>
+          </div>
+          <div class="fs-item">
+            <div class="fs-val red">$12.8K</div>
+            <div class="fs-lbl">محجوزة</div>
+          </div>
+          <div class="fs-item">
+            <div class="fs-val green">$18.4K</div>
+            <div class="fs-lbl">موفَّر اليوم</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity Feed -->
+      <div class="feed-wrap activity-feed">
+        <div class="panel-title" style="margin-bottom:.375rem">تيار النشاط اللحظي</div>
+        <div class="panel-sub" style="margin-bottom:1.25rem">آخر الأحداث في المنظومة</div>
+        <div id="feed-container">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+
+      <!-- Claims Table -->
+      <div class="claims-panel">
+        <div class="panel-title" style="margin-bottom:.375rem">آخر المطالبات المعالجة</div>
+        <div class="panel-sub" style="margin-bottom:1.25rem">تحديث فوري — AI يصنّف كل مطالبة تلقائيًا</div>
+        <div class="claims-table-wrap">
+          <table class="claims-table">
+            <thead>
+              <tr>
+                <th>رقم المطالبة</th>
+                <th>المريض</th>
+                <th>المستشفى</th>
+                <th>المبلغ</th>
+                <th>نقاط المخاطر</th>
+                <th>الحالة</th>
+                <th>وقت المعالجة</th>
+              </tr>
+            </thead>
+            <tbody id="claims-tbody">
+              <!-- Generated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HEALTH SCORE -->
+<section class="health-score">
+  <div class="hs-inner">
+    <div class="reveal">
+      <div class="sec-label">النقاط الصحية</div>
+      <h2 class="sec-h2">النقاط الصحية <em style="color:#1d9e75">بالذكاء الاصطناعي</em></h2>
+      <p style="font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:0">نقاط صحية ديناميكية لكل مؤمَّن — تُحدَّث شهريًا بناءً على البيانات الطبية والسلوك الصحي.</p>
+    </div>
+    <div class="hs-grid reveal">
+      <div class="hs-left">
+        <div class="hs-score-big">
+          <svg class="hsc-svg" viewBox="0 0 180 180" width="200" height="200">
+            <circle class="hsc-track" cx="90" cy="90" r="80" />
+            <circle class="hsc-fill" id="hs-circle" cx="90" cy="90" r="80" />
+          </svg>
+          <div class="hs-center">
+            <div class="hs-num">7<span>8</span></div>
+            <div class="hs-subtitle">من 100 — متوسط المنظومة</div>
+          </div>
+        </div>
+        <div class="hs-label">⬆ تحسّن بـ 6 نقاط هذا الربع</div>
+      </div>
+      <div class="hs-right">
+        <div class="hs-factors">
+          <div class="hf-item">
+            <div class="hf-header">
+              <div class="hf-name">الامتثال للأدوية</div>
+              <div class="hf-score green">87/100</div>
+            </div>
+            <div class="hf-bar-track">
+              <div class="hf-bar-fill" style="width:87%;background:#1d9e75"></div>
+            </div>
+          </div>
+          <div class="hf-item">
+            <div class="hf-header">
+              <div class="hf-name">زيارات الرعاية الوقائية</div>
+              <div class="hf-score green">82/100</div>
+            </div>
+            <div class="hf-bar-track">
+              <div class="hf-bar-fill" style="width:82%;background:#1d9e75"></div>
+            </div>
+          </div>
+          <div class="hf-item">
+            <div class="hf-header">
+              <div class="hf-name">مؤشرات الأمراض المزمنة</div>
+              <div class="hf-score gold">68/100</div>
+            </div>
+            <div class="hf-bar-track">
+              <div class="hf-bar-fill" style="width:68%;background:#c9a84c"></div>
+            </div>
+          </div>
+          <div class="hf-item">
+            <div class="hf-header">
+              <div class="hf-name">التحديث الصحي السنوي</div>
+              <div class="hf-score blue">91/100</div>
+            </div>
+            <div class="hf-bar-track">
+              <div class="hf-bar-fill" style="width:91%;background:#378add"></div>
+            </div>
+          </div>
+          <div class="hf-item">
+            <div class="hf-header">
+              <div class="hf-name">تكرار المطالبات</div>
+              <div class="hf-score gold">72/100</div>
+            </div>
+            <div class="hf-bar-track">
+              <div class="hf-bar-fill" style="width:72%;background:#c9a84c"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES STATUS -->
+<section class="modules-status">
+  <div class="ms-inner">
+    <div class="reveal">
+      <div class="sec-label">حالة الوحدات</div>
+      <h2 class="sec-h2">الوحدات السبع <em style="color:#1d9e75">تعمل بكامل طاقتها</em></h2>
+    </div>
+    <div class="ms-grid">
+      <div class="ms-card reveal">
+        <div class="ms-header">
+          <span class="ms-icon">🛡️</span>
+          <span class="ms-status-pill">نشط</span>
+        </div>
+        <div class="ms-name">كشف الاحتيال</div>
+        <div class="ms-val"><em class="green">4.3</em> ث</div>
+        <div class="ms-meta">43 مطالبة مشبوهة اليوم</div>
+      </div>
+      <div class="ms-card reveal">
+        <div class="ms-header">
+          <span class="ms-icon">❤️</span>
+          <span class="ms-status-pill">نشط</span>
+        </div>
+        <div class="ms-name">النقاط الصحية</div>
+        <div class="ms-val"><em class="green">78</em>/100</div>
+        <div class="ms-meta">متوسط 375K مؤمَّن</div>
+      </div>
+      <div class="ms-card reveal">
+        <div class="ms-header">
+          <span class="ms-icon">📋</span>
+          <span class="ms-status-pill">نشط</span>
+        </div>
+        <div class="ms-name">توقع المطالبات</div>
+        <div class="ms-val"><em class="green">94%</em></div>
+        <div class="ms-meta">دقة التصنيف اللحظية</div>
+      </div>
+      <div class="ms-card reveal">
+        <div class="ms-header">
+          <span class="ms-icon">🏥</span>
+          <span class="ms-status-pill">نشط</span>
+        </div>
+        <div class="ms-name">توجيه المستشفيات</div>
+        <div class="ms-val"><em class="gold">200+</em></div>
+        <div class="ms-meta">مستشفى مُرتبط بالشبكة</div>
+      </div>
+      <div class="ms-card reveal">
+        <div class="ms-header">
+          <span class="ms-icon">🌱</span>
+          <span class="ms-status-pill">نشط</span>
+        </div>
+        <div class="ms-name">الرعاية الوقائية</div>
+        <div class="ms-val"><em class="green">12K</em></div>
+        <div class="ms-meta">تنبيه صحي هذا الشهر</div>
+      </div>
+      <div class="ms-card reveal">
+        <div class="ms-header">
+          <span class="ms-icon">📈</span>
+          <span class="ms-status-pill">نشط</span>
+        </div>
+        <div class="ms-name">الأقساط الديناميكية</div>
+        <div class="ms-val"><em class="gold">±18%</em></div>
+        <div class="ms-meta">تعديل متوسط الأقساط</div>
+      </div>
+      <div class="ms-card reveal">
+        <div class="ms-header">
+          <span class="ms-icon">📊</span>
+          <span class="ms-status-pill">نشط</span>
+        </div>
+        <div class="ms-name">لوحة التحكم</div>
+        <div class="ms-val"><em class="green">100%</em></div>
+        <div class="ms-meta">وقت تشغيل — 99.9% SLA</div>
+      </div>
+      <div class="ms-card reveal" style="border-color:rgba(255,255,255,.04);opacity:.6">
+        <div class="ms-header">
+          <span class="ms-icon">🔗</span>
+          <span class="ms-status-pill" style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.1)">قريبًا</span>
+        </div>
+        <div class="ms-name">API خارجي للشركاء</div>
+        <div class="ms-val" style="color:rgba(255,255,255,.3)">Q3 2026</div>
+        <div class="ms-meta">تكامل مباشر للشركاء</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="dash-cta">
+  <div class="dc-inner reveal">
+    <h2 class="cta-h2">جرّب لوحة التحكم<br><em>مباشرةً مع بياناتك</em></h2>
+    <p class="cta-p">نقدم نسخة تجريبية مُخصَّصة لشركتك — استخدم بياناتك الفعلية وشاهد كيف تعمل وحدات الذكاء الاصطناعي في بيئتك الحقيقية.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="cta-btn-green">طلب عرض تجريبي ←</a>
+      <a href="platform.html" class="cta-btn-sec">استعرض الوحدات</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">iRonic Health</div>
+      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تكتشف الاحتيال في 4.3 ثانية.</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <span class="footer-badge">مُرخَّصة FRA</span>
+        <span class="footer-badge">متوافقة PDPL</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">المنصة</div>
+      <div class="footer-links">
+        <a href="platform.html">وحدات الذكاء الاصطناعي</a>
+        <a href="ecosystem.html">النظام البيئي</a>
+        <a href="dashboard.html">لوحة التحكم</a>
+        <a href="pricing.html">نموذج الإيرادات</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">الشركة</div>
+      <div class="footer-links">
+        <a href="team.html">الفريق</a>
+        <a href="investors.html">المستثمرون</a>
+        <a href="market.html">السوق</a>
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">تواصل</div>
+      <div class="footer-links">
+        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="tel:+201555556697">+20 155 555 6697</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
+    <a href="../dashboard.html" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none">🌐 English</a>
+  </div>
+</footer>
+</main>
+
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+
+<script>
+// Mobile nav
+const toggle = document.querySelector('.nav-mobile-toggle');
+const mNav = document.querySelector('.mobile-nav');
+if(toggle && mNav){
+  toggle.addEventListener('click',()=>{
+    const open = mNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    mNav.setAttribute('aria-hidden', !open);
+  });
+}
+// Reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Nav scroll
+const nav = document.getElementById('nav');
+if(nav) window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY>40); });
+// Scroll top
+const st = document.getElementById('scroll-top');
+if(st){
+  window.addEventListener('scroll',()=>{ st.classList.toggle('visible', window.scrollY>400); });
+  st.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+}
+
+// Live clock
+function updateTime(){
+  const t = new Date();
+  document.getElementById('live-time').textContent =
+    t.toLocaleTimeString('ar-EG',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}
+updateTime(); setInterval(updateTime, 1000);
+
+// Build chart
+const chartData = [
+  {day:'السبت',legit:340,fraud:8},
+  {day:'الأحد',legit:412,fraud:12},
+  {day:'الإثنين',legit:398,fraud:6},
+  {day:'الثلاثاء',legit:467,fraud:15},
+  {day:'الأربعاء',legit:421,fraud:9},
+  {day:'الخميس',legit:389,fraud:11},
+  {day:'الجمعة',legit:420,fraud:7}
+];
+const maxVal = Math.max(...chartData.map(d=>d.legit+d.fraud));
+const chartEl = document.getElementById('main-chart');
+if(chartEl){
+  chartData.forEach(d=>{
+    const wrap = document.createElement('div');
+    wrap.className = 'chart-bar-wrap';
+    const totalH = Math.round(((d.legit+d.fraud)/maxVal)*160);
+    const fraudH = Math.round((d.fraud/(d.legit+d.fraud))*totalH);
+    const legitH = totalH - fraudH;
+    wrap.innerHTML = `
+      <div class="chart-bar legit" style="height:${legitH}px" title="${d.legit} مشروعة"></div>
+      <div class="chart-bar fraud" style="height:${fraudH}px" title="${d.fraud} مشبوهة"></div>
+      <div class="chart-x-label">${d.day}</div>`;
+    chartEl.appendChild(wrap);
+  });
+}
+
+// Build activity feed
+const feedItems = [
+  {color:'red',title:'مطالبة مشبوهة #CLM-8842',meta:'مستشفى النيل · $1,240 · نسبة خطورة: 91%',time:'الآن'},
+  {color:'green',title:'مطالبة معتمدة #CLM-8841',meta:'مستشفى القاهرة الجديد · $380 · 2.1 ثانية',time:'12د'},
+  {color:'gold',title:'تنبيه صحي — مريض مزمن',meta:'معرّف: P-20847 · فحص ضغط الدم متأخر',time:'18د'},
+  {color:'green',title:'10 مطالبات معالجة دفعة واحدة',meta:'TPA النيل · متوسط 3.8 ثانية · جميعها معتمدة',time:'25د'},
+  {color:'red',title:'شبكة احتيال مكتشفة',meta:'3 مطالبات مترابطة · مستشفيان · نفس الرمز الطبي',time:'31د'},
+  {color:'blue',title:'شريك جديد مُضاف للشبكة',meta:'صيدلية الشفاء — 15 فرعًا · Cairo East',time:'45د'},
+  {color:'green',title:'مطالبة معتمدة #CLM-8838',meta:'مركز ماجد الطبي · $2,100 · 4.1 ثانية',time:'52د'},
+  {color:'gold',title:'تحديث أقساط ديناميكية',meta:'مجموعة أ — 2,400 مؤمَّن · تعديل +3.2%',time:'1س'},
+];
+const feedC = document.getElementById('feed-container');
+if(feedC){
+  feedItems.forEach(item=>{
+    feedC.innerHTML += `
+      <div class="feed-item">
+        <span class="fi-dot ${item.color}"></span>
+        <div class="fi-content">
+          <div class="fi-title">${item.title}</div>
+          <div class="fi-meta">${item.meta}</div>
+        </div>
+        <div class="fi-time">${item.time}</div>
+      </div>`;
+  });
+}
+
+// Build claims table
+const claims = [
+  {id:'CLM-8842',patient:'أ. م. س.',hospital:'مستشفى النيل',amount:'$1,240',score:'91',status:'flagged',time:'0.9ث'},
+  {id:'CLM-8841',patient:'ف. ع. ح.',hospital:'القاهرة الجديد',amount:'$380',score:'12',status:'approved',time:'2.1ث'},
+  {id:'CLM-8840',patient:'م. ك. ر.',hospital:'مستشفى المعادي',amount:'$5,800',score:'45',status:'review',time:'3.4ث'},
+  {id:'CLM-8839',patient:'ه. م. س.',hospital:'النهضة الطبي',amount:'$720',score:'8',status:'approved',time:'1.8ث'},
+  {id:'CLM-8838',patient:'أ. ر. ع.',hospital:'ماجد الطبي',amount:'$2,100',score:'19',status:'approved',time:'4.1ث'},
+  {id:'CLM-8837',patient:'ط. س. ح.',hospital:'الشفاء الطبي',amount:'$950',score:'67',status:'pending',time:'5.2ث'},
+];
+const tbody = document.getElementById('claims-tbody');
+if(tbody){
+  const statusMap = {
+    approved:{cls:'cls-approved',label:'معتمدة'},
+    flagged:{cls:'cls-flagged',label:'مشبوهة'},
+    pending:{cls:'cls-pending',label:'قيد المراجعة'},
+    review:{cls:'cls-review',label:'للمراجعة'}
+  };
+  claims.forEach(c=>{
+    const s = statusMap[c.status];
+    const sc = parseInt(c.score);
+    const scoreCls = sc<30?'high':sc<60?'medium':'low';
+    tbody.innerHTML += `<tr>
+      <td>${c.id}</td>
+      <td>${c.patient}</td>
+      <td>${c.hospital}</td>
+      <td>${c.amount}</td>
+      <td><span class="cl-score ${scoreCls}">${c.score}</span></td>
+      <td><span class="cl-status ${s.cls}">${s.label}</span></td>
+      <td>${c.time}</td>
+    </tr>`;
+  });
+}
+
+// Animate gauge on scroll
+const gaugeSec = document.querySelector('.fraud-panel');
+if(gaugeSec){
+  const gObs = new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      const gf = document.getElementById('gauge-fill');
+      if(gf) gf.classList.add('active');
+      gObs.disconnect();
+    }
+  },{threshold:.4});
+  gObs.observe(gaugeSec);
+}
+
+// Animate health score on scroll
+const hsSec = document.querySelector('.health-score');
+if(hsSec){
+  const hsObs = new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      const hc = document.getElementById('hs-circle');
+      if(hc) hc.classList.add('active');
+      hsObs.disconnect();
+    }
+  },{threshold:.3});
+  hsObs.observe(hsSec);
+}
+
+// Animate KPIs counting up
+function countUp(el, target, suffix=''){
+  let current = 0;
+  const step = Math.ceil(target/60);
+  const timer = setInterval(()=>{
+    current = Math.min(current+step, target);
+    el.textContent = current.toLocaleString('ar-EG') + suffix;
+    if(current >= target) clearInterval(timer);
+  }, 20);
+}
+const kpiObs = new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){
+    countUp(document.getElementById('kpi-claims'), 2847);
+    countUp(document.getElementById('kpi-fraud'), 43);
+    kpiObs.disconnect();
+  }
+},{threshold:.5});
+const kpiGrid = document.querySelector('.kpi-grid');
+if(kpiGrid) kpiObs.observe(kpiGrid);
+</script>
+</body>
+</html>

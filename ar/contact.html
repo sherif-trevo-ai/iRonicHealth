@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="تواصل مع فريق iRonic Health — طلب عرض تجريبي، استفسارات الاستثمار، الشراكات.">
+<meta property="og:title" content="تواصل معنا — iRonic Health">
+<title>تواصل معنا · iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;overflow-x:hidden}
+
+/* ══ DESIGN TOKENS ══ */
+:root{--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94}
+
+/* ══ INQUIRY TYPES — LIGHT ══ */
+.inquiry-types{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+.inquiry-types .sec-label{color:rgba(10,22,40,.4)}
+.inquiry-types .sec-h2{color:var(--ink1)}
+.inquiry-types .sec-h2 em{color:#c9a84c}
+.inquiry-types .it-card{background:var(--lt1);border-color:#dde8f5;box-shadow:0 2px 8px rgba(10,22,40,.05)}
+.inquiry-types .it-card:hover,.inquiry-types .it-card.active{border-color:#c9a84c;background:rgba(201,168,76,.05)}
+.inquiry-types .it-title{color:var(--ink1)}
+.inquiry-types .it-desc{color:var(--ink3)}
+
+/* ══ FAQ — LIGHT ══ */
+.faq{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
+.faq .sec-label{color:rgba(10,22,40,.4)}
+.faq .sec-h2{color:var(--ink1)}
+.faq .sec-h2 em{color:#c9a84c}
+.faq .faq-item{border-bottom-color:#e5ecf6}
+.faq .faq-q{color:var(--ink1)}
+.faq .faq-a p{color:var(--ink3)}
+.nav{direction:rtl}
+.nav-center a{font-family:'Cairo',sans-serif}
+.nav-logo-text{text-align:right}
+.logo-wordmark,.logo-tagline,.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
+
+/* HERO */
+.contact-hero{
+  min-height:52vh;background:linear-gradient(145deg,#060f1c,#0a1628 60%,#0d1f3a);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 5% 70px;position:relative;overflow:hidden;
+}
+.ch-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle 500px at 70% 40%,rgba(201,168,76,.08),transparent 60%),
+                   radial-gradient(circle 350px at 15% 70%,rgba(24,95,165,.09),transparent 55%);}
+.ch-grid{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:40px 40px;}
+.ch-inner{position:relative;z-index:1;max-width:680px}
+.ch-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);
+  border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;
+  font-size:.82rem;font-weight:700;color:#c9a84c;}
+.ch-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;
+  color:#fff;margin-bottom:1.25rem;}
+.ch-h1 em{color:#c9a84c;font-style:normal}
+.ch-sub{font-size:1rem;color:rgba(255,255,255,.52);line-height:1.85}
+
+/* INQUIRY TYPES */
+.inquiry-types{padding:5rem 5%}
+.it-inner{max-width:1100px;margin:0 auto}
+.sec-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem}
+.sec-h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:#fff;margin-bottom:2.5rem}
+.sec-h2 em{color:#c9a84c;font-style:normal}
+.it-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.it-card{background:rgba(255,255,255,.03);border:2px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.75rem 1.5rem;cursor:pointer;
+  transition:all .25s;text-align:center}
+.it-card:hover,.it-card.active{border-color:#c9a84c;background:rgba(201,168,76,.06)}
+.it-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.it-title{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.it-desc{font-size:.8rem;color:rgba(255,255,255,.42);line-height:1.7}
+
+/* MAIN CONTACT LAYOUT */
+.contact-main{padding:5rem 5%;background:#0a1628}
+.cm-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start}
+
+/* DIRECT CONTACTS */
+.direct-contacts{}
+.dc-title{font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:.625rem}
+.dc-sub{font-size:.88rem;color:rgba(255,255,255,.45);line-height:1.8;margin-bottom:2rem}
+.dc-cards{display:flex;flex-direction:column;gap:1.25rem}
+.dc-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:14px;padding:1.375rem 1.25rem;transition:border-color .25s}
+.dc-card:hover{border-color:rgba(201,168,76,.25)}
+.dc-card-top{display:flex;align-items:center;gap:.875rem;margin-bottom:.875rem}
+.dc-avatar{width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;font-weight:800;color:#fff;flex-shrink:0}
+.dc-name{font-size:.95rem;font-weight:800;color:#fff}
+.dc-role{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:.1rem}
+.dc-links{display:flex;flex-direction:column;gap:.5rem}
+.dc-link{display:flex;align-items:center;gap:.625rem;font-size:.82rem;
+  color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.dc-link:hover{color:#c9a84c}
+.dc-link-icon{font-size:.9rem;flex-shrink:0}
+
+.dc-info-box{background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.15);
+  border-radius:14px;padding:1.25rem;margin-top:1.5rem}
+.dc-info-box p{font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.8}
+.dc-info-box strong{color:#c9a84c}
+
+/* FORM */
+.contact-form-wrap{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;padding:2.5rem}
+.cf-title{font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:.5rem}
+.cf-sub{font-size:.85rem;color:rgba(255,255,255,.4);margin-bottom:2rem;line-height:1.7}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem}
+.form-group label{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.55)}
+.form-group input,.form-group select,.form-group textarea{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;padding:.75rem 1rem;color:#fff;font-family:'Cairo',sans-serif;
+  font-size:.9rem;outline:none;transition:border-color .2s;direction:rtl;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:rgba(201,168,76,.4)}
+.form-group select option{background:#0a1628;color:#fff}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-submit{width:100%;background:#c9a84c;color:#060f1c;
+  padding:1rem 2rem;border:none;border-radius:8px;
+  font-family:'Cairo',sans-serif;font-size:1rem;font-weight:800;
+  cursor:pointer;transition:all .2s;margin-top:.5rem}
+.form-submit:hover{background:#b8963e;transform:translateY(-1px)}
+.form-note{font-size:.75rem;color:rgba(255,255,255,.3);text-align:center;margin-top:.875rem}
+
+/* SUCCESS STATE */
+.form-success{display:none;text-align:center;padding:3rem 1rem}
+.form-success .success-icon{font-size:3rem;margin-bottom:1rem;display:block}
+.form-success h3{font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:.75rem}
+.form-success p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.8}
+
+/* FAQ */
+.faq{padding:5rem 5%}
+.faq-inner{max-width:800px;margin:0 auto}
+.faq-list{margin-top:2.5rem}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.07);overflow:hidden}
+.faq-q{width:100%;background:none;border:none;color:#fff;
+  font-family:'Cairo',sans-serif;font-size:.95rem;font-weight:700;
+  text-align:right;padding:1.375rem 0;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-icon{font-size:1.1rem;color:#c9a84c;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.85;padding-bottom:1.25rem}
+
+/* FOOTER */
+.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;direction:rtl}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.375rem}
+.footer-brand-tag{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:1rem}
+.footer-col-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem}
+.footer-links{display:flex;flex-direction:column;gap:.5rem}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:#c9a84c}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.75rem}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
+.footer-badge{font-size:.65rem;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35)}
+
+#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
+  background:#c9a84c;color:#060f1c;border:none;cursor:pointer;font-size:1.1rem;
+  opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:999}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#scroll-top:hover{background:#b8963e}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){.cm-inner{grid-template-columns:1fr}.it-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.form-row{grid-template-columns:1fr}.it-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav" role="banner">
+  <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
+    <div class="nav-logo-icon" aria-hidden="true">
+      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
+      <div class="logo-badge">H</div>
+    </div>
+    <div class="nav-logo-text">
+      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
+      <span class="logo-tagline">تقنية تكامل المنظومة الصحية</span>
+    </div>
+  </a>
+  <nav class="nav-center" aria-label="التنقل الرئيسي">
+    <a href="index.html#problem">المشكلة</a>
+    <a href="platform.html">المنصة</a>
+    <a href="ecosystem.html">النظام البيئي</a>
+    <a href="dashboard.html">لوحة التحكم</a>
+    <a href="market.html">السوق</a>
+    <a href="pricing.html">الإيرادات</a>
+    <a href="team.html">الفريق</a>
+    <a href="investors.html">المستثمرون</a>
+  </nav>
+  <div class="nav-right">
+    <a href="../contact.html" class="btn-lang">🌐 English</a>
+    <a href="contact.html" class="btn-demo nav-active">طلب عرض تجريبي ←</a>
+  </div>
+  <button class="nav-mobile-toggle" aria-label="فتح القائمة" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="التنقل المحمول" aria-hidden="true">
+  <a href="index.html#problem">المشكلة</a>
+  <a href="platform.html">المنصة</a>
+  <a href="ecosystem.html">النظام البيئي</a>
+  <a href="dashboard.html">لوحة التحكم</a>
+  <a href="market.html">السوق</a>
+  <a href="pricing.html">الإيرادات</a>
+  <a href="team.html">الفريق</a>
+  <a href="investors.html">المستثمرون</a>
+  <a href="contact.html" class="mobile-demo-btn">طلب عرض تجريبي ←</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="ch-bg"></div>
+  <div class="ch-grid"></div>
+  <div class="ch-inner">
+    <div class="ch-badge">📬 تواصل معنا</div>
+    <h1 class="ch-h1">لنبدأ <em>حوارًا</em><br>يصنع الفرق</h1>
+    <p class="ch-sub">سواء كنت شركة تأمين أو مستشفى أو مستثمرًا أو شريكًا محتملًا — نحن هنا للاستماع والتعاون.</p>
+  </div>
+</section>
+
+<!-- INQUIRY TYPES -->
+<section class="inquiry-types">
+  <div class="it-inner">
+    <div class="reveal">
+      <div class="sec-label">نوع الاستفسار</div>
+      <h2 class="sec-h2">كيف يمكننا <em>مساعدتك؟</em></h2>
+    </div>
+    <div class="it-grid reveal">
+      <div class="it-card active" onclick="selectType(this,'demo')">
+        <span class="it-icon">🖥️</span>
+        <div class="it-title">عرض تجريبي</div>
+        <p class="it-desc">جرّب المنصة مباشرة وشاهد كيف تعمل وحدات الذكاء الاصطناعي</p>
+      </div>
+      <div class="it-card" onclick="selectType(this,'invest')">
+        <span class="it-icon">💼</span>
+        <div class="it-title">استفسار استثماري</div>
+        <p class="it-desc">تعرّف على فرصة جولة التمويل الأولى — SAFE Note مليون دولار</p>
+      </div>
+      <div class="it-card" onclick="selectType(this,'partner')">
+        <span class="it-icon">🤝</span>
+        <div class="it-title">شراكة استراتيجية</div>
+        <p class="it-desc">مستشفيات، TPA، صيدليات، شركات تأمين، مزودو بيانات</p>
+      </div>
+      <div class="it-card" onclick="selectType(this,'other')">
+        <span class="it-icon">💬</span>
+        <div class="it-title">استفسار عام</div>
+        <p class="it-desc">أي سؤال آخر حول المنصة أو فريق iRonic Health</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTACT -->
+<section class="contact-main">
+  <div class="cm-inner">
+
+    <!-- DIRECT CONTACTS -->
+    <div class="direct-contacts reveal">
+      <div class="dc-title">تواصل مباشر</div>
+      <p class="dc-sub">فريق القيادة متاح دائمًا. نردّ على جميع الاستفسارات خلال 24 ساعة.</p>
+
+      <div class="dc-cards">
+        <div class="dc-card">
+          <div class="dc-card-top">
+            <div class="dc-avatar" style="background:linear-gradient(135deg,#1d9e75,#185fa5)">ش</div>
+            <div>
+              <div class="dc-name">م. شريف شوقي</div>
+              <div class="dc-role">الرئيس التنفيذي والمؤسس</div>
+            </div>
+          </div>
+          <div class="dc-links">
+            <a href="mailto:chairman@ironicgmi.com" class="dc-link">
+              <span class="dc-link-icon">✉</span> chairman@ironicgmi.com
+            </a>
+            <a href="tel:+201555556697" class="dc-link">
+              <span class="dc-link-icon">📞</span> +20 155 555 6697
+            </a>
+          </div>
+        </div>
+
+        <div class="dc-card">
+          <div class="dc-card-top">
+            <div class="dc-avatar" style="background:linear-gradient(135deg,#185fa5,#1d9e75)">إ</div>
+            <div>
+              <div class="dc-name">د. إسلام المدني</div>
+              <div class="dc-role">نائب الرئيس للشؤون الطبية</div>
+            </div>
+          </div>
+          <div class="dc-links">
+            <a href="mailto:islam@ironicigmi.com" class="dc-link">
+              <span class="dc-link-icon">✉</span> islam@ironicigmi.com
+            </a>
+            <a href="tel:+201508281948" class="dc-link">
+              <span class="dc-link-icon">📞</span> +20 150 828 1948
+            </a>
+          </div>
+        </div>
+
+        <div class="dc-card">
+          <div class="dc-card-top">
+            <div class="dc-avatar" style="background:linear-gradient(135deg,#c9a84c,#b8963e)">💼</div>
+            <div>
+              <div class="dc-name">علاقات المستثمرين</div>
+              <div class="dc-role">للاستفسارات الاستثمارية — المملكة المتحدة / MENA</div>
+            </div>
+          </div>
+          <div class="dc-links">
+            <a href="mailto:investor@ironicigmi.com" class="dc-link">
+              <span class="dc-link-icon">✉</span> investor@ironicigmi.com
+            </a>
+            <a href="tel:+447308892741" class="dc-link">
+              <span class="dc-link-icon">📞</span> +44 7308 892741
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dc-info-box">
+        <p><strong>وقت الاستجابة:</strong> نلتزم بالرد على جميع الاستفسارات خلال 24 ساعة عمل. للطوارئ الاستثمارية يُرجى الاتصال المباشر.</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-form-wrap reveal">
+      <div id="form-container">
+        <div class="cf-title">أرسل رسالتك</div>
+        <p class="cf-sub">سيتواصل معك أحد أعضاء الفريق خلال 24 ساعة.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">الاسم الكامل *</label>
+            <input type="text" id="fname" placeholder="أدخل اسمك الكامل">
+          </div>
+          <div class="form-group">
+            <label for="fcompany">الشركة / المؤسسة</label>
+            <input type="text" id="fcompany" placeholder="اسم شركتك أو مؤسستك">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="femail">البريد الإلكتروني *</label>
+            <input type="email" id="femail" placeholder="your@email.com" dir="ltr">
+          </div>
+          <div class="form-group">
+            <label for="fphone">رقم الهاتف</label>
+            <input type="tel" id="fphone" placeholder="+20 xxx xxx xxxx" dir="ltr">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ftype">نوع الاستفسار *</label>
+          <select id="ftype">
+            <option value="">اختر نوع الاستفسار</option>
+            <option value="demo">طلب عرض تجريبي</option>
+            <option value="invest">استفسار استثماري</option>
+            <option value="partner">شراكة استراتيجية</option>
+            <option value="insurer">شركة تأمين</option>
+            <option value="hospital">مستشفى / مزود رعاية صحية</option>
+            <option value="tpa">شركة TPA</option>
+            <option value="other">استفسار عام</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fmsg">رسالتك *</label>
+          <textarea id="fmsg" placeholder="أخبرنا عن احتياجاتك أو استفسارك بالتفصيل..."></textarea>
+        </div>
+
+        <button class="form-submit" onclick="submitForm()">إرسال الرسالة ←</button>
+        <p class="form-note">بإرسال هذا النموذج، توافق على التواصل معك من قِبل فريق iRonic Health.</p>
+      </div>
+
+      <div class="form-success" id="form-success">
+        <span class="success-icon">✅</span>
+        <h3>تم إرسال رسالتك بنجاح!</h3>
+        <p>شكرًا على تواصلك مع iRonic Health. سيتواصل معك أحد أعضاء فريقنا خلال 24 ساعة عمل.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 1rem">
+      <div class="sec-label">الأسئلة الشائعة</div>
+      <h2 class="sec-h2">أسئلة <em>تُسأل كثيرًا</em></h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ما هي مدة العرض التجريبي؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>يستغرق العرض التجريبي المباشر 45–60 دقيقة، يشمل جولة كاملة في لوحة التحكم وعرضًا لوحدات الذكاء الاصطناعي بيانات حقيقية (أنونيمة). نقدم أيضًا تجربة 30 يومًا للشركاء الجادين.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ما الوثائق المطلوبة للاستثمار؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>نوفر حزمة كاملة للمستثمرين تشمل: Pitch Deck، ملخص تنفيذي، نموذج مالي لـ 3 سنوات، ملخص العناية الواجبة، ومسودة SAFE Note. تُرسل بعد التواصل الأولي.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          كيف تتعامل المنصة مع بيانات المرضى؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>نحن متوافقون تمامًا مع قانون حماية البيانات الشخصية المصري (PDPL). جميع البيانات مشفرة ومُجهَّلة. لا نشارك بيانات المرضى مع أطراف ثالثة. للتفاصيل الفنية راسلنا مباشرة.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ما الأطراف التي يمكنها الانضمام كشركاء؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>نرحّب بشركات التأمين الصحي، شركات TPA، المستشفيات الخاصة والحكومية، شبكات الصيدليات، مزودي خدمات الرعاية الصحية، وشركات التكنولوجيا الصحية الراغبة في التكامل عبر API.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          هل تعملون خارج مصر؟
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><p>التركيز الحالي هو السوق المصرية. خارطة طريقنا تشمل التوسع في الخليج والمنطقة العربية بحلول 2027. إذا كنت تمثل سوقًا إقليميًا، نسعد بالتحدث معك عن فرص الشراكة المبكرة.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">iRonic Health</div>
+      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تكتشف الاحتيال في 4.3 ثانية.</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <span class="footer-badge">مُرخَّصة من الهيئة المالية</span>
+        <span class="footer-badge">متوافقة مع PDPL</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">المنصة</div>
+      <div class="footer-links">
+        <a href="platform.html">وحدات الذكاء الاصطناعي</a>
+        <a href="ecosystem.html">النظام البيئي</a>
+        <a href="dashboard.html">لوحة التحكم</a>
+        <a href="pricing.html">نموذج الإيرادات</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">الشركة</div>
+      <div class="footer-links">
+        <a href="team.html">الفريق</a>
+        <a href="investors.html">المستثمرون</a>
+        <a href="market.html">السوق</a>
+        <a href="contact.html">تواصل معنا</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">تواصل</div>
+      <div class="footer-links">
+        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
+        <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
+        <a href="tel:+201555556697">+20 155 555 6697</a>
+        <a href="tel:+447308892741">+44 7308 892741</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
+    <a href="../contact.html" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none">🌐 English</a>
+  </div>
+</footer>
+</main>
+
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+
+<script>
+// Mobile nav
+const toggle = document.querySelector('.nav-mobile-toggle');
+const mNav = document.querySelector('.mobile-nav');
+if(toggle && mNav){
+  toggle.addEventListener('click',()=>{
+    const open = mNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    mNav.setAttribute('aria-hidden', !open);
+  });
+}
+// Reveal
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Nav scroll
+const nav = document.getElementById('nav');
+if(nav) window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY>40); });
+// Scroll top
+const st = document.getElementById('scroll-top');
+if(st){
+  window.addEventListener('scroll',()=>{ st.classList.toggle('visible', window.scrollY>400); });
+  st.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+}
+// Inquiry type selector
+function selectType(card, type){
+  document.querySelectorAll('.it-card').forEach(c=>c.classList.remove('active'));
+  card.classList.add('active');
+  const sel = document.getElementById('ftype');
+  if(sel) sel.value = type;
+}
+// Form submit
+function submitForm(){
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const msg = document.getElementById('fmsg').value.trim();
+  if(!name || !email || !msg){
+    alert('يرجى ملء الحقول الإلزامية: الاسم، البريد الإلكتروني، والرسالة.');
+    return;
+  }
+  document.getElementById('form-container').style.display='none';
+  document.getElementById('form-success').style.display='block';
+}
+// FAQ toggle
+function toggleFaq(btn){
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
