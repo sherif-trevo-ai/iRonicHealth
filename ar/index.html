@@ -1149,63 +1149,59 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 
 </main>
 
-<!-- FOOTER -->
-<footer class="footer" role="contentinfo" dir="rtl">
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
   <div class="footer-top">
-    <div class="footer-brand">
-      <a href="#home" class="footer-logo-link" aria-label="آيرونيك هيلث">
-        <img src="assets/iRonic_Health_H_White_version.svg" alt="آيرونيك هيلث" class="footer-logo-img" onerror="this.style.display='none'">
-      </a>
-      <p class="footer-brand-desc">منصة تنظيم التأمين الصحي الأولى المدعومة بالذكاء الاصطناعي في مصر. نربط 8 أطراف، نقضي على الاحتيال، ونسرّع تسوية المطالبات.</p>
-      <div class="footer-social">
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="لينكد إن" class="fsl">in</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="تويتر/إكس" class="fsl">𝕏</a>
+    <div>
+      <div class="footer-brand-name">iRonic Health</div>
+      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تكتشف الاحتيال في 4.3 ثانية. مُرخَّصة من الهيئة المالية. متوافقة مع PDPL.</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <span class="f-badge">مُرخَّصة FRA</span>
+        <span class="f-badge">PDPL 151/2020</span>
+        <span class="f-badge">نماذج AI مصرية</span>
       </div>
     </div>
-    <div class="footer-links-grid">
-      <div class="footer-col">
-        <div class="footer-col-title">المنصة</div>
-        <a href="platform.html#mod-1">الذكاء الاصطناعي لكشف الاحتيال</a>
-        <a href="platform.html#mod-2">المؤشر الصحي</a>
-        <a href="platform.html#mod-3">متنبئ المطالبات</a>
-        <a href="platform.html#mod-4">توجيه المستشفيات</a>
-        <a href="platform.html#mod-7">لوحة التحكم</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">الشركة</div>
-        <a href="team.html">فريق العمل</a>
-        <a href="#problem">المشكلة</a>
+    <div>
+      <div class="footer-col-title">المنصة</div>
+      <div class="footer-links">
+        <a href="platform.html">وحدات الذكاء الاصطناعي</a>
         <a href="ecosystem.html">النظام البيئي</a>
-        <a href="market.html">السوق</a>
+        <a href="dashboard.html">لوحة التحكم</a>
+        <a href="pricing.html">نموذج الإيرادات</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">الشركة</div>
+      <div class="footer-links">
+        <a href="team.html">الفريق</a>
         <a href="investors.html">المستثمرون</a>
-        <a href="index.html">🇬🇧 English</a>
+        <a href="market.html">السوق</a>
+        <a href="contact.html">تواصل معنا</a>
+        <a href="../index.html">🇬🇧 English</a>
       </div>
-      <div class="footer-col">
-        <div class="footer-col-title">الاتصال</div>
-        <a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a>
+    </div>
+    <div>
+      <div class="footer-col-title">تواصل</div>
+      <div class="footer-links">
+        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
         <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
-        <a href="tel:+447308892741">+44 7308 892741</a>
-        <span class="footer-address-txt">أبراج نايل سيتي، البرج الشمالي<br>كورنيش النيل، القاهرة، مصر</span>
+        <a href="tel:+201555556697" dir="ltr">+20 155 555 6697</a>
+        <a href="tel:+447308892741" dir="ltr">+44 7308 892741</a>
       </div>
-    </div><!-- /.footer-links-grid -->
-  </div><!-- /.footer-top -->
+    </div>
+  </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 مجموعة آيرونيك · آيرونيك هيلث · جميع الحقوق محفوظة</div>
-    <div class="footer-legal">
-      <a href="#">الخصوصية (قانون حماية البيانات الشخصية 151/2020)</a>
-      <a href="#">شروط الخدمة</a>
-      <a href="#">الامتثال لهيئة الرقابة المالية (FRA)</a>
+    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+      <span class="f-badge">مُرخَّصة FRA</span>
+      <span class="f-badge">متوافقة PDPL</span>
     </div>
   </div>
 </footer>
- 
-<button id="scroll-top" aria-label="الرجوع للأعلى" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
 
 <script>
-(function(){
-  // تم الاحتفاظ بباقي كود الجافا سكريبت كما هو بدون أي تغيير في المنطق
-})();
-</script>
 // Mobile nav
 const toggle = document.querySelector('.nav-mobile-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
