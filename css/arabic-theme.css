@@ -1,0 +1,703 @@
+/* ═══════════════════════════════════════════════
+   arabic-theme.css — iRonic Health v3
+   Light theme + RTL for all Arabic pages
+   Loaded after css/style.css
+   Uses !important to override dark inline CSS
+═══════════════════════════════════════════════ */
+
+/* ─── 1. BODY & GLOBAL ─── */
+body{background:var(--white)!important;color:var(--ink)!important;font-family:var(--fn-ar)!important}
+.nav{direction:rtl}
+.nav-center a,.logo-wordmark,.logo-tagline,.btn-demo,.btn-lang{font-family:var(--fn-ar)!important}
+.nav-logo-text{text-align:right}
+
+/* ─── 2. HERO — ALL PAGES ─── */
+.hero,.plat-hero,.team-hero,.dash-hero,.eco-hero,.inv-hero,.mkt-hero,.rev-hero,.contact-hero{
+  background:var(--white)!important}
+/* Remove dark radial overlays */
+.hero-bg,.th-bg,.dh-bg,.mh-bg,.rh-bg,.ch-bg,.plat-hero-bg,.eco-hero-bg,.inv-hero-glow,.inv-hero-glow2{
+  display:none!important}
+/* Grid pattern matches English */
+.hero-grid,.th-grid,.dh-grid,.mh-grid,.rh-grid,.ch-grid,.plat-hero-grid,.eco-hero-grid,.inv-hero-grid{
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px)!important;
+  background-size:48px 48px!important;opacity:.32!important}
+/* Hero text */
+.hero-h1,.th-h1,.plat-h1,.eco-h1,.inv-h1,.mkt-hero .mh-h1,.rev-hero .rh-h1,.contact-hero .ch-h1{
+  color:var(--ink)!important}
+.hero-h1 .accent,.dh-h1 em{color:var(--blue)!important}
+.hero-h1 .gold-t{color:var(--gold-dark)!important}
+.hero-desc,.th-sub,.plat-sub,.eco-sub,.inv-sub,.mh-sub,.rh-sub,.ch-sub,.dh-sub{color:var(--muted)!important}
+/* Hero pills */
+.hero-pill,.th-badge,.mh-badge,.rh-badge,.ch-badge,.plat-badge,.eco-badge,.inv-round-badge,.dh-badge{
+  background:var(--blue-light)!important;border-color:var(--blue-mid)!important;color:var(--blue-dark)!important}
+.pill-dot,.irb-dot{background:var(--blue)!important}
+.dh-live-dot{background:var(--green)!important}
+.dh-badge{background:rgba(29,158,117,.08)!important;border-color:rgba(29,158,117,.2)!important;color:var(--green)!important}
+/* Buttons */
+.hbtn-p{background:var(--blue)!important;color:#fff!important;border-color:var(--blue)!important}
+.hbtn-p:hover{background:var(--blue-dark)!important}
+.hbtn-s{background:transparent!important;border-color:var(--border-2)!important;color:var(--ink-3)!important}
+.hbtn-s:hover{background:var(--surface)!important}
+.btn-deck{background:var(--blue)!important;color:#fff!important}
+.btn-meeting{background:transparent!important;border-color:var(--border-2)!important;color:var(--ink-3)!important}
+/* Hero KPIs */
+.kpi-hero-val{color:var(--blue)!important}
+.kpi-hero-lbl{color:var(--muted)!important}
+.kpi-hero{border-right-color:var(--border)!important}
+/* Investor hero stats */
+.ihc{background:var(--white)!important;border-color:var(--border)!important}
+.ihc-val,.ihc-val.blue{color:var(--blue)!important}
+.ihc-val.gold{color:var(--gold-dark)!important}
+.ihc-val.green{color:var(--green)!important}
+.ihc-val.white{color:var(--ink)!important}
+.ihc-lbl{color:var(--muted)!important}
+.ihc.gold-border{border-color:var(--gold)!important}
+/* Platform hero stats */
+.phs-val,.ehs-val{color:var(--blue)!important}
+.phs-val.gold,.ehs-val.gold{color:var(--gold-dark)!important}
+.phs-val.green,.ehs-val.green{color:var(--green)!important}
+.phs-val.white,.ehs-val.white{color:var(--ink)!important}
+.phs-lbl,.ehs-lbl{color:var(--muted)!important}
+.inv-confidential{background:var(--gold-light)!important;border-color:var(--gold)!important;color:var(--gold-dark)!important}
+
+/* ─── 3. DASHBOARD CARD IN HERO ─── */
+.dash-card{background:var(--white)!important;border-color:var(--border)!important;
+  box-shadow:var(--shadow-lg)!important}
+.dc-header{background:var(--blue)!important}
+.dc-title{color:#fff!important}
+.dc-sub{color:rgba(255,255,255,.7)!important}
+.dc-live{color:#4ade80!important}
+.dc-live-dot{background:#4ade80!important;animation:pdot 2s infinite}
+.dc-metrics{border-bottom-color:var(--border)!important}
+.dcm{border-left-color:var(--border)!important}
+.dcm-val{color:var(--ink)!important}
+.dcm-val.blue{color:var(--blue)!important}
+.dcm-val.green{color:var(--green)!important}
+.dcm-val.gold{color:var(--gold-dark)!important}
+.dcm-lbl{color:var(--muted)!important}
+.dcm-trend{color:var(--muted-2)!important}
+.dcm-trend.up{color:var(--green)!important}
+.dcm:last-child{border-left:none!important}
+.dc-body{background:var(--white)!important}
+.dc-section-title{color:var(--muted)!important}
+.fraud-label{color:var(--ink-3)!important}
+.fraud-bar-bg{background:var(--border)!important}
+.fraud-bar-fill{background:linear-gradient(90deg,var(--blue),rgba(65,121,173,.5))!important}
+.fraud-pct{color:var(--muted)!important}
+.chip{background:var(--blue-light)!important;border-color:var(--blue-mid)!important;color:var(--blue-dark)!important}
+.chip-more{background:var(--surface)!important;border-color:var(--border)!important;color:var(--blue)!important}
+.dc-footer{background:var(--surface)!important;border-top-color:var(--border)!important}
+.df-text{color:var(--muted)!important}
+.df-badge{background:var(--green-bg)!important;color:#166534!important}
+
+/* ─── 4. TRUST BAR (dark — correct, matches English) ─── */
+.trust-val{color:var(--gold)!important}
+.trust-lbl{color:rgba(255,255,255,.45)!important}
+.trust-sep{background:rgba(255,255,255,.15)!important}
+
+/* ─── 5. PROBLEM SECTION (dark — matches English) ─── */
+.prob-sec{background:var(--ink)!important}
+.prob-sec .sec-label,.prob-sec .sec-eyebrow{color:var(--gold)!important}
+.prob-sec .sec-h2{color:#fff!important}
+.prob-sec .sec-lead{color:rgba(255,255,255,.55)!important}
+.prob-sec .sec-rule{background:var(--gold)!important}
+.prob-card{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.08)!important}
+.prob-h3{color:#fff!important}
+.prob-stat{color:var(--gold)!important}
+.prob-stat.red{color:#f87171!important}
+.prob-stat.gold{color:var(--gold)!important}
+.prob-p,.prob-source{color:rgba(255,255,255,.6)!important}
+
+/* ─── 6. AUDIENCES (light) ─── */
+.aud-sec{background:var(--white)!important}
+.aud-head-ins{background:linear-gradient(135deg,var(--white) 0%,var(--surface) 100%)!important;border-top-color:var(--gold)!important}
+.aud-head-pat{background:linear-gradient(135deg,var(--blue-light) 0%,var(--surface) 100%)!important;border-top-color:var(--blue)!important}
+.aud-h3{color:var(--ink)!important}
+.aud-body{background:var(--surface)!important;border-color:var(--border)!important;border-top:none!important}
+.aud-item{background:var(--white)!important;border-color:var(--border)!important;color:var(--ink-3)!important}
+.aud-dot-g{background:rgba(22,163,74,.12)!important;color:var(--green)!important}
+.aud-dot-b{background:var(--blue-light)!important;color:var(--blue)!important}
+.aud-tag-g{background:rgba(168,145,74,.1)!important;color:var(--gold-dark)!important}
+.aud-tag-b{background:var(--blue-light)!important;color:var(--blue-dark)!important}
+
+/* ─── 7. AI MODULES (light) ─── */
+.mods-sec{background:var(--surface)!important}
+.mods-sec .sec-eyebrow{color:var(--gold-dark)!important}
+.mods-sec .sec-h2{color:var(--ink)!important}
+.mods-sec .sec-lead{color:var(--muted)!important}
+.mod-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.mod-card:hover{border-color:var(--blue-mid)!important;transform:translateY(-3px)}
+.mod-h3{color:var(--ink)!important}
+.mod-p,.mod-desc{color:var(--muted)!important}
+.mod-metric{color:var(--green)!important;border-top-color:var(--border)!important}
+/* Platform page module sections */
+.mod-section:nth-child(odd){background:var(--white)!important}
+.mod-section:nth-child(even){background:var(--surface)!important;border-top-color:var(--border)!important;border-bottom-color:var(--border)!important}
+.mod-h2{color:var(--ink)!important}
+.mod-h2 em{color:var(--gold-dark)!important}
+.mod-eyebrow{color:var(--gold-dark)!important}
+.mod-metric-val,.mod-metric-val.blue{color:var(--blue)!important}
+.mod-metric-val.gold{color:var(--gold-dark)!important}
+.mod-metric-val.green{color:var(--green)!important}
+.mod-metric-lbl{color:var(--muted)!important}
+.mod-num-pill{background:var(--blue-light)!important;color:var(--blue-dark)!important}
+/* Platform sticky nav */
+.mod-sticky-nav{background:rgba(247,250,253,.95)!important;border-bottom-color:var(--border)!important}
+.msn-link{color:var(--muted)!important}
+.msn-link:hover,.msn-link.msn-active{color:var(--blue)!important}
+.msn-link.msn-active{border-bottom-color:var(--blue)!important}
+/* Mock UI */
+.mod-ui-mock{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-md)!important}
+.mock-topbar{background:var(--surface)!important;border-bottom-color:var(--border)!important}
+.mock-tb-title{color:var(--ink)!important}
+.mock-tb-badge{background:var(--blue)!important;color:#fff!important}
+.mock-body{background:var(--white)!important}
+.ma-btn.primary{background:var(--blue)!important;color:#fff!important}
+.ma-btn.success{background:var(--green)!important;color:#fff!important}
+.ma-btn.danger{background:#ef4444!important;color:#fff!important}
+.badge-green{background:var(--green-bg)!important;color:#166534!important}
+.badge-red{background:#fee2e2!important;color:#991b1b!important}
+.badge-amber{background:#fef3c7!important;color:#92400e!important}
+.badge-blue{background:var(--blue-light)!important;color:var(--blue-dark)!important}
+.route-item{background:var(--surface)!important;border-color:var(--border)!important}
+.route-name{color:var(--ink)!important}
+.route-dist,.route-score{color:var(--muted)!important}
+.route-rank{background:var(--blue-light)!important;color:var(--blue-dark)!important}
+.score-ring{border-color:var(--border-2)!important}
+.score-ring.high{border-color:var(--green)!important}
+.score-ring.medium{border-color:var(--gold)!important}
+.score-num{color:var(--ink)!important}
+.score-num.high{color:var(--green)!important}
+.score-num.medium{color:var(--gold-dark)!important}
+.score-label{color:var(--muted)!important}
+.rb-track{background:var(--border)!important}
+.rb-label{color:var(--ink-3)!important}
+.rb-val{color:var(--muted)!important}
+.mem-avatar{background:var(--blue-light)!important;color:var(--blue)!important}
+.mem-name{color:var(--ink)!important}
+.mem-id{color:var(--muted-2)!important}
+.arch-name{color:var(--ink-3)!important}
+.arch-item{color:var(--muted)!important}
+.hiw-step{background:var(--white)!important;border-color:var(--border)!important}
+.hiw-n{background:var(--blue)!important;color:#fff!important}
+.hiw-title{color:var(--ink)!important}
+.hiw-txt{color:var(--muted)!important}
+.hiw-txt strong{color:var(--ink)!important}
+
+/* ─── 8. ECOSYSTEM (light — matches English eco-sec) ─── */
+.eco-sec{background:var(--surface)!important}
+.e-eyebrow{color:var(--gold-dark)!important}
+.e-h2{color:var(--ink)!important}
+.e-h2 em{color:var(--gold-dark)!important}
+.e-lead{color:var(--muted)!important}
+.eco-center{background:linear-gradient(135deg,var(--blue),var(--green))!important}
+.eco-center-h{color:#fff!important}
+.eco-center-s{color:rgba(255,255,255,.7)!important}
+.eco-party-ico{background:var(--white)!important;border-color:var(--border-2)!important}
+.eco-party-lbl{color:var(--muted)!important}
+.eco-stat{background:var(--white)!important;border-color:var(--border)!important}
+.eco-stat-val,.eco-stat-val.blue{color:var(--blue)!important}
+.eco-stat-val.gold{color:var(--gold-dark)!important}
+.eco-stat-val.green{color:var(--green)!important}
+.eco-stat-lbl{color:var(--muted)!important}
+.eco-link{color:var(--blue)!important;border-bottom-color:var(--blue-mid)!important}
+.eco-link:hover{color:var(--blue-dark)!important}
+/* Before/After */
+#before-after{background:var(--surface)!important;border-top-color:var(--border)!important;border-bottom-color:var(--border)!important}
+.ba-before{background:rgba(216,90,48,.05)!important;border-color:rgba(216,90,48,.15)!important}
+.ba-after{background:rgba(22,163,74,.05)!important;border-color:rgba(22,163,74,.2)!important}
+.ba-label{color:var(--muted)!important}
+.ba-title{color:var(--ink)!important}
+.ba-item{color:var(--ink-3)!important}
+.ba-arrow{color:var(--border-2)!important}
+/* Party panels */
+.pt-btn{color:var(--muted)!important;border-color:var(--border)!important;background:var(--white)!important}
+.pt-btn.active{background:var(--blue)!important;color:#fff!important;border-color:var(--blue)!important}
+.party-panel{background:var(--white)!important;border-color:var(--border)!important}
+.party-name{color:var(--ink)!important}
+.party-desc{color:var(--muted)!important}
+.party-num{color:var(--blue)!important}
+.party-ico{background:var(--blue-light)!important}
+.party-top{border-bottom-color:var(--border)!important}
+.pp-card{background:var(--white)!important;border-color:var(--border)!important}
+.pp-card-bar{background:var(--surface)!important;border-bottom-color:var(--border)!important}
+.pp-card-title{color:var(--ink)!important}
+.pp-h3{color:var(--ink)!important}
+.pp-h3 em{color:var(--blue)!important}
+.pp-stat-val{color:var(--blue)!important}
+.pp-stat-lbl,.pp-desc{color:var(--muted)!important}
+.pp-tag{background:var(--blue-light)!important;border-color:var(--blue-mid)!important;color:var(--blue-dark)!important}
+.pp-item-dot{background:var(--green)!important}
+.pg-before{color:#b91c1c!important}
+.pg-after{color:var(--green)!important}
+.pg-lbl{color:var(--muted)!important}
+.pg-txt{color:var(--ink-3)!important}
+.sf-impact.good{background:var(--green-bg)!important;color:#166534!important}
+.sf-impact.bad{background:#fee2e2!important;color:#991b1b!important}
+.sf-impact.warn{background:#fef3c7!important;color:#92400e!important}
+.benchmark-badge.bb-great{background:var(--green-bg)!important;color:#166534!important}
+.benchmark-badge.bb-good{background:var(--blue-light)!important;color:var(--blue-dark)!important}
+
+/* ─── 9. DASHBOARD SECTION (keep dark) ─── */
+.dash-main{background:var(--ink)!important}
+.dash-topbar{background:rgba(13,27,46,.95)!important;border-bottom-color:rgba(255,255,255,.07)!important}
+.dbar-title{color:rgba(255,255,255,.85)!important}
+.dbar-dot,.dh-live-dot{background:var(--green)!important}
+.dbar-txt{color:var(--green)!important}
+.dash-kpi-row{border-bottom-color:rgba(255,255,255,.06)!important}
+.dkpi{border-left-color:rgba(255,255,255,.06)!important}
+.dkpi-lbl{color:rgba(255,255,255,.38)!important}
+.dkpi-num{color:#fff!important}
+.dkpi-num.gold{color:var(--gold)!important}
+.dkpi-num.green{color:var(--green)!important}
+.dkpi-num.blue{color:var(--blue-light)!important}
+.dkpi-trend{color:rgba(255,255,255,.38)!important}
+.dkpi-trend.up{color:var(--green)!important}
+.dash-wrap{background:#0d1b2e!important;border-color:rgba(255,255,255,.08)!important}
+
+/* ─── 10. WHY NOW (light surface) ─── */
+.why-sec{background:var(--surface)!important}
+.why-sec .sec-eyebrow{color:var(--gold-dark)!important}
+.why-sec .sec-h2{color:var(--ink)!important}
+.why-sec .sec-lead{color:var(--muted)!important}
+/* Urgency panel — stays dark (matches English) */
+.urgency-panel{background:var(--ink-2)!important;border-color:rgba(255,255,255,.06)!important}
+.up-eyebrow{color:rgba(255,255,255,.45)!important}
+.up-h{color:#fff!important}
+.up-body{color:rgba(255,255,255,.62)!important}
+.up-s{background:rgba(255,255,255,.07)!important;border-color:rgba(255,255,255,.12)!important}
+.up-s-val{color:var(--gold)!important}
+.up-s-lbl{color:rgba(255,255,255,.5)!important}
+.up-tl-dot{background:rgba(255,255,255,.15)!important;border-color:rgba(255,255,255,.25)!important}
+.up-tl-item.active .up-tl-dot{background:var(--green)!important;border-color:var(--green)!important}
+.up-tl-date{color:rgba(255,255,255,.6)!important}
+.up-tl-text{color:rgba(255,255,255,.5)!important}
+/* Advantage cards */
+.adv{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.adv:hover{border-color:var(--blue-mid)!important}
+.adv-title{color:var(--ink)!important}
+.adv-desc{color:var(--muted)!important}
+.wn-card{background:var(--white)!important;border-color:var(--border)!important}
+.wn-card:hover{border-color:var(--blue-mid)!important}
+.wn-h3{color:var(--ink)!important}
+.wn-p{color:var(--muted)!important}
+.wn-num{color:rgba(65,121,173,.15)!important}
+.wn-badge{background:var(--blue-light)!important;border-color:var(--blue-mid)!important;color:var(--blue-dark)!important}
+/* Why Now market page */
+.why-now{background:var(--white)!important}
+
+/* ─── 11. BUSINESS MODEL (white — matches English) ─── */
+.model-sec{background:var(--white)!important}
+.price-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.price-card:hover{border-color:var(--blue-mid)!important}
+.price-card.featured{background:var(--gold-light)!important;border-color:var(--gold)!important}
+.feat-label{background:var(--gold)!important;color:var(--ink)!important}
+.prc-phase{color:var(--muted-2)!important}
+.prc-name{color:var(--ink)!important}
+.prc-amt{color:var(--blue)!important}
+.prc-unit,.prc-desc{color:var(--muted)!important}
+.prc-tag{background:var(--blue-light)!important;border-color:var(--blue-mid)!important;color:var(--blue-dark)!important}
+.mn{background:var(--surface)!important;border-color:var(--border)!important}
+.mn-val{color:var(--blue)!important}
+.mn-lbl{color:var(--muted)!important}
+.mn-detail{color:var(--muted-2)!important}
+.mn.mn-gold .mn-val{color:var(--gold-dark)!important}
+/* Revenue streams page */
+.streams{background:var(--white)!important}
+.stream-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.stream-card.primary{background:rgba(202,177,100,.05)!important;border-color:rgba(202,177,100,.25)!important}
+.stream-h3{color:var(--ink)!important}
+.stream-p{color:var(--muted)!important}
+.stream-label.gold{color:var(--gold-dark)!important}
+.stream-label.green{color:var(--green)!important}
+.stream-label.blue{color:var(--blue)!important}
+.stream-price.gold{color:var(--gold-dark)!important}
+.stream-price.green{color:var(--green)!important}
+.stream-price.blue{color:var(--blue)!important}
+.stream-price-sub{color:var(--muted)!important}
+.sf-item{color:var(--ink-3)!important}
+.sf-check.gold{color:var(--gold-dark)!important}
+.sf-check.green{color:var(--green)!important}
+.sf-check.blue{color:var(--blue)!important}
+/* ARR section */
+.arr{background:var(--surface)!important}
+.arr-track{background:var(--border)!important}
+.arr-year{color:var(--ink-3)!important}
+.arr-val.blue{color:var(--blue)!important}
+.arr-val.gold{color:var(--gold-dark)!important}
+.arr-val.green{color:var(--green)!important}
+.arr-detail{color:var(--muted-2)!important}
+.arr-fill.y1{background:linear-gradient(90deg,rgba(65,121,173,.5),rgba(65,121,173,.3))!important}
+.arr-fill.y2{background:linear-gradient(90deg,rgba(202,177,100,.55),rgba(202,177,100,.35))!important}
+.arr-fill.y3{background:linear-gradient(90deg,var(--green),rgba(22,163,74,.7))!important}
+.ab-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.ab-arr{color:var(--ink)!important}
+.ab-lives{color:var(--muted)!important}
+.ab-year.blue{color:var(--blue)!important}
+.ab-year.gold{color:var(--gold-dark)!important}
+.ab-year.green{color:var(--green)!important}
+.ab-row-label{color:var(--muted)!important}
+.ab-row-val{color:var(--ink)!important}
+/* Unit economics */
+.unit-econ{background:var(--white)!important}
+.ue-card{background:var(--surface)!important;border-color:var(--border)!important}
+.ue-card:hover{border-color:var(--blue-mid)!important}
+.ue-label,.ue-metric,.ue-note,.ue-sub{color:var(--muted)!important}
+.ue-val,.ue-val.blue{color:var(--blue)!important}
+.ue-val.gold{color:var(--gold-dark)!important}
+.ue-val.green{color:var(--green)!important}
+/* Pricing table */
+.pricing-table-sec{background:var(--surface)!important}
+.ptable-wrap{border-color:var(--border)!important}
+.ptable th{background:var(--surface)!important;color:var(--muted)!important;border-bottom-color:var(--border)!important}
+.ptable td{color:var(--ink-3)!important;border-bottom-color:var(--border)!important}
+.ptable td:first-child{color:var(--ink)!important}
+.price-val{color:var(--gold-dark)!important}
+.margin-high{color:var(--green)!important}
+
+/* ─── 12. INVESTORS PAGE ─── */
+.inv-sec{}
+#thesis{background:var(--surface)!important;border-top-color:var(--border)!important;border-bottom-color:var(--border)!important}
+#thesis .inv-eyebrow{color:var(--gold-dark)!important}
+#thesis .inv-h2{color:var(--ink)!important}
+#thesis .inv-h2 em{color:var(--gold-dark)!important}
+#thesis .inv-lead{color:var(--muted)!important}
+#thesis .thesis-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+#thesis .thesis-title{color:var(--ink)!important}
+#thesis .thesis-desc{color:var(--muted)!important}
+#thesis .thesis-ico{color:var(--ink-2)!important}
+.fin-table th{background:var(--surface)!important;color:var(--muted)!important;border-bottom-color:var(--border)!important}
+.fin-table td{color:var(--ink-3)!important;border-bottom-color:var(--border)!important}
+.fin-table .row-highlight{background:var(--gold-light)!important}
+.fin-table .row-highlight td{color:var(--gold-dark)!important}
+#unit-economics{background:var(--surface)!important;border-top-color:var(--border)!important;border-bottom-color:var(--border)!important}
+#unit-economics .inv-eyebrow{color:var(--gold-dark)!important}
+#unit-economics .inv-h2{color:var(--ink)!important}
+#unit-economics .inv-lead{color:var(--muted)!important}
+#unit-economics .ue-card{background:var(--white)!important;border-color:var(--border)!important}
+#unit-economics .ue-val{color:var(--blue)!important}
+#unit-economics .ue-label,#unit-economics .ue-note{color:var(--muted)!important}
+.fund-track{background:var(--border)!important}
+.fund-name{color:var(--ink-3)!important}
+.fund-pct{color:var(--muted)!important}
+.deck-form{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.df-title,.cf-title{color:var(--ink)!important}
+.df-sub,.cf-sub{color:var(--muted)!important}
+.df-lbl{color:var(--muted)!important}
+.df-inp,.df-sel,.df-ta{background:var(--surface)!important;border-color:var(--border)!important;color:var(--ink)!important}
+.df-inp:focus,.df-sel:focus,.df-ta:focus{border-color:var(--blue)!important;background:var(--white)!important}
+.df-submit,.df-success-ttl{color:var(--green)!important}
+
+/* ─── 13. MARKET PAGE ─── */
+.mkt-hero .mh-badge{background:rgba(65,121,173,.1)!important;border-color:rgba(65,121,173,.3)!important;color:var(--blue)!important}
+.mhs-val,.mhs-val.blue{color:var(--blue)!important}
+.mhs-val.gold{color:var(--gold-dark)!important}
+.mhs-val.green{color:var(--green)!important}
+.mhs-lbl{color:var(--muted)!important}
+.tam{background:var(--surface)!important}
+.tam .tdd-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.tam .tdd-val{color:var(--ink)!important}
+.tam .tdd-basis{color:var(--muted)!important}
+.tam .tam-arrow{color:var(--border-2)!important}
+.tam .tc-val{color:var(--ink)!important}
+.tam .tc-desc{color:var(--muted)!important}
+.tam .tdd-label{color:var(--muted-2)!important}
+.tam-circle.c1{background:rgba(65,121,173,.08)!important;border-color:rgba(65,121,173,.2)!important}
+.tam-circle.c2{background:rgba(22,163,74,.08)!important;border-color:rgba(22,163,74,.2)!important}
+.tam-circle.c3{background:rgba(202,177,100,.08)!important;border-color:rgba(202,177,100,.28)!important}
+.tc-label.blue{color:var(--blue)!important}
+.tc-label.green{color:var(--green)!important}
+.tc-label.gold{color:var(--gold-dark)!important}
+.pain{background:var(--surface)!important}
+.pain-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.pain-h3{color:var(--ink)!important}
+.pain-p{color:var(--muted)!important}
+.pain-stat{color:var(--blue)!important}
+.pain-stat.red{color:#dc2626!important}
+.pain-stat.gold{color:var(--gold-dark)!important}
+.pain-source{color:var(--muted-2)!important}
+.competition{background:var(--white)!important}
+.comp-table-wrap{border-color:var(--border)!important}
+.comp-table th{background:var(--surface)!important;color:var(--muted)!important;border-bottom-color:var(--border)!important}
+.comp-table td{color:var(--ink-3)!important;border-bottom-color:var(--border)!important}
+.comp-table tr.ironic-row td{background:rgba(22,163,74,.06)!important;color:var(--ink)!important}
+.comp-table tr.ironic-row td:first-child{color:var(--green)!important;font-weight:800!important}
+.check-yes{color:var(--green)!important}
+.check-no{color:var(--muted-2)!important}
+.check-partial{color:var(--gold-dark)!important}
+.moat{background:var(--surface)!important}
+.moat-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.moat-card:hover{border-color:var(--blue-mid)!important}
+.moat-h3{color:var(--ink)!important}
+.moat-p{color:var(--muted)!important}
+
+/* ─── 14. TEAM PAGE ─── */
+.team-sec{background:var(--surface)!important}
+.team-sec .sec-eyebrow{color:var(--gold-dark)!important}
+.team-sec .sec-h2{color:var(--ink)!important}
+.team-sec .sec-lead{color:var(--muted)!important}
+.founders{background:var(--surface)!important;border-top-color:var(--border)!important;border-bottom-color:var(--border)!important}
+.founder-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.founder-card::before{display:none!important}
+.founder-card:hover{border-color:var(--blue-mid)!important;transform:translateY(-4px)}
+.fc-name{color:var(--ink)!important}
+.fc-title{color:var(--green)!important}
+.fc-bio{color:var(--muted)!important}
+.fc-tag{background:rgba(22,163,74,.08)!important;border-color:rgba(22,163,74,.18)!important;color:var(--green)!important}
+.fc-tag.blue{background:var(--blue-light)!important;border-color:var(--blue-mid)!important;color:var(--blue)!important}
+.fc-tag.gold{background:rgba(202,177,100,.1)!important;border-color:rgba(202,177,100,.22)!important;color:var(--gold-dark)!important}
+.fc-contact{border-top-color:var(--border)!important}
+.fc-contact a{color:var(--muted)!important}
+.fc-contact a:hover{color:var(--green)!important}
+.story{background:var(--white)!important}
+.timeline::before{background:linear-gradient(to bottom,var(--green),rgba(22,163,74,.1))!important}
+.tl-dot{background:var(--white)!important;border-color:var(--green)!important}
+.tl-dot.gold{border-color:var(--gold)!important}
+.tl-dot.blue{border-color:var(--blue)!important}
+.tl-date{color:var(--green)!important}
+.tl-date.gold{color:var(--gold-dark)!important}
+.tl-date.blue{color:var(--blue)!important}
+.tl-h3{color:var(--ink)!important}
+.tl-p{color:var(--muted)!important}
+.values{background:var(--surface)!important}
+.val-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.val-card:hover{border-color:rgba(202,177,100,.25)!important}
+.val-h3{color:var(--ink)!important}
+.val-p{color:var(--muted)!important}
+.advisors{background:var(--surface)!important;border-top-color:var(--border)!important;border-bottom-color:var(--border)!important}
+.adv-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.adv-card:hover{border-color:var(--blue-mid)!important}
+.adv-initials{background:var(--blue-light)!important;border-color:var(--blue-mid)!important;color:var(--blue)!important}
+.adv-name{color:var(--ink)!important}
+.adv-role{color:var(--blue)!important}
+.adv-desc{color:var(--muted)!important}
+.join-cta,.join-cta-inner{background:var(--surface)!important}
+.join-cta .cta-h2{color:var(--ink)!important}
+.join-cta .cta-h2 em{color:var(--green)!important}
+.join-cta .cta-p{color:var(--muted)!important}
+
+/* ─── 15. CONTACT PAGE ─── */
+.contact-hero,.ch-inner{background:var(--white)!important}
+.ch-badge{background:rgba(202,177,100,.1)!important;border-color:rgba(202,177,100,.25)!important;color:var(--gold-dark)!important}
+.inquiry-types{background:var(--surface)!important}
+.it-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.it-card:hover,.it-card.active{border-color:var(--gold)!important;background:rgba(202,177,100,.05)!important}
+.it-title{color:var(--ink)!important}
+.it-desc{color:var(--muted)!important}
+.contact-main{background:var(--ink-2)!important}
+.direct-contacts .dc-title,.dc-title{color:#fff!important}
+.direct-contacts .dc-sub{color:rgba(255,255,255,.45)!important}
+.direct-contacts .dc-card{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.08)!important}
+.direct-contacts .dc-card:hover{border-color:rgba(202,177,100,.25)!important}
+.direct-contacts .dc-name{color:#fff!important}
+.direct-contacts .dc-role{color:rgba(255,255,255,.5)!important}
+.direct-contacts .dc-link{color:rgba(255,255,255,.45)!important}
+.direct-contacts .dc-link:hover{color:var(--gold)!important}
+.direct-contacts .dc-info-box{background:rgba(202,177,100,.06)!important;border-color:rgba(202,177,100,.15)!important}
+.direct-contacts .dc-info-box p{color:rgba(255,255,255,.5)!important}
+.direct-contacts .dc-info-box strong{color:var(--gold)!important}
+.contact-form-wrap{background:rgba(255,255,255,.03)!important;border-color:rgba(255,255,255,.08)!important}
+.cf-title{color:#fff!important}
+.cf-sub{color:rgba(255,255,255,.4)!important}
+.contact-form-wrap .f-lbl{color:rgba(255,255,255,.55)!important}
+.contact-form-wrap .f-inp,
+.contact-form-wrap .f-sel,
+.contact-form-wrap .f-ta{background:rgba(255,255,255,.05)!important;border-color:rgba(255,255,255,.1)!important;color:#fff!important}
+.contact-form-wrap .f-inp:focus,
+.contact-form-wrap .f-sel:focus,
+.contact-form-wrap .f-ta:focus{border-color:var(--blue)!important}
+.contact-form-wrap .form-submit,.f-submit{background:linear-gradient(135deg,var(--blue),var(--blue-dark))!important;color:#fff!important}
+.f-note{color:rgba(255,255,255,.28)!important}
+.faq{background:var(--surface)!important}
+.faq .faq-item{border-bottom-color:var(--border)!important}
+.faq .faq-q{color:var(--ink)!important}
+.faq .faq-a p{color:var(--muted)!important}
+.faq-icon{color:var(--gold-dark)!important}
+
+/* ─── 16. DASHBOARD PAGE ─── */
+.dash-hero{background:var(--white)!important}
+.health-score{background:var(--surface)!important;border-top-color:var(--border)!important;border-bottom-color:var(--border)!important}
+.health-score .sec-h2{color:var(--ink)!important}
+.health-score .sec-label{color:var(--gold-dark)!important}
+.health-score p{color:var(--muted)!important}
+.health-score .hs-num{color:var(--ink)!important}
+.health-score .hs-num span{color:var(--green)!important}
+.health-score .hs-subtitle{color:var(--muted)!important}
+.health-score .hs-label{color:var(--green)!important}
+.health-score .hf-name{color:var(--ink)!important}
+.health-score .hf-bar-track{background:var(--border)!important}
+.hsc-track{stroke:var(--border-2)!important}
+.hsc-fill{stroke:var(--green)!important}
+.modules-status{background:var(--white)!important}
+.modules-status .sec-h2{color:var(--ink)!important}
+.modules-status .sec-h2 em{color:var(--green)!important}
+.ms-card{background:var(--surface)!important;border-color:var(--border)!important}
+.ms-card:hover{border-color:var(--blue-mid)!important}
+.ms-name{color:var(--ink)!important}
+.ms-meta{color:var(--muted)!important}
+.ms-val em.green{color:var(--green)!important}
+.ms-val em.gold{color:var(--gold-dark)!important}
+.ms-status-pill{background:rgba(22,163,74,.1)!important;color:var(--green)!important;border-color:rgba(22,163,74,.2)!important}
+.dash-cta{background:var(--surface)!important}
+.dash-cta .cta-h2{color:var(--ink)!important}
+.dash-cta .cta-h2 em{color:var(--green)!important}
+.dash-cta .cta-p{color:var(--muted)!important}
+/* Claims table in dashboard */
+.claims-panel{background:rgba(13,27,46,.5)!important}
+.panel-title{color:rgba(255,255,255,.85)!important}
+.panel-sub{color:rgba(255,255,255,.4)!important}
+.chart-panel{background:rgba(13,27,46,.4)!important;border-color:rgba(255,255,255,.07)!important}
+.claims-table th{background:rgba(255,255,255,.04)!important;color:rgba(255,255,255,.38)!important;border-bottom-color:rgba(255,255,255,.07)!important}
+.claims-table td{color:rgba(255,255,255,.65)!important;border-bottom-color:rgba(255,255,255,.05)!important}
+.cls-approved{background:rgba(22,163,74,.15)!important;color:var(--green)!important}
+.cls-flagged{background:rgba(239,68,68,.15)!important;color:#f87171!important}
+.cls-pending{background:rgba(202,177,100,.12)!important;color:var(--gold)!important}
+.cls-review{background:rgba(65,121,173,.15)!important;color:var(--blue-light)!important}
+.feed-wrap{background:rgba(13,27,46,.4)!important;border-color:rgba(255,255,255,.07)!important}
+.feed-item{border-bottom-color:rgba(255,255,255,.04)!important}
+.fi-title{color:rgba(255,255,255,.85)!important}
+.fi-meta{color:rgba(255,255,255,.4)!important}
+.fi-time{color:rgba(255,255,255,.25)!important}
+.act-ico.red{background:rgba(239,68,68,.15)!important}
+.act-ico.green{background:rgba(22,163,74,.15)!important}
+.act-ico.amber{background:rgba(202,177,100,.15)!important}
+.act-text{color:rgba(255,255,255,.65)!important}
+.act-time{color:rgba(255,255,255,.25)!important}
+.kpi-card{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.08)!important}
+.kpi-label{color:rgba(255,255,255,.38)!important}
+.kpi-val{color:#fff!important}
+.kpi-val.green,.kpi-change.up{color:var(--green)!important}
+.kpi-val.gold{color:var(--gold)!important}
+.kpi-val.blue{color:var(--blue-light)!important}
+.kpi-val.red{color:#f87171!important}
+.kpi-change{color:rgba(255,255,255,.35)!important}
+.kpi-change.down{color:#f87171!important}
+.qs-row{background:rgba(255,255,255,.03)!important;border-color:rgba(255,255,255,.05)!important}
+.qs-lbl{color:rgba(255,255,255,.42)!important}
+.qs-val{color:rgba(255,255,255,.78)!important}
+.qs-val.green{color:var(--green)!important}
+.qs-val.gold{color:var(--gold)!important}
+.qs-val.blue{color:var(--blue-light)!important}
+.ft-bg{background:rgba(255,255,255,.06)!important}
+.ft-label{color:rgba(255,255,255,.58)!important}
+.dash-panel{border-bottom-color:rgba(255,255,255,.06)!important}
+.dash-panel-ttl{color:rgba(255,255,255,.45)!important}
+
+/* ─── 17. TEAM CARDS (shared across pages) ─── */
+.team-card{background:var(--white)!important;border-color:var(--border)!important;box-shadow:var(--shadow-sm)!important}
+.t-name{color:var(--ink)!important}
+.t-role-en{color:var(--blue)!important}
+.t-role-ar{color:var(--muted)!important}
+.t-email{color:var(--blue)!important}
+.t-email:hover{color:var(--blue-dark)!important}
+.t-phone{color:var(--muted-2)!important}
+
+/* ─── 18. COMPANY PANEL + SEED CARD ─── */
+.company-info{background:var(--white)!important}
+.ci-label{color:var(--muted-2)!important}
+.ci-name{color:var(--ink)!important}
+.ci-parent{color:var(--muted)!important}
+.ci-parent strong{color:var(--ink)!important}
+.ci-desc{color:var(--muted)!important}
+.ci-address{color:var(--muted)!important}
+.ci-badge{background:var(--surface)!important;border-color:var(--border-2)!important;color:var(--ink-3)!important}
+/* Seed card stays dark (like English) */
+.seed-card{background:linear-gradient(135deg,var(--ink),var(--ink-2))!important;border-top-color:rgba(202,177,100,.2)!important}
+.seed-eyebrow{color:var(--gold)!important}
+.seed-amount{color:#fff!important}
+.seed-type{color:rgba(255,255,255,.45)!important}
+.sm-val{color:var(--gold)!important}
+.sm-lbl{color:rgba(255,255,255,.38)!important}
+.seed-btn{background:var(--gold)!important;color:var(--ink)!important}
+.seed-btn:hover{background:var(--gold-dark)!important}
+.seed-metrics .sm-val{color:var(--gold)!important}
+
+/* ─── 19. CONTACT SECTION (dark — matches English) ─── */
+.contact-sec{background:var(--ink)!important}
+.contact-sec .sec-eyebrow{color:rgba(255,255,255,.45)!important}
+.contact-sec .sec-h2{color:#fff!important}
+.contact-sec .sec-h2 em{color:var(--green)!important}
+.contact-sec .sec-lead{color:rgba(255,255,255,.5)!important}
+.cp-ico{background:rgba(65,121,173,.15)!important;border-color:rgba(65,121,173,.2)!important}
+.cp-txt{color:rgba(255,255,255,.55)!important}
+.cp-txt strong{color:rgba(255,255,255,.88)!important}
+.contact-direct{border-top-color:rgba(255,255,255,.08)!important}
+.cd-lbl{color:rgba(255,255,255,.3)!important}
+.cd-row{color:rgba(255,255,255,.5)!important}
+.cd-row a{color:#7fb3e8!important}
+.cd-row a:hover{color:var(--blue-light)!important}
+.form-wrap{background:rgba(255,255,255,.03)!important;border-color:rgba(255,255,255,.08)!important}
+.form-ttl{color:#fff!important}
+.form-sub-txt{color:rgba(255,255,255,.4)!important}
+.f-lbl{color:rgba(255,255,255,.45)!important}
+.f-inp,.f-sel,.f-ta{background:rgba(255,255,255,.05)!important;border-color:rgba(255,255,255,.1)!important;color:rgba(255,255,255,.82)!important}
+.f-inp:focus,.f-sel:focus,.f-ta:focus{border-color:var(--blue)!important;background:rgba(65,121,173,.08)!important}
+.f-submit{background:linear-gradient(135deg,var(--blue),var(--blue-dark))!important;color:#fff!important}
+.f-note{color:rgba(255,255,255,.25)!important}
+
+/* ─── 20. FOOTER (dark — matches English) ─── */
+.footer{background:var(--ink-2)!important;font-family:var(--fn-ar)!important}
+.footer *{font-family:var(--fn-ar)!important}
+
+/* ─── 21. CTA SECTIONS ─── */
+.mkt-cta,.rev-cta,.eco-cta{background:var(--surface)!important}
+.mkt-cta .cta-h2,.rev-cta .cta-h2{color:var(--ink)!important}
+.cta-h2 em{color:var(--green)!important}
+.cta-p{color:var(--muted)!important}
+.cta-btn-primary{background:var(--blue)!important;color:#fff!important}
+.cta-btn-primary:hover{background:var(--blue-dark)!important}
+.cta-btn-gold{background:var(--gold)!important;color:var(--ink)!important}
+.cta-btn-gold:hover{background:var(--gold-dark)!important}
+.cta-btn-green{background:var(--green)!important;color:#fff!important}
+.cta-btn-sec{border-color:var(--border-2)!important;color:var(--ink-3)!important;background:transparent!important}
+.cta-btn-sec:hover{border-color:var(--blue-mid)!important;background:var(--surface)!important}
+
+/* ─── 22. TYPOGRAPHY: SEC LABELS IN LIGHT SECTIONS ─── */
+.sec-eyebrow,.sec-label{color:var(--gold-dark)!important}
+.sec-h2{color:var(--ink)!important}
+.sec-h2 em{color:var(--gold-dark)!important}
+.sec-lead{color:var(--muted)!important}
+.sec-rule{background:var(--gold)!important}
+
+/* Override for dark sections */
+.prob-sec .sec-eyebrow,.prob-sec .sec-label{color:var(--gold)!important}
+.prob-sec .sec-h2{color:#fff!important}
+.prob-sec .sec-lead{color:rgba(255,255,255,.55)!important}
+.contact-sec .sec-eyebrow,.contact-sec .sec-label{color:rgba(255,255,255,.45)!important}
+.contact-sec .sec-h2{color:#fff!important}
+.contact-sec .sec-lead{color:rgba(255,255,255,.5)!important}
+
+/* ─── 23. COLOR HELPERS ─── */
+.tp-gold,.ff-gold,.pc-gold,.val-gold{color:var(--gold-dark)!important}
+.tp-blue,.ff-blue,.pc-blue,.val-green{color:var(--blue)!important}
+.tp-green,.ff-green,.pc-green{color:var(--green)!important}
+.ff-gray,.tp-gray{color:var(--muted)!important}
+.val-red{color:#dc2626!important}
+.val-white{color:var(--ink)!important}
+
+/* ─── 24. SCROLL-TO-TOP ─── */
+#scroll-top{background:var(--blue)!important;left:2rem;right:auto}
+#scroll-top:hover{background:var(--blue-dark)!important}
+
+/* ─── 25. ACTIVITY FEEDS (light-section version) ─── */
+.activity-feed .act-item,.act-item{border-bottom-color:var(--border)!important}
+
+/* ─── 26. FORM IN LIGHT SECTION ─── */
+.form-group label{color:var(--muted)!important}
+.form-group input,.form-group select,.form-group textarea{
+  background:var(--surface)!important;border-color:var(--border)!important;color:var(--ink)!important}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--blue)!important;background:var(--white)!important}
+.form-submit{background:linear-gradient(135deg,var(--blue),var(--blue-dark))!important;color:#fff!important}
+.form-success h3,.f-success h3{color:var(--green)!important}
+.form-success p,.f-success p{color:var(--muted)!important}
+
+/* ─── 27. GAUGE COLORS ─── */
+.gauge-fill.active{stroke:var(--green)!important}
+.gauge-center-text{color:var(--green)!important}
+.fraud-gauge .gauge-green{stroke:var(--green)!important}
+.fraud-stats .fs-val{color:var(--ink)!important}
+.fraud-stats .fs-val.green{color:var(--green)!important}
+.fraud-stats .fs-val.red{color:#dc2626!important}
+.fraud-stats .fs-lbl{color:var(--muted)!important}
+.fs-item{background:var(--surface)!important;border-color:var(--border)!important}
