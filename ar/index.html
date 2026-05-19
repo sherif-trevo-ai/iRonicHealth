@@ -481,20 +481,9 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 /* ══ FOOTER ══ */
 .footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);
   padding:3rem 5% 1.5rem;direction:rtl}
-.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
-  gap:2.5rem;margin-bottom:2.5rem}
-.footer-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.375rem}
-.footer-brand-tag{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:1rem}
-.footer-col-title{font-size:.68rem;font-weight:700;text-transform:uppercase;
-  letter-spacing:.08em;color:rgba(255,255,255,.32);margin-bottom:.875rem}
-.footer-links{display:flex;flex-direction:column;gap:.5rem}
-.footer-links a{font-size:.8rem;color:rgba(255,255,255,.42);
-  text-decoration:none;transition:color .2s}
+
 .footer-links a:hover{color:#fff}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;
-  padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);
-  flex-wrap:wrap;gap:.75rem}
-.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
+
 .f-badge{font-size:.62rem;padding:3px 10px;border-radius:20px;
   border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.32)}
 
@@ -522,16 +511,22 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   .pricing-row,.model-numbers,.dash-kpi-row,.eco-stats{grid-template-columns:1fr 1fr}
   .dash-body{grid-template-columns:1fr}
   .dash-right-panel{display:none}
-  .footer-top{grid-template-columns:1fr 1fr}
+  
   .up-stats{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .pricing-row,.model-numbers,.eco-stats,.dash-kpi-row{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr}
+  
   .form-2col{grid-template-columns:1fr}
   .hero-kpis{gap:1.25rem}
   .trust-item{padding:.5rem 1rem}
 }
+
+/* ══ FOOTER — MATCH ENGLISH STYLE ══ */
+.footer *{font-family:'Cairo',sans-serif!important}
+.footer-brand-desc{font-size:.87rem;line-height:1.75;margin-top:.875rem;margin-bottom:1.25rem}
+.footer-logo-img{max-height:44px;width:auto;display:block}
+
 </style>
 </head>
 <body>
@@ -1150,51 +1145,51 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 </main>
 
 <!-- ══ FOOTER ══ -->
-<footer class="footer">
+<footer class="footer" role="contentinfo" style="font-family:'Cairo',sans-serif">
   <div class="footer-top">
-    <div>
-      <div class="footer-brand-name">iRonic Health</div>
-      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تكتشف الاحتيال في 4.3 ثانية. مُرخَّصة من الهيئة المالية. متوافقة مع PDPL.</div>
-      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-        <span class="f-badge">مُرخَّصة FRA</span>
-        <span class="f-badge">PDPL 151/2020</span>
-        <span class="f-badge">نماذج AI مصرية</span>
+    <div class="footer-brand">
+      <a href="#home" class="footer-logo-link" aria-label="iRonic Health">
+        <img src="../assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'" style="max-height:44px;width:auto">
+      </a>
+      <p class="footer-brand-desc" style="font-family:'Cairo',sans-serif">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تُلغي الاحتيال. تُسرّع المطالبات.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
       </div>
     </div>
-    <div>
-      <div class="footer-col-title">المنصة</div>
-      <div class="footer-links">
-        <a href="platform.html">وحدات الذكاء الاصطناعي</a>
-        <a href="ecosystem.html">النظام البيئي</a>
+    <div class="footer-links-grid" style="font-family:'Cairo',sans-serif">
+      <div class="footer-col">
+        <div class="footer-col-title">المنصة</div>
+        <a href="platform.html">كشف الاحتيال AI</a>
+        <a href="platform.html">النقاط الصحية</a>
+        <a href="platform.html">توقع المطالبات</a>
+        <a href="platform.html">توجيه المستشفيات</a>
         <a href="dashboard.html">لوحة التحكم</a>
-        <a href="pricing.html">نموذج الإيرادات</a>
       </div>
-    </div>
-    <div>
-      <div class="footer-col-title">الشركة</div>
-      <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">الشركة</div>
         <a href="team.html">الفريق</a>
-        <a href="investors.html">المستثمرون</a>
+        <a href="#problem">المشكلة</a>
+        <a href="ecosystem.html">النظام البيئي</a>
         <a href="market.html">السوق</a>
-        <a href="contact.html">تواصل معنا</a>
+        <a href="investors.html">المستثمرون</a>
         <a href="../index.html">🇬🇧 English</a>
       </div>
-    </div>
-    <div>
-      <div class="footer-col-title">تواصل</div>
-      <div class="footer-links">
+      <div class="footer-col">
+        <div class="footer-col-title">تواصل</div>
         <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
         <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
         <a href="tel:+201555556697" dir="ltr">+20 155 555 6697</a>
-        <a href="tel:+447308892741" dir="ltr">+44 7308 892741</a>
+        <span class="footer-address-txt" style="font-family:'Cairo',sans-serif">أبراج النيل سيتي، البرج الشمالي<br>كورنيش النيل، القاهرة، مصر</span>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
-    <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-      <span class="f-badge">مُرخَّصة FRA</span>
-      <span class="f-badge">متوافقة PDPL</span>
+  <div class="footer-bottom" style="font-family:'Cairo',sans-serif">
+    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · جميع الحقوق محفوظة</div>
+    <div class="footer-legal">
+      <a href="#">الخصوصية (PDPL 151/2020)</a>
+      <a href="#">شروط الخدمة</a>
+      <a href="#">امتثال الهيئة المالية</a>
     </div>
   </div>
 </footer>
