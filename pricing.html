@@ -282,6 +282,36 @@
   .ue-grid,.module-pricing{grid-template-columns:1fr;}
   .rh-h1{font-size:2.4rem;}
 }
+/* ══ LANGUAGE SWITCHER ══ */
+.lang-switcher{position:relative;display:inline-flex;align-items:center}
+.lang-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  border-radius:8px;padding:.38rem .85rem;color:rgba(255,255,255,.78);
+  font-size:.78rem;font-weight:600;cursor:pointer;
+  display:inline-flex;align-items:center;gap:.4rem;
+  transition:all .2s;white-space:nowrap;letter-spacing:.01em;line-height:1.4}
+.lang-btn:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.25)}
+.lang-caret{font-size:.6rem;opacity:.5;transition:transform .2s}
+.lang-switcher.open .lang-caret{transform:rotate(180deg)}
+.lang-dropdown{position:absolute;top:calc(100% + 8px);left:0;
+  background:#0d1b2e;border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:.35rem;min-width:168px;
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .18s,transform .18s,visibility 0s .18s;
+  z-index:9999;box-shadow:0 10px 36px rgba(0,0,0,.5)}
+.lang-switcher.open .lang-dropdown{opacity:1;visibility:visible;
+  transform:translateY(0);transition:opacity .18s,transform .18s,visibility 0s}
+.lang-opt{display:flex;align-items:center;justify-content:space-between;
+  padding:.48rem .8rem;border-radius:6px;font-size:.8rem;font-weight:500;
+  color:rgba(255,255,255,.62);text-decoration:none;
+  transition:background .14s,color .14s;gap:.5rem;line-height:1.3}
+a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
+.lang-opt.lang-active{color:#fff;background:rgba(24,95,165,.2);
+  font-weight:700;pointer-events:none}
+.lang-opt.lang-soon{opacity:.38;cursor:not-allowed;pointer-events:none}
+.lang-badge{font-size:.58rem;padding:2px 6px;border-radius:20px;
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.4);
+  font-weight:600;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+
 </style>
 </head>
 <body>
@@ -309,6 +339,15 @@
     <a href="investors.html">Investors</a>
   </nav>
   <div class="nav-right">
+    <div class="lang-switcher" id="lang-switcher">
+    <button class="lang-btn" aria-haspopup="listbox" aria-expanded="false">🌐 EN <span class="lang-caret">▾</span></button>
+    <div class="lang-dropdown" role="listbox">
+      <span class="lang-opt lang-active">🇬🇧 English</span>
+      <a href="ar/pricing.html" class="lang-opt">🇪🇬 العربية</a>
+      <span class="lang-opt lang-soon">🇩🇪 Deutsch <span class="lang-badge">Soon</span></span>
+      <span class="lang-opt lang-soon">🇫🇷 Français <span class="lang-badge">Soon</span></span>
+    </div>
+  </div>
     <a href="ar/index.html" class="btn-lang">&#127760; &#1593;&#1585;&#1576;&#1610;</a>
     <a href="contact.html" class="btn-demo">Request Demo &#8594;</a>
   </div>
@@ -337,7 +376,7 @@
   <div class="rh-grid" aria-hidden="true"></div>
   <div class="rh-inner">
     <div class="reveal">
-      <div class="rh-badge">&#128200; Revenue Model &#183; Pricing &#183; Unit Economics</div>
+      <div class="rh-badge">&#128200; Revenue Model · Pricing · Unit Economics</div>
       <h1 class="rh-h1">We Earn When<br><em>You Save.</em></h1>
       <p class="rh-sub">No platform fee until value is proven. We take 25% of validated fraud savings during the pilot &#8212; then transition to a PMPM subscription once ROI is documented. Aligned incentives, not sales pressure.</p>
       <div class="rh-kpis">
@@ -410,7 +449,7 @@
     <div class="phases-grid">
       <div class="phase-card featured reveal">
         <div class="phase-feat-label">Start Here</div>
-        <div class="phase-num">Phase 01 &#183; Entry</div>
+        <div class="phase-num">Phase 01 · Entry</div>
         <div class="phase-ico">&#127919;</div>
         <div class="phase-name">Contingent Savings</div>
         <div class="phase-price">15&#8211;25%</div>
@@ -423,10 +462,10 @@
           <div class="phase-item"><div class="phase-item-dot"></div>CMO-validated every claim</div>
           <div class="phase-item"><div class="phase-item-dot"></div>FRA audit trail on every recovery</div>
         </div>
-        <div class="phase-badge">Pilot: 90 days &#183; Live in 4 weeks</div>
+        <div class="phase-badge">Pilot: 90 days · Live in 4 weeks</div>
       </div>
       <div class="phase-card ph-2 reveal reveal-d1">
-        <div class="phase-num">Phase 02 &#183; Core</div>
+        <div class="phase-num">Phase 02 · Core</div>
         <div class="phase-ico">&#128260;</div>
         <div class="phase-name">PMPM Subscription</div>
         <div class="phase-price">$0.75&#8211;$5</div>
@@ -442,7 +481,7 @@
         <div class="phase-badge">Unlocked: Month 4&#8211;6 post-pilot</div>
       </div>
       <div class="phase-card ph-3 reveal reveal-d2">
-        <div class="phase-num">Phase 03 &#183; Ecosystem</div>
+        <div class="phase-num">Phase 03 · Ecosystem</div>
         <div class="phase-ico">&#128138;</div>
         <div class="phase-name">Pharmacy Network Fee</div>
         <div class="phase-price">$0.05&#8211;$0.20</div>
@@ -455,10 +494,10 @@
           <div class="phase-item"><div class="phase-item-dot"></div>El Ezaby (250+ branches) priority</div>
           <div class="phase-item"><div class="phase-item-dot"></div>High-margin, near-zero incremental cost</div>
         </div>
-        <div class="phase-badge">Unlocked: Year 2 &#183; Pharmacy network live</div>
+        <div class="phase-badge">Unlocked: Year 2 · Pharmacy network live</div>
       </div>
       <div class="phase-card ph-4 reveal reveal-d3">
-        <div class="phase-num">Phase 04 &#183; Enterprise</div>
+        <div class="phase-num">Phase 04 · Enterprise</div>
         <div class="phase-ico">&#127970;</div>
         <div class="phase-name">Corporate Self-Funded</div>
         <div class="phase-price">$4&#8211;$8</div>
@@ -566,14 +605,14 @@
     <div class="reveal" style="margin-top:2rem">
       <div class="ley" style="margin-bottom:.875rem">Per-Module Pricing (Add-On Rates)</div>
       <div class="module-pricing">
-        <div class="mp-card"><div class="mp-ico">&#128269;</div><div class="mp-module">Fraud Detection AI</div><div class="mp-price blue">$0.75</div><div class="mp-unit">PMPM &#183; Always included</div></div>
+        <div class="mp-card"><div class="mp-ico">&#128269;</div><div class="mp-module">Fraud Detection AI</div><div class="mp-price blue">$0.75</div><div class="mp-unit">PMPM · Always included</div></div>
         <div class="mp-card"><div class="mp-ico">&#9889;</div><div class="mp-module">Claims Orchestration</div><div class="mp-price blue">+$0.50</div><div class="mp-unit">PMPM add-on</div></div>
         <div class="mp-card"><div class="mp-ico">&#127973;</div><div class="mp-module">Hospital Routing</div><div class="mp-price blue">+$0.40</div><div class="mp-unit">PMPM add-on</div></div>
         <div class="mp-card"><div class="mp-ico">&#129505;</div><div class="mp-module">Preventive Care</div><div class="mp-price green">+$1.25</div><div class="mp-unit">PMPM add-on</div></div>
         <div class="mp-card"><div class="mp-ico">&#128200;</div><div class="mp-module">Dynamic Premiums</div><div class="mp-price green">+$1.10</div><div class="mp-unit">PMPM add-on</div></div>
         <div class="mp-card"><div class="mp-ico">&#129504;</div><div class="mp-module">Health Score</div><div class="mp-price blue">+$0.30</div><div class="mp-unit">PMPM add-on</div></div>
-        <div class="mp-card"><div class="mp-ico">&#128202;</div><div class="mp-module">Golden Dashboard</div><div class="mp-price gold">Included</div><div class="mp-unit">All tiers &#183; Free</div></div>
-        <div class="mp-card"><div class="mp-ico">&#128138;</div><div class="mp-module">Pharmacy Verification</div><div class="mp-price gold">$0.05&#8211;0.20</div><div class="mp-unit">Per script &#183; Volume-based</div></div>
+        <div class="mp-card"><div class="mp-ico">&#128202;</div><div class="mp-module">Golden Dashboard</div><div class="mp-price gold">Included</div><div class="mp-unit">All tiers · Free</div></div>
+        <div class="mp-card"><div class="mp-ico">&#128138;</div><div class="mp-module">Pharmacy Verification</div><div class="mp-price gold">$0.05&#8211;0.20</div><div class="mp-unit">Per script · Volume-based</div></div>
       </div>
     </div>
   </div>
@@ -593,7 +632,7 @@
           <div class="pc-header">
             <div class="pch-badge">Pilot Commercial Terms</div>
             <div class="pch-title">90-Day Fraud Detection Pilot</div>
-            <div class="pch-sub">Zero platform fee &#183; Contingent pricing only &#183; FRA-compliant</div>
+            <div class="pch-sub">Zero platform fee · Contingent pricing only · FRA-compliant</div>
           </div>
           <div class="pc-body">
             <div class="pc-rows">
@@ -791,7 +830,7 @@
               <span class="cr-val gold" id="res-net">EGP 76.5M</span>
             </div>
           </div>
-          <div class="calc-note">Assumes 85% detection rate &#183; Conservative fraud recovery estimate &#183; Excludes PMPM savings from overtreatment reduction</div>
+          <div class="calc-note">Assumes 85% detection rate · Conservative fraud recovery estimate · Excludes PMPM savings from overtreatment reduction</div>
         </div>
       </div>
       <div class="reveal reveal-d2">
@@ -956,14 +995,14 @@
   <div class="cta-bg-ring" aria-hidden="true"></div>
   <div class="cta-bg-ring2" aria-hidden="true"></div>
   <div class="cta-inner reveal">
-    <div class="cta-eyebrow">Zero Risk &#183; 90-Day Pilot &#183; 4 Weeks to Live</div>
+    <div class="cta-eyebrow">Zero Risk · 90-Day Pilot · 4 Weeks to Live</div>
     <h2 class="cta-h">See the Numbers<br><span>In Your Environment</span></h2>
     <p class="cta-sub">Use the calculator above to estimate your savings &#8212; then request a demo to see iRonic Health's fraud models working on your actual claims data. No commitment, no platform fee, no risk.</p>
     <div class="cta-btns">
       <a href="contact.html" class="cta-btn-g">Request a Demo &#8594;</a>
       <a href="investors.html" class="cta-btn-w">Investor Information</a>
     </div>
-    <div class="cta-metrics">25% Contingent &#183; $0.75&#8211;$5 PMPM &#183; 70% Gross Margin &#183; 4&#8211;6 Month Payback &#183; 20&#8211;30&#215; LTV/CAC</div>
+    <div class="cta-metrics">25% Contingent · $0.75&#8211;$5 PMPM · 70% Gross Margin · 4&#8211;6 Month Payback · 20&#8211;30&#215; LTV/CAC</div>
   </div>
 </section>
 
@@ -997,7 +1036,7 @@
         <a href="market.html">Market</a>
         <a href="team.html">Team</a>
         <a href="investors.html">Investors</a>
-        <a href="ar/index.html">Arabic (&#1593;&#1585;&#1576;&#1610;)</a>
+        <a href="ar/pricing.html">Arabic (&#1593;&#1585;&#1576;&#1610;)</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Contact</div>
@@ -1009,7 +1048,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">&#169; 2026 Ironic Group &#183; iRonic Health &#183; All rights reserved</div>
+    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · All rights reserved</div>
     <div class="footer-legal">
       <a href="#">Privacy (PDPL 151/2020)</a>
       <a href="#">Terms of Service</a>
@@ -1094,5 +1133,21 @@ function initRevBars(){
 })();
 </script>
 <script src="js/main.js"></script>
+<script id="lang-switcher-js">
+(function(){
+  var ls=document.getElementById('lang-switcher');
+  if(!ls)return;
+  var btn=ls.querySelector('.lang-btn');
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=ls.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+  document.addEventListener('click',function(){
+    ls.classList.remove('open');
+    if(btn) btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
 </body>
 </html>
