@@ -401,6 +401,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   <a href="index.html#about">Team</a>
   <a href="investors.html">Investors</a>
   <a href="#inv-deck" class="mobile-demo-btn">Request Investor Deck →</a>
+  <a href="ar/investors.html" class="mobile-lang-btn" style="font-size:.8rem;opacity:.75;letter-spacing:.01em">🇪🇬 العربية</a>
 </div>
 
 <main>
@@ -956,9 +957,9 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   /* Universal reveal */
   function initReveal(){
     var els = document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('up'); }); return; }
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('visible'); }); return; }
     var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); } });
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, {threshold:0.08, rootMargin:'0px 0px -40px 0px'});
     els.forEach(function(el){ obs.observe(el); });
   }
@@ -997,7 +998,6 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   }
 
   window.addEventListener('load', function(){
-    setTimeout(initReveal, 80);
     setTimeout(initArrBars, 200);
     setTimeout(initFundBars, 200);
   });
