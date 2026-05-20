@@ -146,7 +146,6 @@
    ACTIVE NAV HIGHLIGHT
 ══════════════════════════════════════════════ */
 .nav-center a { position:relative; transition:color .2s; }
-.nav-center a.nav-active { color:#c9a84c !important; }
 
 /* ══════════════════════════════════════════════
    MOBILE RESPONSIVE FIXES
@@ -403,6 +402,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   <a href="team.html">Team</a>
   <a href="investors.html">Investors</a>
   <a href="contact.html" class="mobile-demo-btn">Request Demo →</a>
+  <a href="ar/index.html" class="mobile-lang-btn" style="font-size:.8rem;opacity:.75;letter-spacing:.01em">🇪🇬 العربية</a>
 </div>
 
 <!-- HERO -->
@@ -1108,39 +1108,10 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   var btn = document.getElementById('scroll-top');
   window.addEventListener('scroll', function(){
     btn.classList.toggle('visible', window.scrollY > 400);
-  }, {passive:true});
-
-  /* ── Universal reveal fallback ──
-     Ensures ALL .reveal elements animate regardless of nav linkage */
-  function initReveal() {
-    var els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) {
-      els.forEach(function(el){ el.classList.add('up'); });
-      return;
-    }
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); }
-      });
+  }, {passive:true});});
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function(el){ obs.observe(el); });
-  }
-
-  /* ── Active nav highlight on scroll ── */
-  function initNavHighlight() {
-    var sections = document.querySelectorAll('section[id]');
-    var links = document.querySelectorAll('.nav-center a[href^="#"]');
-    if (!links.length || !('IntersectionObserver' in window)) return;
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting) {
-          var id = e.target.id;
-          links.forEach(function(l){
-            l.classList.toggle('nav-active', l.getAttribute('href') === '#' + id);
-          });
-        }
-      });
-    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+  }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
     sections.forEach(function(s){ obs.observe(s); });
   }
 
@@ -1158,8 +1129,6 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   }
 
   window.addEventListener('load', function(){
-    setTimeout(initReveal, 80);
-    setTimeout(initNavHighlight, 120);
     setTimeout(initFeedTicker, 200);
   });
 
