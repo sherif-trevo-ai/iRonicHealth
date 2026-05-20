@@ -327,6 +327,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   <a href="team.html">Team</a>
   <a href="investors.html">Investors</a>
   <a href="contact.html" class="mobile-demo-btn">Contact Us →</a>
+  <a href="ar/contact.html" class="mobile-lang-btn" style="font-size:.8rem;opacity:.75;letter-spacing:.01em">🇪🇬 العربية</a>
 </div>
 
 <main>
@@ -634,7 +635,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 
       <div class="contact-person-card reveal">
         <div class="cpc-header cpc-header-sherif">
-          <div class="cpc-avatar cpca-blue">SH</div>
+          <div class="cpc-avatar cpca-blue">SS</div>
           <div class="cpc-name">Eng. Sherif Shawqi</div>
           <div class="cpc-title">Chairman &amp; Executive Director</div>
         </div>
@@ -657,7 +658,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 
       <div class="contact-person-card reveal reveal-d1">
         <div class="cpc-header cpc-header-islam">
-          <div class="cpc-avatar cpca-green">DI</div>
+          <div class="cpc-avatar cpca-green">IM</div>
           <div class="cpc-name">Dr. Islam Al-Meidany</div>
           <div class="cpc-title">Co-Founder &amp; Medical Director</div>
         </div>
@@ -984,13 +985,13 @@ function toggleFaq(item) {
   window.addEventListener('scroll', function(){ btn.classList.toggle('visible', window.scrollY > 400); }, {passive:true});
   function initReveal(){
     var els = document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('up'); }); return; }
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('visible'); }); return; }
     var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); } });
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, {threshold:0.07, rootMargin:'0px 0px -40px 0px'});
     els.forEach(function(el){ obs.observe(el); });
   }
-  window.addEventListener('load', function(){ setTimeout(initReveal, 80); });
+  window.addEventListener('load', function(){ });
 })();
 </script>
 <script src="js/main.js"></script>
