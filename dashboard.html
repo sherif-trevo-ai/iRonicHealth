@@ -315,6 +315,36 @@
   .dbh-kpis{grid-template-columns:1fr 1fr;}
   .dbh-h1{font-size:2.3rem;}
 }
+/* ══ LANGUAGE SWITCHER ══ */
+.lang-switcher{position:relative;display:inline-flex;align-items:center}
+.lang-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  border-radius:8px;padding:.38rem .85rem;color:rgba(255,255,255,.78);
+  font-size:.78rem;font-weight:600;cursor:pointer;
+  display:inline-flex;align-items:center;gap:.4rem;
+  transition:all .2s;white-space:nowrap;letter-spacing:.01em;line-height:1.4}
+.lang-btn:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.25)}
+.lang-caret{font-size:.6rem;opacity:.5;transition:transform .2s}
+.lang-switcher.open .lang-caret{transform:rotate(180deg)}
+.lang-dropdown{position:absolute;top:calc(100% + 8px);left:0;
+  background:#0d1b2e;border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;padding:.35rem;min-width:168px;
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .18s,transform .18s,visibility 0s .18s;
+  z-index:9999;box-shadow:0 10px 36px rgba(0,0,0,.5)}
+.lang-switcher.open .lang-dropdown{opacity:1;visibility:visible;
+  transform:translateY(0);transition:opacity .18s,transform .18s,visibility 0s}
+.lang-opt{display:flex;align-items:center;justify-content:space-between;
+  padding:.48rem .8rem;border-radius:6px;font-size:.8rem;font-weight:500;
+  color:rgba(255,255,255,.62);text-decoration:none;
+  transition:background .14s,color .14s;gap:.5rem;line-height:1.3}
+a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
+.lang-opt.lang-active{color:#fff;background:rgba(24,95,165,.2);
+  font-weight:700;pointer-events:none}
+.lang-opt.lang-soon{opacity:.38;cursor:not-allowed;pointer-events:none}
+.lang-badge{font-size:.58rem;padding:2px 6px;border-radius:20px;
+  background:rgba(255,255,255,.07);color:rgba(255,255,255,.4);
+  font-weight:600;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+
 </style>
 </head>
 <body>
@@ -342,6 +372,15 @@
     <a href="investors.html">Investors</a>
   </nav>
   <div class="nav-right">
+    <div class="lang-switcher" id="lang-switcher">
+    <button class="lang-btn" aria-haspopup="listbox" aria-expanded="false">🌐 EN <span class="lang-caret">▾</span></button>
+    <div class="lang-dropdown" role="listbox">
+      <span class="lang-opt lang-active">🇬🇧 English</span>
+      <a href="ar/dashboard.html" class="lang-opt">🇪🇬 العربية</a>
+      <span class="lang-opt lang-soon">🇩🇪 Deutsch <span class="lang-badge">Soon</span></span>
+      <span class="lang-opt lang-soon">🇫🇷 Français <span class="lang-badge">Soon</span></span>
+    </div>
+  </div>
     <a href="ar/index.html" class="btn-lang">&#127760; &#1593;&#1585;&#1576;&#1610;</a>
     <a href="contact.html" class="btn-demo">Request Demo &#8594;</a>
   </div>
@@ -1056,7 +1095,7 @@
         <a href="market.html">Market</a>
         <a href="team.html">Team</a>
         <a href="investors.html">Investors</a>
-        <a href="ar/index.html">Arabic (&#1593;&#1585;&#1576;&#1610;)</a>
+        <a href="ar/dashboard.html">Arabic (&#1593;&#1585;&#1576;&#1610;)</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Contact</div>
@@ -1068,7 +1107,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">&#169; 2026 Ironic Group &#183; iRonic Health &#183; All rights reserved</div>
+    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · All rights reserved</div>
     <div class="footer-legal">
       <a href="#">Privacy (PDPL 151/2020)</a>
       <a href="#">Terms of Service</a>
@@ -1121,14 +1160,14 @@ function animateFT(){
 
 /* ── Live feed rotation ── */
 var feedEvents = [
-  {cls:'dfi-flag',ico:'ico-flag',icoTxt:'&#128680;',ttl:'Fraud Flagged &#8212; Phantom Prescription',sub:'IRH-4821 &#183; Cairo Medical Centre &#183; EGP 3,200 &#183; Unictam pattern &#183; Score 87'},
-  {cls:'dfi-ok',ico:'ico-ok',icoTxt:'&#9989;',ttl:'Auto-Approved &#8212; Outpatient Visit',sub:'IRH-4822 &#183; Dr. Amr Clinic &#183; EGP 1,100 &#183; Confidence 98.4%'},
-  {cls:'dfi-warn',ico:'ico-warn',icoTxt:'&#9203;',ttl:'CMO Review &#8212; ICU Over-Stay',sub:'IRH-4823 &#183; Cleopatra Heliopolis &#183; EGP 28,000 &#183; High-cost threshold'},
-  {cls:'dfi-ok',ico:'ico-ok',icoTxt:'&#128300;',ttl:'Lab Tests Verified &#8212; Paid',sub:'IRH-4824 &#183; Alpha Medical Labs &#183; EGP 650 &#183; 3.9s decision'},
-  {cls:'dfi-flag',ico:'ico-flag',icoTxt:'&#9888;&#65039;',ttl:'Brand Upcoding Detected',sub:'IRH-4825 &#183; El Ezaby Pharmacy #47 &#183; EGP 2,800 &#183; Generic substituted'},
-  {cls:'dfi-info',ico:'ico-info',icoTxt:'&#127973;',ttl:'Pre-Auth Approved &#8212; Elective Surgery',sub:'IRH-4826 &#183; Saudi German Hospital &#183; EGP 45,000 &#183; &lt;4h SLA'},
-  {cls:'dfi-ok',ico:'ico-ok',icoTxt:'&#128176;',ttl:'Pharmacy Payment Processed &#8212; 48h Cycle',sub:'IRH-4827 &#183; Pharmacy Marts &#183; EGP 12,400 &#183; 340 pharmacies batch'},
-  {cls:'dfi-flag',ico:'ico-flag',icoTxt:'&#128680;',ttl:'Duplicate Claim Detected',sub:'IRH-4828 &#183; Two providers &#183; Same diagnosis &#183; EGP 1,900 total &#183; Score 76'},
+  {cls:'dfi-flag',ico:'ico-flag',icoTxt:'&#128680;',ttl:'Fraud Flagged &#8212; Phantom Prescription',sub:'IRH-4821 · Cairo Medical Centre · EGP 3,200 · Unictam pattern · Score 87'},
+  {cls:'dfi-ok',ico:'ico-ok',icoTxt:'&#9989;',ttl:'Auto-Approved &#8212; Outpatient Visit',sub:'IRH-4822 · Dr. Amr Clinic · EGP 1,100 · Confidence 98.4%'},
+  {cls:'dfi-warn',ico:'ico-warn',icoTxt:'&#9203;',ttl:'CMO Review &#8212; ICU Over-Stay',sub:'IRH-4823 · Cleopatra Heliopolis · EGP 28,000 · High-cost threshold'},
+  {cls:'dfi-ok',ico:'ico-ok',icoTxt:'&#128300;',ttl:'Lab Tests Verified &#8212; Paid',sub:'IRH-4824 · Alpha Medical Labs · EGP 650 · 3.9s decision'},
+  {cls:'dfi-flag',ico:'ico-flag',icoTxt:'&#9888;&#65039;',ttl:'Brand Upcoding Detected',sub:'IRH-4825 · El Ezaby Pharmacy #47 · EGP 2,800 · Generic substituted'},
+  {cls:'dfi-info',ico:'ico-info',icoTxt:'&#127973;',ttl:'Pre-Auth Approved &#8212; Elective Surgery',sub:'IRH-4826 · Saudi German Hospital · EGP 45,000 · &lt;4h SLA'},
+  {cls:'dfi-ok',ico:'ico-ok',icoTxt:'&#128176;',ttl:'Pharmacy Payment Processed &#8212; 48h Cycle',sub:'IRH-4827 · Pharmacy Marts · EGP 12,400 · 340 pharmacies batch'},
+  {cls:'dfi-flag',ico:'ico-flag',icoTxt:'&#128680;',ttl:'Duplicate Claim Detected',sub:'IRH-4828 · Two providers · Same diagnosis · EGP 1,900 total · Score 76'},
 ];
 var feedIdx = 0;
 var claimsCount = 1247;
@@ -1207,5 +1246,21 @@ window.addEventListener('load', function(){
 });
 </script>
 <script src="js/main.js"></script>
+<script id="lang-switcher-js">
+(function(){
+  var ls=document.getElementById('lang-switcher');
+  if(!ls)return;
+  var btn=ls.querySelector('.lang-btn');
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=ls.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+  document.addEventListener('click',function(){
+    ls.classList.remove('open');
+    if(btn) btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
 </body>
 </html>
