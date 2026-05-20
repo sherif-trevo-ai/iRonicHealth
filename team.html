@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The Team behind iRonic Health — Eng. Sherif Shawqi and Dr. Islam Al-Midani. Egypt's first AI health insurance orchestration platform.">
+<meta name="description" content="The Team behind iRonic Health — Eng. Sherif Shawqi and Dr. Islam Al-Meidany. Egypt's first AI health insurance orchestration platform.">
 <meta property="og:title" content="Team — iRonic Health · The People Behind the Platform">
 <meta property="og:url" content="https://sherif-trevo-ai.github.io/iRonicHealth/team.html">
 <meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/H_Badge_icon.svg">
@@ -412,6 +412,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
   <a href="team.html">Team</a>
   <a href="investors.html">Investors</a>
   <a href="index.html#contact" class="mobile-demo-btn">Request Demo →</a>
+  <a href="ar/team.html" class="mobile-lang-btn" style="font-size:.8rem;opacity:.75;letter-spacing:.01em">🇪🇬 العربية</a>
 </div>
 
 <main>
@@ -535,7 +536,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
           <div class="fc-bio">Founder of Ironic Group — a registered Egyptian company in medical industries. Leads all commercial dimensions of iRonic Health: insurer and TPA partnerships, investor outreach, fundraising strategy, and GTM execution. Drives the GlobeMed engagement and anchor insurer pipeline. Responsible for the business architecture that enables one TPA deal to cover 18 insurers simultaneously. Brings the external commercial relationships and strategic positioning that turn a clinical insight into a funded, scalable company.</div>
           <div class="fc-contact">
             <div class="fcc-item"><div class="fcc-icon">📧</div><a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a></div>
-            <div class="fcc-item"><div class="fcc-icon">📞</div><a href="tel:+447308892741">+44 7308 892741</a></div>
+            <div class="fcc-item"><div class="fcc-icon">📞</div><a href="tel:+201555556697">+20 155 555 6697</a></div>
             <div class="fcc-item"><div class="fcc-icon">📍</div>Nile City Towers, North Tower, Cairo, Egypt</div>
           </div>
         </div>
@@ -562,7 +563,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
           <div class="fc-bio">Co-founder of iRonic Health. Leads all clinical dimensions of the platform — including fraud detection protocols, medical AI governance, and FRA compliance architecture. Responsible for the CMO oversight layer that makes iRonic Health a 'Decision-Support Software' rather than an autonomous denial system — the critical distinction for FRA regulatory positioning. Builds and maintains the 25–40 Egypt-specific fraud archetype taxonomy from clinical knowledge and documented cases. Egyptian Medical Syndicate affiliation provides the clinical credibility that every CMO and Medical Director in an insurer meeting needs to see.</div>
           <div class="fc-contact">
             <div class="fcc-item"><div class="fcc-icon">📧</div><a href="mailto:islam@ironicigmi.com">islam@ironicigmi.com</a></div>
-            <div class="fcc-item"><div class="fcc-icon">📞</div><a href="tel:+447424907088">+44 7424 907088</a></div>
+            <div class="fcc-item"><div class="fcc-icon">📞</div><a href="tel:+201508281948">+20 150 828 1948</a></div>
             <div class="fcc-item"><div class="fcc-icon">🩺</div>Egyptian Medical Syndicate · Licensed Physician</div>
           </div>
         </div>
@@ -667,7 +668,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
             <div class="role-ico">🩺</div>
             <div class="role-body">
               <div class="role-name">Medical Director &amp; Co-Founder</div>
-              <div class="role-desc">Dr. Islam Al-Midani · Clinical AI, FRA, CMO layer</div>
+              <div class="role-desc">Dr. Islam Al-Meidany · Clinical AI, FRA, CMO layer</div>
               <div class="role-status rs-live">Active</div>
             </div>
           </div>
@@ -1022,14 +1023,14 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 
   function initReveal(){
     var els = document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('up'); }); return; }
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('visible'); }); return; }
     var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('up'); obs.unobserve(e.target); } });
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, {threshold:0.07, rootMargin:'0px 0px -40px 0px'});
     els.forEach(function(el){ obs.observe(el); });
   }
 
-  window.addEventListener('load', function(){ setTimeout(initReveal, 80); });
+  window.addEventListener('load', function(){ });
 })();
 </script>
 <script src="js/main.js"></script>
