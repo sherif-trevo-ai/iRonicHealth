@@ -11,31 +11,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/arabic-theme.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;overflow-x:hidden}
+body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 
 /* ══ DESIGN TOKENS ══ */
-:root{--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94}
+/* light theme now via arabic-theme.css */
 
-/* ══ INQUIRY TYPES — LIGHT ══ */
-.inquiry-types{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
-.inquiry-types .sec-label{color:rgba(10,22,40,.4)}
-.inquiry-types .sec-h2{color:var(--ink1)}
-.inquiry-types .sec-h2 em{color:#c9a84c}
-.inquiry-types .it-card{background:var(--lt1);border-color:#dde8f5;box-shadow:0 2px 8px rgba(10,22,40,.05)}
-.inquiry-types .it-card:hover,.inquiry-types .it-card.active{border-color:#c9a84c;background:rgba(201,168,76,.05)}
-.inquiry-types .it-title{color:var(--ink1)}
-.inquiry-types .it-desc{color:var(--ink3)}
+/* handled by arabic-theme.css */
 
-/* ══ FAQ — LIGHT ══ */
-.faq{background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6}
-.faq .sec-label{color:rgba(10,22,40,.4)}
-.faq .sec-h2{color:var(--ink1)}
-.faq .sec-h2 em{color:#c9a84c}
-.faq .faq-item{border-bottom-color:#e5ecf6}
-.faq .faq-q{color:var(--ink1)}
-.faq .faq-a p{color:var(--ink3)}
+/* handled by arabic-theme.css */
 .nav{direction:rtl}
 .nav-center a{font-family:'Cairo',sans-serif}
 .nav-logo-text{text-align:right}
@@ -153,16 +139,8 @@ body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;
 
 /* FOOTER */
 .footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;direction:rtl}
-.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
-.footer-brand-name{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:.375rem}
-.footer-brand-tag{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:1rem}
-.footer-col-title{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.875rem}
-.footer-links{display:flex;flex-direction:column;gap:.5rem}
-.footer-links a{font-size:.8rem;color:rgba(255,255,255,.42);text-decoration:none;transition:color .2s}
+
 .footer-links a:hover{color:#c9a84c}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-wrap:wrap;gap:.75rem}
-.footer-copy{font-size:.72rem;color:rgba(255,255,255,.22)}
-.footer-badge{font-size:.65rem;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.35)}
 
 #scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
   background:#c9a84c;color:#060f1c;border:none;cursor:pointer;font-size:1.1rem;
@@ -173,8 +151,8 @@ body{font-family:'Cairo',sans-serif;direction:rtl;background:#060f1c;color:#fff;
 .reveal.visible{opacity:1;transform:translateY(0)}
 @media(max-width:900px){.cm-inner{grid-template-columns:1fr}.it-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:580px){.form-row{grid-template-columns:1fr}.it-grid{grid-template-columns:1fr}}
-@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+@media(max-width:768px){}
+@media(max-width:480px){}
 
 /* ══ LANGUAGE SWITCHER ══ */
 .lang-switcher{position:relative;display:inline-flex;align-items:center}
@@ -205,6 +183,9 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 .lang-badge{font-size:.58rem;padding:2px 6px;border-radius:20px;
   background:rgba(255,255,255,.07);color:rgba(255,255,255,.4);
   font-weight:600;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+
+/* footer styles now via arabic-theme.css */
+.footer-logo-img{max-height:44px;width:auto;display:block}
 
 </style>
 </head>
@@ -317,7 +298,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
       <div class="dc-cards">
         <div class="dc-card">
           <div class="dc-card-top">
-            <div class="dc-avatar" style="background:linear-gradient(135deg,#1d9e75,#185fa5)">ش</div>
+            <div class="dc-avatar" style="background:linear-gradient(135deg,#1d9e75,#185fa5)">SS</div>
             <div>
               <div class="dc-name">م. شريف شوقي</div>
               <div class="dc-role">الرئيس التنفيذي والمؤسس</div>
@@ -327,26 +308,26 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
             <a href="mailto:chairman@ironicgmi.com" class="dc-link">
               <span class="dc-link-icon">✉</span> chairman@ironicgmi.com
             </a>
-            <a href="tel:+201555556697" class="dc-link">
-              <span class="dc-link-icon">📞</span> +20 155 555 6697
+            <a href="tel:+447308892741" class="dc-link">
+              <span class="dc-link-icon">📞</span> +44 7308 892741
             </a>
           </div>
         </div>
 
         <div class="dc-card">
           <div class="dc-card-top">
-            <div class="dc-avatar" style="background:linear-gradient(135deg,#185fa5,#1d9e75)">إ</div>
+            <div class="dc-avatar" style="background:linear-gradient(135deg,#185fa5,#1d9e75)">IM</div>
             <div>
-              <div class="dc-name">د. إسلام المدني</div>
-              <div class="dc-role">نائب الرئيس للشؤون الطبية</div>
+              <div class="dc-name">د. إسلام الميداني</div>
+              <div class="dc-role">المدير التنفيذي للشؤون الطبية</div>
             </div>
           </div>
           <div class="dc-links">
             <a href="mailto:islam@ironicigmi.com" class="dc-link">
               <span class="dc-link-icon">✉</span> islam@ironicigmi.com
             </a>
-            <a href="tel:+201508281948" class="dc-link">
-              <span class="dc-link-icon">📞</span> +20 150 828 1948
+            <a href="tel:+447424907088" class="dc-link">
+              <span class="dc-link-icon">📞</span> +44 7424 907088
             </a>
           </div>
         </div>
@@ -485,47 +466,52 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer" role="contentinfo" style="font-family:'Cairo',sans-serif">
   <div class="footer-top">
-    <div>
-      <div class="footer-brand-name">iRonic Health</div>
-      <div class="footer-brand-tag">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تكتشف الاحتيال في 4.3 ثانية.</div>
-      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-        <span class="footer-badge">مُرخَّصة من الهيئة المالية</span>
-        <span class="footer-badge">متوافقة مع PDPL</span>
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
+        <img src="../assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'" style="max-height:44px;width:auto">
+      </a>
+      <p class="footer-brand-desc" style="font-family:'Cairo',sans-serif">أول منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تُلغي الاحتيال. تُسرّع المطالبات.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
       </div>
     </div>
-    <div>
-      <div class="footer-col-title">المنصة</div>
-      <div class="footer-links">
-        <a href="platform.html">وحدات الذكاء الاصطناعي</a>
-        <a href="ecosystem.html">النظام البيئي</a>
-        <a href="dashboard.html">لوحة التحكم</a>
-        <a href="pricing.html">نموذج الإيرادات</a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-col-title">الشركة</div>
-      <div class="footer-links">
+    <div class="footer-links-grid" style="font-family:'Cairo',sans-serif">
+      <div class="footer-col">
+        <div class="footer-col-title">الشركة</div>
         <a href="team.html">الفريق</a>
-        <a href="investors.html">المستثمرون</a>
+        <a href="index.html#problem">المشكلة</a>
+        <a href="ecosystem.html">النظام البيئي</a>
         <a href="market.html">السوق</a>
-        <a href="contact.html">تواصل معنا</a>
+        <a href="investors.html">المستثمرون</a>
+        <a href="../index.html">🇬🇧 English</a>
       </div>
-    </div>
-    <div>
-      <div class="footer-col-title">تواصل</div>
-      <div class="footer-links">
-        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
+      <div class="footer-col">
+        <div class="footer-col-title">المنصة</div>
+        <a href="platform.html">كشف الاحتيال AI</a>
+        <a href="platform.html">النقاط الصحية</a>
+        <a href="platform.html">توقع المطالبات</a>
+        <a href="platform.html">توجيه المستشفيات</a>
+        <a href="dashboard.html">لوحة التحكم</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">تواصل</div>
+        <a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a>
         <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
-        <a href="tel:+201555556697">+20 155 555 6697</a>
-        <a href="tel:+447308892741">+44 7308 892741</a>
+        <a href="tel:+447308892741" dir="ltr">+44 7308 892741</a>
+        <span class="footer-address-txt" style="font-family:'Cairo',sans-serif">أبراج النايل سيتي، البرج الشمالي<br>كورنيش النيل، القاهرة، مصر</span>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Ironic Group. جميع الحقوق محفوظة.</div>
-    <a href="../contact.html" style="font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:none">🌐 English</a>
+  <div class="footer-bottom" style="font-family:'Cairo',sans-serif">
+    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · جميع الحقوق محفوظة</div>
+    <div class="footer-legal">
+      <a href="#">الخصوصية (PDPL 151/2020)</a>
+      <a href="#">شروط الخدمة</a>
+      <a href="#">امتثال الهيئة المالية</a>
+    </div>
   </div>
 </footer>
 </main>
