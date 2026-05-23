@@ -701,3 +701,4 @@ body{background:var(--white)!important;color:var(--ink)!important;font-family:va
 .fraud-stats .fs-val.red{color:#dc2626!important}
 .fraud-stats .fs-lbl{color:var(--muted)!important}
 .fs-item{background:var(--surface)!important;border-color:var(--border)!important}
+.phone-dir{width:fit-content}
