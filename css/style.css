@@ -399,6 +399,7 @@ img{max-width:100%;display:block}
 .footer-legal{display:flex;gap:20px}
 .footer-legal a{font-size:12px;color:rgba(255,255,255,.2);text-decoration:none;transition:color .18s}
 .footer-legal a:hover{color:var(--gold)}
+.phone-dir{width:fit-content}
 
 /* â”€â”€â”€ REVEAL â”€â”€â”€ */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
