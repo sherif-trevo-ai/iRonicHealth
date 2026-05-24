@@ -9,6 +9,7 @@
 body{background:var(--white)!important;color:var(--ink)!important;font-family:var(--fn-ar)!important}
 .nav{direction:rtl}
 .nav-center a,.logo-wordmark,.logo-tagline,.btn-demo,.btn-lang{font-family:var(--fn-ar)!important}
+.btn-demo{font-size:12px!important;padding:9px 15px!important;letter-spacing:0!important;white-space:nowrap!important}
 .nav-logo-text{text-align:right}
 
 /* ─── 2. HERO — ALL PAGES ─── */
