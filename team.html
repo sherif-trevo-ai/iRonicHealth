@@ -939,22 +939,6 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 </script>
 <script src="js/main.js"></script>
 
-<script id="lang-switcher-js">
-(function(){
-  var ls=document.getElementById('lang-switcher');
-  if(!ls)return;
-  var btn=ls.querySelector('.lang-btn');
-  btn.addEventListener('click',function(e){
-    e.stopPropagation();
-    var open=ls.classList.toggle('open');
-    btn.setAttribute('aria-expanded',open);
-  });
-  document.addEventListener('click',function(){
-    ls.classList.remove('open');
-    if(btn) btn.setAttribute('aria-expanded','false');
-  });
-})();
-</script>
 
 <script src="js/components.js"></script>
 </body>

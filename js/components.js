@@ -295,14 +295,18 @@
     var dropdown = switcher.querySelector('.lang-dropdown');
     if (!btn || !dropdown) return;
 
+    // Use inline style — bypasses all CSS class conflicts
+    dropdown.style.display = 'none';
+
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
-      var isOpen = dropdown.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(isOpen));
+      var isOpen = dropdown.style.display === 'block';
+      dropdown.style.display = isOpen ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', String(!isOpen));
     });
 
     document.addEventListener('click', function () {
-      dropdown.classList.remove('open');
+      dropdown.style.display = 'none';
       btn.setAttribute('aria-expanded', 'false');
     });
   }
