@@ -1,3 +1,20 @@
+/* ── Lang Switcher Global Toggle (called via onclick) ── */
+window.iRonicLangToggle = function (e) {
+  e.stopPropagation();
+  var d = document.querySelector('.lang-dropdown');
+  if (!d) return;
+  var isOpen = d.style.display === 'block';
+  d.style.display = isOpen ? 'none' : 'block';
+  var btn = document.querySelector('.lang-btn');
+  if (btn) btn.setAttribute('aria-expanded', String(!isOpen));
+};
+document.addEventListener('click', function () {
+  var d = document.querySelector('.lang-dropdown');
+  if (d) d.style.display = 'none';
+  var btn = document.querySelector('.lang-btn');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+});
+
 /**
  * iRonic Health — Global Components
  * ─────────────────────────────────
@@ -55,7 +72,7 @@
   </nav>
   <div class="nav-right">
     <div class="lang-switcher" id="lang-switcher">
-      <button class="lang-btn" aria-haspopup="listbox" aria-expanded="false">
+      <button class="lang-btn" aria-haspopup="listbox" aria-expanded="false" onclick="iRonicLangToggle(event)">
         🌐 EN <span class="lang-caret">▾</span>
       </button>
       <div class="lang-dropdown" role="listbox">
@@ -115,7 +132,7 @@
   </nav>
   <div class="nav-right">
     <div class="lang-switcher" id="lang-switcher" style="direction:ltr">
-      <button class="lang-btn" aria-haspopup="listbox" aria-expanded="false" style="font-family:'Cairo',sans-serif">
+      <button class="lang-btn" aria-haspopup="listbox" aria-expanded="false" style="font-family:'Cairo',sans-serif" onclick="iRonicLangToggle(event)">
         🌐 AR <span class="lang-caret">▾</span>
       </button>
       <div class="lang-dropdown" role="listbox" style="left:auto;right:0;font-family:'Cairo',sans-serif">
@@ -324,7 +341,6 @@
 
   /* ─── Run Everything ─────────────────────────────────────────────────── */
   initMobileNav();
-  initLangSwitcher();
   initNavScroll();
 
 })();
