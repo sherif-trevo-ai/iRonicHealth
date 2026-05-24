@@ -131,10 +131,10 @@ document.addEventListener('click', function () {
   </nav>
   <div class="nav-right">
     <div class="lang-switcher" id="lang-switcher" style="direction:ltr">
-      <button class="lang-btn" aria-haspopup="listbox" aria-expanded="false" onclick="iRonicLangToggle(event)" style="font-family:'Cairo',sans-serif;background:rgba(255,255,255,.10);border:1.5px solid rgba(255,255,255,.18);color:rgba(255,255,255,.90);box-shadow:none">
-        🌐 AR <span class="lang-caret" style="color:rgba(255,255,255,.6)">▾</span>
+      <button class="lang-btn" aria-haspopup="listbox" aria-expanded="false" onclick="iRonicLangToggle(event)">
+        🌐 AR <span class="lang-caret">▾</span>
       </button>
-      <div class="lang-dropdown" role="listbox" style="left:auto;right:0;font-family:'Cairo',sans-serif;background:#0d1b2e;border:1px solid rgba(255,255,255,.1);box-shadow:0 10px 36px rgba(0,0,0,.5)">
+      <div class="lang-dropdown" role="listbox" style="right:0;left:auto">
         <a href="../index.html" class="lang-opt" style="direction:ltr">🇬🇧 English</a>
         <span class="lang-opt lang-active" style="direction:rtl">🇪🇬 العربية</span>
         <span class="lang-opt lang-soon" style="direction:ltr">🇩🇪 Deutsch <span class="lang-badge">قريبًا</span></span>

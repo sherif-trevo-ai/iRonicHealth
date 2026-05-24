@@ -702,21 +702,3 @@ body{background:var(--white)!important;color:var(--ink)!important;font-family:va
 .fraud-stats .fs-lbl{color:var(--muted)!important}
 .fs-item{background:var(--surface)!important;border-color:var(--border)!important}
 .phone-dir{width:fit-content}
-/* ─── 28. LANGUAGE SWITCHER — Dark theme for Arabic navbar ─── */
-.lang-btn{
-  background:rgba(255,255,255,.08)!important;
-  border:1.5px solid rgba(255,255,255,.15)!important;
-  color:rgba(255,255,255,.85)!important;
-  box-shadow:none!important}
-.lang-btn:hover{
-  background:rgba(255,255,255,.15)!important;
-  color:#fff!important;
-  border-color:rgba(255,255,255,.28)!important}
-.lang-dropdown{
-  background:#0d1b2e!important;
-  border:1px solid rgba(255,255,255,.1)!important;
-  box-shadow:0 10px 36px rgba(0,0,0,.5)!important}
-.lang-opt{color:rgba(255,255,255,.65)!important}
-a.lang-opt:hover{background:rgba(255,255,255,.08)!important;color:#fff!important}
-.lang-opt.lang-active{color:#fff!important;background:rgba(24,95,165,.25)!important}
-.lang-badge{background:rgba(255,255,255,.08)!important;color:rgba(255,255,255,.45)!important}
