@@ -98,11 +98,11 @@ document.addEventListener('click', function () {
   ══════════════════════════════════════════════════════════════════════ */
   const navAR = `
 <header class="nav" id="nav" role="banner">
-      <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
-    <img src="../assets/logos/H_Badge_Metro_Blue_T.svg" alt="" class="nav-logo-badge-img">
-    <div class="nav-logo-text">
-      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
-      <span class="logo-tagline">تقنية تكامل المنظومة الصحية</span>
+        <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية" style="flex-direction:row-reverse">
+    <img src="../assets/logos/H_Badge_Metro_Blue_T.svg" alt="" class="nav-logo-badge-img" style="transform:scaleX(-1)">
+    <div class="nav-logo-text" style="align-items:flex-end">
+      <span class="logo-wordmark" style="font-family:'Kufam',sans-serif;font-weight:400"><strong style="font-weight:700">أيرونيك</strong> هيلث</span>
+      <span class="logo-tagline" style="font-family:'Kufam',sans-serif">تكنولوجيا ربط المنظومة الصحية</span>
     </div>
   </a>
   <nav class="nav-center" aria-label="التنقل الرئيسي">
