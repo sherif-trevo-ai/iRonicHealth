@@ -49,7 +49,7 @@
     <a href="ecosystem.html">Ecosystem</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="market.html">Market</a>
-    <a href="index.html#model">Revenue</a>
+    <a href="pricing.html">Revenue</a>
     <a href="team.html">Team</a>
     <a href="investors.html">Investors</a>
   </nav>
@@ -77,7 +77,7 @@
   <a href="ecosystem.html">Ecosystem</a>
   <a href="dashboard.html">Dashboard</a>
   <a href="market.html">Market</a>
-  <a href="index.html#model">Revenue</a>
+  <a href="pricing.html">Revenue</a>
   <a href="team.html">Team</a>
   <a href="investors.html">Investors</a>
   <a href="contact.html" class="mobile-demo-btn">Request Demo →</a>
