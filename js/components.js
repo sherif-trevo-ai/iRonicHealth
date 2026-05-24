@@ -101,7 +101,7 @@ document.addEventListener('click', function () {
           <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
     <img src="../assets/logos/H_Badge_Metro_Blue_T.svg" alt="" class="nav-logo-badge-img" style="transform:scaleX(-1)">
     <div class="nav-logo-text" style="text-align:right">
-      <span class="logo-wordmark" style="font-family:'Kufam',sans-serif;font-weight:400"><strong style="font-weight:700">أيرونيك</strong> هيلث</span>
+      <span class="logo-wordmark" style="font-family:'Kufam',sans-serif;font-weight:400">أيرونيك <strong style="font-weight:700">هيلث</strong></span>
       <span class="logo-tagline" style="font-family:'Kufam',sans-serif">تكنولوجيا ربط المنظومة الصحية</span>
     </div>
   </a>
