@@ -179,7 +179,7 @@
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Contact</div>
-        <a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a>
+        <a href="mailto:info@ironicigmi.com">info@ironicigmi.com</a>
         <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
         <a class="phone-dir" href="tel:+447308892741">+44 7308 892741</a>
         <span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
@@ -232,7 +232,7 @@
       </div>
       <div class="footer-col">
         <div class="footer-col-title">تواصل</div>
-        <a href="mailto:info@ironicgmi.com">info@ironicgmi.com</a>
+        <a href="mailto:info@ironicigmi.com">info@ironicigmi.com</a>
         <a href="mailto:investor@ironicigmi.com">investor@ironicigmi.com</a>
         <a href="tel:+447308892741" dir="ltr" class="phone-dir">+44 7308 892741</a>
         <span class="footer-address-txt" style="font-family:'Cairo',sans-serif">أبراج النايل سيتي، البرج الشمالي<br>كورنيش النيل، القاهرة، مصر</span>
