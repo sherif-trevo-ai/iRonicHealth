@@ -262,6 +262,31 @@
      MOBILE NAV TOGGLE
      (runs after injection so the DOM elements exist)
   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── Lang Switcher Dropdown ───────────────────────────────────── */
+(function injectLangCSS(){
+  if (document.getElementById('ironic-lang-css')) return;
+  var s = document.createElement('style');
+  s.id  = 'ironic-lang-css';
+  s.textContent = [
+    '.lang-switcher{position:relative;display:inline-block}',
+    '.lang-btn{display:flex;align-items:center;gap:5px;font-size:12.5px;color:var(--muted,#555);background:none;border:1px solid var(--border,#dde3ee);border-radius:20px;padding:6px 13px;cursor:pointer;font-family:inherit;transition:all .2s;white-space:nowrap}',
+    '.lang-btn:hover{border-color:#185fa5;color:#185fa5}',
+    '.lang-caret{font-size:10px;transition:transform .2s;display:inline-block}',
+    '.lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:160px;background:#fff;border:1px solid #e2e8f3;border-radius:10px;box-shadow:0 8px 32px rgba(10,22,40,.13);z-index:9999;overflow:hidden;padding:4px 0}',
+    '.lang-dropdown.open{display:block}',
+    '.lang-btn[aria-expanded="true"] .lang-caret{transform:rotate(180deg)}',
+    '.lang-btn[aria-expanded="true"]{border-color:#185fa5;color:#185fa5}',
+    '.lang-opt{display:flex;align-items:center;gap:8px;padding:9px 14px;font-size:13px;color:#334;text-decoration:none;cursor:default;transition:background .15s;white-space:nowrap;font-family:inherit}',
+    'a.lang-opt{cursor:pointer;color:#334}',
+    'a.lang-opt:hover{background:#f0f5ff;color:#185fa5}',
+    '.lang-opt.lang-active{color:#185fa5;font-weight:600;background:#f5f8ff;cursor:default}',
+    '.lang-opt.lang-soon{opacity:.5;cursor:not-allowed}',
+    '.lang-badge{font-size:9px;background:#e8f0fe;color:#185fa5;border-radius:4px;padding:1px 5px;font-weight:700;margin-left:auto}'
+  ].join('');
+  document.head.appendChild(s);
+})();
+
   function initMobileNav() {
     var toggle    = document.querySelector('.nav-mobile-toggle');
     var mobileNav = document.querySelector('.mobile-nav');
