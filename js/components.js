@@ -1,16 +1,15 @@
 /* ── Lang Switcher Global Toggle (called via onclick) ── */
 window.iRonicLangToggle = function (e) {
   e.stopPropagation();
-  var d = document.querySelector('.lang-dropdown');
-  if (!d) return;
-  var isOpen = d.style.display === 'block';
-  d.style.display = isOpen ? 'none' : 'block';
-  var btn = document.querySelector('.lang-btn');
-  if (btn) btn.setAttribute('aria-expanded', String(!isOpen));
+  var ls  = document.getElementById('lang-switcher');
+  if (!ls) return;
+  var btn = ls.querySelector('.lang-btn');
+  var open = ls.classList.toggle('open');
+  if (btn) btn.setAttribute('aria-expanded', String(open));
 };
 document.addEventListener('click', function () {
-  var d = document.querySelector('.lang-dropdown');
-  if (d) d.style.display = 'none';
+  var ls  = document.getElementById('lang-switcher');
+  if (ls)  ls.classList.remove('open');
   var btn = document.querySelector('.lang-btn');
   if (btn) btn.setAttribute('aria-expanded', 'false');
 });
