@@ -364,56 +364,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 <body>
 
 <!-- ═══ NAV ═══ -->
-<header class="nav" id="nav" role="banner">
-  <a href="index.html#home" class="nav-logo" aria-label="iRonic Health Home">
-    <div class="nav-logo-icon" aria-hidden="true">
-      <div class="slash-group"><div class="s-bar"></div><div class="s-dot"></div><div class="s-bar2"></div></div>
-      <div class="logo-badge">H</div>
-    </div>
-    <div class="nav-logo-text">
-      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
-      <span class="logo-tagline">Health System Integration Technology</span>
-    </div>
-  </a>
-  <nav class="nav-center" aria-label="Main navigation">
-    <a href="index.html#problem">Problem</a>
-    <a href="platform.html">Platform</a>
-    <a href="ecosystem.html">Ecosystem</a>
-    <a href="index.html#dashboard">Dashboard</a>
-    <a href="index.html#market">Market</a>
-    <a href="index.html#model">Revenue</a>
-    <a href="team.html" class="nav-active">Team</a>
-    <a href="investors.html">Investors</a>
-  </nav>
-  <div class="nav-right">
-    <div class="lang-switcher" id="lang-switcher">
-    <button class="lang-btn" aria-haspopup="listbox" aria-expanded="false">🌐 EN <span class="lang-caret">▾</span></button>
-    <div class="lang-dropdown" role="listbox">
-      <span class="lang-opt lang-active">🇬🇧 English</span>
-      <a href="ar/team.html" class="lang-opt">🇪🇬 العربية</a>
-      <span class="lang-opt lang-soon">🇩🇪 Deutsch <span class="lang-badge">Soon</span></span>
-      <span class="lang-opt lang-soon">🇫🇷 Français <span class="lang-badge">Soon</span></span>
-    </div>
-  </div>
-    <a href="index.html#contact" class="btn-demo">Request Demo →</a>
-  </div>
-  <button class="nav-mobile-toggle" aria-label="Open menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<div class="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="index.html#problem">Problem</a>
-  <a href="platform.html">Platform</a>
-  <a href="ecosystem.html">Ecosystem</a>
-  <a href="index.html#dashboard">Dashboard</a>
-  <a href="index.html#market">Market</a>
-  <a href="index.html#model">Revenue</a>
-  <a href="team.html">Team</a>
-  <a href="investors.html">Investors</a>
-  <a href="index.html#contact" class="mobile-demo-btn">Request Demo →</a>
-  <a href="ar/team.html" class="mobile-lang-btn" style="font-size:.8rem;opacity:.75;letter-spacing:.01em">🇪🇬 العربية</a>
-</div>
+<div id="nav-placeholder"></div>
 
 <main>
 
@@ -963,54 +914,7 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 </main>
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="footer" role="contentinfo">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
-        <img src="assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'">
-      </a>
-      <p class="footer-brand-desc">Egypt's first AI-powered health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.</p>
-      <div class="footer-social">
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
-      </div>
-    </div>
-    <div class="footer-links-grid">
-      <div class="footer-col">
-        <div class="footer-col-title">Company</div>
-        <a href="platform.html">Platform</a>
-        <a href="ecosystem.html">Ecosystem</a>
-        <a href="investors.html">Investors</a>
-        <a href="index.html#market">Market</a>
-        <a href="ar/team.html">🇪🇬 العربية</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">The Team</div>
-        <a href="#story">Our Story</a>
-        <a href="#founders">Founders</a>
-        <a href="#values">Values</a>
-        <a href="#team-structure">Team Structure</a>
-        <a href="#entity">Legal Entity</a>
-        <a href="#vision">Vision</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Contact</div>
-        <a href="mailto:chairman@ironicgmi.com">chairman@ironicgmi.com</a>
-        <a href="mailto:islam@ironicigmi.com">islam@ironicigmi.com</a>
-        <a href="tel:+447424907088">+44 7424 907088</a>
-        <span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · All rights reserved</div>
-    <div class="footer-legal">
-      <a href="#">Privacy (PDPL 151/2020)</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">FRA Compliance</a>
-    </div>
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 <button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
@@ -1052,5 +956,6 @@ a.lang-opt:hover{background:rgba(255,255,255,.08);color:#fff}
 })();
 </script>
 
+<script src="js/components.js"></script>
 </body>
 </html>
