@@ -153,7 +153,7 @@ document.addEventListener('click', function () {
   <div class="footer-top">
     <div class="footer-brand">
       <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
-        <img src="assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'">
+        <img src="assets/logos/iRonic_Health_EN_Double_Gold_T.svg" alt="iRonic Health" class="footer-logo-img" style="height:52px;width:auto" onerror="this.style.display='none'">
       </a>
       <p class="footer-brand-desc">Egypt's first AI-powered health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.</p>
       <div class="footer-social">
