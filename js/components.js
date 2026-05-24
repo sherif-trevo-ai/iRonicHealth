@@ -45,12 +45,8 @@ document.addEventListener('click', function () {
   ══════════════════════════════════════════════════════════════════════ */
   const navEN = `
 <header class="nav" id="nav" role="banner">
-  <a href="index.html" class="nav-logo" aria-label="iRonic Health Home">
-    <img src="assets/logos/H_Badge_Metro_Blue_T.svg" alt="" class="nav-logo-badge-img">
-    <div class="nav-logo-text">
-      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
-      <span class="logo-tagline">Health System Integration Technology</span>
-    </div>
+    <a href="index.html" class="nav-logo" aria-label="iRonic Health Home">
+    <img src="assets/logos/iRonic_Health_EN_Metro_Blue_T.svg" alt="iRonic Health" class="nav-logo-img">
   </a>
   <nav class="nav-center" aria-label="Main navigation">
     <a href="index.html#problem">Problem</a>
@@ -98,12 +94,8 @@ document.addEventListener('click', function () {
   ══════════════════════════════════════════════════════════════════════ */
   const navAR = `
 <header class="nav" id="nav" role="banner">
-  <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
-    <img src="../assets/logos/H_Badge_Metro_Blue_T.svg" alt="" class="nav-logo-badge-img">
-    <div class="nav-logo-text">
-      <span class="logo-wordmark">iRonic <strong>Health</strong></span>
-      <span class="logo-tagline">تقنية تكامل المنظومة الصحية</span>
-    </div>
+    <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
+    <img src="../assets/logos/iRonic_Health_AR_Metro_Blue_T.svg" alt="iRonic Health" class="nav-logo-img">
   </a>
   <nav class="nav-center" aria-label="التنقل الرئيسي">
     <a href="index.html#problem">المشكلة</a>
