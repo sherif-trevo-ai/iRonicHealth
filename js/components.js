@@ -46,14 +46,7 @@ document.addEventListener('click', function () {
   const navEN = `
 <header class="nav" id="nav" role="banner">
   <a href="index.html" class="nav-logo" aria-label="iRonic Health Home">
-    <div class="nav-logo-icon" aria-hidden="true">
-      <div class="slash-group">
-        <div class="s-bar"></div>
-        <div class="s-dot"></div>
-        <div class="s-bar2"></div>
-      </div>
-      <div class="logo-badge">H</div>
-    </div>
+    <img src="assets/logos/H_Badge_Metro_Blue_T.svg" alt="" class="nav-logo-badge-img">
     <div class="nav-logo-text">
       <span class="logo-wordmark">iRonic <strong>Health</strong></span>
       <span class="logo-tagline">Health System Integration Technology</span>
@@ -106,14 +99,7 @@ document.addEventListener('click', function () {
   const navAR = `
 <header class="nav" id="nav" role="banner">
   <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
-    <div class="nav-logo-icon" aria-hidden="true">
-      <div class="slash-group">
-        <div class="s-bar"></div>
-        <div class="s-dot"></div>
-        <div class="s-bar2"></div>
-      </div>
-      <div class="logo-badge">H</div>
-    </div>
+    <img src="../assets/logos/H_Badge_Metro_Blue_T.svg" alt="" class="nav-logo-badge-img">
     <div class="nav-logo-text">
       <span class="logo-wordmark">iRonic <strong>Health</strong></span>
       <span class="logo-tagline">تقنية تكامل المنظومة الصحية</span>
