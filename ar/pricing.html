@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="نموذج إيرادات iRonic Health — 3 تيارات إيرادية: تحمّل نتائج مشروط، اشتراك PMPM، صيدليات. Y3 ARR: $18M.">
+<meta name="description" content="نموذج إيرادات iRonic Health — 3 تيارات إيرادية: تحمّل نتائج مشروط، اشتراك PMPM، صيدليات. Y3 ARR: $7.35M (قاعدي).">
 <meta property="og:title" content="الإيرادات — iRonic Health">
 <title>نموذج الإيرادات · iRonic Health</title>
 <link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
@@ -15,10 +15,10 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
-
+ 
 /* ══ DESIGN TOKENS ══ */
 /* light theme now via arabic-theme.css */
-
+ 
 /* handled by arabic-theme.css */
 .arr .arr-year{color:var(--ink-2)}
 .arr .arr-track{background:rgba(10,22,40,.08)}
@@ -28,7 +28,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .arr .ab-lives{color:var(--muted-2)}
 .arr .ab-row-label{color:var(--muted-2)}
 .arr .ab-row-val{color:var(--ink)}
-
+ 
 /* handled by arabic-theme.css */
 .pricing-table-sec .sec-h2{color:var(--ink)}
 .pricing-table-sec .ptable-wrap{border-color:var(--border-2)}
@@ -41,7 +41,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .nav-center a{font-family:'Cairo',sans-serif}
 .nav-logo-text{text-align:right}
 .logo-wordmark,.logo-tagline,.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
-
+ 
 /* HERO */
 .rev-hero{
   min-height:62vh;background:linear-gradient(145deg,#060f1c,#0a1628 55%,#0d1f3a);
@@ -67,14 +67,14 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .rk-val{font-size:1.8rem;font-weight:900;line-height:1}
 .rk-val.gold{color:#c9a84c}.rk-val.green{color:#1d9e75}.rk-val.blue{color:#378add}
 .rk-lbl{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.25rem}
-
+ 
 /* COMMON */
 .sec-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem}
 .sec-h2{font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;color:#fff;margin-bottom:.75rem}
 .sec-lead{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;max-width:680px;margin-bottom:3rem}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .reveal.visible{opacity:1;transform:translateY(0)}
-
+ 
 /* REVENUE STREAMS */
 .streams{padding:6rem 5%;background:#060f1c}
 .streams-inner{max-width:1100px;margin:0 auto}
@@ -98,7 +98,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .sf-item{display:flex;align-items:flex-start;gap:.625rem;font-size:.82rem;color:rgba(255,255,255,.6)}
 .sf-check{flex-shrink:0;margin-top:.1rem}
 .sf-check.gold{color:#c9a84c}.sf-check.green{color:#1d9e75}.sf-check.blue{color:#378add}
-
+ 
 /* ARR PROJECTION */
 .arr{padding:6rem 5%}
 .arr-inner{max-width:1000px;margin:0 auto}
@@ -115,7 +115,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .arr-val{font-size:1.2rem;font-weight:900;text-align:left}
 .arr-val.blue{color:#378add}.arr-val.gold{color:#c9a84c}.arr-val.green{color:#1d9e75}
 .arr-detail{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:.25rem}
-
+ 
 .arr-breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .ab-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
   border-radius:16px;padding:1.75rem}
@@ -127,7 +127,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .ab-row{display:flex;justify-content:space-between;font-size:.8rem}
 .ab-row-label{color:rgba(255,255,255,.45)}
 .ab-row-val{color:#fff;font-weight:700}
-
+ 
 /* UNIT ECONOMICS */
 .unit-econ{padding:6rem 5%;background:#060f1c}
 .ue-inner{max-width:1100px;margin:0 auto}
@@ -141,7 +141,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .ue-metric{font-size:.78rem;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:.5rem;
   text-transform:uppercase;letter-spacing:.06em}
 .ue-note{font-size:.8rem;color:rgba(255,255,255,.35);line-height:1.65}
-
+ 
 /* PRICING TABLE */
 .pricing-table-sec{padding:6rem 5%}
 .pt-inner{max-width:1000px;margin:0 auto}
@@ -156,7 +156,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .ptable td:first-child{font-weight:700;color:#fff}
 .ptable .price-val{color:#c9a84c;font-weight:800}
 .ptable .margin-high{color:#1d9e75;font-weight:700}
-
+ 
 /* CTA */
 .rev-cta{padding:5rem 5%;background:linear-gradient(135deg,#060f1c,#0a1628);text-align:center}
 .rc-inner{max-width:640px;margin:0 auto}
@@ -169,12 +169,12 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .cta-btn-gold:hover{background:#b8963e}
 .cta-btn-sec{color:#fff;padding:.9rem 2rem;border-radius:8px;text-decoration:none;
   font-weight:700;font-size:.95rem;border:1px solid rgba(255,255,255,.2)}
-
+ 
 /* FOOTER */
 .footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;direction:rtl}
-
+ 
 .footer-links a:hover{color:#c9a84c}
-
+ 
 #scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
   background:#c9a84c;color:#060f1c;border:none;cursor:pointer;font-size:1.1rem;
   opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:999}
@@ -183,19 +183,19 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 @media(max-width:900px){.streams-grid,.arr-breakdown,.ue-grid{grid-template-columns:1fr}}
 @media(max-width:768px){.arr-bar-item{grid-template-columns:60px 1fr 100px}}
 @media(max-width:480px){.arr-bar-item{grid-template-columns:1fr}}
-
-
+ 
+ 
 /* footer styles now via arabic-theme.css */
 .footer-logo-img{max-height:44px;width:auto;display:block}
-
+ 
 </style>
 </head>
 <body>
-
+ 
 <div id="nav-placeholder"></div>
-
+ 
 <main>
-
+ 
 <!-- HERO -->
 <section class="rev-hero">
   <div class="rh-bg"></div>
@@ -211,7 +211,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- REVENUE STREAMS -->
 <section class="streams">
   <div class="streams-inner">
@@ -221,7 +221,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
       <p class="sec-lead">كل تيار مُصمَّم لخدمة شريحة مختلفة من المنظومة، مما يُقلل الاعتماد على عميل واحد ويُضخّم الإيرادات الإجمالية.</p>
     </div>
     <div class="streams-grid">
-
+ 
       <!-- Stream 1: Contingent -->
       <div class="stream-card primary reveal">
         <div class="stream-accent gold"></div>
@@ -237,14 +237,14 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
           <div class="sf-item"><span class="sf-check gold">✓</span> يُنتج إيرادات من اليوم الأول</div>
         </div>
       </div>
-
+ 
       <!-- Stream 2: PMPM -->
       <div class="stream-card reveal">
         <div class="stream-accent green"></div>
         <span class="stream-icon">📅</span>
         <div class="stream-label green">التيار الثاني</div>
         <h3 class="stream-h3">اشتراك PMPM للمؤمَّنين</h3>
-        <div class="stream-price green">$0.75 – $5</div>
+        <div class="stream-price green">$0.75 – $2.00</div>
         <div class="stream-price-sub">لكل مؤمَّن شهريًا (per member per month)</div>
         <p class="stream-p">اشتراك شهري مدفوع من شركات التأمين أو TPA لكل مؤمَّن مُسجَّل في المنصة. الإيراد يتناسب تلقائيًا مع نمو قاعدة المشتركين.</p>
         <div class="stream-features">
@@ -253,14 +253,14 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
           <div class="sf-item"><span class="sf-check green">✓</span> تسعير حسب حجم المؤمَّنين</div>
         </div>
       </div>
-
+ 
       <!-- Stream 3: Pharmacy + Corporate -->
       <div class="stream-card reveal">
         <div class="stream-accent blue"></div>
         <span class="stream-icon">💊</span>
         <div class="stream-label blue">التيار الثالث</div>
         <h3 class="stream-h3">صيدليات + شركات</h3>
-        <div class="stream-price blue">$0.05 – $0.20</div>
+        <div class="stream-price blue">$0.05 – $0.50</div>
         <div class="stream-price-sub">لكل وصفة طبية + $4–8 PMPM شركات</div>
         <p class="stream-p">رسوم معالجة لكل وصفة طبية إلكترونية تمر عبر شبكة الصيدليات، بالإضافة لاشتراك شركات في برامج العافية والرعاية الصحية الوقائية.</p>
         <div class="stream-features">
@@ -269,11 +269,11 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
           <div class="sf-item"><span class="sf-check blue">✓</span> توسع طبيعي مع الشبكة</div>
         </div>
       </div>
-
+ 
     </div>
   </div>
 </section>
-
+ 
 <!-- ARR PROJECTION -->
 <section class="arr">
   <div class="arr-inner">
@@ -282,7 +282,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
       <h2 class="sec-h2">نمو ARR <em style="color:#c9a84c">السنوات الثلاث الأولى</em></h2>
       <p class="sec-lead">نموذج نمو متحفظ مبني على صفقات موثقة وخارطة طريق تنفيذية واضحة.</p>
     </div>
-
+ 
     <div class="arr-bars reveal" id="arr-bars">
       <div class="arr-bar-item">
         <div class="arr-year">السنة 1</div>
@@ -315,7 +315,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
         </div>
       </div>
     </div>
-
+ 
     <div class="arr-breakdown reveal">
       <div class="ab-card">
         <div class="ab-year blue">السنة الأولى</div>
@@ -353,7 +353,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- UNIT ECONOMICS -->
 <section class="unit-econ">
   <div class="ue-inner">
@@ -396,7 +396,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- PRICING TABLE -->
 <section class="pricing-table-sec">
   <div class="pt-inner">
@@ -441,7 +441,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
             <td>معالجة وصفات الصيدليات</td>
             <td>شبكات الصيدليات</td>
             <td>لكل وصفة</td>
-            <td class="price-val">$0.05 – $0.20</td>
+            <td class="price-val">$0.05 – $0.50</td>
             <td class="margin-high">80%</td>
           </tr>
           <tr>
@@ -456,7 +456,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- CTA -->
 <section class="rev-cta">
   <div class="rc-inner reveal">
@@ -468,13 +468,13 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 </main>
-
+ 
 <button id="scroll-top" aria-label="العودة للأعلى">↑</button>
-
+ 
 <script>
 const toggle = document.querySelector('.nav-mobile-toggle');
 const mNav = document.querySelector('.mobile-nav');
@@ -511,7 +511,7 @@ if(barsSection){
   barObs.observe(barsSection);
 }
 </script>
-
+ 
 <script id="lang-switcher-js">
 (function(){
   var ls=document.getElementById('lang-switcher');
@@ -528,7 +528,7 @@ if(barsSection){
   });
 })();
 </script>
-
+ 
 <script src="../js/components.js"></script>
 </body>
 </html>
