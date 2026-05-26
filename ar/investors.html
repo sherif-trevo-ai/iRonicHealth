@@ -14,17 +14,17 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
-
+ 
 /* ══ DESIGN TOKENS ══ */
 /* light theme now via arabic-theme.css */
-
+ 
 /* handled by arabic-theme.css */
 #thesis .thesis-desc{color:var(--muted)}
-
+ 
 /* handled by arabic-theme.css */
 .nav{direction:rtl}
 .nav-center a,.btn-lang,.btn-demo,.logo-wordmark,.logo-tagline{font-family:'Cairo',sans-serif}
-
+ 
 /* HERO */
 .inv-hero{min-height:85vh;background:linear-gradient(145deg,#030810 0%,#060f1c 50%,#0a1628 100%);
   display:flex;flex-direction:column;justify-content:center;padding:140px 5% 80px;position:relative;overflow:hidden}
@@ -64,7 +64,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
   color:rgba(255,255,255,.85);font-weight:600;font-size:.9rem;text-decoration:none;transition:all .2s;font-family:'Cairo',sans-serif}
 .btn-meeting:hover{background:rgba(255,255,255,.12)}
 .inv-confidential{font-size:.75rem;color:rgba(255,255,255,.28);display:flex;align-items:center;gap:.375rem;font-family:'Cairo',sans-serif}
-
+ 
 /* SECTIONS */
 .inv-sec{padding:5.5rem 5%}
 .inv-sec-inner{max-width:1200px;margin:0 auto}
@@ -72,7 +72,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .inv-h2{font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:1rem;font-family:'Cairo',sans-serif}
 .inv-h2 em{color:#c9a84c;font-style:normal}
 .inv-lead{font-size:.92rem;color:rgba(255,255,255,.5);line-height:1.85;max-width:640px;margin-bottom:2.5rem}
-
+ 
 /* THESIS GRID */
 .thesis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
 .thesis-card{border-radius:16px;padding:2rem;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03)}
@@ -82,7 +82,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .thesis-desc{font-size:.83rem;color:rgba(255,255,255,.52);line-height:1.8;margin-bottom:1rem}
 .thesis-proof{font-size:.72rem;padding:4px 10px;border-radius:6px;display:inline-block;font-family:'Cairo',sans-serif;font-weight:600}
 .tp-gold{background:rgba(201,168,76,.12);color:#c9a84c}.tp-blue{background:rgba(24,95,165,.12);color:#7fb3e8}.tp-green{background:rgba(29,158,117,.12);color:#5dcaa5}
-
+ 
 /* TAM GRID */
 .tam-grid{display:grid;gap:.875rem;margin-top:1.5rem}
 .tam-card{padding:1.25rem 1.5rem;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
@@ -94,14 +94,14 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .tam-t .tam-val{color:#c9a84c}.tam-s .tam-val{color:#378add}.tam-o .tam-val{color:#1d9e75}
 .tam-desc{font-size:.78rem;color:rgba(255,255,255,.42)}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-
+ 
 /* MARKET SIGNALS */
 .market-signals{display:flex;flex-direction:column;gap:.875rem}
 .ms-item{display:flex;gap:.875rem;padding:1rem 1.25rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;align-items:flex-start}
 .ms-ico{font-size:1.25rem;flex-shrink:0}
 .ms-title{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:.25rem}
 .ms-desc{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65}
-
+ 
 /* UNIT ECONOMICS */
 .ue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
 .ue-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.5rem;position:relative}
@@ -113,7 +113,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .benchmark-badge{font-size:.68rem;padding:3px 10px;border-radius:6px;display:inline-block;font-weight:700;font-family:'Cairo',sans-serif}
 .bb-good{background:rgba(29,158,117,.15);color:#5dcaa5}
 .bb-great{background:rgba(201,168,76,.15);color:#c9a84c}
-
+ 
 /* ARR CHART */
 .arr-bars{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
 .arr-bar-row{display:flex;align-items:center;gap:.875rem}
@@ -124,7 +124,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .arr-fill.y2{background:linear-gradient(90deg,#1d9e75,#0f6e56);width:0%}
 .arr-fill.y3{background:linear-gradient(90deg,#c9a84c,#a0852e);color:#fff;width:0%}
 .arr-val{font-size:.9rem;font-weight:700;width:5rem;text-align:left}
-
+ 
 /* FIN TABLE */
 .fin-table-wrap{overflow-x:auto;margin-top:1.25rem}
 .fin-table{width:100%;border-collapse:collapse;font-size:.8rem;font-family:'Cairo',sans-serif}
@@ -134,7 +134,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .fin-table .row-highlight{background:rgba(255,255,255,.04)}
 .fin-table .row-highlight td{color:rgba(255,255,255,.85);font-weight:600}
 .val-white{color:rgba(255,255,255,.9)!important}.val-green{color:#1d9e75!important}.val-gold{color:#c9a84c!important}.val-red{color:#e07050!important}
-
+ 
 /* USE OF FUNDS */
 .fund-bars{display:flex;flex-direction:column;gap:1.25rem;margin-top:1.5rem}
 .fund-row{}
@@ -148,7 +148,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .ff-green{background:linear-gradient(90deg,#1d9e75,#0f6e56)}
 .ff-gray{background:linear-gradient(90deg,rgba(255,255,255,.3),rgba(255,255,255,.15))}
 .fund-desc{font-size:.75rem;color:rgba(255,255,255,.38);line-height:1.55}
-
+ 
 /* DECK REQUEST */
 .deck-form{background:#0d1b2e;border:1px solid rgba(201,168,76,.2);border-radius:16px;padding:2rem;max-width:560px;margin:2.5rem auto 0}
 .df-title{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.375rem;text-align:center}
@@ -169,12 +169,12 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .df-success{display:none;text-align:center;padding:2rem 1rem}
 .df-success-ico{font-size:2.5rem;margin-bottom:.75rem}
 .df-success-ttl{font-size:1.1rem;font-weight:700;color:#c9a84c;font-family:'Cairo',sans-serif}
-
+ 
 /* FOOTER */
 .footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;font-family:'Cairo',sans-serif;direction:rtl}
-
+ 
 .footer-links a:hover{color:#c9a84c}
-
+ 
 #scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;background:#c9a84c;color:#060f1c;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;box-shadow:0 4px 20px rgba(201,168,76,.4);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:999;pointer-events:none}
 #scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
@@ -182,20 +182,20 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
 @media(max-width:900px){.thesis-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.ue-grid{grid-template-columns:1fr 1fr}.df-2col{grid-template-columns:1fr}}
 @media(max-width:480px){.inv-h1{font-size:2.1rem}.ue-grid{grid-template-columns:1fr}}
-
-
+ 
+ 
 /* footer styles now via arabic-theme.css */
 .footer-logo-img{max-height:44px;width:auto;display:block}
-
+ 
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <div id="nav-placeholder"></div>
-
+ 
 <main>
-
+ 
 <!-- HERO -->
 <section class="inv-hero" aria-label="نظرة المستثمرين">
   <div class="inv-hero-glow" aria-hidden="true"></div>
@@ -218,7 +218,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     <p class="inv-confidential">🔒 هذه الصفحة مخصصة للمستثمرين المعتمدين والشركاء المؤسسيين. المعلومات سرية وخاضعة لاتفاقية عدم إفصاح.</p>
   </div>
 </section>
-
+ 
 <!-- INVESTMENT THESIS -->
 <section class="inv-sec" id="thesis">
   <div class="inv-sec-inner">
@@ -243,13 +243,13 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
       <div class="thesis-card tc-green reveal reveal-d2">
         <div class="thesis-ico">💰</div>
         <div class="thesis-title">مسار كفء في رأس المال</div>
-        <div class="thesis-desc">التسعير المشروط يعني أننا نكسب 25% من وفورات الاحتيال المُتحقق منها — تكلفة مقدمة صفر للمؤمِّن، لا مخاطرة في التجريب. هذا يُزيل الاعتراض البيعي الأول ويعني أننا نولد إيرادات من الشهر الخامس، ونصل إلى $500K ARR بحلول الشهر 12، ونقترب من التعادل بحلول الشهر 18 — كل ذلك على مليون دولار من رأس المال الأولي.</div>
+        <div class="thesis-desc">التسعير المشروط يعني أننا نكسب 25% من وفورات الاحتيال المُتحقق منها — تكلفة مقدمة صفر للمؤمِّن، لا مخاطرة في التجريب. هذا يُزيل الاعتراض البيعي الأول ويعني أننا نولد إيرادات من الشهر الخامس، ونصل إلى $475K ARR (السيناريو القاعدي) بحلول الشهر 12، ونقترب من التعادل بحلول الشهر 18 — كل ذلك على مليون دولار من رأس المال الأولي.</div>
         <div class="thesis-proof tp-green">$1M بذرة → $500K ARR الشهر 12 → جاهزون لجولة السلسلة أ</div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- MARKET OPPORTUNITY -->
 <section class="inv-sec" style="background:#060f1c" id="market">
   <div class="inv-sec-inner">
@@ -266,8 +266,8 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
           </div>
           <div class="tam-card tam-s">
             <div class="tam-lbl">السوق القابل للخدمة (SAM)</div>
-            <div class="tam-val">$550M</div>
-            <div class="tam-desc">6–8M حياة × $3–8 PMPM (تنسيق + احتيال + وحدات صيدلية)</div>
+            <div class="tam-val" style="font-size:1.1rem">$80–150M</div>
+            <div class="tam-desc">كبار شركات التأمين وإدارات المطالبات (+٥٠٠ ألف مؤمَّن) · $80–150M</div>
           </div>
           <div class="tam-card tam-o">
             <div class="tam-lbl">السوق المتاح (SOM) · هدف 3 سنوات</div>
@@ -288,7 +288,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- FINANCIALS -->
 <section class="inv-sec" style="background:#0a1628" id="financials">
   <div class="inv-sec-inner">
@@ -358,7 +358,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- UNIT ECONOMICS -->
 <section class="inv-sec" id="unit-economics">
   <div class="inv-sec-inner">
@@ -407,7 +407,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- USE OF FUNDS -->
 <section class="inv-sec" style="background:#0a1628" id="funds">
   <div class="inv-sec-inner">
@@ -463,7 +463,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- DECK REQUEST -->
 <section class="inv-sec" style="background:#060f1c" id="inv-deck">
   <div class="inv-sec-inner">
@@ -515,7 +515,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <div id="footer-placeholder"></div>
 </main>
@@ -552,7 +552,7 @@ function submitDeck(){
   document.getElementById('deck-success').style.display='block';
 }
 </script>
-
+ 
 <script id="lang-switcher-js">
 (function(){
   var ls=document.getElementById('lang-switcher');
@@ -569,7 +569,7 @@ function submitDeck(){
   });
 })();
 </script>
-
+ 
 <script src="../js/components.js"></script>
 </body>
 </html>
