@@ -3,1126 +3,841 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="iRonic Health Golden Dashboard — Real-time fraud detection, claims analytics, loss ratio management, and FRA compliance reporting for all 8 ecosystem parties.">
-<meta property="og:title" content="Dashboard — iRonic Health · One Truth. Every Party. Real Time.">
-<meta property="og:url" content="https://sherif-trevo-ai.github.io/iRonicHealth/dashboard.html">
-<meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/H_Badge_icon.svg">
+<title>iRonic Health — Interactive Platform Demo</title>
+<meta name="description" content="Explore the iRonic Health AI-powered health insurance orchestration platform. See real-time claims processing, fraud detection, CMO decision support, and member health dashboards — all in one place.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (LinkedIn / WhatsApp sharing) -->
+<meta property="og:title" content="iRonic Health — Platform Demo Dashboard">
+<meta property="og:description" content="AI-powered health insurance orchestration for Egypt & MENA. Explore the live demo: claims, fraud detection, CMO tools, provider portal, and member view.">
 <meta property="og:type" content="website">
-<title>Dashboard — iRonic Health · The Golden Dashboard</title>
-<link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
+<meta property="og:url" content="https://sherif-trevo-ai.github.io/iRonicHealth/dashboard.html">
+<meta property="og:site_name" content="iRonic Health">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iRonic Health — Platform Demo">
+<meta name="twitter:description" content="See the AI claims orchestration platform for Egypt's health insurance market. Interactive demo — no login required.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ══ TOKENS ══ */
-:root{
-  --dk1:#060f1c;--dk2:#0a1628;--dk3:#0d1b2e;--dk4:#081220;
-  --lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--lt4:#e8f0fb;
-  --blue:#185fa5;--bluel:#378add;--gold:#c9a84c;--green:#1d9e75;
-  --red:#d85a30;--purple:#534ab7;
+/* ══ VISITOR INTRO BAR ══ */
+.intro-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--navy);padding:8px 18px;font-size:11.5px;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0;flex-wrap:wrap;gap:8px}
+.ib-left{display:flex;align-items:center;gap:10px}
+.ib-back{display:inline-flex;align-items:center;gap:5px;color:rgba(255,255,255,.55);text-decoration:none;font-size:11px;font-weight:500;transition:color .15s;white-space:nowrap}
+.ib-back:hover{color:rgba(255,255,255,.9)}
+.ib-sep{color:rgba(255,255,255,.2);font-size:13px}
+.ib-msg{color:rgba(255,255,255,.55);font-size:11px}
+.ib-msg strong{color:rgba(255,255,255,.85)}
+.ib-right{display:flex;align-items:center;gap:8px}
+.ib-cta{display:inline-flex;align-items:center;gap:5px;background:var(--gold);color:var(--navy);font-size:10.5px;font-weight:700;padding:5px 12px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:opacity .15s}
+.ib-cta:hover{opacity:.88}
+
+/* ══ MOBILE WARNING ══ */
+.mob-warn{display:none;padding:24px 20px;text-align:center;background:var(--g50);border-radius:12px;margin:20px;border:1px solid var(--g200)}
+@media(max-width:860px){
+  .mob-warn{display:block}
+  .layout{display:none!important}
+  .intro-bar{display:flex!important}
 }
 
-/* ══ HERO ══ */
-.db-hero{
-  min-height:72vh;display:flex;flex-direction:column;justify-content:flex-end;
-  padding:135px 5% 5rem;position:relative;overflow:hidden;
-  background:linear-gradient(148deg,var(--dk1) 0%,var(--dk2) 55%,#081422 100%);
+/* ══ LAYOUT WRAPPER ══ */
+.layout{display:flex;flex:1;overflow:hidden}
+
+:root {
+  --navy: #1A1A2E;
+  --navy2: #14142a;
+  --blue: #1B5FA6;
+  --blue-l: #2575c4;
+  --blue-xl: #378add;
+  --gold: #B8963E;
+  --gold-l: #d4aa4a;
+  --green: #1d9e75;
+  --red: #e05252;
+  --amber: #d97706;
+  --white: #ffffff;
+  --g50: #f8fafc;
+  --g100: #f1f5f9;
+  --g200: #e2e8f0;
+  --g300: #cbd5e1;
+  --g400: #94a3b8;
+  --g600: #475569;
+  --g800: #1e293b;
+  --sw: 232px;
 }
-.dbh-glow{position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(circle 600px at 70% 25%,rgba(24,95,165,.12) 0%,transparent 60%),
-             radial-gradient(circle 400px at 10% 75%,rgba(201,168,76,.08) 0%,transparent 55%);}
-.dbh-grid{position:absolute;inset:0;pointer-events:none;
-  background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:40px 40px;}
-.dbh-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;}
-.dbh-row{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:flex-end;}
-.dbh-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.28);border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;font-family:'Ubuntu',sans-serif;font-size:.72rem;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;}
-.dbh-h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;line-height:1.05;color:#fff;letter-spacing:-.03em;margin-bottom:1.1rem;font-family:'Kufam',sans-serif;}
-.dbh-h1 em{color:var(--gold);font-style:normal;}
-.dbh-sub{font-size:.95rem;color:rgba(255,255,255,.52);line-height:1.78;margin-bottom:2rem;font-family:'Ubuntu',sans-serif;}
-.dbh-kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;}
-.dbhk{padding:.875rem 1rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;}
-.dbhk-val{font-size:1.3rem;font-weight:900;color:#fff;font-family:'Kufam',sans-serif;line-height:1;margin-bottom:.25rem;}
-.dbhk-val.gold{color:var(--gold);}.dbhk-val.green{color:var(--green);}.dbhk-val.blue{color:var(--bluel);}
-.dbhk-lbl{font-size:.63rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.07em;font-family:'Ubuntu',sans-serif;}
-/* Hero right — mini sparkline preview */
-.dbh-preview{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;overflow:hidden;}
-.dbh-prev-bar{background:rgba(0,0,0,.3);padding:.625rem 1.1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06);}
-.dbh-prev-title{font-family:'Ubuntu',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.5);}
-.dbh-prev-live{display:flex;align-items:center;gap:5px;}
-.dbh-live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pdot 2s infinite;}
-.dbh-live-txt{font-family:'Ubuntu',sans-serif;font-size:.65rem;font-weight:700;color:var(--green);letter-spacing:.06em;}
-.dbh-prev-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(255,255,255,.05);}
-.dbh-pk{padding:.875rem 1rem;border-left:1px solid rgba(255,255,255,.05);}
-.dbh-pk:first-child{border-left:none;}
-.dbh-pk-lbl{font-family:'Ubuntu',sans-serif;font-size:.62rem;color:rgba(255,255,255,.35);margin-bottom:.3rem;}
-.dbh-pk-val{font-family:'Kufam',sans-serif;font-size:1.2rem;font-weight:900;color:#fff;}
-.dbh-pk-val.gold{color:var(--gold);}.dbh-pk-val.green{color:var(--green);}.dbh-pk-val.blue{color:var(--bluel);}
-.dbh-pk-sub{font-family:'Ubuntu',sans-serif;font-size:.6rem;color:var(--green);}
-.dbh-minibars{display:flex;align-items:flex-end;gap:3px;padding:.875rem 1rem;height:70px;}
-.dbh-mb{flex:1;border-radius:2px 2px 0 0;background:rgba(24,95,165,.4);}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--g100);color:var(--g800);display:flex;flex-direction:column;height:100vh;overflow:hidden;font-size:13px}
 
-/* ══ SHARED ══ */
-.s{padding:6rem 5%;}.si{max-width:1180px;margin:0 auto;}
-.dey{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif;}
-.dh2{font-size:2.2rem;font-weight:900;color:#fff;line-height:1.08;margin-bottom:.875rem;font-family:'Kufam',sans-serif;letter-spacing:-.025em;}
-.dh2 em{color:var(--gold);font-style:normal;}
-.dlead{font-size:.92rem;color:rgba(255,255,255,.5);line-height:1.8;font-family:'Ubuntu',sans-serif;}
-.ley{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:.625rem;font-family:'Ubuntu',sans-serif;}
-.lh2{font-size:2.2rem;font-weight:900;color:var(--dk1);line-height:1.08;margin-bottom:.875rem;font-family:'Kufam',sans-serif;letter-spacing:-.025em;}
-.lh2 em{color:var(--blue);font-style:normal;}.lh2 .gold{color:var(--gold);font-style:normal;}
-.llead{font-size:.92rem;color:#374151;line-height:1.8;font-family:'Ubuntu',sans-serif;}
+/* ══ SIDEBAR ══ */
+.sb{width:var(--sw);background:var(--navy);height:100%;display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto;overflow-x:hidden}
+.sb-logo{padding:18px 18px 14px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-logo-row{display:flex;align-items:center;gap:10px}
+.sb-badge{width:34px;height:34px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;letter-spacing:-.5px;flex-shrink:0}
+.sb-brand{font-size:14px;font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.3px}
+.sb-sub{font-size:9px;color:rgba(255,255,255,.35);margin-top:1px;letter-spacing:.3px}
+.demo-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(184,150,62,.12);border:1px solid rgba(184,150,62,.28);color:var(--gold-l);font-size:9.5px;font-weight:600;padding:3px 9px;border-radius:20px;margin-top:9px;letter-spacing:.2px}
+.demo-dot{width:5px;height:5px;background:var(--gold-l);border-radius:50%;animation:pg 2s ease-in-out infinite}
+@keyframes pg{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ══ MAIN DASHBOARD UI ══ */
-.db-wrap{
-  background:var(--dk4);border:1px solid rgba(255,255,255,.09);
-  border-radius:16px;overflow:hidden;margin-top:2.5rem;
-  box-shadow:0 32px 80px rgba(0,0,0,.5);
-}
-/* Top bar */
-.db-top{
-  background:#040c17;padding:.75rem 1.5rem;
-  display:flex;align-items:center;gap:1rem;
-  border-bottom:1px solid rgba(255,255,255,.06);
-  flex-wrap:wrap;
-}
-.dbt-tabs{display:flex;gap:0;overflow-x:auto;flex:1;scrollbar-width:none;}
-.dbt-tabs::-webkit-scrollbar{display:none;}
-.dbt-tab{
-  padding:.5rem 1.1rem;font-family:'Ubuntu',sans-serif;font-size:.74rem;font-weight:600;
-  color:rgba(255,255,255,.38);border-bottom:2px solid transparent;white-space:nowrap;
-  cursor:pointer;transition:all .18s;
-}
-.dbt-tab:hover{color:rgba(255,255,255,.65);}
-.dbt-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-.dbt-right{display:flex;align-items:center;gap:.75rem;flex-shrink:0;}
-.dbt-live{display:flex;align-items:center;gap:5px;}
-.dbt-live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pdot 2s infinite;}
-.dbt-live-txt{font-family:'Ubuntu',sans-serif;font-size:.65rem;font-weight:700;color:var(--green);letter-spacing:.06em;}
-.dbt-btn{font-family:'Ubuntu',sans-serif;font-size:.7rem;font-weight:600;padding:4px 12px;border-radius:5px;cursor:pointer;border:none;}
-.dbt-btn.outline{background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);}
-.dbt-btn.primary{background:var(--blue);color:#fff;}
-/* KPI Row */
-.db-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(255,255,255,.06);}
-.db-kpi{padding:1.1rem 1.5rem;border-left:1px solid rgba(255,255,255,.05);position:relative;}
-.db-kpi:first-child{border-left:none;}
-.db-kpi-lbl{font-family:'Ubuntu',sans-serif;font-size:.67rem;color:rgba(255,255,255,.38);margin-bottom:.4rem;}
-.db-kpi-val{font-family:'Kufam',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.3rem;}
-.db-kpi-val.gold{color:var(--gold);}.db-kpi-val.green{color:var(--green);}.db-kpi-val.blue{color:var(--bluel);}.db-kpi-val.red{color:#f0997b;}
-.db-kpi-trend{font-family:'Ubuntu',sans-serif;font-size:.67rem;}
-.dkt-up{color:var(--green);}.dkt-blue{color:var(--bluel);}.dkt-gold{color:var(--gold);}
-/* Body grid */
-.db-body{display:grid;grid-template-columns:1fr 1fr 280px;}
-.db-col-left{border-left:1px solid rgba(255,255,255,.05);}
-.db-col-left:first-child{border-left:none;}
-.db-panel{padding:1.1rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.05);}
-.db-panel:last-child{border-bottom:none;}
-.db-panel-ttl{font-family:'Ubuntu',sans-serif;font-size:.67rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;}
-/* Fraud chart bars */
-.db-chart{display:flex;align-items:flex-end;gap:4px;height:110px;direction:ltr;}
-.db-bar-col{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;}
-.db-bar{width:100%;border-radius:3px 3px 0 0;position:relative;transition:height 1.2s cubic-bezier(.4,0,.2,1);}
-.dbb-fraud{background:linear-gradient(180deg,#d85a30,#9a3a1c);}
-.dbb-recovery{background:linear-gradient(180deg,var(--green),#0f6e56);}
-.db-bar-lbl{font-family:'Ubuntu',sans-serif;font-size:.6rem;color:rgba(255,255,255,.3);}
-/* Chart legend */
-.db-chart-legend{display:flex;gap:1rem;margin-top:.625rem;}
-.dcl-item{display:flex;align-items:center;gap:4px;font-family:'Ubuntu',sans-serif;font-size:.65rem;color:rgba(255,255,255,.4);}
-.dcl-dot{width:8px;height:8px;border-radius:2px;}
-/* Loss ratio trend */
-.lr-track{height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;margin-bottom:.375rem;}
-.lr-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--green),#15c18e);transition:width 1.5s ease;}
-.lr-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.625rem;}
-.lr-label{font-family:'Ubuntu',sans-serif;font-size:.74rem;color:rgba(255,255,255,.6);}
-.lr-val{font-family:'Ubuntu',sans-serif;font-size:.74rem;font-weight:700;}
-.lrv-green{color:var(--green);}.lrv-gold{color:var(--gold);}.lrv-red{color:#f0997b;}
-/* Claims feed */
-.db-feed{display:flex;flex-direction:column;gap:.5rem;max-height:280px;overflow:hidden;}
-.db-feed-item{
-  display:flex;align-items:flex-start;gap:.75rem;padding:.625rem .875rem;
-  border-radius:8px;animation:feedin .4s ease;
-}
-.dfi-flag{background:rgba(216,90,48,.12);border:1px solid rgba(216,90,48,.15);}
-.dfi-ok{background:rgba(29,158,117,.08);border:1px solid rgba(29,158,117,.1);}
-.dfi-warn{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.12);}
-.dfi-info{background:rgba(24,95,165,.08);border:1px solid rgba(24,95,165,.12);}
-.dfi-ico{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;}
-.ico-flag{background:rgba(216,90,48,.2);}.ico-ok{background:rgba(29,158,117,.2);}.ico-warn{background:rgba(201,168,76,.2);}.ico-info{background:rgba(24,95,165,.2);}
-.dfi-body{flex:1;min-width:0;}
-.dfi-title{font-family:'Ubuntu',sans-serif;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.dfi-sub{font-family:'JetBrains Mono',monospace;font-size:.64rem;color:rgba(255,255,255,.32);}
-.dfi-time{font-family:'Ubuntu',sans-serif;font-size:.62rem;color:rgba(255,255,255,.22);flex-shrink:0;padding-top:2px;}
-@keyframes feedin{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
-/* Right column */
-.db-fraud-types{display:flex;flex-direction:column;gap:.75rem;}
-.dft-item{}
-.dft-top{display:flex;justify-content:space-between;margin-bottom:4px;}
-.dft-name{font-family:'Ubuntu',sans-serif;font-size:.72rem;color:rgba(255,255,255,.62);}
-.dft-pct{font-family:'Ubuntu',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.82);}
-.dft-bg{height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;}
-.dft-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--red),var(--gold));}
-/* Quick stats */
-.db-qs{display:flex;flex-direction:column;gap:.4rem;}
-.db-qs-row{display:flex;justify-content:space-between;align-items:center;padding:.5rem .75rem;background:rgba(255,255,255,.03);border-radius:5px;border:1px solid rgba(255,255,255,.04);}
-.dbqs-lbl{font-family:'Ubuntu',sans-serif;font-size:.7rem;color:rgba(255,255,255,.4);}
-.dbqs-val{font-family:'Ubuntu',sans-serif;font-size:.74rem;font-weight:700;}
-.dqv-green{color:var(--green);}.dqv-gold{color:var(--gold);}.dqv-blue{color:var(--bluel);}
-/* Alert strip */
-.db-alert{margin:0;padding:.75rem 1.5rem;background:rgba(216,90,48,.08);border-top:1px solid rgba(216,90,48,.15);display:flex;align-items:center;gap:.875rem;}
-.db-alert-ico{font-size:.9rem;flex-shrink:0;}
-.db-alert-txt{font-family:'Ubuntu',sans-serif;font-size:.76rem;color:#f0997b;flex:1;}
-.db-alert-btn{font-family:'Ubuntu',sans-serif;font-size:.7rem;font-weight:700;padding:4px 12px;background:rgba(216,90,48,.2);color:#f0997b;border:1px solid rgba(216,90,48,.3);border-radius:5px;cursor:pointer;white-space:nowrap;}
+.sb-nav{padding:14px 10px;flex:1}
+.nav-sec{font-size:8.5px;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:1.1px;text-transform:uppercase;padding:0 10px;margin:16px 0 5px}
+.nav-sec:first-child{margin-top:0}
+.ni{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:7px;cursor:pointer;margin-bottom:1px;transition:all .14s;color:rgba(255,255,255,.5);font-size:12px;font-weight:500;border-left:2px solid transparent;user-select:none}
+.ni:hover{background:rgba(255,255,255,.055);color:rgba(255,255,255,.82)}
+.ni.active{background:rgba(27,95,166,.32);color:#fff;border-left-color:var(--blue-l)}
+.ni svg{width:14px;height:14px;flex-shrink:0;opacity:.75}
+.ni.active svg{opacity:1}
+.nb{margin-left:auto;background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px;line-height:1.4}
 
-/* ══ ROLE VIEWS ══ */
-.role-tabs{display:flex;gap:0;border-bottom:2px solid #dde8f5;margin-bottom:2rem;overflow-x:auto;scrollbar-width:none;}
-.role-tabs::-webkit-scrollbar{display:none;}
-.rt-tab{
-  padding:.875rem 1.25rem;font-family:'Ubuntu',sans-serif;font-size:.8rem;font-weight:600;
-  color:#6b7a94;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;
-  transition:all .18s;display:flex;align-items:center;gap:.5rem;
-}
-.rt-tab:hover{color:var(--ink2);}
-.rt-tab.active{color:var(--blue);border-bottom-color:var(--blue);}
-.role-panels{}
-.role-panel{display:none;}
-.role-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
-.rp-info{}
-.rp-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;font-family:'Ubuntu',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem;}
-.rp-h3{font-size:1.5rem;font-weight:900;color:var(--dk1);font-family:'Kufam',sans-serif;line-height:1.2;margin-bottom:.75rem;letter-spacing:-.015em;}
-.rp-h3 em{color:var(--blue);font-style:normal;}
-.rp-desc{font-family:'Ubuntu',sans-serif;font-size:.88rem;color:#374151;line-height:1.72;margin-bottom:1.5rem;}
-.rp-features{display:flex;flex-direction:column;gap:.625rem;}
-.rp-feat{display:flex;gap:.75rem;align-items:flex-start;padding:.875rem 1rem;background:var(--lt2);border:1px solid #dde8f5;border-radius:10px;}
-.rp-feat-ico{font-size:.95rem;flex-shrink:0;margin-top:2px;}
-.rp-feat-body{}
-.rp-feat-ttl{font-family:'Ubuntu',sans-serif;font-size:.84rem;font-weight:700;color:var(--dk1);margin-bottom:2px;}
-.rp-feat-desc{font-family:'Ubuntu',sans-serif;font-size:.75rem;color:#6b7a94;line-height:1.5;}
-/* Mini dashboard mockup */
-.rp-mockup{background:var(--dk3);border:1px solid rgba(255,255,255,.09);border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);}
-.rpm-bar{background:#040c17;padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06);}
-.rpm-title{font-family:'Ubuntu',sans-serif;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.5);}
-.rpm-badge{font-family:'Ubuntu',sans-serif;font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:3px;}
-.rpm-body{padding:1rem;}
-.rpm-kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:.625rem;margin-bottom:1rem;}
-.rpm-kpi{padding:.75rem;background:rgba(255,255,255,.04);border-radius:8px;border:1px solid rgba(255,255,255,.06);}
-.rpm-kpi-val{font-family:'Kufam',sans-serif;font-size:1.2rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.2rem;}
-.rpm-kpi-val.gold{color:var(--gold);}.rpm-kpi-val.green{color:var(--green);}.rpm-kpi-val.blue{color:var(--bluel);}
-.rpm-kpi-lbl{font-family:'Ubuntu',sans-serif;font-size:.62rem;color:rgba(255,255,255,.38);}
-.rpm-list{display:flex;flex-direction:column;gap:.4rem;}
-.rpm-row{display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(255,255,255,.03);border-radius:5px;font-family:'Ubuntu',sans-serif;font-size:.72rem;}
-.rpm-row-lbl{color:rgba(255,255,255,.5);}
-.rpm-row-val{font-weight:700;}
-.rpm-bar-list{display:flex;flex-direction:column;gap:.625rem;}
-.rpm-bar-row{margin-bottom:.25rem;}
-.rpm-bar-top{display:flex;justify-content:space-between;font-family:'Ubuntu',sans-serif;font-size:.68rem;margin-bottom:3px;}
-.rpm-bar-lbl{color:rgba(255,255,255,.5);}
-.rpm-bar-val{font-weight:700;}
-.rpm-bar-track{height:5px;background:rgba(255,255,255,.06);border-radius:3px;}
-.rpm-bar-fill{height:100%;border-radius:3px;}
+.sb-foot{padding:12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.sf-user{display:flex;align-items:center;gap:8px}
+.sf-av{width:28px;height:28px;background:linear-gradient(135deg,var(--blue),var(--blue-l));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.sf-name{font-size:11px;font-weight:600;color:#fff}
+.sf-role{font-size:9.5px;color:rgba(255,255,255,.35)}
 
-/* ══ FEATURES DEEP DIVE ══ */
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;}
-.feat-card{padding:1.75rem;border-radius:14px;background:var(--lt1);border:1px solid #dde8f5;box-shadow:0 1px 6px rgba(10,22,40,.04);}
-.feat-ico{font-size:1.5rem;margin-bottom:.875rem;}
-.feat-title{font-family:'Ubuntu',sans-serif;font-size:.95rem;font-weight:700;color:var(--dk1);margin-bottom:.5rem;}
-.feat-desc{font-family:'Ubuntu',sans-serif;font-size:.8rem;color:#374151;line-height:1.7;}
-.feat-tag{display:inline-block;margin-top:.75rem;font-family:'Ubuntu',sans-serif;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:3px;background:rgba(24,95,165,.08);color:var(--blue);}
+/* ══ MAIN ══ */
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
 
-/* ══ FRA COMPLIANCE ══ */
-.fra-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem;}
-.fra-report-card{background:var(--dk3);border:1px solid rgba(255,255,255,.09);border-radius:14px;overflow:hidden;}
-.fra-rep-bar{background:#040c17;padding:.625rem 1.1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.06);}
-.fra-rep-title{font-family:'Ubuntu',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.5);}
-.fra-rep-badge{font-family:'Ubuntu',sans-serif;font-size:.6rem;font-weight:700;padding:2px 8px;border-radius:3px;background:rgba(29,158,117,.2);color:#5dcaa5;}
-.fra-rep-body{padding:1.25rem;}
-.fra-section-ttl{font-family:'Ubuntu',sans-serif;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.3);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,.06);}
-.fra-metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem;}
-.fra-metric{padding:.625rem .875rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:7px;}
-.fra-m-val{font-family:'Kufam',sans-serif;font-size:1.1rem;font-weight:900;color:var(--green);line-height:1;margin-bottom:.2rem;}
-.fra-m-lbl{font-family:'Ubuntu',sans-serif;font-size:.62rem;color:rgba(255,255,255,.35);}
-.fra-sig-rows{display:flex;flex-direction:column;gap:.4rem;}
-.fra-sig-row{display:flex;align-items:center;justify-content:space-between;padding:.45rem .75rem;background:rgba(255,255,255,.03);border-radius:5px;}
-.fra-sig-lbl{font-family:'Ubuntu',sans-serif;font-size:.7rem;color:rgba(255,255,255,.48);}
-.fra-sig-val{font-family:'Ubuntu',sans-serif;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.78);}
-.fra-export-row{display:flex;gap:.625rem;margin-top:1rem;}
-.fra-export-btn{display:flex;align-items:center;gap:5px;padding:.5rem 1rem;border-radius:6px;font-family:'Ubuntu',sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;}
-.frab-pdf{background:rgba(216,90,48,.15);color:#f0997b;border:1px solid rgba(216,90,48,.25);}
-.frab-xlsx{background:rgba(29,158,117,.12);color:#5dcaa5;border:1px solid rgba(29,158,117,.2);}
-.frab-api{background:rgba(24,95,165,.12);color:var(--bluel);border:1px solid rgba(24,95,165,.2);}
-/* Right fra info */
-.fra-features{display:flex;flex-direction:column;gap:1rem;}
-.fra-feat{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem 1.25rem;background:var(--dk3);border:1px solid rgba(255,255,255,.07);border-radius:12px;}
-.fra-feat-ico{font-size:1.1rem;flex-shrink:0;margin-top:2px;}
-.fra-feat-body{}
-.fra-feat-ttl{font-family:'Ubuntu',sans-serif;font-size:.85rem;font-weight:700;color:#fff;margin-bottom:3px;}
-.fra-feat-desc{font-family:'Ubuntu',sans-serif;font-size:.76rem;color:rgba(255,255,255,.48);line-height:1.55;}
-.fra-feat-badge{display:inline-block;margin-top:.375rem;font-family:'Ubuntu',sans-serif;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:3px;}
+/* ══ TOPBAR ══ */
+.tb{background:#fff;border-bottom:1px solid var(--g200);padding:0 22px;height:54px;display:flex;align-items:center;gap:14px;flex-shrink:0}
+.tb-title{font-size:14px;font-weight:700;color:var(--g800);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tb-time{font-size:10.5px;color:var(--g400);white-space:nowrap}
+.role-tabs{display:flex;background:var(--g100);border-radius:8px;padding:3px;gap:2px}
+.rb{padding:5px 13px;border-radius:6px;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;color:var(--g600);cursor:pointer;transition:all .15s;white-space:nowrap}
+.rb.active{background:#fff;color:var(--blue);font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.notif{width:34px;height:34px;border:1px solid var(--g200);border-radius:8px;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative;color:var(--g600);flex-shrink:0}
+.notif-dot{position:absolute;top:7px;right:7px;width:6px;height:6px;background:var(--red);border-radius:50%;border:1.5px solid #fff}
 
-/* ══ DATA SOURCES ══ */
-.sources-layout{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2.5rem;}
-.src-card{padding:1.25rem;border-radius:12px;background:var(--lt1);border:1px solid #dde8f5;box-shadow:0 1px 4px rgba(10,22,40,.04);text-align:center;transition:transform .2s,box-shadow .2s;}
-.src-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(10,22,40,.08);}
-.src-ico{font-size:1.5rem;margin-bottom:.625rem;}
-.src-name{font-family:'Ubuntu',sans-serif;font-size:.84rem;font-weight:700;color:var(--dk1);margin-bottom:.25rem;}
-.src-desc{font-family:'Ubuntu',sans-serif;font-size:.72rem;color:#6b7a94;line-height:1.5;}
-.src-badge{display:inline-block;margin-top:.5rem;font-family:'Ubuntu',sans-serif;font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:3px;background:rgba(24,95,165,.08);color:var(--blue);}
-/* Data flow strip */
-.data-flow-strip{display:flex;align-items:center;gap:.5rem;margin-top:2rem;padding:1.25rem 1.75rem;background:var(--lt3);border:1px solid #dde8f5;border-radius:12px;flex-wrap:wrap;justify-content:center;}
-.dfs-item{font-family:'Ubuntu',sans-serif;font-size:.76rem;font-weight:600;color:var(--ink2);}
-.dfs-arr{color:#c8daf0;font-size:.9rem;}
+/* ══ CONTENT ══ */
+.content{flex:1;overflow-y:auto;padding:18px 22px;display:flex;flex-direction:column;gap:14px}
+.content::-webkit-scrollbar{width:4px}
+.content::-webkit-scrollbar-thumb{background:var(--g200);border-radius:2px}
 
-/* ══ INTEGRATION ══ */
-.integ-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem;}
-.integ-options{display:flex;flex-direction:column;gap:1rem;}
-.io-item{display:flex;gap:1.1rem;align-items:flex-start;padding:1.1rem 1.25rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;}
-.io-ico{font-size:1.2rem;flex-shrink:0;margin-top:2px;}
-.io-body{}
-.io-name{font-family:'Ubuntu',sans-serif;font-size:.88rem;font-weight:700;color:#fff;margin-bottom:3px;}
-.io-desc{font-family:'Ubuntu',sans-serif;font-size:.76rem;color:rgba(255,255,255,.48);line-height:1.55;}
-.io-tag{display:inline-block;margin-top:.375rem;font-family:'Ubuntu',sans-serif;font-size:.62rem;font-weight:700;padding:2px 7px;border-radius:3px;}
-/* Code snippet */
-.code-snippet{background:var(--dk4);border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;}
-.cs-bar{background:rgba(0,0,0,.3);padding:.5rem 1rem;display:flex;align-items:center;gap:.5rem;border-bottom:1px solid rgba(255,255,255,.06);}
-.cs-dot{width:10px;height:10px;border-radius:50%;}
-.cs-title{font-family:'Ubuntu',sans-serif;font-size:.7rem;color:rgba(255,255,255,.35);margin-right:.5rem;}
-.cs-body{padding:1.25rem;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.7);line-height:1.7;}
-.cs-key{color:var(--bluel);}.cs-str{color:#5dcaa5;}.cs-num{color:var(--gold);}.cs-cmt{color:rgba(255,255,255,.3);}
+.rp{display:none;flex-direction:column;gap:14px}
+.rp.active{display:flex}
 
-/* ══ FOOTER + SCROLL ══ */
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 5%;border-top:1px solid rgba(255,255,255,.08);flex-wrap:nowrap;gap:1rem;}
-.footer-copy{font-size:.78rem;color:rgba(255,255,255,.35);white-space:nowrap;}
-.footer-legal{display:flex;gap:1.5rem;}.footer-legal a{font-size:.78rem;color:rgba(255,255,255,.35);text-decoration:none;}
-.footer-legal a:hover{color:rgba(255,255,255,.75);}
-#scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:999;pointer-events:none;}
-#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+/* ══ KPI GRID ══ */
+.kg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kc{background:#fff;border-radius:11px;padding:15px;border:1px solid var(--g200);position:relative;overflow:hidden;transition:box-shadow .18s}
+.kc:hover{box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.kc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:11px 11px 0 0}
+.kc.bl::before{background:var(--blue)}
+.kc.go::before{background:var(--gold)}
+.kc.gr::before{background:var(--green)}
+.kc.rd::before{background:var(--red)}
+.k-ico{position:absolute;top:13px;right:13px;font-size:17px;opacity:.12}
+.k-lbl{font-size:10px;font-weight:600;color:var(--g400);text-transform:uppercase;letter-spacing:.5px;margin-bottom:7px}
+.k-val{font-size:24px;font-weight:700;color:var(--g800);line-height:1;letter-spacing:-.5px}
+.k-sub{font-size:10.5px;color:var(--g400);margin-top:3px}
+.k-delta{display:inline-flex;align-items:center;gap:3px;font-size:10.5px;font-weight:600;margin-top:6px;padding:2px 7px;border-radius:4px}
+.up{color:var(--green);background:rgba(29,158,117,.1)}
+.dn{color:var(--red);background:rgba(224,82,82,.1)}
+.gd{color:var(--green);background:rgba(29,158,117,.1)}
 
-/* ══ RESPONSIVE ══ */
-@media(max-width:1000px){
-  .db-body{grid-template-columns:1fr;}
-  .db-col-left:not(:first-child){display:none;}
-}
-@media(max-width:900px){
-  .dbh-row,.fra-layout,.integ-layout{grid-template-columns:1fr;gap:2.5rem;}
-  .role-panel.active{grid-template-columns:1fr;}
-  .feat-grid{grid-template-columns:1fr 1fr;}
-  .sources-layout{grid-template-columns:1fr 1fr;}
-  .db-kpi-row{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:600px){
-  .feat-grid,.sources-layout{grid-template-columns:1fr;}
-  .db-kpi-row{grid-template-columns:1fr 1fr;}
-  .dbh-kpis{grid-template-columns:1fr 1fr;}
-  .dbh-h1{font-size:2.3rem;}
-}
+/* ══ ROWS ══ */
+.row{display:grid;gap:12px}
+.c2{grid-template-columns:1fr 1fr}
+.c75{grid-template-columns:7fr 5fr}
+.c65{grid-template-columns:6fr 5fr}
 
+/* ══ CARD ══ */
+.card{background:#fff;border-radius:11px;border:1px solid var(--g200);overflow:hidden}
+.ch{padding:13px 15px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.ct{font-size:12.5px;font-weight:700;color:var(--g800)}
+.cs{font-size:10.5px;color:var(--g400);margin-top:2px}
+.cb{padding:12px 15px 15px}
+.tag{font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.t-bl{background:rgba(27,95,166,.1);color:var(--blue)}
+.t-go{background:rgba(184,150,62,.1);color:var(--gold)}
+.t-gr{background:rgba(29,158,117,.1);color:var(--green)}
+.t-rd{background:rgba(224,82,82,.1);color:var(--red)}
+.t-gy{background:var(--g100);color:var(--g600)}
+
+/* ══ SVG CHART ══ */
+.cw{width:100%;height:155px;margin-top:6px}
+.cw svg{width:100%;height:155px;overflow:visible}
+
+/* ══ TABLE ══ */
+.ct2{width:100%;border-collapse:collapse;font-size:11.5px}
+.ct2 th{padding:7px 12px;text-align:left;font-size:9.5px;font-weight:700;color:var(--g400);text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--g200);white-space:nowrap}
+.ct2 td{padding:8px 12px;border-bottom:1px solid var(--g100);color:var(--g800)}
+.ct2 tr:last-child td{border-bottom:none}
+.ct2 tr:hover td{background:var(--g50)}
+.cid{font-family:'DM Mono',monospace;font-size:10.5px;color:var(--blue);font-weight:500}
+
+.pill{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;white-space:nowrap}
+.p-gr{background:rgba(29,158,117,.1);color:var(--green)}
+.p-am{background:rgba(217,119,6,.1);color:var(--amber)}
+.p-rd{background:rgba(224,82,82,.1);color:var(--red)}
+.p-bl{background:rgba(27,95,166,.1);color:var(--blue)}
+.p-gy{background:var(--g100);color:var(--g600)}
+
+.ai-s{display:flex;align-items:center;gap:5px}
+.ai-bar{height:4px;width:48px;background:var(--g200);border-radius:2px;overflow:hidden}
+.ai-fill{height:100%;border-radius:2px}
+.ai-num{font-size:10px;color:var(--g600)}
+
+/* ══ DONUT ══ */
+.donut-row{display:flex;align-items:center;gap:14px}
+.donut-svg{width:96px;height:96px;flex-shrink:0}
+.leg{display:flex;flex-direction:column;gap:7px;flex:1}
+.li{display:flex;align-items:center;gap:6px;font-size:11px}
+.ld{width:8px;height:8px;border-radius:2px;flex-shrink:0}
+.ll{color:var(--g600);flex:1}
+.lv{font-weight:700;color:var(--g800)}
+.lp{color:var(--g400);font-size:10px}
+
+/* ══ MINI METRICS ══ */
+.mm-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.mm{padding:11px;background:var(--g50);border-radius:8px;border:1px solid var(--g200)}
+.mm-v{font-size:17px;font-weight:700;letter-spacing:-.5px}
+.mm-l{font-size:10px;color:var(--g400);margin-top:2px}
+
+/* ══ FEED ══ */
+.feed{display:flex;flex-direction:column;gap:0;overflow:hidden}
+.fi{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--g100);font-size:11px;animation:fi .3s ease}
+.fi:last-child{border-bottom:none}
+@keyframes fi{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.fd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.ft{flex:1;color:var(--g600);line-height:1.35}
+.ft strong{color:var(--g800)}
+.ftm{color:var(--g400);font-size:10px;white-space:nowrap}
+
+/* ══ PROGRESS ══ */
+.pw{margin-top:10px}
+.pi{margin-bottom:11px}
+.pi:last-child{margin-bottom:0}
+.ph{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px}
+.pl{color:var(--g600);font-weight:500}
+.pv{color:var(--g800);font-weight:700}
+.pt{height:5px;background:var(--g200);border-radius:3px;overflow:hidden}
+.pf{height:100%;border-radius:3px;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+
+/* ══ FRAUD LIST ══ */
+.fl{display:flex;flex-direction:column;gap:7px;margin-top:8px}
+.fri{display:flex;align-items:flex-start;gap:9px;padding:9px 11px;background:var(--g50);border-radius:8px;border-left:3px solid var(--red)}
+.fri.am{border-left-color:var(--amber)}
+.fri.go{border-left-color:var(--gold)}
+.fri-ico{font-size:13px;flex-shrink:0;margin-top:1px}
+.fri-body{flex:1;min-width:0}
+.fri-t{font-size:11.5px;font-weight:700;color:var(--g800)}
+.fri-m{font-size:10.5px;color:var(--g400);margin-top:2px;line-height:1.4}
+.fri-amt{font-size:12px;font-weight:700;color:var(--red);flex-shrink:0;white-space:nowrap}
+.fri.am .fri-amt{color:var(--amber)}
+.fri.go .fri-amt{color:var(--gold)}
+
+/* ══ HEALTH SCORE ══ */
+.hs-wrap{display:flex;align-items:center;justify-content:center;position:relative}
+.hs-svg{width:110px;height:110px}
+.hs-c{position:absolute;text-align:center}
+.hs-n{font-size:26px;font-weight:700;color:var(--green);display:block;line-height:1}
+.hs-l{font-size:9.5px;color:var(--g400)}
+
+/* ══ ALERT STRIP ══ */
+.as{display:flex;align-items:center;gap:7px;padding:9px 15px;background:rgba(224,82,82,.05);border-top:1px solid rgba(224,82,82,.12);font-size:10.5px;color:var(--red)}
+
+/* ══ MEMBER CARD ══ */
+.mc-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.mc-av{width:38px;height:38px;background:linear-gradient(135deg,var(--blue),var(--blue-l));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0}
+.mc-nm{font-size:12.5px;font-weight:700;color:var(--g800)}
+.mc-id{font-size:10.5px;color:var(--g400);margin-top:1px}
+.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:10.5px}
+.mc-item span:first-child{color:var(--g400)}
+.mc-item span:last-child{font-weight:700;color:var(--g800)}
+.mc-foot{margin-top:9px;padding-top:9px;border-top:1px solid var(--g200);font-size:10px;color:var(--g400)}
 </style>
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
-<div id="nav-placeholder"></div>
+<!-- ══ VISITOR INTRO BAR ══ -->
+<div class="intro-bar">
+  <div class="ib-left">
+    <a href="index.html" class="ib-back">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      iRonic Health
+    </a>
+    <span class="ib-sep">·</span>
+    <span class="ib-msg"><strong>Interactive Demo</strong> — Switch between CFO, CMO, TPA, Provider, and Member views. All data is illustrative.</span>
+  </div>
+  <div class="ib-right">
+    <a href="contact.html" class="ib-cta">Request a Live Pilot →</a>
+  </div>
+</div>
 
-<main>
+<!-- ══ MOBILE WARNING ══ -->
+<div class="mob-warn">
+  <div style="font-size:28px;margin-bottom:12px">🖥️</div>
+  <div style="font-size:15px;font-weight:700;color:#1e293b;margin-bottom:8px">Best viewed on desktop</div>
+  <div style="font-size:13px;color:#64748b;line-height:1.6;margin-bottom:16px">The iRonic Health platform dashboard is a full-screen interactive experience. Please open this page on a laptop or desktop for the full demo.</div>
+  <a href="index.html" style="display:inline-block;background:#1B5FA6;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:13px">← Back to iRonic Health</a>
+</div>
 
-<!-- ═══ HERO ═══ -->
-<section class="db-hero" aria-label="Dashboard overview">
-  <div class="dbh-glow" aria-hidden="true"></div>
-  <div class="dbh-grid" aria-hidden="true"></div>
-  <div class="dbh-inner">
-    <div class="dbh-row reveal">
+<!-- ══ MAIN LAYOUT ══ -->
+<div class="layout">
+
+<!-- ══ SIDEBAR ══ -->
+<aside class="sb">
+  <div class="sb-logo">
+    <div class="sb-logo-row">
+      <div class="sb-badge">iH</div>
       <div>
-        <div class="dbh-badge">&#128202; Module 07 · The Golden Dashboard</div>
-        <h1 class="dbh-h1">One Truth.<br>Every Party.<br><em>Real Time.</em></h1>
-        <p class="dbh-sub">The Golden Dashboard is iRonic Health's command center — the single source of truth for all 8 ecosystem parties. Fraud alerts, claims analytics, loss ratio trends, FRA compliance reports, and provider payment status — all live, all in one place.</p>
-        <div class="dbh-kpis">
-          <div class="dbhk"><div class="dbhk-val gold">8</div><div class="dbhk-lbl">Parties connected in real time</div></div>
-          <div class="dbhk"><div class="dbhk-val green">4.3s</div><div class="dbhk-lbl">Average claim decision</div></div>
-          <div class="dbhk"><div class="dbhk-val blue">Auto</div><div class="dbhk-lbl">FRA reports generated</div></div>
-          <div class="dbhk"><div class="dbhk-val">5 roles</div><div class="dbhk-lbl">CFO · CMO · Ops · Provider · Member</div></div>
-        </div>
+        <div class="sb-brand">iRonic Health</div>
+        <div class="sb-sub">Operator Dashboard · v2.4</div>
       </div>
+    </div>
+    <div class="demo-pill">
+      <div class="demo-dot"></div>
+      Demo Environment
+    </div>
+  </div>
+
+  <nav class="sb-nav">
+    <div class="nav-sec">Main</div>
+    <div class="ni active" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Overview
+    </div>
+    <div class="ni" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      Claims
+      <span class="nb">127</span>
+    </div>
+    <div class="ni" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Fraud Detection
+      <span class="nb">23</span>
+    </div>
+    <div class="ni" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+      Pharmacy
+    </div>
+    <div class="ni" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      Members
+    </div>
+    <div class="nav-sec">Analytics</div>
+    <div class="ni" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      Reports
+    </div>
+    <div class="ni" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      FRA Compliance
+    </div>
+    <div class="ni" onclick="setNav(this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      API Status
+      <span class="nb" style="background:var(--green)">●</span>
+    </div>
+  </nav>
+
+  <div class="sb-foot">
+    <a href="index.html" style="display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.38);font-size:10.5px;text-decoration:none;margin-bottom:10px;transition:color .15s;padding:0 2px" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.38)'">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      Back to iRonic Health website
+    </a>
+    <div class="sf-user">
+      <div class="sf-av">ش</div>
       <div>
-        <div class="dbh-preview">
-          <div class="dbh-prev-bar">
-            <span class="dbh-prev-title">&#9874;&#65039; Claims Intelligence · GlobeMed TPA · 18 Insurers</span>
-            <div class="dbh-prev-live"><div class="dbh-live-dot"></div><span class="dbh-live-txt">LIVE</span></div>
-          </div>
-          <div class="dbh-prev-kpis">
-            <div class="dbh-pk"><div class="dbh-pk-lbl">Fraud MTD</div><div class="dbh-pk-val gold">EGP 2.4M</div><div class="dbh-pk-sub">&#8593; +18%</div></div>
-            <div class="dbh-pk"><div class="dbh-pk-lbl">Claims Today</div><div class="dbh-pk-val">1,247</div><div class="dbh-pk-sub">&#9889; 4.3s avg</div></div>
-            <div class="dbh-pk"><div class="dbh-pk-lbl">Loss Ratio</div><div class="dbh-pk-val green">&#8722;15.3%</div><div class="dbh-pk-sub">Target exceeded</div></div>
-            <div class="dbh-pk"><div class="dbh-pk-lbl">Members</div><div class="dbh-pk-val blue">1.2M</div><div class="dbh-pk-sub">18 insurers</div></div>
-          </div>
-          <div class="dbh-minibars">
-            <div class="dbh-mb" style="height:40%"></div>
-            <div class="dbh-mb" style="height:48%"></div>
-            <div class="dbh-mb" style="height:45%"></div>
-            <div class="dbh-mb" style="height:60%"></div>
-            <div class="dbh-mb" style="height:65%"></div>
-            <div class="dbh-mb" style="height:73%"></div>
-            <div class="dbh-mb" style="height:70%"></div>
-            <div class="dbh-mb" style="height:82%"></div>
-            <div class="dbh-mb" style="height:78%"></div>
-            <div class="dbh-mb" style="height:90%"></div>
-            <div class="dbh-mb" style="height:96%;background:rgba(201,168,76,.6)"></div>
-            <div class="dbh-mb" style="height:100%;background:rgba(201,168,76,.8)"></div>
-          </div>
-        </div>
+        <div class="sf-name">م. شريف شوقي</div>
+        <div class="sf-role">Chairman & CEO · Ironic Group</div>
       </div>
     </div>
   </div>
-</section>
+</aside>
 
-<!-- ═══ MAIN DASHBOARD UI ═══ -->
-<section class="s" style="background:var(--dk2);padding-top:3rem" id="dashboard-live" aria-labelledby="db-live-h">
-  <div class="si">
-    <div class="reveal">
-      <div class="dey">Interactive Live Demo</div>
-      <h2 class="dh2" id="db-live-h">The Dashboard<br><em>Your Ops Team Sees Every Day</em></h2>
-      <p class="dlead" style="max-width:560px">This is what runs on the screen of every insurer and TPA operations manager connected to iRonic Health. Live claim decisions, fraud alerts, loss ratio tracking — all updating in real time.</p>
+<!-- ══ MAIN ══ -->
+<div class="main">
+  <div class="tb">
+    <div class="tb-title" id="tb-title">Platform Overview — CFO View</div>
+    <div class="tb-time" id="tb-time">May 27, 2026 · Cairo EGT</div>
+    <div class="role-tabs">
+      <button class="rb active" onclick="setRole('cfo',this)">CFO</button>
+      <button class="rb" onclick="setRole('cmo',this)">CMO</button>
+      <button class="rb" onclick="setRole('tpa',this)">TPA Ops</button>
+      <button class="rb" onclick="setRole('prov',this)">Provider</button>
+      <button class="rb" onclick="setRole('mbr',this)">Member</button>
     </div>
+    <div class="notif">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+      <div class="notif-dot"></div>
+    </div>
+  </div>
 
-    <div class="db-wrap reveal">
-      <!-- Top tab bar -->
-      <div class="db-top">
-        <div class="dbt-tabs">
-          <div class="dbt-tab active" onclick="dbSetTab(this,'overview')">&#128202; Overview</div>
-          <div class="dbt-tab" onclick="dbSetTab(this,'fraud')">&#128269; Fraud Intelligence</div>
-          <div class="dbt-tab" onclick="dbSetTab(this,'claims')">&#128203; Claims Queue</div>
-          <div class="dbt-tab" onclick="dbSetTab(this,'providers')">&#127973; Providers</div>
-          <div class="dbt-tab" onclick="dbSetTab(this,'fra')">&#9878;&#65039; FRA Reports</div>
-        </div>
-        <div class="dbt-right">
-          <div class="dbt-live"><div class="dbt-live-dot"></div><span class="dbt-live-txt">LIVE</span></div>
-          <button class="dbt-btn outline">Last 30 days &#9660;</button>
-          <button class="dbt-btn primary">&#8595; Export PDF</button>
-        </div>
+  <div class="content">
+
+    <!-- ══ CFO PANEL ══ -->
+    <div class="rp active" id="p-cfo">
+      <div class="kg">
+        <div class="kc bl"><div class="k-ico">📉</div><div class="k-lbl">Loss Ratio</div><div class="k-val">68.2%</div><div class="k-sub">vs 78.1% pre-iRonic</div><div class="k-delta gd">↓ 9.9pp improvement</div></div>
+        <div class="kc go"><div class="k-ico">💰</div><div class="k-lbl">Fraud Recovered MTD</div><div class="k-val">EGP 842K</div><div class="k-sub">23 active fraud cases</div><div class="k-delta up">↑ 18% vs last month</div></div>
+        <div class="kc gr"><div class="k-ico">📈</div><div class="k-lbl">Platform ROI</div><div class="k-val">11.2x</div><div class="k-sub">EGP 2.1M net savings</div><div class="k-delta up">↑ Q2 YTD</div></div>
+        <div class="kc rd"><div class="k-ico">🏥</div><div class="k-lbl">Active Members</div><div class="k-val">125,000</div><div class="k-sub">GlobeMed pilot book</div><div class="k-delta up">↑ 12K onboarded Apr</div></div>
       </div>
 
-      <!-- KPI Row -->
-      <div class="db-kpi-row">
-        <div class="db-kpi">
-          <div class="db-kpi-lbl">Fraud Detected (MTD)</div>
-          <div class="db-kpi-val gold">EGP 2.4M</div>
-          <div class="db-kpi-trend dkt-up">&#8593; +18% vs last month</div>
-        </div>
-        <div class="db-kpi">
-          <div class="db-kpi-lbl">Claims Processed Today</div>
-          <div class="db-kpi-val" id="kpi-claims">1,247</div>
-          <div class="db-kpi-trend dkt-blue">&#9889; Avg. 4.3s per decision</div>
-        </div>
-        <div class="db-kpi">
-          <div class="db-kpi-lbl">Loss Ratio Improvement</div>
-          <div class="db-kpi-val green">&#8722;15.3%</div>
-          <div class="db-kpi-trend dkt-up">&#8593; Target &#8722;12% · Exceeded &#10003;</div>
-        </div>
-        <div class="db-kpi">
-          <div class="db-kpi-lbl">Active Member Lives</div>
-          <div class="db-kpi-val blue">1.2M</div>
-          <div class="db-kpi-trend dkt-gold">18 insurers · FRA Licensed</div>
-        </div>
-      </div>
-
-      <!-- Body -->
-      <div class="db-body">
-        <!-- Col 1: Chart + Loss ratio -->
-        <div>
-          <div class="db-panel">
-            <div class="db-panel-ttl">Monthly Fraud Recovery (EGP) — Jan to Dec 2026</div>
-            <div class="db-chart" id="db-chart">
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b1" style="height:0"></div><div class="db-bar-lbl">Jan</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b2" style="height:0"></div><div class="db-bar-lbl">Feb</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b3" style="height:0"></div><div class="db-bar-lbl">Mar</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b4" style="height:0"></div><div class="db-bar-lbl">Apr</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b5" style="height:0"></div><div class="db-bar-lbl">May</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b6" style="height:0"></div><div class="db-bar-lbl">Jun</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b7" style="height:0"></div><div class="db-bar-lbl">Jul</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b8" style="height:0"></div><div class="db-bar-lbl">Aug</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b9" style="height:0"></div><div class="db-bar-lbl">Sep</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b10" style="height:0"></div><div class="db-bar-lbl">Oct</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-fraud" id="b11" style="height:0"></div><div class="db-bar-lbl">Nov</div></div>
-              <div class="db-bar-col"><div class="db-bar dbb-recovery" id="b12" style="height:0"></div><div class="db-bar-lbl">Dec</div></div>
-            </div>
-            <div class="db-chart-legend">
-              <div class="dcl-item"><div class="dcl-dot" style="background:#d85a30"></div>Fraud Flagged</div>
-              <div class="dcl-item"><div class="dcl-dot" style="background:var(--green)"></div>Recovery Validated</div>
+      <div class="row c75">
+        <div class="card">
+          <div class="ch"><div><div class="ct">Loss Ratio Trend — 2026</div><div class="cs">Monthly · GlobeMed pilot · 125K lives</div></div><span class="tag t-gr">−9.9pp YTD</span></div>
+          <div class="cb">
+            <div class="cw">
+              <svg viewBox="0 0 580 150" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="lg1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#1B5FA6" stop-opacity=".15"/>
+                    <stop offset="100%" stop-color="#1B5FA6" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <line x1="40" y1="20" x2="570" y2="20" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="40" y1="60" x2="570" y2="60" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="40" y1="100" x2="570" y2="100" stroke="#f1f5f9" stroke-width="1"/>
+                <text x="0" y="23" font-size="9" fill="#94a3b8" font-family="DM Sans,sans-serif">80%</text>
+                <text x="0" y="63" font-size="9" fill="#94a3b8" font-family="DM Sans,sans-serif">73%</text>
+                <text x="0" y="103" font-size="9" fill="#94a3b8" font-family="DM Sans,sans-serif">65%</text>
+                <!-- Baseline -->
+                <line x1="60" y1="32" x2="540" y2="32" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <text x="545" y="35" font-size="8.5" fill="#94a3b8" font-family="DM Sans,sans-serif">78.1%</text>
+                <!-- Area -->
+                <polygon points="60,42 156,52 252,64 348,78 444,92 540,107 540,100 444,100 348,100 252,100 156,100 60,100" fill="url(#lg1)"/>
+                <!-- Line -->
+                <polyline points="60,42 156,52 252,64 348,78 444,92 540,107" fill="none" stroke="#1B5FA6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Points -->
+                <circle cx="60" cy="42" r="4" fill="#1B5FA6" stroke="white" stroke-width="2"/>
+                <circle cx="156" cy="52" r="4" fill="#1B5FA6" stroke="white" stroke-width="2"/>
+                <circle cx="252" cy="64" r="4" fill="#1B5FA6" stroke="white" stroke-width="2"/>
+                <circle cx="348" cy="78" r="4" fill="#1B5FA6" stroke="white" stroke-width="2"/>
+                <circle cx="444" cy="92" r="4" fill="#1B5FA6" stroke="white" stroke-width="2"/>
+                <circle cx="540" cy="107" r="5" fill="#1d9e75" stroke="white" stroke-width="2"/>
+                <text x="540" y="100" font-size="9" fill="#1d9e75" text-anchor="middle" font-weight="700" font-family="DM Sans,sans-serif">68.2%</text>
+                <!-- X labels -->
+                <text x="60" y="130" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">Jan</text>
+                <text x="156" y="130" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">Feb</text>
+                <text x="252" y="130" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">Mar</text>
+                <text x="348" y="130" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">Apr</text>
+                <text x="444" y="130" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">May</text>
+                <text x="540" y="130" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">Jun est.</text>
+              </svg>
             </div>
           </div>
-          <div class="db-panel">
-            <div class="db-panel-ttl">Loss Ratio by Insurer (vs target)</div>
-            <div class="lr-row"><span class="lr-label">AXA Egypt</span><span class="lr-val lrv-green">63.2% &#8722;15pt</span></div>
-            <div class="lr-track"><div class="lr-fill" id="lr1" style="width:0"></div></div>
-            <div style="margin-bottom:.625rem"></div>
-            <div class="lr-row"><span class="lr-label">Bupa Egypt</span><span class="lr-val lrv-green">66.8% &#8722;11pt</span></div>
-            <div class="lr-track"><div class="lr-fill" id="lr2" style="width:0;background:linear-gradient(90deg,var(--bluel),#6fc3f0)"></div></div>
-            <div style="margin-bottom:.625rem"></div>
-            <div class="lr-row"><span class="lr-label">MetLife Egypt</span><span class="lr-val lrv-gold">71.4% &#8722;7pt</span></div>
-            <div class="lr-track"><div class="lr-fill" id="lr3" style="width:0;background:linear-gradient(90deg,var(--gold),#dfc06a)"></div></div>
-            <div style="margin-bottom:.625rem"></div>
-            <div class="lr-row"><span class="lr-label">Misr Insurance</span><span class="lr-val lrv-gold">74.1% &#8722;4pt</span></div>
-            <div class="lr-track"><div class="lr-fill" id="lr4" style="width:0;background:linear-gradient(90deg,#534ab7,#7f77dd)"></div></div>
-          </div>
         </div>
-
-        <!-- Col 2: Live Feed -->
-        <div class="db-col-left">
-          <div class="db-panel" style="min-height:300px">
-            <div class="db-panel-ttl">Live Claims Activity <span style="font-size:.6rem;color:rgba(255,255,255,.2)">(updating)</span></div>
-            <div class="db-feed" id="db-feed">
-              <div class="db-feed-item dfi-flag">
-                <div class="dfi-ico ico-flag">&#128680;</div>
-                <div class="dfi-body"><div class="dfi-title">Fraud Flagged — Phantom Prescription</div><div class="dfi-sub">IRH-4821 · Cairo Medical Centre · EGP 3,200 · Unictam pattern · Score 87</div></div>
-                <div class="dfi-time">2m ago</div>
+        <div class="card">
+          <div class="ch"><div><div class="ct">Savings Breakdown</div><div class="cs">Q2 2026 · EGP 2.1M total</div></div><span class="tag t-go">Q2 YTD</span></div>
+          <div class="cb" style="padding-top:14px">
+            <div class="donut-row">
+              <svg class="donut-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#1B5FA6" stroke-width="13" stroke-dasharray="90.48 226.19" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#B8963E" stroke-width="13" stroke-dasharray="67.86 226.19" stroke-dashoffset="-90.48" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#1d9e75" stroke-width="13" stroke-dasharray="45.24 226.19" stroke-dashoffset="-158.34" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#e2e8f0" stroke-width="13" stroke-dasharray="22.62 226.19" stroke-dashoffset="-203.58" transform="rotate(-90 50 50)"/>
+                <text x="50" y="47" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b" font-family="DM Sans,sans-serif">EGP</text>
+                <text x="50" y="58" text-anchor="middle" font-size="9" font-weight="500" fill="#94a3b8" font-family="DM Sans,sans-serif">2.1M</text>
+              </svg>
+              <div class="leg">
+                <div class="li"><div class="ld" style="background:#1B5FA6"></div><span class="ll">Fraud Recovery</span><span class="lv">842K</span><span class="lp">40%</span></div>
+                <div class="li"><div class="ld" style="background:#B8963E"></div><span class="ll">Overtreatment</span><span class="lv">630K</span><span class="lp">30%</span></div>
+                <div class="li"><div class="ld" style="background:#1d9e75"></div><span class="ll">Pharmacy</span><span class="lv">420K</span><span class="lp">20%</span></div>
+                <div class="li"><div class="ld" style="background:#e2e8f0"></div><span class="ll">Eligibility</span><span class="lv">208K</span><span class="lp">10%</span></div>
               </div>
-              <div class="db-feed-item dfi-ok">
-                <div class="dfi-ico ico-ok">&#9989;</div>
-                <div class="dfi-body"><div class="dfi-title">Auto-Approved — Outpatient Visit</div><div class="dfi-sub">IRH-4820 · Dr. Ahmed Clinic · EGP 1,100 · Confidence 98.4%</div></div>
-                <div class="dfi-time">5m ago</div>
-              </div>
-              <div class="db-feed-item dfi-warn">
-                <div class="dfi-ico ico-warn">&#9203;</div>
-                <div class="dfi-body"><div class="dfi-title">CMO Review — ICU Over-Stay</div><div class="dfi-sub">IRH-4819 · Cleopatra Heliopolis · EGP 28,000 · High-cost threshold</div></div>
-                <div class="dfi-time">8m ago</div>
-              </div>
-              <div class="db-feed-item dfi-ok">
-                <div class="dfi-ico ico-ok">&#128300;</div>
-                <div class="dfi-body"><div class="dfi-title">Lab Tests Verified — Paid</div><div class="dfi-sub">IRH-4818 · Alpha Medical Labs · EGP 650 · 3.9s decision</div></div>
-                <div class="dfi-time">12m ago</div>
-              </div>
-              <div class="db-feed-item dfi-flag">
-                <div class="dfi-ico ico-flag">&#9888;&#65039;</div>
-                <div class="dfi-body"><div class="dfi-title">Brand Upcoding Detected</div><div class="dfi-sub">IRH-4817 · Pharmacy #47 El Ezaby · EGP 2,800 · Generic substituted</div></div>
-                <div class="dfi-time">15m ago</div>
+            </div>
+            <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--g100)">
+              <div class="pw" style="margin-top:0">
+                <div class="pi"><div class="ph"><span class="pl">Platform cost (PMPM × 125K)</span><span class="pv" style="color:var(--g600)">EGP 187K</span></div><div class="pt"><div class="pf" style="width:9%;background:var(--g300)"></div></div></div>
+                <div class="pi" style="margin-bottom:0"><div class="ph"><span class="pl">Net savings delivered</span><span class="pv" style="color:var(--green)">EGP 2.1M</span></div><div class="pt"><div class="pf" style="width:100%;background:var(--green)"></div></div></div>
               </div>
             </div>
           </div>
-          <div class="db-panel">
-            <div class="db-panel-ttl">Auto-Approval Rate by Category</div>
-            <div class="db-qs">
-              <div class="db-qs-row"><span class="dbqs-lbl">Outpatient Visits</span><span class="dbqs-val dqv-green">96.2% auto-approved</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">Pharmacy Claims</span><span class="dbqs-val dqv-green">89.4% auto-approved</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">Lab &amp; Diagnostics</span><span class="dbqs-val dqv-green">91.7% auto-approved</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">Hospital Admissions</span><span class="dbqs-val dqv-gold">74.3% auto-approved</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">ICU / High-Cost Claims</span><span class="dbqs-val dqv-gold">52.1% auto-approved</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">Surgical Procedures</span><span class="dbqs-val" style="color:var(--bluel)">CMO review required</span></div>
+        </div>
+      </div>
+
+      <div class="row c75">
+        <div class="card">
+          <div class="ch"><div><div class="ct">Recent Claims — AI Decisions</div><div class="cs">Today · Auto-processed in avg 4.3 seconds</div></div><span class="tag t-bl">847 Today</span></div>
+          <div class="cb" style="padding:0">
+            <table class="ct2">
+              <thead><tr><th>Claim ID</th><th>Provider</th><th>Type</th><th>Amount</th><th>AI Score</th><th>Decision</th></tr></thead>
+              <tbody>
+                <tr><td><span class="cid">CLM-26-48471</span></td><td>Dar Al Fouad Hospital</td><td>Inpatient</td><td>EGP 18,400</td><td><div class="ai-s"><div class="ai-bar"><div class="ai-fill" style="width:94%;background:#1d9e75"></div></div><span class="ai-num">94</span></div></td><td><span class="pill p-gr">✓ Approved</span></td></tr>
+                <tr><td><span class="cid">CLM-26-48469</span></td><td>Cleopatra Hospital</td><td>Pharmacy</td><td>EGP 3,200</td><td><div class="ai-s"><div class="ai-bar"><div class="ai-fill" style="width:42%;background:#d97706"></div></div><span class="ai-num">42</span></div></td><td><span class="pill p-am">⚠ Flagged</span></td></tr>
+                <tr><td><span class="cid">CLM-26-48467</span></td><td>Cairo Scan Radiology</td><td>Outpatient</td><td>EGP 5,800</td><td><div class="ai-s"><div class="ai-bar"><div class="ai-fill" style="width:88%;background:#1d9e75"></div></div><span class="ai-num">88</span></div></td><td><span class="pill p-gr">✓ Approved</span></td></tr>
+                <tr><td><span class="cid">CLM-26-48465</span></td><td>Al Salam Hospital</td><td>Lab Test</td><td>EGP 1,450</td><td><div class="ai-s"><div class="ai-bar"><div class="ai-fill" style="width:17%;background:#e05252"></div></div><span class="ai-num">17</span></div></td><td><span class="pill p-rd">✗ Rejected</span></td></tr>
+                <tr><td><span class="cid">CLM-26-48463</span></td><td>Ain Shams Specialists</td><td>Inpatient</td><td>EGP 42,000</td><td><div class="ai-s"><div class="ai-bar"><div class="ai-fill" style="width:61%;background:#d97706"></div></div><span class="ai-num">61</span></div></td><td><span class="pill p-am">⚠ CMO Review</span></td></tr>
+                <tr><td><span class="cid">CLM-26-48461</span></td><td>As-Salam International</td><td>Surgery</td><td>EGP 78,000</td><td><div class="ai-s"><div class="ai-bar"><div class="ai-fill" style="width:91%;background:#1d9e75"></div></div><span class="ai-num">91</span></div></td><td><span class="pill p-gr">✓ Approved</span></td></tr>
+              </tbody>
+            </table>
+            <div class="as">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              127 claims pending CMO review · Avg wait: 18 min · SLA: 4 hours · <strong style="margin-left:4px">On Track</strong>
             </div>
           </div>
         </div>
 
-        <!-- Col 3: Fraud types + Quick stats -->
-        <div class="db-col-left">
-          <div class="db-panel">
-            <div class="db-panel-ttl">Fraud Archetype Breakdown (MTD)</div>
-            <div class="db-fraud-types">
-              <div class="dft-item"><div class="dft-top"><span class="dft-name">Phantom Prescriptions</span><span class="dft-pct" style="color:#f0997b">82%</span></div><div class="dft-bg"><div class="dft-fill" id="ft1" style="width:0"></div></div></div>
-              <div class="dft-item"><div class="dft-top"><span class="dft-name">ICU Over-Stay Billing</span><span class="dft-pct" style="color:var(--gold)">67%</span></div><div class="dft-bg"><div class="dft-fill" id="ft2" style="width:0"></div></div></div>
-              <div class="dft-item"><div class="dft-top"><span class="dft-name">Brand Upcoding</span><span class="dft-pct" style="color:var(--bluel)">54%</span></div><div class="dft-bg"><div class="dft-fill" id="ft3" style="width:0"></div></div></div>
-              <div class="dft-item"><div class="dft-top"><span class="dft-name">Unictam Counterfeit</span><span class="dft-pct" style="color:#afa9ec">41%</span></div><div class="dft-bg"><div class="dft-fill" id="ft4" style="width:0"></div></div></div>
-              <div class="dft-item"><div class="dft-top"><span class="dft-name">Duplicate Claims</span><span class="dft-pct">29%</span></div><div class="dft-bg"><div class="dft-fill" id="ft5" style="width:0"></div></div></div>
+        <div class="card">
+          <div class="ch"><div><div class="ct">Real-time Activity</div><div class="cs">AI decisions · Live feed</div></div><div class="demo-pill" style="font-size:9px;padding:2px 8px">● Demo</div></div>
+          <div class="cb">
+            <div class="feed" id="feed">
+              <div class="fi"><div class="fd" style="background:#1d9e75"></div><span class="ft"><strong>CLM-48471</strong> auto-approved · Dar Al Fouad</span><span class="ftm">just now</span></div>
+              <div class="fi"><div class="fd" style="background:#d97706"></div><span class="ft"><strong>CLM-48469</strong> flagged · drug splitting detected</span><span class="ftm">14s ago</span></div>
+              <div class="fi"><div class="fd" style="background:#1B5FA6"></div><span class="ft"><strong>MBR-19847</strong> eligibility verified · QR scan</span><span class="ftm">29s ago</span></div>
+              <div class="fi"><div class="fd" style="background:#e05252"></div><span class="ft"><strong>CLM-48465</strong> rejected · duplicate submission</span><span class="ftm">44s ago</span></div>
+              <div class="fi"><div class="fd" style="background:#1B5FA6"></div><span class="ft"><strong>MBR-20014</strong> enrolled · Telecom Egypt book</span><span class="ftm">58s ago</span></div>
             </div>
-          </div>
-          <div class="db-panel">
-            <div class="db-panel-ttl">Platform Performance</div>
-            <div class="db-qs">
-              <div class="db-qs-row"><span class="dbqs-lbl">AI Detection Accuracy</span><span class="dbqs-val dqv-green">94.2%</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">Avg. Decision Time</span><span class="dbqs-val">4.3 seconds</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">Claims Auto-Approved</span><span class="dbqs-val dqv-green">87%</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">FRA Compliance</span><span class="dbqs-val dqv-green">100%</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">CMO Response SLA</span><span class="dbqs-val dqv-gold">&lt;4 hours</span></div>
-              <div class="db-qs-row"><span class="dbqs-lbl">CAC Payback Period</span><span class="dbqs-val dqv-blue">4&#8211;6 months</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Alert strip -->
-      <div class="db-alert">
-        <div class="db-alert-ico">&#9888;&#65039;</div>
-        <div class="db-alert-txt">High-confidence fraud cluster detected: 14 pharmacy claims from 3 providers showing Unictam pattern in the past 24 hours. CMO review initiated — EGP 42,000 pending validation.</div>
-        <button class="db-alert-btn">Review Cluster &#8594;</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ROLE-BASED VIEWS ═══ -->
-<section class="s" style="background:var(--lt1);border-bottom:1px solid #e5ecf6" id="role-views" aria-labelledby="role-h">
-  <div class="si">
-    <div class="reveal">
-      <div class="ley">Role-Based Dashboards</div>
-      <h2 class="lh2" id="role-h">Every User Sees<br>What <em>They Need</em></h2>
-      <p class="llead" style="max-width:580px">The same underlying data — but filtered, formatted, and prioritised for each role. A CFO doesn't see individual claim IDs. A pharmacy manager doesn't see loss ratio trends. Everyone sees their signal, not the noise.</p>
-    </div>
-    <div class="role-tabs reveal">
-      <div class="rt-tab active" onclick="setRole('cfo')">&#128188; CFO / Finance</div>
-      <div class="rt-tab" onclick="setRole('cmo')">&#128084; CMO / Medical</div>
-      <div class="rt-tab" onclick="setRole('ops')">&#128203; TPA Operations</div>
-      <div class="rt-tab" onclick="setRole('provider')">&#127973; Provider / Hospital</div>
-      <div class="rt-tab" onclick="setRole('member')">&#128100; Member / Patient</div>
-    </div>
-    <div class="role-panels reveal">
-
-      <!-- CFO -->
-      <div class="role-panel active" id="rp-cfo">
-        <div class="rp-info">
-          <div class="rp-badge" style="background:rgba(24,95,165,.1);color:var(--blue)">&#128188; CFO / Finance Dashboard</div>
-          <div class="rp-h3">Loss Ratio, Cost Savings,<br><em>and ROI on Every Screen</em></div>
-          <div class="rp-desc">The CFO's view is built around one question: "How much is iRonic Health saving us, and can I prove it to the board?" Every metric is financial, every trend is benchmarked, and every recovery is traced to a specific claim and CMO decision.</div>
-          <div class="rp-features">
-            <div class="rp-feat"><div class="rp-feat-ico">&#128200;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Loss Ratio Dashboard</div><div class="rp-feat-desc">Monthly loss ratio by insurer, by product line, by geography. Before/after iRonic comparison. Target vs actual tracking.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#128176;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Fraud Recovery Ledger</div><div class="rp-feat-desc">Every EGP recovered, traced to claim ID, CMO decision, and audit log. The invoice iRonic Health sends is identical to this ledger — full transparency.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#128202;</div><div class="rp-feat-body"><div class="rp-feat-ttl">ROI Attribution Report</div><div class="rp-feat-desc">Platform cost (PMPM) vs. total savings (fraud recovery + overtreatment reduction). Auto-generated for board presentations.</div></div></div>
-          </div>
-        </div>
-        <div class="rp-mockup">
-          <div class="rpm-bar"><span class="rpm-title">CFO Dashboard — AXA Egypt · Confidential</span><span class="rpm-badge" style="background:rgba(24,95,165,.2);color:var(--bluel)">Finance View</span></div>
-          <div class="rpm-body">
-            <div class="rpm-kpi-grid">
-              <div class="rpm-kpi"><div class="rpm-kpi-val green">&#8722;15.3%</div><div class="rpm-kpi-lbl">Loss Ratio Improvement</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val gold">EGP 2.4M</div><div class="rpm-kpi-lbl">Fraud Recovered MTD</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val blue">EGP 600K</div><div class="rpm-kpi-lbl">Platform Cost MTD</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val">4.0&#215;</div><div class="rpm-kpi-lbl">Net ROI Multiplier</div></div>
-            </div>
-            <div class="rpm-bar-list">
-              <div style="font-family:'Ubuntu',sans-serif;font-size:.65rem;color:rgba(255,255,255,.35);margin-bottom:.625rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em">Monthly Loss Ratio vs Target</div>
-              <div class="rpm-bar-row"><div class="rpm-bar-top"><span class="rpm-bar-lbl">Jan (pre-iRonic)</span><span class="rpm-bar-val" style="color:#f0997b">78.2%</span></div><div class="rpm-bar-track"><div class="rpm-bar-fill" style="width:78%;background:rgba(216,90,48,.6)"></div></div></div>
-              <div class="rpm-bar-row"><div class="rpm-bar-top"><span class="rpm-bar-lbl">Mar</span><span class="rpm-bar-val" style="color:var(--gold)">72.4%</span></div><div class="rpm-bar-track"><div class="rpm-bar-fill" style="width:72%;background:rgba(201,168,76,.7)"></div></div></div>
-              <div class="rpm-bar-row"><div class="rpm-bar-top"><span class="rpm-bar-lbl">May (current)</span><span class="rpm-bar-val" style="color:var(--green)">63.2%</span></div><div class="rpm-bar-track"><div class="rpm-bar-fill" style="width:63%;background:var(--green)"></div></div></div>
-              <div class="rpm-bar-row"><div class="rpm-bar-top"><span class="rpm-bar-lbl">Target</span><span class="rpm-bar-val" style="color:rgba(255,255,255,.4)">66%</span></div><div class="rpm-bar-track"><div class="rpm-bar-fill" style="width:66%;background:rgba(255,255,255,.15)"></div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CMO -->
-      <div class="role-panel" id="rp-cmo">
-        <div class="rp-info">
-          <div class="rp-badge" style="background:rgba(29,158,117,.1);color:var(--green)">&#128084; CMO / Medical Dashboard</div>
-          <div class="rp-h3">Clinical Fraud Patterns.<br><em>Every Decision. Documented.</em></div>
-          <div class="rp-desc">The CMO view is the governance layer. Every AI-flagged claim lands here with full reasoning, archetype match, and evidence. The CMO makes the final call — and every decision is logged with their Medical Syndicate ID, creating an FRA-compliant audit trail.</div>
-          <div class="rp-features">
-            <div class="rp-feat"><div class="rp-feat-ico">&#9878;&#65039;</div><div class="rp-feat-body"><div class="rp-feat-ttl">CMO Review Queue</div><div class="rp-feat-desc">All claims scoring 30–70 (CMO review required). AI reasoning displayed per claim. One-click approve/reject with mandatory note field.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#129504;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Fraud Pattern Intelligence</div><div class="rp-feat-desc">Which archetypes are rising this month? Which providers are generating anomalous patterns? Geographic and temporal clustering of fraud signals.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#128221;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Decision Audit Trail</div><div class="rp-feat-desc">Every CMO decision logged: claim ID, AI score, CMO override (if any), Medical Syndicate licence number, timestamp. Full FRA export.</div></div></div>
-          </div>
-        </div>
-        <div class="rp-mockup">
-          <div class="rpm-bar"><span class="rpm-title">CMO Review Queue · Dr. Islam Al-Midani</span><span class="rpm-badge" style="background:rgba(29,158,117,.2);color:#5dcaa5">Medical View · 7 pending</span></div>
-          <div class="rpm-body">
-            <div class="rpm-kpi-grid">
-              <div class="rpm-kpi"><div class="rpm-kpi-val" style="color:#f0997b">7</div><div class="rpm-kpi-lbl">Pending CMO Review</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val green">94.2%</div><div class="rpm-kpi-lbl">AI Accuracy (MTD)</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val gold">2h 14m</div><div class="rpm-kpi-lbl">Avg Review Time</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val">100%</div><div class="rpm-kpi-lbl">FRA Audit Coverage</div></div>
-            </div>
-            <div class="rpm-list">
-              <div style="font-family:'Ubuntu',sans-serif;font-size:.65rem;color:rgba(255,255,255,.35);margin-bottom:.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em">Pending Reviews</div>
-              <div class="rpm-row"><span class="rpm-row-lbl">IRH-4819 · ICU Over-Stay · EGP 28,000</span><span class="rpm-row-val" style="color:#f0997b">Score 73 &#8250;</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">IRH-4815 · Brand Upcoding · EGP 2,800</span><span class="rpm-row-val" style="color:var(--gold)">Score 58 &#8250;</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">IRH-4811 · Phantom Prescription · EGP 1,400</span><span class="rpm-row-val" style="color:#f0997b">Score 82 &#8250;</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">IRH-4808 · Duplicate Claim · EGP 950</span><span class="rpm-row-val" style="color:var(--gold)">Score 61 &#8250;</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TPA OPS -->
-      <div class="role-panel" id="rp-ops">
-        <div class="rp-info">
-          <div class="rp-badge" style="background:rgba(201,168,76,.1);color:var(--gold)">&#128203; TPA Operations Dashboard</div>
-          <div class="rp-h3">Claims Pipeline.<br><em>Zero Manual Bottlenecks.</em></div>
-          <div class="rp-desc">TPA operations teams previously reviewed every claim manually. With iRonic Health, 87% auto-approve — the ops team only sees the 13% that need attention. Real-time pipeline visibility, SLA tracking, and provider payment status all in one screen.</div>
-          <div class="rp-features">
-            <div class="rp-feat"><div class="rp-feat-ico">&#9889;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Real-Time Claims Pipeline</div><div class="rp-feat-desc">Live queue of all claims by status: auto-approved, pending CMO, escalated, rejected. Filter by insurer, provider, claim type, or amount.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#9201;</div><div class="rp-feat-body"><div class="rp-feat-ttl">SLA Tracking</div><div class="rp-feat-desc">Every claim has a decision SLA. Breaches flagged before they happen. CMO review queue SLA: 4 hours. Auto-approval: 4.3 seconds.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#128176;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Provider Payment Status</div><div class="rp-feat-desc">Which hospitals and pharmacies are awaiting payment? Which payments are scheduled for the next 48-hour cycle? Full payment trail per claim.</div></div></div>
-          </div>
-        </div>
-        <div class="rp-mockup">
-          <div class="rpm-bar"><span class="rpm-title">Operations · GlobeMed Egypt TPA · 18 Insurers</span><span class="rpm-badge" style="background:rgba(201,168,76,.2);color:var(--gold)">Ops View</span></div>
-          <div class="rpm-body">
-            <div class="rpm-kpi-grid">
-              <div class="rpm-kpi"><div class="rpm-kpi-val green">1,085</div><div class="rpm-kpi-lbl">Auto-Approved Today</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val" style="color:#f0997b">147</div><div class="rpm-kpi-lbl">Flagged for Review</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val gold">15</div><div class="rpm-kpi-lbl">CMO Queue</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val blue">EGP 2.1M</div><div class="rpm-kpi-lbl">Payments Due 48h</div></div>
-            </div>
-            <div class="rpm-list">
-              <div style="font-family:'Ubuntu',sans-serif;font-size:.65rem;color:rgba(255,255,255,.35);margin-bottom:.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em">Claims by Status</div>
-              <div class="rpm-row"><span class="rpm-row-lbl">&#9989; Auto-Approved</span><span class="rpm-row-val dqv-green">1,085 · 87%</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">&#128680; Fraud Flagged</span><span class="rpm-row-val" style="color:#f0997b">147 · 11.8%</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">&#9203; CMO Review</span><span class="rpm-row-val dqv-gold">15 · 1.2%</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">&#10060; Rejected</span><span class="rpm-row-val" style="color:rgba(255,255,255,.4)">0 · 0% (today)</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROVIDER -->
-      <div class="role-panel" id="rp-provider">
-        <div class="rp-info">
-          <div class="rp-badge" style="background:rgba(83,74,183,.12);color:#afa9ec">&#127973; Provider / Hospital Dashboard</div>
-          <div class="rp-h3">Pre-Auth Status.<br><em>Payment in 48 Hours.</em></div>
-          <div class="rp-desc">Hospitals and pharmacies connected to iRonic Health get the one thing they've never had before: payment certainty and speed. Pre-authorization confirmed in under 4 hours. Payment triggered within 48 hours of approved claim submission. Zero write-off risk on verified claims.</div>
-          <div class="rp-features">
-            <div class="rp-feat"><div class="rp-feat-ico">&#128337;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Pre-Authorization Status</div><div class="rp-feat-desc">Real-time status of all pending pre-auth requests. SLA countdown visible. Confirmed pre-auths trigger immediate treatment with guaranteed payment.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#128176;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Payment Pipeline</div><div class="rp-feat-desc">Which claims are approved and payment-pending? When will the next payment batch settle? No more 60–90 day wait — it's 48 hours.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#128293;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Quality Score &amp; Routing Rank</div><div class="rp-feat-desc">Your hospital's quality score — the metric iRonic Health uses to route insured patients to the best provider. Higher score = more referrals.</div></div></div>
-          </div>
-        </div>
-        <div class="rp-mockup">
-          <div class="rpm-bar"><span class="rpm-title">Cleopatra Hospital Group · Provider Portal</span><span class="rpm-badge" style="background:rgba(83,74,183,.2);color:#afa9ec">Provider View</span></div>
-          <div class="rpm-body">
-            <div class="rpm-kpi-grid">
-              <div class="rpm-kpi"><div class="rpm-kpi-val green">&#10003; 14</div><div class="rpm-kpi-lbl">Pre-Auths Confirmed Today</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val gold">EGP 1.8M</div><div class="rpm-kpi-lbl">Payments Due Next 48h</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val blue">94.7</div><div class="rpm-kpi-lbl">Quality Score (out of 100)</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val">#2</div><div class="rpm-kpi-lbl">Routing Rank (Cairo)</div></div>
-            </div>
-            <div class="rpm-list">
-              <div style="font-family:'Ubuntu',sans-serif;font-size:.65rem;color:rgba(255,255,255,.35);margin-bottom:.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em">Pending Pre-Auth Requests</div>
-              <div class="rpm-row"><span class="rpm-row-lbl">IRH-4820 · Elective Surgery · EGP 45K</span><span class="rpm-row-val" style="color:var(--gold)">3h 42m remaining</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">IRH-4818 · Inpatient Cardiac · EGP 28K</span><span class="rpm-row-val dqv-green">&#10003; Confirmed</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">IRH-4816 · Emergency Admit · EGP 12K</span><span class="rpm-row-val dqv-green">&#10003; Fast-tracked</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MEMBER -->
-      <div class="role-panel" id="rp-member">
-        <div class="rp-info">
-          <div class="rp-badge" style="background:rgba(55,138,221,.12);color:var(--bluel)">&#128100; Member / Patient App</div>
-          <div class="rp-h3">Your Health Card.<br><em>Real-Time Claims Tracking.</em></div>
-          <div class="rp-desc">For the first time, Egypt's 6–8 million insured members get a digital health card, real-time claim status, transparent benefit breakdown, and preventive care alerts — all in a single mobile app. QR scan at any connected provider for instant eligibility verification.</div>
-          <div class="rp-features">
-            <div class="rp-feat"><div class="rp-feat-ico">&#128262;</div><div class="rp-feat-body"><div class="rp-feat-ttl">QR Digital Health Card</div><div class="rp-feat-desc">No more laminated paper cards. Scan at hospital, pharmacy, or lab for instant eligibility verification. Stored in the app, always available.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#128203;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Claims Tracker</div><div class="rp-feat-desc">Real-time push notifications for every claim event: submitted, under review, approved, paid. Know exactly where your claim is at all times.</div></div></div>
-            <div class="rp-feat"><div class="rp-feat-ico">&#128200;</div><div class="rp-feat-body"><div class="rp-feat-ttl">Health Score &amp; Premium Rewards</div><div class="rp-feat-desc">Your personal Health Score (0–1000) with actionable steps to improve it. Healthy behaviour earns premium discounts of up to 25% at renewal.</div></div></div>
-          </div>
-        </div>
-        <div class="rp-mockup">
-          <div class="rpm-bar"><span class="rpm-title">iRonic Health · Patient App · v1.0</span><span class="rpm-badge" style="background:rgba(55,138,221,.2);color:var(--bluel)">iOS &amp; Android</span></div>
-          <div class="rpm-body">
-            <div class="rpm-kpi-grid">
-              <div class="rpm-kpi"><div class="rpm-kpi-val blue">847</div><div class="rpm-kpi-lbl">Health Score (out of 1000)</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val green">EGP 12,400</div><div class="rpm-kpi-lbl">Remaining Benefits</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val gold">&#8722;18%</div><div class="rpm-kpi-lbl">Premium Discount Earned</div></div>
-              <div class="rpm-kpi"><div class="rpm-kpi-val">3</div><div class="rpm-kpi-lbl">Active Claims</div></div>
-            </div>
-            <div class="rpm-list">
-              <div style="font-family:'Ubuntu',sans-serif;font-size:.65rem;color:rgba(255,255,255,.35);margin-bottom:.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em">Recent Claims</div>
-              <div class="rpm-row"><span class="rpm-row-lbl">Lab Tests · Alpha Medical · 08 May</span><span class="rpm-row-val dqv-gold">&#9203; Pending</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">Outpatient · Dr. Ahmed · 05 May</span><span class="rpm-row-val dqv-green">&#10003; Approved</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">Pharmacy · El Ezaby · 03 May</span><span class="rpm-row-val dqv-green">&#10003; Paid</span></div>
-              <div class="rpm-row"><span class="rpm-row-lbl">Radiology · Scan &amp; Imaging · 28 Apr</span><span class="rpm-row-val" style="color:#f0997b">&#9888; Flagged</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /role-panels -->
-  </div>
-</section>
-
-<!-- ═══ FEATURES ═══ -->
-<section class="s" style="background:var(--lt2);border-top:1px solid #e5ecf6;border-bottom:1px solid #e5ecf6" id="features" aria-labelledby="feat-h">
-  <div class="si">
-    <div class="reveal">
-      <div class="ley">Dashboard Capabilities</div>
-      <h2 class="lh2" id="feat-h">Every Feature Your<br>Team Needs. <span class="gold">Built In.</span></h2>
-      <p class="llead" style="max-width:560px">The Golden Dashboard is not a reporting tool bolted onto a fraud engine. It was designed from the ground up as the operational interface for every party in Egypt's healthcare insurance ecosystem.</p>
-    </div>
-    <div class="feat-grid">
-      <div class="feat-card reveal">
-        <div class="feat-ico">&#9889;</div>
-        <div class="feat-title">Real-Time Data (No Refresh Needed)</div>
-        <div class="feat-desc">Every claim decision, fraud flag, payment, and CMO action updates the dashboard the moment it happens. All 8 parties see the same truth simultaneously — no batch files, no overnight updates.</div>
-        <div class="feat-tag">WebSocket feed · &lt;200ms latency</div>
-      </div>
-      <div class="feat-card reveal reveal-d1">
-        <div class="feat-ico">&#127759;</div>
-        <div class="feat-title">Arabic &amp; English · Bilingual</div>
-        <div class="feat-desc">Every screen, every label, every report — fully available in Arabic and English. CMO review notes, FRA reports, and provider communications all support both languages with proper RTL rendering.</div>
-        <div class="feat-tag">Arabic RTL · English LTR · Auto-switch</div>
-      </div>
-      <div class="feat-card reveal reveal-d2">
-        <div class="feat-ico">&#128202;</div>
-        <div class="feat-title">Custom KPI Alerts</div>
-        <div class="feat-desc">Set loss ratio thresholds, fraud value alerts, and SLA breach notifications. Alerts delivered via dashboard, email, and SMS. Every CFO gets a daily morning summary. Every CMO gets real-time fraud cluster alerts.</div>
-        <div class="feat-tag">Email · SMS · Dashboard · WhatsApp</div>
-      </div>
-      <div class="feat-card reveal">
-        <div class="feat-ico">&#128196;</div>
-        <div class="feat-title">FRA Report Auto-Generation</div>
-        <div class="feat-desc">Monthly, quarterly, and annual FRA regulatory reports generated automatically with complete CMO sign-off trail. Export to PDF, XLSX, or deliver via API. Zero manual compilation effort for compliance teams.</div>
-        <div class="feat-tag">Monthly · Quarterly · Annual · Auto</div>
-      </div>
-      <div class="feat-card reveal reveal-d1">
-        <div class="feat-ico">&#128274;</div>
-        <div class="feat-title">Role-Based Access Control</div>
-        <div class="feat-desc">Every user sees only what their role permits. CFO cannot see individual claim IDs. CMO review decisions are CMO-only. Patient app data is PDPL-compliant — personal data never exposed to insurers without consent.</div>
-        <div class="feat-tag">RBAC · PDPL 151/2020 · AES-256</div>
-      </div>
-      <div class="feat-card reveal reveal-d2">
-        <div class="feat-ico">&#128190;</div>
-        <div class="feat-title">Export &amp; Data Portability</div>
-        <div class="feat-desc">All data exportable in PDF, XLSX, and JSON. Scheduled report delivery via email. Full API access for custom business intelligence integrations with existing insurer data warehouses. No data lock-in.</div>
-        <div class="feat-tag">PDF · XLSX · JSON · API · Scheduled</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FRA COMPLIANCE ═══ -->
-<section class="s" style="background:var(--dk1)" id="fra" aria-labelledby="fra-h">
-  <div class="si">
-    <div class="reveal">
-      <div class="dey">FRA Compliance Reporting</div>
-      <h2 class="dh2" id="fra-h">Monthly FRA Reports.<br><em>Auto-Generated. Zero Effort.</em></h2>
-      <p class="dlead" style="max-width:560px">Every insurer and TPA regulated by the FRA has mandatory reporting obligations. iRonic Health generates all required reports automatically — with full CMO sign-off trail and audit log — delivered before the FRA deadline.</p>
-    </div>
-    <div class="fra-layout">
-      <div class="reveal">
-        <div class="fra-report-card">
-          <div class="fra-rep-bar">
-            <span class="fra-rep-title">FRA Monthly Compliance Report · May 2026</span>
-            <span class="fra-rep-badge">Auto-Generated</span>
-          </div>
-          <div class="fra-rep-body">
-            <div class="fra-section-ttl">Claims Intelligence Summary</div>
-            <div class="fra-metric-grid">
-              <div class="fra-metric"><div class="fra-m-val">1,247</div><div class="fra-m-lbl">Total Claims MTD</div></div>
-              <div class="fra-metric"><div class="fra-m-val" style="color:var(--gold)">147</div><div class="fra-m-lbl">Fraud Flags Raised</div></div>
-              <div class="fra-metric"><div class="fra-m-val">87%</div><div class="fra-m-lbl">Auto-Approval Rate</div></div>
-              <div class="fra-metric"><div class="fra-m-val" style="color:var(--gold)">EGP 2.4M</div><div class="fra-m-lbl">Fraud Recovered</div></div>
-            </div>
-            <div class="fra-section-ttl">CMO Sign-Off Trail</div>
-            <div class="fra-sig-rows">
-              <div class="fra-sig-row"><span class="fra-sig-lbl">Total CMO Reviews</span><span class="fra-sig-val">15 decisions</span></div>
-              <div class="fra-sig-row"><span class="fra-sig-lbl">CMO Name</span><span class="fra-sig-val">Dr. Islam Al-Midani</span></div>
-              <div class="fra-sig-row"><span class="fra-sig-lbl">Medical Syndicate ID</span><span class="fra-sig-val" style="font-family:'JetBrains Mono',monospace">EMS-2024-00712</span></div>
-              <div class="fra-sig-row"><span class="fra-sig-lbl">Digital Signature</span><span class="fra-sig-val dqv-green">&#10003; Verified · RSA-4096</span></div>
-              <div class="fra-sig-row"><span class="fra-sig-lbl">Audit Log Completeness</span><span class="fra-sig-val dqv-green">100% — all decisions logged</span></div>
-              <div class="fra-sig-row"><span class="fra-sig-lbl">PDPL Compliance</span><span class="fra-sig-val dqv-green">&#10003; PDPL 151/2020</span></div>
-            </div>
-            <div class="fra-export-row">
-              <div class="fra-export-btn frab-pdf">&#128196; Export PDF</div>
-              <div class="fra-export-btn frab-xlsx">&#128200; Export XLSX</div>
-              <div class="fra-export-btn frab-api">&#9658; API</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal reveal-d2">
-        <div class="fra-features">
-          <div class="fra-feat">
-            <div class="fra-feat-ico">&#128336;</div>
-            <div class="fra-feat-body">
-              <div class="fra-feat-ttl">Monthly Reports — Auto-Delivered</div>
-              <div class="fra-feat-desc">FRA monthly claims report auto-generated on the 1st of each month. Delivered to the insurer's compliance officer and the FRA portal simultaneously. No human intervention required.</div>
-              <div class="fra-feat-badge" style="background:rgba(29,158,117,.15);color:#5dcaa5">Zero manual effort</div>
-            </div>
-          </div>
-          <div class="fra-feat">
-            <div class="fra-feat-ico">&#128084;</div>
-            <div class="fra-feat-body">
-              <div class="fra-feat-ttl">CMO Digital Sign-Off on Every Report</div>
-              <div class="fra-feat-desc">Every FRA report carries the CMO's digital signature (RSA-4096) and Medical Syndicate licence number. FRA Decision 229/2025 compliance built in — not retrofitted.</div>
-              <div class="fra-feat-badge" style="background:rgba(201,168,76,.12);color:var(--gold)">RSA-4096 signed</div>
-            </div>
-          </div>
-          <div class="fra-feat">
-            <div class="fra-feat-ico">&#128203;</div>
-            <div class="fra-feat-body">
-              <div class="fra-feat-ttl">Full Audit Trail — Every Claim</div>
-              <div class="fra-feat-desc">Every claim has a unique FRA Audit Trail ID. Every decision (AI score, CMO note, approval/rejection) is immutably logged. Fully queryable for retrospective FRA investigations.</div>
-              <div class="fra-feat-badge" style="background:rgba(24,95,165,.12);color:var(--bluel)">Immutable · FRA-queryable</div>
-            </div>
-          </div>
-          <div class="fra-feat">
-            <div class="fra-feat-ico">&#128274;</div>
-            <div class="fra-feat-body">
-              <div class="fra-feat-ttl">PDPL 151/2020 Data Handling</div>
-              <div class="fra-feat-desc">All personal health data processed under PDPL legitimate interest (Art. 6) for fraud detection. Data localised in Egypt. No cross-border transfer without explicit consent. PM Decree 816 (Nov 2025) compliant.</div>
-              <div class="fra-feat-badge" style="background:rgba(29,158,117,.12);color:#5dcaa5">PDPL · AES-256 · Egypt-hosted</div>
+            <div style="margin-top:13px;padding-top:12px;border-top:1px solid var(--g100)">
+              <div class="mm-grid">
+                <div class="mm"><div class="mm-v" style="color:var(--blue)">4.3s</div><div class="mm-l">Avg AI decision</div></div>
+                <div class="mm"><div class="mm-v" style="color:var(--green)">73%</div><div class="mm-l">Auto-approval rate</div></div>
+                <div class="mm"><div class="mm-v" style="color:var(--gold)">EGP 28K</div><div class="mm-l">Fraud blocked today</div></div>
+                <div class="mm"><div class="mm-v" style="color:var(--navy)">847</div><div class="mm-l">Claims processed</div></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ═══ DATA SOURCES ═══ -->
-<section class="s" style="background:var(--lt1);border-bottom:1px solid #e5ecf6" id="data-sources" aria-labelledby="src-h">
-  <div class="si">
-    <div class="reveal">
-      <div class="ley">Data Sources</div>
-      <h2 class="lh2" id="src-h">8 Parties Feed<br><em>One Dashboard</em></h2>
-      <p class="llead" style="max-width:540px">Every data point in the Golden Dashboard comes from a real, structured API feed from one of the 8 ecosystem parties. No manual entry. No batch delays. Every party feeds the truth in real time.</p>
-    </div>
-    <div class="sources-layout">
-      <div class="src-card reveal"><div class="src-ico">&#127981;</div><div class="src-name">Health Insurers</div><div class="src-desc">Policy data, member enrollment, coverage rules, loss ratio targets, approval authority</div><div class="src-badge">REST API · Daily feed</div></div>
-      <div class="src-card reveal reveal-d1"><div class="src-ico">&#128203;</div><div class="src-name">TPAs</div><div class="src-desc">Claims workflow, provider networks, contract pricing, member management</div><div class="src-badge">Webhook · Real-time</div></div>
-      <div class="src-card reveal reveal-d2"><div class="src-ico">&#127973;</div><div class="src-name">Hospitals</div><div class="src-desc">Admissions, treatment records, ICD/CPT codes, bed availability, discharge data</div><div class="src-badge">HL7 FHIR · API</div></div>
-      <div class="src-card reveal reveal-d3"><div class="src-ico">&#128104;&#8205;&#9877;&#65039;</div><div class="src-name">Doctors</div><div class="src-desc">Prescriptions, treatment plans, referrals, consultation records</div><div class="src-badge">Prescription API</div></div>
-      <div class="src-card reveal"><div class="src-ico">&#128138;</div><div class="src-name">Pharmacies</div><div class="src-desc">Dispensing data, drug codes, prescription verification, counterfeit flags</div><div class="src-badge">POS integration</div></div>
-      <div class="src-card reveal reveal-d1"><div class="src-ico">&#128300;</div><div class="src-name">Labs &amp; Diagnostics</div><div class="src-desc">Test results, imaging reports, test ordering data, capacity availability</div><div class="src-badge">LIS API · Results feed</div></div>
-      <div class="src-card reveal reveal-d2"><div class="src-ico">&#127970;</div><div class="src-name">Corporate HR</div><div class="src-desc">Employee enrollment, payroll demographics, benefit plan design, budget data</div><div class="src-badge">HR system API</div></div>
-      <div class="src-card reveal reveal-d3"><div class="src-ico">&#128100;</div><div class="src-name">Members</div><div class="src-desc">Biometric verification, health history (consented), QR card scan events</div><div class="src-badge">Mobile SDK · QR scan</div></div>
-    </div>
-    <div class="data-flow-strip reveal">
-      <span class="dfs-item">&#127981; Insurer policy data</span><span class="dfs-arr">&#8594;</span>
-      <span class="dfs-item">&#128203; TPA claims workflow</span><span class="dfs-arr">&#8594;</span>
-      <span class="dfs-item">&#9874;&#65039; iRonic AI Engine</span><span class="dfs-arr">&#8594;</span>
-      <span class="dfs-item">&#128202; Golden Dashboard</span><span class="dfs-arr">&#8594;</span>
-      <span class="dfs-item">&#9878;&#65039; FRA Report</span><span class="dfs-arr">&#8594;</span>
-      <span class="dfs-item">&#128176; Payment triggered</span>
-    </div>
-  </div>
-</section>
+    <!-- ══ CMO PANEL ══ -->
+    <div class="rp" id="p-cmo">
+      <div class="kg">
+        <div class="kc rd"><div class="k-ico">🚨</div><div class="k-lbl">High-Risk Members</div><div class="k-val">147</div><div class="k-sub">Requiring clinical review</div><div class="k-delta dn">↑ 12 flagged today</div></div>
+        <div class="kc go"><div class="k-ico">⏳</div><div class="k-lbl">Prior Auth Queue</div><div class="k-val">23</div><div class="k-sub">Pending CMO decision</div><div class="k-delta up">SLA: 4hr · Avg 18min</div></div>
+        <div class="kc bl"><div class="k-ico">🏥</div><div class="k-lbl">Overtreatment Alerts</div><div class="k-val">38</div><div class="k-sub">AI-flagged this month</div><div class="k-delta gd">↓ 22% vs last month</div></div>
+        <div class="kc gr"><div class="k-ico">✅</div><div class="k-lbl">CMO Decisions</div><div class="k-val">612</div><div class="k-sub">AI-supported this month</div><div class="k-delta up">94% accuracy rate</div></div>
+      </div>
 
-<!-- ═══ INTEGRATION ═══ -->
-<section class="s" style="background:var(--dk2)" id="integration" aria-labelledby="integ-h">
-  <div class="si">
-    <div class="reveal">
-      <div class="dey">Technical Integration</div>
-      <h2 class="dh2" id="integ-h">Connect Your Data.<br><em>Dashboard Lives in 4 Weeks.</em></h2>
-      <p class="dlead" style="max-width:560px">The Golden Dashboard requires no new infrastructure. It sits on top of your existing claims workflow via API — no rip-and-replace, no downtime, no re-training of your operations team.</p>
+      <div class="row c2">
+        <div class="card">
+          <div class="ch"><div><div class="ct">Active Fraud Alerts</div><div class="cs">AI-detected · Ranked by severity</div></div><span class="tag t-rd">23 Active</span></div>
+          <div class="cb">
+            <div class="fl">
+              <div class="fri"><div class="fri-ico">💊</div><div class="fri-body"><div class="fri-t">Drug Splitting — Cairo Scan Pharmacy</div><div class="fri-m">Provider ID: PRV-4821 · 8 scripts across 3 members · Rolodex match</div></div><div class="fri-amt">EGP 42K</div></div>
+              <div class="fri am"><div class="fri-ico">🏥</div><div class="fri-body"><div class="fri-t">Phantom Billing — Al Salam Private</div><div class="fri-m">Billed procedures without admission records · 3 claims flagged</div></div><div class="fri-amt">EGP 18K</div></div>
+              <div class="fri am"><div class="fri-ico">🔬</div><div class="fri-body"><div class="fri-t">Upcoding — Lab Test Cluster</div><div class="fri-m">PRV-2914 · 15 tests billed at specialist rate · Pattern detected</div></div><div class="fri-amt">EGP 9,200</div></div>
+              <div class="fri go"><div class="fri-ico">👤</div><div class="fri-body"><div class="fri-t">Eligibility Mismatch — MBR-19421</div><div class="fri-m">Policy expired Feb 2026 · 4 claims submitted post-lapse</div></div><div class="fri-amt">EGP 4,800</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch"><div><div class="ct">Prior Auth — CMO Queue</div><div class="cs">Awaiting clinical decision · SLA 4 hours</div></div><span class="tag t-go">23 Pending</span></div>
+          <div class="cb" style="padding:0">
+            <table class="ct2">
+              <thead><tr><th>Member</th><th>Procedure</th><th>Cost</th><th>AI Rec.</th><th>Wait</th></tr></thead>
+              <tbody>
+                <tr><td>Ahmed M. · 47M</td><td>Cardiac Cath.</td><td>EGP 85K</td><td><span class="pill p-gr">Approve</span></td><td style="color:#94a3b8;font-size:10.5px">12 min</td></tr>
+                <tr><td>Fatma K. · 62F</td><td>Hip Replacement</td><td>EGP 120K</td><td><span class="pill p-am">Review</span></td><td style="color:#94a3b8;font-size:10.5px">34 min</td></tr>
+                <tr><td>Omar S. · 31M</td><td>MRI Brain</td><td>EGP 4,200</td><td><span class="pill p-gr">Approve</span></td><td style="color:#94a3b8;font-size:10.5px">8 min</td></tr>
+                <tr><td>Nour A. · 28F</td><td>Maternity Package</td><td>EGP 22K</td><td><span class="pill p-gr">Approve</span></td><td style="color:#d97706;font-size:10.5px">2h 14m</td></tr>
+                <tr><td>Mahmoud T. · 55M</td><td>Bypass Surgery</td><td>EGP 240K</td><td><span class="pill p-rd">Decline</span></td><td style="color:#e05252;font-size:10.5px">3h 41m ⚠</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ch"><div><div class="ct">Overtreatment Savings — Breakdown</div><div class="cs">AI-flagged intervention savings · Month to date</div></div><span class="tag t-gr">EGP 630K Saved MTD</span></div>
+        <div class="cb">
+          <div class="pw">
+            <div class="pi"><div class="ph"><span class="pl">Unnecessary Lab Tests</span><span class="pv">EGP 124K saved</span></div><div class="pt"><div class="pf" style="width:72%;background:#1B5FA6"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">Extended Inpatient Stays</span><span class="pv">EGP 280K saved</span></div><div class="pt"><div class="pf" style="width:88%;background:#B8963E"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">Specialist Upcoding</span><span class="pv">EGP 67K saved</span></div><div class="pt"><div class="pf" style="width:42%;background:#1d9e75"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">Redundant Imaging</span><span class="pv">EGP 159K saved</span></div><div class="pt"><div class="pf" style="width:58%;background:#e05252"></div></div></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="integ-layout">
-      <div class="reveal">
-        <div class="integ-options">
-          <div class="io-item">
-            <div class="io-ico">&#128279;</div>
-            <div class="io-body">
-              <div class="io-name">REST API Integration</div>
-              <div class="io-desc">The primary integration method. Your claims system sends events to the iRonic Health REST API. Synchronous responses in under 4.3 seconds. Supports JSON and HL7 FHIR formats.</div>
-              <div class="io-tag" style="background:rgba(24,95,165,.15);color:var(--bluel)">JSON · HL7 FHIR · JWT auth · AES-256</div>
+
+    <!-- ══ TPA OPS PANEL ══ -->
+    <div class="rp" id="p-tpa">
+      <div class="kg">
+        <div class="kc bl"><div class="k-ico">📋</div><div class="k-lbl">Claims Processed Today</div><div class="k-val">847</div><div class="k-sub">of ~950 expected today</div><div class="k-delta up">89% SLA achieved</div></div>
+        <div class="kc gr"><div class="k-ico">⚡</div><div class="k-lbl">Avg Processing Time</div><div class="k-val">4.3s</div><div class="k-sub">vs 3–5 days manual</div><div class="k-delta up">↓ 99.7% faster</div></div>
+        <div class="kc go"><div class="k-ico">🤖</div><div class="k-lbl">Auto-Approval Rate</div><div class="k-val">73%</div><div class="k-sub">618 of 847 claims</div><div class="k-delta up">↑ 4pp vs last week</div></div>
+        <div class="kc rd"><div class="k-ico">👁</div><div class="k-lbl">Pending Manual Review</div><div class="k-val">127</div><div class="k-sub">15% of today's claims</div><div class="k-delta gd">↓ from 31% pre-AI</div></div>
+      </div>
+
+      <div class="row c2">
+        <div class="card">
+          <div class="ch"><div><div class="ct">Claims Volume by Hour</div><div class="cs">Today · Inbound vs AI-processed</div></div></div>
+          <div class="cb">
+            <div class="cw">
+              <svg viewBox="0 0 500 140" preserveAspectRatio="none">
+                <line x1="0" y1="25" x2="500" y2="25" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="0" y1="70" x2="500" y2="70" stroke="#f1f5f9" stroke-width="1"/>
+                <line x1="0" y1="110" x2="500" y2="110" stroke="#f1f5f9" stroke-width="1"/>
+                <!-- Inbound bars -->
+                <rect x="5" y="72" width="28" height="38" rx="3" fill="rgba(27,95,166,.12)"/>
+                <rect x="55" y="58" width="28" height="52" rx="3" fill="rgba(27,95,166,.12)"/>
+                <rect x="105" y="40" width="28" height="70" rx="3" fill="rgba(27,95,166,.12)"/>
+                <rect x="155" y="28" width="28" height="82" rx="3" fill="rgba(27,95,166,.12)"/>
+                <rect x="205" y="22" width="28" height="88" rx="3" fill="rgba(27,95,166,.12)"/>
+                <rect x="255" y="32" width="28" height="78" rx="3" fill="rgba(27,95,166,.12)"/>
+                <rect x="305" y="42" width="28" height="68" rx="3" fill="rgba(27,95,166,.12)"/>
+                <rect x="355" y="55" width="28" height="55" rx="3" fill="rgba(27,95,166,.12)"/>
+                <rect x="405" y="68" width="28" height="42" rx="3" fill="rgba(27,95,166,.12)"/>
+                <rect x="455" y="78" width="28" height="32" rx="3" fill="rgba(27,95,166,.12)"/>
+                <!-- Processed bars (narrower, inside) -->
+                <rect x="10" y="76" width="18" height="34" rx="2" fill="#1B5FA6"/>
+                <rect x="60" y="63" width="18" height="47" rx="2" fill="#1B5FA6"/>
+                <rect x="110" y="45" width="18" height="65" rx="2" fill="#1B5FA6"/>
+                <rect x="160" y="33" width="18" height="77" rx="2" fill="#1B5FA6"/>
+                <rect x="210" y="27" width="18" height="83" rx="2" fill="#1B5FA6"/>
+                <rect x="260" y="37" width="18" height="73" rx="2" fill="#1B5FA6"/>
+                <rect x="310" y="47" width="18" height="63" rx="2" fill="#1B5FA6"/>
+                <rect x="360" y="60" width="18" height="50" rx="2" fill="#1B5FA6"/>
+                <rect x="410" y="73" width="18" height="37" rx="2" fill="#1d9e75"/>
+                <rect x="460" y="82" width="18" height="28" rx="2" fill="#1d9e75"/>
+                <!-- X labels -->
+                <text x="19" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">8am</text>
+                <text x="69" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">9am</text>
+                <text x="119" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">10am</text>
+                <text x="169" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">11am</text>
+                <text x="219" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">12pm</text>
+                <text x="269" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">1pm</text>
+                <text x="319" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">2pm</text>
+                <text x="369" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">3pm</text>
+                <text x="419" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">4pm</text>
+                <text x="469" y="130" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="DM Sans,sans-serif">5pm</text>
+              </svg>
+            </div>
+            <div style="display:flex;gap:14px;margin-top:8px">
+              <div class="li"><div class="ld" style="background:#1B5FA6"></div><span class="ll">AI Processed</span></div>
+              <div class="li"><div class="ld" style="background:rgba(27,95,166,.2)"></div><span class="ll">Inbound</span></div>
+              <div class="li"><div class="ld" style="background:#1d9e75"></div><span class="ll">Current hour</span></div>
             </div>
           </div>
-          <div class="io-item">
-            <div class="io-ico">&#128279;</div>
-            <div class="io-body">
-              <div class="io-name">Webhook Push</div>
-              <div class="io-desc">For real-time dashboard updates, iRonic Health pushes events to your registered endpoints via webhook. Fraud flags, CMO decisions, and payment status all delivered instantly.</div>
-              <div class="io-tag" style="background:rgba(29,158,117,.12);color:#5dcaa5">Real-time push · Retry logic · Signed payloads</div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><div><div class="ct">Pipeline Distribution</div><div class="cs">Today's 847 claims · By decision</div></div></div>
+          <div class="cb" style="padding-top:14px">
+            <div class="donut-row">
+              <svg class="donut-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#1d9e75" stroke-width="13" stroke-dasharray="165.15 226.19" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#d97706" stroke-width="13" stroke-dasharray="33.93 226.19" stroke-dashoffset="-165.15" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#e05252" stroke-width="13" stroke-dasharray="27.14 226.19" stroke-dashoffset="-199.08" transform="rotate(-90 50 50)"/>
+                <text x="50" y="47" text-anchor="middle" font-size="11" font-weight="700" fill="#1e293b" font-family="DM Sans,sans-serif">847</text>
+                <text x="50" y="58" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="DM Sans,sans-serif">claims</text>
+              </svg>
+              <div class="leg">
+                <div class="li"><div class="ld" style="background:#1d9e75"></div><span class="ll">Auto-Approved</span><span class="lv">618</span><span class="lp">73%</span></div>
+                <div class="li"><div class="ld" style="background:#d97706"></div><span class="ll">Flagged/Review</span><span class="lv">127</span><span class="lp">15%</span></div>
+                <div class="li"><div class="ld" style="background:#e05252"></div><span class="ll">Auto-Rejected</span><span class="lv">102</span><span class="lp">12%</span></div>
+              </div>
             </div>
-          </div>
-          <div class="io-item">
-            <div class="io-ico">&#128190;</div>
-            <div class="io-body">
-              <div class="io-name">Batch Feed (Legacy Systems)</div>
-              <div class="io-desc">For TPA or insurer systems that cannot support real-time API, iRonic Health accepts hourly or daily batch feeds in CSV, XML, or fixed-width formats. All legacy formats supported.</div>
-              <div class="io-tag" style="background:rgba(201,168,76,.12);color:var(--gold)">CSV · XML · Fixed-width · SFTP · S3</div>
-            </div>
-          </div>
-          <div class="io-item">
-            <div class="io-ico">&#128202;</div>
-            <div class="io-body">
-              <div class="io-name">BI &amp; Analytics Connectors</div>
-              <div class="io-desc">Export dashboard data to your existing business intelligence stack. Pre-built connectors for Power BI, Tableau, Looker, and custom data warehouses via JDBC/ODBC.</div>
-              <div class="io-tag" style="background:rgba(83,74,183,.12);color:#afa9ec">Power BI · Tableau · JDBC · ODBC</div>
+            <div style="margin-top:13px;padding-top:12px;border-top:1px solid var(--g100)">
+              <div class="pw" style="margin-top:0">
+                <div class="pi"><div class="ph"><span class="pl">GlobeMed TPA</span><span class="pv">412 claims</span></div><div class="pt"><div class="pf" style="width:82%;background:#1B5FA6"></div></div></div>
+                <div class="pi"><div class="ph"><span class="pl">Bupa Egypt Direct</span><span class="pv">218 claims</span></div><div class="pt"><div class="pf" style="width:52%;background:#B8963E"></div></div></div>
+                <div class="pi"><div class="ph"><span class="pl">AXA One Health</span><span class="pv">217 claims</span></div><div class="pt"><div class="pf" style="width:48%;background:#1d9e75"></div></div></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="reveal reveal-d2">
-        <div class="code-snippet">
-          <div class="cs-bar">
-            <div class="cs-dot" style="background:#f0997b"></div>
-            <div class="cs-dot" style="background:var(--gold)"></div>
-            <div class="cs-dot" style="background:#5dcaa5"></div>
-            <span class="cs-title">Webhook Payload · Fraud Flag Event</span>
-          </div>
-          <div class="cs-body">
-<span class="cs-cmt">// iRonic Health → Your System (real-time)</span>
-<span class="cs-cmt">// POST https://your-tpa.com/webhooks/ironic</span>
+    </div>
 
-{
-  <span class="cs-key">"event"</span>: <span class="cs-str">"claim.fraud_flagged"</span>,
-  <span class="cs-key">"claim_id"</span>: <span class="cs-str">"IRH-4821"</span>,
-  <span class="cs-key">"timestamp"</span>: <span class="cs-str">"2026-05-18T09:23:41Z"</span>,
-  <span class="cs-key">"fraud_score"</span>: <span class="cs-num">87</span>,
-  <span class="cs-key">"decision"</span>: <span class="cs-str">"CMO_REVIEW"</span>,
-  <span class="cs-key">"amount_egp"</span>: <span class="cs-num">3200</span>,
-  <span class="cs-key">"archetypes"</span>: [
-    {
-      <span class="cs-key">"type"</span>: <span class="cs-str">"phantom_prescription"</span>,
-      <span class="cs-key">"confidence"</span>: <span class="cs-num">0.82</span>,
-      <span class="cs-key">"evidence"</span>: <span class="cs-str">"doctor_pattern_mismatch"</span>
-    }
-  ],
-  <span class="cs-key">"fra_audit_id"</span>: <span class="cs-str">"FRA-2026-8821"</span>,
-  <span class="cs-key">"cmo_queue_eta"</span>: <span class="cs-str">"&lt;4 hours"</span>
-}
+    <!-- ══ PROVIDER PANEL ══ -->
+    <div class="rp" id="p-prov">
+      <div class="kg">
+        <div class="kc gr"><div class="k-ico">✅</div><div class="k-lbl">Eligibility Checks Today</div><div class="k-val">1,247</div><div class="k-sub">Via QR scan & API</div><div class="k-delta up">Avg 4.3 seconds</div></div>
+        <div class="kc bl"><div class="k-ico">💳</div><div class="k-lbl">Payments Processed</div><div class="k-val">EGP 1.8M</div><div class="k-sub">MTD · Network providers</div><div class="k-delta up">340 invoices cleared</div></div>
+        <div class="kc go"><div class="k-ico">⏱</div><div class="k-lbl">Avg Payment Cycle</div><div class="k-val">8 days</div><div class="k-sub">vs 45–90 days industry</div><div class="k-delta up">↓ 82% faster</div></div>
+        <div class="kc rd"><div class="k-ico">🔴</div><div class="k-lbl">Disputed Claims</div><div class="k-val">14</div><div class="k-sub">0.9% dispute rate</div><div class="k-delta gd">↓ from 8.4% pre-platform</div></div>
+      </div>
+
+      <div class="row c65">
+        <div class="card">
+          <div class="ch"><div><div class="ct">Network Provider Performance</div><div class="cs">Top hospitals by claim volume · May 2026</div></div></div>
+          <div class="cb" style="padding:0">
+            <table class="ct2">
+              <thead><tr><th>Hospital / Clinic</th><th>Claims</th><th>Avg Value</th><th>Quality Score</th><th>Payment ETA</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Dar Al Fouad Hospital</strong></td><td>214</td><td>EGP 22K</td><td><span class="pill p-gr">96/100</span></td><td style="color:var(--green);font-size:10.5px;font-weight:600">5 days</td></tr>
+                <tr><td><strong>As-Salam International</strong></td><td>187</td><td>EGP 18K</td><td><span class="pill p-gr">91/100</span></td><td style="color:var(--green);font-size:10.5px;font-weight:600">7 days</td></tr>
+                <tr><td><strong>Ain Shams Specialists</strong></td><td>142</td><td>EGP 31K</td><td><span class="pill p-gr">88/100</span></td><td style="color:var(--green);font-size:10.5px;font-weight:600">6 days</td></tr>
+                <tr><td><strong>Cleopatra Hospital</strong></td><td>98</td><td>EGP 9K</td><td><span class="pill p-am">74/100</span></td><td style="color:var(--amber);font-size:10.5px;font-weight:600">12 days</td></tr>
+                <tr><td><strong>Cairo Scan Radiology</strong></td><td>86</td><td>EGP 4.2K</td><td><span class="pill p-am">68/100</span></td><td style="color:var(--amber);font-size:10.5px;font-weight:600">Under review</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div style="margin-top:1rem;display:flex;gap:.5rem;flex-wrap:wrap">
-          <span style="font-family:'Ubuntu',sans-serif;font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">REST API</span>
-          <span style="font-family:'Ubuntu',sans-serif;font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">Webhooks</span>
-          <span style="font-family:'Ubuntu',sans-serif;font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">JWT Auth</span>
-          <span style="font-family:'Ubuntu',sans-serif;font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">PDPL Compliant</span>
-          <span style="font-family:'Ubuntu',sans-serif;font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)">AES-256</span>
+
+        <div class="card">
+          <div class="ch"><div><div class="ct">Live Eligibility Check</div><div class="cs">QR scan result — real-time</div></div><div class="demo-pill" style="font-size:9px;padding:2px 8px">● Demo</div></div>
+          <div class="cb">
+            <div style="background:var(--g50);border-radius:9px;padding:14px;border:1px solid var(--g200);margin-bottom:12px">
+              <div class="mc-head">
+                <div class="mc-av">A</div>
+                <div>
+                  <div class="mc-nm">Ahmed Mohamed Hassan</div>
+                  <div class="mc-id">MBR-19847 · GlobeMed · Group Medical</div>
+                </div>
+                <span class="pill p-gr" style="margin-left:auto">✓ Eligible</span>
+              </div>
+              <div class="mc-grid">
+                <div class="mc-item"><span>Policy:</span> <span>GMD-2026-4821</span></div>
+                <div class="mc-item"><span>Expires:</span> <span>Dec 31, 2026</span></div>
+                <div class="mc-item"><span>Annual Limit:</span> <span>EGP 500,000</span></div>
+                <div class="mc-item"><span>Used:</span> <span style="color:var(--green)">EGP 128,400</span></div>
+                <div class="mc-item"><span>Deductible:</span> <span>EGP 200/visit</span></div>
+                <div class="mc-item"><span>Co-pay:</span> <span>20%</span></div>
+              </div>
+              <div class="mc-foot">Verified via QR scan · Response: 3.8s · PDPL compliant · AES-256</div>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button style="flex:1;padding:9px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer">Submit Pre-Auth</button>
+              <button style="padding:9px 14px;background:#fff;border:1px solid var(--g200);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:12px;color:var(--g600);cursor:pointer">📱 New QR</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ═══ CTA ═══ -->
-<section class="cta-sec" aria-label="Call to action">
-  <div class="cta-bg-ring" aria-hidden="true"></div>
-  <div class="cta-bg-ring2" aria-hidden="true"></div>
-  <div class="cta-inner reveal">
-    <div class="cta-eyebrow">See It Live · In Your Environment</div>
-    <h2 class="cta-h">The Dashboard Is<br><span>Live in 4 Weeks.</span></h2>
-    <p class="cta-sub">Request a demo to see the Golden Dashboard working on your actual claims data. We connect to your existing TPA or claims system — no new infrastructure required, no disruption to your team.</p>
-    <div class="cta-btns">
-      <a href="contact.html" class="cta-btn-g">Request a Demo &#8594;</a>
-      <a href="platform.html" class="cta-btn-w">All 7 AI Modules</a>
+    <!-- ══ MEMBER PANEL ══ -->
+    <div class="rp" id="p-mbr">
+      <div class="kg">
+        <div class="kc gr"><div class="k-ico">💚</div><div class="k-lbl">Health Score</div><div class="k-val">74/100</div><div class="k-sub">Good — above average</div><div class="k-delta up">↑ 8 pts this quarter</div></div>
+        <div class="kc bl"><div class="k-ico">🛡</div><div class="k-lbl">Annual Limit Remaining</div><div class="k-val">EGP 371K</div><div class="k-sub">of EGP 500K annual</div><div class="k-delta up">74% remaining</div></div>
+        <div class="kc go"><div class="k-ico">📋</div><div class="k-lbl">Active Claims</div><div class="k-val">2</div><div class="k-sub">1 approved · 1 pending</div><div class="k-delta up">Avg 4.3s AI decision</div></div>
+        <div class="kc rd"><div class="k-ico">💊</div><div class="k-lbl">Pharmacy Budget Used</div><div class="k-val">EGP 3,600</div><div class="k-sub">of EGP 6,000 monthly</div><div class="k-delta dn">60% used mid-month</div></div>
+      </div>
+
+      <div class="row c2">
+        <div class="card">
+          <div class="ch"><div><div class="ct">My Health Score</div><div class="cs">Behavioral & clinical data · Ahmed M. Hassan</div></div><span class="tag t-gr">Good</span></div>
+          <div class="cb">
+            <div style="display:flex;align-items:center;gap:18px;margin-bottom:14px">
+              <div class="hs-wrap">
+                <svg class="hs-svg" viewBox="0 0 110 110">
+                  <circle cx="55" cy="55" r="46" fill="none" stroke="#e2e8f0" stroke-width="9"/>
+                  <circle cx="55" cy="55" r="46" fill="none" stroke="#1d9e75" stroke-width="9" stroke-dasharray="213.63 288.81" stroke-dashoffset="72.2" transform="rotate(-90 55 55)" stroke-linecap="round"/>
+                </svg>
+                <div class="hs-c"><span class="hs-n">74</span><span class="hs-l">/ 100</span></div>
+              </div>
+              <div style="flex:1">
+                <div class="pw" style="margin-top:0">
+                  <div class="pi"><div class="ph"><span class="pl" style="font-size:10.5px">Physical Activity</span><span class="pv" style="font-size:10.5px">82</span></div><div class="pt"><div class="pf" style="width:82%;background:#1d9e75"></div></div></div>
+                  <div class="pi"><div class="ph"><span class="pl" style="font-size:10.5px">Chronic Risk</span><span class="pv" style="font-size:10.5px">68</span></div><div class="pt"><div class="pf" style="width:68%;background:#B8963E"></div></div></div>
+                  <div class="pi"><div class="ph"><span class="pl" style="font-size:10.5px">Med. Adherence</span><span class="pv" style="font-size:10.5px">91</span></div><div class="pt"><div class="pf" style="width:91%;background:#1B5FA6"></div></div></div>
+                  <div class="pi"><div class="ph"><span class="pl" style="font-size:10.5px">Preventive Screens</span><span class="pv" style="font-size:10.5px">60</span></div><div class="pt"><div class="pf" style="width:60%;background:#e05252"></div></div></div>
+                </div>
+              </div>
+            </div>
+            <div style="background:rgba(29,158,117,.07);border:1px solid rgba(29,158,117,.2);border-radius:8px;padding:10px 12px;font-size:11px;color:#1d9e75;line-height:1.5">
+              💡 <strong>Premium Insight:</strong> Complete your preventive screenings this month to unlock a −15% premium reduction at your Dec 2026 renewal.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><div><div class="ct">My Claims</div><div class="cs">Active & recent · Ahmed M. Hassan</div></div></div>
+          <div class="cb" style="padding:0">
+            <table class="ct2">
+              <thead><tr><th>Claim</th><th>Service</th><th>Amount</th><th>Status</th><th>My Share</th></tr></thead>
+              <tbody>
+                <tr><td><span class="cid">CLM-48471</span></td><td>Cardiology visit</td><td>EGP 1,800</td><td><span class="pill p-gr">✓ Approved</span></td><td style="font-size:10.5px;font-weight:700;color:var(--green)">EGP 360</td></tr>
+                <tr><td><span class="cid">CLM-48312</span></td><td>Lab tests</td><td>EGP 850</td><td><span class="pill p-gy">⏳ Pending</span></td><td style="font-size:10.5px;color:#94a3b8">Calculating</td></tr>
+                <tr><td><span class="cid">CLM-48201</span></td><td>Pharmacy</td><td>EGP 620</td><td><span class="pill p-gr">✓ Approved</span></td><td style="font-size:10.5px;font-weight:700;color:var(--green)">EGP 124</td></tr>
+                <tr><td><span class="cid">CLM-48098</span></td><td>MRI Brain</td><td>EGP 4,200</td><td><span class="pill p-gr">✓ Approved</span></td><td style="font-size:10.5px;font-weight:700;color:var(--green)">EGP 840</td></tr>
+              </tbody>
+            </table>
+            <div style="padding:12px 15px;background:var(--g50);border-top:1px solid var(--g100)">
+              <div style="font-size:11px;color:var(--g600);margin-bottom:8px">Digital Health Card · Present QR at any network hospital</div>
+              <div style="display:flex;gap:8px">
+                <button style="flex:1;padding:8px;background:var(--navy);color:#fff;border:none;border-radius:7px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;cursor:pointer">📱 Show QR Card</button>
+                <button style="flex:1;padding:8px;background:#fff;border:1px solid var(--g200);border-radius:7px;font-family:'DM Sans',sans-serif;font-size:11px;color:var(--g600);cursor:pointer">📞 Support</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="cta-metrics">Real-Time · 8 Parties · 5 Role Views · Arabic &amp; English · Auto FRA Reports · PDPL 151/2020</div>
-  </div>
-</section>
 
-</main>
-
-<!-- ═══ FOOTER ═══ -->
-<div id="footer-placeholder"></div>
-
-<button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+  </div><!-- /content -->
+</div><!-- /main -->
 
 <script>
-/* ── Chart animation ── */
-var chartHeights = [38,45,42,58,63,71,67,79,74,88,93,100];
-var chartAnimated = false;
-function animateChart(){
-  if(chartAnimated) return; chartAnimated = true;
-  chartHeights.forEach(function(h,i){
-    setTimeout(function(){
-      var el = document.getElementById('b'+(i+1));
-      if(el) el.style.height = h+'%';
-    }, i * 80);
-  });
+const titles={cfo:'Platform Overview — CFO · Financial Intelligence',cmo:'Clinical Overview — CMO · Decision Support',tpa:'TPA Operations — Claims Processing',prov:'Provider Portal — Network Management',mbr:'Member Dashboard — Ahmed M. Hassan'};
+
+function setRole(r,btn){
+  document.querySelectorAll('.rb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.rp').forEach(p=>p.classList.remove('active'));
+  document.getElementById('p-'+r).classList.add('active');
+  document.getElementById('tb-title').textContent=titles[r]||'Dashboard';
+  animateBars();
 }
 
-/* ── Loss ratio bars ── */
-var lrAnimated = false;
-function animateLR(){
-  if(lrAnimated) return; lrAnimated = true;
-  var vals = [63, 68, 71, 74];
-  vals.forEach(function(v,i){
-    setTimeout(function(){
-      var el = document.getElementById('lr'+(i+1));
-      if(el) el.style.width = v+'%';
-    }, i * 120);
-  });
-}
-
-/* ── Fraud type bars ── */
-var ftAnimated = false;
-function animateFT(){
-  if(ftAnimated) return; ftAnimated = true;
-  var vals = [82,67,54,41,29];
-  vals.forEach(function(v,i){
-    setTimeout(function(){
-      var el = document.getElementById('ft'+(i+1));
-      if(el) el.style.width = v+'%';
-    }, i * 100);
-  });
-}
-
-/* ── Live feed rotation ── */
-var feedEvents = [
-  {cls:'dfi-flag',ico:'ico-flag',icoTxt:'&#128680;',ttl:'Fraud Flagged &#8212; Phantom Prescription',sub:'IRH-4821 · Cairo Medical Centre · EGP 3,200 · Unictam pattern · Score 87'},
-  {cls:'dfi-ok',ico:'ico-ok',icoTxt:'&#9989;',ttl:'Auto-Approved &#8212; Outpatient Visit',sub:'IRH-4822 · Dr. Amr Clinic · EGP 1,100 · Confidence 98.4%'},
-  {cls:'dfi-warn',ico:'ico-warn',icoTxt:'&#9203;',ttl:'CMO Review &#8212; ICU Over-Stay',sub:'IRH-4823 · Cleopatra Heliopolis · EGP 28,000 · High-cost threshold'},
-  {cls:'dfi-ok',ico:'ico-ok',icoTxt:'&#128300;',ttl:'Lab Tests Verified &#8212; Paid',sub:'IRH-4824 · Alpha Medical Labs · EGP 650 · 3.9s decision'},
-  {cls:'dfi-flag',ico:'ico-flag',icoTxt:'&#9888;&#65039;',ttl:'Brand Upcoding Detected',sub:'IRH-4825 · El Ezaby Pharmacy #47 · EGP 2,800 · Generic substituted'},
-  {cls:'dfi-info',ico:'ico-info',icoTxt:'&#127973;',ttl:'Pre-Auth Approved &#8212; Elective Surgery',sub:'IRH-4826 · Saudi German Hospital · EGP 45,000 · &lt;4h SLA'},
-  {cls:'dfi-ok',ico:'ico-ok',icoTxt:'&#128176;',ttl:'Pharmacy Payment Processed &#8212; 48h Cycle',sub:'IRH-4827 · Pharmacy Marts · EGP 12,400 · 340 pharmacies batch'},
-  {cls:'dfi-flag',ico:'ico-flag',icoTxt:'&#128680;',ttl:'Duplicate Claim Detected',sub:'IRH-4828 · Two providers · Same diagnosis · EGP 1,900 total · Score 76'},
-];
-var feedIdx = 0;
-var claimsCount = 1247;
-
-function addFeedItem(){
-  var feed = document.getElementById('db-feed');
-  if(!feed) return;
-  var e = feedEvents[feedIdx % feedEvents.length]; feedIdx++;
-  var div = document.createElement('div');
-  div.className = 'db-feed-item ' + e.cls;
-  div.innerHTML = '<div class="dfi-ico '+e.ico+'">'+e.icoTxt+'</div><div class="dfi-body"><div class="dfi-title">'+e.ttl+'</div><div class="dfi-sub">'+e.sub+'</div></div><div class="dfi-time">just now</div>';
-  feed.insertBefore(div, feed.firstChild);
-  if(feed.children.length > 5) feed.removeChild(feed.lastChild);
-  /* Update claims counter */
-  claimsCount += Math.floor(Math.random()*3)+1;
-  var kpi = document.getElementById('kpi-claims');
-  if(kpi) kpi.textContent = claimsCount.toLocaleString('en');
-}
-
-/* ── Intersection observer for animations ── */
-function initAll(){
-  /* Reveal */
-  var els = document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('visible'); }); }
-  else {
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          e.target.classList.add('visible');
-          obs.unobserve(e.target);
-          /* trigger chart/bar animations when they come into view */
-          if(e.target.id==='db-chart' || e.target.closest('#db-chart')){ animateChart(); }
-        }
-      });
-    },{threshold:0.07,rootMargin:'0px 0px -40px 0px'});
-    els.forEach(function(el){ obs.observe(el); });
-  }
-  /* Dashboard animations on scroll */
-  var dashObs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        setTimeout(animateChart, 200);
-        setTimeout(animateLR, 400);
-        setTimeout(animateFT, 600);
-        dashObs.disconnect();
-      }
-    });
-  },{threshold:0.1});
-  var dbWrap = document.querySelector('.db-wrap');
-  if(dbWrap) dashObs.observe(dbWrap);
-}
-
-/* ── Tab switchers ── */
-function dbSetTab(el, tabId){
-  document.querySelectorAll('.dbt-tab').forEach(function(t){ t.classList.remove('active'); });
+function setNav(el){
+  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
   el.classList.add('active');
 }
 
-function setRole(role){
-  document.querySelectorAll('.rt-tab').forEach(function(t){ t.classList.remove('active'); });
-  document.querySelectorAll('.role-panel').forEach(function(p){ p.classList.remove('active'); });
-  var tab = document.querySelector('[onclick="setRole(\''+role+'\')"]');
-  var panel = document.getElementById('rp-'+role);
-  if(tab) tab.classList.add('active');
-  if(panel) panel.classList.add('active');
+// Animate progress bars on role switch
+function animateBars(){
+  document.querySelectorAll('.pf,.ai-fill').forEach(b=>{
+    const w=b.style.width;
+    b.style.transition='none';
+    b.style.width='0';
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(()=>{
+        b.style.transition='width 1.4s cubic-bezier(.4,0,.2,1)';
+        b.style.width=w;
+      });
+    });
+  });
 }
 
-/* ── Scroll top ── */
-var btn = document.getElementById('scroll-top');
-window.addEventListener('scroll',function(){ btn.classList.toggle('visible',window.scrollY>400); },{passive:true});
+// Real-time feed
+const events=[
+  {c:'#1d9e75',t:'<strong>CLM-48482</strong> auto-approved · Dar Al Fouad · EGP 9,200'},
+  {c:'#d97706',t:'<strong>CLM-48481</strong> flagged · upcoding pattern · PRV-2914'},
+  {c:'#1B5FA6',t:'<strong>MBR-20014</strong> eligibility verified · 3.9s · Bupa Egypt'},
+  {c:'#e05252',t:'<strong>CLM-48480</strong> rejected · expired policy MBR-19421'},
+  {c:'#1d9e75',t:'<strong>CLM-48479</strong> pharmacy approved · EGP 840 · Cleopatra'},
+  {c:'#d97706',t:'<strong>CLM-48478</strong> CMO review queued · EGP 42K · Ain Shams'},
+  {c:'#1d9e75',t:'<strong>CLM-48477</strong> inpatient approved · As-Salam · EGP 18K'},
+  {c:'#1B5FA6',t:'<strong>MBR-20012</strong> QR scan · Cleopatra Hospital · 4.1s'},
+  {c:'#e05252',t:'<strong>FRAUD-0084</strong> phantom billing alert · PRV-2914 · EGP 9K'},
+  {c:'#1d9e75',t:'<strong>CLM-48476</strong> lab test approved · Cairo Scan · EGP 1,200'},
+];
+let ei=0,sec=0;
 
-/* ── Init ── */
-window.addEventListener('load', function(){
-  setTimeout(initAll, 80);
-  setTimeout(function(){ setInterval(addFeedItem, 3500); }, 2000);
-});
+function updateFeed(){
+  const f=document.getElementById('feed');
+  if(!f)return;
+  // Age existing items
+  f.querySelectorAll('.ftm').forEach((el,i)=>{
+    if(i===0)return;
+    const s=(i*14)+sec;
+    el.textContent=s<60?s+'s ago':Math.floor(s/60)+'m '+(s%60)+'s ago';
+  });
+  sec+=14;
+  // New event every ~20s
+  if(sec%20===0){
+    const ev=events[ei%events.length];ei++;
+    const d=document.createElement('div');
+    d.className='fi';
+    d.innerHTML=`<div class="fd" style="background:${ev.c}"></div><span class="ft">${ev.t}</span><span class="ftm">just now</span>`;
+    f.insertBefore(d,f.firstChild);
+    if(f.children.length>5)f.removeChild(f.lastChild);
+  }
+}
+
+function updateClock(){
+  const el=document.getElementById('tb-time');
+  if(!el)return;
+  const n=new Date();
+  const h=String(n.getHours()).padStart(2,'0');
+  const m=String(n.getMinutes()).padStart(2,'0');
+  el.textContent=`May 27, 2026 · ${h}:${m} EGT`;
+}
+
+updateClock();
+animateBars();
+setInterval(updateFeed,14000);
+setInterval(updateClock,60000);
 </script>
-<script src="js/main.js"></script>
-<script src="js/components.js"></script>
+
+</div><!-- /layout -->
 </body>
 </html>
