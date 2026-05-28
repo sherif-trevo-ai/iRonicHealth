@@ -703,3 +703,6 @@ body{background:var(--white)!important;color:var(--ink)!important;font-family:va
 .fraud-stats .fs-lbl{color:var(--muted)!important}
 .fs-item{background:var(--surface)!important;border-color:var(--border)!important}
 .phone-dir{width:fit-content}
+/* ── تخطّي إلى المحتوى (WCAG 2.4.1) ── */
+.skip-to-content{position:absolute;right:-9999px;top:0;z-index:9999;background:#1B5FA6;color:#fff;padding:10px 18px;border-radius:0 0 0 8px;font-weight:700;font-size:.9rem;text-decoration:none;font-family:'Cairo',sans-serif}
+.skip-to-content:focus{right:0}

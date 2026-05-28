@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /v1/
+Disallow: /test.html
+
+Sitemap: https://sherif-trevo-ai.github.io/iRonicHealth/sitemap.xml

@@ -493,3 +493,6 @@ a.lang-opt:hover{background:#f0f5ff;color:#185fa5}
   background:#e8f0fe;color:#185fa5;
   font-weight:600;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
 @media(max-width:768px){.lang-switcher{display:none}}
+/* ── Skip-to-content (WCAG 2.4.1) ── */
+.skip-to-content{position:absolute;left:-9999px;top:0;z-index:9999;background:#1B5FA6;color:#fff;padding:10px 18px;border-radius:0 0 8px 0;font-weight:600;font-size:.9rem;text-decoration:none;font-family:'Ubuntu',sans-serif}
+.skip-to-content:focus{left:0}
