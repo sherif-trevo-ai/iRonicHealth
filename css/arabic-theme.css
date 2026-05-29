@@ -705,3 +705,13 @@ body{background:var(--white)!important;color:var(--ink)!important;font-family:va
 .phone-dir{width:fit-content}
 /* ── تخطّي إلى المحتوى — font override only (positioning handled by style.css) ── */
 .skip-to-content{font-family:'Cairo',sans-serif}
+
+/* ══ WCAG AA — Arabic badge text darkened ══ */
+.pill.p-gr{color:#145e46!important}
+.pill.p-am{color:#92400e!important}
+.pill.p-rd{color:#991b1b!important}
+.pill.p-bl{color:#1e40af!important}
+.tag.t-go{color:#7a5e10!important}
+.tag.t-gr{color:#145e46!important}
+/* Muted text on light backgrounds */
+.cs,.k-sub{color:#64748b}

@@ -496,3 +496,30 @@ a.lang-opt:hover{background:#f0f5ff;color:#185fa5}
 /* ── Skip-to-content (WCAG 2.4.1) — universal LTR+RTL ── */
 .skip-to-content{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;background:#1B5FA6;color:#fff;font-weight:600;font-size:.9rem;text-decoration:none;z-index:9999}
 .skip-to-content:focus{position:fixed;top:8px;left:50%;transform:translateX(-50%);width:auto;height:auto;padding:10px 22px;margin:0;overflow:visible;clip:auto;white-space:normal;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+
+/* ══ WCAG AA COLOR FIXES ══
+   Muted text on light/white backgrounds: #94a3b8 fails (2.56:1)
+   Using #64748b instead (4.76:1 — PASSES AA) for secondary text on light backgrounds.
+   Gold #B8963E on white fails (2.81:1).
+   Status badge text darkened for AA compliance on light badge backgrounds.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* Darker muted for light-bg contexts */
+.light-section .cs,.card .cs,.kc .k-sub{color:#64748b!important}
+.card .cs,.ch .cs{color:#64748b}
+
+/* Back-to-top button: ensure contrast on all backgrounds */
+#scroll-top{background:#1B5FA6!important;color:#fff!important;box-shadow:0 2px 12px rgba(27,95,166,.35)!important}
+#scroll-top:hover{background:#14488a!important}
+
+/* Status badge text — darkened for AA on tinted backgrounds */
+.pill.p-gr{color:#145e46!important}
+.pill.p-am{color:#92400e!important}
+.pill.p-rd{color:#991b1b!important}
+.pill.p-bl{color:#1e40af!important}
+.tag.t-go{color:#7a5e10!important}
+.tag.t-gr{color:#145e46!important}
+.tag.t-rd{color:#991b1b!important}
+
+/* Gold text on light backgrounds — use darkened gold */
+.gold-text{color:#7a5e10!important}

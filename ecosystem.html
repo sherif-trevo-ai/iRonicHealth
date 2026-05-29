@@ -291,39 +291,52 @@
 
 
 
-/* Q2: Light content sections — dark hero preserved */
+
+/* Q2 FIXED: Light content sections — hero preserved, all white text overridden */
 .e-sec-odd,.e-sec-even{background:#f8fafc!important}
-.e-sec-odd *,.e-sec-even *{color:#1e293b}
-.e-sec-odd h2,.e-sec-even h2,.e-sec-odd h3,.e-sec-even h3{color:#1A1A2E!important}
-.e-sec-odd p,.e-sec-even p,.e-sec-odd li,.e-sec-even li{color:#475569!important}
-.eco-section-label{color:#1B5FA6!important;border-color:#1B5FA6!important}
-.e-sec-odd .ba-item,.e-sec-even .ba-item{background:#fff!important;border:1px solid #e2e8f0!important;color:#475569!important}
-.e-sec-odd .party-card,.e-sec-even .party-card{background:#fff!important;border:1px solid #e2e8f0!important}
+/* Universal text reset — overrides all white/rgba text */
+.e-sec-odd *,.e-sec-even *{color:#1e293b!important}
+/* Restore specific semantic colors */
+.e-sec-odd .e-h2,.e-sec-even .e-h2{color:#1A1A2E!important;font-family:'Ubuntu',sans-serif!important}
+.e-sec-odd .eco-sub,.e-sec-even .eco-sub{color:#475569!important}
+.e-sec-odd .e-lead,.e-sec-even .e-lead{color:#475569!important}
+.e-sec-odd .e-eyebrow,.e-sec-even .e-eyebrow{color:#1B5FA6!important}
+.e-sec-odd .ehs-val,.e-sec-even .ehs-val{color:#1A1A2E!important}
+.e-sec-odd .ehs-lbl,.e-sec-even .ehs-lbl{color:#64748b!important}
+.e-sec-odd .ba-title,.e-sec-even .ba-title{color:#1A1A2E!important}
+.e-sec-odd .ba-item,.e-sec-even .ba-item{color:#475569!important;background:#fff!important;border:1px solid #e2e8f0!important}
 .e-sec-odd .party-name,.e-sec-even .party-name{color:#1A1A2E!important}
 .e-sec-odd .party-desc,.e-sec-even .party-desc{color:#64748b!important}
-.e-sec-odd .pp-card,.e-sec-even .pp-card{background:#fff!important;border:1px solid #e2e8f0!important}
-.e-sec-odd .pp-card-bar,.e-sec-even .pp-card-bar{background:#f1f5f9!important;border-color:#e2e8f0!important}
-.e-sec-odd .pp-label,.e-sec-even .pp-label{color:#1A1A2E!important}
-.e-sec-odd .fsr-step,.e-sec-even .fsr-step{background:#fff!important;border:1px solid #e2e8f0!important}
+.e-sec-odd .party-card,.e-sec-even .party-card{background:#fff!important;border:1px solid #e2e8f0!important}
+.e-sec-odd .party-num,.e-sec-even .party-num{color:#94a3b8!important}
+.e-sec-odd .hub-core-sub,.e-sec-even .hub-core-sub{color:#64748b!important}
+.e-sec-odd .sec-h,.e-sec-even .sec-h{color:#1A1A2E!important}
+.e-sec-odd .sec-sub,.e-sec-even .sec-sub{color:#64748b!important}
+.e-sec-odd .mp-lead,.e-sec-even .mp-lead{color:#64748b!important}
+.e-sec-odd .mp-stat-val,.e-sec-even .mp-stat-val{color:#1B5FA6!important}
 .e-sec-odd .fsr-title,.e-sec-even .fsr-title{color:#1A1A2E!important}
 .e-sec-odd .fsr-desc,.e-sec-even .fsr-desc{color:#475569!important}
+.e-sec-odd .fsr-step,.e-sec-even .fsr-step{background:#fff!important;border:1px solid #e2e8f0!important}
 .e-sec-odd .fsr-step-num,.e-sec-even .fsr-step-num{color:#94a3b8!important}
-.code-block{background:#1A1A2E!important}
-.code-block *{color:#e2e8f0!important}
-.e-sec-odd .mp-item,.e-sec-even .mp-item{color:#475569!important}
 .e-sec-odd .integ-step,.e-sec-even .integ-step{background:#fff!important;border:1px solid #e2e8f0!important}
 .e-sec-odd .is-title,.e-sec-even .is-title{color:#1A1A2E!important}
 .e-sec-odd .is-desc,.e-sec-even .is-desc{color:#64748b!important}
-.e-sec-odd .sec-h,.e-sec-even .sec-h{color:#1A1A2E!important}
-.e-sec-odd .sec-sub,.e-sec-even .sec-sub{color:#64748b!important}
-.hub-core{background:linear-gradient(135deg,#1A1A2E,#1B5FA6)!important}
-.pp-before-box{background:#fff!important;border:1px solid #fee2e2!important}
-.pp-after-box{background:#f0fdf4!important;border:1px solid #bbf7d0!important}
-.pp-before-box *{color:#1e293b!important}
-.pp-after-box *{color:#1e293b!important}
-.pp-desc{color:#475569!important}
-.mp-lead{color:#475569!important}
-.mp-stat-val{color:#1B5FA6!important}
+/* Preserve brand-colored badges */
+.e-sec-odd .tag-blue,.e-sec-even .tag-blue,.e-sec-odd .eco-tag,.e-sec-even .eco-tag{color:#1B5FA6!important;background:rgba(27,95,166,.1)!important}
+.e-sec-odd .tag-gold,.e-sec-even .tag-gold{color:#7a5e10!important;background:rgba(184,150,62,.12)!important}
+.e-sec-odd .tag-green,.e-sec-even .tag-green{color:#145e46!important;background:rgba(29,158,117,.1)!important}
+/* Before/after boxes */
+.e-sec-odd .pp-before-box,.e-sec-even .pp-before-box{background:#fff8f8!important;border:1px solid #fecaca!important}
+.e-sec-odd .pp-before-box *,.e-sec-even .pp-before-box *{color:#1e293b!important}
+.e-sec-odd .pp-after-box,.e-sec-even .pp-after-box{background:#f0fdf4!important;border:1px solid #bbf7d0!important}
+.e-sec-odd .pp-after-box *,.e-sec-even .pp-after-box *{color:#1e293b!important}
+/* Code blocks stay dark */
+.code-block{background:#1A1A2E!important;color:#e2e8f0!important}
+.code-block *{color:#e2e8f0!important}
+/* Hub core stays dark */
+.hub-core{background:linear-gradient(135deg,#1A1A2E,#1B5FA6)!important;color:#fff!important}
+.hub-core *{color:#fff!important}
+.hub-core .hub-core-sub{color:rgba(255,255,255,.7)!important}
 
 </style>
 <script type="application/ld+json">
