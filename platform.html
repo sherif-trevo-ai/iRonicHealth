@@ -17,7 +17,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Kufam:wght@400;700;900&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
 /* ══ PLATFORM HERO ══ */
@@ -46,9 +46,9 @@
   font-family: 'Ubuntu', sans-serif;
 }
 .plat-h1 {
-  font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 900; line-height: 1.05;
+  font-size: clamp(2.6rem, 5vw, 4rem); font-weight:700; line-height: 1.05;
   color: #fff; letter-spacing: -.03em; margin-bottom: 1.25rem;
-  font-family: 'Kufam', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .plat-h1 em { color: #c9a84c; font-style: normal; }
 .plat-sub {
@@ -59,7 +59,7 @@
   display: flex; gap: 2.5rem; flex-wrap: wrap;
 }
 .phs { }
-.phs-val { font-size: 1.8rem; font-weight: 900; color: #fff; font-family: 'Kufam', sans-serif; line-height: 1; }
+.phs-val { font-size: 1.8rem; font-weight:700; color: #fff; font-family: 'Ubuntu', sans-serif; line-height: 1; }
 .phs-val.gold { color: #c9a84c; }
 .phs-val.green { color: #1d9e75; }
 .phs-val.blue { color: #378add; }
@@ -106,8 +106,8 @@
   padding: 2px 8px; border-radius: 4px; font-size: .65rem; font-weight: 800;
 }
 .mod-h2 {
-  font-size: 2rem; font-weight: 900; color: #fff; line-height: 1.1;
-  margin-bottom: .875rem; font-family: 'Kufam', sans-serif; letter-spacing: -.02em;
+  font-size: 2rem; font-weight:700; color: #fff; line-height: 1.1;
+  margin-bottom: .875rem; font-family: 'Ubuntu', sans-serif; letter-spacing: -.02em;
 }
 .mod-h2 em { color: #c9a84c; font-style: normal; }
 .mod-desc {
@@ -140,7 +140,7 @@
   background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06);
   border-radius: 10px; padding: .875rem 1rem;
 }
-.mod-metric-val { font-size: 1.35rem; font-weight: 900; font-family: 'Kufam', sans-serif; color: #fff; line-height: 1; margin-bottom: .25rem; }
+.mod-metric-val { font-size: 1.35rem; font-weight:700; font-family: 'Ubuntu', sans-serif; color: #fff; line-height: 1; margin-bottom: .25rem; }
 .mod-metric-val.gold { color: #c9a84c; }
 .mod-metric-val.green { color: #1d9e75; }
 .mod-metric-val.blue { color: #378add; }
@@ -178,7 +178,7 @@
 .score-ring.high { border-color: rgba(216,90,48,.4); box-shadow: 0 0 20px rgba(216,90,48,.15); }
 .score-ring.med { border-color: rgba(201,168,76,.4); box-shadow: 0 0 20px rgba(201,168,76,.15); }
 .score-ring.low { border-color: rgba(29,158,117,.4); box-shadow: 0 0 20px rgba(29,158,117,.15); }
-.score-num { font-size: 1.6rem; font-weight: 900; font-family: 'Kufam', sans-serif; }
+.score-num { font-size: 1.6rem; font-weight:700; font-family: 'Ubuntu', sans-serif; }
 .score-num.high { color: #d85a30; }
 .score-num.med { color: #c9a84c; }
 .score-num.low { color: #1d9e75; }
@@ -262,11 +262,11 @@
 .pb-val.pos { color: #5dcaa5; }
 .prem-total { background: rgba(201,168,76,.08); border: 1px solid rgba(201,168,76,.2); border-radius: 8px; padding: .75rem 1rem; text-align: center; }
 .pt-lbl { font-size: .68rem; color: rgba(201,168,76,.7); text-transform: uppercase; letter-spacing: .08em; font-family: 'Ubuntu', sans-serif; margin-bottom: .25rem; }
-.pt-val { font-size: 1.4rem; font-weight: 900; color: #c9a84c; font-family: 'Kufam', sans-serif; }
+.pt-val { font-size: 1.4rem; font-weight:700; color: #c9a84c; font-family: 'Ubuntu', sans-serif; }
 /* Mini dashboard */
 .mini-kpi-row { display: grid; grid-template-columns: repeat(2,1fr); gap: .5rem; margin-bottom: .875rem; }
 .mkpi { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 8px; padding: .7rem .875rem; }
-.mkpi-val { font-size: 1.1rem; font-weight: 900; color: #fff; font-family: 'Kufam', sans-serif; }
+.mkpi-val { font-size: 1.1rem; font-weight:700; color: #fff; font-family: 'Ubuntu', sans-serif; }
 .mkpi-val.gold { color: #c9a84c; }
 .mkpi-val.green { color: #1d9e75; }
 .mkpi-lbl { font-size: .62rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; }
@@ -355,6 +355,21 @@
   .mod-metrics { grid-template-columns:1fr 1fr; }
 }
 
+
+
+/* Q2: Light content sections — platform hero preserved */
+.plat-sec-dark{background:#f8fafc!important}
+.plat-sec-dark *{color:#1e293b}
+.plat-sec-dark h2,.plat-sec-dark h3{color:#1A1A2E!important}
+.plat-sec-dark p{color:#475569!important}
+.module-card{background:#fff!important;border:1px solid #e2e8f0!important}
+.mod-title{color:#1A1A2E!important}.mod-desc{color:#475569!important}
+.feat-item{background:#fff!important;border:1px solid #e2e8f0!important}
+.feat-title{color:#1A1A2E!important}.feat-body{color:#475569!important}
+.comp-badge{background:#fff!important;border:1px solid #e2e8f0!important}
+.comp-name{color:#1A1A2E!important}.comp-desc{color:#475569!important}
+.arch-card{background:#fff!important;border:1px solid #e2e8f0!important}
+.step-title{color:#1A1A2E!important}.step-desc{color:#475569!important}
 
 </style>
 <script type="application/ld+json">
@@ -876,7 +891,7 @@
       <div class="reveal reveal-d2">
         <div class="tech-col-title">Compliance &amp; Regulation</div>
         <div class="compliance-badges">
-          <div class="comp-badge active"><div class="comp-ico">⚖️</div><div class="comp-name">FRA Licensed</div><div class="comp-desc">Financial Regulatory Authority compliance for all AI-driven insurance decisions</div><div class="comp-status cs-active">Active</div></div>
+          <div class="comp-badge active"><div class="comp-ico">⚖️</div><div class="comp-name">FRA-Compliant</div><div class="comp-desc">All AI-driven insurance decisions operate within Financial Regulatory Authority compliance guidelines</div><div class="comp-status cs-active">Active</div></div>
           <div class="comp-badge active"><div class="comp-ico">🔐</div><div class="comp-name">PDPL 151/2020</div><div class="comp-desc">Full compliance with Egypt's Personal Data Protection Law — data localization, consent management</div><div class="comp-status cs-active">Active</div></div>
           <div class="comp-badge active"><div class="comp-ico">🩺</div><div class="comp-name">CMO Oversight</div><div class="comp-desc">Licensed Chief Medical Officer (Egyptian Medical Syndicate) reviews all AI-flagged decisions</div><div class="comp-status cs-active">Active</div></div>
           <div class="comp-badge active"><div class="comp-ico">📋</div><div class="comp-name">ICD / CPT Coding</div><div class="comp-desc">All AI models trained on Egyptian-approved ICD-10 and CPT coding standards</div><div class="comp-status cs-active">Active</div></div>

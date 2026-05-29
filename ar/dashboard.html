@@ -1,791 +1,678 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="لوحة تحكم iRonic Health — مراقبة لحظية للمطالبات، كشف الاحتيال، والنقاط الصحية بالذكاء الاصطناعي.">
-<meta property="og:title" content="لوحة التحكم — iRonic Health">
-<title>لوحة التحكم · iRonic Health</title>
-<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>iRonic Health — لوحة التحكم الموحدة</title>
+<meta property="og:title" content="iRonic Health — لوحة التحكم التفاعلية">
+<meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/arabic-theme.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;900&family=Kufam:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
-
-/* ══ DESIGN TOKENS ══ */
-/* light theme now via arabic-theme.css */
-
-/* handled by arabic-theme.css */
-.nav{direction:rtl}
-.nav-center a{font-family:'Cairo',sans-serif}
-.nav-logo-text{text-align:right}
-.logo-wordmark,.logo-tagline,.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
-
-/* HERO */
-.dash-hero{
-  min-height:55vh;background:linear-gradient(145deg,#060f1c,#0a1628 55%,#0d1f3a);
-  display:flex;flex-direction:column;justify-content:center;
-  padding:140px 5% 70px;position:relative;overflow:hidden;
-}
-.dh-bg{position:absolute;inset:0;pointer-events:none;
-  background-image:radial-gradient(circle 600px at 80% 30%,rgba(29,158,117,.1),transparent 60%),
-                   radial-gradient(circle 400px at 5% 70%,rgba(24,95,165,.08),transparent 55%);}
-.dh-grid{position:absolute;inset:0;
-  background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
-  background-size:40px 40px;}
-.dh-inner{position:relative;z-index:1;max-width:720px}
-.dh-badge{display:inline-flex;align-items:center;gap:8px;
-  background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.25);
-  border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;
-  font-size:.82rem;font-weight:700;color:#1d9e75;letter-spacing:.04em;}
-.dh-live{display:inline-flex;align-items:center;gap:6px;margin-right:.75rem}
-.dh-live-dot{width:8px;height:8px;border-radius:50%;background:#1d9e75;
-  animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
-.dh-h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;line-height:1.1;
-  color:#fff;margin-bottom:1.25rem;}
-.dh-h1 em{color:#1d9e75;font-style:normal}
-.dh-sub{font-size:1rem;color:rgba(255,255,255,.52);line-height:1.85;max-width:580px}
-
-/* COMMON */
-.sec-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem}
-.sec-h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;color:#fff;margin-bottom:.75rem}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* ══ MAIN DASHBOARD ══ */
-.dash-main{padding:4rem 5%;background:#060f1c}
-.dm-inner{max-width:1300px;margin:0 auto}
-
-/* Top bar */
-.dash-topbar{display:flex;align-items:center;justify-content:space-between;
-  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;padding:1rem 1.5rem;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
-.dtb-title{font-size:1rem;font-weight:800;color:#fff}
-.dtb-subtitle{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.2rem}
-.dtb-status{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#1d9e75;font-weight:700}
-.dtb-dot{width:8px;height:8px;border-radius:50%;background:#1d9e75;animation:pulse 2s infinite}
-.dtb-time{font-size:.75rem;color:rgba(255,255,255,.35);font-weight:400}
-
-/* KPI Grid */
-.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:2rem}
-.kpi-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
-  border-radius:12px;padding:1.25rem 1rem;position:relative;overflow:hidden}
-.kpi-card::after{content:'';position:absolute;bottom:0;right:0;left:0;height:2px}
-.kpi-card.k-green::after{background:#1d9e75}
-.kpi-card.k-gold::after{background:#c9a84c}
-.kpi-card.k-blue::after{background:#185fa5}
-.kpi-card.k-red::after{background:#e74c3c}
-.kpi-card.k-purple::after{background:#9b59b6}
-.kpi-label{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.38);
-  text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
-.kpi-val{font-size:1.6rem;font-weight:900;line-height:1;margin-bottom:.3rem}
-.kpi-val.green{color:#1d9e75}.kpi-val.gold{color:#c9a84c}
-.kpi-val.blue{color:#378add}.kpi-val.red{color:#e74c3c}.kpi-val.purple{color:#b97fe8}
-.kpi-change{font-size:.72rem;color:rgba(255,255,255,.35)}
-.kpi-change.up{color:#1d9e75}.kpi-change.down{color:#e74c3c}
-
-/* Main Dashboard Grid */
-.dash-body{display:grid;grid-template-columns:1fr 1fr 380px;gap:1.5rem}
-
-/* Chart area */
-.chart-panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;padding:1.5rem;grid-column:span 2}
-.panel-title{font-size:.88rem;font-weight:800;color:#fff;margin-bottom:.375rem}
-.panel-sub{font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:1.5rem}
-.chart-container{height:180px;position:relative;display:flex;align-items:flex-end;gap:6px}
-.chart-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
-.chart-bar{width:100%;border-radius:4px 4px 0 0;position:relative;transition:height .5s ease;min-height:4px}
-.chart-bar.fraud{background:linear-gradient(to top,#e74c3c,rgba(231,76,60,.5))}
-.chart-bar.legit{background:linear-gradient(to top,#1d9e75,rgba(29,158,117,.5))}
-.chart-x-label{font-size:.62rem;color:rgba(255,255,255,.3);text-align:center}
-.chart-legend{display:flex;gap:1.5rem;margin-top:1rem}
-.cleg{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:rgba(255,255,255,.5)}
-.cleg-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
-.cleg-dot.fraud{background:#e74c3c}.cleg-dot.legit{background:#1d9e75}
-
-/* Fraud detection panel */
-.fraud-panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;padding:1.5rem}
-.fraud-gauge{position:relative;width:150px;height:80px;margin:0 auto 1rem;overflow:hidden}
-.gauge-bg{fill:none;stroke:rgba(255,255,255,.08);stroke-width:14}
-.gauge-fill{fill:none;stroke-width:14;stroke-linecap:round;
-  stroke-dasharray:282;stroke-dashoffset:282;
-  transition:stroke-dashoffset 1.5s cubic-bezier(.16,1,.3,1)}
-.gauge-fill.active{stroke-dashoffset:85}
-.gauge-green{stroke:#1d9e75}
-.gauge-center-text{position:absolute;bottom:0;left:0;right:0;
-  text-align:center;font-size:1.4rem;font-weight:900;color:#1d9e75}
-.gauge-label{font-size:.65rem;color:rgba(255,255,255,.35)}
-.fraud-stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem}
-.fs-item{background:rgba(255,255,255,.04);border-radius:8px;padding:.75rem;text-align:center}
-.fs-val{font-size:1.1rem;font-weight:900;color:#fff}
-.fs-val.red{color:#e74c3c}.fs-val.green{color:#1d9e75}
-.fs-lbl{font-size:.65rem;color:rgba(255,255,255,.35);margin-top:.2rem}
-
-/* Activity Feed */
-.activity-feed{display:flex;flex-direction:column;gap:0}
-.feed-wrap{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;padding:1.5rem;max-height:600px;overflow-y:auto;grid-row:span 2;
-  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent}
-.feed-item{display:flex;align-items:flex-start;gap:.875rem;
-  padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.feed-item:last-child{border-bottom:none}
-.fi-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px}
-.fi-dot.green{background:#1d9e75}.fi-dot.red{background:#e74c3c}
-.fi-dot.gold{background:#c9a84c}.fi-dot.blue{background:#378add}
-.fi-content{flex:1}
-.fi-title{font-size:.8rem;font-weight:700;color:#fff}
-.fi-meta{font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.15rem;line-height:1.5}
-.fi-time{font-size:.65rem;color:rgba(255,255,255,.25);flex-shrink:0;margin-top:2px}
-
-/* Claims Table */
-.claims-panel{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  border-radius:14px;padding:1.5rem;margin-top:1.5rem;grid-column:span 3}
-.claims-table-wrap{overflow-x:auto}
-.claims-table{width:100%;border-collapse:collapse;min-width:700px}
-.claims-table th{font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);
-  padding:.625rem .875rem;border-bottom:1px solid rgba(255,255,255,.07);
-  text-align:right;white-space:nowrap}
-.claims-table td{font-size:.8rem;color:rgba(255,255,255,.65);
-  padding:.625rem .875rem;border-bottom:1px solid rgba(255,255,255,.04);text-align:right}
-.claims-table tr:last-child td{border-bottom:none}
-.cl-status{display:inline-flex;align-items:center;gap:.375rem;
-  font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px}
-.cls-approved{background:rgba(29,158,117,.15);color:#1d9e75}
-.cls-flagged{background:rgba(231,76,60,.15);color:#e74c3c}
-.cls-pending{background:rgba(201,168,76,.12);color:#c9a84c}
-.cls-review{background:rgba(24,95,165,.15);color:#378add}
-.cl-score{font-weight:800}
-.cl-score.high{color:#1d9e75}.cl-score.medium{color:#c9a84c}.cl-score.low{color:#e74c3c}
-
-/* AI Health Score */
-.health-score{padding:5rem 5%}
-.hs-inner{max-width:1100px;margin:0 auto}
-.hs-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3rem}
-.hs-left{}
-.hs-score-big{position:relative;width:200px;height:200px;margin:0 auto}
-.hsc-svg{transform:rotate(-90deg)}
-.hsc-track{fill:none;stroke:rgba(255,255,255,.08);stroke-width:16}
-.hsc-fill{fill:none;stroke:#1d9e75;stroke-width:16;stroke-linecap:round;
-  stroke-dasharray:502;stroke-dashoffset:502;
-  transition:stroke-dashoffset 1.8s cubic-bezier(.16,1,.3,1)}
-.hsc-fill.active{stroke-dashoffset:88}
-.hs-center{position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center}
-.hs-num{font-size:3rem;font-weight:900;color:#fff;line-height:1}
-.hs-num span{color:#1d9e75}
-.hs-subtitle{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.25rem}
-.hs-label{text-align:center;font-size:.9rem;font-weight:700;color:#1d9e75;margin-top:1rem}
-
-.hs-right{}
-.hs-factors{display:flex;flex-direction:column;gap:1.25rem}
-.hf-item{}
-.hf-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
-.hf-name{font-size:.85rem;font-weight:700;color:#fff}
-.hf-score{font-size:.85rem;font-weight:800}
-.hf-score.green{color:#1d9e75}.hf-score.gold{color:#c9a84c}.hf-score.blue{color:#378add}
-.hf-bar-track{height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
-.hf-bar-fill{height:100%;border-radius:4px;transition:width 1s ease}
-
-/* Modules Status */
-.modules-status{padding:5rem 5%;background:#060f1c}
-.ms-inner{max-width:1100px;margin:0 auto}
-.ms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
-.ms-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
-  border-radius:14px;padding:1.5rem;transition:border-color .3s}
-.ms-card:hover{border-color:rgba(29,158,117,.25)}
-.ms-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
-.ms-icon{font-size:1.5rem}
-.ms-status-pill{font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:20px;
-  background:rgba(29,158,117,.12);color:#1d9e75;border:1px solid rgba(29,158,117,.2)}
-.ms-name{font-size:.88rem;font-weight:800;color:#fff;margin-bottom:.375rem}
-.ms-val{font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:.25rem}
-.ms-val em{font-style:normal}
-.ms-val .green{color:#1d9e75}.ms-val .gold{color:#c9a84c}
-.ms-meta{font-size:.7rem;color:rgba(255,255,255,.35)}
-
-/* CTA */
-.dash-cta{padding:5rem 5%;background:linear-gradient(135deg,#060f1c,#0a1628);text-align:center}
-.dc-inner{max-width:640px;margin:0 auto}
-.cta-h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:1rem}
-.cta-h2 em{color:#1d9e75;font-style:normal}
-.cta-p{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:2.5rem}
-.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.cta-btn-green{background:#1d9e75;color:#fff;padding:.9rem 2rem;border-radius:8px;
-  text-decoration:none;font-weight:700;font-size:.95rem;transition:background .2s}
-.cta-btn-green:hover{background:#178a64}
-.cta-btn-sec{color:#fff;padding:.9rem 2rem;border-radius:8px;text-decoration:none;
-  font-weight:700;font-size:.95rem;border:1px solid rgba(255,255,255,.2)}
-
-/* FOOTER */
-.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;direction:rtl}
-
-.footer-links a:hover{color:#1d9e75}
-
-#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
-  background:#1d9e75;color:#fff;border:none;cursor:pointer;font-size:1.1rem;
-  opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:999}
-#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
-#scroll-top:hover{background:#178a64}
-@media(max-width:1100px){.dash-body{grid-template-columns:1fr 1fr}.activity-feed{display:none}.claims-panel{grid-column:span 2}}
-@media(max-width:768px){.kpi-grid{grid-template-columns:repeat(3,1fr)}.dash-body{grid-template-columns:1fr}.chart-panel{grid-column:span 1}.ms-grid{grid-template-columns:1fr 1fr}.hs-grid{grid-template-columns:1fr}}
-@media(max-width:480px){.kpi-grid{grid-template-columns:1fr 1fr}.ms-grid{grid-template-columns:1fr}}
-
-
-/* footer styles now via arabic-theme.css */
-.footer-logo-img{max-height:44px;width:auto;display:block}
-
+:root{--navy:#1A1A2E;--blue:#1B5FA6;--bluel:#2575c4;--gold:#B8963E;--goldl:#d4aa4a;--green:#1d9e75;--red:#e05252;--amber:#d97706;--w:#fff;--g50:#f8fafc;--g100:#f1f5f9;--g200:#e2e8f0;--g400:#94a3b8;--g600:#475569;--g800:#1e293b;--sw:245px;--fn:"Cairo",sans-serif;--fh:"Kufam",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--fn);background:var(--g100);color:var(--g800);display:flex;flex-direction:column;height:100vh;overflow:hidden;font-size:13px;-webkit-font-smoothing:antialiased}
+.ib{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--navy);padding:7px 18px;font-size:11px;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.ib-back{display:inline-flex;align-items:center;gap:5px;color:rgba(255,255,255,.55);text-decoration:none;font-size:11px;font-weight:600;transition:color .15s}.ib-back:hover{color:#fff}
+.ib-msg{color:rgba(255,255,255,.55)}.ib-msg strong{color:rgba(255,255,255,.85)}
+.ib-cta{background:var(--gold);color:var(--navy);font-size:10.5px;font-weight:700;padding:5px 13px;border-radius:6px;text-decoration:none;white-space:nowrap;transition:opacity .15s}.ib-cta:hover{opacity:.88}
+.mob-warn{display:none;padding:32px;text-align:center;background:var(--g50);border-radius:12px;margin:24px;border:1px solid var(--g200)}
+@media(max-width:860px){.mob-warn{display:block}.layout{display:none!important}}
+.layout{display:flex;flex:1;overflow:hidden;min-height:0;flex-direction:row-reverse}
+.sb{width:var(--sw);background:var(--navy);height:100%;display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto}
+.sb::-webkit-scrollbar{width:3px}.sb::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:2px}
+.sb-logo{padding:16px 16px 12px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-row{display:flex;align-items:center;gap:10px;flex-direction:row-reverse}
+.sb-badge{width:32px;height:32px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;flex-shrink:0}
+.sb-brand{font-size:13.5px;font-weight:700;color:#fff;font-family:var(--fh);text-align:right}
+.sb-sub{font-size:9px;color:rgba(255,255,255,.3);text-align:right}
+.demo-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(184,150,62,.12);border:1px solid rgba(184,150,62,.28);color:var(--goldl);font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:20px;margin-top:9px}
+.demo-dot{width:5px;height:5px;background:var(--goldl);border-radius:50%;animation:pg 2s ease-in-out infinite}
+@keyframes pg{0%,100%{opacity:1}50%{opacity:.3}}
+.sb-nav{padding:12px 10px;flex:1}
+.nav-lbl{font-size:8.5px;font-weight:700;color:rgba(255,255,255,.22);padding:0 10px;margin:14px 0 5px;text-align:right;text-transform:uppercase;letter-spacing:.5px}
+.ni{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:7px;cursor:pointer;margin-bottom:1px;transition:all .14s;color:rgba(255,255,255,.48);font-size:12px;font-weight:600;border-right:2px solid transparent;flex-direction:row-reverse;user-select:none}
+.ni:hover{background:rgba(255,255,255,.06);color:rgba(255,255,255,.82)}.ni.active{background:rgba(27,95,166,.32);color:#fff;border-right-color:var(--bluel)}
+.ni svg{width:14px;height:14px;flex-shrink:0;opacity:.7}.ni.active svg{opacity:1}
+.nb{margin-right:auto;background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:2px 6px;border-radius:10px}.nb.ok{background:var(--green)}
+.sb-foot{padding:12px 14px;border-top:1px solid rgba(255,255,255,.07)}
+.sb-back{display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.32);font-size:10.5px;text-decoration:none;margin-bottom:10px;flex-direction:row-reverse;transition:color .15s}.sb-back:hover{color:rgba(255,255,255,.7)}
+.sf-row{display:flex;align-items:center;gap:8px;flex-direction:row-reverse}
+.sf-av{width:28px;height:28px;background:linear-gradient(135deg,var(--blue),var(--bluel));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0}
+.sf-name{font-size:11px;font-weight:700;color:#fff;text-align:right}.sf-role{font-size:9.5px;color:rgba(255,255,255,.3);text-align:right}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.tb{background:#fff;border-bottom:1px solid var(--g200);padding:0 20px;height:52px;display:flex;align-items:center;gap:12px;flex-direction:row-reverse}
+.tb-title{font-size:13.5px;font-weight:700;color:var(--g800);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;font-family:var(--fh)}
+.tb-time{font-size:10px;color:var(--g400);white-space:nowrap}
+.role-tabs{display:flex;background:var(--g100);border-radius:8px;padding:3px;gap:2px}
+.rb{padding:5px 11px;border-radius:6px;border:none;background:transparent;font-family:var(--fn);font-size:11px;font-weight:700;color:var(--g600);cursor:pointer;transition:all .15s;white-space:nowrap}
+.rb.active{background:#fff;color:var(--blue);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.notif{width:32px;height:32px;border:1px solid var(--g200);border-radius:8px;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;position:relative;color:var(--g600);flex-shrink:0}
+.notif-dot{position:absolute;top:6px;left:6px;width:6px;height:6px;background:var(--red);border-radius:50%;border:1.5px solid #fff}
+.content{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:13px}
+.content::-webkit-scrollbar{width:4px}.content::-webkit-scrollbar-thumb{background:var(--g200);border-radius:2px}
+.panel,.rp{display:none;flex-direction:column;gap:13px}
+.panel.active,.rp.active{display:flex}
+.kg{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+.kc{background:#fff;border-radius:11px;padding:14px;border:1px solid var(--g200);position:relative;overflow:hidden;transition:box-shadow .18s}
+.kc:hover{box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.kc::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:11px 11px 0 0}
+.kc.bl::before{background:var(--blue)}.kc.go::before{background:var(--gold)}.kc.gr::before{background:var(--green)}.kc.rd::before{background:var(--red)}.kc.am::before{background:var(--amber)}
+.k-ico{position:absolute;top:12px;left:12px;font-size:16px;opacity:.12}
+.k-lbl{font-size:10px;font-weight:700;color:var(--g400);margin-bottom:6px;text-align:right}
+.k-val{font-size:21px;font-weight:700;color:var(--g800);line-height:1;text-align:right;font-family:var(--fh)}
+.k-sub{font-size:10px;color:var(--g400);margin-top:3px;text-align:right}
+.k-delta{display:inline-flex;align-items:center;gap:3px;font-size:10.5px;font-weight:700;margin-top:5px;padding:2px 7px;border-radius:4px}
+.up{color:var(--green);background:rgba(29,158,117,.1)}.dn{color:var(--red);background:rgba(224,82,82,.1)}.gd{color:var(--green);background:rgba(29,158,117,.1)}
+.row{display:grid;gap:11px}.c2{grid-template-columns:1fr 1fr}.c75{grid-template-columns:5fr 7fr}.c65{grid-template-columns:5fr 6fr}
+.card{background:#fff;border-radius:11px;border:1px solid var(--g200);overflow:hidden}
+.ch{padding:13px 15px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:8px;flex-direction:row-reverse}
+.ct{font-size:12.5px;font-weight:700;color:var(--g800);text-align:right;font-family:var(--fh)}.cs{font-size:10.5px;color:var(--g400);margin-top:2px;text-align:right}
+.cb{padding:12px 15px 15px}
+.tag{font-size:9.5px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.t-bl{background:rgba(27,95,166,.1);color:var(--blue)}.t-go{background:rgba(184,150,62,.1);color:var(--gold)}.t-gr{background:rgba(29,158,117,.1);color:var(--green)}.t-rd{background:rgba(224,82,82,.1);color:var(--red)}.t-gy{background:var(--g100);color:var(--g600)}
+.cw{width:100%;height:150px;margin-top:6px}.cw svg{width:100%;height:150px;overflow:visible}
+.donut-row{display:flex;align-items:center;gap:14px;flex-direction:row-reverse}
+.donut-svg{width:90px;height:90px;flex-shrink:0}
+.leg{display:flex;flex-direction:column;gap:6px;flex:1}
+.li{display:flex;align-items:center;gap:6px;font-size:11px;flex-direction:row-reverse}
+.ld{width:8px;height:8px;border-radius:2px;flex-shrink:0}.ll{color:var(--g600);flex:1;text-align:right}.lv{font-weight:700;color:var(--g800)}.lp{color:var(--g400);font-size:10px}
+.ct2{width:100%;border-collapse:collapse;font-size:11.5px;direction:rtl}
+.ct2 th{padding:7px 11px;text-align:right;font-size:9.5px;font-weight:700;color:var(--g400);border-bottom:1px solid var(--g200);white-space:nowrap}
+.ct2 td{padding:8px 11px;border-bottom:1px solid var(--g100);color:var(--g800);text-align:right}
+.ct2 tr:last-child td{border-bottom:none}.ct2 tr:hover td{background:var(--g50)}
+.cid{font-size:10.5px;color:var(--blue);font-weight:700;direction:ltr;display:inline-block}
+.pill{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;white-space:nowrap}
+.p-gr{background:rgba(29,158,117,.1);color:var(--green)}.p-am{background:rgba(217,119,6,.1);color:var(--amber)}.p-rd{background:rgba(224,82,82,.1);color:var(--red)}.p-bl{background:rgba(27,95,166,.1);color:var(--blue)}.p-gy{background:var(--g100);color:var(--g600)}
+.pw{margin-top:10px}.pi{margin-bottom:10px}.pi:last-child{margin-bottom:0}
+.ph{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;flex-direction:row-reverse}
+.pl{color:var(--g600);font-weight:600}.pv{color:var(--g800);font-weight:700}
+.pt{height:5px;background:var(--g200);border-radius:3px;overflow:hidden}.pf{height:100%;border-radius:3px;transition:width 1.3s cubic-bezier(.4,0,.2,1)}
+.mm-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mm{padding:10px;background:var(--g50);border-radius:8px;border:1px solid var(--g200);text-align:right}
+.mm-v{font-size:16px;font-weight:700;font-family:var(--fh)}.mm-l{font-size:10px;color:var(--g400);margin-top:2px}
+.feed{display:flex;flex-direction:column}
+.fi{display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:1px solid var(--g100);font-size:11px;flex-direction:row-reverse}
+.fi:last-child{border-bottom:none}.fd{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.ft{flex:1;color:var(--g600);line-height:1.4;text-align:right}.ft strong{color:var(--g800)}.ftm{color:var(--g400);font-size:10px;white-space:nowrap}
+.fl{display:flex;flex-direction:column;gap:7px}
+.fri{display:flex;align-items:flex-start;gap:9px;padding:9px 11px;background:var(--g50);border-radius:8px;border-right:3px solid var(--red);flex-direction:row-reverse}
+.fri.am{border-right-color:var(--amber)}.fri.go{border-right-color:var(--gold)}.fri.bl{border-right-color:var(--blue)}
+.fri-ico{font-size:13px;flex-shrink:0;margin-top:1px}.fri-body{flex:1;text-align:right}
+.fri-t{font-size:11.5px;font-weight:700;color:var(--g800)}.fri-m{font-size:10.5px;color:var(--g400);margin-top:2px;line-height:1.4}
+.fri-amt{font-size:12px;font-weight:700;color:var(--red);flex-shrink:0;white-space:nowrap}
+.fri.am .fri-amt{color:var(--amber)}.fri.go .fri-amt{color:var(--gold)}.fri.bl .fri-amt{color:var(--blue)}
+.as{display:flex;align-items:center;gap:7px;padding:8px 15px;background:rgba(224,82,82,.05);border-top:1px solid rgba(224,82,82,.12);font-size:10.5px;color:var(--red);flex-direction:row-reverse}
+.rep-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rep-card{background:var(--g50);border:1px solid var(--g200);border-radius:10px;padding:14px;text-align:right}
+.rep-ico{font-size:20px;margin-bottom:8px}.rep-title{font-size:12px;font-weight:700;color:var(--g800);margin-bottom:4px;font-family:var(--fh)}.rep-meta{font-size:10.5px;color:var(--g400);margin-bottom:10px}
+.rep-foot{display:flex;align-items:center;justify-content:space-between;flex-direction:row-reverse}
+.rep-btn{padding:5px 12px;border-radius:7px;border:none;font-family:var(--fn);font-size:11px;font-weight:700;cursor:pointer;background:var(--blue);color:#fff}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "iRonic Health",
-  "legalName": "Ironic Group",
-  "url": "https://sherif-trevo-ai.github.io/iRonicHealth/",
-  "logo": "https://sherif-trevo-ai.github.io/iRonicHealth/assets/logos/H_Badge_Metro_Blue_T.svg",
-  "description": "Egypt's first AI-powered health insurance orchestration platform. Detects fraud in 4.3 seconds, automates claims processing, and integrates Egypt's fragmented health insurance ecosystem.",
-  "foundingDate": "2025",
-  "founders": [
-    { "@type": "Person", "name": "Sherif Shawky", "jobTitle": "Chairman & CEO" },
-    { "@type": "Person", "name": "Islam Almeidany", "jobTitle": "Co-Founder & CMO" }
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Nile City Towers, North Tower, Corniche El Nil",
-    "addressLocality": "Cairo",
-    "addressCountry": "EG"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "chairman@ironicigmi.com",
-    "contactType": "Business Inquiries"
-  },
-  "sameAs": [],
-  "areaServed": ["EG", "SA", "AE", "KW"],
-  "industry": "Health Insurance Technology",
-  "keywords": "AI health insurance, claims automation, fraud detection, Egypt healthtech, MENA insurtech"
-}
-</script>
 </head>
 <body>
-<a href="#main-content" class="skip-to-content">تخطّي إلى المحتوى الرئيسي</a>
 
-<div id="nav-placeholder"></div>
+<div class="ib">
+  <a href="contact.html" class="ib-cta">← طلب تجربة تشغيلية</a>
+  <span class="ib-msg"><strong>لوحة تحكم تفاعلية</strong> — غيّر الأدوار عبر الأزرار أو استكشف الوحدات من القائمة. البيانات توضيحية.</span>
+  <a href="index.html" class="ib-back">
+    iRonic Health
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+</div>
 
-<main>
+<div class="mob-warn">
+  <div style="font-size:28px;margin-bottom:12px">🖥️</div>
+  <div style="font-size:15px;font-weight:700;color:#1e293b;margin-bottom:8px">يُعرض بشكل أفضل على سطح المكتب</div>
+  <a href="index.html" style="display:inline-block;background:#1B5FA6;color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px">← الرجوع للموقع</a>
+</div>
 
-<!-- HERO -->
-<section class="dash-hero">
-  <div class="dh-bg"></div>
-  <div class="dh-grid"></div>
-  <div class="dh-inner">
-    <div class="dh-badge">
-      <span class="dh-live"><span class="dh-live-dot"></span>مباشر</span>
-      لوحة التحكم الذكية
+<div class="layout">
+
+<aside class="sb">
+  <div class="sb-logo">
+    <div class="sb-row">
+      <div class="sb-badge">iH</div>
+      <div><div class="sb-brand">iRonic Health</div><div class="sb-sub">لوحة التحكم · v2.5</div></div>
     </div>
-    <h1 class="dh-h1">كل المنظومة في<br><em>لوحة واحدة</em></h1>
-    <p class="dh-sub">مراقبة لحظية للمطالبات، كشف الاحتيال فور حدوثه، ونقاط صحية لكل مؤمَّن — كل ذلك في واجهة واحدة مُصمَّمة للقرار السريع.</p>
+    <div class="demo-pill"><div class="demo-dot"></div>بيئة تجريبية</div>
   </div>
-</section>
-
-<!-- MAIN DASHBOARD -->
-<section class="dash-main">
-  <div class="dm-inner reveal">
-
-    <!-- Top Bar -->
-    <div class="dash-topbar">
-      <div>
-        <div class="dtb-title">iRonic Health — لوحة التحكم الموحدة</div>
-        <div class="dtb-subtitle">شركة التأمين الوطنية — Q2 2026 · <span class="dtb-time" id="live-time"></span></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
-        <div class="dtb-status"><span class="dtb-dot"></span> جميع الأنظمة تعمل</div>
-        <div style="font-size:.78rem;color:rgba(255,255,255,.35)">آخر تحديث: الآن</div>
-      </div>
+  <nav class="sb-nav">
+    <div class="nav-lbl">الرئيسية</div>
+    <div class="ni active" onclick="setSection('overview',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      نظرة عامة
     </div>
-
-    <!-- KPI Grid -->
-    <div class="kpi-grid">
-      <div class="kpi-card k-green">
-        <div class="kpi-label">مطالبات اليوم</div>
-        <div class="kpi-val green" id="kpi-claims">2,847</div>
-        <div class="kpi-change up">↑ 12% عن أمس</div>
-      </div>
-      <div class="kpi-card k-red">
-        <div class="kpi-label">مطالبات مشبوهة</div>
-        <div class="kpi-val red" id="kpi-fraud">43</div>
-        <div class="kpi-change down">1.5% من الإجمالي</div>
-      </div>
-      <div class="kpi-card k-gold">
-        <div class="kpi-label">متوسط وقت المعالجة</div>
-        <div class="kpi-val gold">4.3 ث</div>
-        <div class="kpi-change up">↓ 99.2% أسرع</div>
-      </div>
-      <div class="kpi-card k-blue">
-        <div class="kpi-label">مؤمَّنون نشطون</div>
-        <div class="kpi-val blue">375K</div>
-        <div class="kpi-change up">↑ 8.3% هذا الشهر</div>
-      </div>
-      <div class="kpi-card k-purple">
-        <div class="kpi-label">توفير محقق اليوم</div>
-        <div class="kpi-val purple">$18.4K</div>
-        <div class="kpi-change up">↑ 94% دقة الكشف</div>
-      </div>
+    <div class="ni" onclick="setSection('claims',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+      المطالبات <span class="nb">427</span>
     </div>
+    <div class="ni" onclick="setSection('fraud',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/></svg>
+      كشف الاحتيال <span class="nb">43</span>
+    </div>
+    <div class="ni" onclick="setSection('pharmacy',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+      الصيدليات
+    </div>
+    <div class="ni" onclick="setSection('members',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
+      المؤمَّنون
+    </div>
+    <div class="ni" onclick="setSection('reports',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      التقارير
+    </div>
+    <div class="nav-lbl" style="margin-top:18px">النظام</div>
+    <div class="ni" onclick="setSection('overview',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      امتثال الهيئة المالية
+    </div>
+    <div class="ni">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      حالة API <span class="nb ok" style="font-size:9px">●</span>
+    </div>
+  </nav>
+  <div class="sb-foot">
+    <a href="index.html" class="sb-back">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      الرجوع إلى الموقع
+    </a>
+    <div class="sf-row">
+      <div class="sf-av">ش</div>
+      <div><div class="sf-name">م. شريف شوقي</div><div class="sf-role">رئيس مجلس الإدارة · GlobeMed Pilot</div></div>
+    </div>
+  </div>
+</aside>
 
-    <!-- Dashboard Body -->
-    <div class="dash-body">
+<div class="main">
+  <div class="tb">
+    <div class="tb-title" id="tb-title">نظرة عامة على المنصة — المدير المالي</div>
+    <div class="tb-time" id="tb-time">29 مايو 2026 · القاهرة</div>
+    <div class="role-tabs" id="role-tabs">
+      <button class="rb active" onclick="setRole('cfo',this)">المدير المالي</button>
+      <button class="rb" onclick="setRole('cmo',this)">المدير الطبي</button>
+      <button class="rb" onclick="setRole('tpa',this)">عمليات TPA</button>
+      <button class="rb" onclick="setRole('prov',this)">مزود الخدمة</button>
+      <button class="rb" onclick="setRole('mbr',this)">العضو</button>
+    </div>
+    <div class="notif"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><div class="notif-dot"></div></div>
+  </div>
 
-      <!-- Fraud Chart -->
-      <div class="chart-panel">
-        <div class="panel-title">تحليل المطالبات — الأيام السبعة الأخيرة</div>
-        <div class="panel-sub">مطالبات مشروعة مقابل مشبوهة مكتشفة بالذكاء الاصطناعي</div>
-        <div class="chart-container" id="main-chart">
-          <!-- Generated by JS -->
+  <div class="content">
+
+  <!-- OVERVIEW -->
+  <div class="panel active" id="p-overview">
+
+    <!-- CFO -->
+    <div class="rp active" id="p-cfo">
+      <div class="kg">
+        <div class="kc bl"><div class="k-ico">📉</div><div class="k-lbl">نسبة الخسائر</div><div class="k-val">68.2%</div><div class="k-sub">مقابل 78.1% قبل المنصة</div><div class="k-delta gd">↓ تحسّن 9.9 نقطة</div></div>
+        <div class="kc go"><div class="k-ico">💰</div><div class="k-lbl">الاحتيال المُسترجع (ش)</div><div class="k-val">2.1 م ج.م.</div><div class="k-sub">43 قضية نشطة</div><div class="k-delta up">↑ 18% عن الشهر الماضي</div></div>
+        <div class="kc gr"><div class="k-ico">📈</div><div class="k-lbl">العائد على الاستثمار</div><div class="k-val">11.2×</div><div class="k-sub">32.5 م ج.م. صافي توفير</div><div class="k-delta up">↑ $2.45M ARR ش2</div></div>
+        <div class="kc rd"><div class="k-ico">🏥</div><div class="k-lbl">المؤمَّنون النشطون</div><div class="k-val">375,000</div><div class="k-sub">GlobeMed · 18 شركة تأمين</div><div class="k-delta up">↑ 12K مشترك أبريل</div></div>
+      </div>
+      <div class="row c75">
+        <div class="card">
+          <div class="ch"><div><div class="ct">آخر المطالبات المعالجة — اليوم</div><div class="cs">متوسط 4.3 ث · المبالغ بالجنيه المصري</div></div><span class="tag t-bl">٢,٨٤٧ اليوم</span></div>
+          <div class="cb" style="padding:0">
+            <table class="ct2">
+              <thead><tr><th>رقم المطالبة</th><th>المريض</th><th>المستشفى</th><th>المبلغ</th><th>الخطورة</th><th>الحالة</th><th>الوقت</th></tr></thead>
+              <tbody>
+                <tr><td><span class="cid">CLM-88842</span></td><td>أ. م. س.</td><td>مستشفى النيل</td><td>19,220 ج.م.</td><td style="color:var(--red);font-weight:700">91</td><td><span class="pill p-am">⚠ مشبوهة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">0.9 ث</td></tr>
+                <tr><td><span class="cid">CLM-88841</span></td><td>ف. ع. ج.</td><td>القاهرة الجديد</td><td>5,890 ج.م.</td><td style="color:var(--green);font-weight:700">12</td><td><span class="pill p-gr">✓ معتمدة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">2.1 ث</td></tr>
+                <tr><td><span class="cid">CLM-88840</span></td><td>م. ك. ر.</td><td>مستشفى المعادي</td><td>89,900 ج.م.</td><td style="color:var(--amber);font-weight:700">45</td><td><span class="pill p-am">⚠ للمراجعة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">3.4 ث</td></tr>
+                <tr><td><span class="cid">CLM-88839</span></td><td>م. م. س.</td><td>النهضة الطبي</td><td>11,160 ج.م.</td><td style="color:var(--green);font-weight:700">8</td><td><span class="pill p-gr">✓ معتمدة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">1.8 ث</td></tr>
+                <tr><td><span class="cid">CLM-88837</span></td><td>ط. س. ج.</td><td>الشفاء الطبي</td><td>14,725 ج.م.</td><td style="color:var(--amber);font-weight:700">67</td><td><span class="pill p-am">⏳ قيد المراجعة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">5.2 ث</td></tr>
+                <tr><td><span class="cid">CLM-88836</span></td><td>Ahmed M.</td><td>Dar Al Fouad</td><td>131,000 ج.م.</td><td style="color:var(--green);font-weight:700">22</td><td><span class="pill p-gr">✓ معتمدة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">3.7 ث</td></tr>
+              </tbody>
+            </table>
+            <div class="as"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>427 مطالبة بانتظار المراجعة · متوسط انتظار 18 د · مستوى الخدمة: 4 ساعات</div>
+          </div>
         </div>
-        <div class="chart-legend">
-          <div class="cleg"><span class="cleg-dot legit"></span> مطالبات مشروعة</div>
-          <div class="cleg"><span class="cleg-dot fraud"></span> مطالبات مشبوهة</div>
+        <div class="card">
+          <div class="ch"><div><div class="ct">تيار النشاط اللحظي</div><div class="cs">قرارات الذكاء الاصطناعي · آخر 90 ثانية</div></div><div class="demo-pill" style="font-size:9px;padding:2px 8px">● تجريبي</div></div>
+          <div class="cb">
+            <div class="feed" id="feed">
+              <div class="fi"><div class="fd" style="background:#e05252"></div><span class="ft"><strong>CLM-88842</strong> مطالبة مشبوهة · 19,220 ج.م. · مستشفى النيل · خطورة 91%</span><span class="ftm">الآن</span></div>
+              <div class="fi"><div class="fd" style="background:#1d9e75"></div><span class="ft"><strong>CLM-88841</strong> معتمدة تلقائياً · 5,890 ج.م. · 2.1 ثانية</span><span class="ftm">12 ث</span></div>
+              <div class="fi"><div class="fd" style="background:#1B5FA6"></div><span class="ft"><strong>MBR-20847</strong> تحقق من الأهلية · مسح QR · 3.9 ث</span><span class="ftm">25 ث</span></div>
+              <div class="fi"><div class="fd" style="background:#d97706"></div><span class="ft"><strong>CLM-88840</strong> أُحيلت للمدير الطبي · 89,900 ج.م.</span><span class="ftm">38 ث</span></div>
+              <div class="fi"><div class="fd" style="background:#1B5FA6"></div><span class="ft"><strong>MBR-22014</strong> مشترك جديد · كتاب Telecom Egypt</span><span class="ftm">55 ث</span></div>
+            </div>
+            <div style="margin-top:12px;padding-top:11px;border-top:1px solid var(--g100)">
+              <div class="mm-grid">
+                <div class="mm"><div class="mm-v" style="color:var(--blue)">4.3 ث</div><div class="mm-l">متوسط قرار AI</div></div>
+                <div class="mm"><div class="mm-v" style="color:var(--green)">73%</div><div class="mm-l">نسبة الاعتماد التلقائي</div></div>
+                <div class="mm"><div class="mm-v" style="color:var(--gold)">433K ج.م.</div><div class="mm-l">محجوب اليوم</div></div>
+                <div class="mm"><div class="mm-v" style="color:var(--navy)">2,847</div><div class="mm-l">مطالبات معالجة</div></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div><!-- /cfo -->
 
-      <!-- Fraud Gauge -->
-      <div class="fraud-panel">
-        <div class="panel-title">نسبة كشف الاحتيال</div>
-        <div class="panel-sub">دقة وحدة كشف الاحتيال AI</div>
-        <div class="fraud-gauge">
-          <svg viewBox="0 0 100 50" width="150" height="80">
-            <path class="gauge-bg" d="M10,50 A40,40 0 0,1 90,50" />
-            <path class="gauge-fill gauge-green" id="gauge-fill" d="M10,50 A40,40 0 0,1 90,50" />
-          </svg>
-          <div class="gauge-center-text">94%</div>
+    <!-- CMO AR -->
+    <div class="rp" id="p-cmo">
+      <div class="kg">
+        <div class="kc rd"><div class="k-ico">🚨</div><div class="k-lbl">مؤمَّنون عالي الخطورة</div><div class="k-val">2,847</div><div class="k-sub">0.76% من 375K</div><div class="k-delta dn">↑ 312 رُصدوا اليوم</div></div>
+        <div class="kc go"><div class="k-ico">⏳</div><div class="k-lbl">طابور الموافقة المسبقة</div><div class="k-val">23</div><div class="k-sub">بانتظار قرار المدير الطبي</div><div class="k-delta up">مستوى خدمة 4 ساعات</div></div>
+        <div class="kc bl"><div class="k-ico">🏥</div><div class="k-lbl">تنبيهات الإفراط العلاجي</div><div class="k-val">38</div><div class="k-sub">مُكتشف بالذكاء هذا الشهر</div><div class="k-delta gd">↓ 22% عن الشهر الماضي</div></div>
+        <div class="kc gr"><div class="k-ico">🎯</div><div class="k-lbl">دقة كشف الاحتيال</div><div class="k-val">94.2%</div><div class="k-sub">نماذج AI مصرية التدريب</div><div class="k-delta up">↑ 2.1 نقطة هذا الشهر</div></div>
+      </div>
+      <div class="row c2">
+        <div class="card">
+          <div class="ch"><div><div class="ct">قضايا الاحتيال النشطة</div><div class="cs">مُكتشفة بالذكاء · مرتبة حسب الأولوية</div></div><span class="tag t-rd">43 قضية</span></div>
+          <div class="cb">
+            <div class="fl">
+              <div class="fri"><div class="fri-ico">💊</div><div class="fri-body"><div class="fri-t">تقسيم أدوية — شبكة El Ezaby + 19011</div><div class="fri-m">PRV-4821 · 8 وصفات لـ3 مرضى · نمط الرولودكس · 250+ فرع</div></div><div class="fri-amt">65K ج.م.</div></div>
+              <div class="fri"><div class="fri-ico">🏥</div><div class="fri-body"><div class="fri-t">فوترة وهمية — مستشفى السلام الخاص</div><div class="fri-m">إجراءات بُوِّلت دون سجلات دخول · 3 مطالبات · تنبيه نقابة الأطباء</div></div><div class="fri-amt">43.2K ج.م.</div></div>
+              <div class="fri am"><div class="fri-ico">🔬</div><div class="fri-body"><div class="fri-t">زيادة التسعير — مجموعة مختبر IDH</div><div class="fri-m">PRV-2914 · 15 فحصاً بأسعار أخصائي · شذوذ إحصائي مقارنة 340+ فرع</div></div><div class="fri-amt">22.2K ج.م.</div></div>
+              <div class="fri go"><div class="fri-ico">👤</div><div class="fri-body"><div class="fri-t">عدم تطابق الأهلية — 4 مطالبات بعد انتهاء الوثيقة</div><div class="fri-m">MBR-19421 · AXA مصر · انتهت فبراير 2026 · 4 مطالبات بعد الانتهاء</div></div><div class="fri-amt">7.4K ج.م.</div></div>
+            </div>
+          </div>
         </div>
-        <div style="text-align:center;font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:1rem">دقة كشف الاحتيال</div>
-        <div class="fraud-stats">
-          <div class="fs-item">
-            <div class="fs-val green">43</div>
-            <div class="fs-lbl">مكتشفة اليوم</div>
-          </div>
-          <div class="fs-item">
-            <div class="fs-val">4.3ث</div>
-            <div class="fs-lbl">وقت الكشف</div>
-          </div>
-          <div class="fs-item">
-            <div class="fs-val red">$12.8K</div>
-            <div class="fs-lbl">محجوزة</div>
-          </div>
-          <div class="fs-item">
-            <div class="fs-val green">$18.4K</div>
-            <div class="fs-lbl">موفَّر اليوم</div>
+        <div class="card">
+          <div class="ch"><div><div class="ct">طابور الموافقة المسبقة</div><div class="cs">بانتظار قرار المدير الطبي · مستوى الخدمة 4 ساعات</div></div><span class="tag t-go">23 معلقة</span></div>
+          <div class="cb" style="padding:0">
+            <table class="ct2">
+              <thead><tr><th>العضو</th><th>الإجراء</th><th>التكلفة</th><th>توصية AI</th><th>وقت الانتظار</th></tr></thead>
+              <tbody>
+                <tr><td>Ahmed M. · 47M</td><td>قسطرة قلبية</td><td>131K ج.م.</td><td><span class="pill p-gr">اعتماد</span></td><td style="color:#94a3b8;font-size:10.5px;direction:ltr">12 د</td></tr>
+                <tr><td>Fatma K. · 62F</td><td>استبدال مفصل ورك</td><td>186K ج.م.</td><td><span class="pill p-am">مراجعة</span></td><td style="color:#94a3b8;font-size:10.5px;direction:ltr">34 د</td></tr>
+                <tr><td>Omar S. · 31M</td><td>تصوير دماغ MRI</td><td>6,510 ج.م.</td><td><span class="pill p-gr">اعتماد</span></td><td style="color:#94a3b8;font-size:10.5px;direction:ltr">8 د</td></tr>
+                <tr><td>Nour A. · 28F</td><td>باقة الأمومة</td><td>34K ج.م.</td><td><span class="pill p-gr">اعتماد</span></td><td style="color:#d97706;font-size:10.5px;direction:ltr">2 س 14 د</td></tr>
+                <tr><td>Mahmoud T. · 55M</td><td>جراحة تحويل مسار</td><td>372K ج.م.</td><td><span class="pill p-rd">رفض</span></td><td style="color:#e05252;font-size:10.5px;direction:ltr">3 س 41 د ⚠</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+    </div><!-- /cmo -->
 
-      <!-- Activity Feed -->
-      <div class="feed-wrap activity-feed">
-        <div class="panel-title" style="margin-bottom:.375rem">تيار النشاط اللحظي</div>
-        <div class="panel-sub" style="margin-bottom:1.25rem">آخر الأحداث في المنظومة</div>
-        <div id="feed-container">
-          <!-- Generated by JS -->
+    <!-- TPA AR -->
+    <div class="rp" id="p-tpa">
+      <div class="kg">
+        <div class="kc bl"><div class="k-ico">📋</div><div class="k-lbl">المطالبات اليوم</div><div class="k-val">2,847</div><div class="k-sub">من ~3,200 متوقع</div><div class="k-delta up">89% مستوى الخدمة</div></div>
+        <div class="kc gr"><div class="k-ico">⚡</div><div class="k-lbl">متوسط وقت المعالجة</div><div class="k-val">4.3 ث</div><div class="k-sub">مقابل 3–5 أيام يدوياً</div><div class="k-delta up">↓ أسرع بـ99.7%</div></div>
+        <div class="kc go"><div class="k-ico">🤖</div><div class="k-lbl">نسبة الاعتماد التلقائي</div><div class="k-val">73%</div><div class="k-sub">2,073 من 2,847</div><div class="k-delta up">↑ 4 نقاط عن الأسبوع الماضي</div></div>
+        <div class="kc rd"><div class="k-ico">👁</div><div class="k-lbl">طابور المراجعة اليدوية</div><div class="k-val">427</div><div class="k-sub">15% من مطالبات اليوم</div><div class="k-delta gd">↓ من 31% قبل AI</div></div>
+      </div>
+      <div class="row c2">
+        <div class="card">
+          <div class="ch"><div><div class="ct">توزيع خط معالجة المطالبات</div><div class="cs">اليوم · 3 قنوات تأمين</div></div></div>
+          <div class="cb" style="padding-top:14px">
+            <div class="donut-row">
+              <svg class="donut-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#1d9e75" stroke-width="13" stroke-dasharray="165.15 226.19" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#d97706" stroke-width="13" stroke-dasharray="33.93 226.19" stroke-dashoffset="-165.15" transform="rotate(-90 50 50)"/>
+                <circle cx="50" cy="50" r="36" fill="none" stroke="#e05252" stroke-width="13" stroke-dasharray="27.14 226.19" stroke-dashoffset="-199.08" transform="rotate(-90 50 50)"/>
+                <text x="50" y="47" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b" font-family="Kufam,sans-serif">2,847</text>
+                <text x="50" y="58" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="Cairo,sans-serif">مطالبة</text>
+              </svg>
+              <div class="leg">
+                <div class="li"><div class="ld" style="background:#1d9e75"></div><span class="ll">معتمدة تلقائياً</span><span class="lv">2,073</span><span class="lp">73%</span></div>
+                <div class="li"><div class="ld" style="background:#d97706"></div><span class="ll">للمراجعة</span><span class="lv">427</span><span class="lp">15%</span></div>
+                <div class="li"><div class="ld" style="background:#e05252"></div><span class="ll">مرفوضة تلقائياً</span><span class="lv">347</span><span class="lp">12%</span></div>
+              </div>
+            </div>
+            <div style="margin-top:13px;padding-top:11px;border-top:1px solid var(--g100)">
+              <div class="pw" style="margin-top:0">
+                <div class="pi"><div class="ph"><span class="pl">GlobeMed TPA</span><span class="pv">1,420 مطالبة</span></div><div class="pt"><div class="pf" style="width:82%;background:#1B5FA6"></div></div></div>
+                <div class="pi"><div class="ph"><span class="pl">Bupa Egypt</span><span class="pv">892 مطالبة</span></div><div class="pt"><div class="pf" style="width:52%;background:#B8963E"></div></div></div>
+                <div class="pi"><div class="ph"><span class="pl">AXA One Health</span><span class="pv">535 مطالبة</span></div><div class="pt"><div class="pf" style="width:38%;background:#1d9e75"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch"><div><div class="ct">أنماط الاحتيال الأعلى تكراراً</div><div class="cs">7 أيام · نماذج AI مصرية التدريب</div></div></div>
+          <div class="cb">
+            <div class="pw" style="margin-top:4px">
+              <div class="pi"><div class="ph"><span class="pl">وصفات وهمية</span><span class="pv" style="color:var(--red)">82%</span></div><div class="pt"><div class="pf" style="width:82%;background:#e05252"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">الإطالة غير المبررة بالإقامة</span><span class="pv" style="color:var(--amber)">67%</span></div><div class="pt"><div class="pf" style="width:67%;background:#d97706"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">التسعير الزائد للأدوية</span><span class="pv" style="color:var(--amber)">54%</span></div><div class="pt"><div class="pf" style="width:54%;background:#d97706"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">أدوية مزيفة</span><span class="pv" style="color:var(--blue)">41%</span></div><div class="pt"><div class="pf" style="width:41%;background:#1B5FA6"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">احتيال QR</span><span class="pv" style="color:var(--green)">28%</span></div><div class="pt"><div class="pf" style="width:28%;background:#1d9e75"></div></div></div>
+            </div>
+          </div>
         </div>
       </div>
+    </div><!-- /tpa -->
 
-      <!-- Claims Table -->
-      <div class="claims-panel">
-        <div class="panel-title" style="margin-bottom:.375rem">آخر المطالبات المعالجة</div>
-        <div class="panel-sub" style="margin-bottom:1.25rem">تحديث فوري — AI يصنّف كل مطالبة تلقائيًا</div>
-        <div class="claims-table-wrap">
-          <table class="claims-table">
-            <thead>
-              <tr>
-                <th>رقم المطالبة</th>
-                <th>المريض</th>
-                <th>المستشفى</th>
-                <th>المبلغ</th>
-                <th>نقاط المخاطر</th>
-                <th>الحالة</th>
-                <th>وقت المعالجة</th>
-              </tr>
-            </thead>
-            <tbody id="claims-tbody">
-              <!-- Generated by JS -->
+    <!-- PROVIDER AR -->
+    <div class="rp" id="p-prov">
+      <div class="kg">
+        <div class="kc gr"><div class="k-ico">✅</div><div class="k-lbl">فحوصات الأهلية اليوم</div><div class="k-val">1,247</div><div class="k-sub">عبر QR + API</div><div class="k-delta up">متوسط 3.9 ث</div></div>
+        <div class="kc bl"><div class="k-ico">💳</div><div class="k-lbl">المدفوعات (ش)</div><div class="k-val">27.9 م ج.م.</div><div class="k-sub">1,340 فاتورة مسوَّاة</div><div class="k-delta up">$1.8M ما يعادله</div></div>
+        <div class="kc go"><div class="k-ico">⏱</div><div class="k-lbl">متوسط دورة السداد</div><div class="k-val">8 أيام</div><div class="k-sub">مقابل 45–90 يوماً (متوسط القطاع)</div><div class="k-delta up">↓ أسرع بـ82%</div></div>
+        <div class="kc rd"><div class="k-ico">🔴</div><div class="k-lbl">المطالبات المتنازع عليها</div><div class="k-val">14</div><div class="k-sub">0.49% معدل النزاعات</div><div class="k-delta gd">↓ من 8.4% قبل المنصة</div></div>
+      </div>
+      <div class="card">
+        <div class="ch"><div><div class="ct">أداء مقدمي الخدمة في الشبكة</div><div class="cs">أعلى المستشفيات حجماً · مايو 2026</div></div></div>
+        <div class="cb" style="padding:0">
+          <table class="ct2">
+            <thead><tr><th>المستشفى / العيادة</th><th>المطالبات</th><th>متوسط القيمة</th><th>درجة الجودة</th><th>موعد السداد</th></tr></thead>
+            <tbody>
+              <tr><td><strong>دار الفؤاد</strong></td><td>847</td><td>34K ج.م.</td><td><span class="pill p-gr">96/100</span></td><td style="color:var(--green);font-size:10.5px;font-weight:600;direction:ltr">5 أيام</td></tr>
+              <tr><td><strong>السلام الدولي</strong></td><td>692</td><td>28K ج.م.</td><td><span class="pill p-gr">91/100</span></td><td style="color:var(--green);font-size:10.5px;font-weight:600;direction:ltr">7 أيام</td></tr>
+              <tr><td><strong>أخصائيو عين شمس</strong></td><td>548</td><td>48K ج.م.</td><td><span class="pill p-gr">88/100</span></td><td style="color:var(--green);font-size:10.5px;font-weight:600;direction:ltr">6 أيام</td></tr>
+              <tr><td><strong>مستشفى كليوباترا</strong></td><td>421</td><td>14K ج.م.</td><td><span class="pill p-am">74/100</span></td><td style="color:var(--amber);font-size:10.5px;font-weight:600;direction:ltr">12 يوماً</td></tr>
+              <tr><td><strong>Cairo Scan للأشعة</strong></td><td>339</td><td>6.5K ج.م.</td><td><span class="pill p-am">68/100</span></td><td style="color:var(--amber);font-size:10.5px;font-weight:600">تحت المراجعة</td></tr>
             </tbody>
           </table>
         </div>
       </div>
+    </div><!-- /prov -->
 
-    </div>
-  </div>
-</section>
-
-<!-- HEALTH SCORE -->
-<section class="health-score">
-  <div class="hs-inner">
-    <div class="reveal">
-      <div class="sec-label">النقاط الصحية</div>
-      <h2 class="sec-h2">النقاط الصحية <em style="color:#1d9e75">بالذكاء الاصطناعي</em></h2>
-      <p style="font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:0">نقاط صحية ديناميكية لكل مؤمَّن — تُحدَّث شهريًا بناءً على البيانات الطبية والسلوك الصحي.</p>
-    </div>
-    <div class="hs-grid reveal">
-      <div class="hs-left">
-        <div class="hs-score-big">
-          <svg class="hsc-svg" viewBox="0 0 180 180" width="200" height="200">
-            <circle class="hsc-track" cx="90" cy="90" r="80" />
-            <circle class="hsc-fill" id="hs-circle" cx="90" cy="90" r="80" />
-          </svg>
-          <div class="hs-center">
-            <div class="hs-num">7<span>8</span></div>
-            <div class="hs-subtitle">من 100 — متوسط المنظومة</div>
+    <!-- MEMBER AR -->
+    <div class="rp" id="p-mbr">
+      <div class="kg">
+        <div class="kc gr"><div class="k-ico">💚</div><div class="k-lbl">درجة الصحة</div><div class="k-val">74/100</div><div class="k-sub">جيد · فوق المتوسط</div><div class="k-delta up">↑ 8 نقاط هذا الربع</div></div>
+        <div class="kc bl"><div class="k-ico">🛡</div><div class="k-lbl">الحد السنوي المتبقي</div><div class="k-val">577K ج.م.</div><div class="k-sub">من 775K ج.م. سنوياً</div><div class="k-delta up">74% متبقٍ</div></div>
+        <div class="kc go"><div class="k-ico">📋</div><div class="k-lbl">المطالبات النشطة</div><div class="k-val">2</div><div class="k-sub">1 معتمدة · 1 معلقة</div><div class="k-delta up">قرار AI 4.3 ث</div></div>
+        <div class="kc rd"><div class="k-ico">💊</div><div class="k-lbl">ميزانية الصيدلية المستخدمة</div><div class="k-val">3,600 ج.م.</div><div class="k-sub">من 9,300 ج.م. شهرياً</div><div class="k-delta dn">39% في منتصف الشهر</div></div>
+      </div>
+      <div class="row c2">
+        <div class="card">
+          <div class="ch"><div><div class="ct">درجة الصحة الشخصية</div><div class="cs">أحمد محمد حسن · MBR-20847</div></div><span class="tag t-gr">جيد</span></div>
+          <div class="cb">
+            <div class="pw" style="margin-top:4px">
+              <div class="pi"><div class="ph"><span class="pl">النشاط البدني</span><span class="pv">82/100</span></div><div class="pt"><div class="pf" style="width:82%;background:#1d9e75"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">مخاطر الأمراض المزمنة</span><span class="pv">68/100</span></div><div class="pt"><div class="pf" style="width:68%;background:#B8963E"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">الالتزام بالدواء</span><span class="pv">91/100</span></div><div class="pt"><div class="pf" style="width:91%;background:#1B5FA6"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">الفحوصات الوقائية</span><span class="pv">60/100</span></div><div class="pt"><div class="pf" style="width:60%;background:#e05252"></div></div></div>
+            </div>
+            <div style="margin-top:12px;background:rgba(29,158,117,.07);border:1px solid rgba(29,158,117,.2);border-radius:8px;padding:10px 12px;font-size:11px;color:#1d9e75;line-height:1.6;text-align:right">💡 أكمل فحوصاتك الوقائية هذا الشهر لتحصل على خصم −15% على قسطك في تجديد ديسمبر 2026.</div>
           </div>
         </div>
-        <div class="hs-label">⬆ تحسّن بـ 6 نقاط هذا الربع</div>
-      </div>
-      <div class="hs-right">
-        <div class="hs-factors">
-          <div class="hf-item">
-            <div class="hf-header">
-              <div class="hf-name">الامتثال للأدوية</div>
-              <div class="hf-score green">87/100</div>
-            </div>
-            <div class="hf-bar-track">
-              <div class="hf-bar-fill" style="width:87%;background:#1d9e75"></div>
-            </div>
-          </div>
-          <div class="hf-item">
-            <div class="hf-header">
-              <div class="hf-name">زيارات الرعاية الوقائية</div>
-              <div class="hf-score green">82/100</div>
-            </div>
-            <div class="hf-bar-track">
-              <div class="hf-bar-fill" style="width:82%;background:#1d9e75"></div>
-            </div>
-          </div>
-          <div class="hf-item">
-            <div class="hf-header">
-              <div class="hf-name">مؤشرات الأمراض المزمنة</div>
-              <div class="hf-score gold">68/100</div>
-            </div>
-            <div class="hf-bar-track">
-              <div class="hf-bar-fill" style="width:68%;background:#c9a84c"></div>
-            </div>
-          </div>
-          <div class="hf-item">
-            <div class="hf-header">
-              <div class="hf-name">التحديث الصحي السنوي</div>
-              <div class="hf-score blue">91/100</div>
-            </div>
-            <div class="hf-bar-track">
-              <div class="hf-bar-fill" style="width:91%;background:#378add"></div>
-            </div>
-          </div>
-          <div class="hf-item">
-            <div class="hf-header">
-              <div class="hf-name">تكرار المطالبات</div>
-              <div class="hf-score gold">72/100</div>
-            </div>
-            <div class="hf-bar-track">
-              <div class="hf-bar-fill" style="width:72%;background:#c9a84c"></div>
+        <div class="card">
+          <div class="ch"><div><div class="ct">مطالباتي</div><div class="cs">النشطة والأخيرة · أحمد محمد حسن</div></div></div>
+          <div class="cb" style="padding:0">
+            <table class="ct2">
+              <thead><tr><th>المطالبة</th><th>الخدمة</th><th>المبلغ</th><th>الحالة</th><th>حصتي</th></tr></thead>
+              <tbody>
+                <tr><td><span class="cid">CLM-88471</span></td><td>زيارة قلبية</td><td>2,790 ج.م.</td><td><span class="pill p-gr">✓ معتمدة</span></td><td style="font-size:10.5px;font-weight:700;color:var(--green)">558 ج.م.</td></tr>
+                <tr><td><span class="cid">CLM-88312</span></td><td>فحوصات مختبرية</td><td>1,318 ج.م.</td><td><span class="pill p-gy">⏳ معلقة</span></td><td style="font-size:10.5px;color:#94a3b8">قيد الحساب</td></tr>
+                <tr><td><span class="cid">CLM-88201</span></td><td>صيدلية</td><td>961 ج.م.</td><td><span class="pill p-gr">✓ معتمدة</span></td><td style="font-size:10.5px;font-weight:700;color:var(--green)">192 ج.م.</td></tr>
+                <tr><td><span class="cid">CLM-88098</span></td><td>تصوير دماغ MRI</td><td>6,510 ج.م.</td><td><span class="pill p-gr">✓ معتمدة</span></td><td style="font-size:10.5px;font-weight:700;color:var(--green)">1,302 ج.م.</td></tr>
+              </tbody>
+            </table>
+            <div style="padding:11px 15px;background:var(--g50);border-top:1px solid var(--g100)">
+              <div style="font-size:11px;color:var(--g600);margin-bottom:8px;text-align:right">بطاقتك الصحية الرقمية · أبرز الـQR في أي مستشفى شبكي</div>
+              <div style="display:flex;gap:8px;flex-direction:row-reverse">
+                <button style="flex:1;padding:8px;background:var(--navy);color:#fff;border:none;border-radius:7px;font-family:var(--fn);font-size:11px;font-weight:700;cursor:pointer">📱 عرض بطاقة QR</button>
+                <button style="flex:1;padding:8px;background:#fff;border:1px solid var(--g200);border-radius:7px;font-family:var(--fn);font-size:11px;color:var(--g600);cursor:pointer">📞 الدعم</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </div><!-- /mbr -->
 
-<!-- MODULES STATUS -->
-<section class="modules-status">
-  <div class="ms-inner">
-    <div class="reveal">
-      <div class="sec-label">حالة الوحدات</div>
-      <h2 class="sec-h2">الوحدات السبع <em style="color:#1d9e75">تعمل بكامل طاقتها</em></h2>
+  </div><!-- /overview -->
+
+  <!-- CLAIMS PANEL AR -->
+  <div class="panel" id="p-claims">
+    <div class="kg">
+      <div class="kc bl"><div class="k-ico">📋</div><div class="k-lbl">إجمالي المطالبات اليوم</div><div class="k-val">2,847</div><div class="k-sub">19.2 مليون ج.م. قيمة إجمالية</div><div class="k-delta up">↑ 12% عن أمس</div></div>
+      <div class="kc gr"><div class="k-ico">⚡</div><div class="k-lbl">معتمدة تلقائياً</div><div class="k-val">2,073</div><div class="k-sub">73% · متوسط 4.3 ث</div><div class="k-delta up">↑ 4 نقاط عن الأسبوع</div></div>
+      <div class="kc am"><div class="k-ico">⚠️</div><div class="k-lbl">بانتظار المراجعة</div><div class="k-val">427</div><div class="k-sub">15% · SLA 4 ساعات</div><div class="k-delta gd">↓ من 31% قبل AI</div></div>
+      <div class="kc rd"><div class="k-ico">✗</div><div class="k-lbl">مرفوضة تلقائياً</div><div class="k-val">347</div><div class="k-sub">12% · 2.4 مليون ج.م. محمية</div><div class="k-delta gd">انتهاكات السياسة</div></div>
     </div>
-    <div class="ms-grid">
-      <div class="ms-card reveal">
-        <div class="ms-header">
-          <span class="ms-icon">🛡️</span>
-          <span class="ms-status-pill">نشط</span>
-        </div>
-        <div class="ms-name">كشف الاحتيال</div>
-        <div class="ms-val"><em class="green">4.3</em> ث</div>
-        <div class="ms-meta">43 مطالبة مشبوهة اليوم</div>
-      </div>
-      <div class="ms-card reveal">
-        <div class="ms-header">
-          <span class="ms-icon">❤️</span>
-          <span class="ms-status-pill">نشط</span>
-        </div>
-        <div class="ms-name">النقاط الصحية</div>
-        <div class="ms-val"><em class="green">78</em>/100</div>
-        <div class="ms-meta">متوسط 375K مؤمَّن</div>
-      </div>
-      <div class="ms-card reveal">
-        <div class="ms-header">
-          <span class="ms-icon">📋</span>
-          <span class="ms-status-pill">نشط</span>
-        </div>
-        <div class="ms-name">توقع المطالبات</div>
-        <div class="ms-val"><em class="green">94%</em></div>
-        <div class="ms-meta">دقة التصنيف اللحظية</div>
-      </div>
-      <div class="ms-card reveal">
-        <div class="ms-header">
-          <span class="ms-icon">🏥</span>
-          <span class="ms-status-pill">نشط</span>
-        </div>
-        <div class="ms-name">توجيه المستشفيات</div>
-        <div class="ms-val"><em class="gold">200+</em></div>
-        <div class="ms-meta">مستشفى مُرتبط بالشبكة</div>
-      </div>
-      <div class="ms-card reveal">
-        <div class="ms-header">
-          <span class="ms-icon">🌱</span>
-          <span class="ms-status-pill">نشط</span>
-        </div>
-        <div class="ms-name">الرعاية الوقائية</div>
-        <div class="ms-val"><em class="green">12K</em></div>
-        <div class="ms-meta">تنبيه صحي هذا الشهر</div>
-      </div>
-      <div class="ms-card reveal">
-        <div class="ms-header">
-          <span class="ms-icon">📈</span>
-          <span class="ms-status-pill">نشط</span>
-        </div>
-        <div class="ms-name">الأقساط الديناميكية</div>
-        <div class="ms-val"><em class="gold">±18%</em></div>
-        <div class="ms-meta">تعديل متوسط الأقساط</div>
-      </div>
-      <div class="ms-card reveal">
-        <div class="ms-header">
-          <span class="ms-icon">📊</span>
-          <span class="ms-status-pill">نشط</span>
-        </div>
-        <div class="ms-name">لوحة التحكم</div>
-        <div class="ms-val"><em class="green">100%</em></div>
-        <div class="ms-meta">وقت تشغيل — 99.9% SLA</div>
-      </div>
-      <div class="ms-card reveal" style="border-color:rgba(255,255,255,.04);opacity:.6">
-        <div class="ms-header">
-          <span class="ms-icon">🔗</span>
-          <span class="ms-status-pill" style="background:rgba(255,255,255,.06);color:rgba(255,255,255,.35);border-color:rgba(255,255,255,.1)">قريبًا</span>
-        </div>
-        <div class="ms-name">API خارجي للشركاء</div>
-        <div class="ms-val" style="color:rgba(255,255,255,.3)">Q3 2026</div>
-        <div class="ms-meta">تكامل مباشر للشركاء</div>
+    <div class="card">
+      <div class="ch"><div><div class="ct">جدول معالجة المطالبات</div><div class="cs">اليوم · تحديث فوري · المبالغ بالجنيه المصري</div></div><span class="tag t-bl">2,847 معالجة</span></div>
+      <div class="cb" style="padding:0">
+        <table class="ct2">
+          <thead><tr><th>رقم المطالبة</th><th>المريض</th><th>المستشفى</th><th>النوع</th><th>المبلغ (ج.م.)</th><th>المخاطر</th><th>الحالة</th><th>الوقت</th></tr></thead>
+          <tbody>
+            <tr><td><span class="cid">CLM-88842</span></td><td>أ. م. س.</td><td>مستشفى النيل</td><td>داخلي</td><td>19,220</td><td style="color:var(--red);font-weight:700">91</td><td><span class="pill p-am">⚠ مشبوهة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">0.9 ث</td></tr>
+            <tr><td><span class="cid">CLM-88841</span></td><td>ف. ع. ج.</td><td>القاهرة الجديد</td><td>خارجي</td><td>5,890</td><td style="color:var(--green);font-weight:700">12</td><td><span class="pill p-gr">✓ معتمدة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">2.1 ث</td></tr>
+            <tr><td><span class="cid">CLM-88840</span></td><td>م. ك. ر.</td><td>مستشفى المعادي</td><td>جراحة</td><td>89,900</td><td style="color:var(--amber);font-weight:700">45</td><td><span class="pill p-am">⚠ للمراجعة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">3.4 ث</td></tr>
+            <tr><td><span class="cid">CLM-88839</span></td><td>م. م. س.</td><td>النهضة الطبي</td><td>مختبر</td><td>11,160</td><td style="color:var(--green);font-weight:700">8</td><td><span class="pill p-gr">✓ معتمدة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">1.8 ث</td></tr>
+            <tr><td><span class="cid">CLM-88838</span></td><td>أ. ر. ع.</td><td>ماجد الطبي</td><td>صيدلية</td><td>32,550</td><td style="color:var(--green);font-weight:700">19</td><td><span class="pill p-gr">✓ معتمدة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">4.1 ث</td></tr>
+            <tr><td><span class="cid">CLM-88837</span></td><td>ط. س. ج.</td><td>الشفاء الطبي</td><td>داخلي</td><td>14,725</td><td style="color:var(--amber);font-weight:700">67</td><td><span class="pill p-am">⏳ قيد المراجعة</span></td><td style="font-size:10px;color:#94a3b8;direction:ltr">5.2 ث</td></tr>
+          </tbody>
+        </table>
+        <div class="as"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>427 بانتظار المدير الطبي · 347 مرفوضة · 2.4 مليون ج.م. محمية من مطالبات غير مشروعة</div>
       </div>
     </div>
-  </div>
-</section>
+  </div><!-- /claims -->
 
-<!-- CTA -->
-<section class="dash-cta">
-  <div class="dc-inner reveal">
-    <h2 class="cta-h2">جرّب لوحة التحكم<br><em>مباشرةً مع بياناتك</em></h2>
-    <p class="cta-p">نقدم نسخة تجريبية مُخصَّصة لشركتك — استخدم بياناتك الفعلية وشاهد كيف تعمل وحدات الذكاء الاصطناعي في بيئتك الحقيقية.</p>
-    <div class="cta-btns">
-      <a href="contact.html" class="cta-btn-green">طلب عرض تجريبي ←</a>
-      <a href="platform.html" class="cta-btn-sec">استعرض الوحدات</a>
+  <!-- FRAUD PANEL AR -->
+  <div class="panel" id="p-fraud">
+    <div class="kg">
+      <div class="kc rd"><div class="k-ico">🚨</div><div class="k-lbl">تنبيهات احتيال نشطة</div><div class="k-val">43</div><div class="k-sub">عبر 3 كتب تأمين</div><div class="k-delta dn">↑ 8 جديدة اليوم</div></div>
+      <div class="kc am"><div class="k-ico">🛑</div><div class="k-lbl">محجوب اليوم</div><div class="k-val">433K ج.م.</div><div class="k-sub">$28K ما يعادله</div><div class="k-delta up">↑ 18% عن أمس</div></div>
+      <div class="kc gr"><div class="k-ico">🎯</div><div class="k-lbl">دقة الكشف</div><div class="k-val">94.2%</div><div class="k-sub">نماذج AI مصرية التدريب</div><div class="k-delta up">↑ 2.1 نقطة هذا الشهر</div></div>
+      <div class="kc bl"><div class="k-ico">⚡</div><div class="k-lbl">سرعة الكشف</div><div class="k-val">0.9 ث</div><div class="k-sub">متوسط وقت تأشير الاحتيال</div><div class="k-delta up">↓ أسرع بـ99.9% من اليدوي</div></div>
     </div>
-  </div>
-</section>
+    <div class="row c2">
+      <div class="card">
+        <div class="ch"><div><div class="ct">قضايا الاحتيال النشطة</div><div class="cs">مرتبة حسب الخطورة · المبالغ بالجنيه المصري</div></div><span class="tag t-rd">43 قضية</span></div>
+        <div class="cb">
+          <div class="fl">
+            <div class="fri"><div class="fri-ico">💊</div><div class="fri-body"><div class="fri-t">تقسيم أدوية — El Ezaby + 19011</div><div class="fri-m">PRV-4821 · 8 وصفات لـ3 مرضى · 2 صيدليات · نمط الرولودكس · 250+ فرع</div></div><div class="fri-amt">65K ج.م.</div></div>
+            <div class="fri"><div class="fri-ico">🏥</div><div class="fri-body"><div class="fri-t">فوترة وهمية — مستشفى السلام الخاص</div><div class="fri-m">إجراءات دون سجلات دخول · 3 مطالبات · نقابة الأطباء مُنبَّهة</div></div><div class="fri-amt">43.2K ج.م.</div></div>
+            <div class="fri am"><div class="fri-ico">🔬</div><div class="fri-body"><div class="fri-t">تسعير زائد — مجموعة مختبر IDH</div><div class="fri-m">15 فحصاً بأسعار أخصائي · شذوذ إحصائي · 340+ فرع كمرجع</div></div><div class="fri-amt">22.2K ج.م.</div></div>
+            <div class="fri go"><div class="fri-ico">👤</div><div class="fri-body"><div class="fri-t">عدم تطابق الأهلية — MBR-19421</div><div class="fri-m">وثيقة AXA مصر · انتهت فبراير 2026 · 4 مطالبات بعد الانتهاء</div></div><div class="fri-amt">7.4K ج.م.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ch"><div><div class="ct">أنماط الاحتيال الأعلى</div><div class="cs">25–40 نمطاً مصري التدريب · 7 أيام</div></div></div>
+        <div class="cb">
+          <div class="cw" style="height:130px">
+            <svg viewBox="0 0 400 130" preserveAspectRatio="none">
+              <rect x="5" y="55" width="44" height="50" rx="3" fill="#1d9e75"/><rect x="5" y="48" width="44" height="7" rx="2" fill="#e05252"/>
+              <rect x="60" y="48" width="44" height="57" rx="3" fill="#1d9e75"/><rect x="60" y="40" width="44" height="8" rx="2" fill="#e05252"/>
+              <rect x="115" y="42" width="44" height="63" rx="3" fill="#1d9e75"/><rect x="115" y="32" width="44" height="10" rx="2" fill="#e05252"/>
+              <rect x="170" y="35" width="44" height="70" rx="3" fill="#1d9e75"/><rect x="170" y="22" width="44" height="13" rx="2" fill="#e05252"/>
+              <rect x="225" y="28" width="44" height="77" rx="3" fill="#1d9e75"/><rect x="225" y="18" width="44" height="10" rx="2" fill="#e05252"/>
+              <rect x="280" y="35" width="44" height="70" rx="3" fill="#1d9e75"/><rect x="280" y="25" width="44" height="10" rx="2" fill="#e05252"/>
+              <rect x="335" y="42" width="44" height="63" rx="3" fill="#1d9e75"/><rect x="335" y="32" width="44" height="10" rx="2" fill="#e05252"/>
+              <text x="27" y="122" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Cairo,sans-serif">السبت</text>
+              <text x="82" y="122" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Cairo,sans-serif">الأحد</text>
+              <text x="137" y="122" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Cairo,sans-serif">الاثنين</text>
+              <text x="192" y="122" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Cairo,sans-serif">الثلاثاء</text>
+              <text x="247" y="122" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Cairo,sans-serif">الأربعاء</text>
+              <text x="302" y="122" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Cairo,sans-serif">الخميس</text>
+              <text x="357" y="122" font-size="8.5" fill="#94a3b8" text-anchor="middle" font-family="Cairo,sans-serif">الجمعة</text>
+            </svg>
+          </div>
+          <div style="display:flex;gap:14px;margin-top:6px;flex-direction:row-reverse">
+            <div class="li"><div class="ld" style="background:#1d9e75"></div><span class="ll">مطالبات شرعية</span></div>
+            <div class="li"><div class="ld" style="background:#e05252"></div><span class="ll">مشبوهة</span></div>
+          </div>
+          <div class="pw" style="margin-top:12px">
+            <div class="pi"><div class="ph"><span class="pl">وصفات وهمية</span><span class="pv" style="color:var(--red)">82%</span></div><div class="pt"><div class="pf" style="width:82%;background:#e05252"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">إطالة الإقامة</span><span class="pv" style="color:var(--amber)">67%</span></div><div class="pt"><div class="pf" style="width:67%;background:#d97706"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">تسعير زائد للأدوية</span><span class="pv" style="color:var(--amber)">54%</span></div><div class="pt"><div class="pf" style="width:54%;background:#d97706"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">أدوية مزيفة</span><span class="pv" style="color:var(--blue)">41%</span></div><div class="pt"><div class="pf" style="width:41%;background:#1B5FA6"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /fraud -->
 
-<!-- FOOTER -->
-<div id="footer-placeholder"></div>
-</main>
+  <!-- PHARMACY PANEL AR -->
+  <div class="panel" id="p-pharmacy">
+    <div class="kg">
+      <div class="kc bl"><div class="k-ico">💊</div><div class="k-lbl">الوصفات المعالجة اليوم</div><div class="k-val">1,247</div><div class="k-sub">El Ezaby · 19011 · Yodawy</div><div class="k-delta up">↑ 8% عن أمس</div></div>
+      <div class="kc gr"><div class="k-ico">💰</div><div class="k-lbl">توفير الأدوية البديلة</div><div class="k-val">124K ج.م.</div><div class="k-sub">$8K · معدل إحلال 23%</div><div class="k-delta up">↑ 3 نقاط هذا الشهر</div></div>
+      <div class="kc rd"><div class="k-ico">⚠️</div><div class="k-lbl">حالات تقسيم الأدوية</div><div class="k-val">12</div><div class="k-sub">65K ج.م. محجوبة</div><div class="k-delta gd">↓ 4 عن الأسبوع الماضي</div></div>
+      <div class="kc go"><div class="k-ico">🔬</div><div class="k-lbl">الالتزام بالقائمة الدوائية</div><div class="k-val">87.4%</div><div class="k-sub">من الوصفات على القائمة</div><div class="k-delta up">↑ 2.1 نقطة هذا الشهر</div></div>
+    </div>
+    <div class="row c2">
+      <div class="card">
+        <div class="ch"><div><div class="ct">أعلى فئات الأدوية المصروفة</div><div class="cs">حسب حجم الوصفات اليوم</div></div></div>
+        <div class="cb">
+          <div class="pw" style="margin-top:4px">
+            <div class="pi"><div class="ph"><span class="pl">أمراض مزمنة (ضغط، سكر)</span><span class="pv">340 وصفة · 48K ج.م. توفير</span></div><div class="pt"><div class="pf" style="width:85%;background:#1B5FA6"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">التهابات حادة</span><span class="pv">287 وصفة · 31K ج.م. توفير</span></div><div class="pt"><div class="pf" style="width:72%;background:#1d9e75"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">طب أطفال</span><span class="pv">198 وصفة · 18K ج.م. توفير</span></div><div class="pt"><div class="pf" style="width:50%;background:#B8963E"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">أورام (عبر الشبكة)</span><span class="pv">145 وصفة · 22K ج.م. توفير</span></div><div class="pt"><div class="pf" style="width:36%;background:#d97706"></div></div></div>
+            <div class="pi"><div class="ph"><span class="pl">عام / أخرى</span><span class="pv">277 وصفة · 5K ج.م. توفير</span></div><div class="pt"><div class="pf" style="width:24%;background:#94a3b8"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ch"><div><div class="ct">تنبيهات تقسيم الأدوية</div><div class="cs">القضايا النشطة اليوم</div></div><span class="tag t-rd">12 قضية</span></div>
+        <div class="cb">
+          <div class="fl">
+            <div class="fri"><div class="fri-ico">💊</div><div class="fri-body"><div class="fri-t">El Ezaby — فرع المهندسين #4821</div><div class="fri-m">8 وصفات · 3 مرضى · نفس الطبيب المُحيل · تقسيم في زيارتين خلال 24 ساعة</div></div><div class="fri-amt">28K ج.م.</div></div>
+            <div class="fri am"><div class="fri-ico">🏪</div><div class="fri-body"><div class="fri-t">Pharmacy Mart — فرع المعادي</div><div class="fri-m">5 وصفات أنسولين · تقسيم على 3 أيام · قيمة مبالغ فيها</div></div><div class="fri-amt">12K ج.م.</div></div>
+            <div class="fri go"><div class="fri-ico">💊</div><div class="fri-body"><div class="fri-t">19011 — عنقود مصر الجديدة</div><div class="fri-m">4 وصفات علاج كيماوي · تقسيم الوصفة · تأشير أورام</div></div><div class="fri-amt">8.4K ج.م.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /pharmacy -->
 
-<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+  <!-- MEMBERS PANEL AR -->
+  <div class="panel" id="p-members">
+    <div class="kg">
+      <div class="kc bl"><div class="k-ico">👥</div><div class="k-lbl">المؤمَّنون النشطون</div><div class="k-val">375,000</div><div class="k-sub">GlobeMed · 18 شركة تأمين</div><div class="k-delta up">↑ 12K أبريل</div></div>
+      <div class="kc rd"><div class="k-ico">🚨</div><div class="k-lbl">عالي الخطورة</div><div class="k-val">2,847</div><div class="k-sub">0.76% · يحتاجون تدخلاً</div><div class="k-delta dn">↑ 312 رُصدوا اليوم</div></div>
+      <div class="kc am"><div class="k-ico">❤️</div><div class="k-lbl">أمراض مزمنة</div><div class="k-val">12,441</div><div class="k-sub">3.3% من إجمالي الكتاب</div><div class="k-delta up">مراقبة نشطة</div></div>
+      <div class="kc gr"><div class="k-ico">⭐</div><div class="k-lbl">متوسط درجة الصحة</div><div class="k-val">68/100</div><div class="k-sub">عبر 375K مؤمَّن</div><div class="k-delta up">↑ 3 نقاط هذا الربع</div></div>
+    </div>
+    <div class="row c2">
+      <div class="card">
+        <div class="ch"><div><div class="ct">المؤمَّنون عالي الخطورة — طابور التدخل</div><div class="cs">أعلى 8 بدرجة الخطورة</div></div><span class="tag t-rd">2,847 إجمالاً</span></div>
+        <div class="cb" style="padding:0">
+          <table class="ct2">
+            <thead><tr><th>رقم العضو</th><th>العمر</th><th>درجة الخطورة</th><th>السبب الرئيسي</th><th>شركة التأمين</th><th>الإجراء</th></tr></thead>
+            <tbody>
+              <tr><td><span class="cid">MBR-18421</span></td><td>62 أنثى</td><td style="color:var(--red);font-weight:700">94</td><td>قلب + سكر غير منضبط</td><td>GlobeMed</td><td><span class="pill p-rd">عاجل</span></td></tr>
+              <tr><td><span class="cid">MBR-20014</span></td><td>55 ذكر</td><td style="color:var(--red);font-weight:700">89</td><td>عدم التزام بعد عملية تحويل</td><td>Bupa مصر</td><td><span class="pill p-rd">عاجل</span></td></tr>
+              <tr><td><span class="cid">MBR-19847</span></td><td>48 ذكر</td><td style="color:var(--amber);font-weight:700">76</td><td>ضغط دم المرحلة الثالثة</td><td>GlobeMed</td><td><span class="pill p-am">مراجعة</span></td></tr>
+              <tr><td><span class="cid">MBR-21034</span></td><td>71 أنثى</td><td style="color:var(--amber);font-weight:700">72</td><td>قصور كلوي مزمن</td><td>AXA مصر</td><td><span class="pill p-am">مراجعة</span></td></tr>
+              <tr><td><span class="cid">MBR-20847</span></td><td>47 ذكر</td><td style="color:var(--blue);font-weight:700">54</td><td>عوامل خطر قلبية</td><td>GlobeMed</td><td><span class="pill p-bl">مراقبة</span></td></tr>
+              <tr><td><span class="cid">MBR-18904</span></td><td>33 أنثى</td><td style="color:var(--blue);font-weight:700">47</td><td>حمل عالي المخاطر</td><td>Bupa مصر</td><td><span class="pill p-bl">مراقبة</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ch"><div><div class="ct">توزيع مستويات المخاطر</div><div class="cs">375,000 مؤمَّن · مايو 2026</div></div></div>
+        <div class="cb" style="padding-top:14px">
+          <div class="donut-row">
+            <svg class="donut-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="36" fill="none" stroke="#e2e8f0" stroke-width="13" stroke-dasharray="176.19 226.19" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+              <circle cx="50" cy="50" r="36" fill="none" stroke="#1d9e75" stroke-width="13" stroke-dasharray="41.83 226.19" stroke-dashoffset="-176.19" transform="rotate(-90 50 50)"/>
+              <circle cx="50" cy="50" r="36" fill="none" stroke="#d97706" stroke-width="13" stroke-dasharray="6.79 226.19" stroke-dashoffset="-218.02" transform="rotate(-90 50 50)"/>
+              <circle cx="50" cy="50" r="36" fill="none" stroke="#e05252" stroke-width="13" stroke-dasharray="1.36 226.19" stroke-dashoffset="-224.81" transform="rotate(-90 50 50)"/>
+              <text x="50" y="47" text-anchor="middle" font-size="10" font-weight="700" fill="#1e293b" font-family="Kufam,sans-serif">375K</text>
+              <text x="50" y="58" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="Cairo,sans-serif">مؤمَّن</text>
+            </svg>
+            <div class="leg">
+              <div class="li"><div class="ld" style="background:#e2e8f0"></div><span class="ll">خطورة منخفضة</span><span class="lv">292.5K</span><span class="lp">78%</span></div>
+              <div class="li"><div class="ld" style="background:#1d9e75"></div><span class="ll">خطورة متوسطة</span><span class="lv">69.4K</span><span class="lp">18.5%</span></div>
+              <div class="li"><div class="ld" style="background:#d97706"></div><span class="ll">خطورة عالية</span><span class="lv">12K</span><span class="lp">3.2%</span></div>
+              <div class="li"><div class="ld" style="background:#e05252"></div><span class="ll">حرجة</span><span class="lv">1,125</span><span class="lp">0.3%</span></div>
+            </div>
+          </div>
+          <div style="margin-top:13px;padding-top:11px;border-top:1px solid var(--g100)">
+            <div class="ct" style="font-size:11.5px;margin-bottom:10px;text-align:right">أبرز الأمراض المزمنة</div>
+            <div class="pw" style="margin-top:0">
+              <div class="pi"><div class="ph"><span class="pl">ارتفاع ضغط الدم</span><span class="pv">4,218 مؤمَّن</span></div><div class="pt"><div class="pf" style="width:88%;background:#e05252"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">السكري النوع الثاني</span><span class="pv">3,847 مؤمَّن</span></div><div class="pt"><div class="pf" style="width:80%;background:#d97706"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">أمراض القلب</span><span class="pv">2,114 مؤمَّن</span></div><div class="pt"><div class="pf" style="width:62%;background:#1B5FA6"></div></div></div>
+              <div class="pi"><div class="ph"><span class="pl">القصور الكلوي</span><span class="pv">1,241 مؤمَّن</span></div><div class="pt"><div class="pf" style="width:38%;background:#B8963E"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /members -->
+
+  <!-- REPORTS PANEL AR -->
+  <div class="panel" id="p-reports">
+    <div class="kg">
+      <div class="kc bl"><div class="k-ico">📄</div><div class="k-lbl">تقارير مولَّدة (ش)</div><div class="k-val">24</div><div class="k-sub">6 أنواع · جدولة تلقائية</div><div class="k-delta up">↑ 4 جديدة هذا الشهر</div></div>
+      <div class="kc gr"><div class="k-ico">✅</div><div class="k-lbl">امتثال الهيئة المالية</div><div class="k-val">100%</div><div class="k-sub">كل مسارات التدقيق مكتملة</div><div class="k-delta up">لا ثغرات</div></div>
+      <div class="kc go"><div class="k-ico">⏱</div><div class="k-lbl">متوسط وقت التقرير</div><div class="k-val">2.4 ث</div><div class="k-sub">توليد تلقائي بالذكاء</div><div class="k-delta up">كان 3–5 أيام يدوياً</div></div>
+      <div class="kc rd"><div class="k-ico">📊</div><div class="k-lbl">رضا شركات التأمين</div><div class="k-val">4.8/5</div><div class="k-sub">NPS الكتاب التجريبي</div><div class="k-delta up">↑ 0.3 هذا الربع</div></div>
+    </div>
+    <div class="card">
+      <div class="ch"><div><div class="ct">مكتبة التقارير</div><div class="cs">توليد تلقائي · متوافقة مع الهيئة المالية · للتنزيل أو التصدير</div></div><span class="tag t-bl">6 أنواع</span></div>
+      <div class="cb">
+        <div class="rep-grid">
+          <div class="rep-card"><div class="rep-ico">📋</div><div class="rep-title">تقرير الامتثال الشهري — الهيئة المالية</div><div class="rep-meta">28 مايو 2026 · PDF · 42 صفحة<br>يشمل: سجل القرارات، ملخص الاحتيال</div><div class="rep-foot"><span class="rep-badge t-gr" style="background:rgba(29,158,117,.1);color:#1d9e75">● حالي</span><button class="rep-btn">تحميل PDF</button></div></div>
+          <div class="rep-card"><div class="rep-ico">📉</div><div class="rep-title">تحليل نسبة الخسائر — ش2 2026</div><div class="rep-meta">27 مايو 2026 · PDF + Excel · 18 صفحة<br>يشمل: اتجاه نسبة الخسائر، عائد الاستثمار</div><div class="rep-foot"><span class="rep-badge t-gr" style="background:rgba(29,158,117,.1);color:#1d9e75">● حالي</span><button class="rep-btn">تحميل PDF</button></div></div>
+          <div class="rep-card"><div class="rep-ico">🔍</div><div class="rep-title">ملخص استرداد مبالغ الاحتيال</div><div class="rep-meta">29 مايو 2026 · PDF · 28 صفحة<br>يشمل: القضايا، المبالغ، تأشيرات مقدمي الخدمة</div><div class="rep-foot"><span class="rep-badge" style="background:rgba(27,95,166,.1);color:#1B5FA6">● اليوم</span><button class="rep-btn">تحميل PDF</button></div></div>
+          <div class="rep-card"><div class="rep-ico">⚡</div><div class="rep-title">إحصاءات معالجة المطالبات</div><div class="rep-meta">29 مايو 2026 · Excel · 8 أوراق<br>يشمل: الحجم، SLA، الاعتماد التلقائي</div><div class="rep-foot"><span class="rep-badge" style="background:rgba(27,95,166,.1);color:#1B5FA6">● اليوم</span><button class="rep-btn">تصدير Excel</button></div></div>
+          <div class="rep-card"><div class="rep-ico">💊</div><div class="rep-title">تحليل إنفاق الصيدليات</div><div class="rep-meta">27 مايو 2026 · PDF · 14 صفحة<br>يشمل: الوصفات، الإحلال، تقسيم الأدوية</div><div class="rep-foot"><span class="rep-badge t-gr" style="background:rgba(29,158,117,.1);color:#1d9e75">● حالي</span><button class="rep-btn">تحميل PDF</button></div></div>
+          <div class="rep-card"><div class="rep-ico">👥</div><div class="rep-title">مؤشر صحة المؤمَّنين — 375K</div><div class="rep-meta">25 مايو 2026 · PDF + Excel · 31 صفحة<br>يشمل: مستويات الخطر، الأمراض المزمنة، درجات الصحة</div><div class="rep-foot"><span class="rep-badge t-go" style="background:rgba(184,150,62,.1);color:#B8963E">أسبوعي</span><button class="rep-btn">تحميل PDF</button></div></div>
+        </div>
+        <div style="margin-top:14px;padding:12px 16px;background:rgba(27,95,166,.05);border:1px solid rgba(27,95,166,.15);border-radius:9px;font-size:11.5px;color:var(--blue);text-align:right">📊 <strong>غرفة بيانات المستثمرين:</strong> جميع التقارير متاحة في <a href="investors.html" style="color:var(--blue);font-weight:700">الملف الاستثماري</a> — القاعدي: $475K → $2.45M → $7.35M ARR خلال 3 سنوات.</div>
+      </div>
+    </div>
+  </div><!-- /reports -->
+
+  </div><!-- /content -->
+</div><!-- /main -->
+</div><!-- /layout -->
 
 <script>
-// Mobile nav
-const toggle = document.querySelector('.nav-mobile-toggle');
-const mNav = document.querySelector('.mobile-nav');
-if(toggle && mNav){
-  toggle.addEventListener('click',()=>{
-    const open = mNav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-    mNav.setAttribute('aria-hidden', !open);
+var T={overview:'نظرة عامة على المنصة',claims:'وحدة معالجة المطالبات',fraud:'كشف الاحتيال والتحليل',pharmacy:'تحليلات الصيدليات',members:'إدارة صحة المؤمَّنين',reports:'التقارير وامتثال الهيئة المالية'};
+var RT={cfo:'نظرة عامة — المدير المالي · الاستخبارات المالية',cmo:'نظرة سريرية — المدير الطبي · دعم القرار',tpa:'عمليات TPA · معالجة المطالبات',prov:'بوابة مقدمي الخدمة · إدارة الشبكة',mbr:'لوحة العضو — أحمد محمد حسن'};
+function setSection(sec,el){
+  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('active'));
+  if(el)el.classList.add('active');
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  var p=document.getElementById('p-'+sec);if(p)p.classList.add('active');
+  document.getElementById('tb-title').textContent=T[sec]||sec;
+  document.getElementById('role-tabs').style.display=(sec==='overview')?'flex':'none';
+  animateBars();
+}
+function setRole(r,btn){
+  document.querySelectorAll('.rb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.rp').forEach(p=>p.classList.remove('active'));
+  var rp=document.getElementById('p-'+r);if(rp)rp.classList.add('active');
+  document.getElementById('tb-title').textContent=RT[r]||'نظرة عامة';
+  animateBars();
+}
+function animateBars(){
+  document.querySelectorAll('.pf').forEach(b=>{
+    var w=b.style.width;b.style.transition='none';b.style.width='0';
+    requestAnimationFrame(()=>{requestAnimationFrame(()=>{b.style.transition='width 1.3s cubic-bezier(.4,0,.2,1)';b.style.width=w;});});
   });
 }
-// Reveal
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-// Nav scroll
-const nav = document.getElementById('nav');
-if(nav) window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY>40); });
-// Scroll top
-const st = document.getElementById('scroll-top');
-if(st){
-  window.addEventListener('scroll',()=>{ st.classList.toggle('visible', window.scrollY>400); });
-  st.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
-}
-
-// Live clock
-function updateTime(){
-  const t = new Date();
-  document.getElementById('live-time').textContent =
-    t.toLocaleTimeString('ar-EG',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-}
-updateTime(); setInterval(updateTime, 1000);
-
-// Build chart
-const chartData = [
-  {day:'السبت',legit:340,fraud:8},
-  {day:'الأحد',legit:412,fraud:12},
-  {day:'الإثنين',legit:398,fraud:6},
-  {day:'الثلاثاء',legit:467,fraud:15},
-  {day:'الأربعاء',legit:421,fraud:9},
-  {day:'الخميس',legit:389,fraud:11},
-  {day:'الجمعة',legit:420,fraud:7}
+var fevts=[
+  {c:'#e05252',t:'<strong>CLM-88842</strong> مطالبة مشبوهة · 19,220 ج.م. · خطورة 91%'},
+  {c:'#1d9e75',t:'<strong>CLM-88841</strong> معتمدة تلقائياً · 5,890 ج.م. · 2.1 ث'},
+  {c:'#1B5FA6',t:'<strong>MBR-20847</strong> تحقق الأهلية · QR · 3.9 ث'},
+  {c:'#d97706',t:'<strong>CLM-88840</strong> أُحيلت للمدير الطبي · 89,900 ج.م.'},
+  {c:'#1d9e75',t:'<strong>CLM-88839</strong> مختبر معتمد · 11,160 ج.م.'},
+  {c:'#e05252',t:'<strong>FRAUD-0091</strong> وصفة وهمية · El Ezaby · محجوبة'},
+  {c:'#1B5FA6',t:'<strong>MBR-22014</strong> تسجيل جديد · كتاب Telecom Egypt'},
 ];
-const maxVal = Math.max(...chartData.map(d=>d.legit+d.fraud));
-const chartEl = document.getElementById('main-chart');
-if(chartEl){
-  chartData.forEach(d=>{
-    const wrap = document.createElement('div');
-    wrap.className = 'chart-bar-wrap';
-    const totalH = Math.round(((d.legit+d.fraud)/maxVal)*160);
-    const fraudH = Math.round((d.fraud/(d.legit+d.fraud))*totalH);
-    const legitH = totalH - fraudH;
-    wrap.innerHTML = `
-      <div class="chart-bar legit" style="height:${legitH}px" title="${d.legit} مشروعة"></div>
-      <div class="chart-bar fraud" style="height:${fraudH}px" title="${d.fraud} مشبوهة"></div>
-      <div class="chart-x-label">${d.day}</div>`;
-    chartEl.appendChild(wrap);
+var ei=0,sc=0;
+function updateFeed(){
+  var f=document.getElementById('feed');if(!f)return;
+  f.querySelectorAll('.ftm').forEach((el,i)=>{
+    if(i===0)return;var s=(i*12)+sc;
+    el.textContent=s<60?s+' ث':Math.floor(s/60)+' د '+(s%60)+' ث';
   });
-}
-
-// Build activity feed
-const feedItems = [
-  {color:'red',title:'مطالبة مشبوهة #CLM-8842',meta:'مستشفى النيل · $1,240 · نسبة خطورة: 91%',time:'الآن'},
-  {color:'green',title:'مطالبة معتمدة #CLM-8841',meta:'مستشفى القاهرة الجديد · $380 · 2.1 ثانية',time:'12د'},
-  {color:'gold',title:'تنبيه صحي — مريض مزمن',meta:'معرّف: P-20847 · فحص ضغط الدم متأخر',time:'18د'},
-  {color:'green',title:'10 مطالبات معالجة دفعة واحدة',meta:'TPA النيل · متوسط 3.8 ثانية · جميعها معتمدة',time:'25د'},
-  {color:'red',title:'شبكة احتيال مكتشفة',meta:'3 مطالبات مترابطة · مستشفيان · نفس الرمز الطبي',time:'31د'},
-  {color:'blue',title:'شريك جديد مُضاف للشبكة',meta:'صيدلية الشفاء — 15 فرعًا · Cairo East',time:'45د'},
-  {color:'green',title:'مطالبة معتمدة #CLM-8838',meta:'مركز ماجد الطبي · $2,100 · 4.1 ثانية',time:'52د'},
-  {color:'gold',title:'تحديث أقساط ديناميكية',meta:'مجموعة أ — 2,400 مؤمَّن · تعديل +3.2%',time:'1س'},
-];
-const feedC = document.getElementById('feed-container');
-if(feedC){
-  feedItems.forEach(item=>{
-    feedC.innerHTML += `
-      <div class="feed-item">
-        <span class="fi-dot ${item.color}"></span>
-        <div class="fi-content">
-          <div class="fi-title">${item.title}</div>
-          <div class="fi-meta">${item.meta}</div>
-        </div>
-        <div class="fi-time">${item.time}</div>
-      </div>`;
-  });
-}
-
-// Build claims table
-const claims = [
-  {id:'CLM-8842',patient:'أ. م. س.',hospital:'مستشفى النيل',amount:'$1,240',score:'91',status:'flagged',time:'0.9ث'},
-  {id:'CLM-8841',patient:'ف. ع. ح.',hospital:'القاهرة الجديد',amount:'$380',score:'12',status:'approved',time:'2.1ث'},
-  {id:'CLM-8840',patient:'م. ك. ر.',hospital:'مستشفى المعادي',amount:'$5,800',score:'45',status:'review',time:'3.4ث'},
-  {id:'CLM-8839',patient:'ه. م. س.',hospital:'النهضة الطبي',amount:'$720',score:'8',status:'approved',time:'1.8ث'},
-  {id:'CLM-8838',patient:'أ. ر. ع.',hospital:'ماجد الطبي',amount:'$2,100',score:'19',status:'approved',time:'4.1ث'},
-  {id:'CLM-8837',patient:'ط. س. ح.',hospital:'الشفاء الطبي',amount:'$950',score:'67',status:'pending',time:'5.2ث'},
-];
-const tbody = document.getElementById('claims-tbody');
-if(tbody){
-  const statusMap = {
-    approved:{cls:'cls-approved',label:'معتمدة'},
-    flagged:{cls:'cls-flagged',label:'مشبوهة'},
-    pending:{cls:'cls-pending',label:'قيد المراجعة'},
-    review:{cls:'cls-review',label:'للمراجعة'}
-  };
-  claims.forEach(c=>{
-    const s = statusMap[c.status];
-    const sc = parseInt(c.score);
-    const scoreCls = sc<30?'high':sc<60?'medium':'low';
-    tbody.innerHTML += `<tr>
-      <td>${c.id}</td>
-      <td>${c.patient}</td>
-      <td>${c.hospital}</td>
-      <td>${c.amount}</td>
-      <td><span class="cl-score ${scoreCls}">${c.score}</span></td>
-      <td><span class="cl-status ${s.cls}">${s.label}</span></td>
-      <td>${c.time}</td>
-    </tr>`;
-  });
-}
-
-// Animate gauge on scroll
-const gaugeSec = document.querySelector('.fraud-panel');
-if(gaugeSec){
-  const gObs = new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting){
-      const gf = document.getElementById('gauge-fill');
-      if(gf) gf.classList.add('active');
-      gObs.disconnect();
-    }
-  },{threshold:.4});
-  gObs.observe(gaugeSec);
-}
-
-// Animate health score on scroll
-const hsSec = document.querySelector('.health-score');
-if(hsSec){
-  const hsObs = new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting){
-      const hc = document.getElementById('hs-circle');
-      if(hc) hc.classList.add('active');
-      hsObs.disconnect();
-    }
-  },{threshold:.3});
-  hsObs.observe(hsSec);
-}
-
-// Animate KPIs counting up
-function countUp(el, target, suffix=''){
-  let current = 0;
-  const step = Math.ceil(target/60);
-  const timer = setInterval(()=>{
-    current = Math.min(current+step, target);
-    el.textContent = current.toLocaleString('ar-EG') + suffix;
-    if(current >= target) clearInterval(timer);
-  }, 20);
-}
-const kpiObs = new IntersectionObserver(entries=>{
-  if(entries[0].isIntersecting){
-    countUp(document.getElementById('kpi-claims'), 2847);
-    countUp(document.getElementById('kpi-fraud'), 43);
-    kpiObs.disconnect();
+  sc+=12;
+  if(sc%24===0){
+    var ev=fevts[ei%fevts.length];ei++;
+    var d=document.createElement('div');d.className='fi';
+    d.innerHTML='<div class="fd" style="background:'+ev.c+'"></div><span class="ft">'+ev.t+'</span><span class="ftm">الآن</span>';
+    f.insertBefore(d,f.firstChild);
+    if(f.children.length>5)f.removeChild(f.lastChild);
   }
-},{threshold:.5});
-const kpiGrid = document.querySelector('.kpi-grid');
-if(kpiGrid) kpiObs.observe(kpiGrid);
+}
+function updateClock(){
+  var el=document.getElementById('tb-time');if(!el)return;
+  var n=new Date(),h=String(n.getHours()).padStart(2,'0'),m=String(n.getMinutes()).padStart(2,'0');
+  el.textContent='29 مايو 2026 · '+h+':'+m+' القاهرة';
+}
+updateClock();animateBars();
+setInterval(updateFeed,12000);setInterval(updateClock,60000);
 </script>
-
-<script id="lang-switcher-js">
-(function(){
-  var ls=document.getElementById('lang-switcher');
-  if(!ls)return;
-  var btn=ls.querySelector('.lang-btn');
-  btn.addEventListener('click',function(e){
-    e.stopPropagation();
-    var open=ls.classList.toggle('open');
-    btn.setAttribute('aria-expanded',open);
-  });
-  document.addEventListener('click',function(){
-    ls.classList.remove('open');
-    if(btn) btn.setAttribute('aria-expanded','false');
-  });
-})();
-</script>
-
-<script src="../js/components.js"></script>
-<script src="../js/consent.js" defer></script>
 </body>
 </html>

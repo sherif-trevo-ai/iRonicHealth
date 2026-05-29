@@ -1,69 +1,23 @@
 # iRonic Health — Official Website
 
-**Health System Integration Technology**
+**Health System Integration Technology**  
 Egypt's first AI-powered health insurance orchestration platform.
-
-🌐 **Live site:** https://sherif-trevo-ai.github.io/iRonicHealth/
-📊 **Interactive demo:** https://sherif-trevo-ai.github.io/iRonicHealth/dashboard.html
-
----
-
-## Project Overview
-
-iRonic Health is a B2B SaaS platform that orchestrates Egypt's fragmented health insurance ecosystem using AI. The platform serves insurers, TPAs, corporates, providers, and members through a unified API-first layer.
-
-| Metric | Base Case | Upside |
-|--------|-----------|--------|
-| Year 1 ARR | $475K | $500K |
-| Year 2 ARR | $2.45M | $3.5M |
-| Year 3 ARR | $7.35M | $12M |
-| Breakeven | Month 18 | — |
-| SAM | $80–150M | — |
 
 ---
 
 ## Project Structure
 
 ```
-iRonicHealth/
-├── index.html              # Homepage (EN)
-├── platform.html           # Platform & product (EN)
-├── ecosystem.html          # Ecosystem diagram (EN)
-├── dashboard.html          # Interactive demo dashboard (EN)
-├── market.html             # Market opportunity (EN)
-├── pricing.html            # Revenue model (EN)
-├── investors.html          # Investor brief (EN)
-├── team.html               # Team page (EN)
-├── contact.html            # Contact & demo request (EN)
-│
-├── ar/                     # Arabic versions (RTL, fully mirrored)
-│   ├── index.html
-│   ├── platform.html
-│   ├── ecosystem.html
-│   ├── dashboard.html
-│   ├── market.html
-│   ├── pricing.html
-│   ├── investors.html
-│   ├── team.html
-│   └── contact.html
-│
+ironic-health/
+├── index.html          # Main homepage (EN)
 ├── css/
-│   ├── style.css           # Main stylesheet — brand-locked
-│   └── arabic-theme.css    # RTL layout + Arabic typography
-│
+│   └── style.css       # All styles — brand-locked
 ├── js/
-│   ├── components.js       # Nav + footer injection (bilingual EN/AR)
-│   ├── main.js             # Scroll reveal, mobile nav, interactions
-│   └── consent.js          # PDPL cookie consent + consent-gated GA4
-│
-├── assets/
-│   ├── logos/              # Brand logo files (SVG)
-│   ├── og-image.jpg        # 1200×630 social sharing card
-│   └── og-image.png        # PNG version of social card
-│
-├── netlify.toml            # Security headers, cache rules, redirects
-├── sitemap.xml             # SEO sitemap — 18 URLs (EN + AR)
-├── robots.txt              # SEO robots config
+│   └── main.js         # Scroll reveal, mobile nav, interactions
+├── assets/             # Place logo files and images here
+│   ├── logo-color.svg
+│   ├── logo-white.svg
+│   └── og-image.jpg    # 1200x630 for social sharing
 └── README.md
 ```
 
@@ -71,118 +25,127 @@ iRonicHealth/
 
 ## Brand System
 
-| Token | Value | Usage |
-|-------|-------|-------|
-| Navy | `#1A1A2E` | Page background, sidebar, section headings |
-| Blue | `#1B5FA6` | Primary CTA, links, highlights |
-| Gold | `#B8963E` | Accent, badges, dividers |
-| Dark | `#2D2D2D` | Body text |
-| White | `#FFFFFF` | Cards, light backgrounds |
-| EN Font | Ubuntu (Google Fonts) | All English content |
-| AR Heading Font | Kufam (Google Fonts) | Arabic headings & display |
-| AR Body Font | Cairo (Google Fonts) | Arabic body & tables |
+| Token | Value |
+|-------|-------|
+| Primary Blue | `#4179AD` |
+| Dark Blue | `#2d5a8a` |
+| Gold Lustre | `#CAB164` |
+| Dark Gold | `#a8914a` |
+| EN Font | Ubuntu (Google Fonts) |
+| AR Font | Kufam (Google Fonts) |
 
 ---
 
-## Pages & Status
+## Deploy to Netlify (Recommended)
 
-| Page | EN | AR | Notes |
-|------|----|----|-------|
-| Homepage | ✅ | ✅ | Hero, dashboard preview, stats |
-| Platform | ✅ | ✅ | Product modules, AI features |
-| Ecosystem | ✅ | ✅ | Integration diagram |
-| Dashboard | ✅ | ✅ | Interactive demo — CFO/CMO/TPA/Provider/Member views |
-| Market | ✅ | ✅ | SAM, TAM, competitive landscape |
-| Revenue | ✅ | ✅ | PMPM pricing, unit economics |
-| Investors | ✅ | ✅ | Financial projections, thesis |
-| Team | ✅ | ✅ | Founders section |
-| Contact | ✅ | ✅ | Demo request form |
+### Option A — Drag & Drop (Fastest)
 
----
+1. Go to [netlify.com](https://netlify.com) and log in
+2. Drag the entire `ironic-health/` folder onto the Netlify dashboard
+3. Your site is live instantly at a `.netlify.app` URL
+4. Rename it to `ironichealth.netlify.app` in Site Settings → Site name
 
-## Key Technical Features
+### Option B — GitHub + Netlify (Recommended for ongoing updates)
 
-- **Bilingual (EN/AR):** Full RTL support via `arabic-theme.css` and `dir="rtl"` on all Arabic pages
-- **Single nav/footer system:** `js/components.js` auto-detects language from URL path and injects the correct nav/footer
-- **PDPL-compliant analytics:** `js/consent.js` gates GA4 behind explicit user consent — no tracking fires before acceptance
-- **SEO-ready:** `sitemap.xml`, `robots.txt`, `og:image` (1200×630 JPG), JSON-LD Organization + WebSite schema on all pages
-- **Accessibility:** WCAG 2.4.1 skip-to-content link on all 18 pages (EN + AR)
-- **Security headers:** X-Frame-Options, X-Content-Type-Options, HSTS, Permissions-Policy via `netlify.toml`
-- **Interactive dashboard:** 5-role demo (CFO, CMO, TPA Ops, Provider, Member) with animated charts, real-time activity feed, and live-looking claims data — clearly marked as Demo environment
+Follow the steps below to connect GitHub for automatic deployments.
 
 ---
 
-## Deployment
+## GitHub Setup — Step by Step
 
-### Current host: GitHub Pages
-The site is live at `https://sherif-trevo-ai.github.io/iRonicHealth/`
-
-### Recommended: Migrate to Netlify
-
-Netlify activates the security headers and cache rules already configured in `netlify.toml`.
-
-**Option A — Drag & Drop (fastest)**
-1. Go to [netlify.com](https://netlify.com) → log in
-2. Drag the entire repo folder onto the Netlify dashboard
-3. Site is live instantly at a `.netlify.app` URL
-4. Rename to `ironichealth.netlify.app` in Site Settings → Site name
-
-**Option B — GitHub integration (recommended for ongoing updates)**
-1. Netlify → **Add new site** → **Import an existing project** → GitHub
-2. Select repo: `sherif-trevo-ai/iRonicHealth`
-3. Build settings:
-   - **Build command:** *(leave empty)*
-   - **Publish directory:** `.`
-4. Click **Deploy site**
-5. Every push to `main` auto-deploys in ~30 seconds
-
-**After deploying to Netlify:**
-- Set custom domain: `ironichealth.com` → Netlify → Domain settings
-- Update `og:image` and `sitemap.xml` URLs from GitHub Pages URL to new domain
-
-### Making Updates
+### 1. Create the Repository
 
 ```bash
-# Edit files locally, then:
+# In your terminal, navigate to this folder
+cd ironic-health
+
+# Initialize git
+git init
+
+# Add all files
 git add .
-git commit -m "Describe your change"
+
+# First commit
+git commit -m "Initial commit — iRonic Health homepage v2"
+```
+
+### 2. Create GitHub Repo
+
+1. Go to [github.com](https://github.com) → click **New repository**
+2. Name it: `iRonicHealth` (or `ironic-health-website`)
+3. Set to **Public** (required for free Netlify)
+4. Do NOT initialize with README (you already have one)
+5. Click **Create repository**
+
+### 3. Push to GitHub
+
+Copy the commands GitHub shows you, or use:
+
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/iRonicHealth.git
+git branch -M main
+git push -u origin main
+```
+
+### 4. Connect Netlify to GitHub
+
+1. Go to [netlify.com](https://netlify.com) → **Add new site** → **Import an existing project**
+2. Choose **GitHub**
+3. Authorize Netlify and select your `iRonicHealth` repo
+4. Build settings:
+   - **Build command:** *(leave empty — pure HTML/CSS/JS)*
+   - **Publish directory:** `.` (root)
+5. Click **Deploy site**
+
+### 5. Set Custom Domain (Optional)
+
+In Netlify → **Domain settings** → **Add custom domain**  
+Point your DNS to Netlify's nameservers.
+
+---
+
+## Making Updates
+
+After the initial setup, every push to GitHub auto-deploys:
+
+```bash
+# Make your changes to index.html, css/style.css, etc.
+git add .
+git commit -m "Update hero section copy"
 git push
 ```
 
-GitHub Pages redeploys in ~60 seconds. Netlify redeploys in ~30 seconds.
+Netlify detects the push and redeploys in ~30 seconds.
 
 ---
 
-## Analytics Setup
+## Pages Roadmap
 
-GA4 is scaffolded but inactive until configured:
-
-1. Create a GA4 property at [analytics.google.com](https://analytics.google.com)
-2. Copy your Measurement ID (format: `G-XXXXXXXXXX`)
-3. Open `js/consent.js` → replace line 12:
-   ```js
-   var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // ← paste your ID here
-   ```
-4. Commit and push
-
-Analytics only activates **after** a user clicks "Accept" on the PDPL consent banner.
-
----
-
-## Compliance Notes
-
-- AI outputs are positioned as **decision support only**, not autonomous clinical decisions (PDPL Law 151/2020)
-- Platform is classified as **SaaS Decision-Support Software** — no FRA insurance licence required
-- Cookie consent banner is self-hosted, consent-gated, and PDPL-compliant
-- All data references on the live site use the **Base Case** financial scenario
+| Page | Status | File |
+|------|--------|------|
+| Homepage (EN) | ✅ Done | `index.html` |
+| Homepage (AR) | 🔜 Next | `ar/index.html` |
+| Product | 🔜 | `product.html` |
+| For Insurers | 🔜 | `insurers.html` |
+| Investors | 🔜 | `investors.html` |
+| About | 🔜 | `about.html` |
 
 ---
 
 ## Contact
 
-For business inquiries: [ironichealth.com/contact.html](https://ironichealth.com/contact.html)
-or email **info@ironicigmi.com**
+- **Chairman & CEO:** م. شريف شوقي — chairman@ironicgmi.com — +20 155 555 6697  
+- **Founder & CMO:** د. إسلام الميداني — islam@ironicigmi.com — +20 150 828 1948  
+- **HQ:** Nile City Towers, North Tower, Corniche El Nile, Cairo, Egypt
 
 ---
 
-*iRonic Health is the healthtech vertical of **Ironic Group** — a registered Egyptian company.*
+## Compliance Notes
+
+- AI outputs are positioned as **decision support**, not autonomous decisions (PDPL 151/2020)
+- Positioned as **SaaS platform** — not licensed as insurer or TPA
+- FRA-compliant messaging throughout
+
+---
+
+*iRonic Health is the healthtech vertical of Ironic Group — a registered Egyptian company.*
