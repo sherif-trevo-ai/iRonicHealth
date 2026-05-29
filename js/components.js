@@ -53,13 +53,10 @@ document.addEventListener('click', function () {
     </div>
   </a>
   <nav class="nav-center" aria-label="Main navigation">
-    <a href="index.html#problem">Problem</a>
     <a href="platform.html">Platform</a>
     <a href="ecosystem.html">Ecosystem</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="market.html">Market</a>
-    <a href="pricing.html">Revenue</a>
-    <a href="team.html">Team</a>
     <a href="investors.html">Investors</a>
   </nav>
   <div class="nav-right">
@@ -86,8 +83,6 @@ document.addEventListener('click', function () {
   <a href="ecosystem.html">Ecosystem</a>
   <a href="dashboard.html">Dashboard</a>
   <a href="market.html">Market</a>
-  <a href="pricing.html">Revenue</a>
-  <a href="team.html">Team</a>
   <a href="investors.html">Investors</a>
   <a href="contact.html" class="mobile-demo-btn">Request Demo →</a>
   <a href="ar/index.html" class="mobile-lang-btn" style="font-size:.8rem;opacity:.75;letter-spacing:.01em">🇪🇬 العربية</a>
@@ -106,13 +101,10 @@ document.addEventListener('click', function () {
     </div>
   </a>
   <nav class="nav-center" aria-label="التنقل الرئيسي">
-    <a href="index.html#problem">المشكلة</a>
     <a href="platform.html">المنصة</a>
     <a href="ecosystem.html">النظام البيئي</a>
     <a href="dashboard.html">لوحة التحكم</a>
     <a href="market.html">السوق</a>
-    <a href="pricing.html">الإيرادات</a>
-    <a href="team.html">الفريق</a>
     <a href="investors.html">المستثمرون</a>
   </nav>
   <div class="nav-right">
@@ -139,8 +131,6 @@ document.addEventListener('click', function () {
   <a href="ecosystem.html">النظام البيئي</a>
   <a href="dashboard.html">لوحة التحكم</a>
   <a href="market.html">السوق</a>
-  <a href="pricing.html">الإيرادات</a>
-  <a href="team.html">الفريق</a>
   <a href="investors.html">المستثمرون</a>
   <a href="contact.html" class="mobile-demo-btn">طلب عرض تجريبي ←</a>
 </div>`;
