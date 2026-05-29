@@ -625,7 +625,7 @@ body{background:var(--white)!important;color:var(--ink)!important;font-family:va
 .contact-direct{border-top-color:rgba(255,255,255,.08)!important}
 .cd-lbl{color:rgba(255,255,255,.3)!important}
 .cd-row{color:rgba(255,255,255,.5)!important}
-.cd-row a{color:#7fb3e8!important}
+.cd-row a{color:#6FA0CC!important}
 .cd-row a:hover{color:var(--blue-light)!important}
 .form-wrap{background:rgba(255,255,255,.03)!important;border-color:rgba(255,255,255,.08)!important}
 .form-ttl{color:#fff!important}
@@ -715,3 +715,18 @@ body{background:var(--white)!important;color:var(--ink)!important;font-family:va
 .tag.t-gr{color:#145e46!important}
 /* Muted text on light backgrounds */
 .cs,.k-sub{color:#64748b}
+
+
+/* ── iRonic Health Brand v4 Additions ── */
+/* Blue Pale: use for chip backgrounds on light (Arabic) sections */
+.chip,.mod-tag,.ci-badge,.prc-tag,.adv-icon,.mod-icon-wrap{
+  background:var(--blue-pale,#EEF4FA)!important;
+}
+/* Off-White: light section backgrounds */
+.eco-sec,.why-sec{background:var(--off-white,#FAFAF8)!important}
+
+/* Cairo weight hierarchy for Arabic */
+:root{--fn-ar:'Cairo',sans-serif}
+h1,h2,h3,.sec-h2,.prob-h2,.hero-h1{font-family:'Cairo',sans-serif;font-weight:800!important}
+.sec-lead,.hero-desc,.prob-lead{font-family:'Cairo',sans-serif;font-weight:300!important}
+.ts-caption,.sec-eyebrow{font-family:'Cairo',sans-serif;font-weight:700!important}
