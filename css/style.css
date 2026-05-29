@@ -1,17 +1,50 @@
 /* iRonic Health v3 â€” style.css */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --blue:#4179AD;--blue-dark:#2d5a8a;--blue-light:#eaf2fa;--blue-mid:#d0e6f7;
-  --gold:#CAB164;--gold-dark:#a8914a;--gold-light:#faf6ec;--gold-mid:#ecdfa8;
-  --ink:#0d1b2e;--ink-2:#1e3048;--ink-3:#2e4a68;
-  --muted:#6b7f96;--muted-2:#98acbe;
-  --border:#e2eaf3;--border-2:#cdd9e8;
-  --surface:#f7fafd;--white:#ffffff;
+  /* ── iRonic Health Brand Palette v4 ── */
+  --blue:#4179AD;           /* Metro Blue */
+  --blue-dark:#2D5580;      /* Blue Dark — CORRECTED */
+  --blue-light:#6FA0CC;     /* Blue Light — CORRECTED */
+  --blue-pale:#EEF4FA;      /* Blue Pale — new: light content sections */
+  --blue-mid:#d0e6f7;       /* tint utility */
+  --gold:#CAB164;           /* Gold Lustre */
+  --gold-dark:#a8914a;
+  --gold-light:#faf6ec;
+  --gold-mid:#ecdfa8;
+  /* ── Ink Scale ── */
+  --ink:#1A2332;            /* Ink — CORRECTED from #0d1b2e */
+  --ink-mid:#3D4F63;        /* Ink Mid — new */
+  --ink-soft:#6B7F96;       /* Ink Soft — new */
+  --ink-2:#1e3048;          /* legacy: dark section BGs */
+  --ink-3:#2e4a68;          /* legacy: muted text on dark */
+  --muted:#6B7F96;
+  --muted-2:#98acbe;
+  /* ── Neutral Scale ── */
+  --off-white:#FAFAF8;      /* Off-White — new: light content section BGs */
+  --near-black:#111922;     /* Near Black — CORRECTED (replaces var(--near-black)) */
+  --surface:#f7fafd;
+  --white:#ffffff;
+  --border:#e2eaf3;
+  --border-2:#cdd9e8;
+  /* ── Semantic ── */
   --green:#16a34a;--green-bg:#dcfce7;
+  /* ── Radii ── */
   --r8:8px;--r12:12px;--r16:16px;--r24:24px;
-  --fn:'Ubuntu',sans-serif;--fn-ar:'Cairo',sans-serif;
-  --shadow-sm:0 1px 4px rgba(13,27,46,.06);
-  --shadow-md:0 4px 20px rgba(13,27,46,.08);
+  /* ── Typography ── */
+  --fn:'Ubuntu',sans-serif;
+  --fn-ar:'Cairo',sans-serif;
+  /* ── 8-Level Type Scale (Title 64pt → Caption 14pt) ── */
+  --ts-title:4rem;      /* 64px — Display / Hero H1 */
+  --ts-h1:3rem;         /* 48px — Section Hero */
+  --ts-h2:2.5rem;       /* 40px — Section Headings */
+  --ts-h3:1.75rem;      /* 28px — Sub-section */
+  --ts-h4:1.25rem;      /* 20px — Card titles */
+  --ts-lead:1.0625rem;  /* 17px — Lead / intro */
+  --ts-body:0.9375rem;  /* 15px — Body default */
+  --ts-caption:0.875rem;/* 14px — Caption / labels */
+  /* ── Shadows ── */
+  --shadow-sm:0 1px 4px rgba(26,35,50,.06);
+  --shadow-md:0 4px 20px rgba(26,35,50,.08);
   --shadow-lg:0 8px 40px rgba(65,121,173,.12);
 }
 html{scroll-behavior:smooth;font-size:16px}
@@ -73,7 +106,7 @@ img{max-width:100%;display:block}
 .pill-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:pdot 2.4s ease-in-out infinite;flex-shrink:0}
 @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
 .pill-text{font-size:12px;color:var(--ink-3);font-weight:500;letter-spacing:.2px}
-.hero-h1{font-size:58px;font-weight:700;line-height:1.06;letter-spacing:-1.5px;color:var(--ink);margin-bottom:22px}
+.hero-h1{font-size:var(--ts-title);font-weight:700;line-height:1.06;letter-spacing:-1.5px;color:var(--ink);margin-bottom:22px}
 .hero-h1 .accent{color:var(--blue)}
 .hero-h1 .gold-t{color:var(--gold-dark)}
 .hero-desc{font-size:17px;line-height:1.7;color:var(--muted);font-weight:300;max-width:460px;margin-bottom:36px}
@@ -113,7 +146,7 @@ img{max-width:100%;display:block}
 .fraud-bar-fill{height:100%;border-radius:3px;background:var(--blue);width:0%;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
 .fraud-pct{font-size:11px;color:var(--muted);width:30px;text-align:right}
 .party-chips{display:flex;gap:5px;flex-wrap:wrap}
-.chip{font-size:10.5px;background:var(--blue-light);color:var(--blue-dark);padding:3px 9px;border-radius:20px;font-weight:500}
+.chip{font-size:10.5px;background:var(--blue-pale);color:var(--blue-dark);padding:3px 9px;border-radius:20px;font-weight:500}
 .chip-more{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
 .dash-footer{border-top:1px solid var(--border);padding:11px 18px;display:flex;align-items:center;justify-content:space-between}
 .df-text{font-size:11px;color:var(--muted)}
@@ -132,7 +165,7 @@ img{max-width:100%;display:block}
 .sec-inner{max-width:1140px;margin:0 auto}
 .sec-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:0;gap:24px}
 .sec-eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-dark);font-weight:600;margin-bottom:14px}
-.sec-h2{font-size:40px;font-weight:700;letter-spacing:-.8px;line-height:1.12;color:var(--ink)}
+.sec-h2{font-size:var(--ts-h2);font-weight:700;letter-spacing:-.8px;line-height:1.12;color:var(--ink)}
 .sec-h2 em{color:var(--blue);font-style:normal}
 .sec-lead{font-size:16.5px;color:var(--muted);margin-top:12px;line-height:1.65;max-width:540px;font-weight:300}
 .sec-rule{width:40px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:16px}
@@ -165,13 +198,13 @@ img{max-width:100%;display:block}
 .mod-card:hover{border-color:var(--border-2);box-shadow:var(--shadow-md)}
 .mod-card:hover::after{transform:scaleX(1)}
 .mod-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.mod-icon-wrap{width:44px;height:44px;border-radius:var(--r8);background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:20px;transition:background .2s}
+.mod-icon-wrap{width:44px;height:44px;border-radius:var(--r8);background:var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:20px;transition:background .2s}
 .mod-card:hover .mod-icon-wrap{background:var(--blue)}
 .mod-n{font-size:11px;color:var(--muted-2);letter-spacing:1px;font-weight:700}
 .mod-title{font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-.1px}
 .mod-desc{font-size:13px;color:var(--muted);line-height:1.65;flex:1}
 .mod-footer{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
-.mod-tag{font-size:11px;font-weight:600;color:var(--blue-dark);background:var(--blue-light);padding:3px 10px;border-radius:20px}
+.mod-tag{font-size:11px;font-weight:600;color:var(--blue-dark);background:var(--blue-pale);padding:3px 10px;border-radius:20px}
 .mod-arrow{font-size:16px;color:var(--muted-2);transition:all .2s;opacity:0}
 .mod-card:hover .mod-arrow{opacity:1;color:var(--blue);transform:translateX(3px)}
 .mod-wide{grid-column:span 3;flex-direction:row;align-items:center;gap:28px;padding:24px 28px}
@@ -189,7 +222,7 @@ img{max-width:100%;display:block}
 .mini-chart-label{font-size:10px;color:var(--muted-2)}
 
 /* â”€â”€â”€ ECOSYSTEM â”€â”€â”€ */
-.eco-sec{background:var(--surface)}
+.eco-sec{background:var(--off-white)}
 .eco-layout{display:grid;grid-template-columns:1fr 440px;gap:52px;align-items:start;margin-top:52px}
 .eco-list{display:flex;flex-direction:column}
 .eco-item{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--border);transition:all .2s;cursor:default}
@@ -242,7 +275,7 @@ img{max-width:100%;display:block}
 
 /* â”€â”€â”€ ROI CALCULATOR â”€â”€â”€ */
 .roi-sec{background:var(--white)}
-.roi-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r24);padding:40px;align-items:start}
+.roi-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;background:var(--off-white);border:1px solid var(--border);border-radius:var(--r24);padding:40px;align-items:start}
 .roi-inputs{display:flex;flex-direction:column;gap:28px}
 .roi-input-group{display:flex;flex-direction:column;gap:10px}
 .roi-label{font-size:13.5px;font-weight:600;color:var(--ink-3)}
@@ -271,7 +304,7 @@ img{max-width:100%;display:block}
 .roi-cta-btn:hover{background:var(--ink-2)}
 
 /* â”€â”€â”€ WHY NOW â”€â”€â”€ */
-.why-sec{background:var(--surface)}
+.why-sec{background:var(--off-white)}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:52px;align-items:start}
 .urgency-panel{background:var(--ink-2);border-radius:var(--r16);padding:36px;border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
 .urgency-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
@@ -293,7 +326,7 @@ img{max-width:100%;display:block}
 .adv-list{display:flex;flex-direction:column;gap:20px}
 .adv{display:flex;gap:14px;align-items:flex-start;padding:18px;background:var(--white);border:1px solid var(--border);border-radius:var(--r12);transition:all .2s}
 .adv:hover{border-color:var(--blue-mid);box-shadow:var(--shadow-sm)}
-.adv-icon{width:36px;height:36px;min-width:36px;border-radius:var(--r8);background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:16px}
+.adv-icon{width:36px;height:36px;min-width:36px;border-radius:var(--r8);background:var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:16px}
 .adv-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:-.1px}
 .adv-desc{font-size:13px;color:var(--muted);line-height:1.55}
 
@@ -309,7 +342,7 @@ img{max-width:100%;display:block}
 .prc-amt{font-size:30px;font-weight:700;color:var(--blue);letter-spacing:-.5px;line-height:1;margin-top:4px}
 .prc-unit{font-size:11px;color:var(--muted);margin-bottom:6px}
 .prc-desc{font-size:12.5px;color:var(--muted);line-height:1.6;flex:1}
-.prc-tag{font-size:11px;font-weight:600;color:var(--blue-dark);background:var(--blue-light);padding:4px 10px;border-radius:20px;margin-top:6px;display:inline-block}
+.prc-tag{font-size:11px;font-weight:600;color:var(--blue-dark);background:var(--blue-pale);padding:4px 10px;border-radius:20px;margin-top:6px;display:inline-block}
 .model-numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--r12);overflow:hidden;margin-top:28px;border:1px solid var(--border)}
 .mn{background:var(--white);padding:24px 20px;text-align:center;transition:background .2s}
 .mn:hover{background:var(--surface)}
@@ -347,7 +380,7 @@ img{max-width:100%;display:block}
 .ci-desc{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:12px}
 .ci-address{font-size:12.5px;color:var(--muted);display:flex;align-items:flex-start;gap:6px;margin-bottom:16px}
 .ci-compliance{display:flex;gap:8px;flex-wrap:wrap}
-.ci-badge{font-size:11px;font-weight:600;color:var(--blue-dark);background:var(--blue-light);padding:4px 12px;border-radius:20px}
+.ci-badge{font-size:11px;font-weight:600;color:var(--blue-dark);background:var(--blue-pale);padding:4px 12px;border-radius:20px}
 .seed-card{background:var(--ink-2);border-radius:var(--r16);padding:28px;border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
 .seed-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
 .seed-eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
@@ -523,3 +556,47 @@ a.lang-opt:hover{background:#f0f5ff;color:#185fa5}
 
 /* Gold text on light backgrounds — use darkened gold */
 .gold-text{color:#7a5e10!important}
+
+
+/* ══════════════════════════════════════════════
+   iRonic Health Brand Type Scale v4
+   Title 64pt → Caption 14pt (8 levels)
+   Font: Ubuntu (EN) · Cairo (AR)
+══════════════════════════════════════════════ */
+/* Level 1 — Title / Display (64px) */
+.ts-title{font-size:var(--ts-title);font-weight:700;line-height:1.04;letter-spacing:-2px}
+/* Level 2 — H1 (48px) */
+.ts-h1{font-size:var(--ts-h1);font-weight:700;line-height:1.08;letter-spacing:-1.2px}
+/* Level 3 — H2 (40px) */
+.ts-h2{font-size:var(--ts-h2);font-weight:700;line-height:1.12;letter-spacing:-.8px}
+/* Level 4 — H3 (28px) */
+.ts-h3{font-size:var(--ts-h3);font-weight:600;line-height:1.25;letter-spacing:-.3px}
+/* Level 5 — H4 (20px) */
+.ts-h4{font-size:var(--ts-h4);font-weight:600;line-height:1.3;letter-spacing:-.1px}
+/* Level 6 — Body Lead (17px) */
+.ts-lead{font-size:var(--ts-lead);font-weight:300;line-height:1.7}
+/* Level 7 — Body (15px) */
+.ts-body{font-size:var(--ts-body);font-weight:400;line-height:1.65}
+/* Level 8 — Caption (14px) */
+.ts-caption{font-size:var(--ts-caption);font-weight:500;line-height:1.5;letter-spacing:.02em}
+
+/* ── Off-White & Blue-Pale section backgrounds ── */
+.bg-off-white{background:var(--off-white)}
+.bg-blue-pale{background:var(--blue-pale)}
+
+/* ── Responsive type scale ── */
+@media(max-width:768px){
+  :root{
+    --ts-title:2.5rem;
+    --ts-h1:2rem;
+    --ts-h2:1.75rem;
+    --ts-h3:1.35rem;
+  }
+}
+@media(max-width:480px){
+  :root{
+    --ts-title:2rem;
+    --ts-h1:1.75rem;
+    --ts-h2:1.5rem;
+  }
+}
