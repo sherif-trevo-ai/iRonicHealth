@@ -18,22 +18,22 @@
 <link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
 /* ══════════════════════════════════════════════
    DASHBOARD SECTION
 ══════════════════════════════════════════════ */
-.dashboard-sec { background: linear-gradient(180deg,#060f1c 0%,#0a1628 100%); }
+.dashboard-sec { background: linear-gradient(180deg,#111922 0%,#0a1628 100%); }
 .dash-pro-wrap { background:#0d1b2e; border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; margin-top:2.5rem; box-shadow:0 24px 80px rgba(0,0,0,.5); }
-.dash-pro-bar { background:#060f1c; padding:.7rem 1.5rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.06); gap:1rem; flex-wrap:wrap; }
+.dash-pro-bar { background:#111922; padding:.7rem 1.5rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.06); gap:1rem; flex-wrap:wrap; }
 .dash-pro-title { font-size:.82rem; font-weight:700; color:rgba(255,255,255,.85); font-family:'Ubuntu',sans-serif; }
 .dash-pro-live { display:flex; align-items:center; gap:6px; }
 .dash-live-dot { width:7px; height:7px; border-radius:50%; background:#1d9e75; animation:pdot 2s infinite; }
 .dash-live-txt { font-size:.7rem; color:#1d9e75; font-weight:700; font-family:'Ubuntu',sans-serif; letter-spacing:.06em; }
 .dash-pro-actions { display:flex; gap:.5rem; }
 .dash-pro-btn { font-size:.7rem; padding:4px 10px; border-radius:5px; border:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.4); background:transparent; font-family:'Ubuntu',sans-serif; }
-.dash-pro-btn.act { border-color:#185fa5; color:#7fb3e8; background:rgba(24,95,165,.1); }
+.dash-pro-btn.act { border-color:#2D5580; color:#6FA0CC; background:rgba(24,95,165,.1); }
 /* KPI row */
 .dash-kpi-row { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid rgba(255,255,255,.06); }
 .dash-kpi { padding:1.2rem 1.5rem; border-right:1px solid rgba(255,255,255,.06); }
@@ -42,7 +42,7 @@
 .dash-kpi-num { font-size:1.55rem; font-weight:700; line-height:1; margin-bottom:.3rem; font-family:'Ubuntu',sans-serif; color:#fff; }
 .dash-kpi-num.gold { color:#c9a84c; }
 .dash-kpi-num.green { color:#1d9e75; }
-.dash-kpi-num.blue { color:#378add; }
+.dash-kpi-num.blue { color:#6FA0CC; }
 .dash-kpi-trend { font-size:.68rem; font-family:'Ubuntu',sans-serif; color:rgba(255,255,255,.38); }
 .dash-kpi-trend.up { color:#1d9e75; }
 /* Body */
@@ -96,7 +96,7 @@
 /* ══════════════════════════════════════════════
    CONTACT / DEMO REQUEST SECTION
 ══════════════════════════════════════════════ */
-.contact-sec { background:#060f1c; }
+.contact-sec { background:#111922; }
 .contact-sec .sec-h2 { color:#fff !important; }
 .contact-sec .sec-eyebrow { color:rgba(255,255,255,.45) !important; }
 .contact-sec .sec-lead { color:rgba(255,255,255,.5) !important; }
@@ -109,8 +109,8 @@
 .contact-direct { margin-top:1.75rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,.08); }
 .cd-lbl { font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.3); margin-bottom:.75rem; font-family:'Ubuntu',sans-serif; }
 .cd-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.5rem; font-size:.845rem; color:rgba(255,255,255,.5); font-family:'Ubuntu',sans-serif; }
-.cd-row a { color:#7fb3e8; text-decoration:none; transition:color .2s; }
-.cd-row a:hover { color:#378add; }
+.cd-row a { color:#6FA0CC; text-decoration:none; transition:color .2s; }
+.cd-row a:hover { color:#6FA0CC; }
 /* Form */
 .form-wrap { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:2rem; }
 .form-ttl { font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:.35rem; font-family:'Ubuntu',sans-serif; }
@@ -123,14 +123,14 @@
   padding:.675rem .9rem; font-size:.875rem; color:rgba(255,255,255,.82);
   font-family:'Ubuntu',sans-serif; outline:none; transition:border-color .2s; width:100%;
 }
-.f-inp:focus, .f-sel:focus, .f-ta:focus { border-color:#185fa5; background:rgba(24,95,165,.08); }
+.f-inp:focus, .f-sel:focus, .f-ta:focus { border-color:#2D5580; background:rgba(24,95,165,.08); }
 .f-inp::placeholder, .f-ta::placeholder { color:rgba(255,255,255,.22); }
 .f-sel { appearance:none; cursor:pointer; }
 .f-sel option { background:#0a1628; color:#fff; }
 .f-ta { min-height:88px; resize:vertical; }
 .f-submit {
   width:100%; padding:.9rem; margin-top:.375rem;
-  background:linear-gradient(135deg,#185fa5,#0c447c);
+  background:linear-gradient(135deg,#2D5580,#0c447c);
   border:none; border-radius:8px; color:#fff; font-size:.92rem; font-weight:700;
   font-family:'Ubuntu',sans-serif; cursor:pointer; transition:all .2s;
 }
@@ -202,7 +202,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #185fa5;
+  background: #2D5580;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -229,11 +229,11 @@
 .audiences-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
 .aud-card { border-radius: 16px; overflow: hidden; }
 .aud-card-head { padding: 2rem 2rem 1.75rem; }
-.aud-insurer-head { background: linear-gradient(135deg, #060f1c 0%, #0d1f3a 100%); border-top: 3px solid #c9a84c; }
-.aud-patients-head { background: linear-gradient(135deg, #0f3460 0%, #185fa5 100%); border-top: 3px solid #378add; }
+.aud-insurer-head { background: linear-gradient(135deg, #111922 0%, #0d1f3a 100%); border-top: 3px solid #c9a84c; }
+.aud-patients-head { background: linear-gradient(135deg, #0f3460 0%, #2D5580 100%); border-top: 3px solid #6FA0CC; }
 .aud-tag { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 4px 13px; border-radius: 100px; margin-bottom: .875rem; }
 .aud-tag-g { background: rgba(201,168,76,.2); color: #c9a84c; }
-.aud-tag-b { background: rgba(55,138,221,.2); color: #7fb3e8; }
+.aud-tag-b { background: rgba(55,138,221,.2); color: #6FA0CC; }
 .aud-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
 .aud-title { font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: .6rem; }
 .aud-sub { font-size: .85rem; color: rgba(255,255,255,.58); line-height: 1.72; }
@@ -241,24 +241,24 @@
 .aud-feature { display: flex; gap: .875rem; margin-bottom: 1rem; align-items: flex-start; }
 .aud-feature:last-child { margin-bottom: 0; }
 .aud-dot { width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: .7rem; margin-top: 2px; }
-.aud-dot-b { background: rgba(55,138,221,.18); color: #7fb3e8; }
+.aud-dot-b { background: rgba(55,138,221,.18); color: #6FA0CC; }
 .aud-dot-g { background: rgba(29,158,117,.18); color: #1d9e75; }
 .aud-feat-text { font-size: .84rem; color: rgba(255,255,255,.62); line-height: 1.65; }
 .aud-feat-text strong { color: rgba(255,255,255,.9); font-weight: 600; }
 @media(max-width:860px){ .audiences-grid{ grid-template-columns:1fr; } }
 
 /* ── APP SCREENS ── */
-.appscreens-sec { background: linear-gradient(170deg, #060f1c 0%, #0a1628 100%); }
+.appscreens-sec { background: linear-gradient(170deg, #111922 0%, #0a1628 100%); }
 .screens-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; margin-top: 3rem; align-items: start; }
 .screen-wrap { display: flex; flex-direction: column; align-items: center; }
 .phone-frame { background: #111c2e; border-radius: 22px; overflow: hidden; border: 1.5px solid rgba(255,255,255,.1); box-shadow: 0 24px 60px rgba(0,0,0,.55); width: 100%; max-width: 200px; }
 .phone-notch-bar { height: 8px; background: rgba(255,255,255,.04); display: flex; justify-content: center; align-items: center; }
 .phone-pill-bar { width: 26px; height: 3px; background: rgba(255,255,255,.18); border-radius: 2px; }
 .ph-topbar { background: #fff; padding: 8px 11px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid #e8eef6; }
-.ph-badge { width: 20px; height: 20px; border-radius: 5px; background: #185fa5; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ph-badge { width: 20px; height: 20px; border-radius: 5px; background: #2D5580; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; color: #fff; flex-shrink: 0; }
 .ph-ttl { font-size: 11px; font-weight: 700; color: #0a1628; flex: 1; font-family: 'Ubuntu', sans-serif; }
 .ph-bell { font-size: 13px; }
-.ph-hero-card { background: linear-gradient(135deg, #185fa5, #0a3567); border-radius: 11px; padding: 11px; margin: 9px; }
+.ph-hero-card { background: linear-gradient(135deg, #2D5580, #0a3567); border-radius: 11px; padding: 11px; margin: 9px; }
 .phc-name { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 1px; font-family: 'Ubuntu', sans-serif; }
 .phc-id { font-size: 7.5px; color: rgba(255,255,255,.45); margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
 .phc-bar-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
@@ -283,15 +283,15 @@
 .ph-qr-ttl { font-size: 9.5px; font-weight: 700; color: #0a1628; text-align: center; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
 .ph-qr-sub { font-size: 7px; color: #6b7fa0; text-align: center; margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
 .ph-qr-card { background: #fff; border-radius: 11px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,.12); }
-.ph-qr-head { background: linear-gradient(135deg,#185fa5,#0a3567); padding: 9px 11px; display: flex; justify-content: space-between; align-items: center; }
+.ph-qr-head { background: linear-gradient(135deg,#2D5580,#0a3567); padding: 9px 11px; display: flex; justify-content: space-between; align-items: center; }
 .ph-qr-brand { font-size: 9.5px; font-weight: 700; color: #fff; font-family: 'Ubuntu', sans-serif; }
 .ph-class-badge { background: #c9a84c; padding: 2px 7px; border-radius: 4px; font-size: 6.5px; font-weight: 700; color: #fff; font-family: 'Ubuntu', sans-serif; }
 .ph-qr-body { padding: 11px; text-align: center; }
 .ph-qr-name { font-size: 11px; font-weight: 700; color: #0a1628; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
 .ph-qr-id { font-size: 7px; color: #6b7fa0; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
-.ph-qr-plan { font-size: 7.5px; color: #185fa5; font-weight: 600; margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-plan { font-size: 7.5px; color: #2D5580; font-weight: 600; margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
 .ph-qr-code { width: 78px; height: 78px; margin: 0 auto 7px; background: #f5f8fc; border-radius: 6px; border: 1px solid #e8eef6; display: grid; grid-template-columns: repeat(9,1fr); gap: 1.5px; padding: 5px; }
-.qc1 { background: #185fa5; border-radius: 1px; } .qc0 { background: transparent; }
+.qc1 { background: #2D5580; border-radius: 1px; } .qc0 { background: transparent; }
 .ph-qr-hint { font-size: 7px; color: #6b7fa0; font-family: 'Ubuntu', sans-serif; }
 .ph-qr-footer { border-top: 1px solid #e8eef6; padding: 8px 11px; display: flex; justify-content: space-between; }
 .ph-qr-flbl { font-size: 6.5px; color: #6b7fa0; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
@@ -301,7 +301,7 @@
 .ph-qr-stxt { font-size: 7.5px; color: #1d9e75; font-weight: 600; font-family: 'Ubuntu', sans-serif; }
 .ph-filters { background: #fff; border-bottom: 1px solid #e8eef6; padding: 6px 9px; display: flex; gap: 4px; }
 .ph-filter { font-size: 7px; padding: 3px 8px; border-radius: 20px; border: 1px solid #e8eef6; color: #6b7fa0; font-weight: 500; font-family: 'Ubuntu', sans-serif; }
-.ph-filter.on { background: #185fa5; border-color: #185fa5; color: #fff; font-weight: 700; }
+.ph-filter.on { background: #2D5580; border-color: #2D5580; color: #fff; font-weight: 700; }
 .ph-claims-list { padding: 7px 9px; background: #f5f8fc; }
 .ph-clm { background: #fff; border-radius: 7px; padding: 8px; margin-bottom: 5px; border: 1px solid #e8eef6; }
 .ph-clm-top { display: flex; justify-content: space-between; margin-bottom: 2px; }
@@ -312,7 +312,7 @@
 .ph-clm-date { font-size: 6.5px; color: #6b7fa0; font-family: 'Ubuntu', sans-serif; }
 .ph-tabbar { background: #fff; border-top: 1px solid #e8eef6; padding: 5px; display: flex; justify-content: space-around; }
 .ph-tab { text-align: center; font-size: 6px; color: #6b7fa0; font-weight: 500; font-family: 'Ubuntu', sans-serif; }
-.ph-tab.on { color: #185fa5; font-weight: 700; }
+.ph-tab.on { color: #2D5580; font-weight: 700; }
 .ph-tab-icon { font-size: 11px; display: block; margin-bottom: 1px; }
 .screen-label { margin-top: .875rem; font-size: .9rem; font-weight: 700; color: rgba(255,255,255,.9); text-align: center; font-family: 'Ubuntu', sans-serif; }
 .screen-sub { font-size: .75rem; color: rgba(255,255,255,.4); text-align: center; margin-top: .2rem; font-family: 'Ubuntu', sans-serif; }
