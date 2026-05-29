@@ -1050,7 +1050,8 @@
   var btn = document.getElementById('scroll-top');
   window.addEventListener('scroll', function(){
     btn.classList.toggle('visible', window.scrollY > 400);
-  }, {passive:true});});
+  }, {passive:true});
+})();
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     els.forEach(function(el){ obs.observe(el); });
   }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
