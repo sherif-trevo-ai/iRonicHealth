@@ -292,51 +292,116 @@
 
 
 
-/* Q2 FIXED: Light content sections — hero preserved, all white text overridden */
-.e-sec-odd,.e-sec-even{background:#f8fafc!important}
-/* Universal text reset — overrides all white/rgba text */
-.e-sec-odd *,.e-sec-even *{color:#1e293b!important}
-/* Restore specific semantic colors */
-.e-sec-odd .e-h2,.e-sec-even .e-h2{color:#1A1A2E!important;font-family:'Ubuntu',sans-serif!important}
-.e-sec-odd .eco-sub,.e-sec-even .eco-sub{color:#475569!important}
-.e-sec-odd .e-lead,.e-sec-even .e-lead{color:#475569!important}
-.e-sec-odd .e-eyebrow,.e-sec-even .e-eyebrow{color:#1B5FA6!important}
-.e-sec-odd .ehs-val,.e-sec-even .ehs-val{color:#1A1A2E!important}
-.e-sec-odd .ehs-lbl,.e-sec-even .ehs-lbl{color:#64748b!important}
-.e-sec-odd .ba-title,.e-sec-even .ba-title{color:#1A1A2E!important}
-.e-sec-odd .ba-item,.e-sec-even .ba-item{color:#475569!important;background:#fff!important;border:1px solid #e2e8f0!important}
-.e-sec-odd .party-name,.e-sec-even .party-name{color:#1A1A2E!important}
-.e-sec-odd .party-desc,.e-sec-even .party-desc{color:#64748b!important}
-.e-sec-odd .party-card,.e-sec-even .party-card{background:#fff!important;border:1px solid #e2e8f0!important}
-.e-sec-odd .party-num,.e-sec-even .party-num{color:#94a3b8!important}
-.e-sec-odd .hub-core-sub,.e-sec-even .hub-core-sub{color:#64748b!important}
-.e-sec-odd .sec-h,.e-sec-even .sec-h{color:#1A1A2E!important}
-.e-sec-odd .sec-sub,.e-sec-even .sec-sub{color:#64748b!important}
-.e-sec-odd .mp-lead,.e-sec-even .mp-lead{color:#64748b!important}
-.e-sec-odd .mp-stat-val,.e-sec-even .mp-stat-val{color:#1B5FA6!important}
-.e-sec-odd .fsr-title,.e-sec-even .fsr-title{color:#1A1A2E!important}
-.e-sec-odd .fsr-desc,.e-sec-even .fsr-desc{color:#475569!important}
-.e-sec-odd .fsr-step,.e-sec-even .fsr-step{background:#fff!important;border:1px solid #e2e8f0!important}
-.e-sec-odd .fsr-step-num,.e-sec-even .fsr-step-num{color:#94a3b8!important}
-.e-sec-odd .integ-step,.e-sec-even .integ-step{background:#fff!important;border:1px solid #e2e8f0!important}
-.e-sec-odd .is-title,.e-sec-even .is-title{color:#1A1A2E!important}
-.e-sec-odd .is-desc,.e-sec-even .is-desc{color:#64748b!important}
-/* Preserve brand-colored badges */
-.e-sec-odd .tag-blue,.e-sec-even .tag-blue,.e-sec-odd .eco-tag,.e-sec-even .eco-tag{color:#1B5FA6!important;background:rgba(27,95,166,.1)!important}
-.e-sec-odd .tag-gold,.e-sec-even .tag-gold{color:#7a5e10!important;background:rgba(184,150,62,.12)!important}
-.e-sec-odd .tag-green,.e-sec-even .tag-green{color:#145e46!important;background:rgba(29,158,117,.1)!important}
-/* Before/after boxes */
-.e-sec-odd .pp-before-box,.e-sec-even .pp-before-box{background:#fff8f8!important;border:1px solid #fecaca!important}
-.e-sec-odd .pp-before-box *,.e-sec-even .pp-before-box *{color:#1e293b!important}
-.e-sec-odd .pp-after-box,.e-sec-even .pp-after-box{background:#f0fdf4!important;border:1px solid #bbf7d0!important}
-.e-sec-odd .pp-after-box *,.e-sec-even .pp-after-box *{color:#1e293b!important}
-/* Code blocks stay dark */
-.code-block{background:#1A1A2E!important;color:#e2e8f0!important}
-.code-block *{color:#e2e8f0!important}
-/* Hub core stays dark */
-.hub-core{background:linear-gradient(135deg,#1A1A2E,#1B5FA6)!important;color:#fff!important}
-.hub-core *{color:#fff!important}
-.hub-core .hub-core-sub{color:rgba(255,255,255,.7)!important}
+
+/* ════════════════════════════════════════════════════
+   Q2 FINAL: Light content sections — surgical fix
+   Strategy: target ONLY known white-text classes.
+   NEVER touch pp-card (dark UI simulator) or inline styles.
+   ════════════════════════════════════════════════════ */
+
+/* ── Section backgrounds ── */
+.e-sec-odd,.e-sec-even { background: #f8fafc !important }
+
+/* ── Section headings & labels ── */
+.e-sec-odd .e-h2,.e-sec-even .e-h2 { color: #1A1A2E !important }
+.e-sec-odd .eco-sub,.e-sec-even .eco-sub { color: #475569 !important }
+.e-sec-odd .e-lead,.e-sec-even .e-lead { color: #475569 !important }
+.e-sec-odd .e-eyebrow,.e-sec-even .e-eyebrow { color: #1B5FA6 !important }
+.e-sec-odd .sec-h,.e-sec-even .sec-h { color: #1A1A2E !important }
+.e-sec-odd .sec-sub,.e-sec-even .sec-sub { color: #64748b !important }
+.e-sec-odd .ehs-val,.e-sec-even .ehs-val { color: #1A1A2E !important }
+.e-sec-odd .ehs-lbl,.e-sec-even .ehs-lbl { color: #64748b !important }
+
+/* ── Benefit list items ── */
+.e-sec-odd .ba-title,.e-sec-even .ba-title { color: #1A1A2E !important }
+.e-sec-odd .ba-item,.e-sec-even .ba-item {
+  background: #fff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important
+}
+.e-sec-odd .ba-arrow,.e-sec-even .ba-arrow { color: #94a3b8 !important }
+
+/* ── Party card grid (the 8-party carousel cards) ── */
+.e-sec-odd .party-card,.e-sec-even .party-card {
+  background: #fff !important;
+  border: 1px solid #e2e8f0 !important
+}
+.e-sec-odd .party-name,.e-sec-even .party-name { color: #1A1A2E !important }
+.e-sec-odd .party-desc,.e-sec-even .party-desc { color: #64748b !important }
+.e-sec-odd .party-num,.e-sec-even .party-num { color: #94a3b8 !important }
+
+/* ── Party deep dive LEFT SIDE (text content) ── */
+.e-sec-odd .pp-h3,.e-sec-even .pp-h3 { color: #1A1A2E !important }
+.e-sec-odd .pp-desc,.e-sec-even .pp-desc { color: #475569 !important }
+.e-sec-odd .pp-section-title,.e-sec-even .pp-section-title { color: #1A1A2E !important }
+.e-sec-odd .pp-item,.e-sec-even .pp-item { color: #475569 !important }
+.e-sec-odd .pp-stat-lbl,.e-sec-even .pp-stat-lbl { color: #64748b !important }
+.e-sec-odd .pp-tag,.e-sec-even .pp-tag { color: #7fb3e8 !important }
+.e-sec-odd .pp-ex,.e-sec-even .pp-ex {
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+  border: 1px solid #e2e8f0 !important
+}
+
+/* ── pp-stat-val: NEVER override — uses inline color (green/gold/blue stats) ── */
+/* .pp-stat-val intentionally NOT overridden — inline style="color:..." is preserved */
+
+/* ── Process steps ── */
+.e-sec-odd .fsr-step,.e-sec-even .fsr-step {
+  background: #fff !important;
+  border: 1px solid #e2e8f0 !important
+}
+.e-sec-odd .fsr-title,.e-sec-even .fsr-title { color: #1A1A2E !important }
+.e-sec-odd .fsr-desc,.e-sec-even .fsr-desc { color: #475569 !important }
+.e-sec-odd .fsr-step-num,.e-sec-even .fsr-step-num { color: #94a3b8 !important }
+.e-sec-odd .integ-step,.e-sec-even .integ-step {
+  background: #fff !important;
+  border: 1px solid #e2e8f0 !important
+}
+.e-sec-odd .is-title,.e-sec-even .is-title { color: #1A1A2E !important }
+.e-sec-odd .is-desc,.e-sec-even .is-desc { color: #64748b !important }
+.e-sec-odd .mp-lead,.e-sec-even .mp-lead { color: #64748b !important }
+
+/* ── Hub core (stays dark — it IS the dark platform) ── */
+.hub-core {
+  background: linear-gradient(135deg, #1A1A2E, #1B5FA6) !important;
+  color: #fff !important
+}
+.hub-core .hub-core-name { color: #fff !important }
+.hub-core .hub-core-sub { color: rgba(255,255,255,.65) !important }
+
+/* ── pp-card (dark UI simulator) — FULLY PRESERVED DARK ── */
+.pp-card {
+  background: #0d1b2e !important;
+  border-color: rgba(255,255,255,.09) !important
+}
+.pp-card-bar { background: #060f1c !important }
+.pp-card-title { color: rgba(255,255,255,.55) !important }
+.pp-card-badge { color: #1d9e75 !important; background: rgba(29,158,117,.15) !important }
+.pp-card-body { color: rgba(255,255,255,.7) !important }
+.pp-card .pp-before-box {
+  background: rgba(220,38,38,.1) !important;
+  border-color: rgba(220,38,38,.2) !important
+}
+.pp-card .pp-after-box {
+  background: rgba(29,158,117,.1) !important;
+  border-color: rgba(29,158,117,.2) !important
+}
+.pp-card .pp-roi-box {
+  background: rgba(184,150,62,.12) !important;
+  border-color: rgba(184,150,62,.2) !important
+}
+/* All text inside pp-card: white-ish */
+.pp-card * { color: rgba(255,255,255,.75) !important }
+/* Section titles inside pp-card */
+.pp-card .pp-bb-label { color: rgba(255,255,255,.45) !important }
+/* Key metric highlights in pp-card */
+.pp-card .pp-bb-val { color: #fff !important; font-weight: 700 }
+.pp-card .pp-roi-txt { color: var(--gold-l, #d4aa4a) !important }
+
+/* ── Code blocks stay dark ── */
+.code-block { background: #1A1A2E !important; color: #e2e8f0 !important }
+.code-block * { color: #e2e8f0 !important }
 
 </style>
 <script type="application/ld+json">
