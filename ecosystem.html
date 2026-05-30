@@ -16,14 +16,23 @@
 <link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
+/* ══════════════════════════════════════════════
+   iRonic Health — ecosystem.html
+   Brand Guidelines v4 applied
+   Fonts: Ubuntu 300/400/500/700 (EN) · Cairo 300/400/600/700/800 (AR)
+   Palette: Metro Blue #4179AD · Gold Lustre #CAB164
+   Blue Dark #2D5580 · Blue Light #6FA0CC · Blue Pale #EEF4FA
+   Ink #1A2332 · Ink Mid #3D4F63 · Ink Soft #6B7F96
+   Off-White #FAFAF8 · Near Black #111922
+══════════════════════════════════════════════ */
 /* ══ ECOSYSTEM HERO ══ */
 .eco-hero {
   min-height: 78vh; display: flex; flex-direction: column; justify-content: center;
   padding: 140px 5% 80px; position: relative; overflow: hidden;
-  background: linear-gradient(155deg, #060f1c 0%, #0a1628 55%, #0d1f3a 100%);
+  background: linear-gradient(155deg, #111922 0%, #111922 55%, #111922 100%);
 }
 .eco-hero-bg {
   position: absolute; inset: 0; pointer-events: none;
@@ -45,28 +54,28 @@
   text-transform: uppercase; font-family: 'Ubuntu', sans-serif;
 }
 .eco-h1 {
-  font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight:700; line-height: 1.03;
+  font-size: clamp(2.6rem, 5vw, var(--ts-title, 4rem)); font-weight:700; line-height: 1.03;
   color: #fff; letter-spacing: -.03em; margin-bottom: 1.25rem; font-family: 'Ubuntu', sans-serif;
 }
-.eco-h1 em { color: #c9a84c; font-style: normal; }
-.eco-h1 .bl { color: #378add; }
+.eco-h1 em { color: #CAB164; font-style: normal; }
+.eco-h1 .bl { color: #6FA0CC; }
 .eco-sub { font-size: 1.05rem; color: rgba(255,255,255,.55); line-height: 1.75; max-width: 600px; margin-bottom: 2.5rem; font-family: 'Ubuntu', sans-serif; }
 .eco-hero-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
 .ehs { }
 .ehs-val { font-size: 1.8rem; font-weight:700; color: #fff; font-family: 'Ubuntu', sans-serif; line-height: 1; }
-.ehs-val.gold { color: #c9a84c; }
+.ehs-val.gold { color: #CAB164; }
 .ehs-val.green { color: #1d9e75; }
-.ehs-val.blue { color: #378add; }
+.ehs-val.blue { color: #6FA0CC; }
 .ehs-lbl { font-size: .68rem; color: rgba(255,255,255,.38); margin-top: .25rem; font-family: 'Ubuntu', sans-serif; text-transform: uppercase; letter-spacing: .07em; }
 
 /* ══ SHARED SECTION ══ */
 .e-sec { padding: 6rem 5%; border-bottom: 1px solid rgba(255,255,255,.05); }
-.e-sec-odd { background: #060f1c; }
-.e-sec-even { background: #0a1628; }
+.e-sec-odd { background: var(--off-white,#FAFAF8); }
+.e-sec-even { background: var(--off-white,#FAFAF8); }
 .e-inner { max-width: 1200px; margin: 0 auto; }
 .e-eyebrow { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.32); margin-bottom: .625rem; font-family: 'Ubuntu', sans-serif; }
 .e-h2 { font-size: 2.1rem; font-weight:700; color: #fff; line-height: 1.1; margin-bottom: .875rem; font-family: 'Ubuntu', sans-serif; letter-spacing: -.02em; }
-.e-h2 em { color: #c9a84c; font-style: normal; }
+.e-h2 em { color: #CAB164; font-style: normal; }
 .e-lead { font-size: .92rem; color: rgba(255,255,255,.5); line-height: 1.78; margin-bottom: 2.5rem; font-family: 'Ubuntu', sans-serif; }
 
 /* ══ BEFORE / AFTER ══ */
@@ -103,7 +112,7 @@
   width: 100%;
 }
 .hub-core-ico { font-size: 2rem; margin-bottom: .75rem; }
-.hub-core-name { font-size: 1.1rem; font-weight:700; color: #c9a84c; font-family: 'Ubuntu', sans-serif; margin-bottom: .375rem; letter-spacing: -.01em; }
+.hub-core-name { font-size: 1.1rem; font-weight:700; color: #CAB164; font-family: 'Ubuntu', sans-serif; margin-bottom: .375rem; letter-spacing: -.01em; }
 .hub-core-sub { font-size: .72rem; color: rgba(255,255,255,.45); font-family: 'Ubuntu', sans-serif; line-height: 1.5; margin-bottom: 1rem; }
 .hub-core-pulse { display: flex; align-items: center; gap: 6px; justify-content: center; }
 .hcp-dot { width: 7px; height: 7px; border-radius: 50%; background: #1d9e75; animation: pdot 2s infinite; }
@@ -122,8 +131,8 @@
 }
 .party-card:hover { border-color: rgba(255,255,255,.15); background: rgba(255,255,255,.05); }
 .party-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; }
-.pc-blue::before   { background: #185fa5; }
-.pc-gold::before   { background: #c9a84c; }
+.pc-blue::before   { background: #2D5580; }
+.pc-gold::before   { background: #CAB164; }
 .pc-green::before  { background: #1d9e75; }
 .pc-teal::before   { background: #0f6e56; }
 .pc-coral::before  { background: #d85a30; }
@@ -145,14 +154,14 @@
   transition: all .2s; font-family: 'Ubuntu', sans-serif; cursor: pointer; display: flex; gap: 6px; align-items: center;
 }
 .pt-tab:hover { color: rgba(255,255,255,.7); }
-.pt-tab.active { color: #c9a84c; border-bottom-color: #c9a84c; }
+.pt-tab.active { color: #CAB164; border-bottom-color: #CAB164; }
 .party-panels { }
 .party-panel { display: none; }
 .party-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
 .pp-left { }
 .pp-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 100px; font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1rem; font-family: 'Ubuntu', sans-serif; }
 .pp-h3 { font-size: 1.6rem; font-weight:700; color: #fff; line-height: 1.15; margin-bottom: .875rem; font-family: 'Ubuntu', sans-serif; }
-.pp-h3 em { color: #c9a84c; font-style: normal; }
+.pp-h3 em { color: #CAB164; font-style: normal; }
 .pp-desc { font-size: .88rem; color: rgba(255,255,255,.52); line-height: 1.78; margin-bottom: 1.5rem; font-family: 'Ubuntu', sans-serif; }
 .pp-section-title { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.28); margin-bottom: .625rem; font-family: 'Ubuntu', sans-serif; }
 .pp-list { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.5rem; }
@@ -167,8 +176,8 @@
 .pp-stat-lbl { font-size: .65rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; }
 /* Right card */
 .pp-right { }
-.pp-card { background: #0d1b2e; border: 1px solid rgba(255,255,255,.09); border-radius: 14px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
-.pp-card-bar { background: #060f1c; padding: .625rem 1.1rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.06); }
+.pp-card { background: #1A2332; border: 1px solid rgba(255,255,255,.09); border-radius: 14px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+.pp-card-bar { background: #111922; padding: .625rem 1.1rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,.06); }
 .pp-card-title { font-size: .72rem; font-weight: 700; color: rgba(255,255,255,.55); font-family: 'Ubuntu', sans-serif; }
 .pp-card-badge { font-size: .62rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; }
 .pp-card-body { padding: 1.25rem; }
@@ -194,8 +203,8 @@
 .fsr-desc { font-size: .82rem; color: rgba(255,255,255,.48); line-height: 1.65; font-family: 'Ubuntu', sans-serif; }
 .fsr-tags { display: flex; flex-wrap: wrap; gap: .375rem; margin-top: .625rem; }
 .fsr-tag { font-size: .65rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; }
-.fst-blue   { background: rgba(24,95,165,.15); color: #7fb3e8; }
-.fst-gold   { background: rgba(201,168,76,.15); color: #c9a84c; }
+.fst-blue   { background: rgba(24,95,165,.15); color: #6FA0CC; }
+.fst-gold   { background: rgba(201,168,76,.15); color: #CAB164; }
 .fst-green  { background: rgba(29,158,117,.15); color: #5dcaa5; }
 .fst-coral  { background: rgba(216,90,48,.15); color: #f0997b; }
 
@@ -210,27 +219,27 @@
 .pi-name { font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.78); font-family: 'Ubuntu', sans-serif; }
 .pi-note { font-size: .7rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; }
 .pi-badge { font-size: .6rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; font-family: 'Ubuntu', sans-serif; margin-left: 4px; }
-.pib-target { background: rgba(201,168,76,.2); color: #c9a84c; }
+.pib-target { background: rgba(201,168,76,.2); color: #CAB164; }
 .pib-active { background: rgba(29,158,117,.2); color: #5dcaa5; }
 
 /* ══ INTEGRATION ══ */
 .integ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-top: 2.5rem; }
 .integ-steps { display: flex; flex-direction: column; gap: 1rem; }
 .integ-step { display: flex; gap: 1rem; padding: 1.1rem 1.25rem; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 10px; }
-.is-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(24,95,165,.2); border: 1px solid rgba(24,95,165,.3); color: #7fb3e8; font-size: .75rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Ubuntu', sans-serif; }
+.is-num { width: 28px; height: 28px; border-radius: 50%; background: rgba(24,95,165,.2); border: 1px solid rgba(24,95,165,.3); color: #6FA0CC; font-size: .75rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Ubuntu', sans-serif; }
 .is-body { }
 .is-title { font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.82); margin-bottom: 3px; font-family: 'Ubuntu', sans-serif; }
 .is-desc { font-size: .76rem; color: rgba(255,255,255,.42); line-height: 1.55; font-family: 'Ubuntu', sans-serif; }
 .is-time { display: inline-flex; align-items: center; gap: 4px; margin-top: .375rem; font-size: .65rem; font-weight: 700; padding: 1px 7px; border-radius: 3px; background: rgba(29,158,117,.12); color: #5dcaa5; font-family: 'Ubuntu', sans-serif; }
 /* Code block */
-.code-block { background: #060f1c; border: 1px solid rgba(255,255,255,.08); border-radius: 12px; overflow: hidden; }
+.code-block { background: #111922; border: 1px solid rgba(255,255,255,.08); border-radius: 12px; overflow: hidden; }
 .cb-bar { background: rgba(255,255,255,.04); padding: .5rem 1rem; display: flex; align-items: center; gap: .5rem; border-bottom: 1px solid rgba(255,255,255,.06); }
 .cb-dot { width: 10px; height: 10px; border-radius: 50%; }
 .cb-title { font-size: .72rem; color: rgba(255,255,255,.35); font-family: 'Ubuntu', sans-serif; margin-left: .5rem; }
 .cb-body { padding: 1.25rem; font-size: .78rem; font-family: monospace; color: rgba(255,255,255,.7); line-height: 1.7; overflow-x: auto; }
-.cb-key { color: #7fb3e8; }
+.cb-key { color: #6FA0CC; }
 .cb-str { color: #5dcaa5; }
-.cb-num { color: #c9a84c; }
+.cb-num { color: #CAB164; }
 .cb-cmt { color: rgba(255,255,255,.3); }
 .cb-tag { color: #f0997b; }
 
@@ -242,16 +251,16 @@
 .mp-3 { background: rgba(201,168,76,.06); border: 1px solid rgba(201,168,76,.18); }
 .mp-phase-label { font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .375rem; font-family: 'Ubuntu', sans-serif; }
 .mp-1 .mp-phase-label { color: #5dcaa5; }
-.mp-2 .mp-phase-label { color: #7fb3e8; }
-.mp-3 .mp-phase-label { color: #c9a84c; }
-.mp-country { font-size: 1.4rem; font-weight:700; color: #fff; font-family: 'Ubuntu', sans-serif; margin-bottom: .25rem; }
+.mp-2 .mp-phase-label { color: #6FA0CC; }
+.mp-3 .mp-phase-label { color: #CAB164; }
+.mp-country { font-size: 1.4rem; font-weight:700; color: var(--ink,#1A2332); font-family: 'Ubuntu', sans-serif; margin-bottom: .25rem; }
 .mp-timeline { font-size: .75rem; color: rgba(255,255,255,.4); font-family: 'Ubuntu', sans-serif; margin-bottom: 1rem; }
 .mp-items { display: flex; flex-direction: column; gap: .375rem; }
 .mp-item { font-size: .78rem; color: rgba(255,255,255,.58); font-family: 'Ubuntu', sans-serif; display: flex; gap: .5rem; }
 .mp-stat { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.07); font-size: .78rem; font-weight: 700; font-family: 'Ubuntu', sans-serif; }
 .mp-1 .mp-stat { color: #5dcaa5; }
-.mp-2 .mp-stat { color: #7fb3e8; }
-.mp-3 .mp-stat { color: #c9a84c; }
+.mp-2 .mp-stat { color: #6FA0CC; }
+.mp-3 .mp-stat { color: #CAB164; }
 
 /* ══ FOOTER-BOTTOM FIX ══ */
 .footer-bottom { display:flex; justify-content:space-between; align-items:center; padding:1.1rem 5%; border-top:1px solid rgba(255,255,255,.08); flex-wrap:nowrap; gap:1rem; }
@@ -261,9 +270,9 @@
 .footer-legal a:hover { color:rgba(255,255,255,.75); }
 
 /* ══ SCROLL TOP ══ */
-#scroll-top { position:fixed; bottom:2rem; right:2rem; width:44px; height:44px; border-radius:50%; background:#185fa5; color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.1rem; opacity:0; transform:translateY(12px); transition:opacity .3s,transform .3s; z-index:999; pointer-events:none; }
+#scroll-top { position:fixed; bottom:2rem; right:2rem; width:44px; height:44px; border-radius:50%; background:#2D5580; color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:1.1rem; opacity:0; transform:translateY(12px); transition:opacity .3s,transform .3s; z-index:999; pointer-events:none; }
 #scroll-top.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
-#scroll-top:hover { background:#0c447c; }
+#scroll-top:hover { background:#2D5580; }
 
 /* ══ RESPONSIVE ══ */
 @media(max-width:1000px){
@@ -300,67 +309,81 @@
    ════════════════════════════════════════════════════ */
 
 /* ── Section backgrounds ── */
-.e-sec-odd,.e-sec-even { background: #f8fafc !important }
+.e-sec-odd,.e-sec-even { background: var(--off-white,#FAFAF8) !important }
 
 /* ── Section headings & labels ── */
-.e-sec-odd .e-h2,.e-sec-even .e-h2 { color: #1A1A2E !important }
-.e-sec-odd .eco-sub,.e-sec-even .eco-sub { color: #475569 !important }
-.e-sec-odd .e-lead,.e-sec-even .e-lead { color: #475569 !important }
-.e-sec-odd .e-eyebrow,.e-sec-even .e-eyebrow { color: #1B5FA6 !important }
-.e-sec-odd .sec-h,.e-sec-even .sec-h { color: #1A1A2E !important }
-.e-sec-odd .sec-sub,.e-sec-even .sec-sub { color: #64748b !important }
-.e-sec-odd .ehs-val,.e-sec-even .ehs-val { color: #1A1A2E !important }
-.e-sec-odd .ehs-lbl,.e-sec-even .ehs-lbl { color: #64748b !important }
+.e-sec-odd .e-h2,.e-sec-even .e-h2 { color: var(--ink,#1A2332) !important }
+.e-sec-odd .eco-sub,.e-sec-even .eco-sub { color: var(--ink-mid,#3D4F63) !important }
+.e-sec-odd .e-lead,.e-sec-even .e-lead { color: var(--ink-mid,#3D4F63) !important }
+.e-sec-odd .e-eyebrow,.e-sec-even .e-eyebrow { color: var(--blue,#4179AD) !important }
+.e-sec-odd .sec-h,.e-sec-even .sec-h { color: var(--ink,#1A2332) !important }
+.e-sec-odd .sec-sub,.e-sec-even .sec-sub { color: var(--ink-soft,#6B7F96) !important }
+.e-sec-odd .ehs-val,.e-sec-even .ehs-val { color: var(--ink,#1A2332) !important }
+.e-sec-odd .ehs-lbl,.e-sec-even .ehs-lbl { color: var(--ink-soft,#6B7F96) !important }
 
 /* ── Benefit list items ── */
-.e-sec-odd .ba-title,.e-sec-even .ba-title { color: #1A1A2E !important }
+.e-sec-odd .ba-title,.e-sec-even .ba-title { color: var(--ink,#1A2332) !important }
 .e-sec-odd .ba-item,.e-sec-even .ba-item {
-  background: #fff !important;
+  background: var(--white,#ffffff) !important;
   border: 1px solid #e2e8f0 !important;
-  color: #475569 !important
+  color: var(--ink-mid,#3D4F63) !important
 }
-.e-sec-odd .ba-arrow,.e-sec-even .ba-arrow { color: #94a3b8 !important }
+.e-sec-odd .ba-arrow,.e-sec-even .ba-arrow { color: var(--muted-2,#98acbe) !important }
 
 /* ── Party card grid (the 8-party carousel cards) ── */
 .e-sec-odd .party-card,.e-sec-even .party-card {
-  background: #fff !important;
-  border: 1px solid #e2e8f0 !important
+  background: var(--white,#ffffff) !important;
+  border: 1px solid var(--border,#e2eaf3) !important
 }
-.e-sec-odd .party-name,.e-sec-even .party-name { color: #1A1A2E !important }
-.e-sec-odd .party-desc,.e-sec-even .party-desc { color: #64748b !important }
-.e-sec-odd .party-num,.e-sec-even .party-num { color: #94a3b8 !important }
+.e-sec-odd .party-card.party-featured,.e-sec-even .party-card.party-featured {
+  background: var(--blue-pale,#EEF4FA) !important;
+  border-color: var(--blue-light,#6FA0CC) !important
+}
+.e-sec-odd .party-name,.e-sec-even .party-name { color: var(--ink,#1A2332) !important }
+.e-sec-odd .party-desc,.e-sec-even .party-desc { color: var(--ink-soft,#6B7F96) !important }
+.e-sec-odd .party-num,.e-sec-even .party-num { color: var(--muted-2,#98acbe) !important }
 
 /* ── Party deep dive LEFT SIDE (text content) ── */
-.e-sec-odd .pp-h3,.e-sec-even .pp-h3 { color: #1A1A2E !important }
-.e-sec-odd .pp-desc,.e-sec-even .pp-desc { color: #475569 !important }
-.e-sec-odd .pp-section-title,.e-sec-even .pp-section-title { color: #1A1A2E !important }
-.e-sec-odd .pp-item,.e-sec-even .pp-item { color: #475569 !important }
-.e-sec-odd .pp-stat-lbl,.e-sec-even .pp-stat-lbl { color: #64748b !important }
-.e-sec-odd .pp-tag,.e-sec-even .pp-tag { color: #7fb3e8 !important }
+.e-sec-odd .pp-h3,.e-sec-even .pp-h3 { color: var(--ink,#1A2332) !important }
+.e-sec-odd .pp-desc,.e-sec-even .pp-desc { color: var(--ink-mid,#3D4F63) !important }
+.e-sec-odd .pp-section-title,.e-sec-even .pp-section-title { color: var(--ink,#1A2332) !important }
+.e-sec-odd .pp-item,.e-sec-even .pp-item { color: var(--ink-mid,#3D4F63) !important }
+.e-sec-odd .pp-stat-lbl,.e-sec-even .pp-stat-lbl { color: var(--ink-soft,#6B7F96) !important }
+.e-sec-odd .pp-tag,.e-sec-even .pp-tag { color: #6FA0CC !important }
 .e-sec-odd .pp-ex,.e-sec-even .pp-ex {
-  background: #f1f5f9 !important;
-  color: #475569 !important;
+  background: var(--blue-pale,#EEF4FA) !important;
+  color: var(--ink-mid,#3D4F63) !important;
   border: 1px solid #e2e8f0 !important
 }
+
+/* ── partner-item text — invisible on light bg without override ── */
+.e-sec-odd .pi-name,.e-sec-even .pi-name { color: var(--ink,#1A2332) !important }
+.e-sec-odd .pi-note,.e-sec-even .pi-note { color: var(--ink-soft,#6B7F96) !important }
+.e-sec-odd .pi-dot,.e-sec-even .pi-dot { opacity: 1 !important }
 
 /* ── pp-stat-val: NEVER override — uses inline color (green/gold/blue stats) ── */
 /* .pp-stat-val intentionally NOT overridden — inline style="color:..." is preserved */
+/* BUT: pp-stat-val with NO inline color defaults to #fff — invisible on light bg */
+.e-sec-odd .pp-stat-val:not([style]),.e-sec-even .pp-stat-val:not([style]) { color: var(--ink,#1A2332) !important }
 
 /* ── Process steps ── */
 .e-sec-odd .fsr-step,.e-sec-even .fsr-step {
-  background: #fff !important;
+  background: var(--white,#ffffff) !important;
   border: 1px solid #e2e8f0 !important
 }
-.e-sec-odd .fsr-title,.e-sec-even .fsr-title { color: #1A1A2E !important }
-.e-sec-odd .fsr-desc,.e-sec-even .fsr-desc { color: #475569 !important }
-.e-sec-odd .fsr-step-num,.e-sec-even .fsr-step-num { color: #94a3b8 !important }
+.e-sec-odd .fsr-title,.e-sec-even .fsr-title { color: var(--ink,#1A2332) !important }
+.e-sec-odd .fsr-desc,.e-sec-even .fsr-desc { color: var(--ink-mid,#3D4F63) !important }
+.e-sec-odd .fsr-step-num,.e-sec-even .fsr-step-num { color: var(--muted-2,#98acbe) !important }
 .e-sec-odd .integ-step,.e-sec-even .integ-step {
-  background: #fff !important;
+  background: var(--white,#ffffff) !important;
   border: 1px solid #e2e8f0 !important
 }
-.e-sec-odd .is-title,.e-sec-even .is-title { color: #1A1A2E !important }
-.e-sec-odd .is-desc,.e-sec-even .is-desc { color: #64748b !important }
-.e-sec-odd .mp-lead,.e-sec-even .mp-lead { color: #64748b !important }
+.e-sec-odd .is-title,.e-sec-even .is-title { color: var(--ink,#1A2332) !important }
+.e-sec-odd .is-desc,.e-sec-even .is-desc { color: var(--ink-soft,#6B7F96) !important }
+.e-sec-odd .mp-lead,.e-sec-even .mp-lead { color: var(--ink-soft,#6B7F96) !important }
+.e-sec-odd .mp-country,.e-sec-even .mp-country { color: var(--ink,#1A2332) !important }
+.e-sec-odd .mp-item,.e-sec-even .mp-item { color: var(--ink-mid,#3D4F63) !important }
+.e-sec-odd .mp-phase-label,.e-sec-even .mp-phase-label { opacity: .85 !important }
 
 /* ── Hub core (stays dark — it IS the dark platform) ── */
 .hub-core {
@@ -372,10 +395,10 @@
 
 /* ── pp-card (dark UI simulator) — FULLY PRESERVED DARK ── */
 .pp-card {
-  background: #0d1b2e !important;
+  background: #1A2332 !important;
   border-color: rgba(255,255,255,.09) !important
 }
-.pp-card-bar { background: #060f1c !important }
+.pp-card-bar { background: #111922 !important }
 .pp-card-title { color: rgba(255,255,255,.55) !important }
 .pp-card-badge { color: #1d9e75 !important; background: rgba(29,158,117,.15) !important }
 .pp-card-body { color: rgba(255,255,255,.7) !important }
@@ -398,6 +421,14 @@
 /* Key metric highlights in pp-card */
 .pp-card .pp-bb-val { color: #fff !important; font-weight: 700 }
 .pp-card .pp-roi-txt { color: var(--gold-l, #d4aa4a) !important }
+
+/* ── partner-section-header on light bg ── */
+.e-sec-odd .partner-section-header,.e-sec-even .partner-section-header {
+  background: var(--blue-pale,#EEF4FA) !important;
+  border-color: var(--border,#e2eaf3) !important
+}
+.e-sec-odd .ps-title,.e-sec-even .ps-title { color: var(--blue,#4179AD) !important }
+.e-sec-odd .ps-icon,.e-sec-even .ps-icon { opacity: .75 !important }
 
 /* ── Code blocks stay dark ── */
 .code-block { background: #1A1A2E !important; color: #e2e8f0 !important }
@@ -572,10 +603,10 @@
           <div style="font-size:.78rem;color:rgba(255,255,255,.45);font-family:'Ubuntu',sans-serif;line-height:1.55">1.2M+ insured Egyptians who gain a QR digital health card, real-time claims tracking, faster approvals, preventive care alerts, and transparent benefit navigation — for the first time.</div>
         </div>
         <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">iOS App</span>
-          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">Android App</span>
-          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">QR Digital Card</span>
-          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">Claims Tracker</span>
+          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#6FA0CC;font-family:'Ubuntu',sans-serif;font-weight:600">iOS App</span>
+          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#6FA0CC;font-family:'Ubuntu',sans-serif;font-weight:600">Android App</span>
+          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#6FA0CC;font-family:'Ubuntu',sans-serif;font-weight:600">QR Digital Card</span>
+          <span style="font-size:.7rem;padding:4px 10px;border-radius:4px;background:rgba(55,138,221,.15);color:#6FA0CC;font-family:'Ubuntu',sans-serif;font-weight:600">Claims Tracker</span>
         </div>
       </div>
     </div>
@@ -608,21 +639,21 @@
       <!-- INSURERS -->
       <div class="party-panel active" id="panel-insurers">
         <div class="pp-left">
-          <div class="pp-tag" style="background:rgba(24,95,165,.15);color:#7fb3e8">🏛️ Party 01 — Health Insurers</div>
+          <div class="pp-tag" style="background:rgba(24,95,165,.15);color:#6FA0CC">🏛️ Party 01 — Health Insurers</div>
           <div class="pp-h3">The <em>Payers</em> Who<br>Need Fraud to Stop</div>
           <div class="pp-desc">Egyptian private insurers are running loss ratios of 70–85% and rising. Every 1% improvement in loss ratio is worth millions. iRonic Health is the first platform that makes fraud detection measurable, FRA-compliant, and deployable in 4 weeks without upfront cost.</div>
           <div class="pp-section-title">What they provide</div>
           <div class="pp-list">
-            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Historical claims data for AI model training and baseline benchmarking</div>
-            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Policy and member enrollment data for eligibility verification</div>
-            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Provider network contracts and pricing benchmarks</div>
-            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Approval authority for high-value claim decisions</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#6FA0CC"></div>Historical claims data for AI model training and baseline benchmarking</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#6FA0CC"></div>Policy and member enrollment data for eligibility verification</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#6FA0CC"></div>Provider network contracts and pricing benchmarks</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#6FA0CC"></div>Approval authority for high-value claim decisions</div>
           </div>
           <div class="pp-section-title">What they gain</div>
           <div class="pp-stats">
             <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">−15%</div><div class="pp-stat-lbl">Loss ratio improvement</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">25–40%</div><div class="pp-stat-lbl">Fraud recovery rate</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">4.3s</div><div class="pp-stat-lbl">Claim decision time</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#CAB164">25–40%</div><div class="pp-stat-lbl">Fraud recovery rate</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#6FA0CC">4.3s</div><div class="pp-stat-lbl">Claim decision time</div></div>
             <div class="pp-stat"><div class="pp-stat-val">100%</div><div class="pp-stat-lbl">FRA audit coverage</div></div>
           </div>
           <div class="pp-section-title">Target organisations</div>
@@ -640,7 +671,7 @@
                 <div class="pg-item pg-before"><div class="pg-lbl">Before — The Problem</div><div class="pg-txt">Loss ratio at 78% — rising 12% YoY. 90% of claims reviewed manually by a 12-person team. 2-week approval cycle. No visibility into fraud vs. legitimate high-cost claims. Boards asking hard questions.</div></div>
                 <div class="pg-item pg-after"><div class="pg-lbl">After — With iRonic Health</div><div class="pg-txt">Loss ratio falls to 63% — 15-point improvement in 6 months. 87% of claims auto-approved in 4.3 seconds. Review team focuses only on flagged cases. FRA-compliant audit trail on every decision. Board sees real-time ROI dashboard.</div></div>
               </div>
-              <div style="margin-top:1rem;padding:.75rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;font-size:.76rem;color:#c9a84c;font-family:'Ubuntu',sans-serif;font-weight:600">
+              <div style="margin-top:1rem;padding:.75rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;font-size:.76rem;color:#CAB164;font-family:'Ubuntu',sans-serif;font-weight:600">
                 💰 Pilot ROI: EGP 2.4M fraud recovered in 90 days on a 200K-life sub-book. No platform fee paid.
               </div>
             </div>
@@ -651,39 +682,39 @@
       <!-- TPA -->
       <div class="party-panel" id="panel-tpa">
         <div class="pp-left">
-          <div class="pp-tag" style="background:rgba(201,168,76,.12);color:#c9a84c">📋 Party 02 — TPAs</div>
+          <div class="pp-tag" style="background:rgba(201,168,76,.12);color:#CAB164">📋 Party 02 — TPAs</div>
           <div class="pp-h3">The <em>Scale Multipliers</em><br>We Go Through First</div>
           <div class="pp-desc">One TPA partnership replaces 18 separate insurer sales cycles. GlobeMed Egypt manages 1.2M insured lives across 18 insurance companies. Our TPA-first GTM strategy compresses years of sales work into months — and gives TPAs a powerful AI upgrade to their legacy claims stack.</div>
           <div class="pp-section-title">What they provide</div>
           <div class="pp-list">
-            <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>Multi-insurer claims workflow — existing processing infrastructure</div>
-            <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>Provider network management and contract data across all connected insurers</div>
-            <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>Member enrollment data for 18 insurers — 1.2M lives in one integration</div>
-            <div class="pp-item"><div class="pp-item-dot" style="background:#c9a84c"></div>Distribution reach — iRonic deploys to all 18 connected insurers via one API</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#CAB164"></div>Multi-insurer claims workflow — existing processing infrastructure</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#CAB164"></div>Provider network management and contract data across all connected insurers</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#CAB164"></div>Member enrollment data for 18 insurers — 1.2M lives in one integration</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#CAB164"></div>Distribution reach — iRonic deploys to all 18 connected insurers via one API</div>
           </div>
           <div class="pp-section-title">What they gain</div>
           <div class="pp-stats">
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">18</div><div class="pp-stat-lbl">Insurers served via 1 deal</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#CAB164">18</div><div class="pp-stat-lbl">Insurers served via 1 deal</div></div>
             <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">AI upgrade</div><div class="pp-stat-lbl">No rebuild needed</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">87%</div><div class="pp-stat-lbl">Claims automated</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#6FA0CC">87%</div><div class="pp-stat-lbl">Claims automated</div></div>
             <div class="pp-stat"><div class="pp-stat-val">New revenue</div><div class="pp-stat-lbl">Recovery share income</div></div>
           </div>
           <div class="pp-section-title">Target organisations</div>
           <div class="pp-examples">
-            <span class="pp-ex" style="background:rgba(201,168,76,.12);color:#c9a84c;border:1px solid rgba(201,168,76,.25)">★ GlobeMed Egypt</span>
+            <span class="pp-ex" style="background:rgba(201,168,76,.12);color:#CAB164;border:1px solid rgba(201,168,76,.25)">★ GlobeMed Egypt</span>
             <span class="pp-ex">MedNet (Munich Re)</span><span class="pp-ex">AMC</span><span class="pp-ex">Limitless Care</span>
             <span class="pp-ex">6 FRA-Licensed TPAs (Apr 2026)</span>
           </div>
         </div>
         <div class="pp-right">
           <div class="pp-card">
-            <div class="pp-card-bar"><span class="pp-card-title">GlobeMed Egypt — Integration Overview</span><span class="pp-card-badge" style="background:rgba(201,168,76,.2);color:#c9a84c">Strategic Target</span></div>
+            <div class="pp-card-bar"><span class="pp-card-title">GlobeMed Egypt — Integration Overview</span><span class="pp-card-badge" style="background:rgba(201,168,76,.2);color:#CAB164">Strategic Target</span></div>
             <div class="pp-card-body">
               <div class="pain-gain">
                 <div class="pg-item pg-before"><div class="pg-lbl">Current State</div><div class="pg-txt">1.2M lives, 18 insurers, legacy claims processing stack. Rules-based fraud detection. Manual review bottleneck. Insurers pushing for cost containment — GlobeMed needs to show innovation or risk losing contracts.</div></div>
                 <div class="pg-item pg-after"><div class="pg-lbl">With iRonic Health</div><div class="pg-txt">AI-powered fraud scoring plugs directly into GlobeMed's existing workflow. All 18 connected insurers get upgraded simultaneously. GlobeMed becomes the first TPA in Egypt to offer AI-native fraud detection — a retention and acquisition tool for new insurer mandates.</div></div>
               </div>
-              <div style="margin-top:1rem;padding:.75rem;background:rgba(55,138,221,.08);border:1px solid rgba(55,138,221,.2);border-radius:8px;font-size:.76rem;color:#7fb3e8;font-family:'Ubuntu',sans-serif;font-weight:600">
+              <div style="margin-top:1rem;padding:.75rem;background:rgba(55,138,221,.08);border:1px solid rgba(55,138,221,.2);border-radius:8px;font-size:.76rem;color:#6FA0CC;font-family:'Ubuntu',sans-serif;font-weight:600">
                 ⚡ One GlobeMed API integration = immediate 1.2M lives on platform. 18 insurer deals in 1 contract.
               </div>
             </div>
@@ -706,8 +737,8 @@
           <div class="pp-section-title">What they gain</div>
           <div class="pp-stats">
             <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">&lt;4h</div><div class="pp-stat-lbl">Pre-authorization</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">48h</div><div class="pp-stat-lbl">Payment processing</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">↑ Ranked</div><div class="pp-stat-lbl">In routing algorithm</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#CAB164">48h</div><div class="pp-stat-lbl">Payment processing</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#6FA0CC">↑ Ranked</div><div class="pp-stat-lbl">In routing algorithm</div></div>
             <div class="pp-stat"><div class="pp-stat-val">Lower</div><div class="pp-stat-lbl">Audit friction</div></div>
           </div>
           <div class="pp-section-title">Target organisations</div>
@@ -745,7 +776,7 @@
           <div class="pp-stats">
             <div class="pp-stat"><div class="pp-stat-val" style="color:#f0997b">48h</div><div class="pp-stat-lbl">vs 60–90 day payments</div></div>
             <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">Instant</div><div class="pp-stat-lbl">Eligibility check</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">Protected</div><div class="pp-stat-lbl">From counterfeit risk</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#CAB164">Protected</div><div class="pp-stat-lbl">From counterfeit risk</div></div>
             <div class="pp-stat"><div class="pp-stat-val">Audit</div><div class="pp-stat-lbl">Dispute protection</div></div>
           </div>
           <div class="pp-section-title">Target organisations</div>
@@ -783,7 +814,7 @@
           <div class="pp-stats">
             <div class="pp-stat"><div class="pp-stat-val" style="color:#afa9ec">Pre-verified</div><div class="pp-stat-lbl">Every test order</div></div>
             <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">48h</div><div class="pp-stat-lbl">Payment</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">Zero</div><div class="pp-stat-lbl">Fraudulent referral risk</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#CAB164">Zero</div><div class="pp-stat-lbl">Fraudulent referral risk</div></div>
             <div class="pp-stat"><div class="pp-stat-val">API</div><div class="pp-stat-lbl">Direct integration</div></div>
           </div>
           <div class="pp-section-title">Target organisations</div>
@@ -820,8 +851,8 @@
           <div class="pp-section-title">What they gain</div>
           <div class="pp-stats">
             <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">Protected</div><div class="pp-stat-lbl">Identity &amp; licence</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">AI support</div><div class="pp-stat-lbl">Clinical decision aid</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">Formulary</div><div class="pp-stat-lbl">Real-time guidance</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#6FA0CC">AI support</div><div class="pp-stat-lbl">Clinical decision aid</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#CAB164">Formulary</div><div class="pp-stat-lbl">Real-time guidance</div></div>
             <div class="pp-stat"><div class="pp-stat-val">Zero</div><div class="pp-stat-lbl">False liability</div></div>
           </div>
         </div>
@@ -854,7 +885,7 @@
           <div class="pp-stats">
             <div class="pp-stat"><div class="pp-stat-val" style="color:#afa9ec">$5</div><div class="pp-stat-lbl">PMPM all-in pricing</div></div>
             <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">Real-time</div><div class="pp-stat-lbl">Spend analytics</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">Full</div><div class="pp-stat-lbl">Claims transparency</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#CAB164">Full</div><div class="pp-stat-lbl">Claims transparency</div></div>
             <div class="pp-stat"><div class="pp-stat-val">Health</div><div class="pp-stat-lbl">Pool risk scoring</div></div>
           </div>
           <div class="pp-section-title">Target organisations</div>
@@ -879,26 +910,26 @@
       <!-- PATIENTS -->
       <div class="party-panel" id="panel-patients">
         <div class="pp-left">
-          <div class="pp-tag" style="background:rgba(55,138,221,.15);color:#7fb3e8">👤 Party 08 — Patients &amp; Members</div>
+          <div class="pp-tag" style="background:rgba(55,138,221,.15);color:#6FA0CC">👤 Party 08 — Patients &amp; Members</div>
           <div class="pp-h3">1.2M Egyptians Who<br><em>Deserve Better</em></div>
           <div class="pp-desc">Egypt's 6–8 million insured members carry paper cards, wait days for approvals, have no idea what their policy covers, and often pay out-of-pocket because the insurer approval didn't come through in time. iRonic Health gives every insured member a digital identity, a real-time view of their benefits, and faster access to care.</div>
           <div class="pp-section-title">What they provide</div>
           <div class="pp-list">
-            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Biometric verification for digital health card enrollment</div>
-            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>Health behavior data (with consent) for Health Score and Dynamic Premiums modules</div>
-            <div class="pp-item"><div class="pp-item-dot" style="background:#378add"></div>QR presentation at hospitals, pharmacies, and labs for instant eligibility check</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#6FA0CC"></div>Biometric verification for digital health card enrollment</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#6FA0CC"></div>Health behavior data (with consent) for Health Score and Dynamic Premiums modules</div>
+            <div class="pp-item"><div class="pp-item-dot" style="background:#6FA0CC"></div>QR presentation at hospitals, pharmacies, and labs for instant eligibility check</div>
           </div>
           <div class="pp-section-title">What they gain</div>
           <div class="pp-stats">
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#378add">QR Card</div><div class="pp-stat-lbl">Digital health identity</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#6FA0CC">QR Card</div><div class="pp-stat-lbl">Digital health identity</div></div>
             <div class="pp-stat"><div class="pp-stat-val" style="color:#1d9e75">Real-time</div><div class="pp-stat-lbl">Claims tracking</div></div>
-            <div class="pp-stat"><div class="pp-stat-val" style="color:#c9a84c">−25%</div><div class="pp-stat-lbl">Premium via healthy living</div></div>
+            <div class="pp-stat"><div class="pp-stat-val" style="color:#CAB164">−25%</div><div class="pp-stat-lbl">Premium via healthy living</div></div>
             <div class="pp-stat"><div class="pp-stat-val">&lt;4h</div><div class="pp-stat-lbl">Pre-authorization</div></div>
           </div>
         </div>
         <div class="pp-right">
           <div class="pp-card">
-            <div class="pp-card-bar"><span class="pp-card-title">iRonic Patient App — Member View</span><span class="pp-card-badge" style="background:rgba(55,138,221,.2);color:#7fb3e8">iOS + Android</span></div>
+            <div class="pp-card-bar"><span class="pp-card-title">iRonic Patient App — Member View</span><span class="pp-card-badge" style="background:rgba(55,138,221,.2);color:#6FA0CC">iOS + Android</span></div>
             <div class="pp-card-body">
               <div class="pain-gain">
                 <div class="pg-item pg-before"><div class="pg-lbl">Before — Paper &amp; Uncertainty</div><div class="pg-txt">Laminated insurance card. 3-day approval wait. No idea what's covered. Out-of-pocket payment because the approval didn't arrive. Annual renewal without understanding what you paid for.</div></div>
@@ -962,22 +993,22 @@
       <div class="partner-group">
         <div class="partner-group-title">🏛️ Insurers (Primary Targets)</div>
         <div class="partner-list">
-          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">Misr Insurance Holding <span class="pi-badge pib-target">Target Y2</span></div><div class="pi-note">~41% non-life market share · State-owned · Largest in Egypt</div></div></div>
-          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">AXA Egypt <span class="pi-badge pib-target">Target Y1</span></div><div class="pi-note">1M+ customers · Digital-first · Ada Health AI partnership</div></div></div>
-          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">Bupa Egypt <span class="pi-badge pib-target">Target Y1</span></div><div class="pi-note">Premium segment · Fastest sales cycle (6–8 weeks)</div></div></div>
-          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">MetLife Egypt</div><div class="pi-note">1M+ customers · Uses MedNet TPA</div></div></div>
-          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">Allianz Egypt / NEXtCARE</div><div class="pi-note">4M+ regional members · USD 1bn claims/yr</div></div></div>
-          <div class="partner-item"><div class="pi-dot" style="background:#378add"></div><div class="pi-body"><div class="pi-name">GIG Egypt · Orient Takaful · AMIG</div><div class="pi-note">Mid-tier · 100–400K lives each</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#6FA0CC"></div><div class="pi-body"><div class="pi-name">Misr Insurance Holding <span class="pi-badge pib-target">Target Y2</span></div><div class="pi-note">~41% non-life market share · State-owned · Largest in Egypt</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#6FA0CC"></div><div class="pi-body"><div class="pi-name">AXA Egypt <span class="pi-badge pib-target">Target Y1</span></div><div class="pi-note">1M+ customers · Digital-first · Ada Health AI partnership</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#6FA0CC"></div><div class="pi-body"><div class="pi-name">Bupa Egypt <span class="pi-badge pib-target">Target Y1</span></div><div class="pi-note">Premium segment · Fastest sales cycle (6–8 weeks)</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#6FA0CC"></div><div class="pi-body"><div class="pi-name">MetLife Egypt</div><div class="pi-note">1M+ customers · Uses MedNet TPA</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#6FA0CC"></div><div class="pi-body"><div class="pi-name">Allianz Egypt / NEXtCARE</div><div class="pi-note">4M+ regional members · USD 1bn claims/yr</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#6FA0CC"></div><div class="pi-body"><div class="pi-name">GIG Egypt · Orient Takaful · AMIG</div><div class="pi-note">Mid-tier · 100–400K lives each</div></div></div>
         </div>
       </div>
       <div class="partner-group">
         <div class="partner-group-title">📋 TPAs (Strategic Partners)</div>
         <div class="partner-list">
-          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">GlobeMed Egypt <span class="pi-badge pib-target">Primary Target</span></div><div class="pi-note">1.2M lives · 18 insurers · #1 TPA in Egypt</div></div></div>
-          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">MedNet Egypt (Munich Re)</div><div class="pi-note">Services MetLife Egypt · Regional scale</div></div></div>
-          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">AMC</div><div class="pi-note">75,000+ beneficiaries</div></div></div>
-          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">Limitless Care (Eva Pharma)</div><div class="pi-note">TPA + pharma group synergy</div></div></div>
-          <div class="partner-item"><div class="pi-dot" style="background:#c9a84c"></div><div class="pi-body"><div class="pi-name">6 FRA-Licensed TPAs (April 2026)</div><div class="pi-note">Names TBD · FRA Decision 229/2025</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#CAB164"></div><div class="pi-body"><div class="pi-name">GlobeMed Egypt <span class="pi-badge pib-target">Primary Target</span></div><div class="pi-note">1.2M lives · 18 insurers · #1 TPA in Egypt</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#CAB164"></div><div class="pi-body"><div class="pi-name">MedNet Egypt (Munich Re)</div><div class="pi-note">Services MetLife Egypt · Regional scale</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#CAB164"></div><div class="pi-body"><div class="pi-name">AMC</div><div class="pi-note">75,000+ beneficiaries</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#CAB164"></div><div class="pi-body"><div class="pi-name">Limitless Care (Eva Pharma)</div><div class="pi-note">TPA + pharma group synergy</div></div></div>
+          <div class="partner-item"><div class="pi-dot" style="background:#CAB164"></div><div class="pi-body"><div class="pi-name">6 FRA-Licensed TPAs (April 2026)</div><div class="pi-note">Names TBD · FRA Decision 229/2025</div></div></div>
         </div>
       </div>
       <div class="partner-group">
@@ -1017,7 +1048,7 @@
         <div class="code-block">
           <div class="cb-bar">
             <div class="cb-dot" style="background:#f0997b"></div>
-            <div class="cb-dot" style="background:#c9a84c"></div>
+            <div class="cb-dot" style="background:#CAB164"></div>
             <div class="cb-dot" style="background:#5dcaa5"></div>
             <span class="cb-title">POST /v1/claims/score · iRonic Health API</span>
           </div>
