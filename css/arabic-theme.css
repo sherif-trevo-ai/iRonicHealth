@@ -13,23 +13,29 @@ body{background:var(--white)!important;color:var(--ink)!important;font-family:va
 .nav-logo-text{text-align:right}
 
 /* ─── 2. HERO — ALL PAGES ─── */
-.hero,.plat-hero,.team-hero,.dash-hero,.eco-hero,.inv-hero,.mkt-hero,.rev-hero,.contact-hero{
+/* .hero excluded — ar/index.html hero is intentionally DARK */
+.plat-hero,.team-hero,.dash-hero,.eco-hero,.inv-hero,.mkt-hero,.rev-hero,.contact-hero{
   background:var(--white)!important}
 /* Remove dark radial overlays */
-.hero-bg,.th-bg,.dh-bg,.mh-bg,.rh-bg,.ch-bg,.plat-hero-bg,.eco-hero-bg,.inv-hero-glow,.inv-hero-glow2{
+/* .hero-bg excluded — needed for dark hero on ar/index.html */
+.th-bg,.dh-bg,.mh-bg,.rh-bg,.ch-bg,.plat-hero-bg,.eco-hero-bg,.inv-hero-glow,.inv-hero-glow2{
   display:none!important}
 /* Grid pattern matches English */
-.hero-grid,.th-grid,.dh-grid,.mh-grid,.rh-grid,.ch-grid,.plat-hero-grid,.eco-hero-grid,.inv-hero-grid{
+/* .hero-grid excluded — dark hero uses its own dot grid */
+.th-grid,.dh-grid,.mh-grid,.rh-grid,.ch-grid,.plat-hero-grid,.eco-hero-grid,.inv-hero-grid{
   background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px)!important;
   background-size:48px 48px!important;opacity:.32!important}
 /* Hero text */
-.hero-h1,.th-h1,.plat-h1,.eco-h1,.inv-h1,.mkt-hero .mh-h1,.rev-hero .rh-h1,.contact-hero .ch-h1{
+/* .hero-h1 excluded — dark hero needs white text, ar/index.html sets it inline */
+.th-h1,.plat-h1,.eco-h1,.inv-h1,.mkt-hero .mh-h1,.rev-hero .rh-h1,.contact-hero .ch-h1{
   color:var(--ink)!important}
 .hero-h1 .accent,.dh-h1 em{color:var(--blue)!important}
 .hero-h1 .gold-t{color:var(--gold-dark)!important}
-.hero-desc,.th-sub,.plat-sub,.eco-sub,.inv-sub,.mh-sub,.rh-sub,.ch-sub,.dh-sub{color:var(--muted)!important}
+/* .hero-desc excluded from muted override — dark hero needs rgba white */
+.th-sub,.plat-sub,.eco-sub,.inv-sub,.mh-sub,.rh-sub,.ch-sub,.dh-sub{color:var(--muted)!important}
 /* Hero pills */
-.hero-pill,.th-badge,.mh-badge,.rh-badge,.ch-badge,.plat-badge,.eco-badge,.inv-round-badge,.dh-badge{
+/* .hero-pill excluded — dark hero pill needs dark treatment */
+.th-badge,.mh-badge,.rh-badge,.ch-badge,.plat-badge,.eco-badge,.inv-round-badge,.dh-badge{
   background:var(--blue-light)!important;border-color:var(--blue-mid)!important;color:var(--blue-dark)!important}
 .pill-dot,.irb-dot{background:var(--blue)!important}
 .dh-live-dot{background:var(--green)!important}
@@ -42,8 +48,10 @@ body{background:var(--white)!important;color:var(--ink)!important;font-family:va
 .btn-deck{background:var(--blue)!important;color:#fff!important}
 .btn-meeting{background:transparent!important;border-color:var(--border-2)!important;color:var(--ink-3)!important}
 /* Hero KPIs */
-.kpi-hero-val{color:var(--blue)!important}
-.kpi-hero-lbl{color:var(--muted)!important}
+/* kpi-hero-val excluded from blue override for dark hero */
+/* .kpi-hero-val{color:var(--blue)!important} */
+/* kpi-hero-lbl excluded — dark hero needs rgba white */
+/* .kpi-hero-lbl{color:var(--muted)!important} */
 .kpi-hero{border-right-color:var(--border)!important}
 /* Investor hero stats */
 .ihc{background:var(--white)!important;border-color:var(--border)!important}
