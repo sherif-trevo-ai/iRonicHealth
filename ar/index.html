@@ -204,16 +204,15 @@
     }
 
     .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 7%;
-      height: 72px;
-      display: flex;
-      align-items: center;
-      /* ✅ FIX: bilingual nav — ltr container so logo is visually on right in RTL page */
-      flex-direction: row-reverse;
-      justify-content: space-between;
-    }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 7%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;          /* ← logo now on the RIGHT in RTL */
+  justify-content: space-between;
+}
 
     .nav-logo {
       display: flex;
@@ -221,7 +220,7 @@
     }
 
     .nav-logo img {
-      height: 38px;
+      height: 56px;
       width: auto;
     }
 
@@ -1540,15 +1539,15 @@
     }
 
     .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 40px;
-      flex-direction: row-reverse;
-      gap: 32px;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  flex-direction: row;          /* ← logo now on the RIGHT in RTL */
+  gap: 32px;
+}
 
-    .footer-logo img { height: 36px; width: auto; }
+    .footer-logo img { height: 52px; width: auto; }
 
     .footer-tagline {
       font-size: 0.82rem;
