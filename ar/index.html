@@ -207,9 +207,8 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
 /* ══ ECOSYSTEM ══ */
 .eco-sec{padding:6rem 5%;background:#111922}
 .eco-inner{max-width:1200px;margin:0 auto;direction:rtl}
-.eco-hub{position:relative;display:flex;align-items:center;
-  justify-content:center;margin:3rem auto 0;max-width:700px;height:300px;
-  direction:ltr} /* keep absolute positions physical in RTL page */
+.eco-hub{margin:2rem auto 0;max-width:700px;
+  direction:ltr} /* SVG hub — direction:ltr so SVG coordinates are unaffected by RTL */
 .eco-center{position:absolute;width:90px;height:90px;border-radius:50%;
   background:linear-gradient(135deg,var(--blue),var(--green));
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -814,35 +813,71 @@ p,li,td,th,label,span{font-family:'Cairo',sans-serif}
       <p class="sec-lead" style="color:rgba(255,255,255,.5)">iRonic Health ليست طرفًا في المنظومة — إنها البنية التحتية التي تجعل كل الأطراف تعمل معًا لأول مرة.</p>
     </div>
 
-    <!-- Visual hub -->
-    <div class="eco-hub reveal" aria-hidden="true">
-      <!-- Center -->
-      <div class="eco-center">
-        <div class="eco-center-h">iRonic<br>Health</div>
-        <div class="eco-center-s">AI Hub</div>
-      </div>
-      <!-- Parties placed via absolute positioning -->
-      <div class="eco-party" style="top:50%;right:0;transform:translateY(-50%)">
-        <div class="eco-party-ico">🛡️</div><div class="eco-party-lbl">التأمين</div>
-      </div>
-      <div class="eco-party" style="top:10%;right:22%">
-        <div class="eco-party-ico">📋</div><div class="eco-party-lbl">TPA</div>
-      </div>
-      <div class="eco-party" style="top:10%;left:22%">
-        <div class="eco-party-ico">🏥</div><div class="eco-party-lbl">مستشفيات</div>
-      </div>
-      <div class="eco-party" style="top:50%;left:0;transform:translateY(-50%)">
-        <div class="eco-party-ico">💊</div><div class="eco-party-lbl">صيدليات</div>
-      </div>
-      <div class="eco-party" style="bottom:10%;left:22%">
-        <div class="eco-party-ico">🧪</div><div class="eco-party-lbl">مختبرات</div>
-      </div>
-      <div class="eco-party" style="bottom:10%;right:22%">
-        <div class="eco-party-ico">👤</div><div class="eco-party-lbl">مؤمَّنون</div>
-      </div>
-      <div class="eco-party" style="bottom:0;right:50%;transform:translateX(50%)">
-        <div class="eco-party-ico">🏢</div><div class="eco-party-lbl">شركات</div>
-      </div>
+    <!-- Visual hub — SVG replaces broken RTL absolute-position approach -->
+    <div class="eco-hub reveal" aria-hidden="true" style="direction:ltr;height:320px;width:100%;max-width:700px;margin:2rem auto 0">
+      <svg width="100%" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="hubGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#1d9e75"/>
+            <stop offset="100%" stop-color="#4179AD"/>
+          </radialGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+        </defs>
+
+        <!-- Connector lines from center (350,160) to each node -->
+        <line x1="350" y1="160" x2="620" y2="160" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="350" y1="160" x2="530" y2="52"  stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="350" y1="160" x2="175" y2="52"  stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="350" y1="160" x2="80"  y2="160" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="350" y1="160" x2="175" y2="268" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="350" y1="160" x2="530" y2="268" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="350" y1="160" x2="350" y2="280" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+
+        <!-- Center hub circle -->
+        <circle cx="350" cy="160" r="52" fill="url(#hubGrad)" opacity="0.15"/>
+        <circle cx="350" cy="160" r="40" fill="url(#hubGrad)"/>
+        <text x="350" y="154" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="9.5" font-weight="800" fill="white">iRonic</text>
+        <text x="350" y="165" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="9.5" font-weight="800" fill="white">Health</text>
+        <text x="350" y="177" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="7" fill="rgba(255,255,255,0.7)">AI Hub</text>
+
+        <!-- Node helper: box + emoji + label -->
+        <!-- Node 1: التأمين — right (620,160) -->
+        <rect x="594" y="134" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="620" y="167" text-anchor="middle" font-size="22">🛡️</text>
+        <text x="620" y="200" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">التأمين</text>
+
+        <!-- Node 2: TPA — upper right (530,52) -->
+        <rect x="504" y="26" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="530" y="59" text-anchor="middle" font-size="22">📋</text>
+        <text x="530" y="92" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">TPA</text>
+
+        <!-- Node 3: مستشفيات — upper left (175,52) -->
+        <rect x="149" y="26" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="175" y="59" text-anchor="middle" font-size="22">🏥</text>
+        <text x="175" y="92" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">مستشفيات</text>
+
+        <!-- Node 4: صيدليات — left (80,160) -->
+        <rect x="54" y="134" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="80" y="167" text-anchor="middle" font-size="22">💊</text>
+        <text x="80" y="200" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">صيدليات</text>
+
+        <!-- Node 5: مختبرات — lower left (175,268) -->
+        <rect x="149" y="242" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="175" y="275" text-anchor="middle" font-size="22">🧪</text>
+        <text x="175" y="308" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">مختبرات</text>
+
+        <!-- Node 6: مؤمَّنون — lower right (530,268) -->
+        <rect x="504" y="242" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="530" y="275" text-anchor="middle" font-size="22">👤</text>
+        <text x="530" y="308" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">مؤمَّنون</text>
+
+        <!-- Node 7: شركات — bottom center (350,280) -->
+        <rect x="324" y="286" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="350" y="319" text-anchor="middle" font-size="22">🏢</text>
+      </svg>
     </div>
 
     <div class="eco-stats reveal">
