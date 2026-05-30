@@ -46,6 +46,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
   direction:ltr; /* RTL body reverses grid columns — keep hero physical LTR */
 }
 .hero-left{direction:rtl} /* text content stays RTL inside hero */
+.hero-right{display:block!important;direction:ltr} /* ensure dashboard visible */
 .hero-bg{position:absolute;inset:0;pointer-events:none;
   background-image:radial-gradient(circle 700px at 80% 30%,rgba(24,95,165,.14) 0%,transparent 65%),
                    radial-gradient(circle 500px at 5% 70%,rgba(201,168,76,.07) 0%,transparent 55%);}
@@ -505,13 +506,17 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
 
 
 /* ── iRonic Health Brand v4 — Arabic Page Overrides ── */
+/* Keep hero DARK — arabic-theme.css wrongly overrides to white */
+.hero{background:linear-gradient(145deg,#111922 0%,#111922 55%,#111922 100%)!important}
+.hero-bg,.hero-grid{display:block!important}
 /* Cairo weights: 300 (light) · 400 (regular) · 600 (semibold) · 700 (bold) · 800 (extrabold) */
 h1,h2,h3{font-family:'Cairo',sans-serif;font-weight:800}
 p,li,td,th,label,span{font-family:'Cairo',sans-serif}
 .sec-lead,.hero-desc{font-weight:300}
 .sec-eyebrow,.trust-lbl,.kpi-lbl{font-weight:700;letter-spacing:.03em}
 /* Off-White & Blue Pale backgrounds on light sections */
-.eco-sec,.why-sec,.roi-sec{background:var(--off-white,#FAFAF8)!important}
+.why-sec,.roi-sec{background:var(--off-white,#FAFAF8)!important}
+.eco-sec{background:#111922!important} /* keep ecosystem dark — brand design */
 .roi-layout{background:var(--blue-pale,#EEF4FA)!important}
 .chip,.mod-tag,.ci-badge,.prc-tag{background:var(--blue-pale,#EEF4FA)!important}
 /* RTL flex / alignment corrections */
@@ -814,8 +819,8 @@ p,li,td,th,label,span{font-family:'Cairo',sans-serif}
     </div>
 
     <!-- Visual hub — SVG replaces broken RTL absolute-position approach -->
-    <div class="eco-hub reveal" aria-hidden="true" style="direction:ltr;height:320px;width:100%;max-width:700px;margin:2rem auto 0">
-      <svg width="100%" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+    <div class="eco-hub reveal" aria-hidden="true" style="direction:ltr;height:360px;width:100%;max-width:700px;margin:2rem auto 0;overflow:visible">
+      <svg width="100%" viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
         <defs>
           <radialGradient id="hubGrad" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#1d9e75"/>
