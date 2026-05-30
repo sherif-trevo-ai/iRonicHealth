@@ -43,7 +43,10 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
   display:grid;grid-template-columns:1fr 1fr;
   align-items:center;gap:4rem;padding:130px 5% 80px;
   position:relative;overflow:hidden;
+  direction:ltr; /* RTL body reverses grid columns — keep hero physical LTR */
 }
+.hero-left{direction:rtl} /* text content stays RTL inside hero */
+.hero-right{display:block!important;direction:ltr} /* ensure dashboard visible */
 .hero-bg{position:absolute;inset:0;pointer-events:none;
   background-image:radial-gradient(circle 700px at 80% 30%,rgba(24,95,165,.14) 0%,transparent 65%),
                    radial-gradient(circle 500px at 5% 70%,rgba(201,168,76,.07) 0%,transparent 55%);}
@@ -51,10 +54,11 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
   background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
   background-size:40px 40px;}
 .hero-left{position:relative;z-index:1}
-.hero-pill{display:inline-flex;align-items:center;gap:.5rem;
+.hero-pill{display:flex;align-items:flex-start;gap:.5rem;
   background:rgba(24,95,165,.12);border:1px solid rgba(24,95,165,.25);
-  border-radius:100px;padding:5px 16px;margin-bottom:1.75rem;
-  font-size:.78rem;font-weight:700;color:#6FA0CC;letter-spacing:.03em}
+  border-radius:16px;padding:8px 16px;margin-bottom:1.75rem;
+  font-size:.75rem;font-weight:600;color:#6FA0CC;letter-spacing:.02em;
+  line-height:1.5;max-width:480px}
 .pill-dot{width:6px;height:6px;border-radius:50%;background:#6FA0CC;
   animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
@@ -168,7 +172,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
 .aud-card{border-radius:16px;overflow:hidden}
 .aud-head{padding:1.75rem 2rem;display:flex;align-items:flex-start;gap:1rem}
 .aud-head-ins{background:linear-gradient(135deg,#111922,#111922);border-top:3px solid var(--gold)}
-.aud-head-pat{background:linear-gradient(135deg,#0f3460,var(--blue));border-top:3px solid var(--bluel)}
+.aud-head-pat{background:linear-gradient(135deg,#0f3460,var(--blue));border-top:3px solid #6FA0CC}
 .aud-icon{font-size:1.75rem;flex-shrink:0}
 .aud-tag{font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.5rem;display:inline-block}
 .aud-tag-g{background:rgba(201,168,76,.2);color:var(--gold)}
@@ -203,7 +207,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
   font-size:.75rem;font-weight:700;color:var(--green)}
 
 /* ══ ECOSYSTEM ══ */
-.eco-sec{padding:6rem 5%;background:#111922}
+.eco-sec{padding:6rem 5%;background:#111922;overflow:hidden}
 .eco-inner{max-width:1200px;margin:0 auto;direction:rtl}
 .eco-hub{margin:2rem auto 0;max-width:700px;
   direction:ltr} /* SVG hub — direction:ltr so SVG coordinates are unaffected by RTL */
@@ -221,13 +225,13 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
 .eco-line{position:absolute;border:none;border-top:1px dashed rgba(255,255,255,.12);
   transform-origin:right center;z-index:1}
 .eco-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
-.eco-stat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
-  border-radius:12px;padding:1.25rem;text-align:center}
+.eco-stat{background:rgba(255,255,255,.08)!important;border:1px solid rgba(255,255,255,.12)!important;
+  border-radius:12px;padding:1.25rem;text-align:center;color:#fff!important}
 .eco-stat-val{font-size:1.5rem;font-weight:900;color:#fff}
-.eco-stat-val.green{color:var(--green)}.eco-stat-val.gold{color:var(--gold)}.eco-stat-val.blue{color:var(--bluel)}
-.eco-stat-lbl{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.25rem}
+.eco-stat-val.green{color:var(--green)}.eco-stat-val.gold{color:var(--gold)}.eco-stat-val.blue{color:#6FA0CC}
+.eco-stat-lbl{font-size:.72rem;color:rgba(255,255,255,.55)!important;margin-top:.25rem}
 .eco-cta{text-align:center;margin-top:2rem}
-.eco-link{color:var(--bluel);font-size:.88rem;font-weight:700;text-decoration:none;
+.eco-link{color:#6FA0CC;font-size:.88rem;font-weight:700;text-decoration:none;
   border-bottom:1px solid rgba(55,138,221,.3);padding-bottom:1px;transition:color .2s}
 .eco-link:hover{color:#fff;border-color:rgba(255,255,255,.3)}
 
@@ -246,16 +250,16 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
 .dbar-txt{font-size:.68rem;color:var(--green);font-weight:700;letter-spacing:.05em}
 .dash-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);
   border-bottom:1px solid rgba(255,255,255,.06)}
-.dkpi{padding:1.1rem 1.4rem;border-left:1px solid rgba(255,255,255,.06)}
+.dkpi{padding:1.1rem 1.4rem;border-inline-start:1px solid rgba(255,255,255,.06)}
 .dkpi:last-child{border-left:none}
 .dkpi-lbl{font-size:.65rem;color:rgba(255,255,255,.38);text-transform:uppercase;
   letter-spacing:.08em;margin-bottom:.375rem}
 .dkpi-num{font-size:1.5rem;font-weight:900;line-height:1;margin-bottom:.25rem;color:#fff}
-.dkpi-num.gold{color:var(--gold)}.dkpi-num.green{color:var(--green)}.dkpi-num.blue{color:var(--bluel)}
+.dkpi-num.gold{color:var(--gold)}.dkpi-num.green{color:var(--green)}.dkpi-num.blue{color:#6FA0CC}
 .dkpi-trend{font-size:.65rem;color:rgba(255,255,255,.35)}
 .dkpi-trend.up{color:var(--green)}
-.dash-body{display:grid;grid-template-columns:1fr 300px}
-.dash-left{border-left:1px solid rgba(255,255,255,.06)}
+.dash-body{display:grid;grid-template-columns:1fr 300px;direction:ltr}
+.dash-left{border-left:1px solid rgba(255,255,255,.06);direction:rtl}
 .dash-panel{padding:1.1rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.06)}
 .dash-panel:last-child{border-bottom:none}
 .dash-panel-ttl{font-size:.65rem;font-weight:700;color:rgba(255,255,255,.4);
@@ -293,7 +297,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
   border-radius:6px;border:1px solid rgba(255,255,255,.05)}
 .qs-lbl{font-size:.72rem;color:rgba(255,255,255,.5)}
 .qs-val{font-size:.78rem;font-weight:700;color:#fff}
-.qs-val.green{color:var(--green)}.qs-val.gold{color:var(--gold)}.qs-val.blue{color:var(--bluel)}
+.qs-val.green{color:var(--green)}.qs-val.gold{color:var(--gold)}.qs-val.blue{color:#6FA0CC}
 
 /* ══ WHY NOW ══ */
 .why-sec{padding:6rem 5%;background:var(--surface);
@@ -506,10 +510,6 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font
 /* Keep hero DARK — arabic-theme.css wrongly overrides to white */
 .hero{background:linear-gradient(145deg,#111922 0%,#111922 55%,#111922 100%)!important}
 .hero-bg,.hero-grid{display:block!important}
-/* Hero dashboard card — ensure visible in RTL grid */
-.hero-right{display:block!important;overflow:hidden;min-width:0}
-.dash-card{direction:ltr;text-align:left} /* card internal layout stays LTR */
-.dash-card .dc-title,.dash-card .dc-sub{direction:rtl;text-align:right} /* Arabic text RTL */
 /* Cairo weights: 300 (light) · 400 (regular) · 600 (semibold) · 700 (bold) · 800 (extrabold) */
 h1,h2,h3{font-family:'Cairo',sans-serif;font-weight:800}
 p,li,td,th,label,span{font-family:'Cairo',sans-serif}
@@ -520,6 +520,9 @@ p,li,td,th,label,span{font-family:'Cairo',sans-serif}
 .eco-sec{background:#111922!important} /* keep ecosystem dark — brand design */
 .roi-layout{background:var(--blue-pale,#EEF4FA)!important}
 .chip,.mod-tag,.ci-badge,.prc-tag{background:var(--blue-pale,#EEF4FA)!important}
+/* Chips inside dark dashboard card stay dark */
+.dash-card .chip{background:rgba(255,255,255,.05)!important;border-color:rgba(255,255,255,.1)!important;color:rgba(255,255,255,.5)!important}
+.dash-card .chip-more{background:rgba(65,121,173,.12)!important;border-color:rgba(65,121,173,.2)!important;color:#6FA0CC!important}
 /* RTL flex / alignment corrections */
 .sec-rule{margin-right:0;margin-left:auto}
 .sec-eyebrow::after{content:'';display:block}
@@ -820,8 +823,8 @@ p,li,td,th,label,span{font-family:'Cairo',sans-serif}
     </div>
 
     <!-- Visual hub — SVG replaces broken RTL absolute-position approach -->
-    <div class="eco-hub reveal" aria-hidden="true" style="direction:ltr;height:380px;width:100%;max-width:700px;margin:2rem auto 0">
-      <svg width="100%" viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg">
+    <div class="eco-hub" aria-hidden="true" style="direction:ltr;height:360px;width:100%;max-width:700px;margin:2rem auto 0;overflow:visible">
+      <svg width="100%" viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">
         <defs>
           <radialGradient id="hubGrad" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#1d9e75"/>
@@ -838,8 +841,8 @@ p,li,td,th,label,span{font-family:'Cairo',sans-serif}
         <line x1="350" y1="160" x2="530" y2="52"  stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
         <line x1="350" y1="160" x2="175" y2="52"  stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
         <line x1="350" y1="160" x2="80"  y2="160" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
-        <line x1="350" y1="160" x2="175" y2="278" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
-        <line x1="350" y1="160" x2="530" y2="278" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="350" y1="160" x2="175" y2="268" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="350" y1="160" x2="530" y2="268" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
         <line x1="350" y1="160" x2="350" y2="280" stroke="rgba(65,121,173,0.3)" stroke-width="1" stroke-dasharray="4 3"/>
 
         <!-- Center hub circle -->
@@ -870,20 +873,19 @@ p,li,td,th,label,span{font-family:'Cairo',sans-serif}
         <text x="80" y="167" text-anchor="middle" font-size="22">💊</text>
         <text x="80" y="200" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">صيدليات</text>
 
-        <!-- Node 5: مختبرات — lower left (175,248) -->
-        <rect x="149" y="248" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <text x="175" y="281" text-anchor="middle" font-size="22">🧪</text>
-        <text x="175" y="314" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">مختبرات</text>
+        <!-- Node 5: مختبرات — lower left (175,268) -->
+        <rect x="149" y="242" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="175" y="275" text-anchor="middle" font-size="22">🧪</text>
+        <text x="175" y="308" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">مختبرات</text>
 
-        <!-- Node 6: مؤمَّنون — lower right (530,248) -->
-        <rect x="504" y="248" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <text x="530" y="281" text-anchor="middle" font-size="22">👤</text>
-        <text x="530" y="314" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">مؤمَّنون</text>
+        <!-- Node 6: مؤمَّنون — lower right (530,268) -->
+        <rect x="504" y="242" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="530" y="275" text-anchor="middle" font-size="22">👤</text>
+        <text x="530" y="308" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" direction="rtl">مؤمَّنون</text>
 
-        <!-- Node 7: شركات — bottom center (350,290) -->
-        <rect x="324" y="290" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <text x="350" y="323" text-anchor="middle" font-size="22">🏢</text>
-        <text x="350" y="357" text-anchor="middle" font-family="Cairo,sans-serif" font-size="9" fill="rgba(255,255,255,0.6)">شركات</text>
+        <!-- Node 7: شركات — bottom center (350,280) -->
+        <rect x="324" y="286" width="52" height="52" rx="10" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="350" y="319" text-anchor="middle" font-size="22">🏢</text>
       </svg>
     </div>
 
@@ -964,7 +966,7 @@ p,li,td,th,label,span{font-family:'Cairo',sans-serif}
       </div>
     </div>
     <div style="text-align:center;margin-top:1.75rem">
-      <a href="dashboard.html" class="eco-link" style="color:var(--bluel);border-color:rgba(55,138,221,.3)">استعرض لوحة التحكم الكاملة ←</a>
+      <a href="dashboard.html" class="eco-link" style="color:#6FA0CC;border-color:rgba(55,138,221,.3)">استعرض لوحة التحكم الكاملة ←</a>
     </div>
   </div>
 </section>
