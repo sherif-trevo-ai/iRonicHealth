@@ -17,12 +17,17 @@
 <link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/arabic-theme.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
+body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* ── Cairo RTL Type Scale ── */
+:root{--fn-ar:'Cairo',sans-serif}
+.hero-h1,.th-h1,.prob-h2,.sec-h2{font-family:'Cairo',sans-serif;font-weight:800}
+.hero-desc,.prob-lead,.sec-lead{font-family:'Cairo',sans-serif;font-weight:300}
+.sec-eyebrow,.pill-text,.kpi-lbl,.trust-lbl{font-family:'Cairo',sans-serif;font-weight:700;letter-spacing:.02em}
 .nav{direction:rtl}
 .nav-center a,.logo-wordmark,.logo-tagline,.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
 .nav-logo-text{text-align:right}
@@ -34,7 +39,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 /* ══ HERO ══ */
 .hero{
   min-height:100vh;
-  background:linear-gradient(145deg,#060f1c 0%,#0a1628 55%,#0d1f3a 100%);
+  background:linear-gradient(145deg,#111922 0%,#0a1628 55%,#0d1f3a 100%);
   display:grid;grid-template-columns:1fr 1fr;
   align-items:center;gap:4rem;padding:130px 5% 80px;
   position:relative;overflow:hidden;
@@ -49,21 +54,21 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .hero-pill{display:inline-flex;align-items:center;gap:.5rem;
   background:rgba(24,95,165,.12);border:1px solid rgba(24,95,165,.25);
   border-radius:100px;padding:5px 16px;margin-bottom:1.75rem;
-  font-size:.78rem;font-weight:700;color:#378add;letter-spacing:.03em}
-.pill-dot{width:6px;height:6px;border-radius:50%;background:#378add;
+  font-size:.78rem;font-weight:700;color:#6FA0CC;letter-spacing:.03em}
+.pill-dot{width:6px;height:6px;border-radius:50%;background:#6FA0CC;
   animation:blink 2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 .hero-h1{font-size:clamp(2.6rem,5vw,4rem);font-weight:900;line-height:1.08;
   color:#fff;margin-bottom:1.5rem}
-.hero-h1 .accent{color:#378add}
+.hero-h1 .accent{color:#6FA0CC}
 .hero-h1 .gold-t{color:#c9a84c}
 .hero-desc{font-size:1rem;color:rgba(255,255,255,.55);line-height:1.9;
   max-width:520px;margin-bottom:2rem}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.hbtn-p{background:#185fa5;color:#fff;padding:.9rem 1.75rem;border-radius:8px;
+.hbtn-p{background:#2D5580;color:#fff;padding:.9rem 1.75rem;border-radius:8px;
   text-decoration:none;font-weight:800;font-size:.95rem;
   transition:background .2s;display:inline-flex;align-items:center;gap:.4rem}
-.hbtn-p:hover{background:#0c447c}
+.hbtn-p:hover{background:#2D5580}
 .hbtn-s{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8);
   padding:.9rem 1.75rem;border-radius:8px;text-decoration:none;font-weight:700;
   font-size:.95rem;border:1px solid rgba(255,255,255,.12);transition:all .2s}
@@ -78,7 +83,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .hero-right{position:relative;z-index:1}
 .dash-card{background:#0d1b2e;border:1px solid rgba(255,255,255,.09);
   border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5)}
-.dc-header{background:#060f1c;padding:.8rem 1.25rem;
+.dc-header{background:#111922;padding:.8rem 1.25rem;
   display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid rgba(255,255,255,.06)}
 .dc-title{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.85)}
@@ -92,7 +97,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .dcm:last-child{border-left:none}
 .dcm-icon{font-size:1.2rem;margin-bottom:.375rem}
 .dcm-val{font-size:1.4rem;font-weight:900;line-height:1}
-.dcm-val.blue{color:#378add}.dcm-val.green{color:#1d9e75}.dcm-val.gold{color:#c9a84c}
+.dcm-val.blue{color:#6FA0CC}.dcm-val.green{color:#1d9e75}.dcm-val.gold{color:#c9a84c}
 .dcm-lbl{font-size:.62rem;color:rgba(255,255,255,.35);margin-top:.25rem}
 .dcm-trend{font-size:.62rem;color:#1d9e75;margin-top:.15rem}
 .dc-body{padding:1.25rem}
@@ -109,7 +114,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .chip{font-size:.68rem;padding:3px 10px;border-radius:20px;
   background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
   color:rgba(255,255,255,.5)}
-.chip-more{background:rgba(24,95,165,.12);border-color:rgba(24,95,165,.2);color:#378add}
+.chip-more{background:rgba(24,95,165,.12);border-color:rgba(24,95,165,.2);color:#6FA0CC}
 .dc-footer{background:rgba(255,255,255,.02);padding:.6rem 1.25rem;
   display:flex;align-items:center;justify-content:space-between;
   border-top:1px solid rgba(255,255,255,.05)}
@@ -157,17 +162,17 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .prob-source{font-size:.65rem;color:var(--muted-2);margin-top:.5rem;font-style:italic}
 
 /* ══ AUDIENCES ══ */
-.aud-sec{padding:6rem 5%;background:#060f1c}
+.aud-sec{padding:6rem 5%;background:#111922}
 .aud-inner{max-width:1200px;margin:0 auto}
 .aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
 .aud-card{border-radius:16px;overflow:hidden}
 .aud-head{padding:1.75rem 2rem;display:flex;align-items:flex-start;gap:1rem}
-.aud-head-ins{background:linear-gradient(135deg,#060f1c,#0d1f3a);border-top:3px solid var(--gold)}
+.aud-head-ins{background:linear-gradient(135deg,#111922,#0d1f3a);border-top:3px solid var(--gold)}
 .aud-head-pat{background:linear-gradient(135deg,#0f3460,var(--blue));border-top:3px solid var(--bluel)}
 .aud-icon{font-size:1.75rem;flex-shrink:0}
 .aud-tag{font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.5rem;display:inline-block}
 .aud-tag-g{background:rgba(201,168,76,.2);color:var(--gold)}
-.aud-tag-b{background:rgba(55,138,221,.2);color:#7fb3e8}
+.aud-tag-b{background:rgba(55,138,221,.2);color:#6FA0CC}
 .aud-h3{font-size:1.15rem;font-weight:900;color:#fff;line-height:1.2}
 .aud-body{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
   border-top:none;padding:1.75rem 2rem;border-radius:0 0 16px 16px}
@@ -178,7 +183,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .aud-dot{width:24px;height:24px;border-radius:50%;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;font-size:.7rem}
 .aud-dot-g{background:rgba(201,168,76,.18);color:var(--gold)}
-.aud-dot-b{background:rgba(55,138,221,.18);color:#7fb3e8}
+.aud-dot-b{background:rgba(55,138,221,.18);color:#6FA0CC}
 
 /* ══ MODULES ══ */
 .mods-sec{padding:6rem 5%;background:var(--surface);
@@ -227,12 +232,12 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .eco-link:hover{color:#fff;border-color:rgba(255,255,255,.3)}
 
 /* ══ DASHBOARD ══ */
-.dashboard-sec{padding:6rem 5%;background:linear-gradient(180deg,#060f1c,#0a1628)}
+.dashboard-sec{padding:6rem 5%;background:linear-gradient(180deg,#111922,#0a1628)}
 .dash-inner{max-width:1100px;margin:0 auto}
 .dash-wrap{background:#0d1b2e;border:1px solid rgba(255,255,255,.08);
   border-radius:16px;overflow:hidden;margin-top:3rem;
   box-shadow:0 24px 80px rgba(0,0,0,.5)}
-.dash-topbar{background:#060f1c;padding:.7rem 1.5rem;
+.dash-topbar{background:#111922;padding:.7rem 1.5rem;
   display:flex;align-items:center;justify-content:space-between;
   border-bottom:1px solid rgba(255,255,255,.06);gap:1rem;flex-wrap:wrap}
 .dbar-title{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.85)}
@@ -325,7 +330,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .adv-desc{font-size:.8rem;color:var(--muted);line-height:1.75}
 
 /* ══ REVENUE MODEL ══ */
-.model-sec{padding:6rem 5%;background:#060f1c}
+.model-sec{padding:6rem 5%;background:#111922}
 .model-inner{max-width:1200px;margin:0 auto}
 .pricing-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3rem}
 .price-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
@@ -335,7 +340,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .price-card.featured{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.04)}
 .feat-label{position:absolute;top:-1px;right:1.5rem;
   font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:0 0 8px 8px;
-  background:var(--gold);color:#060f1c}
+  background:var(--gold);color:#111922}
 .prc-phase{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
   color:rgba(255,255,255,.35);margin-bottom:.5rem}
 .prc-name{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.875rem}
@@ -366,7 +371,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
   padding:1.5rem;display:flex;gap:1.25rem;align-items:flex-start;
   box-shadow:0 2px 8px rgba(10,22,40,.05)}
 .t-avatar{width:52px;height:52px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--blue),#0c447c);
+  background:linear-gradient(135deg,var(--blue),#2D5580);
   display:flex;align-items:center;justify-content:center;
   font-size:1rem;font-weight:900;color:#fff}
 .t-avatar.t-avatar-gold{background:linear-gradient(135deg,var(--green),var(--blue))}
@@ -390,7 +395,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .ci-compliance{display:flex;flex-wrap:wrap;gap:.4rem}
 .ci-badge{font-size:.65rem;padding:3px 10px;border-radius:20px;
   background:var(--surface);border:1px solid #c8daf0;color:var(--ink-2);font-weight:600}
-.seed-card{background:linear-gradient(135deg,#060f1c,#0a1628);
+.seed-card{background:linear-gradient(135deg,#111922,#0a1628);
   border-top:1px solid rgba(201,168,76,.2);padding:1.75rem 2rem}
 .seed-eyebrow{font-size:.65rem;font-weight:700;text-transform:uppercase;
   letter-spacing:.08em;color:var(--gold);margin-bottom:.375rem}
@@ -400,7 +405,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .sm{text-align:center}
 .sm-val{font-size:1.2rem;font-weight:900;color:var(--gold)}
 .sm-lbl{font-size:.62rem;color:rgba(255,255,255,.38);margin-top:.15rem}
-.seed-btn{display:block;background:var(--gold);color:#060f1c;
+.seed-btn{display:block;background:var(--gold);color:#111922;
   padding:.8rem 1.5rem;border-radius:8px;text-align:center;
   text-decoration:none;font-weight:800;font-size:.88rem;transition:background .2s}
 .seed-btn:hover{background:#b8963e}
@@ -437,7 +442,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 .f-inp:focus,.f-sel:focus,.f-ta:focus{border-color:rgba(24,95,165,.4)}
 .f-sel option{background:#0a1628;color:#fff}
 .f-ta{resize:vertical;min-height:100px}
-.f-submit{width:100%;background:linear-gradient(135deg,var(--blue),#0c447c);
+.f-submit{width:100%;background:linear-gradient(135deg,var(--blue),#2D5580);
   color:#fff;padding:.9rem 1.5rem;border:none;border-radius:8px;
   font-family:'Cairo',sans-serif;font-size:.95rem;font-weight:800;
   cursor:pointer;transition:all .2s;margin-top:.5rem}
@@ -464,7 +469,7 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
   cursor:pointer;font-size:1.1rem;opacity:0;transform:translateY(10px);
   transition:all .3s;pointer-events:none;z-index:999}
 #scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
-#scroll-top:hover{background:#0c447c}
+#scroll-top:hover{background:#2D5580}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -495,6 +500,21 @@ body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
 
 /* footer styles now via arabic-theme.css */
 .footer-logo-img{max-height:44px;width:auto;display:block}
+
+
+/* ── iRonic Health Brand v4 — Arabic Page Overrides ── */
+/* Cairo weights: 300 (light) · 400 (regular) · 600 (semibold) · 700 (bold) · 800 (extrabold) */
+h1,h2,h3{font-family:'Cairo',sans-serif;font-weight:800}
+p,li,td,th,label,span{font-family:'Cairo',sans-serif}
+.sec-lead,.hero-desc{font-weight:300}
+.sec-eyebrow,.trust-lbl,.kpi-lbl{font-weight:700;letter-spacing:.03em}
+/* Off-White & Blue Pale backgrounds on light sections */
+.eco-sec,.why-sec,.roi-sec{background:var(--off-white,#FAFAF8)!important}
+.roi-layout{background:var(--blue-pale,#EEF4FA)!important}
+.chip,.mod-tag,.ci-badge,.prc-tag{background:var(--blue-pale,#EEF4FA)!important}
+/* RTL flex / alignment corrections */
+.sec-rule{margin-right:0;margin-left:auto}
+.sec-eyebrow::after{content:'';display:block}
 
 </style>
 <script type="application/ld+json">
