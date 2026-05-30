@@ -15,10 +15,10 @@
 <link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
-:root{--dk1:#060f1c;--dk2:#0a1628;--dk3:#0d1b2e;--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--lt4:#e8f0fb;--ink1:#0a1628;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94;--blue:#185fa5;--bluel:#378add;--gold:#c9a84c;--green:#1d9e75;}
+:root{--dk1:#111922;--dk2:#111922;--dk3:#1A2332;--lt1:#ffffff;--lt2:#f8fafc;--lt3:#eef3fa;--lt4:#e8f0fb;--ink1:#111922;--ink2:#1e3a5f;--ink3:#374151;--ink4:#6b7a94;--blue:#2D5580;--bluel:#6FA0CC;--gold:#CAB164;--green:#1d9e75;}
  
 /* HERO */
 .mkt-hero{min-height:76vh;display:flex;flex-direction:column;justify-content:flex-end;padding:135px 5% 5rem;position:relative;overflow:hidden;background:linear-gradient(155deg,var(--dk1) 0%,var(--dk2) 60%,#0c1e35 100%);}
@@ -187,7 +187,7 @@
 .footer-legal a:hover{color:rgba(255,255,255,.75);}
 #scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:999;pointer-events:none;}
 #scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto;}
-#scroll-top:hover{background:#0c447c;}
+#scroll-top:hover{background:#2D5580;}
  
 @media(max-width:900px){
   .mh-stats{grid-template-columns:repeat(3,1fr);}
@@ -303,22 +303,35 @@ section.ms[style*="dk1"] .tl-lbl,section.ms[style*="dk2"] .tl-lbl{color:#64748b!
     </div>
     <div class="tam-layout">
       <div class="reveal">
-        <div class="tam-bubble-wrap">
-          <div class="tb-ring tb-tam">
-            <div class="tb-label">TAM</div>
-            <div class="tb-val" style="font-size:1.2rem">$373M</div>
-            <div class="tb-sub">Egypt private health GWP</div>
-          </div>
-          <div class="tb-ring tb-sam">
-            <div class="tb-label">SAM</div>
-            <div class="tb-val" style="font-size:1.1rem">$80&#8211;150M</div>
-            <div class="tb-sub">Top 10 insurers/TPAs with 500K+ members</div>
-          </div>
-          <div class="tb-ring tb-som">
-            <div class="tb-label">SOM</div>
-            <div class="tb-val" style="font-size:1.2rem">$18M</div>
-            <div class="tb-sub">3-yr ARR target</div>
-          </div>
+        <div class="tam-bubble-wrap" style="height:420px">
+          <svg width="100%" viewBox="0 0 380 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TAM SAM SOM concentric circles diagram">
+            <title>Market Sizing — TAM $373M, SAM $80–150M, SOM $18M ARR</title>
+            <!-- TAM outer ring -->
+            <circle cx="190" cy="210" r="168" fill="rgba(65,121,173,0.06)" stroke="rgba(65,121,173,0.25)" stroke-width="1.5"/>
+            <!-- SAM middle ring -->
+            <circle cx="190" cy="210" r="118" fill="rgba(65,121,173,0.10)" stroke="rgba(65,121,173,0.38)" stroke-width="1.5"/>
+            <!-- SOM inner ring -->
+            <circle cx="190" cy="210" r="68" fill="rgba(202,177,100,0.15)" stroke="rgba(202,177,100,0.55)" stroke-width="1.5"/>
+
+            <!-- TAM label — top of outer ring -->
+            <text x="190" y="56" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="9" font-weight="800" letter-spacing="1.5" fill="rgba(65,121,173,0.55)" text-transform="uppercase">TAM</text>
+            <text x="190" y="74" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="20" font-weight="700" fill="rgba(65,121,173,0.5)">$373M</text>
+            <text x="190" y="89" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="9" fill="rgba(65,121,173,0.4)">Egypt private health GWP</text>
+
+            <!-- SAM label — top of middle ring, below TAM text -->
+            <text x="190" y="116" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="9" font-weight="800" letter-spacing="1.5" fill="#4179AD">SAM</text>
+            <text x="190" y="133" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="17" font-weight="700" fill="#4179AD">$80–150M</text>
+            <text x="190" y="147" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="8.5" fill="rgba(65,121,173,0.65)">Top 10 insurers / TPAs · 500K+ members</text>
+
+            <!-- SOM label — centered in inner ring -->
+            <text x="190" y="200" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="9" font-weight="800" letter-spacing="1.5" fill="#CAB164">SOM</text>
+            <text x="190" y="218" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="22" font-weight="700" fill="#CAB164">$18M</text>
+            <text x="190" y="233" text-anchor="middle" font-family="Ubuntu,sans-serif" font-size="8.5" fill="rgba(202,177,100,0.8)">3-yr ARR target</text>
+
+            <!-- Connector tick lines for clarity -->
+            <line x1="190" y1="96" x2="190" y2="106" stroke="rgba(65,121,173,0.25)" stroke-width="1" stroke-dasharray="2 2"/>
+            <line x1="190" y1="155" x2="190" y2="168" stroke="rgba(65,121,173,0.25)" stroke-width="1" stroke-dasharray="2 2"/>
+          </svg>
         </div>
         <div class="growth-track">
           <div class="gt-pill"><span class="gtp-val" style="color:var(--blue)">+15%</span><span class="gtp-lbl">YoY insurance GWP</span></div>
