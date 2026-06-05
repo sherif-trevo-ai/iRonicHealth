@@ -552,3 +552,42 @@
   }
 
 })();
+
+/* ─── SIDEBAR AI EXPERIENCE BUTTON ──────────────────────── */
+(function addSidebarBtn() {
+  function inject() {
+    const sb = document.querySelector('.sb-logo, .sb > div:first-child');
+    if (!sb || document.getElementById('irhAiBtn')) return;
+
+    const btn = document.createElement('a');
+    btn.id = 'irhAiBtn';
+    btn.href = 'ai-experience.html';
+    btn.innerHTML = `
+      <span style="font-size:15px">⚡</span>
+      <div style="flex:1">
+        <div style="font-size:12px;font-weight:700;color:#CAB164;line-height:1.2">AI Experience</div>
+        <div style="font-size:10px;color:rgba(202,177,100,.55);margin-top:1px">Fraud Detection Live</div>
+      </div>
+      <span style="font-size:10px;color:rgba(202,177,100,.4)">→</span>`;
+
+    Object.assign(btn.style, {
+      display:'flex', alignItems:'center', gap:'10px',
+      background:'rgba(202,177,100,.08)',
+      border:'1px solid rgba(202,177,100,.22)',
+      borderRadius:'10px', padding:'10px 14px',
+      margin:'12px 16px 4px', cursor:'pointer',
+      textDecoration:'none', transition:'background .15s',
+    });
+    btn.onmouseenter = () => btn.style.background='rgba(202,177,100,.15)';
+    btn.onmouseleave = () => btn.style.background='rgba(202,177,100,.08)';
+
+    // Insert after the logo block
+    sb.parentNode.insertBefore(btn, sb.nextSibling);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', inject);
+  } else {
+    setTimeout(inject, 700);
+  }
+})();
