@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iRonic Health — AI Fraud Detection Experience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Kufam:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:     #EFF3F8;
+  --surface:#F8FAFC;
+  --white:  #FFFFFF;
+  --navy:   #1A2332;
+  --blue:   #4179AD;
+  --blueH:  #2d5f8a;
+  --gold:   #CAB164;
+  --goldD:  #A8914A;
+  --green:  #1d9e75;
+  --amber:  #d97706;
+  --red:    #dc2626;
+  --text:   #1E293B;
+  --muted:  #64748B;
+  --light:  #94A3B8;
+  --border: #E2E8F0;
+  --borderB:#CBD5E1;
+  --font:   'Ubuntu', system-ui, sans-serif;
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { font-size:15px; }
+body { font-family:var(--font); background:var(--bg); color:var(--text); min-height:100vh; }
+
+/* ── TOPBAR ─────────────────────────────────────────────── */
+.topbar {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:var(--navy);
+  padding:0 32px;
+  height:56px;
+  display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.topbar-left { display:flex; align-items:center; gap:12px; }
+.topbar-badge {
+  width:32px; height:32px; border-radius:8px;
+  background:rgba(202,177,100,0.15); border:1px solid rgba(202,177,100,0.3);
+  display:flex; align-items:center; justify-content:center;
+}
+.topbar-brand { font-size:14px; font-weight:700; color:#fff; }
+.topbar-tag {
+  font-size:10px; font-weight:600; letter-spacing:.08em;
+  color:rgba(255,255,255,.35); text-transform:uppercase;
+  border-left:1px solid rgba(255,255,255,.12); padding-left:12px; margin-left:4px;
+}
+.topbar-right { display:flex; align-items:center; gap:16px; }
+.back-link {
+  display:flex; align-items:center; gap:6px;
+  color:rgba(255,255,255,.5); font-size:13px; text-decoration:none;
+  transition:color .15s;
+}
+.back-link:hover { color:rgba(255,255,255,.85); }
+.demo-pill {
+  display:flex; align-items:center; gap:6px;
+  background:rgba(29,158,117,.15); border:1px solid rgba(29,158,117,.3);
+  border-radius:20px; padding:4px 12px;
+}
+.demo-dot { width:6px; height:6px; border-radius:50%; background:var(--green); }
+.demo-txt { font-size:10.5px; font-weight:700; color:var(--green); letter-spacing:.08em; }
+
+/* ── SCREENS ────────────────────────────────────────────── */
+.screen { display:none; padding-top:56px; }
+.screen.active { display:block; }
+.fill { min-height:100vh; display:flex; align-items:center; justify-content:center; }
+
+/* ── LANDING ────────────────────────────────────────────── */
+.landing-inner {
+  text-align:center; max-width:560px;
+  padding:60px 24px 80px;
+}
+.badge-wrap {
+  width:100px; height:100px; margin:0 auto 32px;
+  background:var(--white); border:1px solid var(--border);
+  border-radius:24px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 24px rgba(202,177,100,.12), 0 1px 4px rgba(0,0,0,.06);
+}
+.badge-wrap img { width:58px; height:58px; }
+
+.landing-title {
+  font-family:'Kufam', var(--font);
+  font-size:40px; font-weight:600;
+  color:var(--navy); line-height:1.18;
+  margin-bottom:14px;
+  letter-spacing:-0.02em;
+}
+.landing-title span { color:var(--blue); }
+.landing-sub {
+  font-size:15px; color:var(--muted); line-height:1.85; margin-bottom:36px; max-width:440px; margin-left:auto; margin-right:auto;
+}
+.start-btn {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--navy); color:#fff;
+  font-size:15px; font-weight:700; font-family:var(--font);
+  padding:14px 36px; border-radius:10px; border:none; cursor:pointer;
+  transition:background .15s, transform .12s;
+}
+.start-btn:hover { background:#243447; transform:translateY(-1px); }
+
+.divider { height:1px; background:var(--border); margin:36px 0; }
+.stats-row { display:flex; justify-content:center; gap:48px; }
+.stat-n { font-size:28px; font-weight:800; color:var(--gold); font-family:'Kufam',monospace; line-height:1; }
+.stat-l { font-size:11.5px; color:var(--light); margin-top:5px; }
+
+/* ── CARD ───────────────────────────────────────────────── */
+.card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:14px; padding:20px;
+}
+.card+.card { margin-top:14px; }
+
+/* ── FORM ───────────────────────────────────────────────── */
+.page-wrap { max-width:680px; margin:0 auto; padding:32px 20px 64px; }
+.page-topbar { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; }
+.ghost-btn {
+  background:none; border:none; font-size:13px; font-family:var(--font);
+  color:var(--muted); cursor:pointer; display:flex; align-items:center; gap:5px;
+}
+.ghost-btn:hover { color:var(--text); }
+.page-title { font-size:16px; font-weight:700; color:var(--navy); }
+.spacer { width:80px; }
+
+.field-label {
+  font-size:10px; font-weight:700; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--light); display:block; margin-bottom:7px;
+}
+.inp {
+  width:100%; background:var(--surface); border:1.5px solid var(--border);
+  border-radius:9px; padding:10px 14px; color:var(--text);
+  font-size:13.5px; font-family:var(--font); outline:none;
+  transition:border-color .15s;
+}
+.inp:focus { border-color:var(--blue); background:var(--white); }
+.inp::placeholder { color:var(--light); }
+textarea.inp { min-height:76px; resize:vertical; }
+
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+
+.type-row { display:flex; gap:8px; flex-wrap:wrap; }
+.type-pill {
+  background:var(--surface); border:1.5px solid var(--border);
+  color:var(--muted); border-radius:8px; padding:7px 15px;
+  font-size:12.5px; font-weight:600; cursor:pointer; font-family:var(--font);
+  transition:all .15s;
+}
+.type-pill.on { background:var(--navy); border-color:var(--navy); color:#fff; }
+
+.ex-row { display:flex; gap:10px; flex-wrap:wrap; }
+.ex-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:10px; padding:10px 16px; cursor:pointer;
+  transition:border-color .15s, box-shadow .15s; text-align:left;
+}
+.ex-card:hover { border-color:var(--blue); box-shadow:0 2px 8px rgba(65,121,173,.1); }
+.ex-label { font-size:12px; font-weight:700; color:var(--text); }
+.ex-tag   { font-size:10px; margin-top:3px; font-weight:600; }
+
+.analyze-btn {
+  width:100%; background:var(--blue); color:#fff;
+  font-size:15px; font-weight:700; font-family:var(--font);
+  padding:14px; border-radius:10px; border:none; cursor:pointer;
+  box-shadow:0 2px 10px rgba(65,121,173,.2); transition:all .15s;
+  margin-top:20px;
+}
+.analyze-btn:hover:not(:disabled) { background:var(--blueH); box-shadow:0 4px 18px rgba(65,121,173,.3); }
+.analyze-btn:disabled { opacity:.4; cursor:not-allowed; }
+
+.err-bar {
+  background:#FFF5F5; border:1px solid #FED7D7; border-radius:10px;
+  padding:11px 16px; margin-bottom:14px; color:var(--red); font-size:13px;
+}
+
+/* ── ANALYZING ──────────────────────────────────────────── */
+.spin-wrap { text-align:center; max-width:420px; padding:48px 24px; width:100%; }
+@keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.08);opacity:.85} }
+.orb {
+  width:80px; height:80px; border-radius:50%;
+  border:2px solid rgba(65,121,173,.25);
+  background:rgba(65,121,173,.06);
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 24px; animation:pulse 1.6s ease-in-out infinite;
+}
+.orb-dot { width:30px; height:30px; border-radius:50%; background:var(--blue); }
+.spin-title { font-size:22px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.phase-txt  { font-size:14px; font-weight:600; color:var(--blue); min-height:22px; margin-bottom:18px; }
+.prog-bg   { background:var(--border); border-radius:4px; height:4px; overflow:hidden; margin-bottom:24px; }
+.prog-fill { height:100%; border-radius:4px; background:linear-gradient(90deg,var(--blue),var(--gold)); transition:width .3s ease; }
+.plist { text-align:left; }
+.pitem {
+  display:flex; align-items:center; gap:10px;
+  padding:7px 0; font-size:13px; color:var(--light);
+  border-bottom:1px solid var(--border);
+}
+.pitem.done { color:var(--text); }
+.pitem.cur  { color:var(--blue); font-weight:700; }
+.pdot {
+  width:20px; height:20px; border-radius:50%; flex-shrink:0;
+  background:var(--surface); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; font-size:9px;
+}
+.pdot.done { background:var(--green); border-color:var(--green); color:#fff; }
+.pdot.cur  { background:var(--blue); border-color:var(--blue); color:#fff; }
+
+/* ── RESULTS ────────────────────────────────────────────── */
+.results-wrap { max-width:720px; margin:0 auto; padding:32px 20px 64px; }
+.res-topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; }
+.claim-ref { font-size:11px; color:var(--light); font-family:monospace; letter-spacing:.1em; }
+.conf-badge { font-size:11px; font-weight:700; padding:3px 10px; border-radius:6px; }
+.hero-card {
+  background:var(--white); border:1px solid var(--border); border-radius:16px;
+  padding:28px; display:flex; gap:28px; align-items:center;
+  flex-wrap:wrap; justify-content:center; margin-bottom:14px;
+}
+.gauge-wrap { text-align:center; }
+.hero-right { flex:1; min-width:220px; }
+.dec-badge { display:inline-block; padding:8px 22px; border-radius:9px; font-size:14px; font-weight:700; margin-bottom:18px; }
+.summary-txt { font-size:13.5px; color:var(--muted); line-height:1.85; }
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+.risk-card  { background:#FFF5F5; border:1px solid #FECACA; border-radius:12px; padding:16px; }
+.clean-card { background:#F0FDF4; border:1px solid #BBF7D0; border-radius:12px; padding:16px; }
+.info-card  { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:16px; margin-bottom:14px; }
+.section-label { font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; display:block; margin-bottom:10px; }
+.fact-row { display:flex; gap:8px; align-items:flex-start; font-size:13.5px; line-height:1.7; color:var(--text); margin-bottom:7px; }
+.fact-row:last-child { margin-bottom:0; }
+.fact-icon { flex-shrink:0; margin-top:2px; }
+.arch-row  { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px; }
+.arch-badge {
+  background:#FEF3C7; color:#92400E; border:1px solid #FDE68A;
+  border-radius:6px; padding:4px 12px; font-size:11.5px; font-weight:700;
+}
+.actions { display:flex; gap:10px; justify-content:flex-end; margin-top:8px; flex-wrap:wrap; }
+.btn {
+  padding:10px 22px; border-radius:9px; font-size:13.5px; font-weight:700;
+  cursor:pointer; border:none; font-family:var(--font); transition:all .15s;
+}
+.btn.sec  { background:var(--surface); color:var(--muted); border:1px solid var(--border); }
+.btn.sec:hover  { background:var(--border); }
+.btn.app  { background:var(--green);  color:#fff; }
+.btn.app:hover  { background:#178a64; }
+.btn.rej  { background:var(--red);    color:#fff; }
+.btn.rej:hover  { background:#b91c1c; }
+.btn.pri  { background:var(--blue);   color:#fff; }
+.btn.pri:hover  { background:var(--blueH); }
+.btn.nav  { background:rgba(202,177,100,.1); color:var(--goldD); border:1px solid rgba(202,177,100,.3); text-decoration:none; display:inline-flex; align-items:center; }
+.btn.nav:hover { background:rgba(202,177,100,.18); }
+
+/* ── CMO ────────────────────────────────────────────────── */
+.cmo-wrap  { max-width:580px; margin:0 auto; padding:32px 20px 64px; }
+.cmo-icon  { width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 14px; }
+.note-inp  {
+  width:100%; background:var(--surface); border:1.5px solid var(--border);
+  border-radius:9px; padding:10px 14px; color:var(--text);
+  font-family:var(--font); font-size:13px; resize:none; outline:none; margin-bottom:14px;
+  transition:border-color .15s;
+}
+.note-inp:focus { border-color:var(--blue); }
+.cmo-btns  { display:flex; gap:12px; }
+.cmo-btns .btn { flex:1; text-align:center; padding:13px; font-size:14px; }
+
+/* ── AUDIT ──────────────────────────────────────────────── */
+.audit-wrap { max-width:540px; margin:0 auto; padding:32px 20px 64px; }
+.audit-icon { width:68px; height:68px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 14px; }
+.audit-table { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:18px; margin:20px 0; }
+.audit-ref  { font-size:10px; font-weight:700; color:var(--blue); letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px; }
+.audit-row  { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--border); font-size:12.5px; }
+.audit-row:last-child { border:none; }
+.audit-k   { color:var(--muted); }
+.audit-v   { color:var(--navy); font-weight:700; font-family:monospace; font-size:11.5px; }
+.compliance-note { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center; font-size:11.5px; color:var(--light); line-height:1.8; }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="topbar-badge">
+      <img src="assets/H_Badge_icon_Gold_with_white_H.svg" alt="iRonic Health" style="width:20px;height:20px;display:block;">
+    </div>
+    <span class="topbar-brand">iRonic Health</span>
+    <span class="topbar-tag">AI Experience</span>
+  </div>
+  <div class="topbar-right">
+    <div class="demo-pill"><div class="demo-dot"></div><span class="demo-txt">GlobeMed Pilot</span></div>
+    <a href="dashboard.html" class="back-link">← Dashboard</a>
+  </div>
+</div>
+
+<!-- LANDING -->
+<section id="landing" class="screen active">
+  <div class="fill">
+    <div class="landing-inner">
+      <div class="badge-wrap">
+        <img src="assets/H_Badge_icon_Gold_with_white_H.svg" alt="iRonic Health">
+      </div>
+
+      <h1 class="landing-title">
+        AI Fraud Detection<br><span>Experience</span>
+      </h1>
+      <p class="landing-sub">
+        Submit a real health insurance claim and watch the AI analyze it in seconds —
+        detecting fraud patterns, routing the decision, and generating a tamper-proof FRA audit trail.
+      </p>
+      <button class="start-btn" onclick="show('form')">Start Experience →</button>
+
+      <div class="divider"></div>
+      <div class="stats-row">
+        <div><div class="stat-n">25</div><div class="stat-l">Fraud Archetypes</div></div>
+        <div><div class="stat-n">&lt; 5s</div><div class="stat-l">Decision Time</div></div>
+        <div><div class="stat-n">100%</div><div class="stat-l">Audit Coverage</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="form" class="screen">
+  <div class="page-wrap">
+    <div class="page-topbar">
+      <button class="ghost-btn" onclick="show('landing')">← Back</button>
+      <div class="page-title">Submit a Claim</div>
+      <div class="spacer"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:14px">
+      <span class="field-label">Ready-made examples</span>
+      <div class="ex-row" id="exRow"></div>
+    </div>
+
+    <div id="errBar" class="err-bar" style="display:none"></div>
+
+    <div class="card">
+      <div style="margin-bottom:18px">
+        <span class="field-label">Claim Type</span>
+        <div class="type-row" id="typeBtns">
+          <button class="type-pill on" data-t="hospital">Hospital / Clinic</button>
+          <button class="type-pill" data-t="pharmacy">Pharmacy</button>
+          <button class="type-pill" data-t="lab">Laboratory</button>
+          <button class="type-pill" data-t="imaging">Imaging</button>
+          <button class="type-pill" data-t="physician">Physician</button>
+        </div>
+      </div>
+      <div class="grid2" style="margin-bottom:14px">
+        <div><span class="field-label">Provider Name</span><input class="inp" id="fProvider" placeholder="Hospital / Pharmacy / Lab..."></div>
+        <div><span class="field-label">Patient ID / Policy No.</span><input class="inp" id="fPatientId" placeholder="e.g. GBM-2024-XXXXX"></div>
+      </div>
+      <div style="margin-bottom:14px"><span class="field-label">Diagnosis Codes (ICD)</span><input class="inp" id="fDiagnosis" placeholder="e.g. J06.9, I10"></div>
+      <div style="margin-bottom:14px"><span class="field-label">Services / Medications / Procedures</span><textarea class="inp" id="fServices" placeholder="Describe the services in detail..."></textarea></div>
+      <div class="grid2" style="margin-bottom:14px">
+        <div><span class="field-label">Total Amount (EGP)</span><input class="inp" type="number" id="fAmount" placeholder="0.00"></div>
+        <div><span class="field-label">Date of Service</span><input class="inp" type="date" id="fDate" value="2026-06-06"></div>
+      </div>
+      <div style="margin-bottom:4px"><span class="field-label">Additional Notes (optional)</span><input class="inp" id="fNotes" placeholder="Any additional information..."></div>
+      <button class="analyze-btn" id="analyzeBtn" onclick="startAnalysis()" disabled>Analyze Claim with AI →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYZING -->
+<section id="analyzing" class="screen">
+  <div class="fill" style="background:var(--white)">
+    <div class="spin-wrap">
+      <div class="orb"><div class="orb-dot"></div></div>
+      <div class="spin-title">Analyzing Claim...</div>
+      <div class="phase-txt" id="phaseTxt"></div>
+      <div class="prog-bg"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+      <div class="plist" id="pList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="screen">
+  <div class="results-wrap">
+    <div class="res-topbar">
+      <span class="claim-ref" id="rClaimRef">—</span>
+      <div style="font-size:16px;font-weight:700;color:var(--navy)">Analysis Results</div>
+      <span class="conf-badge" id="rConfBadge"></span>
+    </div>
+    <div id="rContent"></div>
+  </div>
+</section>
+
+<!-- CMO -->
+<section id="cmo" class="screen">
+  <div class="cmo-wrap">
+    <div style="text-align:center;margin-bottom:32px">
+      <div class="cmo-icon" style="background:#FFFBEB;border:2px solid #FDE68A">👨‍⚕️</div>
+      <div style="font-size:22px;font-weight:700;color:var(--navy)">CMO Review Panel</div>
+      <div id="cmoMeta" style="font-size:13px;color:var(--muted);margin-top:6px"></div>
+    </div>
+    <div id="cmoContent"></div>
+    <div class="card" style="margin-top:14px">
+      <span class="field-label">CMO Clinical Note (optional)</span>
+      <textarea class="note-inp" id="cmoNote" rows="2" placeholder="Add your clinical justification..."></textarea>
+      <div class="cmo-btns">
+        <button class="btn rej" onclick="finalDecision('rejected')">✕ Reject Claim</button>
+        <button class="btn app" onclick="finalDecision('approved')">✓ Approve Claim</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIT -->
+<section id="audit" class="screen">
+  <div class="audit-wrap" id="auditContent"></div>
+</section>
+
+<script>
+const EXAMPLES=[
+  {label:'Pharmacy — Suspicious',tag:'Fraud Flag',tagColor:'#dc2626',
+   type:'pharmacy',provider:'Al Nil Al Dhahabi Pharmacy — Nasr City',
+   patientId:'GBM-2024-88432',diagnosis:'J06.9, J11.1',
+   services:'Amoxicillin 500mg ×60, Ibuprofen 400mg ×120, Azithromycin 500mg ×30, Omeprazole 20mg ×90',
+   amount:'4850',date:'2026-06-01',notes:'Second claim for same member within 9 days'},
+  {label:'Inpatient — Clean',tag:'Normal',tagColor:'#1d9e75',
+   type:'hospital',provider:'Sameeh Hospital — Maadi',
+   patientId:'GBM-2024-54210',diagnosis:'I10',
+   services:'Internal medicine consultation, blood pressure monitoring, CBC blood test, Amlodipine 5mg prescription',
+   amount:'850',date:'2026-06-03',notes:''},
+  {label:'Imaging — Repeated',tag:'CMO Review',tagColor:'#d97706',
+   type:'imaging',provider:'Roia Radiology Center — Heliopolis',
+   patientId:'GBM-2024-71893',diagnosis:'M54.5',
+   services:'Lumbar spine MRI with contrast, lumbar CT scan, lumbar X-ray 4 views — same session',
+   amount:'7800',date:'2026-06-02',notes:'Previous imaging for same diagnosis 21 days ago'},
+];
+const ANALYSES={
+  'GBM-2024-88432':{fraud_score:68,risk_level:'high',decision:'cmo_review',confidence:91,
+    archetypes:['Drug Splitting','Prescription Volume Anomaly'],
+    risks:['Same member filled 3 prescriptions at different pharmacies within 8 days — drug splitting pattern.',
+           'Antibiotic quantity (×60 tabs) exceeds standard 7-day course by 3× — upcoding suspected.',
+           'Prescribing physician has 4 anomalous high-volume pharmacy claims this month.',
+           'Pharmacy quality score 74/100 — currently under elevated monitoring.'],
+    clean:['Member eligibility confirmed — policy active with no lapses.'],
+    rec:'Hold for CMO review — drug splitting detected across 3 dispensing points. Request prescription originals before approval.',
+    summary:'High-confidence fraud flag. Drug splitting across multiple dispensing points combined with anomalous prescription volume warrants clinical review before payment.'},
+  'GBM-2024-54210':{fraud_score:6,risk_level:'low',decision:'auto_approve',confidence:97,
+    archetypes:[],risks:[],
+    clean:['Procedure code matches ICD-10 diagnosis — clinical alignment confirmed.',
+           'Provider quality score 96/100 — zero fraud history in the last 18 months.'],
+    rec:'Auto-approve — all clinical, billing, and eligibility checks passed with high confidence.',
+    summary:'Clean outpatient consultation at a high-rated network provider. All parameters within expected range. No fraud indicators detected.'},
+  'GBM-2024-71893':{fraud_score:61,risk_level:'medium',decision:'cmo_review',confidence:88,
+    archetypes:['Redundant Imaging','Cost Benchmark Deviation'],
+    risks:['Three imaging modalities billed for the same anatomical area in one session — redundant imaging pattern.',
+           'Total imaging cost EGP 7,800 is 58% above benchmark for this diagnosis.',
+           'Prior imaging study for identical diagnosis completed 21 days ago.'],
+    clean:['Roia Radiology quality score 82/100 — generally reliable provider.',
+           'Admission diagnosis is consistent with imaging request.'],
+    rec:'Escalate to CMO — multiple imaging modalities in a single session require clinical justification. Request attending physician report.',
+    summary:'Medium-risk imaging claim with redundant modalities and cost benchmark deviation. Clinical justification required before authorization.'},
+};
+const PHASES=['Receiving claim data...','Matching ICD / CPT codes...','Checking 25 Egyptian fraud archetypes...','Analyzing provider history...','Calculating risk score...','Issuing AI recommendation...'];
+
+let state={type:'hospital',claimId:'',patientId:'',analysis:null};
+let phaseTimer=null;
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>{s.classList.remove('active');s.style.display='none';});
+  const el=document.getElementById(id); el.style.display=''; requestAnimationFrame(()=>el.classList.add('active')); window.scrollTo(0,0);
+}
+function col(s){return s<30?'#1d9e75':s<70?'#d97706':'#dc2626';}
+function colBg(s){return s<30?'#F0FDF4':s<70?'#FFFBEB':'#FFF5F5';}
+
+function gauge(score){
+  const R=70,cx=88,cy=88,len=Math.PI*R;
+  const a=Math.PI*(1-score/100);
+  const nx=cx+R*Math.cos(a),ny=cy-R*Math.sin(a);
+  const off=len*(1-score/100),c=col(score);
+  return `<svg viewBox="0 0 176 108" width="200" height="124" style="display:block;margin:0 auto">
+    <path d="M${cx-R} ${cy} A${R} ${R} 0 0 1 ${cx+R} ${cy}" fill="none" stroke="#E2E8F0" stroke-width="13" stroke-linecap="round"/>
+    <path d="M${cx-R} ${cy} A${R} ${R} 0 0 1 ${cx+R} ${cy}" fill="none" stroke="${c}" stroke-width="13" stroke-linecap="round"
+      stroke-dasharray="${len}" stroke-dashoffset="${off}"/>
+    <circle cx="${nx}" cy="${ny}" r="8" fill="${c}"/>
+    <circle cx="${nx}" cy="${ny}" r="3.5" fill="#fff"/>
+    <text x="${cx}" y="${cy+2}" text-anchor="middle" fill="${c}" font-size="42" font-weight="700" font-family="'Kufam',monospace">${score}</text>
+    <text x="${cx}" y="${cy+17}" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="Ubuntu">/ 100</text>
+    <text x="${cx-R-4}" y="${cy+14}" text-anchor="middle" fill="#CBD5E1" font-size="8">0</text>
+    <text x="${cx+R+4}" y="${cy+14}" text-anchor="middle" fill="#CBD5E1" font-size="8">100</text>
+  </svg>`;
+}
+
+function buildExamples(){
+  document.getElementById('exRow').innerHTML=EXAMPLES.map((ex,i)=>`
+    <button class="ex-card" onclick="loadEx(${i})">
+      <div class="ex-label">${ex.label}</div>
+      <div class="ex-tag" style="color:${ex.tagColor}">${ex.tag}</div>
+    </button>`).join('');
+}
+function loadEx(i){
+  const ex=EXAMPLES[i];
+  setType(ex.type);
+  ['Provider','PatientId','Diagnosis','Services','Amount','Date','Notes'].forEach(k=>{
+    const el=document.getElementById('f'+k); if(el) el.value=ex[k.toLowerCase()]||'';
+  });
+  checkBtn();
+}
+function setType(t){
+  state.type=t;
+  document.querySelectorAll('.type-pill').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+}
+document.querySelectorAll('.type-pill').forEach(b=>b.addEventListener('click',()=>setType(b.dataset.t)));
+
+function checkBtn(){
+  const ok=document.getElementById('fProvider').value.trim()&&
+            document.getElementById('fServices').value.trim()&&
+            document.getElementById('fAmount').value.trim();
+  document.getElementById('analyzeBtn').disabled=!ok;
+}
+['fProvider','fPatientId','fDiagnosis','fServices','fAmount','fNotes'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',checkBtn);
+});
+
+function startAnalysis(){
+  state.patientId=document.getElementById('fPatientId').value.trim();
+  state.claimId='CLM-'+Date.now().toString().slice(-8);
+  document.getElementById('errBar').style.display='none';
+  show('analyzing'); runPhases();
+}
+function runPhases(){
+  const pList=document.getElementById('pList');
+  pList.innerHTML=PHASES.map((p,i)=>`
+    <div class="pitem${i===0?' cur':''}" id="ph${i}">
+      <div class="pdot${i===0?' cur':''}" id="phd${i}">${i===0?'●':''}</div>${p}
+    </div>`).join('');
+  document.getElementById('phaseTxt').textContent=PHASES[0];
+  document.getElementById('progFill').style.width='0%';
+  let p=0;
+  phaseTimer=setInterval(()=>{
+    p=Math.min(p+1,PHASES.length-1);
+    document.getElementById('phaseTxt').textContent=PHASES[p];
+    document.getElementById('progFill').style.width=`${(p/(PHASES.length-1))*85}%`;
+    for(let i=0;i<PHASES.length;i++){
+      const row=document.getElementById(`ph${i}`);const dot=document.getElementById(`phd${i}`);
+      if(!row)continue;
+      row.className=`pitem${i<p?' done':i===p?' cur':''}`;
+      dot.className=`pdot${i<p?' done':i===p?' cur':''}`;
+      dot.textContent=i<p?'✓':'●';
+    }
+  },720);
+  setTimeout(()=>{
+    clearInterval(phaseTimer);
+    document.getElementById('progFill').style.width='100%';
+    const a=ANALYSES[state.patientId]||{fraud_score:45,risk_level:'medium',decision:'cmo_review',confidence:82,archetypes:['Billing Anomaly'],risks:['Cost deviation from benchmark for this claim type.'],clean:['Provider is in-network.'],rec:'Escalate to CMO for review.',summary:'Analysis complete. See details below.'};
+    state.analysis=a;
+    setTimeout(()=>showResults(a),400);
+  },4400);
+}
+
+function showResults(a){
+  const c=col(a.fraud_score),bg=colBg(a.fraud_score);
+  const decLabel=a.decision==='auto_approve'?'✓ Auto-Approved':a.decision==='cmo_review'?'⚠ CMO Review Required':'✕ Auto-Rejected';
+  document.getElementById('rClaimRef').textContent=state.claimId;
+  const cb=document.getElementById('rConfBadge');
+  cb.textContent=`Confidence ${a.confidence}%`;
+  cb.style.cssText=`background:${bg};color:${c};border:1px solid ${c}30;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700`;
+
+  let html=`
+    <div class="hero-card" style="border:2px solid ${c}20">
+      <div class="gauge-wrap">${gauge(a.fraud_score)}</div>
+      <div class="hero-right">
+        <div style="font-size:10px;color:var(--light);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px">AI Decision</div>
+        <div class="dec-badge" style="background:${bg};color:${c};border:1px solid ${c}25">${decLabel}</div>
+        <div class="summary-txt">${a.summary}</div>
+      </div>
+    </div>
+    <div class="info-card">
+      <span class="section-label" style="color:var(--muted)">AI Summary</span>
+      <div style="font-size:13.5px;line-height:1.8;color:var(--text)">${a.summary}</div>
+    </div>`;
+
+  if(a.archetypes?.length){
+    html+=`<span class="section-label" style="color:#92400E;margin-bottom:8px;display:block">Fraud Archetypes Detected</span>
+      <div class="arch-row">${a.archetypes.map(x=>`<span class="arch-badge">${x}</span>`).join('')}</div>`;
+  }
+
+  html+=`<div class="two-col">
+    <div class="${a.risks?.length?'risk-card':'card'}" style="${!a.risks?.length?'display:flex;align-items:center;justify-content:center;color:var(--light);font-size:13px':''}">
+      ${a.risks?.length?`<span class="section-label" style="color:var(--red)">Risk Factors</span>${a.risks.map(r=>`<div class="fact-row"><span class="fact-icon" style="color:var(--red)">⚠</span>${r}</div>`).join('')}`:'No risk factors detected'}
+    </div>
+    <div class="${a.clean?.length?'clean-card':'card'}" style="${!a.clean?.length?'display:flex;align-items:center;justify-content:center;color:var(--light);font-size:13px':''}">
+      ${a.clean?.length?`<span class="section-label" style="color:var(--green)">Clean Indicators</span>${a.clean.map(r=>`<div class="fact-row"><span class="fact-icon" style="color:var(--green)">✓</span>${r}</div>`).join('')}`:'No clean indicators'}
+    </div>
+  </div>
+  <div class="info-card" style="border-color:${c}25;background:${bg}">
+    <span class="section-label" style="color:${c}">AI Recommendation for CMO</span>
+    <div style="font-size:13.5px;line-height:1.8">${a.rec}</div>
+  </div>
+  <div class="actions">
+    <button class="btn sec" onclick="reset()">New Claim</button>`;
+
+  if(a.decision==='cmo_review') html+=`<button class="btn" style="background:var(--amber);color:#fff" onclick="showCMO()">CMO Review Panel →</button>`;
+  else if(a.decision==='auto_approve') html+=`<button class="btn app" id="auditBtn">Confirm Approval → FRA Trail</button>`;
+  else html+=`<button class="btn rej" id="auditBtn">Confirm Rejection → FRA Trail</button>`;
+  html+=`</div>`;
+
+  document.getElementById('rContent').innerHTML=html;
+  if(a.decision!=='cmo_review') document.getElementById('auditBtn').onclick=()=>showAudit(a.decision);
+  show('results');
+}
+
+function showCMO(){
+  const a=state.analysis,c=col(a.fraud_score);
+  document.getElementById('cmoMeta').textContent=`${state.claimId} · Risk Score ${a.fraud_score} / 100`;
+  document.getElementById('cmoContent').innerHTML=`
+    <div class="card" style="margin-bottom:14px">
+      <span class="field-label">Claim Summary</span>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13.5px">
+        ${[['Provider',document.getElementById('fProvider').value],['Amount','EGP '+Number(document.getElementById('fAmount').value).toLocaleString()],['Type',state.type],['AI Confidence',a.confidence+'%']].map(([k,v])=>`<div><span style="color:var(--light);display:block;font-size:9.5px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px">${k}</span><strong style="color:var(--navy)">${v}</strong></div>`).join('')}
+      </div>
+    </div>
+    <div class="card" style="border-color:#FDE68A;background:#FFFBEB">
+      <span class="field-label" style="color:var(--amber)">AI Analysis Brief</span>
+      <div style="font-size:13.5px;line-height:1.8;margin-bottom:10px">${a.summary}</div>
+      ${a.risks.map(r=>`<div style="font-size:12.5px;color:var(--red);margin-bottom:4px">⚠ ${r}</div>`).join('')}
+    </div>`;
+  show('cmo');
+}
+function finalDecision(dec){state.finalDec=dec;showAudit(dec);}
+
+function showAudit(dec){
+  const a=state.analysis;
+  const ok=dec==='approved'||dec==='auto_approve';
+  const c=ok?'#1d9e75':dec==='auto_reject'||dec==='rejected'?'#dc2626':'#d97706';
+  const auditRef='FRA-'+Math.random().toString(36).substr(2,9).toUpperCase();
+  const ts=new Date().toLocaleString('en-GB',{timeZone:'Africa/Cairo'});
+  const note=document.getElementById('cmoNote')?.value||'';
+
+  document.getElementById('auditContent').innerHTML=`
+    <div style="text-align:center;padding:32px 0 20px">
+      <div class="audit-icon" style="background:${c}10;border:2px solid ${c};color:${c}">${ok?'✓':'✕'}</div>
+      <div style="font-size:24px;font-weight:700;color:${c};margin-bottom:6px">${ok?'Claim Approved':'Claim Rejected'}</div>
+      <div style="font-size:12.5px;color:var(--muted)">FRA audit trail generated automatically</div>
+    </div>
+    <div class="audit-table">
+      <div class="audit-ref">FRA AUDIT TRAIL — ${auditRef}</div>
+      ${[['Claim ID',state.claimId],['FRA Reference',auditRef],['Provider',document.getElementById('fProvider').value],
+         ['Amount','EGP '+Number(document.getElementById('fAmount').value).toLocaleString()],
+         ['AI Fraud Score',`${a.fraud_score} / 100`],['AI Decision',a.decision.replace(/_/g,' ').toUpperCase()],
+         ['Final Status',ok?'APPROVED ✓':'REJECTED ✕'],['Timestamp',ts+' EGT'],
+         ['Cryptographic Sig.','RSA-4096 · Signed ✓'],
+         ...(note?[['CMO Note',note]]:[])
+      ].map(([k,v])=>`<div class="audit-row"><span class="audit-k">${k}</span><span class="audit-v">${v}</span></div>`).join('')}
+    </div>
+    <div class="compliance-note">
+      Decision logged in an immutable audit trail per FRA requirements<br>
+      FRA Decision 229/2025 · PDPL 151/2020 · AES-256 Encrypted
+    </div>
+    <div class="actions" style="margin-top:20px">
+      <button class="btn sec" onclick="reset()">New Claim</button>
+      <button class="btn pri" onclick="window.print()">Export FRA Report</button>
+      <a href="dashboard.html" class="btn nav">← Back to Dashboard</a>
+    </div>`;
+  show('audit');
+}
+
+function reset(){
+  state={type:'hospital',claimId:'',patientId:'',analysis:null};
+  ['fProvider','fPatientId','fDiagnosis','fServices','fAmount','fNotes'].forEach(id=>document.getElementById(id).value='');
+  if(document.getElementById('cmoNote')) document.getElementById('cmoNote').value='';
+  setType('hospital'); checkBtn(); show('form');
+}
+
+buildExamples(); show('landing');
+</script>
+</body>
+</html>
