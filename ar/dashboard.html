@@ -131,8 +131,17 @@ body{font-family:var(--fn);background:var(--g100);color:var(--g800);display:flex
 <aside class="sb">
   <div class="sb-logo">
     <div class="sb-row">
-      <div class="sb-badge">iH</div>
-      <div><div class="sb-brand">iRonic Health</div><div class="sb-sub">لوحة التحكم · v2.5</div></div>
+
+      <div class="sb-badge" style="background:transparent;padding:0;">
+        <img src="../assets/H_Badge_icon_Gold_with_white_H.svg"
+             alt="iRonic Health"
+             style="width:36px;height:36px;border-radius:9px;">
+      </div>
+
+      <div>
+        <div class="sb-brand">iRonic Health</div>
+        <div class="sb-sub">لوحة التحكم · v2.5</div>
+      </div>
     </div>
     <div class="demo-pill"><div class="demo-dot"></div>بيئة تجريبية</div>
   </div>
@@ -675,5 +684,6 @@ updateClock();animateBars();
 setInterval(updateFeed,12000);setInterval(updateClock,60000);
 </script>
 <script src="../js/consent.js" defer></script>
+  <script src="ai-layer.js"></script>
 </body>
 </html>
