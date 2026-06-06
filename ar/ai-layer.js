@@ -549,7 +549,7 @@
       if (!sb || document.getElementById('irhAiBtn')) return;
       const btn = document.createElement('a');
       btn.id = 'irhAiBtn';
-      btn.href = '../ai-experience.html';
+      btn.href = 'ai-experience.html';
       btn.innerHTML = `
         <div style="flex:1;text-align:right">
           <div style="font-size:12px;font-weight:700;color:#CAB164;line-height:1.2;font-family:'Cairo',sans-serif">تجربة الذكاء الاصطناعي ⚡</div>
