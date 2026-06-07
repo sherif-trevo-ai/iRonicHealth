@@ -371,14 +371,26 @@
         dot.className = `irh-pdot${i<p?' done':i===p?' cur':''}`;
         dot.textContent = i<p ? '✓' : '●';
       }
-    }, 720);
+    }, 620);
 
-    setTimeout(() => {
+    /* ── Real AI call + minimum animation time ── */
+    const claim = {
+      id: cur.id,
+      provider: cur.provider || '—',
+      type: cur.type || '—',
+      amount: cur.amount || '—',
+      ai_score: cur.ai_score,
+    };
+    const minWait = new Promise(r => setTimeout(r, 3800));
+    const apiCall = window.iRonicAnalyze
+      ? window.iRonicAnalyze(claim, 'en').catch(() => fallback(cur))
+      : Promise.resolve(ANALYSES[cur.id] || fallback(cur));
+
+    Promise.all([minWait, apiCall]).then(([, a]) => {
       clearInterval(phaseTimer);
       document.getElementById('irhPBar').style.width = '100%';
-      const a = ANALYSES[cur.id] || fallback(cur);
       setTimeout(() => showResults(a), 400);
-    }, 4400);
+    });
   }
 
   /* ─── FALLBACK IF CLAIM NOT IN ANALYSES ─────────────────── */

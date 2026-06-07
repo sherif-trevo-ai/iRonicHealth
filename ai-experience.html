@@ -546,14 +546,27 @@ function runPhases(){
       dot.className=`pdot${i<p?' done':i===p?' cur':''}`;
       dot.textContent=i<p?'✓':'●';
     }
-  },720);
-  setTimeout(()=>{
+  },620);
+  /* ── Real AI + minimum animation time ── */
+  const claim={
+    type:state.type,
+    provider:document.getElementById('fProvider').value,
+    patient_id:state.patientId,
+    diagnosis:document.getElementById('fDiagnosis').value,
+    services:document.getElementById('fServices').value,
+    amount_egp:document.getElementById('fAmount').value,
+    date:document.getElementById('fDate').value,
+    notes:document.getElementById('fNotes').value,
+  };
+  const minWait=new Promise(r=>setTimeout(r,3800));
+  const fallbackA={fraud_score:45,risk_level:'medium',decision:'cmo_review',confidence:82,archetypes:['Billing Anomaly'],risks:['Cost deviation from benchmark.'],clean:['Provider is in-network.'],rec:'Escalate to CMO for review.',summary:'Analysis complete. See details below.'};
+  const apiCall=window.iRonicAnalyze?window.iRonicAnalyze(claim,'en').catch(()=>fallbackA):Promise.resolve(ANALYSES[state.patientId]||fallbackA);
+  Promise.all([minWait,apiCall]).then(([,a])=>{
     clearInterval(phaseTimer);
     document.getElementById('progFill').style.width='100%';
-    const a=ANALYSES[state.patientId]||{fraud_score:45,risk_level:'medium',decision:'cmo_review',confidence:82,archetypes:['Billing Anomaly'],risks:['Cost deviation from benchmark for this claim type.'],clean:['Provider is in-network.'],rec:'Escalate to CMO for review.',summary:'Analysis complete. See details below.'};
     state.analysis=a;
     setTimeout(()=>showResults(a),400);
-  },4400);
+  });
 }
 
 function showResults(a){
@@ -672,5 +685,6 @@ function reset(){
 
 buildExamples(); show('landing');
 </script>
+<script src="ai-api.js"></script>
 </body>
 </html>
