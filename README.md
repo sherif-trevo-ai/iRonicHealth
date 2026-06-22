@@ -134,8 +134,8 @@ Netlify detects the push and redeploys in ~30 seconds.
 
 ## Contact
 
-- **Chairman & CEO:** م. شريف شوقي — chairman@ironicgmi.com — +20 155 555 6697  
-- **Founder & CMO:** د. إسلام الميداني — islam@ironicigmi.com — +20 150 828 1948  
+- **Chairman & CEO:** chairman@ironicgmi.com
+- **Founder & CMO:** islam@ironicigmi.com 
 - **HQ:** Nile City Towers, North Tower, Corniche El Nile, Cairo, Egypt
 
 ---
