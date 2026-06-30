@@ -29,6 +29,9 @@
   .ih-nlink::after{content:"";position:absolute;left:0;bottom:-2px;height:1.5px;width:0;background:#4179AD;transition:width .25s cubic-bezier(.4,0,.2,1)}
   .ih-nlink:hover{color:#1A2332}.ih-nlink:hover::after{width:100%}
   .ih-eco{scrollbar-width:none}.ih-eco::-webkit-scrollbar{display:none}
+  /* Grid blowout prevention — allow all grid/flex children to shrink below their content size */
+  .ih-hero-grid>*,.ih-2col>*,.ih-stats>div,.ih-panel>*{min-width:0}
+  img{max-width:100%;height:auto}
   /* ---- Tablet ≤900px ---- */
   @media(max-width:900px){
     .ih-hero-grid{grid-template-columns:1fr !important}
@@ -54,6 +57,13 @@
     [data-ih="herocard"]{animation-name:ih-float-sm !important}
     [data-ih="macstage"]{transform:scale(.36) !important;margin-bottom:-427px !important}
     [data-ih="phonewrap"]{transform:none !important;width:220px !important;height:450px !important}
+    /* Fix h1 nowrap span overflowing on mobile */
+    #ih-root h1 span{white-space:normal !important}
+    /* Hero counter card: hide overflow badge, allow card to fill width */
+    header [style*="max-width:480px"]{max-width:100% !important}
+    header [style*="flex-shrink:0"][style*="border-radius:999px"]{display:none !important}
+    /* Nav CTA button — tighten on small screens */
+    nav>a{white-space:nowrap;font-size:13px !important;padding:8px 14px !important}
   }
   /* ---- Small ≤420px ---- */
   @media(max-width:420px){
