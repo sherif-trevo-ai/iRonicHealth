@@ -1,0 +1,12 @@
+* { box-sizing: border-box; }
+body { margin: 0; }
+.k { font-family: 'Kufam', 'Cairo', sans-serif; }
+.ar-body { font-family: 'Cairo', system-ui, sans-serif; }
+.en-body { font-family: 'Ubuntu', system-ui, sans-serif; }
+.m { font-family: 'Ubuntu Mono', monospace; direction: ltr; unicode-bidi: isolate; }
+@keyframes pop { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.pop { animation: pop .2s ease-out; }
+@media (prefers-reduced-motion: reduce) { .pop { animation: none; } }
+input, textarea, select, button { font-family: inherit; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #DFE3E8; border-radius: 4px; }
