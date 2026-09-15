@@ -134,8 +134,8 @@ Netlify detects the push and redeploys in ~30 seconds.
 
 ## Contact
 
-- **Chairman & CEO:** chairman@ironicgmi.com
-- **Founder & CMO:** islam@ironicigmi.com 
+- **Chairman & CEO:** sherif@ironichealth.com
+- **Founder & CMO:** islam@ironichealth.com 
 - **HQ:** Nile City Towers, North Tower, Corniche El Nile, Cairo, Egypt
 
 ---
