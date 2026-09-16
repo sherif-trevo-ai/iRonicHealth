@@ -139,8 +139,8 @@
 
     const fraudLoss = gwp * fraudRate;
     const fraudRecovery = fraudLoss * 0.30;
-    const opsSavings = gwp * 0.20;
-    const prevSavings = gwp * 0.15;
+    const opsSavings = gwp * 0.10 * 0.20; // admin cost ~10% of GWP, 20% automation saving (assumption)
+    const prevSavings = gwp * 0.015; // preventive care: 1.5% of GWP (target assumption)
     const total = fraudRecovery + opsSavings + prevSavings;
 
     out.fraud.textContent = fmt(fraudRecovery);

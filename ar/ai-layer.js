@@ -131,7 +131,7 @@
     },
 
     'CLM-88836': {
-      provider: 'مستشفى دار الفؤاد',
+      provider: 'مستشفى مستشفى افتراضي (هـ)',
       type: 'استشفاء داخلي',
       amount: '131,000 ج.م.',
       fraud_score: 22,
@@ -142,7 +142,7 @@
       risks: [],
       clean: [
         'التكلفة ضمن النطاق المتوقع لقسطرة قلبية — تطابق مع بيانات ٨٤٧ مطالبة مرجعية.',
-        'درجة جودة دار الفؤاد ٩٦/١٠٠ — صفر سجل احتيال خلال ١٨ شهرًا.',
+        'درجة جودة مستشفى افتراضي (هـ) ٩٦/١٠٠ — صفر سجل احتيال خلال ١٨ شهرًا.',
       ],
       rec: 'اعتماد تلقائي — مطالبة الإجراء القلبي مستوفية لجميع معايير التحقق السريري والمالي.',
       summary: 'مطالبة قسطرة قلبية نظيفة من مزود عالي التقييم. التكلفة متوافقة مع المعيار المرجعي. لا مؤشرات احتيال.',
@@ -474,7 +474,7 @@
       foot.innerHTML = `
         <div class="irh-btns">
           <button class="irh-btn sec" id="irhBtnClose">إغلاق</button>
-          <button class="irh-btn pri" id="irhBtnAudit">عرض سجل FRA ←</button>
+          <button class="irh-btn pri" id="irhBtnAudit">عرض سجل المراجعة ←</button>
         </div>`;
       document.getElementById('irhBtnClose').onclick = closePanel;
       document.getElementById('irhBtnAudit').onclick = () => showAudit(a.decision);
@@ -487,7 +487,7 @@
     const ok  = finalDec === 'approved' || finalDec === 'auto_approve';
     const c   = ok ? GREEN : RED;
     const icon = ok ? '✓' : '✕';
-    const auditRef = 'FRA-' + Math.random().toString(36).substr(2,9).toUpperCase();
+    const auditRef = 'AUD-' + Math.random().toString(36).substr(2,9).toUpperCase();
     const ts = new Date().toLocaleString('ar-EG', { timeZone: 'Africa/Cairo' });
     const note = document.getElementById('irhNote')?.value || '';
 
@@ -500,17 +500,17 @@
           ${ok ? 'تمت الموافقة على المطالبة' : 'تم رفض المطالبة'}
         </div>
         <div style="font-size:11.5px;color:#94a3b8;margin-top:4px;font-family:'Cairo',sans-serif">
-          سجل مراجعة مُولَّد تلقائيًا بواسطة الهيئة المالية للرقابة
+          سجل مراجعة مُولَّد تلقائيًا (عرض تجريبي)
         </div>
       </div>
       <div class="irh-card info" style="margin:0 0 14px">
         <div style="font-size:10px;font-weight:700;color:${BLUE};letter-spacing:.1em;
           text-transform:uppercase;margin-bottom:14px;font-family:monospace">
-          FRA AUDIT TRAIL — ${auditRef}
+          AUDIT TRAIL (DEMO) — ${auditRef}
         </div>
         ${[
           ['رقم المطالبة',       cur.id],
-          ['مرجع سجل FRA',      auditRef],
+          ['مرجع سجل المراجعة',      auditRef],
           ['المزود',             cur.provider||'—'],
           ['المبلغ',             cur.amount||'—'],
           ['درجة مخاطرة AI',     `${a.fraud_score} / 100`],
@@ -528,13 +528,13 @@
         padding:12px;text-align:center;font-size:11.5px;color:#94a3b8;
         line-height:1.8;font-family:'Cairo',sans-serif">
         تم تسجيل هذا القرار في سجل مراجعة غير قابل للتعديل<br>
-        القرار ٢٢٩/٢٠٢٥ (FRA) · قانون PDPL ١٥١/٢٠٢٠
+        عرض تجريبي فقط · ليس مستندًا تنظيميًا
       </div>`;
 
     document.getElementById('irhFoot').innerHTML = `
       <div class="irh-btns">
         <button class="irh-btn sec" id="irhBtnDone">إغلاق</button>
-        <button class="irh-btn pri" onclick="window.print()">تصدير تقرير FRA</button>
+        <button class="irh-btn pri" onclick="window.print()">تصدير تقرير تجريبي</button>
       </div>`;
     document.getElementById('irhBtnDone').onclick = closePanel;
   }

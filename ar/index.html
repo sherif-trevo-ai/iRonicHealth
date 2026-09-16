@@ -10,8 +10,8 @@
   <!-- ✅ FIX #2: Meta description aligned to approved tagline -->
   <meta name="description" content="iRonic Health — تقنية ذكية تربط منظومة الرعاية الصحية والتأمين الطبي بالكامل في مصر ومنطقة الشرق الأوسط وشمال أفريقيا. كشف احتيال فوري، موافقات آلية، وتكامل شامل للمنظومة الصحية.">
   <meta property="og:title" content="iRonic Health — تقنية ذكية تربط منظومة الرعاية الصحية والتأمين الطبي بالكامل">
-  <meta property="og:description" content="تقنية ذكية تربط منظومة الرعاية الصحية والتأمين الطبي بالكامل. ترتبط بـ 8 أطراف. تُلغي الاحتيال. تُسرّع المطالبات.">
-  <meta property="og:image" content="https://sherif-trevo-ai.github.io/iRonicHealth/assets/og-image.jpg">
+  <meta property="og:description" content="تقنية ذكية تربط منظومة الرعاية الصحية والتأمين الطبي بالكامل. ترتبط بـ 8 أطراف. ترصد الاحتيال. تُسرّع المطالبات.">
+  <meta property="og:image" content="https://ironichealth.com/assets/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
@@ -1299,7 +1299,7 @@
       border: 1px solid rgba(65, 121, 173, 0.2);
     }
 
-    /* ✅ FIX #11: FRA compliance badge shows "في طور الحصول على الترخيص" */
+    /* ✅ FIX #11: FRA compliance badge shows decision-support SaaS positioning */
     .badge-gold {
       background: rgba(202, 177, 100, 0.1);
       color: var(--gold-dark);
@@ -1662,6 +1662,8 @@
       .market-stats { grid-template-columns: repeat(2,1fr); }
     }
   </style>
+<link rel="alternate" hreflang="en" href="https://ironichealth.com/">
+<link rel="alternate" hreflang="ar" href="https://ironichealth.com/ar/">
 </head>
 
 <body>
@@ -1672,14 +1674,13 @@
   <nav role="navigation" aria-label="التنقل الرئيسي">
     <div class="nav-inner">
       <!-- ✅ FIX #4: AR logo on correct side (right in RTL = logo first visually) -->
-      <div class="nav-logo">
-        <!-- ✅ FIX #2: Using AR Metro Blue logo for light background nav -->
+      <a class="nav-logo" href="index.html" aria-label="iRonic Health — الرئيسية">
         <img
           src="../assets/logos/iRonic_Health_AR_Metro_Blue_T.svg"
           alt="iRonic Health — أيرونيك هيلث"
           height="38"
         >
-      </div>
+      </a>
 
       <ul class="nav-links" role="list">
         <li><a href="platform.html">المنصة</a></li>
@@ -1687,10 +1688,12 @@
         <li><a href="pricing.html">الأسعار</a></li>
         <li><a href="team.html">الفريق</a></li>
         <li><a href="dashboard.html">لوحة التحكم</a></li>
+        <li><a href="market.html">السوق</a></li>
+        <li><a href="investors.html">المستثمرون</a></li>
       </ul>
 
       <div class="nav-cta">
-        <a href="../en/index.html" class="lang-switcher" lang="en" hreflang="en">EN</a>
+        <a href="../index.html" class="lang-switcher" lang="en" hreflang="en">EN</a>
         <a href="contact.html" class="btn btn-primary" style="padding:10px 20px; font-size:0.85rem;">
           طلب عرض تجريبي
         </a>
@@ -1706,7 +1709,7 @@
       <div class="hero-inner">
         <div class="hero-content">
           <div class="section-label" style="background:rgba(202,177,100,0.1);border-color:rgba(202,177,100,0.25);color:var(--gold-lustre);">
-            مُرخَّصة FRA · في طور الحصول على الترخيص
+            برمجيات SaaS لدعم القرار · لسنا شركة تأمين أو TPA
           </div>
 
           <!-- ✅ FIX #1: Hero headline — no mixed $ symbol -->
@@ -1716,7 +1719,7 @@
           </h1>
 
           <p class="hero-sub">
-            iRonic Health تُلغي الاحتيال، وتُؤتمت الموافقات، وتربط منظومة التأمين الصحي المصرية المجزأة — مدعومة بذكاء اصطناعي مُدرَّب على 25–40 نمطًا مصريًا أصيلًا للاحتيال.
+            iRonic Health تُبنى لرصد الاحتيال، وأتمتة الموافقات، وربط منظومة التأمين الصحي المصرية المجزأة — بطبقة ذكاء اصطناعي مصمَّمة حول 25–40 نمطًا مصريًا للاحتيال.
           </p>
 
           <div class="hero-actions">
@@ -1748,30 +1751,30 @@
         <!-- Mini dashboard preview in hero -->
         <div class="hero-dashboard" role="img" aria-label="لوحة استخبارات المطالبات — بيانات افتراضية">
           <div class="dash-header">
-            <span class="dash-title">لوحة استخبارات المطالبات · GlobeMed مصر</span>
+            <span class="dash-title">لوحة استخبارات المطالبات · TPA افتراضي</span>
             <!-- ✅ FIX #8: Demo badge prominently labeled -->
             <span class="demo-badge">⚠ بيانات افتراضية</span>
           </div>
           <div class="dash-body">
             <div class="dash-kpis">
               <div class="kpi-card">
-                <span class="kpi-label">دقة كشف الاحتيال</span>
-                <span class="kpi-value">94.2%</span>
-                <span class="kpi-delta">↑ +2.1% هذا الشهر</span>
+                <span class="kpi-label">أنماط الاحتيال (مستهدف)</span>
+                <span class="kpi-value">25–40</span>
+                <span class="kpi-delta">أهداف نموذجية — ليست نتائج فعلية</span>
               </div>
               <div class="kpi-card">
-                <span class="kpi-label">متوسط قرار المطالبة</span>
+                <span class="kpi-label">زمن قرار المطالبة (مستهدف)</span>
                 <span class="kpi-value">4.3 ث</span>
-                <span class="kpi-delta">↓ كانت 14 يومًا</span>
+                <span class="kpi-delta">أهداف نموذجية — ليست نتائج فعلية</span>
               </div>
               <div class="kpi-card">
-                <span class="kpi-label">احتيال محتجز (YTD)</span>
+                <span class="kpi-label">احتيال محتجز (بيانات افتراضية)</span>
                 <!-- ✅ FIX #1: Proper Arabic currency context -->
                 <span class="kpi-value">2.4M دولار</span>
-                <span class="kpi-delta">↑ في المسار الصحيح</span>
+                <span class="kpi-delta">أهداف نموذجية — ليست نتائج فعلية</span>
               </div>
               <div class="kpi-card">
-                <span class="kpi-label">نسبة الأتمتة</span>
+                <span class="kpi-label">نسبة الأتمتة (مستهدفة)</span>
                 <span class="kpi-value">87%</span>
                 <span class="kpi-delta">موافقة تلقائية</span>
               </div>
@@ -1799,7 +1802,7 @@
     </section>
 
     <!-- ══════════════ PROBLEM ══════════════ -->
-    <section class="problem" aria-labelledby="problem-heading">
+    <section class="problem" id="problem" aria-labelledby="problem-heading">
       <div class="container">
         <div class="section-header">
           <div class="section-label">المشكلة</div>
@@ -1813,26 +1816,26 @@
         <div class="problem-grid">
           <div class="problem-card">
             <span class="problem-icon">🚨</span>
-            <span class="problem-stat">30%</span>
-            <h3>معدل احتيال مرتفع</h3>
-            <p>من المطالبات مشبوهة أو مزورة — ما يعادل أكثر من 100 مليون دولار سنويًا تُهدر من أقساط التأمين.</p>
-            <span class="problem-source">المصدر: هيئة الرقابة المالية 2024</span>
+            <span class="problem-stat">2–10%</span>
+            <h3>تسرب الاحتيال وإساءة الاستخدام</h3>
+            <p>من المطالبات تُرفض بسبب الاحتيال أو إساءة الاستخدام وفق مسح إقليمي لشركات التأمين.</p>
+            <span class="problem-source">المصدر: مسح RGA للشرق الأوسط (37 شركة تأمين في المنطقة)</span>
           </div>
 
           <div class="problem-card">
             <span class="problem-icon">⏳</span>
             <span class="problem-stat">7–21 يوم</span>
             <h3>بطء المعالجة</h3>
-            <p>متوسط وقت معالجة مطالبة واحدة يدويًا — بينما iRonic Health تُنجزها في 4.3 ثانية بدقة 94%.</p>
-            <span class="problem-source">المصدر: بيانات TPA مصر 2024</span>
+            <p>متوسط دورة الموافقة اليدوية — وهدفنا أن يتم تقييم المطالبة آليًا في ثوانٍ.</p>
+            <span class="problem-source">تقدير مرجعي من أسواق مشابهة في المنطقة</span>
           </div>
 
           <div class="problem-card">
             <span class="problem-icon">💸</span>
-            <span class="problem-stat">40–60%</span>
+            <span class="problem-stat">يدوي</span>
             <h3>تضخم التكاليف التشغيلية</h3>
-            <p>من تكاليف شركات التأمين تذهب لمعالجة المطالبات يدويًا — قابلة للتخفيض إلى أقل من 20% بالأتمتة.</p>
-            <span class="problem-source">المصدر: تقرير McKinsey للتأمين الصحي MENA</span>
+            <p>معالجة المطالبات ومراجعتها يدويًا ترفع التكلفة التشغيلية لشركات التأمين ويمكن خفضها بالأتمتة.</p>
+            <span class="problem-source">تقدير iRonic Health</span>
           </div>
 
           <div class="problem-card">
@@ -1840,7 +1843,7 @@
             <span class="problem-stat">+90% ورقية</span>
             <h3>جُزر بيانات معزولة</h3>
             <p>8 أنظمة منفصلة لا تتحدث مع بعضها — شركات التأمين والمستشفيات والصيدليات وTPA في صوامع بيانات تامة.</p>
-            <span class="problem-source">المصدر: مسح منظومة التأمين المصرية 2024</span>
+            <span class="problem-source">المصدر: الرئيس التنفيذي لـ Yodawy — TechCrunch، فبراير 2023</span>
           </div>
 
           <div class="problem-card">
@@ -1848,7 +1851,7 @@
             <span class="problem-stat">60–90 يوم</span>
             <h3>المستشفيات تنتظر الدفع</h3>
             <p>انتظار الدفع من شركات التأمين يخلق أزمة تدفق نقدي تدفع المستشفيات لتفضيل مرضى النقد على المؤمَّنين.</p>
-            <span class="problem-source">المصدر: جمعية المستشفيات الخاصة المصرية</span>
+            <span class="problem-source">تقدير iRonic Health من مقابلات السوق</span>
           </div>
 
           <div class="problem-card">
@@ -1856,7 +1859,7 @@
             <span class="problem-stat">صفر شفافية</span>
             <h3>المؤمَّن في العتمة</h3>
             <p>لا تتبع رقمي، لا هوية موحدة، لا تنبيهات وقائية استباقية — المؤمَّن آخر من يعلم بحالة مطالبته.</p>
-            <span class="problem-source">المصدر: تقرير منظمة الصحة العالمية — مصر</span>
+            <span class="problem-source">تقدير iRonic Health</span>
           </div>
         </div>
       </div>
@@ -1880,11 +1883,11 @@
             <h3>شركات التأمين وTPA</h3>
             <span class="who-card-sub">تحوّل من الخسائر إلى الأرباح المثبَّتة</span>
             <ul class="checklist">
-              <li>كشف الاحتيال في 4.3 ثانية — 94% دقة، 25–40 نمطًا مصريًا أصيلًا</li>
-              <li>87% من المطالبات موافقة تلقائية — تقليل التكلفة التشغيلية بنسبة 60%</li>
-              <li>تسعير أقساط ديناميكي مبني على البيانات الفعلية — تحسين نسبة الخسائر 15%</li>
+              <li>تقييم الاحتيال في ثوانٍ (هدف) — مبني على 25–40 نمطًا مصريًا</li>
+              <li>هدف: موافقة تلقائية على المطالبات السليمة وخفض التكلفة التشغيلية</li>
+              <li>تسعير أقساط ديناميكي مبني على البيانات — هدف تحسين نسبة الخسائر حتى 15%</li>
               <li>لوحة تحكم موحدة لكل شركات التأمين ومزودي الرعاية الصحية</li>
-              <li>توافق كامل مع لوائح الهيئة المالية — مسار تدقيق لكل قرار ذكاء اصطناعي</li>
+              <li>مُصمَّم وفق متطلبات الهيئة — مسار تدقيق لكل قرار ذكاء اصطناعي</li>
             </ul>
           </div>
 
@@ -1895,7 +1898,7 @@
             <ul class="checklist">
               <li>بطاقة صحية رقمية QR — تحقق فوري من الأهلية في أي صيدلية أو مستشفى</li>
               <li>توجيه ذكي للمستشفيات حسب التخصص والتغطية والقرب الجغرافي</li>
-              <li>المستشفيات تحصل على الموافقة المسبقة خلال 4 ساعات — دفع خلال 48 ساعة</li>
+              <li>هدف: موافقة مسبقة للمستشفيات خلال 4 ساعات ودفع خلال 48 ساعة</li>
               <li>الصيدليات تكشف الوصفات الوهمية فور تقديمها — حماية الشبكة بالكامل</li>
               <li>تنبيهات رعاية وقائية مُخصَّصة — تقليل التكاليف الطبية على المدى البعيد</li>
             </ul>
@@ -1913,7 +1916,7 @@
             7 وحدات ذكاء اصطناعي
             <em class="highlight"> تُحرّك المنصة بالكامل</em>
           </h2>
-          <p>كل وحدة تحل مشكلة محددة — مجتمعةً تُشكّل منظومة متكاملة لا يمكن لأي حل منقطع أن يحقق نتائجها.</p>
+          <p>كل وحدة مصمَّمة لحل مشكلة محددة (المنصة قيد التطوير والأرقام أهداف نموذجية) — مجتمعةً تُشكّل منظومة متكاملة لا يمكن لأي حل منقطع أن يحقق نتائجها.</p>
         </div>
 
         <div class="modules-grid">
@@ -1921,56 +1924,56 @@
             <span class="module-icon">🛡️</span>
             <h3>كشف الاحتيال</h3>
             <p>25–40 نمطًا مصريًا أصيلًا يُراقَب في الوقت الفعلي — وصفات وهمية، إقامة مزيفة، أدوية مزيفة.</p>
-            <span class="module-stat">⚡ 4.3 ث · 94% دقة</span>
+            <span class="module-stat">⚡ هدف: أقل من 5 ث</span>
           </div>
 
           <div class="module-card">
             <span class="module-icon">❤️</span>
             <h3>النقاط الصحية</h3>
             <p>نقاط ديناميكية لكل مؤمَّن تُحدَّث شهريًا لدعم التسعير الوقائي وتحفيز السلوك الصحي.</p>
-            <span class="module-stat">📊 متوسط 78/100</span>
+            <span class="module-stat">📊 مقياس 0–100</span>
           </div>
 
           <div class="module-card">
             <span class="module-icon">📋</span>
             <h3>توقع المطالبات</h3>
-            <p>تصنيف تلقائي للمطالبات قبل معالجتها — 87% موافقة فورية بدون تدخل بشري.</p>
-            <span class="module-stat">✅ 87% أتمتة كاملة</span>
+            <p>تصنيف تلقائي للمطالبات قبل معالجتها — هدف: موافقة فورية على المطالبات السليمة.</p>
+            <span class="module-stat">✅ هدف أتمتة 87%</span>
           </div>
 
           <div class="module-card">
             <span class="module-icon">🏥</span>
             <h3>توجيه المستشفيات</h3>
             <p>يوصّل المؤمَّن بالمستشفى الأمثل لحالته — يوازن بين التخصص والتكلفة والقرب الجغرافي.</p>
-            <span class="module-stat">🗺️ 200+ مستشفى مُتصل</span>
+            <span class="module-stat">🗺️ حسب شبكة كل شركة تأمين</span>
           </div>
 
           <div class="module-card">
             <span class="module-icon">🌱</span>
             <h3>الرعاية الوقائية</h3>
             <p>تنبيهات استباقية للمؤمَّنين بالفحوصات والتطعيمات — تقليل التكاليف الطبية طويلة الأمد.</p>
-            <span class="module-stat">📱 12K تنبيه/شهر</span>
+            <span class="module-stat">📱 تنبيهات مخصصة</span>
           </div>
 
           <div class="module-card">
             <span class="module-icon">📈</span>
             <h3>الأقساط الديناميكية</h3>
-            <p>تسعير مبني على البيانات الفعلية لكل فئة ديموغرافية — تحسين نسبة الخسائر بنسبة 15%.</p>
-            <span class="module-stat">💹 تحسين 15% في نسبة الخسائر</span>
+            <p>تسعير مبني على البيانات لكل فئة ديموغرافية — هدف تحسين نسبة الخسائر حتى 15%.</p>
+            <span class="module-stat">💹 هدف: حتى 15%</span>
           </div>
 
           <div class="module-card">
             <span class="module-icon">📊</span>
             <h3>لوحة التحكم الموحدة</h3>
             <p>رؤية 360° لكل المنظومة في واجهة واحدة — مطالبات، احتيال، نقاط صحية، توقعات ARR.</p>
-            <span class="module-stat">🔄 تحديث لحظي · 99.9% SLA</span>
+            <span class="module-stat">🔄 تحديث لحظي · هدف إتاحة 99.9%</span>
           </div>
 
           <div class="module-card coming-soon">
             <span class="module-icon">🔗</span>
             <h3>API الشركاء</h3>
             <p>تكامل مباشر للشركاء الخارجيين — فتح المنصة لمزودي الخدمات والتطبيقات الصحية.</p>
-            <span class="coming-tag">الربع الثالث 2026</span>
+            <span class="coming-tag">ضمن خارطة الطريق</span>
           </div>
         </div>
 
@@ -1991,7 +1994,7 @@
             النقطة المركزية
             <em style="color:var(--gold-lustre); font-style:normal; display:block;">لـ 8 أطراف متصلة</em>
           </h2>
-          <p>iRonic Health ليست طرفًا في المنظومة — إنها البنية التحتية التي تجعل كل الأطراف تعمل معًا لأول مرة.</p>
+          <p>iRonic Health ليست طرفًا في المنظومة — إنها البنية التحتية التي صُمِّمت لتجعل كل الأطراف تعمل معًا.</p>
         </div>
 
         <div class="eco-hub">
@@ -2018,16 +2021,16 @@
             <span class="eco-stat-label">أطراف مترابطة</span>
           </div>
           <div class="eco-stat">
-            <span class="eco-stat-value">1.2M</span>
-            <span class="eco-stat-label">حياة في شبكة واحدة</span>
+            <span class="eco-stat-value">6–8M</span>
+            <span class="eco-stat-label">مؤمَّن عليهم في القطاع الخاص (مصر)</span>
           </div>
           <div class="eco-stat">
-            <span class="eco-stat-value">18</span>
-            <span class="eco-stat-label">شركة تأمين مُتصلة</span>
+            <span class="eco-stat-value">7</span>
+            <span class="eco-stat-label">وحدات ذكاء اصطناعي</span>
           </div>
           <div class="eco-stat">
-            <span class="eco-stat-value">200+</span>
-            <span class="eco-stat-label">مستشفى في الشبكة</span>
+            <span class="eco-stat-value">0</span>
+            <span class="eco-stat-label">شراكات موقَّعة (قبل التجريب)</span>
           </div>
         </div>
 
@@ -2060,7 +2063,7 @@
 
         <div class="dashboard-mock" role="img" aria-label="لوحة التحكم الموحدة — عرض افتراضي">
           <div class="dash-topbar">
-            <span class="dash-topbar-title">iRonic Health — لوحة التحكم الموحدة · GlobeMed Egypt TPA</span>
+            <span class="dash-topbar-title">iRonic Health — لوحة التحكم الموحدة · Illustrative TPA · Sample Data</span>
             <span class="dash-topbar-meta">عرض افتراضي · ⚠ بيانات تجريبية</span>
           </div>
           <div class="dash-content">
@@ -2076,10 +2079,10 @@
                 <span class="dash-kpi-delta" style="color:var(--gold-dark);">1.5% من الإجمالي</span>
               </div>
               <div class="dash-kpi">
-                <span class="dash-kpi-title">توفير محقق اليوم</span>
+                <span class="dash-kpi-title">توفير اليوم (افتراضي)</span>
                 <!-- ✅ Arabic-friendly amount format -->
                 <span class="dash-kpi-value">18,400 دولار</span>
-                <span class="dash-kpi-delta">↑ 94% دقة</span>
+                <span class="dash-kpi-delta">بيانات افتراضية</span>
               </div>
               <div class="dash-kpi">
                 <span class="dash-kpi-title">مؤمَّنون نشطون</span>
@@ -2093,7 +2096,7 @@
               <div class="event-row">
                 <span class="event-icon">🚨</span>
                 <div>
-                  <span class="event-text">وصفة وهمية محتجزة — #CLM-8842 · مستشفى النيل</span>
+                  <span class="event-text">وصفة وهمية محتجزة — #CLM-8842 · مستشفى افتراضي (أ)</span>
                   <span class="event-time">منذ لحظة</span>
                 </div>
               </div>
@@ -2114,7 +2117,7 @@
               <div class="event-row">
                 <span class="event-icon">💊</span>
                 <div>
-                  <span class="event-text">10 وصفات معالجة دفعة — TPA النيل · 3.8 ثانية متوسط</span>
+                  <span class="event-text">10 وصفات معالجة دفعة — TPA افتراضي · 3.8 ثانية متوسط</span>
                   <span class="event-time">منذ 31 دقيقة</span>
                 </div>
               </div>
@@ -2168,21 +2171,21 @@
               <li>
                 <div>
                   <span class="timeline-date">أبريل 2026</span>
-                  <span class="timeline-text">الهيئة المالية تُرخِّص 6 شركات TPA — النافذة التنظيمية تفتح</span>
+                  <span class="timeline-text">الهيئة تمنح 6 تراخيص مؤقتة لشركات إدارة الرعاية الصحية (TPA)</span>
                 </div>
                 <div class="timeline-dot"></div>
               </li>
               <li>
                 <div>
-                  <span class="timeline-date">الربع الثالث 2026</span>
-                  <span class="timeline-text">تجريب GlobeMed — 1.2M حياة، 18 شركة تأمين</span>
+                  <span class="timeline-date">2026–2027</span>
+                  <span class="timeline-text">هدف: أول تجربة مع TPA مرخَّص أو شركة تأمين</span>
                 </div>
                 <div class="timeline-dot"></div>
               </li>
               <li>
                 <div>
-                  <span class="timeline-date">2027</span>
-                  <span class="timeline-text">التوسع الإقليمي — الإمارات، السعودية، الأردن</span>
+                  <span class="timeline-date">2028+</span>
+                  <span class="timeline-text">خطة التوسع الإقليمي — السعودية، الإمارات</span>
                 </div>
                 <div class="timeline-dot"></div>
               </li>
@@ -2192,18 +2195,18 @@
           <div class="why-cards" style="grid-template-columns:1fr; margin:0;">
             <div class="why-card">
               <span class="why-card-icon">⚖️</span>
-              <h3>الهيئة المالية رخّصت 6 TPA — أبريل 2026</h3>
-              <p>الموجة الأولى من الترخيص تخلق طلبًا منظمًا لإدارة الاحتيال بالذكاء الاصطناعي. الأول يحدد المعيار — المنافسون متأخرون 18–24 شهرًا.</p>
+              <h3>الهيئة منحت 6 تراخيص مؤقتة لشركات TPA — أبريل 2026</h3>
+              <p>قناة جديدة منظَّمة لإدارة المطالبات، وهي مسارنا الأساسي لدخول السوق. وفق قرار مجلس إدارة الهيئة 229/2025 والقانون 155/2024.</p>
             </div>
             <div class="why-card">
               <span class="why-card-icon">🤝</span>
-              <h3>GlobeMed مصر — موطئ القدم الاستراتيجي</h3>
-              <p>صفقة TPA واحدة = 1.2M حياة + 18 شركة تأمين. المنافسون يمضون 12 شهرًا في ما يُحققه عقد iRonic Health الواحد في حركة واحدة.</p>
+              <h3>البداية عبر شركات TPA</h3>
+              <p>شركة TPA واحدة تدير مطالبات عدة شركات تأمين، فشراكة واحدة قد تصل إلى عدة محافظ دفعة واحدة. لم تُوقَّع أي شراكة بعد.</p>
             </div>
             <div class="why-card">
               <span class="why-card-icon">🤖</span>
-              <h3>صفر منافسين بذكاء اصطناعي مصري</h3>
-              <p>Yodawy، Vezeeta، Altibbi — لا أيٌّ منها يمتلك ذكاء اصطناعي للاحتيال أو نماذج مصرية أصيلة أو امتثالًا للهيئة المالية. الفجوة حقيقية وغير محمية.</p>
+              <h3>فجوة مفتوحة في السوق</h3>
+              <p>وفق مراجعتنا للمعلومات المتاحة علنًا، لم نجد طبقة ذكاء اصطناعي لكشف الاحتيال مصمَّمة خصيصًا لأنماط المطالبات المصرية.</p>
             </div>
           </div>
         </div>
@@ -2219,7 +2222,7 @@
             إيرادات تتوسع
             <em class="highlight"> مع السوق</em>
           </h2>
-          <p>أربعة تيارات إيرادية متكاملة — من دخول التجريب بلا خطر إلى اشتراك المنصة الكامل وتحقيق الدخل من المنظومة.</p>
+          <p>أربعة تيارات إيرادية مخطَّطة (الأرقام أهداف نموذجية) — من دخول التجريب بلا خطر إلى اشتراك المنصة الكامل وتحقيق الدخل من المنظومة.</p>
         </div>
 
         <div class="revenue-phases">
@@ -2279,7 +2282,7 @@
         </div>
 
         <div style="text-align:center; margin-top:20px; color:var(--ink-soft); font-size:0.82rem;">
-          هامش الربح الإجمالي +70% · LTV/CAC: 20–30×
+          أهداف نموذجية — ليست نتائج فعلية: هامش +70% · LTV/CAC 20–30×
         </div>
 
         <div style="text-align:center; margin-top:28px;">
@@ -2304,10 +2307,10 @@
 
         <div class="team-grid">
           <div class="team-card">
-            <div class="team-avatar">SS</div>
-            <span class="team-name-ar">م. شريف شوقي</span>
-            <span class="team-title-ar">رئيس مجلس الإدارة والرئيس التنفيذي</span>
-            <span class="team-title-en">Chairman & CEO</span>
+            <div class="team-avatar">ش م</div>
+            <span class="team-name-ar">م. شريف الميداني</span>
+            <span class="team-title-ar">المؤسس المشارك والرئيس التنفيذي</span>
+            <span class="team-title-en">Co-Founder & CEO</span>
             <div class="team-contact">
               <a href="mailto:sherif@ironichealth.com">sherif@ironichealth.com</a>
               <a href="tel:+447308892741">+44 7308 892741</a>
@@ -2315,30 +2318,31 @@
           </div>
 
           <div class="team-card">
-            <div class="team-avatar" style="background:var(--blue-dark);">IM</div>
+            <div class="team-avatar" style="background:var(--blue-dark);">إ م</div>
             <span class="team-name-ar">د. إسلام الميداني</span>
-            <span class="team-title-ar">المؤسس والمدير الطبي التنفيذي</span>
-            <span class="team-title-en">Founder & Chief Medical Officer</span>
+            <span class="team-title-ar">المؤسس المشارك والمدير الطبي</span>
+            <span class="team-title-en">Co-Founder & Medical Director</span>
             <div class="team-contact">
               <a href="mailto:islam@ironichealth.com">islam@ironichealth.com</a>
               <a href="tel:+447424907088">+44 7424 907088</a>
             </div>
           </div>
         </div>
+        <p style="text-align:center;margin-top:16px;font-weight:600;">إفصاح: الشريكان المؤسسان شقيقان.</p>
 
         <!-- Company Info -->
         <div class="company-info">
           <h3>iRonic Health</h3>
-          <p>ذراع متخصصة لـ <strong>Ironic Group</strong> — شركة مسجلة في مصر. منصة تنسيق التأمين الصحي بالذكاء الاصطناعي. SaaS متوافق مع الهيئة المالية — لسنا شركة تأمين أو TPA.</p>
+          <p>شركة قيد التأسيس في مصر. منصة لتنسيق التأمين الصحي بالذكاء الاصطناعي — برمجيات SaaS لدعم القرار، ولسنا شركة تأمين أو شركة إدارة طرف ثالث (TPA).</p>
           <p class="company-address">
-            📍 أبراج النايل سيتي، البرج الشمالي، كورنيش النيل، القاهرة، مصر
+            📍 القاهرة، مصر
           </p>
           <div class="compliance-badges">
             <!-- ✅ FIX #11: FRA status corrected to "in progress" -->
-            <span class="badge badge-gold">FRA · في طور الحصول على الترخيص</span>
+            <span class="badge badge-gold">برمجيات لدعم القرار (SaaS)</span>
             <span class="badge badge-blue">PDPL 151/2020</span>
             <span class="badge badge-blue">AI Decision Support</span>
-            <span class="badge badge-blue">نماذج مصرية أصيلة</span>
+            <span class="badge badge-blue">مراجعة طبية بشرية</span>
           </div>
         </div>
 
@@ -2347,20 +2351,20 @@
           <h3>جولة التمويل الأولى مفتوحة</h3>
           <div class="funding-stats">
             <div>
-              <span class="funding-stat-value">1M$</span>
+              <span class="funding-stat-value">1.5M$</span>
               <span class="funding-stat-label">SAFE / سند قابل للتحويل</span>
             </div>
             <div>
               <span class="funding-stat-value">20–30×</span>
-              <span class="funding-stat-label">LTV/CAC</span>
+              <span class="funding-stat-label">LTV/CAC (مستهدف)</span>
             </div>
             <div>
               <span class="funding-stat-value">4–6 أشهر</span>
-              <span class="funding-stat-label">استرداد CAC</span>
+              <span class="funding-stat-label">استرداد CAC (مستهدف)</span>
             </div>
             <div>
               <span class="funding-stat-value">+70%</span>
-              <span class="funding-stat-label">هامش الربح</span>
+              <span class="funding-stat-label">هامش الربح (مستهدف)</span>
             </div>
           </div>
           <div style="margin-top:24px;">
@@ -2401,22 +2405,22 @@
             <div class="cta-benefit">
               <span class="cta-benefit-icon">⚡</span>
               <div>
-                <h3>تشغيل في أقل من 4 أسابيع</h3>
-                <p>تكامل API مع GlobeMed وBupa مصر وAXA مُعد مسبقًا. تجريبك يمكن أن يبدأ في غضون شهر من التوقيع.</p>
+                <h3>هدف: تشغيل خلال نحو 4 أسابيع</h3>
+                <p>نبني الربط لكل شريك أثناء الإعداد. الجدول الزمني يعتمد على إتاحة البيانات.</p>
               </div>
             </div>
             <div class="cta-benefit">
               <span class="cta-benefit-icon">📊</span>
               <div>
-                <h3>ROI قابل للقياس من اليوم الأول</h3>
-                <p>كل قرار مطالبة له مسار تدقيق AI كامل. شاهد توفيرات الاحتيال وتحسين نسبة الخسائر في الوقت الفعلي.</p>
+                <h3>عائد قابل للقياس</h3>
+                <p>كل قرار مطالبة مُصمَّم ليحمل مسار تدقيق كامل. شاهد توفيرات الاحتيال وتحسين نسبة الخسائر في الوقت الفعلي.</p>
               </div>
             </div>
             <div class="cta-benefit">
               <span class="cta-benefit-icon">🛡️</span>
               <div>
-                <h3>مُصمَّم للامتثال التنظيمي</h3>
-                <p>إشراف المدير الطبي المُرخَّص على كل قرار AI. توثيق تنظيمي كامل — فريق الامتثال لديك يظل في السيطرة.</p>
+                <h3>مُصمَّم للمراجعة التنظيمية</h3>
+                <p>مراجعة طبيب مرخَّص للقرارات التي يرصدها الذكاء الاصطناعي. المنصة تدعم القرار فقط — القرار النهائي لفريقك.</p>
               </div>
             </div>
 
@@ -2438,7 +2442,7 @@
               </div>
               <div class="contact-item">
                 <span>📍</span>
-                <span>أبراج النايل سيتي، البرج الشمالي، القاهرة، مصر</span>
+                <span>القاهرة، مصر</span>
               </div>
             </div>
           </div>
@@ -2572,11 +2576,11 @@
 
       <div class="footer-bottom">
         <span class="footer-copy">
-          © 2026 Ironic Group. جميع الحقوق محفوظة.
+          © 2026 شريف الميداني ود. إسلام الميداني · iRonic Health (شركة قيد التأسيس) · جميع الحقوق محفوظة
         </span>
         <!-- ✅ FIX #6: Public URL shown to visitors is ironichealth.com -->
         <span class="footer-domain">ironichealth.com</span>
-        <a href="../en/index.html" style="font-family:var(--font-en);font-size:0.78rem;color:rgba(255,255,255,0.4);text-decoration:none;" lang="en">English</a>
+        <a href="../index.html" style="font-family:var(--font-en);font-size:0.78rem;color:rgba(255,255,255,0.4);text-decoration:none;" lang="en">English</a>
       </div>
     </div>
   </footer>
@@ -2620,11 +2624,18 @@
         return;
       }
 
+      const msgEl = document.querySelector('#contact-form textarea');
+      const msg = msgEl ? msgEl.value.trim() : '';
+      const subject = encodeURIComponent('طلب عرض تجريبي — ' + name + ' · ' + company + ' · ' + role);
+      const body = encodeURIComponent('الاسم: ' + name + '\nالشركة: ' + company + '\nالبريد: ' + email + '\nالدور: ' + role + (msg ? '\n\nالرسالة:\n' + msg : ''));
+      window.location.href = 'mailto:info@ironichealth.com?subject=' + subject + '&body=' + body;
+
       // Show success
       document.getElementById('contact-form').style.display = 'none';
       document.getElementById('form-success').classList.add('active');
     }
   </script>
 
+<script src="../js/disclosure.js"></script>
 </body>
 </html>

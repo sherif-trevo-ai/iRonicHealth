@@ -34,27 +34,27 @@
   const ANALYSES = {
 
     'CLM-26-48471': {
-      provider: 'Dar Al Fouad Hospital', type: 'Inpatient', amount: 'EGP 18,400',
+      provider: 'Sample Hospital C', type: 'Inpatient', amount: 'EGP 18,400',
       fraud_score: 6, risk_level: 'low', decision: 'auto_approve', confidence: 97,
       archetypes_detected: [],
       risk_factors: [],
       clean_indicators: [
         'Procedure code matches ICD-10 diagnosis for acute MI — clinical alignment confirmed.',
-        'Provider quality score 96/100 — Dar Al Fouad has zero fraud history in the last 18 months.',
+        'Provider quality score 96/100 — Sample Hospital C has zero fraud history in the last 18 months.',
       ],
       recommendation: 'Auto-approve — all clinical, billing, and eligibility checks passed with high confidence.',
       summary: 'Clean inpatient admission at a high-rated network provider. Procedure cost is within the expected range for a cardiac case. No fraud indicators detected.',
     },
 
     'CLM-26-48469': {
-      provider: 'Cleopatra Hospital', type: 'Pharmacy', amount: 'EGP 3,200',
+      provider: 'Sample Hospital A', type: 'Pharmacy', amount: 'EGP 3,200',
       fraud_score: 68, risk_level: 'high', decision: 'cmo_review', confidence: 91,
       archetypes_detected: ['Drug Splitting', 'Prescription Volume Anomaly'],
       risk_factors: [
         'Same member filled 3 prescriptions at different pharmacies within 8 days — drug splitting pattern detected.',
         'Antibiotic quantity (×60 tabs) exceeds standard 7-day course by 3× — upcoding suspected.',
         'Prescribing physician has 4 anomalous high-volume pharmacy claims this month.',
-        'Cleopatra Hospital Pharmacy: quality score 74/100 — currently under elevated monitoring.',
+        'Sample Hospital A Pharmacy: quality score 74/100 — currently under elevated monitoring.',
       ],
       clean_indicators: [
         'Member eligibility confirmed — policy active with no lapses.',
@@ -64,7 +64,7 @@
     },
 
     'CLM-26-48467': {
-      provider: 'Cairo Scan Radiology', type: 'Outpatient', amount: 'EGP 5,800',
+      provider: 'Sample Radiology Centre', type: 'Outpatient', amount: 'EGP 5,800',
       fraud_score: 12, risk_level: 'low', decision: 'auto_approve', confidence: 95,
       archetypes_detected: [],
       risk_factors: [],
@@ -77,14 +77,14 @@
     },
 
     'CLM-26-48465': {
-      provider: 'Al Salam Hospital', type: 'Lab Test', amount: 'EGP 1,450',
+      provider: 'Sample Hospital B', type: 'Lab Test', amount: 'EGP 1,450',
       fraud_score: 91, risk_level: 'high', decision: 'auto_reject', confidence: 96,
       archetypes_detected: ['Duplicate Submission', 'Phantom Billing'],
       risk_factors: [
         'Identical claim submitted and paid for same member 14 days ago — CLM-26-47891.',
         'Lab test codes billed without a corresponding admission or outpatient visit record.',
-        'Al Salam Hospital: 3rd duplicate submission this quarter — pattern alert triggered.',
-        'Member policy network tier does not cover Al Salam for laboratory services.',
+        'Sample Hospital B: 3rd duplicate submission this quarter — pattern alert triggered.',
+        'Member policy network tier does not cover this provider for laboratory services.',
       ],
       clean_indicators: [],
       recommendation: 'Auto-reject and flag for investigation — confirmed duplicate of paid claim CLM-26-47891. Initiate provider audit.',
@@ -478,7 +478,7 @@
       foot.innerHTML = `
         <div class="irh-btns">
           <button class="irh-btn sec" id="irhBtnClose">Close</button>
-          <button class="irh-btn pri" id="irhBtnAudit">View FRA Audit Trail →</button>
+          <button class="irh-btn pri" id="irhBtnAudit">View Audit Trail →</button>
         </div>`;
       document.getElementById('irhBtnClose').onclick = closePanel;
       document.getElementById('irhBtnAudit').onclick = () => showAudit(a.decision);
@@ -491,7 +491,7 @@
     const ok = finalDec === 'approved' || finalDec === 'auto_approve';
     const c  = ok ? GREEN : finalDec === 'auto_reject' || finalDec === 'rejected' ? RED : AMBER;
     const icon = ok ? '✓' : '✕';
-    const auditRef = 'FRA-' + Math.random().toString(36).substr(2,9).toUpperCase();
+    const auditRef = 'AUD-' + Math.random().toString(36).substr(2,9).toUpperCase();
     const ts = new Date().toLocaleString('en-GB', { timeZone: 'Africa/Cairo' });
 
     document.getElementById('irhBody').innerHTML = `
@@ -502,15 +502,15 @@
         <div style="font-size:20px;font-weight:800;color:${c}">
           ${ok ? 'Claim Approved' : finalDec==='cmo_review'?'Pending CMO':'Claim Rejected'}
         </div>
-        <div style="font-size:11px;color:#94a3b8;margin-top:4px">FRA audit trail generated automatically</div>
+        <div style="font-size:11px;color:#94a3b8;margin-top:4px">Audit trail generated automatically (demo)</div>
       </div>
 
       <div class="irh-card info">
         <div style="font-size:10px;font-weight:700;color:${BLUE};letter-spacing:.12em;
-          text-transform:uppercase;margin-bottom:14px">FRA AUDIT TRAIL — ${auditRef}</div>
+          text-transform:uppercase;margin-bottom:14px">AUDIT TRAIL (DEMO) — ${auditRef}</div>
         ${[
           ['Claim ID',           cur.id],
-          ['FRA Reference',      auditRef],
+          ['Audit Reference',      auditRef],
           ['Provider',           cur.provider||'—'],
           ['Amount',             cur.amount||'—'],
           ['AI Fraud Score',     `${a.fraud_score} / 100`],
@@ -527,13 +527,13 @@
       <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;
         padding:12px;text-align:center;font-size:11px;color:#94a3b8;line-height:1.7">
         Decision logged in immutable audit trail<br>
-        FRA Decision 229/2025 · PDPL 151/2020
+        Demo only · not a regulatory document
       </div>`;
 
     document.getElementById('irhFoot').innerHTML = `
       <div class="irh-btns">
         <button class="irh-btn sec" id="irhBtnDone">Close</button>
-        <button class="irh-btn pri" onclick="window.print()">Export FRA Report</button>
+        <button class="irh-btn pri" onclick="window.print()">Export Demo Report</button>
       </div>`;
     document.getElementById('irhBtnDone').onclick = closePanel;
   }
@@ -578,7 +578,7 @@
       <span style="font-size:15px">⚡</span>
       <div style="flex:1">
         <div style="font-size:12px;font-weight:700;color:#CAB164;line-height:1.2">AI Experience</div>
-        <div style="font-size:10px;color:rgba(202,177,100,.55);margin-top:1px">Fraud Detection Live</div>
+        <div style="font-size:10px;color:rgba(202,177,100,.55);margin-top:1px">Fraud Detection Demo</div>
       </div>
       <span style="font-size:10px;color:rgba(202,177,100,.4)">→</span>`;
 

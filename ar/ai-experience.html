@@ -247,6 +247,8 @@ input[type="number"].inp { direction:ltr; text-align:right; }
 .audit-v   { color:var(--navy); font-weight:700; font-family:monospace; font-size:11.5px; direction:ltr; }
 .compliance-note { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center; font-size:11.5px; color:var(--light); line-height:1.85; }
 </style>
+<link rel="alternate" hreflang="en" href="https://ironichealth.com/ai-experience.html">
+<link rel="alternate" hreflang="ar" href="https://ironichealth.com/ar/ai-experience.html">
 </head>
 <body>
 
@@ -260,7 +262,7 @@ input[type="number"].inp { direction:ltr; text-align:right; }
     <span class="topbar-tag">تجربة الذكاء الاصطناعي</span>
   </div>
   <div class="topbar-left">
-    <div class="demo-pill"><div class="demo-dot"></div><span class="demo-txt">تجربة GlobeMed</span></div>
+    <div class="demo-pill"><div class="demo-dot"></div><span class="demo-txt">عرض تجريبي · بيانات افتراضية</span></div>
     <a href="dashboard.html" class="back-link">لوحة التحكم →</a>
   </div>
 </div>
@@ -277,7 +279,7 @@ input[type="number"].inp { direction:ltr; text-align:right; }
       </h1>
       <p class="landing-sub">
         أدخل بيانات مطالبة تأمين صحي وشاهد الذكاء الاصطناعي يحللها في ثوانٍ —
-        يكشف أنماط الاحتيال، ويوجّه القرار، ويُولِّد سجل مراجعة FRA غير قابل للتعديل تلقائيًا.
+        يكشف أنماط الاحتيال، ويوجّه القرار، ويُولِّد سجل مراجعة تلقائيًا. عرض تجريبي ببيانات افتراضية — ليس نظامًا تشغيليًا.
       </p>
       <button class="start-btn" onclick="show('form')">← ابدأ التجربة</button>
       <div class="divider"></div>
@@ -319,7 +321,7 @@ input[type="number"].inp { direction:ltr; text-align:right; }
       </div>
       <div class="grid2" style="margin-bottom:14px">
         <div><span class="field-label">مزود الرعاية</span><input class="inp" id="fProvider" placeholder="المستشفى / الصيدلية / المختبر..."></div>
-        <div><span class="field-label">رقم المريض / الوثيقة</span><input class="inp" id="fPatientId" placeholder="مثال: GBM-2024-XXXXX"></div>
+        <div><span class="field-label">رقم المريض / الوثيقة</span><input class="inp" id="fPatientId" placeholder="مثال: POL-2026-XXXXX"></div>
       </div>
       <div style="margin-bottom:14px"><span class="field-label">رموز التشخيص (ICD)</span><input class="inp" id="fDiagnosis" placeholder="مثال: J06.9, I10"></div>
       <div style="margin-bottom:14px"><span class="field-label">الخدمات / الأدوية / الإجراءات</span><textarea class="inp" id="fServices" placeholder="صف الخدمات بالتفصيل..."></textarea></div>
@@ -387,23 +389,23 @@ input[type="number"].inp { direction:ltr; text-align:right; }
 const EXAMPLES = [
   { label:'صيدلانية — مشبوهة', tag:'احتيال محتمل', tagColor:'#dc2626',
     type:'pharmacy', provider:'صيدلية النيل الذهبي - مدينة نصر',
-    patientId:'GBM-2024-88432', diagnosis:'J06.9, J11.1',
+    patientId:'POL-2024-88432', diagnosis:'J06.9, J11.1',
     services:'أموكسيسيلين 500mg ×60، إيبوبروفين 400mg ×120، أزيثروميسين 500mg ×30، أوميبرازول 20mg ×90',
     amount:'4850', date:'2026-06-01', notes:'مطالبة ثانية لنفس المريض خلال 9 أيام' },
   { label:'استشفاء — نظيف', tag:'عادي', tagColor:'#1d9e75',
     type:'hospital', provider:'مستشفى سميح - المعادي',
-    patientId:'GBM-2024-54210', diagnosis:'I10',
+    patientId:'POL-2024-54210', diagnosis:'I10',
     services:'استشارة طب باطني، قياس ضغط الدم، تحليل CBC، وصف أملوديبين 5mg',
     amount:'850', date:'2026-06-03', notes:'' },
   { label:'أشعة — تكرار مريب', tag:'للمراجعة', tagColor:'#d97706',
     type:'imaging', provider:'مركز رؤية للأشعة - مصر الجديدة',
-    patientId:'GBM-2024-71893', diagnosis:'M54.5',
+    patientId:'POL-2024-71893', diagnosis:'M54.5',
     services:'MRI للعمود الفقري مع حقن، CT للعمود الفقري، أشعة سينية 4 لقطات — نفس الجلسة',
     amount:'7800', date:'2026-06-02', notes:'تصوير سابق لنفس التشخيص منذ 21 يومًا' },
 ];
 
 const ANALYSES = {
-  'GBM-2024-88432': {
+  'POL-2024-88432': {
     fraud_score:68, risk_level:'high', decision:'cmo_review', confidence:91,
     archetypes:['تقسيم الوصفات', 'شذوذ في حجم الوصفة'],
     risks:['نفس المريض صرف 3 وصفات في صيدليات مختلفة خلال 8 أيام — نمط تقسيم مشبوه.',
@@ -414,7 +416,7 @@ const ANALYSES = {
     rec:'تعليق المطالبة لمراجعة المدير الطبي — نمط تقسيم وصفات مكتشف عبر 3 صيدليات. مطلوب أصول الوصفات قبل الاعتماد.',
     summary:'إشارة احتيال عالية الثقة. تقسيم الوصفات عبر نقاط صرف متعددة مع شذوذ في الحجم يستوجب مراجعة سريرية قبل الدفع.',
   },
-  'GBM-2024-54210': {
+  'POL-2024-54210': {
     fraud_score:6, risk_level:'low', decision:'auto_approve', confidence:97,
     archetypes:[], risks:[],
     clean:['رمز الإجراء متوافق مع تشخيص ICD-10 — تطابق سريري مؤكَّد.',
@@ -422,7 +424,7 @@ const ANALYSES = {
     rec:'اعتماد تلقائي — اجتازت المطالبة جميع فحوصات السريرية والفوترة والأهلية بثقة عالية.',
     summary:'استشارة خارجية نظيفة في مرفق طبي عالي التقييم. جميع المؤشرات ضمن النطاق المتوقع. لا أنماط احتيال مكتشفة.',
   },
-  'GBM-2024-71893': {
+  'POL-2024-71893': {
     fraud_score:61, risk_level:'medium', decision:'cmo_review', confidence:88,
     archetypes:['تصوير مكرر', 'انحراف عن المعيار التكلفي'],
     risks:['ثلاثة أوضاع تصوير لنفس المنطقة التشريحية في جلسة واحدة — نمط تكرار مشبوه.',
@@ -614,9 +616,9 @@ function showResults(a) {
   if (a.decision==='cmo_review')
     html += `<button class="btn" style="background:var(--amber);color:#fff" onclick="showCMO()">← لوحة المدير الطبي</button>`;
   else if (a.decision==='auto_approve')
-    html += `<button class="btn app" id="auditBtn">اعتماد → سجل FRA</button>`;
+    html += `<button class="btn app" id="auditBtn">اعتماد → سجل المراجعة</button>`;
   else
-    html += `<button class="btn rej" id="auditBtn">رفض → سجل FRA</button>`;
+    html += `<button class="btn rej" id="auditBtn">رفض → سجل المراجعة</button>`;
   html += `</div>`;
 
   document.getElementById('rContent').innerHTML = html;
@@ -651,7 +653,7 @@ function showAudit(dec) {
   const a = state.analysis;
   const ok  = dec==='approved' || dec==='auto_approve';
   const c   = ok ? '#1d9e75' : '#dc2626';
-  const auditRef = 'FRA-' + Math.random().toString(36).substr(2,9).toUpperCase();
+  const auditRef = 'AUD-' + Math.random().toString(36).substr(2,9).toUpperCase();
   const ts = new Date().toLocaleString('ar-EG', { timeZone:'Africa/Cairo' });
   const note = document.getElementById('cmoNote')?.value || '';
 
@@ -659,12 +661,12 @@ function showAudit(dec) {
     <div style="text-align:center;padding:32px 0 20px">
       <div class="audit-icon" style="background:${c}10;border:2px solid ${c};color:${c}">${ok?'✓':'✕'}</div>
       <div style="font-size:24px;font-weight:700;color:${c};margin-bottom:6px">${ok?'تمت الموافقة على المطالبة':'تم رفض المطالبة'}</div>
-      <div style="font-size:12.5px;color:var(--muted)">سجل مراجعة مُولَّد تلقائيًا بواسطة الهيئة المالية للرقابة</div>
+      <div style="font-size:12.5px;color:var(--muted)">سجل مراجعة مُولَّد تلقائيًا (عرض تجريبي)</div>
     </div>
     <div class="audit-table">
-      <div class="audit-ref">FRA AUDIT TRAIL — ${auditRef}</div>
+      <div class="audit-ref">AUDIT TRAIL (DEMO) — ${auditRef}</div>
       ${[['رقم المطالبة', state.claimId],
-         ['مرجع سجل FRA', auditRef],
+         ['مرجع سجل المراجعة', auditRef],
          ['المزود', document.getElementById('fProvider').value],
          ['المبلغ', Number(document.getElementById('fAmount').value).toLocaleString('ar-EG')+' ج.م.'],
          ['درجة مخاطرة AI', `${a.fraud_score} / 100`],
@@ -677,11 +679,11 @@ function showAudit(dec) {
     </div>
     <div class="compliance-note">
       تم تسجيل هذا القرار في سجل مراجعة غير قابل للتعديل<br>
-      القرار ٢٢٩/٢٠٢٥ (FRA) · قانون PDPL ١٥١/٢٠٢٠ · تشفير AES-256
+      عرض تجريبي فقط · ليس مستندًا تنظيميًا · تشفير AES-256
     </div>
     <div class="actions" style="margin-top:20px">
       <button class="btn sec" onclick="reset()">مطالبة جديدة</button>
-      <button class="btn pri" onclick="window.print()">تصدير تقرير FRA</button>
+      <button class="btn pri" onclick="window.print()">تصدير تقرير تجريبي</button>
       <a href="dashboard.html" class="btn nav">← لوحة التحكم</a>
     </div>`;
   show('audit');
@@ -697,5 +699,6 @@ function reset() {
 buildExamples(); show('landing');
 </script>
 <script src="../ai-api.js"></script>
+<script src="../js/disclosure.js"></script>
 </body>
 </html>
