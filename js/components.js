@@ -182,7 +182,7 @@ document.addEventListener('click', function () {
         <div class="footer-col-title">Contact</div>
         <a href="mailto:info@ironichealth.com">info@ironichealth.com</a>
         <a href="mailto:investor@ironichealth.com">investor@ironichealth.com</a>
-        <a class="phone-dir" href="tel:+447308892741">+44 7308 892741</a>
+        <a class="phone-dir" href="tel:+201555556697">+20 1555556697</a>
         <span class="footer-address-txt">Cairo, Egypt</span>
       </div>
     </div>
@@ -231,7 +231,7 @@ document.addEventListener('click', function () {
         <div class="footer-col-title">تواصل</div>
         <a href="mailto:info@ironichealth.com">info@ironichealth.com</a>
         <a href="mailto:investor@ironichealth.com">investor@ironichealth.com</a>
-        <a href="tel:+447308892741" dir="ltr" class="phone-dir">+44 7308 892741</a>
+        <a href="tel:+201555556697" dir="ltr" class="phone-dir">+20 1555556697</a>
         <span class="footer-address-txt" style="font-family:'Cairo',sans-serif">القاهرة، مصر</span>
       </div>
     </div>
