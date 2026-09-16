@@ -39,6 +39,11 @@ document.addEventListener('click', function () {
 
   /* ─── Language Detection ─────────────────────────────────────────────── */
   const isArabic = window.location.pathname.includes('/ar/');
+  /* Same page in the other language (EN at root, AR under /ar/) */
+  var curFile = (window.location.pathname.split('/').pop() || 'index.html');
+  if (curFile.indexOf('.html') === -1) curFile = 'index.html';
+  const toAR = 'ar/' + curFile;
+  const toEN = '../' + curFile;
 
   /* ══════════════════════════════════════════════════════════════════════
      ENGLISH NAVBAR
@@ -58,6 +63,8 @@ document.addEventListener('click', function () {
     <a href="dashboard.html">Dashboard</a>
     <a href="market.html">Market</a>
     <a href="investors.html">Investors</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="team.html">Team</a>
   </nav>
   <div class="nav-right">
     <div class="lang-switcher" id="lang-switcher">
@@ -66,9 +73,7 @@ document.addEventListener('click', function () {
       </button>
       <div class="lang-dropdown" role="listbox">
         <span class="lang-opt lang-active">🇬🇧 English</span>
-        <a href="ar/index.html" class="lang-opt">🇪🇬 العربية</a>
-        <span class="lang-opt lang-soon">🇩🇪 Deutsch <span class="lang-badge">Soon</span></span>
-        <span class="lang-opt lang-soon">🇫🇷 Français <span class="lang-badge">Soon</span></span>
+        <a href="${toAR}" class="lang-opt" lang="ar" hreflang="ar">🇪🇬 العربية</a>
       </div>
     </div>
     <a href="contact.html" class="btn-demo">Request Demo →</a>
@@ -84,8 +89,11 @@ document.addEventListener('click', function () {
   <a href="dashboard.html">Dashboard</a>
   <a href="market.html">Market</a>
   <a href="investors.html">Investors</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html">Contact</a>
   <a href="contact.html" class="mobile-demo-btn">Request Demo →</a>
-  <a href="ar/index.html" class="mobile-lang-btn" style="font-size:.8rem;opacity:.75;letter-spacing:.01em">🇪🇬 العربية</a>
+  <a href="${toAR}" class="mobile-lang-btn" lang="ar" hreflang="ar" style="font-size:.8rem;opacity:.75;letter-spacing:.01em">🇪🇬 العربية</a>
 </div>`;
 
   /* ══════════════════════════════════════════════════════════════════════
@@ -93,7 +101,7 @@ document.addEventListener('click', function () {
   ══════════════════════════════════════════════════════════════════════ */
   const navAR = `
 <header class="nav" id="nav" role="banner">
-          <a href="../index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
+          <a href="index.html" class="nav-logo" aria-label="iRonic Health الرئيسية">
     <img src="../assets/logos/H_Badge_Metro_Blue_T.svg" alt="" class="nav-logo-badge-img" style="transform:scaleX(-1)">
     <div class="nav-logo-text" style="text-align:right">
       <span class="logo-wordmark" style="font-family:'Kufam',sans-serif;font-weight:400">أيرونيك <strong style="font-weight:700">هيلث</strong></span>
@@ -106,6 +114,8 @@ document.addEventListener('click', function () {
     <a href="dashboard.html">لوحة التحكم</a>
     <a href="market.html">السوق</a>
     <a href="investors.html">المستثمرون</a>
+    <a href="pricing.html">الأسعار</a>
+    <a href="team.html">الفريق</a>
   </nav>
   <div class="nav-right">
     <div class="lang-switcher" id="lang-switcher" style="direction:ltr">
@@ -113,10 +123,8 @@ document.addEventListener('click', function () {
         🌐 AR <span class="lang-caret">▾</span>
       </button>
       <div class="lang-dropdown" role="listbox" style="right:0;left:auto">
-        <a href="../index.html" class="lang-opt" style="direction:ltr">🇬🇧 English</a>
+        <a href="${toEN}" class="lang-opt" style="direction:ltr" lang="en" hreflang="en">🇬🇧 English</a>
         <span class="lang-opt lang-active" style="direction:rtl">🇪🇬 العربية</span>
-        <span class="lang-opt lang-soon" style="direction:ltr">🇩🇪 Deutsch <span class="lang-badge">قريبًا</span></span>
-        <span class="lang-opt lang-soon" style="direction:ltr">🇫🇷 Français <span class="lang-badge">قريبًا</span></span>
       </div>
     </div>
     <a href="contact.html" class="btn-demo">طلب عرض تجريبي ←</a>
@@ -132,7 +140,11 @@ document.addEventListener('click', function () {
   <a href="dashboard.html">لوحة التحكم</a>
   <a href="market.html">السوق</a>
   <a href="investors.html">المستثمرون</a>
+  <a href="pricing.html">الأسعار</a>
+  <a href="team.html">الفريق</a>
+  <a href="contact.html">تواصل معنا</a>
   <a href="contact.html" class="mobile-demo-btn">طلب عرض تجريبي ←</a>
+  <a href="${toEN}" class="mobile-lang-btn" lang="en" hreflang="en" style="font-size:.8rem;opacity:.75">🇬🇧 English</a>
 </div>`;
 
   /* ══════════════════════════════════════════════════════════════════════
@@ -145,21 +157,18 @@ document.addEventListener('click', function () {
       <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
         <img src="assets/logos/iRonic_Health_EN_Double_Gold_T.svg" alt="iRonic Health" class="footer-logo-img" style="height:52px;width:auto" onerror="this.style.display='none'">
       </a>
-      <p class="footer-brand-desc">Egypt's first AI-powered health insurance orchestration platform. Connecting 8 parties. Eliminating fraud. Accelerating claims.</p>
-      <div class="footer-social">
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
-      </div>
+      <p class="footer-brand-desc">AI-powered health insurance orchestration platform built for Egypt. Company in formation · decision-support SaaS — not an insurer or TPA. Figures on this site are illustrative targets, not actual results.</p>
     </div>
     <div class="footer-links-grid">
       <div class="footer-col">
         <div class="footer-col-title">Company</div>
         <a href="team.html">Team</a>
-        <a href="index.html#problem">Problem</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
         <a href="ecosystem.html">Ecosystem</a>
         <a href="market.html">Market</a>
         <a href="investors.html">Investors</a>
-        <a href="ar/index.html">🇪🇬 العربية</a>
+        <a href="${toAR}" lang="ar">🇪🇬 العربية</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Platform</div>
@@ -174,16 +183,15 @@ document.addEventListener('click', function () {
         <a href="mailto:info@ironichealth.com">info@ironichealth.com</a>
         <a href="mailto:investor@ironichealth.com">investor@ironichealth.com</a>
         <a class="phone-dir" href="tel:+447308892741">+44 7308 892741</a>
-        <span class="footer-address-txt">Nile City Towers, North Tower<br>Corniche El Nile, Cairo, Egypt</span>
+        <span class="footer-address-txt">Cairo, Egypt</span>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · All rights reserved</div>
+    <div class="footer-copy">© 2026 Sherif Almeidany &amp; Dr. Islam Almeidany · iRonic Health (company in formation) · All rights reserved</div>
     <div class="footer-legal">
-      <a href="#">Privacy (PDPL 151/2020)</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">FRA Compliance</a>
+      <a href="mailto:info@ironichealth.com?subject=Privacy%20request">Privacy requests (PDPL 151/2020)</a>
+      <a href="team.html#entity">Legal &amp; regulatory status</a>
     </div>
   </div>
 </footer>`;
@@ -198,21 +206,18 @@ document.addEventListener('click', function () {
       <a href="index.html" class="footer-logo-link" aria-label="iRonic Health">
         <img src="../assets/iRonic_Health_H_White_version.svg" alt="iRonic Health" class="footer-logo-img" onerror="this.style.display='none'" style="max-height:44px;width:auto">
       </a>
-      <p class="footer-brand-desc" style="font-family:'Cairo',sans-serif">أول منصة لربط المنظومة الصحية بالذكاء الاصطناعي في مصر. ترتبط بـ 8 أطراف. تُلغي الاحتيال. تُسرّع المطالبات.</p>
-      <div class="footer-social">
-        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="fsl">in</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter/X" class="fsl">𝕏</a>
-      </div>
+      <p class="footer-brand-desc" style="font-family:'Cairo',sans-serif">منصة لربط المنظومة الصحية بالذكاء الاصطناعي، مصمَّمة للسوق المصري. شركة قيد التأسيس · برمجيات لدعم القرار — لسنا شركة تأمين أو TPA. الأرقام المعروضة أهداف نموذجية وليست نتائج فعلية.</p>
     </div>
     <div class="footer-links-grid" style="font-family:'Cairo',sans-serif">
       <div class="footer-col">
         <div class="footer-col-title">الشركة</div>
         <a href="team.html">الفريق</a>
-        <a href="index.html#problem">المشكلة</a>
+        <a href="pricing.html">الأسعار</a>
+        <a href="contact.html">تواصل معنا</a>
         <a href="ecosystem.html">النظام البيئي</a>
         <a href="market.html">السوق</a>
         <a href="investors.html">المستثمرون</a>
-        <a href="../index.html">🇬🇧 English</a>
+        <a href="${toEN}" lang="en">🇬🇧 English</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">المنصة</div>
@@ -227,16 +232,15 @@ document.addEventListener('click', function () {
         <a href="mailto:info@ironichealth.com">info@ironichealth.com</a>
         <a href="mailto:investor@ironichealth.com">investor@ironichealth.com</a>
         <a href="tel:+447308892741" dir="ltr" class="phone-dir">+44 7308 892741</a>
-        <span class="footer-address-txt" style="font-family:'Cairo',sans-serif">أبراج النايل سيتي، البرج الشمالي<br>كورنيش النيل، القاهرة، مصر</span>
+        <span class="footer-address-txt" style="font-family:'Cairo',sans-serif">القاهرة، مصر</span>
       </div>
     </div>
   </div>
   <div class="footer-bottom" style="font-family:'Cairo',sans-serif">
-    <div class="footer-copy">© 2026 Ironic Group · iRonic Health · جميع الحقوق محفوظة</div>
+    <div class="footer-copy">© 2026 شريف الميداني ود. إسلام الميداني · iRonic Health (شركة قيد التأسيس) · جميع الحقوق محفوظة</div>
     <div class="footer-legal">
-      <a href="#">الخصوصية (PDPL 151/2020)</a>
-      <a href="#">شروط الخدمة</a>
-      <a href="#">امتثال الهيئة المالية</a>
+      <a href="mailto:info@ironichealth.com?subject=Privacy%20request">طلبات الخصوصية (PDPL 151/2020)</a>
+      <a href="contact.html">تواصل معنا</a>
     </div>
   </div>
 </footer>`;

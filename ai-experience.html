@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -277,6 +277,8 @@ textarea.inp { min-height:76px; resize:vertical; }
 .audit-v   { color:var(--navy); font-weight:700; font-family:monospace; font-size:11.5px; }
 .compliance-note { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center; font-size:11.5px; color:var(--light); line-height:1.8; }
 </style>
+<link rel="alternate" hreflang="en" href="https://ironichealth.com/ai-experience.html">
+<link rel="alternate" hreflang="ar" href="https://ironichealth.com/ar/ai-experience.html">
 </head>
 <body>
 
@@ -290,7 +292,7 @@ textarea.inp { min-height:76px; resize:vertical; }
     <span class="topbar-tag">AI Experience</span>
   </div>
   <div class="topbar-right">
-    <div class="demo-pill"><div class="demo-dot"></div><span class="demo-txt">GlobeMed Pilot</span></div>
+    <div class="demo-pill"><div class="demo-dot"></div><span class="demo-txt">Demo — sample data</span></div>
     <a href="dashboard.html" class="back-link">← Dashboard</a>
   </div>
 </div>
@@ -307,8 +309,8 @@ textarea.inp { min-height:76px; resize:vertical; }
         AI Fraud Detection<br><span>Experience</span>
       </h1>
       <p class="landing-sub">
-        Submit a real health insurance claim and watch the AI analyze it in seconds —
-        detecting fraud patterns, routing the decision, and generating a tamper-proof FRA audit trail.
+        Submit a sample health insurance claim and watch the AI analyze it in seconds —
+        detecting fraud patterns, routing the decision, and generating an audit trail. Demo with sample data — not a production system.
       </p>
       <button class="start-btn" onclick="show('form')">Start Experience →</button>
 
@@ -351,7 +353,7 @@ textarea.inp { min-height:76px; resize:vertical; }
       </div>
       <div class="grid2" style="margin-bottom:14px">
         <div><span class="field-label">Provider Name</span><input class="inp" id="fProvider" placeholder="Hospital / Pharmacy / Lab..."></div>
-        <div><span class="field-label">Patient ID / Policy No.</span><input class="inp" id="fPatientId" placeholder="e.g. GBM-2024-XXXXX"></div>
+        <div><span class="field-label">Patient ID / Policy No.</span><input class="inp" id="fPatientId" placeholder="e.g. POL-2026-XXXXX"></div>
       </div>
       <div style="margin-bottom:14px"><span class="field-label">Diagnosis Codes (ICD)</span><input class="inp" id="fDiagnosis" placeholder="e.g. J06.9, I10"></div>
       <div style="margin-bottom:14px"><span class="field-label">Services / Medications / Procedures</span><textarea class="inp" id="fServices" placeholder="Describe the services in detail..."></textarea></div>
@@ -418,23 +420,23 @@ textarea.inp { min-height:76px; resize:vertical; }
 <script>
 const EXAMPLES=[
   {label:'Pharmacy — Suspicious',tag:'Fraud Flag',tagColor:'#dc2626',
-   type:'pharmacy',provider:'Al Nil Al Dhahabi Pharmacy — Nasr City',
-   patientId:'GBM-2024-88432',diagnosis:'J06.9, J11.1',
+   type:'pharmacy',provider:'Sample Pharmacy — Nasr City',
+   patientId:'POL-2024-88432',diagnosis:'J06.9, J11.1',
    services:'Amoxicillin 500mg ×60, Ibuprofen 400mg ×120, Azithromycin 500mg ×30, Omeprazole 20mg ×90',
    amount:'4850',date:'2026-06-01',notes:'Second claim for same member within 9 days'},
   {label:'Inpatient — Clean',tag:'Normal',tagColor:'#1d9e75',
-   type:'hospital',provider:'Sameeh Hospital — Maadi',
-   patientId:'GBM-2024-54210',diagnosis:'I10',
+   type:'hospital',provider:'Sample Hospital E — Maadi',
+   patientId:'POL-2024-54210',diagnosis:'I10',
    services:'Internal medicine consultation, blood pressure monitoring, CBC blood test, Amlodipine 5mg prescription',
    amount:'850',date:'2026-06-03',notes:''},
   {label:'Imaging — Repeated',tag:'CMO Review',tagColor:'#d97706',
    type:'imaging',provider:'Roia Radiology Center — Heliopolis',
-   patientId:'GBM-2024-71893',diagnosis:'M54.5',
+   patientId:'POL-2024-71893',diagnosis:'M54.5',
    services:'Lumbar spine MRI with contrast, lumbar CT scan, lumbar X-ray 4 views — same session',
    amount:'7800',date:'2026-06-02',notes:'Previous imaging for same diagnosis 21 days ago'},
 ];
 const ANALYSES={
-  'GBM-2024-88432':{fraud_score:68,risk_level:'high',decision:'cmo_review',confidence:91,
+  'POL-2024-88432':{fraud_score:68,risk_level:'high',decision:'cmo_review',confidence:91,
     archetypes:['Drug Splitting','Prescription Volume Anomaly'],
     risks:['Same member filled 3 prescriptions at different pharmacies within 8 days — drug splitting pattern.',
            'Antibiotic quantity (×60 tabs) exceeds standard 7-day course by 3× — upcoding suspected.',
@@ -443,13 +445,13 @@ const ANALYSES={
     clean:['Member eligibility confirmed — policy active with no lapses.'],
     rec:'Hold for CMO review — drug splitting detected across 3 dispensing points. Request prescription originals before approval.',
     summary:'High-confidence fraud flag. Drug splitting across multiple dispensing points combined with anomalous prescription volume warrants clinical review before payment.'},
-  'GBM-2024-54210':{fraud_score:6,risk_level:'low',decision:'auto_approve',confidence:97,
+  'POL-2024-54210':{fraud_score:6,risk_level:'low',decision:'auto_approve',confidence:97,
     archetypes:[],risks:[],
     clean:['Procedure code matches ICD-10 diagnosis — clinical alignment confirmed.',
            'Provider quality score 96/100 — zero fraud history in the last 18 months.'],
     rec:'Auto-approve — all clinical, billing, and eligibility checks passed with high confidence.',
     summary:'Clean outpatient consultation at a high-rated network provider. All parameters within expected range. No fraud indicators detected.'},
-  'GBM-2024-71893':{fraud_score:61,risk_level:'medium',decision:'cmo_review',confidence:88,
+  'POL-2024-71893':{fraud_score:61,risk_level:'medium',decision:'cmo_review',confidence:88,
     archetypes:['Redundant Imaging','Cost Benchmark Deviation'],
     risks:['Three imaging modalities billed for the same anatomical area in one session — redundant imaging pattern.',
            'Total imaging cost EGP 7,800 is 58% above benchmark for this diagnosis.',
@@ -612,8 +614,8 @@ function showResults(a){
     <button class="btn sec" onclick="reset()">New Claim</button>`;
 
   if(a.decision==='cmo_review') html+=`<button class="btn" style="background:var(--amber);color:#fff" onclick="showCMO()">CMO Review Panel →</button>`;
-  else if(a.decision==='auto_approve') html+=`<button class="btn app" id="auditBtn">Confirm Approval → FRA Trail</button>`;
-  else html+=`<button class="btn rej" id="auditBtn">Confirm Rejection → FRA Trail</button>`;
+  else if(a.decision==='auto_approve') html+=`<button class="btn app" id="auditBtn">Confirm Approval → Audit Trail</button>`;
+  else html+=`<button class="btn rej" id="auditBtn">Confirm Rejection → Audit Trail</button>`;
   html+=`</div>`;
 
   document.getElementById('rContent').innerHTML=html;
@@ -644,7 +646,7 @@ function showAudit(dec){
   const a=state.analysis;
   const ok=dec==='approved'||dec==='auto_approve';
   const c=ok?'#1d9e75':dec==='auto_reject'||dec==='rejected'?'#dc2626':'#d97706';
-  const auditRef='FRA-'+Math.random().toString(36).substr(2,9).toUpperCase();
+  const auditRef='AUD-'+Math.random().toString(36).substr(2,9).toUpperCase();
   const ts=new Date().toLocaleString('en-GB',{timeZone:'Africa/Cairo'});
   const note=document.getElementById('cmoNote')?.value||'';
 
@@ -652,11 +654,11 @@ function showAudit(dec){
     <div style="text-align:center;padding:32px 0 20px">
       <div class="audit-icon" style="background:${c}10;border:2px solid ${c};color:${c}">${ok?'✓':'✕'}</div>
       <div style="font-size:24px;font-weight:700;color:${c};margin-bottom:6px">${ok?'Claim Approved':'Claim Rejected'}</div>
-      <div style="font-size:12.5px;color:var(--muted)">FRA audit trail generated automatically</div>
+      <div style="font-size:12.5px;color:var(--muted)">Audit trail generated automatically (demo)</div>
     </div>
     <div class="audit-table">
-      <div class="audit-ref">FRA AUDIT TRAIL — ${auditRef}</div>
-      ${[['Claim ID',state.claimId],['FRA Reference',auditRef],['Provider',document.getElementById('fProvider').value],
+      <div class="audit-ref">AUDIT TRAIL (DEMO) — ${auditRef}</div>
+      ${[['Claim ID',state.claimId],['Audit Reference',auditRef],['Provider',document.getElementById('fProvider').value],
          ['Amount','EGP '+Number(document.getElementById('fAmount').value).toLocaleString()],
          ['AI Fraud Score',`${a.fraud_score} / 100`],['AI Decision',a.decision.replace(/_/g,' ').toUpperCase()],
          ['Final Status',ok?'APPROVED ✓':'REJECTED ✕'],['Timestamp',ts+' EGT'],
@@ -665,12 +667,12 @@ function showAudit(dec){
       ].map(([k,v])=>`<div class="audit-row"><span class="audit-k">${k}</span><span class="audit-v">${v}</span></div>`).join('')}
     </div>
     <div class="compliance-note">
-      Decision logged in an immutable audit trail per FRA requirements<br>
-      FRA Decision 229/2025 · PDPL 151/2020 · AES-256 Encrypted
+      Decision logged in an audit trail (demo — not a regulatory record)<br>
+      Demo only · not a regulatory document · AES-256 Encrypted
     </div>
     <div class="actions" style="margin-top:20px">
       <button class="btn sec" onclick="reset()">New Claim</button>
-      <button class="btn pri" onclick="window.print()">Export FRA Report</button>
+      <button class="btn pri" onclick="window.print()">Export Demo Report</button>
       <a href="dashboard.html" class="btn nav">← Back to Dashboard</a>
     </div>`;
   show('audit');
@@ -686,5 +688,6 @@ function reset(){
 buildExamples(); show('landing');
 </script>
 <script src="ai-api.js"></script>
+<script src="js/disclosure.js"></script>
 </body>
 </html>

@@ -1,151 +1,59 @@
-# iRonic Health — Official Website
+# iRonic Health — Website (v1.0)
 
-**Health System Integration Technology**  
-Egypt's first AI-powered health insurance orchestration platform.
+Public website for **iRonic Health**, an AI-powered health-insurance orchestration platform being built for Egypt's private health-insurance market.
 
----
+- **Live site:** https://ironichealth.com (GitHub Pages, custom domain via `CNAME`, DNS/HTTPS on Cloudflare)
+- **Status:** company in formation (Egypt). Decision-support SaaS — not an insurer or TPA.
+- **Founders:** Sherif Almeidany (Co-Founder & CEO) · Dr. Islam Almeidany (Co-Founder & Medical Director). The co-founders are brothers.
+- **Contact:** info@ironichealth.com · investor@ironichealth.com · sherif@ironichealth.com · islam@ironichealth.com (Cloudflare Email Routing)
 
-## Project Structure
+> All performance figures, financial projections and dashboard data on this site are illustrative targets or fictional sample data — not actual results. No partnerships or customers have been signed. The interactive platform lives in a separate private repository and is not part of this site.
+
+## Structure
 
 ```
-ironic-health/
-├── index.html          # Main homepage (EN)
-├── css/
-│   └── style.css       # All styles — brand-locked
-├── js/
-│   └── main.js         # Scroll reveal, mobile nav, interactions
-├── assets/             # Place logo files and images here
-│   ├── logo-color.svg
-│   ├── logo-white.svg
-│   └── og-image.jpg    # 1200x630 for social sharing
-└── README.md
+/                    English pages (index, platform, ecosystem, dashboard, ai-experience,
+                     market, investors, pricing, team, contact)
+/ar/                 Arabic pages (same file names, RTL)
+/css/style.css       Shared styles
+/css/arabic-theme.css  Arabic/RTL overrides
+/js/components.js    Shared nav + footer (EN/AR), page-to-page language switch
+/js/disclosure.js    Site-wide disclosure bar + language link (all pages)
+/js/main.js          Scroll reveal, counters, ROI calculator (EN home)
+/js/consent.js       Cookie/consent banner
+/ai-layer.js, /ar/ai-layer.js   Dashboard demo layer (sample data)
+/ai-api.js           Client for the demo analysis endpoint
+/assets/             Logos, icons, OG image
+CNAME · robots.txt · sitemap.xml · LICENSE
 ```
 
----
+The English site is at the root; Arabic mirrors each page under `/ar/` with the same file name, so the language switch maps `page.html` ↔ `ar/page.html`.
 
-## Brand System
+## Brand tokens
 
 | Token | Value |
-|-------|-------|
+|---|---|
 | Primary Blue | `#4179AD` |
 | Dark Blue | `#2d5a8a` |
 | Gold Lustre | `#CAB164` |
 | Dark Gold | `#a8914a` |
-| EN Font | Ubuntu (Google Fonts) |
-| AR Font | Kufam (Google Fonts) |
+| EN font | Ubuntu |
+| AR fonts | Kufam / Cairo |
 
----
+## Deploy
 
-## Deploy to Netlify (Recommended)
+Pushes to `main` publish automatically via GitHub Pages. There is no build step (plain HTML/CSS/JS).
 
-### Option A — Drag & Drop (Fastest)
+## Content rules
 
-1. Go to [netlify.com](https://netlify.com) and log in
-2. Drag the entire `ironic-health/` folder onto the Netlify dashboard
-3. Your site is live instantly at a `.netlify.app` URL
-4. Rename it to `ironichealth.netlify.app` in Site Settings → Site name
+- Every figure about iRonic Health is labelled as a target or sample data, never as a result.
+- Real companies are not named as partners, customers or integrations. Demo data uses fictional names.
+- EN and AR pages must carry the same facts.
 
-### Option B — GitHub + Netlify (Recommended for ongoing updates)
+## Release
 
-Follow the steps below to connect GitHub for automatic deployments.
+`v1.0-deposit` — reviewed release prepared for deposit as a software work (ITIDA). Earlier drafts (`v1/`, `v2/`) were removed from the tree and remain in git history.
 
----
+## License
 
-## GitHub Setup — Step by Step
-
-### 1. Create the Repository
-
-```bash
-# In your terminal, navigate to this folder
-cd ironic-health
-
-# Initialize git
-git init
-
-# Add all files
-git add .
-
-# First commit
-git commit -m "Initial commit — iRonic Health homepage v2"
-```
-
-### 2. Create GitHub Repo
-
-1. Go to [github.com](https://github.com) → click **New repository**
-2. Name it: `iRonicHealth` (or `ironic-health-website`)
-3. Set to **Public** (required for free Netlify)
-4. Do NOT initialize with README (you already have one)
-5. Click **Create repository**
-
-### 3. Push to GitHub
-
-Copy the commands GitHub shows you, or use:
-
-```bash
-git remote add origin https://github.com/YOUR_USERNAME/iRonicHealth.git
-git branch -M main
-git push -u origin main
-```
-
-### 4. Connect Netlify to GitHub
-
-1. Go to [netlify.com](https://netlify.com) → **Add new site** → **Import an existing project**
-2. Choose **GitHub**
-3. Authorize Netlify and select your `iRonicHealth` repo
-4. Build settings:
-   - **Build command:** *(leave empty — pure HTML/CSS/JS)*
-   - **Publish directory:** `.` (root)
-5. Click **Deploy site**
-
-### 5. Set Custom Domain (Optional)
-
-In Netlify → **Domain settings** → **Add custom domain**  
-Point your DNS to Netlify's nameservers.
-
----
-
-## Making Updates
-
-After the initial setup, every push to GitHub auto-deploys:
-
-```bash
-# Make your changes to index.html, css/style.css, etc.
-git add .
-git commit -m "Update hero section copy"
-git push
-```
-
-Netlify detects the push and redeploys in ~30 seconds.
-
----
-
-## Pages Roadmap
-
-| Page | Status | File |
-|------|--------|------|
-| Homepage (EN) | ✅ Done | `index.html` |
-| Homepage (AR) | 🔜 Next | `ar/index.html` |
-| Product | 🔜 | `product.html` |
-| For Insurers | 🔜 | `insurers.html` |
-| Investors | 🔜 | `investors.html` |
-| About | 🔜 | `about.html` |
-
----
-
-## Contact
-
-- **Chairman & CEO:** sherif@ironichealth.com
-- **Founder & CMO:** islam@ironichealth.com 
-- **HQ:** Nile City Towers, North Tower, Corniche El Nile, Cairo, Egypt
-
----
-
-## Compliance Notes
-
-- AI outputs are positioned as **decision support**, not autonomous decisions (PDPL 151/2020)
-- Positioned as **SaaS platform** — not licensed as insurer or TPA
-- FRA-compliant messaging throughout
-
----
-
-*iRonic Health is the healthtech vertical of Ironic Group — a registered Egyptian company.*
+Proprietary — © 2026 Sherif Almeidany and Dr. Islam Almeidany. All rights reserved. See `LICENSE`.
