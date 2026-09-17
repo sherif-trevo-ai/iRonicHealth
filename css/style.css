@@ -332,7 +332,7 @@ img{max-width:100%;display:block}
 
 /* â”€â”€â”€ MODEL â”€â”€â”€ */
 .model-sec{background:var(--white)}
-.pricing-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px}
+.pricing-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
 .price-card{border:1px solid var(--border);border-radius:var(--r16);padding:26px 22px;background:var(--white);transition:all .2s;position:relative;display:flex;flex-direction:column;gap:6px}
 .price-card.featured{border-color:var(--blue);border-width:1.5px}
 .price-card:hover{box-shadow:var(--shadow-md)}
