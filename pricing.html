@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="iRonic Health Revenue Model — Contingent pricing, PMPM subscriptions, 70% gross margin. We earn only when you save. 4-6 month payback.">
+<meta name="description" content="iRonic Health Revenue Model — Contingent pricing, PMPY subscription tiers, 72% gross margin (LTV basis). We earn only when you save. CAC payback ~9.7 months.">
 <meta property="og:title" content="Revenue Model — iRonic Health · We Earn When You Save">
 <meta property="og:url" content="https://ironichealth.com/pricing.html">
 <meta property="og:image" content="https://ironichealth.com/assets/og-image.jpg">
@@ -75,7 +75,7 @@
 .pp-proof{font-size:.68rem;font-weight:600;padding:2px 8px;border-radius:3px;margin-top:.375rem;display:inline-block;font-family:'Ubuntu',sans-serif;background:rgba(24,95,165,.08);color:var(--blue);}
  
 /* ══ REVENUE PHASES  (dark) ══ */
-.phases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem;}
+.phases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;}
 .phase-card{border-radius:16px;padding:1.75rem;border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;transition:transform .2s;}
 .phase-card:hover{transform:translateY(-3px);}
 .phase-card.featured{border-color:rgba(201,168,76,.4);background:linear-gradient(145deg,rgba(201,168,76,.1),rgba(201,168,76,.05));}
@@ -105,7 +105,7 @@
 .pf-step{font-size:.72rem;color:rgba(255,255,255,.5);font-family:'Ubuntu',sans-serif;padding:4px 12px;background:rgba(255,255,255,.04);border-radius:20px;border:1px solid rgba(255,255,255,.08);}
 .pf-arr{color:rgba(255,255,255,.25);font-size:.9rem;}
  
-/* ══ PMPM TIERS  (white) ══ */
+/* ══ PRICING TIERS  (white) ══ */
 .tier-table-wrap{overflow-x:auto;margin-top:2.5rem;border-radius:14px;border:1px solid #dde8f5;box-shadow:0 2px 16px rgba(10,22,40,.06);}
 .tier-table{width:100%;border-collapse:collapse;font-family:'Ubuntu',sans-serif;}
 .tier-table th{padding:1rem 1.25rem;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink4);background:var(--lt2);border-bottom:2px solid #dde8f5;text-align:left;white-space:nowrap;}
@@ -335,13 +335,13 @@
     <div class="reveal">
       <div class="rh-badge">&#128200; Revenue Model · Pricing · Unit Economics</div>
       <h1 class="rh-h1">We Earn When<br><em>You Save.</em></h1>
-      <p class="rh-sub">No platform fee until value is proven. We take 25% of validated fraud savings during the pilot &#8212; then transition to a PMPM subscription once ROI is documented. Aligned incentives, not sales pressure.</p>
+      <p class="rh-sub">No platform fee until value is proven. We take 25% of validated fraud savings during the pilot &#8212; then transition to an annual subscription, billed monthly, once ROI is documented. Aligned incentives, not sales pressure.</p>
       <div class="rh-kpis">
         <div class="rhk"><div class="rhk-val gold">25%</div><div class="rhk-lbl">Of fraud savings (pilot)</div></div>
-        <div class="rhk"><div class="rhk-val blue">$0.75&#8211;$2.00</div><div class="rhk-lbl">PMPM — Insurer / TPA Channel</div></div>
-        <div class="rhk"><div class="rhk-val green">70%</div><div class="rhk-lbl">Gross margin</div></div>
-        <div class="rhk"><div class="rhk-val">4&#8211;6 mo</div><div class="rhk-lbl">CAC payback</div></div>
-        <div class="rhk"><div class="rhk-val gold">20&#8211;30&#215;</div><div class="rhk-lbl">LTV / CAC ratio</div></div>
+        <div class="rhk"><div class="rhk-val blue">$0.90&#8211;$2.40</div><div class="rhk-lbl">Per member / year (by tier)</div></div>
+        <div class="rhk"><div class="rhk-val green">72%</div><div class="rhk-lbl">Gross margin (LTV basis)</div></div>
+        <div class="rhk"><div class="rhk-val">9.7 mo</div><div class="rhk-lbl">CAC payback (incl. sales cycle)</div></div>
+        <div class="rhk"><div class="rhk-val gold">13.2&#215;</div><div class="rhk-lbl">LTV / CAC ratio</div></div>
       </div>
     </div>
   </div>
@@ -384,9 +384,9 @@
           <div class="pp-item">
             <div class="pp-ico">&#128200;</div>
             <div class="pp-body">
-              <div class="pp-title">PMPM Transition: Value Already Proven</div>
-              <div class="pp-desc">After a 90-day pilot with documented ROI, the commercial conversation shifts: the insurer compares the documented pilot savings with the PMPM subscription price ($0.75 per member per month for fraud detection) and decides on evidence, not promises.</div>
-              <div class="pp-proof">PMPM transition happens only after documented ROI &#8212; never before</div>
+              <div class="pp-title">Subscription Transition: Value Already Proven</div>
+              <div class="pp-desc">After a 90-day pilot with documented ROI, the commercial conversation shifts: the insurer compares the documented pilot savings with the annual subscription price (from $0.90 per member per year, billed monthly, depending on tier) and decides on evidence, not promises.</div>
+              <div class="pp-proof">Subscription transition happens only after documented ROI &#8212; never before</div>
             </div>
           </div>
         </div>
@@ -400,8 +400,8 @@
   <div class="si">
     <div class="reveal">
       <div class="dey">Revenue Architecture</div>
-      <h2 class="dh2" id="phases-h">4 Revenue Streams.<br><em>Each Unlocks the Next.</em></h2>
-      <p class="dlead" style="max-width:600px">Start with fraud recovery (zero risk). Prove value. Move to PMPM. Add pharmacy. Add corporate. Each phase compounds ARR without replacing the previous stream &#8212; they stack.</p>
+      <h2 class="dh2" id="phases-h">3 Revenue Streams.<br><em>Each Unlocks the Next.</em></h2>
+      <p class="dlead" style="max-width:600px">Start with fraud recovery (zero risk). Prove value. Move to the annual subscription. Add pharmacy. Each stream compounds ARR without replacing the previous one &#8212; they stack.</p>
     </div>
     <div class="phases-grid">
       <div class="phase-card featured reveal">
@@ -411,7 +411,7 @@
         <div class="phase-name">Contingent Savings</div>
         <div class="phase-price">15&#8211;25%</div>
         <div class="phase-unit">of validated fraud recoveries</div>
-        <div class="phase-desc">Zero platform fee during the pilot. We invoice only on validated savings &#8212; claims that were fraudulent, confirmed by CMO review, and recovered from the provider. 25% during pilot; 15% on Year 1 PMPM contract + recovery hybrid.</div>
+        <div class="phase-desc">Zero platform fee during the pilot. We invoice only on validated savings &#8212; claims that were fraudulent, confirmed by CMO review, and recovered from the provider. 25% during the pilot; 15% once the subscription contract starts.</div>
         <div class="phase-items">
           <div class="phase-item"><div class="phase-item-dot"></div>Zero financial risk for insurer</div>
           <div class="phase-item"><div class="phase-item-dot"></div>Invoice against savings only</div>
@@ -424,50 +424,34 @@
       <div class="phase-card ph-2 reveal reveal-d1">
         <div class="phase-num">Phase 02 · Core</div>
         <div class="phase-ico">&#128260;</div>
-        <div class="phase-name">PMPM Subscription</div>
-        <div class="phase-price">$0.75&#8211;$2.00</div>
-        <div class="phase-unit">per member per month</div>
-        <div class="phase-desc">Insurer/TPA channel: $0.75&#8211;$2.00 per member per month after documented pilot ROI. Start with Fraud Detection at $0.75 PMPM, add modules as the relationship matures. Corporate Self-Funded channel billed all-in at $4&#8211;$8 PMPM (see Phase 04).</div>
+        <div class="phase-name">Annual Subscription</div>
+        <div class="phase-price">$0.90&#8211;$2.40</div>
+        <div class="phase-unit">per member per year</div>
+        <div class="phase-desc">Volume-tiered pricing once pilot ROI is documented &#8212; larger books pay less per life. Self-funded corporate books (Law 155/2024) sit in the top tier as an all-in price, with no separate recovery fee.</div>
         <div class="phase-items">
-          <div class="phase-item"><div class="phase-item-dot"></div>Fraud Detection only: $0.75 PMPM</div>
-          <div class="phase-item"><div class="phase-item-dot"></div>Fraud + Claims Orchestration: $2.00</div>
-          <div class="phase-item"><div class="phase-item-dot"></div>Full platform (7 modules): $2.00 PMPM (Insurer/TPA) · $8 PMPM all-in (Corporate)</div>
-          <div class="phase-item"><div class="phase-item-dot"></div>Annual contract, monthly billing</div>
-          <div class="phase-item"><div class="phase-item-dot"></div">+ 15% recovery share continues</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Tier A &#8212; &gt;500K lives: $0.90/yr</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Tier B &#8212; 100&#8211;500K lives: $1.20/yr (anchor tier)</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Tier C &#8212; corporate self-funded: $2.40/yr all-in</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Annual contract, billed monthly</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>+ 15% recovery share continues (insurer/TPA tiers)</div>
         </div>
         <div class="phase-badge">Unlocked: Month 4&#8211;6 post-pilot</div>
       </div>
       <div class="phase-card ph-3 reveal reveal-d2">
         <div class="phase-num">Phase 03 · Ecosystem</div>
         <div class="phase-ico">&#128138;</div>
-        <div class="phase-name">Pharmacy Network Fee</div>
-        <div class="phase-price">$0.05&#8211;$0.50</div>
-        <div class="phase-unit">per verified prescription</div>
-        <div class="phase-desc">Volume-based transaction fee on every prescription verified through the iRonic Health pharmacy network. As the pharmacy network grows, this is designed to become high-margin recurring revenue without additional sales effort.</div>
+        <div class="phase-name">Pharmacy / Script-Screening</div>
+        <div class="phase-price">$0.09</div>
+        <div class="phase-unit">per screened script</div>
+        <div class="phase-desc">Volume-based transaction fee on every prescription screened through the iRonic Health pharmacy network. Modelled at $0.09 per script &#8212; inside the $0.05&#8211;$0.50 band the market supports &#8212; because volume, not price per script, is the point. High-margin, near-zero incremental cost.</div>
         <div class="phase-items">
-          <div class="phase-item"><div class="phase-item-dot"></div>$0.05 basic eligibility check</div>
-          <div class="phase-item"><div class="phase-item-dot"></div>$0.50 full fraud + counterfeit check</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>$0.09 per screened script (model input)</div>
+          <div class="phase-item"><div class="phase-item-dot"></div>Modelled adoption: 45% of paying lives on the module</div>
           <div class="phase-item"><div class="phase-item-dot"></div>Pharmacy network built during pilots</div>
           <div class="phase-item"><div class="phase-item-dot"></div>Large pharmacy chains prioritised</div>
           <div class="phase-item"><div class="phase-item-dot"></div>High-margin, near-zero incremental cost</div>
         </div>
-        <div class="phase-badge">Unlocked: Year 2 · Pharmacy network live</div>
-      </div>
-      <div class="phase-card ph-4 reveal reveal-d3">
-        <div class="phase-num">Phase 04 · Enterprise</div>
-        <div class="phase-ico">&#127970;</div>
-        <div class="phase-name">Corporate Self-Funded</div>
-        <div class="phase-price">$4&#8211;$8</div>
-        <div class="phase-unit">PMPM all-in enterprise</div>
-        <div class="phase-desc">Self-funded corporate health programmes under Law 155/2024. Higher PMPM than insurer channel reflects all-in pricing (no separate recovery fee), cleaner data (employer payroll = verified demographics), and faster 4&#8211;6 week procurement cycle. 3&#8211;5 corporates by Month 12.</div>
-        <div class="phase-items">
-          <div class="phase-item"><div class="phase-item-dot"></div>$5 PMPM all-in standard tier</div>
-          <div class="phase-item"><div class="phase-item-dot"></div>$8 PMPM with analytics add-on</div>
-          <div class="phase-item"><div class="phase-item-dot"></div>No recovery share (cleaner pricing)</div>
-          <div class="phase-item"><div class="phase-item-dot"></div>Banks and telecom operators as targets</div>
-          <div class="phase-item"><div class="phase-item-dot"></div>10&#8211;50K lives per corporate</div>
-        </div>
-        <div class="phase-badge">Unlocked: Year 1 Month 6&#8211;12</div>
+        <div class="phase-badge">Unlocked: Month 14 · Pharmacy network live</div>
       </div>
     </div>
     <div class="phase-flow reveal">
@@ -479,97 +463,69 @@
       <div class="pf-arr">&#8594;</div>
       <div class="pf-step">90-day ROI report</div>
       <div class="pf-arr">&#8594;</div>
-      <div class="pf-step">PMPM contract signed</div>
+      <div class="pf-step">Subscription contract signed</div>
       <div class="pf-arr">&#8594;</div>
-      <div class="pf-step">Pharmacy + corporate added</div>
+      <div class="pf-step">Pharmacy module added</div>
       <div class="pf-arr">&#8594;</div>
       <div class="pf-step">ARR compounds</div>
     </div>
   </div>
 </section>
  
-<!-- ═══ PMPM TIERS  (white) ═══ -->
+<!-- ═══ PRICING TIERS  (white) ═══ -->
 <section class="s" style="background:var(--lt1)" id="pricing-tiers" aria-labelledby="tier-h">
   <div class="si">
     <div class="reveal">
       <div class="ley">Pricing Tiers</div>
-      <h2 class="lh2" id="tier-h">Modular Pricing.<br><em>Pay for What You Use.</em></h2>
-      <p class="llead" style="max-width:600px">Every insurer starts with Fraud Detection only. As the relationship matures, additional modules are added to the contract &#8212; each adding PMPM and compounding LTV without replacing the core subscription.</p>
+      <h2 class="lh2" id="tier-h">Volume-Based Pricing.<br><em>Larger Books Pay Less.</em></h2>
+      <p class="llead" style="max-width:600px">Every insurer or TPA is priced per member per year, tiered by contracted lives &#8212; a single price per tier, not a menu of paid modules. Most of the platform's value comes from the same core rules and claims engine regardless of tier.</p>
     </div>
     <div class="tier-table-wrap reveal">
       <table class="tier-table">
         <thead>
           <tr>
             <th>Tier</th>
-            <th>PMPM Price</th>
-            <th>Fraud Detection AI</th>
-            <th>Claims Orchestration</th>
-            <th>Hospital Routing</th>
-            <th>Preventive Care</th>
-            <th>Dynamic Premiums</th>
+            <th>Contracted Lives</th>
+            <th>Price (per member/year)</th>
+            <th>Monthly Equivalent</th>
             <th>Recovery Share</th>
             <th>Best For</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><span class="tier-name">Entry &#8212; Fraud Only</span><br><span class="tier-badge tb-entry">&#9733; Start Here</span></td>
-            <td><span class="tier-price tp-entry">$0.75</span></td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-dash">&#8212;</td>
-            <td class="tier-dash">&#8212;</td>
-            <td class="tier-dash">&#8212;</td>
-            <td class="tier-dash">&#8212;</td>
-            <td>+25% pilot / +15% contract</td>
-            <td>Post-pilot insurer contracts</td>
-          </tr>
           <tr class="featured-tier">
-            <td><span class="tier-name">Core Orchestration</span><br><span class="tier-badge tb-pop">Most Popular</span></td>
-            <td><span class="tier-price tp-core">$2.00</span></td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-dash">&#8212;</td>
-            <td class="tier-dash">&#8212;</td>
-            <td>+15% recovery share</td>
-            <td>Anchor insurers Year 1&#8211;2</td>
+            <td><span class="tier-name">Tier B &#8212; Anchor</span><br><span class="tier-badge tb-pop">Most Popular</span></td>
+            <td>100K&#8211;500K lives</td>
+            <td><span class="tier-price tp-core">$1.20</span></td>
+            <td>$0.10 / mo</td>
+            <td>+15% production / +25% pilot</td>
+            <td>First 5 clients &#8212; mid-size insurers &amp; TPAs</td>
           </tr>
           <tr>
-            <td><span class="tier-name">Full Platform</span><br><span class="tier-badge tb-full">All 7 Modules</span></td>
-            <td><span class="tier-price tp-full">$5.00</span></td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-check">&#10003; Full</td>
-            <td>+10% recovery share</td>
-            <td>TPA channel, Year 2+</td>
+            <td><span class="tier-name">Tier A &#8212; Volume</span><br><span class="tier-badge tb-entry">Large Books</span></td>
+            <td>&gt;500K lives</td>
+            <td><span class="tier-price tp-entry">$0.90</span></td>
+            <td>$0.075 / mo</td>
+            <td>+15% production / +25% pilot</td>
+            <td>National TPAs, large insurer books</td>
           </tr>
           <tr>
-            <td><span class="tier-name">Corporate Self-Funded</span><br><span class="tier-badge tb-corp">All-Inclusive</span></td>
-            <td><span class="tier-price tp-corp">$4&#8211;$8</span></td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-check">&#10003; Full</td>
-            <td class="tier-check">&#10003;</td>
-            <td class="tier-check">&#10003;</td>
-            <td class="tier-check">&#10003;</td>
-            <td>Included in PMPM</td>
-            <td>Law 155/2024 corporates</td>
+            <td><span class="tier-name">Tier C &#8212; Corporate</span><br><span class="tier-badge tb-corp">All-Inclusive</span></td>
+            <td>Self-funded corporate</td>
+            <td><span class="tier-price tp-corp">$2.40</span></td>
+            <td>$0.20 / mo</td>
+            <td>Included &#8212; no separate fee</td>
+            <td>Law 155/2024 self-funded employers</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="reveal" style="margin-top:2rem">
-      <div class="ley" style="margin-bottom:.875rem">Per-Module Pricing (Add-On Rates)</div>
+      <div class="ley" style="margin-bottom:.875rem">Beyond Subscription — the Other Two Streams</div>
       <div class="module-pricing">
-        <div class="mp-card"><div class="mp-ico">&#128269;</div><div class="mp-module">Fraud Detection AI</div><div class="mp-price blue">$0.75</div><div class="mp-unit">PMPM · Always included</div></div>
-        <div class="mp-card"><div class="mp-ico">&#9889;</div><div class="mp-module">Claims Orchestration</div><div class="mp-price blue">+$0.50</div><div class="mp-unit">PMPM add-on</div></div>
-        <div class="mp-card"><div class="mp-ico">&#127973;</div><div class="mp-module">Hospital Routing</div><div class="mp-price blue">+$0.40</div><div class="mp-unit">PMPM add-on</div></div>
-        <div class="mp-card"><div class="mp-ico">&#129505;</div><div class="mp-module">Preventive Care</div><div class="mp-price green">+$1.25</div><div class="mp-unit">PMPM add-on</div></div>
-        <div class="mp-card"><div class="mp-ico">&#128200;</div><div class="mp-module">Dynamic Premiums</div><div class="mp-price green">+$1.10</div><div class="mp-unit">PMPM add-on</div></div>
-        <div class="mp-card"><div class="mp-ico">&#129504;</div><div class="mp-module">Health Score</div><div class="mp-price blue">+$0.30</div><div class="mp-unit">PMPM add-on</div></div>
-        <div class="mp-card"><div class="mp-ico">&#128202;</div><div class="mp-module">Golden Dashboard</div><div class="mp-price gold">Included</div><div class="mp-unit">All tiers · Free</div></div>
-        <div class="mp-card"><div class="mp-ico">&#128138;</div><div class="mp-module">Pharmacy Verification</div><div class="mp-price gold">$0.05&#8211;0.50</div><div class="mp-unit">Per script · Volume-based</div></div>
+        <div class="mp-card"><div class="mp-ico">&#127919;</div><div class="mp-module">Contingent Recovery (Pilot)</div><div class="mp-price gold">25%</div><div class="mp-unit">Of validated fraud savings</div></div>
+        <div class="mp-card"><div class="mp-ico">&#127919;</div><div class="mp-module">Contingent Recovery (Production)</div><div class="mp-price gold">15%</div><div class="mp-unit">Of validated fraud savings</div></div>
+        <div class="mp-card"><div class="mp-ico">&#128138;</div><div class="mp-module">Pharmacy / Script-Screening</div><div class="mp-price blue">$0.09</div><div class="mp-unit">Per screened script</div></div>
       </div>
     </div>
   </div>
@@ -645,7 +601,7 @@
             <div class="pt-body">
               <div class="pt-when gold-t">Day 90 &#8212; ROI Report</div>
               <div class="pt-title">Documented ROI &#8594; Year 1 Contract Proposed</div>
-              <div class="pt-desc">Full 90-day report: total fraud recovered, loss ratio change, approval time improvement, FRA compliance summary. Year 1 PMPM contract proposed before the pilot closes.</div>
+              <div class="pt-desc">Full 90-day report: total fraud recovered, loss ratio change, approval time improvement, FRA compliance summary. Year 1 subscription contract proposed before the pilot closes.</div>
             </div>
           </div>
         </div>
@@ -660,64 +616,64 @@
     <div class="reveal">
       <div class="dey">Unit Economics</div>
       <h2 class="dh2" id="ue-h">Target Unit Economics<br><em>Pending Pilot Validation</em></h2>
-      <p class="dlead" style="max-width:600px">Contingent pricing means CAC payback starts in Month 1&#8211;2. Our base-case model targets a 20&#8211;30&#215; LTV/CAC ratio (SaaS benchmark: 3&#215;). These are assumptions to be tested in pilots.</p>
+      <p class="dlead" style="max-width:600px">Contingent pricing means the contract starts recovering CAC from Month 1&#8211;2, before the subscription even begins. Our base-case model targets a 13.2&#215; LTV/CAC ratio &#8212; already fully-loaded on CAC and margin- and time-capped on LTV (SaaS benchmark: 3&#215;). These are model assumptions to be tested in pilots.</p>
     </div>
     <div class="ue-grid">
       <div class="ue-card reveal">
         <div class="ue-label">Customer Acquisition Cost (CAC)</div>
-        <div class="ue-val gold">$30&#8211;50K</div>
-        <div class="ue-sub">Per insurer or TPA. Includes full sales cycle, pilot setup, onboarding, and CMO governance activation. Enterprise SaaS benchmark: $50&#8211;100K per customer.</div>
-        <div class="ue-bench ub-good">&#8595; Below enterprise SaaS benchmark</div>
+        <div class="ue-val gold">$75K</div>
+        <div class="ue-sub">Fully loaded per enterprise client: allocated sales payroll and travel over a 7-month sales cycle, the cost of delivering the unpaid pilot, and one-off integration build. Excluding pilot and integration cost &#8212; the commonest way founders inflate LTV/CAC &#8212; is not done here.</div>
+        <div class="ue-bench ub-good">Fully loaded, incl. pilot &amp; integration cost</div>
       </div>
       <div class="ue-card reveal reveal-d1">
         <div class="ue-label">3-Year LTV Per Customer</div>
-        <div class="ue-val green">$500K&#8211;$1.5M</div>
-        <div class="ue-sub">PMPM recurring + 15% fraud recovery share over 3 years. Large TPA books at the $1.5M upper end. Mid-tier insurer (300K lives) at $500K lower end.</div>
-        <div class="ue-bench ub-great">&#8593;&#8593; High absolute LTV</div>
+        <div class="ue-val green">$988K</div>
+        <div class="ue-sub">Gross-profit basis (72% margin), capped at 3 years even though 1/churn implies 12.5 years &#8212; conservative on purpose, with no expansion revenue assumed. A Tier B anchor client (300K lives) alone is worth $457.6K in total contract value at full run-rate.</div>
+        <div class="ue-bench ub-great">Capped at 3 years for credibility</div>
       </div>
       <div class="ue-card highlight reveal reveal-d2">
         <div class="ue-label">LTV / CAC Ratio</div>
-        <div class="ue-val gold">20&#8211;30&#215;</div>
-        <div class="ue-sub">Gold standard SaaS benchmark is 3&#215;. We're 7&#8211;10&#215; above it &#8212; driven by high LTV from large enterprise accounts and low CAC through TPA channel leverage.</div>
-        <div class="ue-bench ub-great">&#127942; 7&#8211;10&#215; above gold standard (3&#215;)</div>
+        <div class="ue-val gold">13.2&#215;</div>
+        <div class="ue-sub">Gold standard SaaS benchmark is 3&#215;. This applies the fully-loaded CAC and a gross-margin-adjusted, capped-life LTV &#8212; both haircuts most companies skip. An uncapped, margin-blind version of this same ratio would read far higher; that version is not used because it doesn't survive diligence.</div>
+        <div class="ue-bench ub-great">4.4&#215; above gold standard (3&#215;)</div>
       </div>
       <div class="ue-card reveal">
         <div class="ue-label">Gross Margin</div>
-        <div class="ue-val green">70%</div>
-        <div class="ue-sub">COGS = 30%. Breakdown: cloud infrastructure (12%), AI model maintenance (10%), CMO governance layer (5%), customer success (3%). Scales as lives increase.</div>
-        <div class="ue-bench ub-good">Target (SaaS benchmark 70%+)</div>
+        <div class="ue-val green">49% &#8594; 78%</div>
+        <div class="ue-sub">Ramps with scale: 48.7% in Year 1 (fixed cloud/AI cost against low volume), 74.0% in Year 2, 77.5% in Year 3. 72% is the conservative figure used in the LTV calculation.</div>
+        <div class="ue-bench ub-good">Y3 exceeds SaaS benchmark (70%+)</div>
       </div>
       <div class="ue-card reveal reveal-d1">
         <div class="ue-label">CAC Payback Period</div>
-        <div class="ue-val blue">4&#8211;6 mo</div>
-        <div class="ue-sub">Contingent model: we earn 25% of savings from Month 1&#8211;2. Full CAC recovery by Month 4&#8211;6. Typical enterprise SaaS payback: 12&#8211;18 months. We're 3&#215; faster.</div>
-        <div class="ue-bench ub-great">&#8595;&#8595; 3&#215; faster than typical SaaS (12&#8211;18mo)</div>
+        <div class="ue-val blue">9.7 mo</div>
+        <div class="ue-sub">Including the full 7-month sales cycle &#8212; the number a disciplined investor asks for. From go-live alone (post-signature), payback is 2.7 months, since the contingent fee starts recovering CAC immediately.</div>
+        <div class="ue-bench ub-great">Faster than typical enterprise SaaS (12&#8211;18mo) incl. the sales cycle</div>
       </div>
       <div class="ue-card reveal reveal-d2">
         <div class="ue-label">Average Contract Value (ACV)</div>
-        <div class="ue-val gold">$225K+</div>
-        <div class="ue-sub">Year 1 per anchor insurer in the base-case model (partial-year ramp). Target to scale to $500K&#8211;$1M+ as modules expand and lives grow.</div>
-        <div class="ue-bench ub-great">Expands 2&#8211;4&#215; by Year 3</div>
+        <div class="ue-val gold">$457.6K</div>
+        <div class="ue-sub">Tier B anchor client, 300K lives, at full run-rate: $360K subscription + $70.9K recovery share + $26.7K pharmacy module. Blended ACV is lower in Year 1 while clients are still ramping to full lives.</div>
+        <div class="ue-bench ub-great">Full run-rate figure, not a partial-year average</div>
       </div>
     </div>
     <div class="cogs-breakdown reveal">
-      <div class="cogs-title">Gross Margin Breakdown &#8212; 70% Gross / 30% COGS</div>
+      <div class="cogs-title">Gross Margin Breakdown &#8212; 78% Gross / 22% COGS (Year 3 steady state)</div>
       <div class="cogs-bars">
         <div class="cogs-row">
-          <div class="cogs-top"><span class="cogs-name" style="color:#5dcaa5">Revenue &#8212; Gross Margin</span><span class="cogs-pct" style="color:#5dcaa5">70%</span></div>
-          <div class="cogs-track"><div class="cogs-fill cf-revenue" style="width:70%"></div></div>
+          <div class="cogs-top"><span class="cogs-name" style="color:#5dcaa5">Revenue &#8212; Gross Margin</span><span class="cogs-pct" style="color:#5dcaa5">78%</span></div>
+          <div class="cogs-track"><div class="cogs-fill cf-revenue" style="width:78%"></div></div>
         </div>
         <div class="cogs-row">
-          <div class="cogs-top"><span class="cogs-name" style="color:var(--bluel)">Cloud Infrastructure &amp; Hosting</span><span class="cogs-pct" style="color:var(--bluel)">12%</span></div>
-          <div class="cogs-track"><div class="cogs-fill cf-cloud" style="width:12%"></div></div>
+          <div class="cogs-top"><span class="cogs-name" style="color:var(--bluel)">Cloud Infrastructure &amp; Hosting</span><span class="cogs-pct" style="color:var(--bluel)">11%</span></div>
+          <div class="cogs-track"><div class="cogs-fill cf-cloud" style="width:11%"></div></div>
         </div>
         <div class="cogs-row">
-          <div class="cogs-top"><span class="cogs-name" style="color:#afa9ec">AI Model Maintenance &amp; Retraining</span><span class="cogs-pct" style="color:#afa9ec">10%</span></div>
-          <div class="cogs-track"><div class="cogs-fill cf-ai" style="width:10%"></div></div>
+          <div class="cogs-top"><span class="cogs-name" style="color:#afa9ec">AI / LLM Inference</span><span class="cogs-pct" style="color:#afa9ec">9%</span></div>
+          <div class="cogs-track"><div class="cogs-fill cf-ai" style="width:9%"></div></div>
         </div>
         <div class="cogs-row">
-          <div class="cogs-top"><span class="cogs-name" style="color:var(--gold)">CMO Governance + Customer Success</span><span class="cogs-pct" style="color:var(--gold)">8%</span></div>
-          <div class="cogs-track"><div class="cogs-fill cf-ops" style="width:8%"></div></div>
+          <div class="cogs-top"><span class="cogs-name" style="color:var(--gold)">Third-Party Data &amp; Integration</span><span class="cogs-pct" style="color:var(--gold)">2%</span></div>
+          <div class="cogs-track"><div class="cogs-fill cf-ops" style="width:2%"></div></div>
         </div>
       </div>
     </div>
@@ -787,7 +743,7 @@
               <span class="cr-val gold" id="res-net">EGP 76.5M</span>
             </div>
           </div>
-          <div class="calc-note">Assumes 85% detection rate (model assumption, not a measured result) · Excludes PMPM savings from overtreatment reduction</div>
+          <div class="calc-note">Assumes 85% detection rate (model assumption, not a measured result) · Excludes subscription-side savings from overtreatment reduction</div>
         </div>
       </div>
       <div class="reveal reveal-d2">
@@ -799,7 +755,7 @@
         <div class="roi-context">
           <div class="roi-point">
             <div class="roi-p-ico">&#9889;</div>
-            <div class="roi-p-txt"><strong>Target 4-6 month payback on CAC</strong> &#8212; the contingent model means your first invoice arrives after the first recovery, not before. Target payback starts from Day 30.</div>
+            <div class="roi-p-txt"><strong>CAC payback in 9.7 months, sales cycle included</strong> &#8212; the contingent model means your first invoice arrives after the first recovery, not before. From go-live alone, payback is under 3 months.</div>
           </div>
           <div class="roi-point">
             <div class="roi-p-ico">&#128200;</div>
@@ -807,7 +763,7 @@
           </div>
           <div class="roi-point">
             <div class="roi-p-ico">&#128202;</div>
-            <div class="roi-p-txt"><strong>PMPM adds predictable cost</strong> &#8212; fraud detection at $0.75 per member per month gives a fixed, predictable cost once pilot ROI is documented.</div>
+            <div class="roi-p-txt"><strong>The subscription adds predictable cost</strong> &#8212; from $0.90 per member per year (about $0.075/month) at volume, giving a fixed, predictable cost once pilot ROI is documented.</div>
           </div>
           <div class="roi-point">
             <div class="roi-p-ico">&#9878;&#65039;</div>
@@ -824,8 +780,8 @@
   <div class="si">
     <div class="reveal">
       <div class="dey">3-Year Financial Model</div>
-      <h2 class="dh2" id="proj-h">From $475K to <em>$7.35M ARR</em><br>In 36 Months</h2>
-      <p class="dlead" style="max-width:580px">Base-case model targets, not actual results. Milestone assumptions: one anchor insurer by Month 3, PMPM by Month 6, pharmacy module by Month 18. 70% gross margin throughout. Breakeven at Month 18.</p>
+      <h2 class="dh2" id="proj-h">From $616K to <em>$3.69M</em> Exit ARR<br>In 36 Months (Base Case)</h2>
+      <p class="dlead" style="max-width:580px">Base-case model targets, not actual results. Gross margin ramps from 49% (Year 1) to 78% (Year 3) as fixed cloud and AI cost is spread over more lives. Sustained EBITDA-positive from Month 17.</p>
     </div>
     <div class="fin-table-wrap reveal">
       <table class="fin-table">
@@ -833,52 +789,52 @@
           <tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr>
         </thead>
         <tbody>
-          <tr><td>Anchor Customers</td><td>1&#8211;2</td><td>3&#8211;4</td><td>6&#8211;8</td></tr>
-          <tr><td>Total Lives on Platform</td><td>375K</td><td>1.4M</td><td>4.2M</td></tr>
-          <tr><td>Platform PMPM Revenue</td><td class="fv-white">$225K</td><td class="fv-white">$1.05M</td><td class="fv-white">$3.78M</td></tr>
-          <tr><td>Recovery Share (15%)</td><td class="fv-white">$250K</td><td class="fv-white">$1.05M</td><td class="fv-white">$2.52M</td></tr>
-          <tr><td>Pharmacy Module Revenue</td><td>&#8212;</td><td class="fv-white">$350K</td><td class="fv-white">$1.05M</td></tr>
-          <tr class="row-highlight"><td><strong>Total ARR</strong></td><td class="fv-white">$475K</td><td class="fv-green">$2.45M</td><td class="fv-gold">$7.35M</td></tr>
-          <tr><td>Gross Margin</td><td class="fv-green">70%</td><td class="fv-green">70%</td><td class="fv-green">70%</td></tr>
-          <tr><td>EBITDA</td><td class="fv-red">($975K)</td><td class="fv-red">($485K)</td><td class="fv-green">+$1.95M</td></tr>
-          <tr><td>Annual Burn Rate</td><td>~$1.5M</td><td>~$800K</td><td class="fv-green">Positive</td></tr>
-          <tr><td>Breakeven Month</td><td colspan="3" style="color:var(--gold);font-weight:700">Month 18 &#8212; Series A preparation starts Month 12</td></tr>
+          <tr><td>Paying Clients (year-end)</td><td>2</td><td>6</td><td>11</td></tr>
+          <tr><td>Paying Lives (year-end)</td><td>277K</td><td>1.0M</td><td>2.25M</td></tr>
+          <tr><td>Subscription Revenue</td><td class="fv-white">$83K</td><td class="fv-white">$916K</td><td class="fv-white">$2.19M</td></tr>
+          <tr><td>Recovery Share Revenue</td><td class="fv-white">$75K</td><td class="fv-white">$311K</td><td class="fv-white">$568K</td></tr>
+          <tr><td>Pharmacy Module Revenue</td><td>&#8212;</td><td class="fv-white">$57K</td><td class="fv-white">$153K</td></tr>
+          <tr class="row-highlight"><td><strong>Total Revenue (annual)</strong></td><td class="fv-white">$158K</td><td class="fv-green">$1.28M</td><td class="fv-gold">$2.91M</td></tr>
+          <tr><td>Exit ARR (run-rate, year-end)</td><td class="fv-white">$616K</td><td class="fv-green">$1.95M</td><td class="fv-gold">$3.69M</td></tr>
+          <tr><td>Gross Margin</td><td class="fv-red">49%</td><td class="fv-green">74%</td><td class="fv-green">78%</td></tr>
+          <tr><td>EBITDA</td><td class="fv-red">($311K)</td><td class="fv-green">+$304K</td><td class="fv-green">+$1.29M</td></tr>
+          <tr><td>Sustained EBITDA-Positive</td><td colspan="3" style="color:var(--gold);font-weight:700">From Month 17 &#8212; downside case still ends Month 36 cash-positive, no bridge round</td></tr>
         </tbody>
       </table>
     </div>
     <div class="rev-build reveal" id="rev-bars">
-      <div class="rb-title">ARR Build by Revenue Stream</div>
+      <div class="rb-title">Annual Revenue Build by Stream (not run-rate ARR)</div>
       <div class="rb-bars">
         <div class="rb-row">
           <div class="rb-yr">Y1</div>
           <div class="rb-track">
-            <div class="rb-seg rb-pmpm" id="y1-pmpm" style="width:0">PMPM</div>
+            <div class="rb-seg rb-pmpm" id="y1-pmpm" style="width:0">Subscription</div>
             <div class="rb-seg rb-recov" id="y1-recov" style="width:0">Recovery</div>
           </div>
-          <div class="rb-total" style="color:var(--bluel)">$475K</div>
+          <div class="rb-total" style="color:var(--bluel)">$158K</div>
         </div>
         <div class="rb-row">
           <div class="rb-yr">Y2</div>
           <div class="rb-track">
-            <div class="rb-seg rb-pmpm" id="y2-pmpm" style="width:0">PMPM</div>
+            <div class="rb-seg rb-pmpm" id="y2-pmpm" style="width:0">Subscription</div>
             <div class="rb-seg rb-recov" id="y2-recov" style="width:0">Recovery</div>
             <div class="rb-seg rb-pharma" id="y2-pharma" style="width:0">Pharmacy</div>
           </div>
-          <div class="rb-total" style="color:var(--green)">$2.45M</div>
+          <div class="rb-total" style="color:var(--green)">$1.28M</div>
         </div>
         <div class="rb-row">
           <div class="rb-yr">Y3</div>
           <div class="rb-track">
-            <div class="rb-seg rb-pmpm" id="y3-pmpm" style="width:0">PMPM $3.78M</div>
-            <div class="rb-seg rb-recov" id="y3-recov" style="width:0">Recovery $2.52M</div>
-            <div class="rb-seg rb-pharma" id="y3-pharma" style="width:0">Pharmacy $1.05M</div>
+            <div class="rb-seg rb-pmpm" id="y3-pmpm" style="width:0">Subscription $2.19M</div>
+            <div class="rb-seg rb-recov" id="y3-recov" style="width:0">Recovery $568K</div>
+            <div class="rb-seg rb-pharma" id="y3-pharma" style="width:0">Pharmacy $153K</div>
           </div>
-          <div class="rb-total" style="color:var(--gold)">$7.35M</div>
+          <div class="rb-total" style="color:var(--gold)">$2.91M</div>
         </div>
       </div>
       <div class="rb-legend">
-        <div class="rbl-item"><div class="rbl-dot" style="background:rgba(24,95,165,.7)"></div>PMPM Subscription</div>
-        <div class="rbl-item"><div class="rbl-dot" style="background:rgba(29,158,117,.7)"></div>Recovery Share (15%)</div>
+        <div class="rbl-item"><div class="rbl-dot" style="background:rgba(24,95,165,.7)"></div>Annual Subscription</div>
+        <div class="rbl-item"><div class="rbl-dot" style="background:rgba(29,158,117,.7)"></div>Recovery Share</div>
         <div class="rbl-item"><div class="rbl-dot" style="background:rgba(83,74,183,.7)"></div>Pharmacy Module</div>
       </div>
     </div>
@@ -959,7 +915,7 @@
       <a href="contact.html" class="cta-btn-g">Request a Demo &#8594;</a>
       <a href="investors.html" class="cta-btn-w">Investor Information</a>
     </div>
-    <div class="cta-metrics">Model targets: 25% Contingent · $0.75&#8211;$2.00 PMPM (Insurer) · $4&#8211;$8 PMPM (Corporate) · 70% Gross Margin · Breakeven Month 18</div>
+    <div class="cta-metrics">Model targets: 25% Contingent (pilot) · $0.90&#8211;$2.40 per member/year (by tier) · 78% Gross Margin (Y3) · Sustained EBITDA-positive Month 17</div>
   </div>
 </section>
  
@@ -1007,17 +963,17 @@ function initRevBars(){
   if(!wrap || !('IntersectionObserver' in window)) return;
   var obs = new IntersectionObserver(function(entries){
     if(entries[0].isIntersecting){
-      /* Y1: $475K total — PMPM $225K (47%), Recovery $250K (53%) */
-      setTimeout(function(){ document.getElementById('y1-pmpm').style.width='6.1%'; },100);
-      setTimeout(function(){ document.getElementById('y1-recov').style.width='6.8%'; },300);
-      /* Y2: $2.45M total — PMPM $1.05M (43%), Recovery $1.05M (43%), Pharma $350K (14%) */
-      setTimeout(function(){ document.getElementById('y2-pmpm').style.width='29%'; },100);
-      setTimeout(function(){ document.getElementById('y2-recov').style.width='29%'; },300);
-      setTimeout(function(){ document.getElementById('y2-pharma').style.width='9.6%'; },500);
-      /* Y3: $7.35M total — PMPM $3.78M (51%), Recovery $2.52M (34%), Pharma $1.05M (14%) */
-      setTimeout(function(){ document.getElementById('y3-pmpm').style.width='51.4%'; },100);
-      setTimeout(function(){ document.getElementById('y3-recov').style.width='34.3%'; },300);
-      setTimeout(function(){ document.getElementById('y3-pharma').style.width='14.3%'; },500);
+      /* Y1: $158K total — Subscription $83K (52.5%), Recovery $75K (47.5%) */
+      setTimeout(function(){ document.getElementById('y1-pmpm').style.width='52.5%'; },100);
+      setTimeout(function(){ document.getElementById('y1-recov').style.width='47.5%'; },300);
+      /* Y2: $1.28M total — Subscription $916K (71.3%), Recovery $311K (24.2%), Pharma $57K (4.4%) */
+      setTimeout(function(){ document.getElementById('y2-pmpm').style.width='71.3%'; },100);
+      setTimeout(function(){ document.getElementById('y2-recov').style.width='24.2%'; },300);
+      setTimeout(function(){ document.getElementById('y2-pharma').style.width='4.4%'; },500);
+      /* Y3: $2.91M total — Subscription $2.19M (75.2%), Recovery $568K (19.5%), Pharma $153K (5.3%) */
+      setTimeout(function(){ document.getElementById('y3-pmpm').style.width='75.2%'; },100);
+      setTimeout(function(){ document.getElementById('y3-recov').style.width='19.5%'; },300);
+      setTimeout(function(){ document.getElementById('y3-pharma').style.width='5.3%'; },500);
       obs.disconnect();
     }
   },{threshold:0.3});
