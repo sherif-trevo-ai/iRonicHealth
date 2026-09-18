@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="iRonic Health — جولة Seed بقيمة 1.5 مليون دولار، بعد جولة ما قبل التأسيس 3 مليون جنيه قابلة للتحويل. منصة ذكاء اصطناعي للتأمين الصحي مصمَّمة لمصر. الأرقام أهداف نموذجية. بدون منافس.">
+<title>المستثمرون — iRonic Health · جولة البداية 2026</title>
+<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/arabic-theme.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
+ 
+/* ══ DESIGN TOKENS ══ */
+/* light theme now via arabic-theme.css */
+ 
+/* handled by arabic-theme.css */
+#thesis .thesis-desc{color:var(--muted)}
+ 
+/* handled by arabic-theme.css */
+.nav{direction:rtl}
+.nav-center a,.btn-lang,.btn-demo,.logo-wordmark,.logo-tagline{font-family:'Cairo',sans-serif}
+ 
+/* HERO */
+.inv-hero{min-height:85vh;background:linear-gradient(145deg,#030810 0%,#060f1c 50%,#0a1628 100%);
+  display:flex;flex-direction:column;justify-content:center;padding:140px 5% 80px;position:relative;overflow:hidden}
+.inv-hero-glow{position:absolute;width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%);
+  top:-200px;right:-200px;pointer-events:none}
+.inv-hero-glow2{position:absolute;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(24,95,165,.1) 0%,transparent 70%);
+  bottom:-100px;left:5%;pointer-events:none}
+.inv-hero-grid{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px}
+.inv-hero-inner{position:relative;z-index:1;max-width:780px}
+.inv-round-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);
+  border-radius:100px;padding:6px 18px;margin-bottom:1.75rem}
+.irb-dot{width:7px;height:7px;border-radius:50%;background:#c9a84c;animation:pdot 2s infinite}
+@keyframes pdot{0%,100%{opacity:1}50%{opacity:.4}}
+.irb-txt{font-size:.78rem;font-weight:700;color:#c9a84c;letter-spacing:.04em;font-family:'Cairo',sans-serif}
+.inv-h1{font-size:clamp(2.4rem,5.5vw,4rem);font-weight:900;line-height:1.08;color:#fff;
+  margin-bottom:1.5rem;font-family:'Cairo',sans-serif}
+.inv-h1 em{color:#c9a84c;font-style:normal}
+.inv-sub{font-size:1rem;color:rgba(255,255,255,.52);line-height:1.85;max-width:640px;margin-bottom:2.5rem}
+.inv-hero-cards{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.ihc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;
+  padding:1.1rem 1.5rem;min-width:130px}
+.ihc.gold-border{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.06)}
+.ihc-val{font-size:1.7rem;font-weight:900;font-family:'Cairo',sans-serif;line-height:1;margin-bottom:.25rem}
+.ihc-val.gold{color:#c9a84c}.ihc-val.green{color:#1d9e75}.ihc-val.blue{color:#378add}
+.ihc-lbl{font-size:.75rem;color:rgba(255,255,255,.4)}
+.inv-hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.btn-deck{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;
+  background:linear-gradient(135deg,#c9a84c,#a0852e);border-radius:9px;
+  color:#060f1c;font-weight:700;font-size:.9rem;text-decoration:none;transition:all .2s;font-family:'Cairo',sans-serif}
+.btn-deck:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.35)}
+.btn-meeting{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.75rem;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:9px;
+  color:rgba(255,255,255,.85);font-weight:600;font-size:.9rem;text-decoration:none;transition:all .2s;font-family:'Cairo',sans-serif}
+.btn-meeting:hover{background:rgba(255,255,255,.12)}
+.inv-confidential{font-size:.75rem;color:rgba(255,255,255,.28);display:flex;align-items:center;gap:.375rem;font-family:'Cairo',sans-serif}
+ 
+/* SECTIONS */
+.inv-sec{padding:5.5rem 5%}
+.inv-sec-inner{max-width:1200px;margin:0 auto}
+.inv-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem}
+.inv-h2{font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:1rem;font-family:'Cairo',sans-serif}
+.inv-h2 em{color:#c9a84c;font-style:normal}
+.inv-lead{font-size:.92rem;color:rgba(255,255,255,.5);line-height:1.85;max-width:640px;margin-bottom:2.5rem}
+ 
+/* THESIS GRID */
+.thesis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.thesis-card{border-radius:16px;padding:2rem;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03)}
+.tc-gold{border-top:3px solid #c9a84c}.tc-blue{border-top:3px solid #185fa5}.tc-green{border-top:3px solid #1d9e75}
+.thesis-ico{font-size:2rem;margin-bottom:1rem;display:block}
+.thesis-title{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.75rem;font-family:'Cairo',sans-serif}
+.thesis-desc{font-size:.83rem;color:rgba(255,255,255,.52);line-height:1.8;margin-bottom:1rem}
+.thesis-proof{font-size:.72rem;padding:4px 10px;border-radius:6px;display:inline-block;font-family:'Cairo',sans-serif;font-weight:600}
+.tp-gold{background:rgba(201,168,76,.12);color:#c9a84c}.tp-blue{background:rgba(24,95,165,.12);color:#7fb3e8}.tp-green{background:rgba(29,158,117,.12);color:#5dcaa5}
+ 
+/* TAM GRID */
+.tam-grid{display:grid;gap:.875rem;margin-top:1.5rem}
+.tam-card{padding:1.25rem 1.5rem;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+.tam-t{background:rgba(201,168,76,.05);border-color:rgba(201,168,76,.2)}
+.tam-s{background:rgba(24,95,165,.05);border-color:rgba(24,95,165,.2)}
+.tam-o{background:rgba(29,158,117,.05);border-color:rgba(29,158,117,.2)}
+.tam-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:.25rem}
+.tam-val{font-size:2rem;font-weight:900;font-family:'Cairo',sans-serif;margin-bottom:.25rem}
+.tam-t .tam-val{color:#c9a84c}.tam-s .tam-val{color:#378add}.tam-o .tam-val{color:#1d9e75}
+.tam-desc{font-size:.78rem;color:rgba(255,255,255,.42)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+ 
+/* MARKET SIGNALS */
+.market-signals{display:flex;flex-direction:column;gap:.875rem}
+.ms-item{display:flex;gap:.875rem;padding:1rem 1.25rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;align-items:flex-start}
+.ms-ico{font-size:1.25rem;flex-shrink:0}
+.ms-title{font-size:.85rem;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:.25rem}
+.ms-desc{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65}
+ 
+/* UNIT ECONOMICS */
+.ue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.ue-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:1.5rem;position:relative}
+.ue-card.highlight{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.05)}
+.ue-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.35);margin-bottom:.625rem}
+.ue-val{font-size:2rem;font-weight:900;font-family:'Cairo',sans-serif;margin-bottom:.5rem}
+.ue-val.gold{color:#c9a84c}.ue-val.green{color:#1d9e75}.ue-val.blue{color:#378add}
+.ue-sub{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:.875rem}
+.benchmark-badge{font-size:.68rem;padding:3px 10px;border-radius:6px;display:inline-block;font-weight:700;font-family:'Cairo',sans-serif}
+.bb-good{background:rgba(29,158,117,.15);color:#5dcaa5}
+.bb-great{background:rgba(201,168,76,.15);color:#c9a84c}
+ 
+/* ARR CHART */
+.arr-bars{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+.arr-bar-row{display:flex;align-items:center;gap:.875rem}
+.arr-yr{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.5);width:2.5rem;text-align:left}
+.arr-track{flex:1;background:rgba(255,255,255,.06);border-radius:4px;height:36px;overflow:hidden}
+.arr-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding:0 .875rem;font-size:.8rem;font-weight:700;color:rgba(0,0,0,.8);white-space:nowrap;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.arr-fill.y1{background:linear-gradient(90deg,#378add,#185fa5);width:0%}
+.arr-fill.y2{background:linear-gradient(90deg,#1d9e75,#0f6e56);width:0%}
+.arr-fill.y3{background:linear-gradient(90deg,#c9a84c,#a0852e);color:#fff;width:0%}
+.arr-val{font-size:.9rem;font-weight:700;width:5rem;text-align:left}
+ 
+/* FIN TABLE */
+.fin-table-wrap{overflow-x:auto;margin-top:1.25rem}
+.fin-table{width:100%;border-collapse:collapse;font-size:.8rem;font-family:'Cairo',sans-serif}
+.fin-table th{background:rgba(255,255,255,.06);padding:.6rem .875rem;text-align:right;color:rgba(255,255,255,.55);font-weight:700;border-bottom:1px solid rgba(255,255,255,.08)}
+.fin-table td{padding:.55rem .875rem;border-bottom:1px solid rgba(255,255,255,.05);color:rgba(255,255,255,.55)}
+.fin-table tr:last-child td{border-bottom:none}
+.fin-table .row-highlight{background:rgba(255,255,255,.04)}
+.fin-table .row-highlight td{color:rgba(255,255,255,.85);font-weight:600}
+.val-white{color:rgba(255,255,255,.9)!important}.val-green{color:#1d9e75!important}.val-gold{color:#c9a84c!important}.val-red{color:#e07050!important}
+ 
+/* USE OF FUNDS */
+.fund-bars{display:flex;flex-direction:column;gap:1.25rem;margin-top:1.5rem}
+.fund-row{}
+.fund-top{display:flex;justify-content:space-between;margin-bottom:.375rem}
+.fund-name{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.72);font-family:'Cairo',sans-serif}
+.fund-pct{font-size:.82rem;font-weight:700;font-family:'Cairo',sans-serif}
+.fund-track{height:8px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden;margin-bottom:.375rem}
+.fund-fill{height:100%;border-radius:4px;width:0%;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.ff-gold{background:linear-gradient(90deg,#c9a84c,#a0852e)}
+.ff-blue{background:linear-gradient(90deg,#378add,#185fa5)}
+.ff-green{background:linear-gradient(90deg,#1d9e75,#0f6e56)}
+.ff-gray{background:linear-gradient(90deg,rgba(255,255,255,.3),rgba(255,255,255,.15))}
+.fund-desc{font-size:.75rem;color:rgba(255,255,255,.38);line-height:1.55}
+ 
+/* DECK REQUEST */
+.deck-form{background:#0d1b2e;border:1px solid rgba(201,168,76,.2);border-radius:16px;padding:2rem;max-width:560px;margin:2.5rem auto 0}
+.df-title{font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.375rem;text-align:center}
+.df-sub{font-size:.82rem;color:rgba(255,255,255,.4);text-align:center;margin-bottom:1.5rem}
+.df-2col{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;margin-bottom:.875rem}
+.df-grp{display:flex;flex-direction:column;gap:.375rem;margin-bottom:.875rem}
+.df-lbl{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em}
+.df-inp,.df-sel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;
+  padding:.675rem .9rem;font-size:.875rem;color:rgba(255,255,255,.82);font-family:'Cairo',sans-serif;
+  outline:none;transition:border-color .2s;width:100%;text-align:right}
+.df-inp:focus,.df-sel:focus{border-color:#c9a84c}
+.df-inp::placeholder{color:rgba(255,255,255,.22)}
+.df-sel option{background:#0a1628}
+.df-submit{width:100%;padding:.9rem;background:linear-gradient(135deg,#c9a84c,#a0852e);
+  border:none;border-radius:8px;color:#060f1c;font-size:.95rem;font-weight:700;
+  font-family:'Cairo',sans-serif;cursor:pointer;transition:all .2s}
+.df-submit:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(201,168,76,.35)}
+.df-success{display:none;text-align:center;padding:2rem 1rem}
+.df-success-ico{font-size:2.5rem;margin-bottom:.75rem}
+.df-success-ttl{font-size:1.1rem;font-weight:700;color:#c9a84c;font-family:'Cairo',sans-serif}
+ 
+/* FOOTER */
+.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;font-family:'Cairo',sans-serif;direction:rtl}
+ 
+.footer-links a:hover{color:#c9a84c}
+ 
+#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;background:#c9a84c;color:#060f1c;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;box-shadow:0 4px 20px rgba(201,168,76,.4);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;z-index:999;pointer-events:none}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+@media(max-width:900px){.thesis-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.ue-grid{grid-template-columns:1fr 1fr}.df-2col{grid-template-columns:1fr}}
+@media(max-width:480px){.inv-h1{font-size:2.1rem}.ue-grid{grid-template-columns:1fr}}
+ 
+ 
+/* footer styles now via arabic-theme.css */
+.footer-logo-img{max-height:44px;width:auto;display:block}
+ 
+
+/* Q2 FIXED AR */
+.inv-sec{background:#f8fafc!important}
+.inv-sec *{color:#1e293b!important}
+.inv-sec h2,.inv-sec h3{color:#1A1A2E!important}
+.inv-sec p,.inv-sec li{color:#475569!important}
+.inv-sec .inv-card{background:#fff!important;border:1px solid #e2e8f0!important}
+.inv-sec .ic-label{color:#94a3b8!important}
+.inv-sec .ic-val{color:#1A1A2E!important}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "iRonic Health",
+  "url": "https://ironichealth.com/investor/",
+  "logo": "https://ironichealth.com/investor/assets/logos/H_Badge_Metro_Blue_T.svg",
+  "description": "AI-powered health insurance orchestration platform in development for Egypt's private health insurance market. Company in formation.",
+  "founders": [
+    { "@type": "Person", "name": "Sherif Almeidany", "jobTitle": "Co-Founder & CEO" },
+    { "@type": "Person", "name": "Dr. Islam Almeidany", "jobTitle": "Co-Founder & Chief Pharmacy Officer" }
+  ],
+  "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+  "contactPoint": { "@type": "ContactPoint", "email": "info@ironichealth.com", "contactType": "Business Inquiries" }
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://ironichealth.com/investor/investors.html">
+<link rel="alternate" hreflang="ar" href="https://ironichealth.com/investor/ar/investors.html">
+</head>
+<body>
+<a href="#main-content" class="skip-to-content">تخطّي إلى المحتوى الرئيسي</a>
+ 
+<!-- NAV -->
+<div id="nav-placeholder"></div>
+ 
+<main id="main-content">
+ 
+<!-- HERO -->
+<section class="inv-hero" aria-label="نظرة المستثمرين">
+  <div class="inv-hero-glow" aria-hidden="true"></div>
+  <div class="inv-hero-glow2" aria-hidden="true"></div>
+  <div class="inv-hero-grid" aria-hidden="true"></div>
+  <div class="inv-hero-inner reveal">
+    <div class="inv-round-badge"><div class="irb-dot"></div><span class="irb-txt">جولة البداية — مفتوحة الآن · 2026</span></div>
+    <h1 class="inv-h1">منصة ذكاء اصطناعي<br>للتأمين الصحي في مصر<br><em>تجمع 1.5 مليون دولار.</em></h1>
+    <p class="inv-sub">SAFE Note · شركة قيد التأسيس · برمجيات SaaS لدعم القرار (لسنا شركة تأمين أو TPA) · هامش ربح مستهدف 70%. دخول السوق عبر شركات TPA: شركة TPA مرخَّصة واحدة قد تصل إلى عدة شركات تأمين بشراكة واحدة.</p>
+    <div class="inv-hero-cards">
+      <div class="ihc gold-border"><div class="ihc-val gold">$1.5M</div><div class="ihc-lbl">المبلغ المطلوب</div></div>
+      <div class="ihc"><div class="ihc-val green">78%</div><div class="ihc-lbl">هامش الربح الإجمالي (هدف سنة 3)</div></div>
+      <div class="ihc"><div class="ihc-val blue">13.2×</div><div class="ihc-lbl">نسبة LTV/CAC</div></div>
+      <div class="ihc"><div class="ihc-val">18 شهرًا</div><div class="ihc-lbl">المدرج التشغيلي</div></div>
+    </div>
+    <div class="inv-hero-btns">
+      <a href="#inv-deck" class="btn-deck">📄 طلب ملف المستثمر ←</a>
+      <a href="mailto:investor@ironichealth.com" class="btn-meeting">📅 جدولة مكالمة</a>
+    </div>
+    <p class="inv-confidential">جميع الأرقام المالية في هذه الصفحة أهداف نموذجية — ليست نتائج فعلية. الشركة قيد التأسيس ولا توجد إيرادات أو عملاء موقَّعون بعد. هذه الصفحة ليست عرضًا لبيع أوراق مالية.</p>
+  </div>
+</section>
+ 
+<!-- INVESTMENT THESIS -->
+<section class="inv-sec" id="thesis">
+  <div class="inv-sec-inner">
+    <div class="reveal">
+      <div class="inv-eyebrow">لماذا iRonic Health</div>
+      <h2 class="inv-h2">ثلاثة أسباب <em>تجعل هذا الاستثمار ناجحًا</em></h2>
+      <p class="inv-lead">توقيت السوق، الريح التنظيمية الملائمة، ونموذج كفء في استخدام رأس المال يستهدف التعادل بتمويل الجولة الأولى.</p>
+    </div>
+    <div class="thesis-grid">
+      <div class="thesis-card tc-gold reveal">
+        <div class="thesis-ico">⏰</div>
+        <div class="thesis-title">صفقة TPA واحدة = عدة شركات تأمين</div>
+        <div class="thesis-desc">منحت الهيئة العامة للرقابة المالية تراخيص مؤقتة لست شركات TPA في أبريل 2026، ما فتح قناة جديدة منظَّمة. ووفق مراجعتنا للمعلومات المتاحة علنًا، لم نجد طبقة ذكاء اصطناعي لكشف الاحتيال مصمَّمة للسوق المصري.</div>
+        <div class="thesis-proof tp-gold">قرار مجلس إدارة الهيئة 229/2025 · أبريل 2026 · 6 تراخيص مؤقتة</div>
+      </div>
+      <div class="thesis-card tc-blue reveal reveal-d1">
+        <div class="thesis-ico">🎯</div>
+        <div class="thesis-title">صفقة TPA واحدة = عدة شركات تأمين</div>
+        <div class="thesis-desc">شركة TPA المرخَّصة تدير مطالبات عدة شركات تأمين، فشراكة واحدة قد تُغني عن دورات بيع منفصلة. لم تُوقَّع أي شراكة بعد.</div>
+        <div class="thesis-proof tp-blue">الهدف: شركات TPA المرخَّصة (أبريل 2026)</div>
+      </div>
+      <div class="thesis-card tc-green reveal reveal-d2">
+        <div class="thesis-ico">💰</div>
+        <div class="thesis-title">مسار كفء في رأس المال</div>
+        <div class="thesis-desc">التسعير المشروط يعني أننا نكسب 25% من وفورات الاحتيال المُتحقق منها — تكلفة مقدمة صفر للمؤمِّن، لا مخاطرة في التجريب. هذا يُزيل الاعتراض البيعي الأول ويعني أننا نولد إيرادات من الشهر الخامس، ونصل إلى $616K Exit ARR (السيناريو القاعدي) بحلول الشهر 12، ونحقق ربحية تشغيلية مستدامة من الشهر 17 — كل ذلك بجولة 1.5 مليون دولار (أهداف نموذجية).</div>
+        <div class="thesis-proof tp-green">$1.5M بذرة → $616K ARR الشهر 12 (هدف) → السلسلة أ</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- MARKET OPPORTUNITY -->
+<section class="inv-sec" style="background:#060f1c" id="market">
+  <div class="inv-sec-inner">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="inv-eyebrow">حجم السوق</div>
+        <h2 class="inv-h2">سوق بقيمة $373M<br><em>مع فجوة مفتوحة في الذكاء الاصطناعي</em></h2>
+        <p class="inv-lead">سوق التأمين الصحي الخاص في مصر ينمو 15% سنويًا مع 6–8 مليون مؤمَّن عليه ونسب خسائر في ارتفاع. ولم نجد طبقة ذكاء اصطناعي لكشف الاحتيال مصمَّمة خصيصًا للسوق المصري.</p>
+        <div class="tam-grid" style="grid-template-columns:1fr">
+          <div class="tam-card tam-t">
+            <div class="tam-lbl">إجمالي السوق (TAM)</div>
+            <div class="tam-val">$373M</div>
+            <div class="tam-desc">أقساط مكتتبة للتأمين الصحي الخاص 2024 · نمو +15% سنويًا · هيئة مالية / ستاتيستا</div>
+          </div>
+          <div class="tam-card tam-s">
+            <div class="tam-lbl">السوق القابل للخدمة (SAM)</div>
+            <div class="tam-val" style="font-size:1.1rem">$80–150M</div>
+            <div class="tam-desc">كبار شركات التأمين وإدارات المطالبات (+٥٠٠ ألف مؤمَّن) · $80–150M</div>
+          </div>
+          <div class="tam-card tam-o">
+            <div class="tam-lbl">Exit ARR بعد 3 سنوات (السيناريو القاعدي)</div>
+            <div class="tam-val">$3.7M</div>
+            <div class="tam-desc">11 عميلًا · 2.25M حياة · اشتراك سنوي حسب الشريحة ($0.90–$2.40) + حصة استرداد 15%. السيناريو التفاؤلي: $6.0M.</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="inv-eyebrow" style="margin-top:0">إشارات السوق</div>
+        <div class="market-signals">
+          <div class="ms-item"><div class="ms-ico">📈</div><div class="ms-body"><div class="ms-title">نسب الخسائر عند مستويات قياسية</div><div class="ms-desc">نسب خسائر شركات التأمين المصرية عند 70–85% وترتفع 50–60% سنويًا. كل مدير مالي يبحث عن حل الآن — لا بعد سنتين.</div></div></div>
+          <div class="ms-item"><div class="ms-ico">⚖️</div><div class="ms-body"><div class="ms-title">الهيئة المالية رخّصت 6 TPA (أبريل 2026)</div><div class="ms-desc">أول انفتاح تنظيمي لكشف الاحتيال بالذكاء الاصطناعي عبر TPA. مسار توافق لم يكن موجودًا قبل أبريل 2026.</div></div></div>
+          <div class="ms-item"><div class="ms-ico">🏛️</div><div class="ms-body"><div class="ms-title">قانون التأمين الموحّد 155/2024</div><div class="ms-desc">يفتح مخططات الشركات ذاتية التمويل كقناة تأمين جديدة — قطاع مشترٍ جديد كليًا لـ iRonic Health.</div></div></div>
+          <div class="ms-item"><div class="ms-ico">🧪</div><div class="ms-body"><div class="ms-title">مشكلة احتيال موثقة</div><div class="ms-desc">معدل خسائر احتيال 2–10% وفق مسح RGA للشرق الأوسط لـ 37 شركة تأمين في المنطقة. عند $373M GWP، ذلك نحو 7–37 مليون دولار سنويًا (تقدير وفق نطاق المسح).</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FINANCIALS -->
+<section class="inv-sec" style="background:#0a1628" id="financials">
+  <div class="inv-sec-inner">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="inv-eyebrow">التوقعات المالية</div>
+        <h2 class="inv-h2">من $616K إلى <em>$3.69M Exit ARR</em> في 3 سنوات (أهداف نموذجية)</h2>
+        <p class="inv-lead">نمو محافظ مبني على نموذج TPA-أولًا. يتبع ARR في السنة الأولى التجريب في الشهر 5، ومن ثَمّ التحول إلى اشتراك سنوي دائم. الربحية التشغيلية المستدامة من الشهر 17.</p>
+        <div class="arr-bars" id="arr-bars">
+          <div class="arr-bar-row">
+            <div class="arr-yr">السنة 1</div>
+            <div class="arr-track"><div class="arr-fill y1" id="bar-y1">$616K ARR</div></div>
+            <div class="arr-val" style="color:#378add">$616K</div>
+          </div>
+          <div class="arr-bar-row">
+            <div class="arr-yr">السنة 2</div>
+            <div class="arr-track"><div class="arr-fill y2" id="bar-y2">$1.95M ARR</div></div>
+            <div class="arr-val" style="color:#1d9e75">$1.95M</div>
+          </div>
+          <div class="arr-bar-row">
+            <div class="arr-yr">السنة 3</div>
+            <div class="arr-track"><div class="arr-fill y3" id="bar-y3">$3.69M ARR</div></div>
+            <div class="arr-val" style="color:#c9a84c">$3.69M</div>
+          </div>
+        </div>
+        <div class="fin-table-wrap">
+          <table class="fin-table">
+            <thead><tr><th>المؤشر</th><th>السنة 1</th><th>السنة 2</th><th>السنة 3</th></tr></thead>
+            <tbody>
+              <tr><td>العملاء المدفوعون (نهاية السنة)</td><td>2</td><td>6</td><td>11</td></tr>
+              <tr><td>المؤمَّنون المدفوعون (نهاية السنة)</td><td>277K</td><td>1.0M</td><td>2.25M</td></tr>
+              <tr><td>إيرادات الاشتراك السنوي</td><td>$83K</td><td>$916K</td><td>$2.19M</td></tr>
+              <tr><td>إيرادات حصة الاسترداد</td><td>$75K</td><td>$311K</td><td>$568K</td></tr>
+              <tr><td>إيرادات وحدة الصيدلية</td><td>—</td><td>$57K</td><td>$153K</td></tr>
+              <tr class="row-highlight"><td><strong>إجمالي الإيراد (سنوي)</strong></td><td class="val-white">$158K</td><td class="val-green">$1.28M</td><td class="val-gold">$2.91M</td></tr>
+              <tr><td>Exit ARR (معدل التشغيل الجاري)</td><td class="val-white">$616K</td><td class="val-green">$1.95M</td><td class="val-gold">$3.69M</td></tr>
+              <tr><td>هامش الربح الإجمالي</td><td class="val-red">49%</td><td class="val-green">74%</td><td class="val-green">78%</td></tr>
+              <tr><td>EBITDA</td><td class="val-red">($311K)</td><td class="val-green">+$304K</td><td class="val-green">+$1.29M</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="inv-eyebrow">مسار التمويل</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.25rem">
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.1rem 1rem">
+            <div style="font-size:.68rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem">ما قبل التأسيس</div>
+            <div style="font-size:1.4rem;font-weight:900;color:#fff;font-family:'Cairo',sans-serif;line-height:1.1;margin-bottom:.375rem">3 مليون ج.م.</div>
+            <div style="font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.5">أداة قابلة للتحويل · سقف تقييم $2.5–3.0M · خصم 20%</div>
+          </div>
+          <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.25);border-radius:12px;padding:1.1rem 1rem">
+            <div style="font-size:.68rem;font-weight:700;color:rgba(201,168,76,.8);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem">Seed — هذه الجولة</div>
+            <div style="font-size:1.4rem;font-weight:900;color:#c9a84c;font-family:'Cairo',sans-serif;line-height:1.1;margin-bottom:.375rem">$1.5M</div>
+            <div style="font-size:.72rem;color:rgba(255,255,255,.55);line-height:1.5">SAFE Note · تقييم قبل الجولة $6.5–8M</div>
+          </div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.1rem 1rem">
+            <div style="font-size:.68rem;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem">هدف السلسلة أ</div>
+            <div style="font-size:1.4rem;font-weight:900;color:#fff;font-family:'Cairo',sans-serif;line-height:1.1;margin-bottom:.375rem">$1.5M</div>
+            <div style="font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.5">تقييم قبل الجولة $15–20M · الشهر 12–15 عند تحقيق $616K ARR</div>
+          </div>
+        </div>
+        <div style="text-align:center;font-size:.74rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem">يحتفظ المؤسسان بنحو 60% من الشركة بعد الجولات الثلاث — افتراضات تخطيطية لسه معلقة على التفاوض النهائي</div>
+        <div style="display:flex;flex-direction:column;gap:.625rem;margin-bottom:1.5rem">
+          <div style="padding:.875rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.65">
+            <strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:3px">استخدامات السلسلة أ</strong>
+            توسيع فريق المبيعات (10+ موظفين) · المنتج: تدقيق الصيدليات وتحسين الإنفاق · التوسع الإقليمي (السعودية / الإمارات)
+          </div>
+          <div style="padding:.875rem 1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.65">
+            <strong style="color:rgba(255,255,255,.85);display:block;margin-bottom:3px">سيناريوهات الاستحواذ (السنة 2–3)</strong>
+            فئات توضيحية وليست تقييمات: شركات تأمين كبرى تبحث عن قدرات ذكاء اصطناعي · منصات تقنية صحية عالمية تسعى لدخول مصر · مجمّعات إقليمية</div>
+        </div>
+        <div style="background:rgba(24,95,165,.08);border:1px solid rgba(24,95,165,.2);border-radius:10px;padding:1rem 1.25rem">
+          <div style="font-size:.72rem;font-weight:700;color:#7fb3e8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem">تحليل نقطة التعادل</div>
+          <div style="font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.65">
+            الربحية التشغيلية المستدامة من الشهر 17 · جولة $1.5M تستهدف مدارًا تشغيليًا 18 شهرًا حتى في السيناريو المتحفظ · نموذج التسعير المشروط يولّد إيرادات من الشهر 5 دون رأس مال مقدم
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:2rem;background:rgba(29,158,117,.08);border:1px solid rgba(29,158,117,.25);border-radius:14px;padding:1.5rem 1.75rem">
+      <div style="font-size:.72rem;font-weight:700;color:#5dcaa5;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.625rem">السيناريو المتحفظ — ما تُقاس عليه الجولة فعليًا</div>
+      <p style="font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.85;margin:0">في السيناريو المتحفظ — منتفعون عند 60% من الخطة، وتأخير كل تشغيل أربعة أشهر، وتسعير أقل بـ15% — تنهي الشركة الشهر 36 برصيد نقدي موجب ودون جولة إنقاذ. حجم التمويل مُقاس على هذا السيناريو لا على القاعدي.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- UNIT ECONOMICS -->
+<section class="inv-sec" id="unit-economics">
+  <div class="inv-sec-inner">
+    <div class="reveal">
+      <div class="inv-eyebrow">الاقتصاديات الوحدوية</div>
+      <h2 class="inv-h2">اقتصاديات الوحدة المستهدفة<br><em>منذ الشهر الأول</em></h2>
+      <p class="inv-lead">التسعير المشروط يعني أن استرداد CAC يبدأ فورًا. نموذجنا يستهدف نسبة LTV/CAC عند 13.2 ضعفًا (المعيار المرجعي 3×) — بعد احتساب التكلفة الكاملة للاكتساب وتقييد عمر القيمة الدائمة. هذه افتراضات سيتم اختبارها في التجارب.</p>
+    </div>
+    <div class="ue-grid">
+      <div class="ue-card reveal">
+        <div class="ue-label">تكلفة اكتساب العميل (CAC)</div>
+        <div class="ue-val gold">$75K</div>
+        <div class="ue-sub">تكلفة كاملة لكل عميل: رواتب المبيعات والسفر على مدى دورة بيع 7 أشهر، بالإضافة لتكلفة التجربة المجانية وبناء التكامل — بدون استبعاد أي بند.</div>
+        <div class="benchmark-badge bb-good">تكلفة كاملة، شاملة التجربة والتكامل</div>
+      </div>
+      <div class="ue-card reveal reveal-d1">
+        <div class="ue-label">LTV (3 سنوات، لكل عميل)</div>
+        <div class="ue-val green">$988K</div>
+        <div class="ue-sub">اشتراك سنوي (الشرائح A–C) + 15% حصة استرداد الاحتيال، مقيّد بـ3 سنوات على أساس مجمل الربح. $988K لكل عميل — محافظ TPA الكبيرة في الطرف الأعلى (هدف نموذجي).</div>
+        <div class="benchmark-badge bb-great">↑↑ LTV مرتفع</div>
+      </div>
+      <div class="ue-card highlight reveal reveal-d2">
+        <div class="ue-label">نسبة LTV / CAC</div>
+        <div class="ue-val gold">13.2×</div>
+        <div class="ue-sub">المعيار المرجعي لـ SaaS هو 3×، وهدف نموذجنا أعلى منه بفضل قيمة العميل المتوقعة وانخفاض تكلفة الاكتساب عبر قناة TPA.</div>
+        <div class="benchmark-badge bb-great">المعيار المرجعي: 3× · هدف نموذجنا: 13.2×</div>
+      </div>
+      <div class="ue-card reveal reveal-d3">
+        <div class="ue-label">هامش الربح الإجمالي</div>
+        <div class="ue-val green">49% ← 78%</div>
+        <div class="ue-sub">يرتفع مع الحجم: 49% (سنة 1)، 74% (سنة 2)، 78% (سنة 3). الرقم 72% هو المستخدم في حساب القيمة الدائمة كتقدير متحفظ.</div>
+        <div class="benchmark-badge bb-good">السنة 3 تتجاوز معيار SaaS (70%+)</div>
+      </div>
+      <div class="ue-card reveal">
+        <div class="ue-label">فترة استرداد CAC</div>
+        <div class="ue-val blue">9.7 أشهر</div>
+        <div class="ue-sub">شاملة دورة البيع كاملة (7 أشهر) — الرقم الذي يطلبه أي مستثمر منضبط. من لحظة التشغيل الفعلي فقط، الاسترداد خلال 2.7 شهر.</div>
+        <div class="benchmark-badge bb-great">أسرع من SaaS النموذجي (12–18 شهرًا) شاملة دورة البيع</div>
+      </div>
+      <div class="ue-card reveal reveal-d1">
+        <div class="ue-label">متوسط قيمة العقد (ACV)</div>
+        <div class="ue-val">$457.6K</div>
+        <div class="ue-sub">عميل الشريحة B المحوري، 300 ألف مؤمَّن، بمعدل التشغيل الكامل: $360K اشتراك + $70.9K استرداد + $26.7K صيدليات. المتوسط الفعلي أقل في السنة الأولى أثناء وصول العملاء للعدد الكامل.</div>
+        <div class="benchmark-badge bb-good">رقم بمعدل التشغيل الكامل، وليس متوسط سنة جزئية</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- USE OF FUNDS -->
+<section class="inv-sec" style="background:#0a1628" id="funds">
+  <div class="inv-sec-inner">
+    <div class="two-col">
+      <div class="reveal">
+        <div class="inv-eyebrow">توزيع رأس المال</div>
+        <h2 class="inv-h2">كيف يُستثمر <em>الـ 1.5 مليون دولار</em></h2>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin:-.75rem 0 1.25rem">جولة Seed هذه تأتي بعد جولة ما قبل التأسيس بقيمة 3 مليون جنيه مصري (أداة قابلة للتحويل).</p>
+        <p class="inv-lead" style="margin-bottom:2rem">كل دولار مرسوم لمخرج محدد — لا "نفقات عامة" مبهمة. توزيع ثقيل على GTM لأن المنتج مصمم إلى حد بعيد؛ نحتاج إلى البيع والإثبات.</p>
+        <div class="fund-bars" id="fund-bars">
+          <div class="fund-row">
+            <div class="fund-top"><span class="fund-name">GTM والشراكات</span><span class="fund-pct" style="color:#c9a84c">40% · $600K</span></div>
+            <div class="fund-track"><div class="fund-fill ff-gold" data-w="40"></div></div>
+            <div class="fund-desc">توظيف VP مبيعات · التواصل مع شركات TPA · اجتماعات شركات التأمين · تطبيقات المسرّعات (Flat6Labs، AUC Venture Lab)</div>
+          </div>
+          <div class="fund-row">
+            <div class="fund-top"><span class="fund-name">تطوير المنتج والذكاء الاصطناعي</span><span class="fund-pct" style="color:#378add">35% · $525K</span></div>
+            <div class="fund-track"><div class="fund-fill ff-blue" data-w="35"></div></div>
+            <div class="fund-desc">بناء نماذج الاحتيال · تكامل API · بنية PDPL · تطوير MVP للوحة التحكم الذهبية</div>
+          </div>
+          <div class="fund-row">
+            <div class="fund-top"><span class="fund-name">التشغيل والامتثال</span><span class="fund-pct" style="color:#1d9e75">15% · $225K</span></div>
+            <div class="fund-track"><div class="fund-fill ff-green" data-w="15"></div></div>
+            <div class="fund-desc">تأسيس الشركة · تسجيل العلامات التجارية · PDPL · مستشار قانوني · التأمين</div>
+          </div>
+          <div class="fund-row">
+            <div class="fund-top"><span class="fund-name">الاحتياطي التشغيلي</span><span class="fund-pct" style="color:rgba(255,255,255,.5)">10% · $150K</span></div>
+            <div class="fund-track"><div class="fund-fill ff-gray" data-w="10"></div></div>
+            <div class="fund-desc">احتياطي الطوارئ لتمديد التجريب والنفقات غير المتوقعة</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-d2">
+        <div class="inv-eyebrow">مخطط الجدول الزمني</div>
+        <div style="display:flex;flex-direction:column;gap:.875rem;margin-top:.5rem">
+          <div style="display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 1rem;background:rgba(255,255,255,.04);border-radius:10px;border-right:3px solid rgba(255,255,255,.15)">
+            <div style="font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);min-width:4rem">الشهر 1–2</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6">تأسيس الشركة · توظيف CTO وفريق الذكاء الاصطناعي الأساسي · التواصل التنظيمي</div>
+          </div>
+          <div style="display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 1rem;background:rgba(201,168,76,.05);border-radius:10px;border-right:3px solid rgba(201,168,76,.4)">
+            <div style="font-size:.72rem;font-weight:700;color:#c9a84c;min-width:4rem">الشهر 3–5</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6">MVP للاحتيال · ربط أول TPA · توقيع أول عميل تجريبي · هدف بدء الإيرادات من الشهر 5</div>
+          </div>
+          <div style="display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 1rem;background:rgba(24,95,165,.05);border-radius:10px;border-right:3px solid rgba(24,95,165,.4)">
+            <div style="font-size:.72rem;font-weight:700;color:#7fb3e8;min-width:4rem">الشهر 6–12</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6">نتائج التجريب في 90 يومًا · تحويل إلى عقد دائم · عميل محوري ثانٍ · هدف $616K ARR الشهر 12</div>
+          </div>
+          <div style="display:flex;gap:.875rem;align-items:flex-start;padding:.875rem 1rem;background:rgba(29,158,117,.05);border-radius:10px;border-right:3px solid rgba(29,158,117,.4)">
+            <div style="font-size:.72rem;font-weight:700;color:#5dcaa5;min-width:4rem">الشهر 12–18</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.6">جاهزون لجولة السلسلة أ ($1.5M عند تقييم $15–20M) · عميلان محوريان · ربحية تشغيلية مستدامة من الشهر 17</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- DECK REQUEST -->
+<section class="inv-sec" style="background:#060f1c" id="inv-deck">
+  <div class="inv-sec-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:0">
+      <div class="inv-eyebrow" style="text-align:center">طلب الملف</div>
+      <h2 class="inv-h2" style="text-align:center">طلب <em>ملف المستثمر</em></h2>
+      <p class="inv-lead" style="text-align:center;max-width:520px;margin:0 auto 0">يتضمن: العرض التقديمي، غرفة البيانات، نموذج الاقتصاديات الوحدوية، الإطار القانوني، وخطة 90 يومًا.</p>
+    </div>
+    <div class="deck-form reveal">
+      <div class="df-title">طلب ملف المستثمر</div>
+      <div class="df-sub">سيرد م. شريف الميداني شخصيًا خلال 24 ساعة</div>
+      <div id="deck-form-body">
+        <div class="df-2col">
+          <div class="df-grp"><label class="df-lbl">الاسم الكامل *</label><input type="text" class="df-inp" placeholder="اسمك"></div>
+          <div class="df-grp"><label class="df-lbl">المنظمة *</label><input type="text" class="df-inp" placeholder="الشركة أو الصندوق"></div>
+        </div>
+        <div class="df-2col">
+          <div class="df-grp"><label class="df-lbl">البريد الإلكتروني *</label><input type="email" class="df-inp" placeholder="you@fund.com"></div>
+          <div class="df-grp"><label class="df-lbl">نوع المستثمر *</label>
+            <select class="df-sel">
+              <option value="" disabled selected>اختر النوع</option>
+              <option>مستثمر مَلَكي</option>
+              <option>رأس مال مخاطر</option>
+              <option>مكتب عائلي</option>
+              <option>صندوق استثمار مباشر CVC</option>
+              <option>مستثمر ذو أثر</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+        </div>
+        <div class="df-grp"><label class="df-lbl">حجم التذكرة (اختياري)</label>
+          <select class="df-sel">
+            <option value="" disabled selected>النطاق</option>
+            <option>أقل من $25K</option>
+            <option>$25K – $100K</option>
+            <option>$100K – $250K</option>
+            <option>$250K – $500K</option>
+            <option>$500K+</option>
+          </select>
+        </div>
+        <button class="df-submit" onclick="submitDeck()">📄 طلب ملف المستثمر الكامل ←</button>
+        <div style="text-align:center;font-size:.72rem;color:rgba(255,255,255,.25);margin-top:.75rem">معلومات سرية · تخضع لاتفاقية عدم إفصاح · لمستثمرين معتمدين فقط</div>
+      </div>
+      <div class="df-success" id="deck-success">
+        <div class="df-success-ico">✅</div>
+        <div class="df-success-ttl">تم استلام طلبك</div>
+        <div style="font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.5rem">سيتواصل معك م. شريف الميداني خلال 24 ساعة على البريد الإلكتروني الذي أدخلته.</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+</main>
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+<script>
+const toggle=document.querySelector('.nav-mobile-toggle'),mNav=document.querySelector('.mobile-nav');
+if(toggle&&mNav){toggle.addEventListener('click',()=>{const o=mNav.classList.toggle('open');toggle.setAttribute('aria-expanded',o);mNav.setAttribute('aria-hidden',!o)});}
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)});
+const st=document.getElementById('scroll-top');
+if(st){window.addEventListener('scroll',()=>{st.classList.toggle('visible',window.scrollY>400)});st.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'})});}
+// Animate ARR bars
+const barsObs=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){
+    setTimeout(()=>{document.getElementById('bar-y1').style.width='6.5%'},200);
+    setTimeout(()=>{document.getElementById('bar-y2').style.width='33%'},400);
+    setTimeout(()=>{document.getElementById('bar-y3').style.width='100%'},600);
+    barsObs.disconnect();
+  }
+},{threshold:.5});
+const ab=document.getElementById('arr-bars');if(ab)barsObs.observe(ab);
+// Animate fund bars
+const fbObs=new IntersectionObserver(entries=>{
+  if(entries[0].isIntersecting){
+    document.querySelectorAll('.fund-fill').forEach(f=>{f.style.width=f.dataset.w+'%'});
+    fbObs.disconnect();
+  }
+},{threshold:.5});
+const fb=document.getElementById('fund-bars');if(fb)fbObs.observe(fb);
+function submitDeck(){
+  var box=document.getElementById('deck-form-body');
+  var inp=box.querySelectorAll('.df-inp'), sel=box.querySelectorAll('.df-sel');
+  var name=(inp[0]||{}).value||'', org=(inp[1]||{}).value||'', email=(inp[2]||{}).value||'';
+  if(!name.trim()||!org.trim()||!email.trim()){alert('يرجى ملء الحقول الإلزامية: الاسم، المنظمة، البريد الإلكتروني.');return;}
+  var type=(sel[0]||{}).value||'', size=(sel[1]||{}).value||'';
+  var subject=encodeURIComponent('طلب ملف المستثمر — '+name+' · '+org);
+  var body=encodeURIComponent('الاسم: '+name+'\nالمنظمة: '+org+'\nالبريد: '+email+'\nنوع المستثمر: '+type+'\nحجم التذكرة: '+size);
+  window.location.href='mailto:investor@ironichealth.com?subject='+subject+'&body='+body;
+  box.style.display='none';
+  document.getElementById('deck-success').style.display='block';
+}
+</script>
+ 
+<script id="lang-switcher-js">
+(function(){
+  var ls=document.getElementById('lang-switcher');
+  if(!ls)return;
+  var btn=ls.querySelector('.lang-btn');
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=ls.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+  document.addEventListener('click',function(){
+    ls.classList.remove('open');
+    if(btn) btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
+ 
+<script src="../js/components.js"></script>
+<script src="../js/consent.js" defer></script>
+<script src="../js/disclosure.js"></script>
+</body>
+</html>

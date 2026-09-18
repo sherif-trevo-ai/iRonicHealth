@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="iRonic Health — AI-powered health insurance orchestration platform built for Egypt.">
+<meta property="og:title" content="iRonic Health — Health System Integration Technology">
+<meta property="og:description" content="AI health insurance orchestration platform built for Egypt. Connecting 8 parties. Built to detect fraud and accelerate claims.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ironichealth.com/investor/">
+<meta property="og:image" content="https://ironichealth.com/investor/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ironichealth.com/investor/assets/og-image.jpg">
+<title>iRonic Health — Health System Integration Technology</title>
+<link rel="icon" type="image/svg+xml" href="assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ══════════════════════════════════════════════
+   DASHBOARD SECTION
+══════════════════════════════════════════════ */
+.dashboard-sec { background: linear-gradient(180deg,#111922 0%,#0a1628 100%); }
+.dash-pro-wrap { background:#0d1b2e; border:1px solid rgba(255,255,255,.08); border-radius:16px; overflow:hidden; margin-top:2.5rem; box-shadow:0 24px 80px rgba(0,0,0,.5); }
+.dash-pro-bar { background:#111922; padding:.7rem 1.5rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.06); gap:1rem; flex-wrap:wrap; }
+.dash-pro-title { font-size:.82rem; font-weight:700; color:rgba(255,255,255,.85); font-family:'Ubuntu',sans-serif; }
+.dash-pro-live { display:flex; align-items:center; gap:6px; }
+.dash-live-dot { width:7px; height:7px; border-radius:50%; background:#1d9e75; animation:pdot 2s infinite; }
+.dash-live-txt { font-size:.7rem; color:#1d9e75; font-weight:700; font-family:'Ubuntu',sans-serif; letter-spacing:.06em; }
+.dash-pro-actions { display:flex; gap:.5rem; }
+.dash-pro-btn { font-size:.7rem; padding:4px 10px; border-radius:5px; border:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.4); background:transparent; font-family:'Ubuntu',sans-serif; }
+.dash-pro-btn.act { border-color:#2D5580; color:#6FA0CC; background:rgba(24,95,165,.1); }
+/* KPI row */
+.dash-kpi-row { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid rgba(255,255,255,.06); }
+.dash-kpi { padding:1.2rem 1.5rem; border-right:1px solid rgba(255,255,255,.06); }
+.dash-kpi:last-child { border-right:none; }
+.dash-kpi-lbl { font-size:.68rem; color:rgba(255,255,255,.38); text-transform:uppercase; letter-spacing:.08em; margin-bottom:.4rem; font-family:'Ubuntu',sans-serif; }
+.dash-kpi-num { font-size:1.55rem; font-weight:700; line-height:1; margin-bottom:.3rem; font-family:'Ubuntu',sans-serif; color:#fff; }
+.dash-kpi-num.gold { color:#c9a84c; }
+.dash-kpi-num.green { color:#1d9e75; }
+.dash-kpi-num.blue { color:#6FA0CC; }
+.dash-kpi-trend { font-size:.68rem; font-family:'Ubuntu',sans-serif; color:rgba(255,255,255,.38); }
+.dash-kpi-trend.up { color:#1d9e75; }
+/* Body */
+.dash-pro-body { display:grid; grid-template-columns:1fr 320px; }
+.dash-d-left { border-right:1px solid rgba(255,255,255,.06); }
+.dash-panel { padding:1.2rem 1.5rem; border-bottom:1px solid rgba(255,255,255,.06); }
+.dash-panel:last-child { border-bottom:none; }
+.dash-panel-ttl { font-size:.7rem; font-weight:700; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.08em; margin-bottom:1rem; font-family:'Ubuntu',sans-serif; }
+/* Bar chart */
+.pro-chart { display:flex; align-items:flex-end; gap:5px; height:110px; padding-bottom:4px; }
+.pro-bar-col { display:flex; flex-direction:column; align-items:center; gap:4px; flex:1; }
+.pro-bar { width:100%; border-radius:3px 3px 0 0; min-height:4px; }
+.pro-bar.fraud { background:linear-gradient(180deg,#d85a30,#9a3a1c); }
+.pro-bar.saved { background:linear-gradient(180deg,#1d9e75,#0f6e56); }
+.pro-bar-lbl { font-size:.58rem; color:rgba(255,255,255,.28); font-family:'Ubuntu',sans-serif; }
+.chart-legend { display:flex; gap:1.25rem; margin-top:.75rem; }
+.cl-item { display:flex; align-items:center; gap:5px; font-size:.7rem; color:rgba(255,255,255,.45); font-family:'Ubuntu',sans-serif; }
+.cl-dot { width:8px; height:8px; border-radius:2px; flex-shrink:0; }
+/* Activity feed */
+.act-feed { display:flex; flex-direction:column; gap:.65rem; }
+.act-row { display:flex; align-items:flex-start; gap:.75rem; }
+.act-ico { width:28px; height:28px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:.75rem; flex-shrink:0; }
+.act-ico.red { background:rgba(216,90,48,.15); }
+.act-ico.green { background:rgba(29,158,117,.15); }
+.act-ico.amber { background:rgba(201,168,76,.15); }
+.act-body { flex:1; min-width:0; }
+.act-ttl { font-size:.76rem; font-weight:600; color:rgba(255,255,255,.78); font-family:'Ubuntu',sans-serif; margin-bottom:1px; }
+.act-sub { font-size:.67rem; color:rgba(255,255,255,.33); font-family:'Ubuntu',sans-serif; }
+.act-t { font-size:.63rem; color:rgba(255,255,255,.22); font-family:'Ubuntu',sans-serif; flex-shrink:0; padding-top:2px; }
+/* Right panel */
+.ft-list { display:flex; flex-direction:column; gap:.75rem; }
+.ft-row {}
+.ft-top { display:flex; justify-content:space-between; margin-bottom:4px; }
+.ft-name { font-size:.74rem; color:rgba(255,255,255,.58); font-family:'Ubuntu',sans-serif; }
+.ft-pct { font-size:.74rem; font-weight:700; color:rgba(255,255,255,.8); font-family:'Ubuntu',sans-serif; }
+.ft-bg { height:5px; background:rgba(255,255,255,.06); border-radius:3px; }
+.ft-fill { height:5px; border-radius:3px; background:linear-gradient(90deg,#d85a30,#c9a84c); }
+/* Quick stats */
+.qs-list { display:flex; flex-direction:column; gap:.5rem; }
+.qs-row { display:flex; justify-content:space-between; align-items:center; padding:.55rem .75rem; background:rgba(255,255,255,.03); border-radius:6px; border:1px solid rgba(255,255,255,.05); }
+.qs-lbl { font-size:.72rem; color:rgba(255,255,255,.42); font-family:'Ubuntu',sans-serif; }
+.qs-val { font-size:.76rem; font-weight:700; color:rgba(255,255,255,.78); font-family:'Ubuntu',sans-serif; }
+.qs-val.green { color:#1d9e75; }
+.qs-val.gold { color:#c9a84c; }
+@media(max-width:900px){
+  .dash-kpi-row { grid-template-columns:repeat(2,1fr); }
+  .dash-pro-body { grid-template-columns:1fr; }
+  .dash-d-left { border-right:none; }
+}
+
+/* ══════════════════════════════════════════════
+   CONTACT / DEMO REQUEST SECTION
+══════════════════════════════════════════════ */
+.contact-sec { background:#111922; }
+.contact-sec .sec-h2 { color:#fff !important; }
+.contact-sec .sec-eyebrow { color:rgba(255,255,255,.45) !important; }
+.contact-sec .sec-lead { color:rgba(255,255,255,.5) !important; }
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; margin-top:3rem; }
+.contact-pts { display:flex; flex-direction:column; gap:1.1rem; margin:1.75rem 0; }
+.cp-row { display:flex; gap:.875rem; align-items:flex-start; }
+.cp-ico { width:36px; height:36px; border-radius:8px; background:rgba(24,95,165,.15); border:1px solid rgba(24,95,165,.2); display:flex; align-items:center; justify-content:center; font-size:.9rem; flex-shrink:0; margin-top:2px; }
+.cp-txt { font-size:.855rem; color:rgba(255,255,255,.55); line-height:1.65; }
+.cp-txt strong { color:rgba(255,255,255,.88); display:block; margin-bottom:2px; font-size:.875rem; }
+.contact-direct { margin-top:1.75rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,.08); }
+.cd-lbl { font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.3); margin-bottom:.75rem; font-family:'Ubuntu',sans-serif; }
+.cd-row { display:flex; align-items:center; gap:.5rem; margin-bottom:.5rem; font-size:.845rem; color:rgba(255,255,255,.5); font-family:'Ubuntu',sans-serif; }
+.cd-row a { color:#6FA0CC; text-decoration:none; transition:color .2s; }
+.cd-row a:hover { color:#6FA0CC; }
+/* Form */
+.form-wrap { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:2rem; }
+.form-ttl { font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:.35rem; font-family:'Ubuntu',sans-serif; }
+.form-sub-txt { font-size:.8rem; color:rgba(255,255,255,.4); margin-bottom:1.5rem; }
+.form-2col { display:grid; grid-template-columns:1fr 1fr; gap:.875rem; margin-bottom:.875rem; }
+.f-grp { display:flex; flex-direction:column; gap:.375rem; margin-bottom:.875rem; }
+.f-lbl { font-size:.7rem; font-weight:600; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.06em; font-family:'Ubuntu',sans-serif; }
+.f-inp, .f-sel, .f-ta {
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:8px;
+  padding:.675rem .9rem; font-size:.875rem; color:rgba(255,255,255,.82);
+  font-family:'Ubuntu',sans-serif; outline:none; transition:border-color .2s; width:100%;
+}
+.f-inp:focus, .f-sel:focus, .f-ta:focus { border-color:#2D5580; background:rgba(24,95,165,.08); }
+.f-inp::placeholder, .f-ta::placeholder { color:rgba(255,255,255,.22); }
+.f-sel { appearance:none; cursor:pointer; }
+.f-sel option { background:#0a1628; color:#fff; }
+.f-ta { min-height:88px; resize:vertical; }
+.f-submit {
+  width:100%; padding:.9rem; margin-top:.375rem;
+  background:linear-gradient(135deg,#2D5580,#0c447c);
+  border:none; border-radius:8px; color:#fff; font-size:.92rem; font-weight:700;
+  font-family:'Ubuntu',sans-serif; cursor:pointer; transition:all .2s;
+}
+.f-submit:hover { transform:translateY(-1px); box-shadow:0 8px 24px rgba(24,95,165,.4); }
+.f-note { text-align:center; font-size:.7rem; color:rgba(255,255,255,.25); margin-top:.65rem; font-family:'Ubuntu',sans-serif; }
+.f-success { display:none; text-align:center; padding:2.5rem 1rem; }
+.f-success-ico { font-size:2.5rem; margin-bottom:.75rem; }
+.f-success-ttl { font-size:1rem; font-weight:700; color:#1d9e75; margin-bottom:.375rem; font-family:'Ubuntu',sans-serif; }
+.f-success-sub { font-size:.82rem; color:rgba(255,255,255,.4); font-family:'Ubuntu',sans-serif; }
+@media(max-width:900px){
+  .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .form-2col { grid-template-columns:1fr; }
+}
+
+/* ══════════════════════════════════════════════
+   ACTIVE NAV HIGHLIGHT
+══════════════════════════════════════════════ */
+.nav-center a { position:relative; transition:color .2s; }
+
+/* ══════════════════════════════════════════════
+   MOBILE RESPONSIVE FIXES
+══════════════════════════════════════════════ */
+@media(max-width:768px){
+  .prob-cards { grid-template-columns:1fr 1fr; }
+  .modules-grid { grid-template-columns:1fr; }
+  .pricing-row { grid-template-columns:1fr; }
+  .model-numbers { grid-template-columns:repeat(2,1fr); }
+  .team-layout { grid-template-columns:1fr; }
+  .team-cards { grid-template-columns:1fr; }
+  .footer-top { grid-template-columns:1fr; gap:2rem; }
+  .footer-links-grid { grid-template-columns:1fr 1fr; }
+  .eco-layout { grid-template-columns:1fr; }
+  .audiences-grid { grid-template-columns:1fr; }
+  .screens-row { grid-template-columns:1fr; }
+  .sec-h2 { font-size:2rem !important; }
+  .hero-h1 { font-size:2.4rem; }
+  .why-grid { grid-template-columns:1fr; }
+}
+@media(max-width:480px){
+  .prob-cards { grid-template-columns:1fr; }
+  .dash-kpi-row { grid-template-columns:1fr 1fr; }
+  .footer-links-grid { grid-template-columns:1fr; }
+  .trust-inner { flex-wrap:wrap; }
+  .hero-h1 { font-size:2rem; }
+  .form-2col { grid-template-columns:1fr; }
+}
+
+/* ── SEC-H2 COLOR FIX FOR DARK SECTIONS ──
+   The sec-h2 base color from style.css is dark (works on light sections).
+   audiences-sec and appscreens-sec have dark backgrounds — force white. */
+.audiences-sec .sec-h2,
+.appscreens-sec .sec-h2 {
+  color: #ffffff !important;
+}
+.audiences-sec .sec-eyebrow,
+.appscreens-sec .sec-eyebrow {
+  color: rgba(255,255,255,0.55) !important;
+}
+.audiences-sec .sec-lead,
+.appscreens-sec .sec-lead {
+  color: rgba(255,255,255,0.55) !important;
+}
+
+/* ── SCROLL TO TOP ── */
+#scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #2D5580;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 20px rgba(24,95,165,.4);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .3s, transform .3s;
+  z-index: 999;
+  pointer-events: none;
+}
+#scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#scroll-top:hover { background: #0c447c; }
+
+/* ── FOR INSURERS / FOR PATIENTS ── */
+.audiences-sec { background: var(--bg-alt, #0d1b2e); }
+.audiences-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.aud-card { border-radius: 16px; overflow: hidden; }
+.aud-card-head { padding: 2rem 2rem 1.75rem; }
+.aud-insurer-head { background: linear-gradient(135deg, #111922 0%, #0d1f3a 100%); border-top: 3px solid #c9a84c; }
+.aud-patients-head { background: linear-gradient(135deg, #0f3460 0%, #2D5580 100%); border-top: 3px solid #6FA0CC; }
+.aud-tag { display: inline-block; font-size: .65rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 4px 13px; border-radius: 100px; margin-bottom: .875rem; }
+.aud-tag-g { background: rgba(201,168,76,.2); color: #c9a84c; }
+.aud-tag-b { background: rgba(55,138,221,.2); color: #6FA0CC; }
+.aud-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
+.aud-title { font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: .6rem; }
+.aud-sub { font-size: .85rem; color: rgba(255,255,255,.58); line-height: 1.72; }
+.aud-card-body { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-top: none; padding: 1.75rem 2rem; border-radius: 0 0 16px 16px; }
+.aud-feature { display: flex; gap: .875rem; margin-bottom: 1rem; align-items: flex-start; }
+.aud-feature:last-child { margin-bottom: 0; }
+.aud-dot { width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: .7rem; margin-top: 2px; }
+.aud-dot-b { background: rgba(55,138,221,.18); color: #6FA0CC; }
+.aud-dot-g { background: rgba(29,158,117,.18); color: #1d9e75; }
+.aud-feat-text { font-size: .84rem; color: rgba(255,255,255,.62); line-height: 1.65; }
+.aud-feat-text strong { color: rgba(255,255,255,.9); font-weight: 600; }
+@media(max-width:860px){ .audiences-grid{ grid-template-columns:1fr; } }
+
+/* ── APP SCREENS ── */
+.appscreens-sec { background: linear-gradient(170deg, #111922 0%, #0a1628 100%); }
+.screens-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; margin-top: 3rem; align-items: start; }
+.screen-wrap { display: flex; flex-direction: column; align-items: center; }
+.phone-frame { background: #111c2e; border-radius: 22px; overflow: hidden; border: 1.5px solid rgba(255,255,255,.1); box-shadow: 0 24px 60px rgba(0,0,0,.55); width: 100%; max-width: 200px; }
+.phone-notch-bar { height: 8px; background: rgba(255,255,255,.04); display: flex; justify-content: center; align-items: center; }
+.phone-pill-bar { width: 26px; height: 3px; background: rgba(255,255,255,.18); border-radius: 2px; }
+.ph-topbar { background: #fff; padding: 8px 11px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid #e8eef6; }
+.ph-badge { width: 20px; height: 20px; border-radius: 5px; background: #2D5580; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.ph-ttl { font-size: 11px; font-weight: 700; color: #0a1628; flex: 1; font-family: 'Ubuntu', sans-serif; }
+.ph-bell { font-size: 13px; }
+.ph-hero-card { background: linear-gradient(135deg, #2D5580, #0a3567); border-radius: 11px; padding: 11px; margin: 9px; }
+.phc-name { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 1px; font-family: 'Ubuntu', sans-serif; }
+.phc-id { font-size: 7.5px; color: rgba(255,255,255,.45); margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
+.phc-bar-row { display: flex; justify-content: space-between; margin-bottom: 5px; }
+.phc-bar-row span { font-size: 8.5px; color: rgba(255,255,255,.7); font-family: 'Ubuntu', sans-serif; }
+.phc-bar-row strong { font-size: 9px; color: #c9a84c; font-weight: 700; font-family: 'Ubuntu', sans-serif; }
+.phc-track { height: 5px; background: rgba(255,255,255,.18); border-radius: 3px; }
+.phc-fill { height: 5px; width: 23%; background: #c9a84c; border-radius: 3px; }
+.ph-actions { display: grid; grid-template-columns: repeat(4,1fr); gap: 5px; padding: 0 9px 8px; }
+.ph-act { background: #f5f8fc; border-radius: 7px; padding: 6px 3px; text-align: center; border: 1px solid #e8eef6; }
+.ph-act-icon { font-size: 12px; margin-bottom: 2px; }
+.ph-act-lbl { font-size: 6.5px; color: #0a1628; font-weight: 600; font-family: 'Ubuntu', sans-serif; }
+.ph-sec-lbl { font-size: 8.5px; font-weight: 700; color: #0a1628; padding: 0 9px; margin-bottom: 5px; font-family: 'Ubuntu', sans-serif; }
+.ph-claim { background: #fff; border-radius: 7px; margin: 0 9px 5px; padding: 7px 8px; border: 1px solid #e8eef6; display: flex; justify-content: space-between; align-items: center; }
+.phcl-l .phcl-type { font-size: 7.5px; font-weight: 600; color: #0a1628; font-family: 'Ubuntu', sans-serif; }
+.phcl-l .phcl-prov { font-size: 6.5px; color: #6b7fa0; font-family: 'Ubuntu', sans-serif; }
+.phcl-r .phcl-amt { font-size: 8.5px; font-weight: 700; color: #0a1628; text-align: right; font-family: 'Ubuntu', sans-serif; }
+.ph-pill { font-size: 6px; font-weight: 700; padding: 2px 6px; border-radius: 20px; margin-top: 2px; display: inline-block; font-family: 'Ubuntu', sans-serif; }
+.ph-green { background: #e8f7f2; color: #1d9e75; }
+.ph-amber { background: #fef3e0; color: #d97706; }
+.ph-red { background: #faeae5; color: #d85a30; }
+.ph-qr-bg { background: #f5f8fc; padding: 9px; }
+.ph-qr-ttl { font-size: 9.5px; font-weight: 700; color: #0a1628; text-align: center; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-sub { font-size: 7px; color: #6b7fa0; text-align: center; margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-card { background: #fff; border-radius: 11px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+.ph-qr-head { background: linear-gradient(135deg,#2D5580,#0a3567); padding: 9px 11px; display: flex; justify-content: space-between; align-items: center; }
+.ph-qr-brand { font-size: 9.5px; font-weight: 700; color: #fff; font-family: 'Ubuntu', sans-serif; }
+.ph-class-badge { background: #c9a84c; padding: 2px 7px; border-radius: 4px; font-size: 6.5px; font-weight: 700; color: #fff; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-body { padding: 11px; text-align: center; }
+.ph-qr-name { font-size: 11px; font-weight: 700; color: #0a1628; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-id { font-size: 7px; color: #6b7fa0; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-plan { font-size: 7.5px; color: #2D5580; font-weight: 600; margin-bottom: 9px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-code { width: 78px; height: 78px; margin: 0 auto 7px; background: #f5f8fc; border-radius: 6px; border: 1px solid #e8eef6; display: grid; grid-template-columns: repeat(9,1fr); gap: 1.5px; padding: 5px; }
+.qc1 { background: #2D5580; border-radius: 1px; } .qc0 { background: transparent; }
+.ph-qr-hint { font-size: 7px; color: #6b7fa0; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-footer { border-top: 1px solid #e8eef6; padding: 8px 11px; display: flex; justify-content: space-between; }
+.ph-qr-flbl { font-size: 6.5px; color: #6b7fa0; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-fval { font-size: 8px; font-weight: 600; color: #0a1628; font-family: 'Ubuntu', sans-serif; }
+.ph-qr-status { display: flex; align-items: center; gap: 5px; margin-top: 7px; justify-content: center; }
+.ph-qr-dot { width: 5px; height: 5px; border-radius: 50%; background: #1d9e75; }
+.ph-qr-stxt { font-size: 7.5px; color: #1d9e75; font-weight: 600; font-family: 'Ubuntu', sans-serif; }
+.ph-filters { background: #fff; border-bottom: 1px solid #e8eef6; padding: 6px 9px; display: flex; gap: 4px; }
+.ph-filter { font-size: 7px; padding: 3px 8px; border-radius: 20px; border: 1px solid #e8eef6; color: #6b7fa0; font-weight: 500; font-family: 'Ubuntu', sans-serif; }
+.ph-filter.on { background: #2D5580; border-color: #2D5580; color: #fff; font-weight: 700; }
+.ph-claims-list { padding: 7px 9px; background: #f5f8fc; }
+.ph-clm { background: #fff; border-radius: 7px; padding: 8px; margin-bottom: 5px; border: 1px solid #e8eef6; }
+.ph-clm-top { display: flex; justify-content: space-between; margin-bottom: 2px; }
+.ph-clm-type { font-size: 8px; font-weight: 700; color: #0a1628; font-family: 'Ubuntu', sans-serif; }
+.ph-clm-amt { font-size: 8.5px; font-weight: 700; color: #0a1628; font-family: 'Ubuntu', sans-serif; }
+.ph-clm-prov { font-size: 7px; color: #6b7fa0; margin-bottom: 4px; font-family: 'Ubuntu', sans-serif; }
+.ph-clm-bot { display: flex; justify-content: space-between; align-items: center; }
+.ph-clm-date { font-size: 6.5px; color: #6b7fa0; font-family: 'Ubuntu', sans-serif; }
+.ph-tabbar { background: #fff; border-top: 1px solid #e8eef6; padding: 5px; display: flex; justify-content: space-around; }
+.ph-tab { text-align: center; font-size: 6px; color: #6b7fa0; font-weight: 500; font-family: 'Ubuntu', sans-serif; }
+.ph-tab.on { color: #2D5580; font-weight: 700; }
+.ph-tab-icon { font-size: 11px; display: block; margin-bottom: 1px; }
+.screen-label { margin-top: .875rem; font-size: .9rem; font-weight: 700; color: rgba(255,255,255,.9); text-align: center; font-family: 'Ubuntu', sans-serif; }
+.screen-sub { font-size: .75rem; color: rgba(255,255,255,.4); text-align: center; margin-top: .2rem; font-family: 'Ubuntu', sans-serif; }
+@media(max-width:860px){ .screens-row{ grid-template-columns:1fr; } .phone-frame{ max-width:260px; } }
+
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "iRonic Health",
+  "url": "https://ironichealth.com/investor/",
+  "logo": "https://ironichealth.com/investor/assets/logos/H_Badge_Metro_Blue_T.svg",
+  "description": "AI-powered health insurance orchestration platform in development for Egypt's private health insurance market. Company in formation.",
+  "founders": [
+    { "@type": "Person", "name": "Sherif Almeidany", "jobTitle": "Co-Founder & CEO" },
+    { "@type": "Person", "name": "Dr. Islam Almeidany", "jobTitle": "Co-Founder & Chief Pharmacy Officer" }
+  ],
+  "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+  "contactPoint": { "@type": "ContactPoint", "email": "info@ironichealth.com", "contactType": "Business Inquiries" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "iRonic Health",
+  "url": "https://ironichealth.com/investor/",
+  "description": "AI-powered health insurance orchestration platform built for Egypt.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://ironichealth.com/investor/contact.html",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://ironichealth.com/investor/">
+<link rel="alternate" hreflang="ar" href="https://ironichealth.com/investor/ar/">
+</head>
+<body>
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+<!-- NAV -->
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<main id="main-content">
+<section class="hero" aria-label="Hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-fade-mask" aria-hidden="true"></div>
+  <div class="hero-left reveal">
+    <div class="hero-pill"><div class="pill-dot" aria-hidden="true"></div><span class="pill-text">AI health insurance orchestration platform built for Egypt</span></div>
+    <h1 class="hero-h1">Every Claim<br><span class="accent">Verified.</span><br>Every <span class="gold-t">Pound Saved.</span></h1>
+    <p class="hero-desc">iRonic Health is being built to detect fraud, automate approvals, and connect Egypt's fragmented health insurance ecosystem — powered by an AI layer designed around 25–40 Egypt-specific fraud archetypes (in development).</p>
+    <div class="hero-btns">
+      <a href="contact.html" class="hbtn-p">Request a Demo →</a>
+      <a href="platform.html" class="hbtn-s">See How It Works</a>
+    </div>
+    <div class="hero-kpis" role="list">
+      <div class="kpi" role="listitem"><div class="kpi-val counter" data-target="90" data-suffix="%+">0%</div><div class="kpi-lbl">Claims still paper-based</div></div>
+      <div class="kpi" role="listitem"><div class="kpi-val">7–21 days</div><div class="kpi-lbl">Average approval cycle</div></div>
+      <div class="kpi" role="listitem"><div class="kpi-val">2–10%</div><div class="kpi-lbl">Fraud leakage on GWP</div></div>
+    </div>
+  </div>
+  <div class="hero-right reveal reveal-d2">
+    <div class="dashboard-card">
+      <div class="dash-header">
+        <div class="dash-header-left"><span class="dash-title">Claims Intelligence Dashboard</span><span class="dash-sub">Illustrative TPA · Sample Data</span></div>
+        <span class="dash-live"><span class="live-dot" aria-hidden="true"></span>Sample data</span>
+      </div>
+      <div class="dash-body">
+        <div class="dash-metrics">
+          <div class="dm dm-blue"><div class="dm-icon">🎯</div><div class="dm-val">25–40</div><div class="dm-lbl">Fraud archetypes (target)</div><div class="dm-trend up">Illustrative</div></div>
+          <div class="dm dm-green"><div class="dm-icon">⚡</div><div class="dm-val">4.3s</div><div class="dm-lbl">Claim decision (target)</div><div class="dm-trend up">Illustrative</div></div>
+          <div class="dm dm-gold"><div class="dm-icon">💰</div><div class="dm-val">$2.4M</div><div class="dm-lbl">Fraud recovered (sample)</div><div class="dm-trend up">Illustrative</div></div>
+        </div>
+        <div class="dash-section-title">Top fraud patterns detected</div>
+        <div class="fraud-rows">
+          <div class="fraud-row"><span class="fraud-label">Phantom prescriptions</span><div class="fraud-bar-bg"><div class="fraud-bar-fill" data-width="82"></div></div><span class="fraud-pct">82%</span></div>
+          <div class="fraud-row"><span class="fraud-label">ICU over-stay</span><div class="fraud-bar-bg"><div class="fraud-bar-fill" data-width="67"></div></div><span class="fraud-pct">67%</span></div>
+          <div class="fraud-row"><span class="fraud-label">Brand upcoding</span><div class="fraud-bar-bg"><div class="fraud-bar-fill" data-width="54"></div></div><span class="fraud-pct">54%</span></div>
+          <div class="fraud-row"><span class="fraud-label">Counterfeit drugs</span><div class="fraud-bar-bg"><div class="fraud-bar-fill" data-width="41"></div></div><span class="fraud-pct">41%</span></div>
+        </div>
+        <div class="party-chips" role="list">
+          <span class="chip">🏥 Hospitals</span><span class="chip">🛡 Insurers</span><span class="chip">💊 Pharmacies</span><span class="chip">🧪 Labs</span><span class="chip">👤 Patients</span><span class="chip chip-more">+3 more</span>
+        </div>
+      </div>
+      <div class="dash-footer"><span class="df-text">Illustrative targets — not actual results</span><span class="df-badge">Sample data</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar" aria-label="Platform statistics">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-val">6–8M</span><span class="trust-lbl">Privately Insured Lives (Egypt)</span></div>
+    <div class="trust-sep" aria-hidden="true"></div>
+    <div class="trust-item"><span class="trust-val">7</span><span class="trust-lbl">AI Modules Designed</span></div>
+    <div class="trust-sep" aria-hidden="true"></div>
+    <div class="trust-item"><span class="trust-val">8</span><span class="trust-lbl">Ecosystem Parties</span></div>
+    <div class="trust-sep" aria-hidden="true"></div>
+    <div class="trust-item"><span class="trust-val">$373M</span><span class="trust-lbl">Egypt GWP Market</span></div>
+    <div class="trust-sep" aria-hidden="true"></div>
+    <div class="trust-item"><span class="trust-val">15%</span><span class="trust-lbl">Annual Market Growth</span></div>
+    <div class="trust-sep" aria-hidden="true"></div>
+    <div class="trust-item"><span class="trust-val">70%+</span><span class="trust-lbl">Target Gross Margin</span></div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="prob-sec" id="problem" aria-labelledby="problem-heading">
+  <div class="prob-inner">
+    <div class="prob-top">
+      <div class="reveal"><div class="prob-eyebrow">The Problem</div><h2 class="prob-h2" id="problem-heading">Egypt's Health Insurance<br>System Is Running Blind</h2></div>
+      <p class="prob-lead reveal reveal-d1">Paper claims, manual approvals, costly fraud — and no Egypt-specific AI layer we could find. Every day this continues, insurers lose margin they'll never recover.</p>
+    </div>
+    <div class="prob-cards" role="list">
+      <div class="pc reveal" role="listitem"><div class="pc-accent" aria-hidden="true"></div><div class="pc-icon">📋</div><div class="pc-num">90%+</div><div class="pc-label">Paper-based claims</div><div class="pc-desc">Insurance claims in Egypt are still processed manually. No automation, no audit trail, no intelligence layer.</div></div>
+      <div class="pc reveal reveal-d1" role="listitem"><div class="pc-accent" aria-hidden="true"></div><div class="pc-icon">⏱</div><div class="pc-num">7–21</div><div class="pc-label">Days per approval</div><div class="pc-desc">Every hospital admission triggers a slow, human-gated process that delays care and inflates operational costs.</div></div>
+      <div class="pc reveal reveal-d2" role="listitem"><div class="pc-accent" aria-hidden="true"></div><div class="pc-icon">🚨</div><div class="pc-num">2–10%</div><div class="pc-label">Fraud leakage on GWP</div><div class="pc-desc">Phantom prescriptions, ICU over-stays, brand upcoding — Egyptian fraud patterns invisible to generic systems.</div></div>
+      <div class="pc reveal reveal-d3" role="listitem"><div class="pc-accent" aria-hidden="true"></div><div class="pc-icon">🤖</div><div class="pc-num">0</div><div class="pc-label">Egypt-specific fraud AI platforms we found</div><div class="pc-desc">We found no platform built specifically around Egyptian claims patterns and fraud archetypes. That is the gap we are building for.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCES — FOR INSURERS / FOR PATIENTS -->
+<section class="sec audiences-sec" id="audiences" aria-labelledby="audiences-heading">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-rule" aria-hidden="true"></div>
+      <div class="sec-eyebrow">Who We Serve</div>
+      <h2 class="sec-h2" id="audiences-heading">B2B Infrastructure.<br><em>B2C Experience.</em></h2>
+      <p class="sec-lead">Insurers and TPAs pay for the platform. Policyholders use it every day. Both sides win — and the insurer gets all the ROI data to prove it.</p>
+    </div>
+    <div class="audiences-grid">
+
+      <!-- For Insurers -->
+      <div class="aud-card reveal">
+        <div class="aud-card-head aud-insurer-head">
+          <span class="aud-icon">🏛️</span>
+          <div class="aud-tag aud-tag-g">For Insurers &amp; TPAs</div>
+          <div class="aud-title">Stop losing money to fraud you can't see.</div>
+          <div class="aud-sub">Industry surveys put fraud and abuse at 2–10% of claims. Our AI is designed to flag it before claims are paid — not after. Zero upfront cost in the pilot.</div>
+        </div>
+        <div class="aud-card-body">
+          <div class="aud-feature"><div class="aud-dot aud-dot-b">🔍</div><p class="aud-feat-text"><strong>Real-time fraud scoring</strong> on every claim — 25–40 Egypt-specific archetypes including counterfeit antibiotics, phantom claims, and antibiotic over-prescription</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-b">⚡</div><p class="aud-feat-text"><strong>Claims automation</strong> cuts 7–21 day approval cycles to under 4 hours with full designed for FRA requirements audit trail and zero extra headcount</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-b">💰</div><p class="aud-feat-text"><strong>Pilot pricing: 25% of validated fraud savings</strong> — zero platform fee, zero financial risk. We earn only when you save.</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-b">⚖️</div><p class="aud-feat-text"><strong>Physician oversight</strong> on every AI decision — removes clinical liability risk from your team entirely</p></div>
+        </div>
+      </div>
+
+      <!-- For Patients -->
+      <div class="aud-card reveal reveal-d2">
+        <div class="aud-card-head aud-patients-head">
+          <span class="aud-icon">📱</span>
+          <div class="aud-tag aud-tag-b">For Policyholders</div>
+          <div class="aud-title">Your entire insurance relationship in your pocket.</div>
+          <div class="aud-sub">No phone calls. No paper. No waiting. iRonic Health gives policyholders a premium digital experience — white-labelled for your insurer at no extra cost.</div>
+        </div>
+        <div class="aud-card-body">
+          <div class="aud-feature"><div class="aud-dot aud-dot-g">🪪</div><p class="aud-feat-text"><strong>Digital health card with live QR code</strong> — scan at any network provider to verify coverage in under 1 second, replacing paper entirely</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-g">📋</div><p class="aud-feat-text"><strong>Real-time claims tracking</strong> — know the status of every claim the moment it updates, with full AI decision audit trail</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-g">🛡️</div><p class="aud-feat-text"><strong>Coverage dashboard</strong> showing annual limits, used amounts, and remaining benefits by category — always live and accurate</p></div>
+          <div class="aud-feature"><div class="aud-dot aud-dot-g">📅</div><p class="aud-feat-text"><strong>Appointment booking</strong> with specialty browse and provider search within the insured network</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+
+<section class="sec" id="product" aria-labelledby="product-heading">
+  <div class="sec-inner">
+    <div class="sec-header reveal">
+      <div><div class="sec-rule" aria-hidden="true"></div><div class="sec-eyebrow">The Platform</div><h2 class="sec-h2" id="product-heading">Adjudication Automation.<br><em>Not Just Fraud Detection.</em></h2><p class="sec-lead">Fraud recovery alone gets a client to roughly 2.1&#215; ROI &#8212; below what most CFOs will sign for. Administrative-cost automation across the platform raises that to a documented 3.67&#215; target. Deploy individually or as a full platform. Figures below are design targets, pending pilot validation.</p></div>
+      <div class="sec-badge reveal reveal-d2"><div class="sb-val">3.67&#215;</div><div class="sb-lbl">Target Client ROI</div><div class="sb-sub">Fraud + admin automation combined</div></div>
+    </div>
+    <div class="modules-grid">
+      <article class="mod-card reveal reveal-d1"><div class="mod-header"><div class="mod-icon-wrap">🔍</div><span class="mod-n">01</span></div><h3 class="mod-title">Fraud Detection AI</h3><p class="mod-desc">25–40 Egypt-specific fraud archetypes mapped to real-time AI models. Phantom prescriptions, counterfeit drugs, ICU over-stays flagged in seconds.</p><div class="mod-footer"><span class="mod-tag">Target: 25–40% fraud recovery</span><span class="mod-arrow">→</span></div></article>
+      <article class="mod-card reveal reveal-d2"><div class="mod-header"><div class="mod-icon-wrap">🧠</div><span class="mod-n">02</span></div><h3 class="mod-title">Insurance Health Score</h3><p class="mod-desc">Predictive risk score per member, updated continuously. Enables dynamic underwriting, tiered premiums, and proactive case management before claims occur.</p><div class="mod-footer"><span class="mod-tag">Risk stratification</span><span class="mod-arrow">→</span></div></article>
+      <article class="mod-card reveal reveal-d3"><div class="mod-header"><div class="mod-icon-wrap">📊</div><span class="mod-n">03</span></div><h3 class="mod-title">AI Claim Predictor</h3><p class="mod-desc">Forecasts high-cost claims 30–60 days before they occur — giving insurers and TPAs advance notice to intervene with preventive protocols.</p><div class="mod-footer"><span class="mod-tag">Pre-loss intervention</span><span class="mod-arrow">→</span></div></article>
+      <article class="mod-card reveal reveal-d1"><div class="mod-header"><div class="mod-icon-wrap">🏥</div><span class="mod-n">04</span></div><h3 class="mod-title">Auto Hospital Routing</h3><p class="mod-desc">Routes patients to the most cost-effective, clinically appropriate provider. Targets 20–35% savings per routed claim through network optimization.</p><div class="mod-footer"><span class="mod-tag">Target: 20–35% cost reduction</span><span class="mod-arrow">→</span></div></article>
+      <article class="mod-card reveal reveal-d2"><div class="mod-header"><div class="mod-icon-wrap">❤️</div><span class="mod-n">05</span></div><h3 class="mod-title">Preventive Care Program</h3><p class="mod-desc">Chronic disease management and early intervention for high-risk members. Targets up to 40% fewer preventable hospitalizations across the pool.</p><div class="mod-footer"><span class="mod-tag">Target: 40% fewer admissions</span><span class="mod-arrow">→</span></div></article>
+      <article class="mod-card reveal reveal-d3"><div class="mod-header"><div class="mod-icon-wrap">💰</div><span class="mod-n">06</span></div><h3 class="mod-title">Dynamic Premiums</h3><p class="mod-desc">Members pay less when they engage in healthy behaviors. Insurers gain behavioral levers and healthier risk pools. A new lever for Egypt's insurance market.</p><div class="mod-footer"><span class="mod-tag">Behavior-linked pricing</span><span class="mod-arrow">→</span></div></article>
+      <article class="mod-card mod-wide reveal">
+        <div class="mod-header"><div class="mod-icon-wrap">📈</div><span class="mod-n">07</span></div>
+        <div class="mod-wide-body"><h3 class="mod-title">Golden Insurance Dashboard</h3><p class="mod-desc">Real-time intelligence across all 8 ecosystem parties. Data → Insights → Cost Reduction. The single source of truth for every insurer, TPA, and hospital CFO.</p><div class="mod-wide-tags"><span class="mod-tag">Decision support layer</span><span class="mod-tag-outline">designed for FRA requirements</span><span class="mod-tag-outline">PDPL 151/2020</span></div></div>
+        <div class="mod-wide-visual" aria-hidden="true"><div class="mini-chart"><div class="chart-bar" style="height:40%"></div><div class="chart-bar" style="height:60%"></div><div class="chart-bar" style="height:45%"></div><div class="chart-bar" style="height:80%"></div><div class="chart-bar" style="height:55%"></div><div class="chart-bar" style="height:90%"></div><div class="chart-bar active" style="height:75%"></div></div><div class="mini-chart-label">Fraud savings trend</div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section class="sec eco-sec" id="ecosystem" aria-labelledby="ecosystem-heading">
+  <div class="sec-inner">
+    <div class="reveal"><div class="sec-rule" aria-hidden="true"></div><div class="sec-eyebrow">The Ecosystem</div><h2 class="sec-h2" id="ecosystem-heading">8 Parties. <em>One Platform.</em><br>Zero Fragmentation.</h2><p class="sec-lead">Designed to connect every stakeholder in the health insurance value chain — in real time.</p></div>
+    <div class="eco-layout">
+      <div class="eco-list reveal">
+        <div class="eco-item"><div class="eco-item-icon"><span>🏥</span></div><div class="eco-item-body"><div class="eco-item-title">Hospitals</div><div class="eco-item-desc">Real-time pre-authorization, clinical protocol compliance, cost benchmarking</div></div><div class="eco-item-arrow">→</div></div>
+        <div class="eco-item"><div class="eco-item-icon"><span>🛡</span></div><div class="eco-item-body"><div class="eco-item-title">Insurers</div><div class="eco-item-desc">Fraud flagging, loss ratio management, claims automation, regulatory reporting</div></div><div class="eco-item-arrow">→</div></div>
+        <div class="eco-item"><div class="eco-item-icon"><span>💊</span></div><div class="eco-item-body"><div class="eco-item-title">Pharmacies</div><div class="eco-item-desc">Prescription verification, brand-vs-generic audit, dispensing analytics</div></div><div class="eco-item-arrow">→</div></div>
+        <div class="eco-item"><div class="eco-item-icon"><span>👨‍⚕️</span></div><div class="eco-item-body"><div class="eco-item-title">Doctors</div><div class="eco-item-desc">Evidence-based prescribing support, treatment pathway guidance</div></div><div class="eco-item-arrow">→</div></div>
+        <div class="eco-item"><div class="eco-item-icon"><span>👤</span></div><div class="eco-item-body"><div class="eco-item-title">Patients</div><div class="eco-item-desc">Health score, benefit navigation, care reminders, claim tracking</div></div><div class="eco-item-arrow">→</div></div>
+        <div class="eco-item"><div class="eco-item-icon"><span>🧪</span></div><div class="eco-item-body"><div class="eco-item-title">Labs</div><div class="eco-item-desc">Test ordering validation, duplicate detection, AI result integration</div></div><div class="eco-item-arrow">→</div></div>
+        <div class="eco-item"><div class="eco-item-icon"><span>📷</span></div><div class="eco-item-body"><div class="eco-item-title">Radiology</div><div class="eco-item-desc">Pre-auth for imaging, overuse detection, clinical appropriateness scoring</div></div><div class="eco-item-arrow">→</div></div>
+        <div class="eco-item" style="border-bottom:none"><div class="eco-item-icon"><span>🏭</span></div><div class="eco-item-body"><div class="eco-item-title">Pharma Companies</div><div class="eco-item-desc">Formulary intelligence, prescription data, brand analytics</div></div><div class="eco-item-arrow">→</div></div>
+      </div>
+      <div class="eco-right reveal reveal-d2">
+        <div class="eco-visual">
+          <div class="eco-center-ring" role="img" aria-label="8-party ecosystem orbit diagram">
+            <div class="eco-hub">
+              <img src="assets/H_Badge_icon.svg" alt="iRonic Health AI Core" class="eco-hub-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="eco-hub-fallback" style="display:none;flex-direction:column;align-items:center;justify-content:center"><span class="eco-hub-h">iH</span><span class="eco-hub-s">AI CORE</span></div>
+            </div>
+            <div class="eco-orbit" aria-hidden="true">
+              <div class="eco-node"><span>🏥</span>Hospital</div><div class="eco-node"><span>🛡</span>Insurer</div>
+              <div class="eco-node"><span>💊</span>Pharma</div><div class="eco-node"><span>👨‍⚕️</span>Doctor</div>
+              <div class="eco-node"><span>👤</span>Patient</div><div class="eco-node"><span>🧪</span>Labs</div>
+              <div class="eco-node"><span>📷</span>Radiol.</div><div class="eco-node"><span>🏭</span>Pharma Co.</div>
+            </div>
+          </div>
+          <div class="eco-visual-stats">
+            <div class="evs"><div class="evs-val">8</div><div class="evs-lbl">Party types</div></div>
+            <div class="evs-sep"></div>
+            <div class="evs"><div class="evs-val">7</div><div class="evs-lbl">AI modules</div></div>
+          </div>
+        </div>
+        <div class="competitor-card">
+          <div class="cc-title">iRonic Health vs. Competitors</div>
+          <table class="cc-table" aria-label="Competitor comparison">
+            <thead><tr><th>Capability</th><th class="cc-us">iRonic</th><th>Others</th></tr></thead>
+            <tbody>
+              <tr><td>Egypt-specific fraud archetypes (in design)</td><td class="cc-us cc-yes">✓</td><td class="cc-no">✗</td></tr>
+              <tr><td>Full 8-party ecosystem</td><td class="cc-us cc-yes">✓</td><td class="cc-no">✗</td></tr>
+              <tr><td>TPA + insurer integration</td><td class="cc-us cc-yes">✓</td><td class="cc-partial">~</td></tr>
+              <tr><td>designed for FRA requirements AI layer</td><td class="cc-us cc-yes">✓</td><td class="cc-no">✗</td></tr>
+              <tr><td>Contingent pricing model</td><td class="cc-us cc-yes">✓</td><td class="cc-no">✗</td></tr>
+              <tr><td>Pharmacy + lab integration</td><td class="cc-us cc-yes">✓</td><td class="cc-no">✗</td></tr>
+            </tbody>
+          </table>
+          <div class="cc-note">Design comparison vs. existing Egyptian health-tech and TPA offerings, based on publicly available information (2026). iRonic capabilities are in development.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP SCREENS -->
+<section class="sec appscreens-sec" id="appscreens" aria-labelledby="appscreens-heading">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-rule" aria-hidden="true"></div>
+      <div class="sec-eyebrow">The Patient App</div>
+      <h2 class="sec-h2" id="appscreens-heading">What Policyholders<br><em>Actually See.</em></h2>
+      <p class="sec-lead">Planned for iOS and Android, white-labelled per insurer. The app is a direct extension of the platform — the screens below are design mockups with sample data.</p>
+    </div>
+    <div class="screens-row">
+
+      <!-- Phone 1: Home -->
+      <div class="screen-wrap reveal">
+        <div class="phone-frame">
+          <div class="phone-notch-bar"><div class="phone-pill-bar"></div></div>
+          <div class="ph-topbar"><div class="ph-badge">H</div><span class="ph-ttl">Home</span><span class="ph-bell">🔔</span></div>
+          <div class="ph-hero-card">
+            <div class="phc-name">Sara Mahmoud</div>
+            <div class="phc-id">IRH-2026-00101</div>
+            <div class="phc-bar-row"><span>Coverage Used</span><strong>23%</strong></div>
+            <div class="phc-track"><div class="phc-fill"></div></div>
+          </div>
+          <div class="ph-actions">
+            <div class="ph-act"><div class="ph-act-icon">🆔</div><div class="ph-act-lbl">My Card</div></div>
+            <div class="ph-act"><div class="ph-act-icon">📋</div><div class="ph-act-lbl">Claim</div></div>
+            <div class="ph-act"><div class="ph-act-icon">📅</div><div class="ph-act-lbl">Book</div></div>
+            <div class="ph-act"><div class="ph-act-icon">📞</div><div class="ph-act-lbl">Support</div></div>
+          </div>
+          <div class="ph-sec-lbl">Recent Claims</div>
+          <div class="ph-claim"><div class="phcl-l"><div class="phcl-type">Outpatient Visit</div><div class="phcl-prov">Sample Medical Centre</div></div><div class="phcl-r"><div class="phcl-amt">EGP 1,200</div><div class="ph-pill ph-green">Approved</div></div></div>
+          <div class="ph-claim"><div class="phcl-l"><div class="phcl-type">Lab Tests</div><div class="phcl-prov">Sample Lab A</div></div><div class="phcl-r"><div class="phcl-amt">EGP 850</div><div class="ph-pill ph-amber">Pending</div></div></div>
+          <div class="ph-claim"><div class="phcl-l"><div class="phcl-type">Radiology</div><div class="phcl-prov">Sample Imaging Centre</div></div><div class="phcl-r"><div class="phcl-amt">EGP 2,100</div><div class="ph-pill ph-red">⚠ Flagged</div></div></div>
+          <div class="ph-tabbar">
+            <div class="ph-tab on"><span class="ph-tab-icon">🏠</span>Home</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🛡️</span>Cover</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🪪</span>Card</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📅</span>Appts</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📋</span>Claims</div>
+          </div>
+        </div>
+        <div class="screen-label">Coverage Dashboard</div>
+        <div class="screen-sub">Full insurance view at a glance</div>
+      </div>
+
+      <!-- Phone 2: QR Card -->
+      <div class="screen-wrap reveal reveal-d2">
+        <div class="phone-frame">
+          <div class="phone-notch-bar"><div class="phone-pill-bar"></div></div>
+          <div class="ph-topbar"><div class="ph-badge">H</div><span class="ph-ttl">Digital Card</span><span class="ph-bell">🔔</span></div>
+          <div class="ph-qr-bg">
+            <div class="ph-qr-ttl">Digital Health Card</div>
+            <div class="ph-qr-sub">Show at any network provider</div>
+            <div class="ph-qr-card">
+              <div class="ph-qr-head"><span class="ph-qr-brand">iRonic Health</span><span class="ph-class-badge">CLASS A</span></div>
+              <div class="ph-qr-body">
+                <div class="ph-qr-name">Sara Mahmoud</div>
+                <div class="ph-qr-id">IRH-2026-00101</div>
+                <div class="ph-qr-plan">Premium Plus · Class A</div>
+                <div class="ph-qr-code">
+                  <div class="qc1" style="grid-column:1/4;grid-row:1/4"></div><div class="qc0" style="grid-column:2/3;grid-row:2/3;background:#fff"></div>
+                  <div class="qc1" style="grid-column:5;grid-row:1"></div><div class="qc1" style="grid-column:7;grid-row:1"></div><div class="qc1" style="grid-column:9;grid-row:1"></div>
+                  <div class="qc1" style="grid-column:5;grid-row:3"></div><div class="qc1" style="grid-column:6;grid-row:3"></div><div class="qc1" style="grid-column:8;grid-row:2"></div>
+                  <div class="qc1" style="grid-column:7/10;grid-row:7/10"></div><div class="qc0" style="grid-column:8/9;grid-row:8/9;background:#fff"></div>
+                  <div class="qc1" style="grid-column:1/4;grid-row:7/10"></div><div class="qc0" style="grid-column:2/3;grid-row:8/9;background:#fff"></div>
+                  <div class="qc1" style="grid-column:5;grid-row:5"></div><div class="qc1" style="grid-column:7;grid-row:5"></div>
+                  <div class="qc1" style="grid-column:4;grid-row:6"></div><div class="qc1" style="grid-column:6;grid-row:8"></div>
+                </div>
+                <div class="ph-qr-hint">Scan to verify coverage instantly</div>
+              </div>
+              <div class="ph-qr-footer"><div><div class="ph-qr-flbl">Insurer</div><div class="ph-qr-fval">iRonic Health</div></div><div><div class="ph-qr-flbl">Valid Until</div><div class="ph-qr-fval">31 Dec 2026</div></div></div>
+            </div>
+            <div class="ph-qr-status"><div class="ph-qr-dot"></div><span class="ph-qr-stxt">Coverage Active · AI Verified</span></div>
+          </div>
+          <div class="ph-tabbar">
+            <div class="ph-tab"><span class="ph-tab-icon">🏠</span>Home</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🛡️</span>Cover</div>
+            <div class="ph-tab on"><span class="ph-tab-icon">🪪</span>Card</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📅</span>Appts</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📋</span>Claims</div>
+          </div>
+        </div>
+        <div class="screen-label">Digital Health Card</div>
+        <div class="screen-sub">Replaces paper card entirely</div>
+      </div>
+
+      <!-- Phone 3: Claims -->
+      <div class="screen-wrap reveal reveal-d3">
+        <div class="phone-frame">
+          <div class="phone-notch-bar"><div class="phone-pill-bar"></div></div>
+          <div class="ph-topbar"><div class="ph-badge">H</div><span class="ph-ttl">My Claims</span><span class="ph-bell">🔔</span></div>
+          <div class="ph-filters">
+            <div class="ph-filter on">All</div>
+            <div class="ph-filter">Approved</div>
+            <div class="ph-filter">Pending</div>
+            <div class="ph-filter">Flagged</div>
+          </div>
+          <div class="ph-claims-list">
+            <div class="ph-clm"><div class="ph-clm-top"><span class="ph-clm-type">Outpatient Visit</span><span class="ph-clm-amt">EGP 1,200</span></div><div class="ph-clm-prov">Sample Medical Centre</div><div class="ph-clm-bot"><span class="ph-clm-date">12 May 2026</span><span class="ph-pill ph-green">Approved</span></div></div>
+            <div class="ph-clm"><div class="ph-clm-top"><span class="ph-clm-type">Lab Tests</span><span class="ph-clm-amt">EGP 850</span></div><div class="ph-clm-prov">Sample Lab A</div><div class="ph-clm-bot"><span class="ph-clm-date">08 May 2026</span><span class="ph-pill ph-amber">Pending</span></div></div>
+            <div class="ph-clm"><div class="ph-clm-top"><span class="ph-clm-type">Radiology</span><span class="ph-clm-amt">EGP 2,100</span></div><div class="ph-clm-prov">Sample Imaging Centre</div><div class="ph-clm-bot"><span class="ph-clm-date">28 Apr 2026</span><span class="ph-pill ph-red">⚠ Flagged</span></div></div>
+            <div class="ph-clm"><div class="ph-clm-top"><span class="ph-clm-type">Pharmacy</span><span class="ph-clm-amt">EGP 320</span></div><div class="ph-clm-prov">Sample Pharmacy</div><div class="ph-clm-bot"><span class="ph-clm-date">03 May 2026</span><span class="ph-pill ph-green">Approved</span></div></div>
+          </div>
+          <div class="ph-tabbar">
+            <div class="ph-tab"><span class="ph-tab-icon">🏠</span>Home</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🛡️</span>Cover</div>
+            <div class="ph-tab"><span class="ph-tab-icon">🪪</span>Card</div>
+            <div class="ph-tab"><span class="ph-tab-icon">📅</span>Appts</div>
+            <div class="ph-tab on"><span class="ph-tab-icon">📋</span>Claims</div>
+          </div>
+        </div>
+        <div class="screen-label">Claims Tracker</div>
+        <div class="screen-sub">AI fraud flag visible in real time</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR -->
+
+<!-- DASHBOARD -->
+<section class="sec dashboard-sec" id="dashboard" aria-labelledby="dashboard-heading">
+  <div class="sec-inner">
+    <div class="reveal">
+      <div class="sec-rule" aria-hidden="true"></div>
+      <div class="sec-eyebrow" style="color:rgba(255,255,255,.45)">Platform Preview · Sample Data</div>
+      <h2 class="sec-h2" id="dashboard-heading" style="color:#fff">The Intelligence<br><em>Command Center</em></h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,.52)">Real-time fraud detection, claims analytics, and loss ratio management — all in one view. Design preview with sample data — not live results.</p>
+    </div>
+
+    <div class="dash-pro-wrap reveal">
+      <!-- Top bar -->
+      <div class="dash-pro-bar">
+        <span class="dash-pro-title">⚕ Claims Intelligence Platform — Illustrative TPA · Sample Data</span>
+        <div class="dash-pro-live"><div class="dash-live-dot"></div><span class="dash-live-txt">SAMPLE DATA</span></div>
+        <div class="dash-pro-actions">
+          <span class="dash-pro-btn">Last 30 days ▾</span>
+          <span class="dash-pro-btn act">↓ Export PDF</span>
+        </div>
+      </div>
+
+      <!-- KPI Row -->
+      <div class="dash-kpi-row">
+        <div class="dash-kpi">
+          <div class="dash-kpi-lbl">Fraud Detected (sample)</div>
+          <div class="dash-kpi-num gold">EGP 2.4M</div>
+          <div class="dash-kpi-trend up">Illustrative</div>
+        </div>
+        <div class="dash-kpi">
+          <div class="dash-kpi-lbl">Claims Processed (sample)</div>
+          <div class="dash-kpi-num">1,247</div>
+          <div class="dash-kpi-trend up">⚡ Target: under 5s per decision</div>
+        </div>
+        <div class="dash-kpi">
+          <div class="dash-kpi-lbl">Loss Ratio Improvement</div>
+          <div class="dash-kpi-num green">−15.3%</div>
+          <div class="dash-kpi-trend up">Target scenario</div>
+        </div>
+        <div class="dash-kpi">
+          <div class="dash-kpi-lbl">Member Lives (sample)</div>
+          <div class="dash-kpi-num blue">250K</div>
+          <div class="dash-kpi-trend up">Illustrative sub-book</div>
+        </div>
+      </div>
+
+      <!-- Body -->
+      <div class="dash-pro-body">
+        <!-- Left -->
+        <div class="dash-d-left">
+          <!-- Chart -->
+          <div class="dash-panel">
+            <div class="dash-panel-ttl">Monthly Fraud Recovery (EGP) — illustrative scenario</div>
+            <div class="pro-chart">
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:38%"></div><div class="pro-bar-lbl">Jan</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:45%"></div><div class="pro-bar-lbl">Feb</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:42%"></div><div class="pro-bar-lbl">Mar</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:58%"></div><div class="pro-bar-lbl">Apr</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:63%"></div><div class="pro-bar-lbl">May</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:71%"></div><div class="pro-bar-lbl">Jun</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:67%"></div><div class="pro-bar-lbl">Jul</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:79%"></div><div class="pro-bar-lbl">Aug</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:74%"></div><div class="pro-bar-lbl">Sep</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:88%"></div><div class="pro-bar-lbl">Oct</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:93%"></div><div class="pro-bar-lbl">Nov</div></div>
+              <div class="pro-bar-col"><div class="pro-bar fraud" style="height:100%"></div><div class="pro-bar-lbl">Dec</div></div>
+            </div>
+            <div class="chart-legend">
+              <div class="cl-item"><div class="cl-dot" style="background:#d85a30"></div>Fraud Recovered (EGP)</div>
+              <div class="cl-item"><div class="cl-dot" style="background:#1d9e75"></div>Target Threshold</div>
+            </div>
+          </div>
+
+          <!-- Activity feed -->
+          <div class="dash-panel">
+            <div class="dash-panel-ttl">Live Claims Activity Feed</div>
+            <div class="act-feed">
+              <div class="act-row"><div class="act-ico red">🚨</div><div class="act-body"><div class="act-ttl">Fraud Flagged — Phantom Prescription</div><div class="act-sub">Claim #IRH-4821 · Sample Medical Centre · EGP 3,200 · counterfeit-drug archetype</div></div><div class="act-t" id="at1">2m ago</div></div>
+              <div class="act-row"><div class="act-ico green">✅</div><div class="act-body"><div class="act-ttl">Claim Auto-Approved — Outpatient Visit</div><div class="act-sub">Claim #IRH-4820 · Dr. Amr Clinic · EGP 1,100 · AI confidence 98.4%</div></div><div class="act-t" id="at2">5m ago</div></div>
+              <div class="act-row"><div class="act-ico red">⚠️</div><div class="act-body"><div class="act-ttl">ICU Over-Stay Detected</div><div class="act-sub">Claim #IRH-4819 · Sample Hospital A · EGP 28,000 · Sent for review</div></div><div class="act-t" id="at3">8m ago</div></div>
+              <div class="act-row"><div class="act-ico green">✅</div><div class="act-body"><div class="act-ttl">Lab Tests Verified &amp; Paid</div><div class="act-sub">Claim #IRH-4818 · Sample Lab A · EGP 650 · 3.9s decision</div></div><div class="act-t" id="at4">12m ago</div></div>
+              <div class="act-row"><div class="act-ico amber">⏳</div><div class="act-body"><div class="act-ttl">Radiology Pre-Auth — Pending CMO</div><div class="act-sub">Claim #IRH-4817 · Sample Imaging Centre · EGP 5,400 · High-cost review</div></div><div class="act-t" id="at5">15m ago</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div class="dash-d-right">
+          <!-- Fraud types -->
+          <div class="dash-panel">
+            <div class="dash-panel-ttl">Top Fraud Archetypes (MTD)</div>
+            <div class="ft-list">
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Phantom Prescriptions</span><span class="ft-pct">82%</span></div><div class="ft-bg"><div class="ft-fill" style="width:82%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">ICU Over-Stay</span><span class="ft-pct">67%</span></div><div class="ft-bg"><div class="ft-fill" style="width:67%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Brand Upcoding</span><span class="ft-pct">54%</span></div><div class="ft-bg"><div class="ft-fill" style="width:54%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Counterfeit Drugs</span><span class="ft-pct">41%</span></div><div class="ft-bg"><div class="ft-fill" style="width:41%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Duplicate Claims</span><span class="ft-pct">29%</span></div><div class="ft-bg"><div class="ft-fill" style="width:29%"></div></div></div>
+              <div class="ft-row"><div class="ft-top"><span class="ft-name">Unnecessary Procedures</span><span class="ft-pct">18%</span></div><div class="ft-bg"><div class="ft-fill" style="width:18%"></div></div></div>
+            </div>
+          </div>
+
+          <!-- Quick stats -->
+          <div class="dash-panel">
+            <div class="dash-panel-ttl">Platform Targets</div><div style="font-size:.66rem;color:#CAB164;margin-top:.35rem;letter-spacing:.02em">Illustrative targets — not actual results</div>
+            <div class="qs-list">
+              <div class="qs-row"><span class="qs-lbl">AI Detection Accuracy</span><span class="qs-val green">Set in pilot</span></div>
+              <div class="qs-row"><span class="qs-lbl">Avg. Claim Decision Time</span><span class="qs-val">4.3 sec</span></div>
+              <div class="qs-row"><span class="qs-lbl">Claims Fully Automated</span><span class="qs-val green">87%</span></div>
+              <div class="qs-row"><span class="qs-lbl">Decision Audit Trail</span><span class="qs-val green">Every claim</span></div>
+              <div class="qs-row"><span class="qs-lbl">Pharmacies Connected</span><span class="qs-val">Pilot phase</span></div>
+              <div class="qs-row"><span class="qs-lbl">Pilot ROI Payback</span><span class="qs-val gold">9.7 months</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI CALCULATOR -->
+ 
+<section class="sec roi-sec" id="roi" aria-labelledby="roi-heading">
+  <div class="sec-inner">
+    <div class="reveal"><div class="sec-rule"></div><div class="sec-eyebrow">ROI Calculator</div><h2 class="sec-h2" id="roi-heading">See Your <em>Savings Potential</em></h2><p class="sec-lead">A simplified estimate based on your inputs and our model assumptions. Outputs are illustrative, not a quote or a guaranteed result.</p></div>
+    <div class="roi-layout reveal">
+      <div class="roi-inputs">
+        <div class="roi-input-group">
+          <label class="roi-label" for="roi-members">Number of insured members</label>
+          <div class="roi-slider-wrap"><input type="range" id="roi-members" min="10000" max="500000" value="100000" step="10000" class="roi-slider"><div class="roi-slider-val" id="roi-members-val">100,000</div></div>
+        </div>
+        <div class="roi-input-group">
+          <label class="roi-label" for="roi-gwp">Annual GWP (EGP millions)</label>
+          <div class="roi-slider-wrap"><input type="range" id="roi-gwp" min="50" max="2000" value="200" step="50" class="roi-slider"><div class="roi-slider-val" id="roi-gwp-val">200M EGP</div></div>
+        </div>
+        <div class="roi-input-group">
+          <label class="roi-label" for="roi-fraud">Estimated fraud rate (%)</label>
+          <div class="roi-slider-wrap"><input type="range" id="roi-fraud" min="2" max="12" value="5" step="0.5" class="roi-slider"><div class="roi-slider-val" id="roi-fraud-val">5%</div></div>
+        </div>
+        <div class="roi-assumptions">
+          <div class="roi-assumption">iRonic Health recovers <strong>30%</strong> of fraud losses</div>
+          <div class="roi-assumption">Admin costs assumed at <strong>10%</strong> of GWP; automation saves <strong>20%</strong> of that</div>
+          <div class="roi-assumption">Preventive care reduces claims by <strong>1.5%</strong> of GWP (target)</div>
+        </div>
+      </div>
+      <div class="roi-results">
+        <div class="roi-result-main">
+          <div class="roi-result-label">Estimated Annual Savings</div>
+          <div class="roi-result-val" id="roi-total-savings">EGP 10.0M</div>
+          <div class="roi-result-sub">fraud recovery + operational + preventive care</div>
+        </div>
+        <div class="roi-result-cards">
+          <div class="roi-rc"><div class="roi-rc-val" id="roi-fraud-savings">EGP 3M</div><div class="roi-rc-lbl">Fraud recovery</div></div>
+          <div class="roi-rc"><div class="roi-rc-val" id="roi-ops-savings">EGP 4.0M</div><div class="roi-rc-lbl">Operational</div></div>
+          <div class="roi-rc"><div class="roi-rc-val" id="roi-prev-savings">EGP 3.0M</div><div class="roi-rc-lbl">Preventive care</div></div>
+        </div>
+        <div class="roi-payback"><span class="roi-payback-label">Estimated payback period</span><span class="roi-payback-val">9.7 months</span></div>
+        <a href="contact.html" class="roi-cta-btn">Get a Precise ROI Analysis →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section class="sec why-sec" id="market" aria-labelledby="market-heading">
+  <div class="sec-inner">
+    <div class="reveal"><div class="sec-rule"></div><div class="sec-eyebrow">Why Now</div><h2 class="sec-h2" id="market-heading">An 18–36 Month<br><em>Uncontested Window</em></h2><p class="sec-lead">Egypt's regulatory environment just opened a narrow, time-sensitive opportunity. iRonic Health is positioned at the entry point.</p></div>
+    <div class="why-grid">
+      <div class="urgency-panel reveal">
+        <div class="up-eyebrow">Market Opportunity</div>
+        <h3 class="up-h">Egypt's Private Health Insurance Market Growing at 15% Annually</h3>
+        <p class="up-body">The TAM is $373M in GWP today — growing fast, largely undigitized, with a fraud rate that transfers directly into insurer losses every quarter.</p>
+        <div class="up-stats">
+          <div class="up-s"><div class="up-s-val">$373M</div><div class="up-s-lbl">TAM — Egypt Private Health GWP 2024</div></div>
+          <div class="up-s"><div class="up-s-val">$80–150M</div><div class="up-s-lbl">SAM — our estimate</div></div>
+          <div class="up-s"><div class="up-s-val">$18M</div><div class="up-s-lbl">ARR SOM — 3-Year Target</div></div>
+          <div class="up-s"><div class="up-s-val">15%</div><div class="up-s-lbl">Annual market growth rate</div></div>
+        </div>
+        <div class="up-timeline">
+          <div class="up-tl-item active"><div class="up-tl-dot"></div><div class="up-tl-content"><div class="up-tl-date">April 2026</div><div class="up-tl-text">FRA licenses 6 TPAs — regulatory window opens</div></div></div>
+          <div class="up-tl-item"><div class="up-tl-dot"></div><div class="up-tl-content"><div class="up-tl-date">2026–2027</div><div class="up-tl-text">Target: first pilot with a licensed TPA or insurer</div></div></div>
+          <div class="up-tl-item"><div class="up-tl-dot"></div><div class="up-tl-content"><div class="up-tl-date">2028+</div><div class="up-tl-text">MENA expansion roadmap — KSA, UAE</div></div></div>
+        </div>
+      </div>
+      <div class="adv-list reveal reveal-d2">
+        <div class="adv"><div class="adv-icon">⚖️</div><div><div class="adv-title">FRA Licensed 6 Healthcare TPAs — April 2026</div><div class="adv-desc">Temporary licences under FRA Decision 229/2025 (Law 155/2024) create a new, regulated TPA channel — our primary route to market.</div></div></div>
+        <div class="adv"><div class="adv-icon">🤝</div><div><div class="adv-title">TPA-First Beachhead</div><div class="adv-desc">One licensed TPA typically administers claims for several insurers, so a single partnership can reach many books at once. No partnership is signed yet.</div></div></div>
+        <div class="adv"><div class="adv-icon">🤖</div><div><div class="adv-title">An Open Gap</div><div class="adv-desc">Based on our review of public information, we found no Egypt-specific AI fraud layer offered to insurers and TPAs today.</div></div></div>
+        <div class="adv"><div class="adv-icon">💡</div><div><div class="adv-title">Contingent Pricing Removes Buyer Risk</div><div class="adv-desc">25% of validated fraud recoveries during pilot — zero upfront cost. The buying decision becomes a no-risk ROI calculation, not a procurement battle.</div></div></div>
+        <div class="adv"><div class="adv-icon">🌍</div><div><div class="adv-title">MENA Expansion Runway</div><div class="adv-desc">Once validated in Egypt, the models are planned to extend to KSA and the UAE — markets with similar TPA structures and Arabic-language requirements.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS MODEL -->
+<section class="sec model-sec" id="model" aria-labelledby="model-heading">
+  <div class="sec-inner">
+    <div class="reveal"><div class="sec-rule"></div><div class="sec-eyebrow">Business Model</div><h2 class="sec-h2" id="model-heading">Revenue That Scales<br><em>With the Market</em></h2><p class="sec-lead">Three planned revenue streams — from zero-risk pilot entry to full platform subscription. All figures below are model targets pending pilot validation.</p></div>
+    <div class="pricing-row">
+      <div class="price-card featured reveal"><div class="feat-label">Start Here</div><div class="prc-phase">Phase 1</div><div class="prc-name">Contingent Savings</div><div class="prc-amt">15–25%</div><div class="prc-unit">of fraud recoveries</div><div class="prc-desc">Zero upfront cost. We only earn when you save — removing all buyer risk at pilot stage.</div><div class="prc-tag">Zero risk entry</div></div>
+      <div class="price-card reveal reveal-d1"><div class="prc-phase">Phase 2</div><div class="prc-name">Annual Subscription</div><div class="prc-amt">$0.90–2.40</div><div class="prc-unit">per member / year</div><div class="prc-desc">Volume-tiered by contracted lives. Larger books pay less per life. Corporate self-funded billed all-in at the top tier.</div><div class="prc-tag">Core recurring revenue</div></div>
+      <div class="price-card reveal reveal-d2"><div class="prc-phase">Phase 3</div><div class="prc-name">Pharmacy Network</div><div class="prc-amt">$0.05–0.50</div><div class="prc-unit">per verified prescription</div><div class="prc-desc">Volume-based, high-margin recurring revenue through the iRonic Health pharmacy network.</div><div class="prc-tag">Ecosystem monetization</div></div>
+      
+    </div>
+    <div class="model-numbers reveal">
+      <div class="mn"><div class="mn-icon">📅</div><div class="mn-val">$616K</div><div class="mn-lbl">Year 1 Exit ARR (target)</div><div class="mn-detail">2 clients</div></div>
+      <div class="mn"><div class="mn-icon">📈</div><div class="mn-val">$1.95M</div><div class="mn-lbl">Year 2 Exit ARR (target)</div><div class="mn-detail">6 clients</div></div>
+      <div class="mn"><div class="mn-icon">🚀</div><div class="mn-val">$3.69M</div><div class="mn-lbl">Year 3 Exit ARR (target)</div><div class="mn-detail">11 clients</div></div>
+      <div class="mn mn-gold"><div class="mn-icon">💎</div><div class="mn-val">78%</div><div class="mn-lbl">Gross Margin (Y3 target)</div><div class="mn-detail">Model targets, not results</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec team-sec" id="about" aria-labelledby="team-heading" data-section="team">
+  <div class="sec-inner">
+    <div class="reveal"><div class="sec-rule"></div><div class="sec-eyebrow">The Team</div><h2 class="sec-h2" id="team-heading">Built by People Who<br><em>Know This Market</em></h2><p class="sec-lead">Clinical expertise meets strategic leadership, with deep roots in Egypt's healthcare landscape. The co-founders are brothers.</p></div>
+    <div class="team-layout">
+      <div class="team-cards">
+        <div class="team-card reveal">
+          <div class="t-avatar">SS</div>
+          <div class="t-info"><div class="t-name">Sherif Almeidany</div><div class="t-role-en">Co-Founder & CEO</div><div class="t-role-ar">المؤسس المشارك والرئيس التنفيذي</div><div class="t-contact"><a href="mailto:sherif@ironichealth.com" class="t-email">sherif@ironichealth.com</a><span class="t-phone">+20 1555556697</span></div></div>
+        </div>
+        <div class="team-card reveal reveal-d1">
+          <div class="t-avatar t-avatar-gold">IM</div>
+          <div class="t-info"><div class="t-name">Dr. Islam Almeidany</div><div class="t-role-en">Co-Founder & Chief Pharmacy Officer</div><div class="t-role-ar">المؤسس المشارك ومدير الشؤون الصيدلانية الإكلينيكية</div><div class="t-contact"><a href="mailto:islam@ironichealth.com" class="t-email">islam@ironichealth.com</a><span class="t-phone">+20 1018166483</span></div></div>
+        </div>
+      </div>
+      <div class="company-panel reveal reveal-d2">
+        <div class="company-info">
+          <div class="ci-label">About the Company</div>
+          <div class="ci-name">iRonic Health</div>
+          <div class="ci-parent">Company in formation in Egypt</div>
+          <div class="ci-desc">AI-powered health insurance orchestration platform. Decision-support SaaS — not an insurer or TPA.</div>
+          <div class="ci-address"><span>📍</span> Cairo, Egypt</div>
+          <div class="ci-compliance"><span class="ci-badge">Decision-Support SaaS</span><span class="ci-badge">PDPL 151/2020-aligned</span><span class="ci-badge">Human-in-the-loop</span></div>
+        </div>
+        <div class="seed-card">
+          <div class="seed-eyebrow">Seed Round Open</div>
+          <div class="seed-amount">$1.5M</div>
+          <div class="seed-type">SAFE Note at $6.5–8M pre-money · following an EGP 3M pre-seed convertible</div>
+          <div class="seed-metrics">
+            <div class="sm"><div class="sm-val">13.2×</div><div class="sm-lbl">LTV/CAC (target)</div></div>
+            <div class="sm"><div class="sm-val">9.7 mo</div><div class="sm-lbl">Payback (target, incl. sales cycle)</div></div>
+            <div class="sm"><div class="sm-val">70%+</div><div class="sm-lbl">Margin (target)</div></div>
+          </div>
+          <a href="mailto:sherif@ironichealth.com" class="seed-btn">Request Investor Deck →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / DEMO REQUEST -->
+<section class="sec contact-sec" id="contact" aria-labelledby="contact-heading">
+  <div class="sec-inner">
+    <div class="contact-grid">
+      <!-- Left: value proposition -->
+      <div class="reveal">
+        <div class="sec-rule" aria-hidden="true"></div>
+        <div class="sec-eyebrow">Request a Demo</div>
+        <h2 class="sec-h2" id="contact-heading">Ready to Reduce<br>Fraud &amp; Accelerate<br><em>Claims?</em></h2>
+        <div class="contact-pts">
+          <div class="cp-row"><div class="cp-ico">🎯</div><div class="cp-txt"><strong>90-Day Pilot — Zero Upfront Cost</strong>Proposed model: we earn only on validated fraud recoveries. No platform fee, no financial risk during the pilot.</div></div>
+          <div class="cp-row"><div class="cp-ico">⚡</div><div class="cp-txt"><strong>Live in Under 4 Weeks</strong>Target: pilot live within about four weeks of signing and data access.</div></div>
+          <div class="cp-row"><div class="cp-ico">📊</div><div class="cp-txt"><strong>Measurable ROI</strong>Every claim decision is designed to carry a full AI audit trail. See exact fraud savings and loss ratio improvement in real time.</div></div>
+          <div class="cp-row"><div class="cp-ico">🛡️</div><div class="cp-txt"><strong>Built for Regulatory Review</strong>Physician review of AI-flagged decisions. Decision support only — your team keeps the final decision.</div></div>
+        </div>
+        <div class="contact-direct">
+          <div class="cd-lbl">Direct Contact</div>
+          <div class="cd-row">📧 <a href="mailto:sherif@ironichealth.com">sherif@ironichealth.com</a></div>
+          <div class="cd-row">📧 <a href="mailto:investor@ironichealth.com">investor@ironichealth.com</a></div>
+          <div class="cd-row">📞 <a href="tel:+201555556697">+20 1555556697</a></div>
+          <div class="cd-row">📍 Cairo, Egypt</div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="reveal reveal-d2">
+        <div class="form-wrap">
+          <div class="form-ttl">Request a Demo or Investor Meeting</div>
+          <div class="form-sub-txt">We respond within 24 hours. No pressure — just a focused conversation about your needs.</div>
+          <div id="contact-form-inner">
+            <div class="form-2col">
+              <div class="f-grp"><label class="f-lbl">Full Name *</label><input type="text" class="f-inp" id="f-name" placeholder="Your name"></div>
+              <div class="f-grp"><label class="f-lbl">Company *</label><input type="text" class="f-inp" id="f-company" placeholder="Your organization"></div>
+            </div>
+            <div class="form-2col">
+              <div class="f-grp"><label class="f-lbl">Email *</label><input type="email" class="f-inp" id="f-email" placeholder="you@company.com"></div>
+              <div class="f-grp"><label class="f-lbl">Phone</label><input type="tel" class="f-inp" placeholder="+20 or +44..."></div>
+            </div>
+            <div class="f-grp"><label class="f-lbl">I Am A *</label>
+              <select class="f-sel" id="f-role">
+                <option value="" disabled selected>Select your role</option>
+                <option>Health Insurer (Egypt)</option>
+                <option>TPA — Third Party Administrator</option>
+                <option>Corporate HR / Self-Funded Plan</option>
+                <option>Investor / VC / Family Office</option>
+                <option>Hospital / Healthcare Provider</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="f-grp"><label class="f-lbl">Members / Lives Covered</label>
+              <select class="f-sel">
+                <option value="" disabled selected>Approximate size (optional)</option>
+                <option>Under 10,000</option>
+                <option>10,000 – 50,000</option>
+                <option>50,000 – 200,000</option>
+                <option>200,000 – 1M</option>
+                <option>1M+</option>
+                <option>N/A (Investor inquiry)</option>
+              </select>
+            </div>
+            <div class="f-grp"><label class="f-lbl">Message</label><textarea class="f-ta" placeholder="Tell us what you're looking to solve, or ask anything about the platform..."></textarea></div>
+            <button class="f-submit" onclick="submitDemoForm(event)">Send Request → We'll Respond in 24h</button>
+            <div class="f-note">🔒 Your data is never shared. Handled in line with PDPL 151/2020.</div>
+          </div>
+          <div class="f-success" id="form-success-msg">
+            <div class="f-success-ico">✅</div>
+            <div class="f-success-ttl">Request Sent Successfully!</div>
+            <div class="f-success-sub">Check your email — we'll respond within 24 hours with next steps.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec" id="investors" aria-labelledby="cta-heading">
+  <div class="cta-bg-ring" aria-hidden="true"></div><div class="cta-bg-ring2" aria-hidden="true"></div>
+  <div class="cta-inner reveal">
+    <div class="cta-eyebrow">Seed Round Open</div>
+    <h2 class="cta-h" id="cta-heading">Build Egypt's<br><span>AI Health Insurance</span> Layer With Us</h2>
+    <p class="cta-sub">We're raising $1.5M (SAFE Note, $6.5–8M pre-money) to incorporate the company, build the fraud AI core, and sign a first pilot with a licensed TPA or insurer.</p>
+    <div class="cta-btns"><a href="contact.html" class="cta-btn-g">Request a Demo →</a><a href="investors.html" class="cta-btn-w">Investor Information</a></div>
+    <div class="cta-metrics">Model targets, not results: LTV/CAC 13.2× · 9.7-month CAC payback · 78% gross margin (Y3) · Market: $373M TAM (Statista 2024)</div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+ 
+<button id="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+(function(){
+
+  /* ── Scroll-to-top ── */
+  var btn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, {passive:true});
+})();
+
+(function(){
+  /* ── Sample feed time ticker ── */
+  function initFeedTicker() {
+    var ids = ['at1','at2','at3','at4','at5'];
+    var mins = [2,5,8,12,15];
+    setInterval(function(){
+      mins = mins.map(function(m){ return m+1; });
+      ids.forEach(function(id,i){
+        var el = document.getElementById(id);
+        if (el) el.textContent = mins[i]+'m ago';
+      });
+    }, 60000);
+  }
+
+  window.addEventListener('load', function(){
+    setTimeout(initFeedTicker, 200);
+  });
+
+})();
+
+/* ── Demo form submission ── */
+function submitDemoForm(e) {
+  e.preventDefault();
+  var name    = document.getElementById('f-name').value.trim();
+  var company = document.getElementById('f-company').value.trim();
+  var email   = document.getElementById('f-email').value.trim();
+  var role    = document.getElementById('f-role').value;
+  var ta      = document.querySelector('.f-ta');
+  var msg     = ta ? ta.value.trim() : '';
+
+  if (!name || !company || !email) {
+    var missing = [];
+    if (!name) missing.push('Full Name');
+    if (!company) missing.push('Company');
+    if (!email) missing.push('Email');
+    alert('Please fill in: ' + missing.join(', '));
+    return;
+  }
+
+  var subject = encodeURIComponent('Demo Request — ' + name + ' · ' + company + (role ? ' · ' + role : ''));
+  var body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Company: ' + company + '\n' +
+    'Email: ' + email + '\n' +
+    (role  ? 'Role: ' + role + '\n' : '') +
+    (msg   ? '\nMessage:\n' + msg : '')
+  );
+  window.location.href = 'mailto:sherif@ironichealth.com?subject=' + subject + '&body=' + body;
+
+  document.getElementById('contact-form-inner').style.display = 'none';
+  document.getElementById('form-success-msg').style.display   = 'block';
+}
+</script>
+</script>
+
+<script src="js/main.js"></script>
+
+
+<script src="js/components.js"></script>
+<script src="js/consent.js" defer></script>
+<script src="js/disclosure.js"></script>
+</body>
+</html>

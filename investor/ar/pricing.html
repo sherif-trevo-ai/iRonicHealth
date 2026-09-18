@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="نموذج إيرادات iRonic Health — 3 تيارات إيرادية: تحمّل نتائج مشروط، اشتراك سنوي حسب الشريحة، صيدليات. Y3 Exit ARR: $3.69M (قاعدي).">
+<meta property="og:title" content="الإيرادات — iRonic Health">
+<title>نموذج الإيرادات · iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/arabic-theme.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
+ 
+/* ══ DESIGN TOKENS ══ */
+/* light theme now via arabic-theme.css */
+ 
+/* handled by arabic-theme.css */
+.arr .arr-year{color:var(--ink-2)}
+.arr .arr-track{background:rgba(10,22,40,.08)}
+.arr .arr-detail{color:var(--muted-2)}
+.arr .ab-card{background:var(--white);border-color:var(--border-2);box-shadow:0 2px 8px rgba(10,22,40,.05)}
+.arr .ab-arr{color:var(--ink)}
+.arr .ab-lives{color:var(--muted-2)}
+.arr .ab-row-label{color:var(--muted-2)}
+.arr .ab-row-val{color:var(--ink)}
+ 
+/* handled by arabic-theme.css */
+.pricing-table-sec .sec-h2{color:var(--ink)}
+.pricing-table-sec .ptable-wrap{border-color:var(--border-2)}
+.pricing-table-sec .ptable th{background:var(--surface);color:var(--muted-2);border-bottom-color:#dde8f5}
+.pricing-table-sec .ptable td{color:var(--muted);border-bottom-color:#e5ecf6}
+.pricing-table-sec .ptable td:first-child{color:var(--ink)}
+.pricing-table-sec .price-val{color:#c9a84c}
+.pricing-table-sec .margin-high{color:#1d9e75}
+.nav{direction:rtl}
+.nav-center a{font-family:'Cairo',sans-serif}
+.nav-logo-text{text-align:right}
+.logo-wordmark,.logo-tagline,.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
+ 
+/* HERO */
+.rev-hero{
+  min-height:62vh;background:linear-gradient(145deg,#060f1c,#0a1628 55%,#0d1f3a);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 5% 80px;position:relative;overflow:hidden;
+}
+.rh-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle 600px at 85% 25%,rgba(201,168,76,.1),transparent 60%),
+                   radial-gradient(circle 400px at 5% 70%,rgba(29,158,117,.08),transparent 55%);}
+.rh-grid{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:40px 40px;}
+.rh-inner{position:relative;z-index:1;max-width:760px}
+.rh-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);
+  border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;
+  font-size:.82rem;font-weight:700;color:#c9a84c;}
+.rh-h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;line-height:1.1;
+  color:#fff;margin-bottom:1.25rem;}
+.rh-h1 em{color:#c9a84c;font-style:normal}
+.rh-sub{font-size:1.05rem;color:rgba(255,255,255,.52);line-height:1.85;max-width:600px;margin-bottom:2.5rem}
+.rh-kpis{display:flex;gap:2.5rem;flex-wrap:wrap}
+.rk-val{font-size:1.8rem;font-weight:900;line-height:1}
+.rk-val.gold{color:#c9a84c}.rk-val.green{color:#1d9e75}.rk-val.blue{color:#378add}
+.rk-lbl{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.25rem}
+ 
+/* COMMON */
+.sec-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem}
+.sec-h2{font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;color:#fff;margin-bottom:.75rem}
+.sec-lead{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;max-width:680px;margin-bottom:3rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+ 
+/* REVENUE STREAMS */
+.streams{padding:6rem 5%;background:#060f1c}
+.streams-inner{max-width:1100px;margin:0 auto}
+.streams-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;margin-top:3rem}
+.stream-card{border-radius:20px;padding:2.25rem;position:relative;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
+.stream-card.primary{background:rgba(201,168,76,.07);border-color:rgba(201,168,76,.25)}
+.stream-accent{position:absolute;top:0;right:0;left:0;height:3px}
+.stream-accent.gold{background:linear-gradient(90deg,#c9a84c,#b8963e)}
+.stream-accent.green{background:linear-gradient(90deg,#1d9e75,#178a64)}
+.stream-accent.blue{background:linear-gradient(90deg,#185fa5,#0c447c)}
+.stream-icon{font-size:2.2rem;margin-bottom:1.25rem;display:block}
+.stream-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+.stream-label.gold{color:#c9a84c}.stream-label.green{color:#1d9e75}.stream-label.blue{color:#378add}
+.stream-h3{font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:1rem}
+.stream-price{font-size:1.6rem;font-weight:900;margin-bottom:.375rem}
+.stream-price.gold{color:#c9a84c}.stream-price.green{color:#1d9e75}.stream-price.blue{color:#378add}
+.stream-price-sub{font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
+.stream-p{font-size:.87rem;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:1.5rem}
+.stream-features{display:flex;flex-direction:column;gap:.5rem}
+.sf-item{display:flex;align-items:flex-start;gap:.625rem;font-size:.82rem;color:rgba(255,255,255,.6)}
+.sf-check{flex-shrink:0;margin-top:.1rem}
+.sf-check.gold{color:#c9a84c}.sf-check.green{color:#1d9e75}.sf-check.blue{color:#378add}
+ 
+/* ARR PROJECTION */
+.arr{padding:6rem 5%}
+.arr-inner{max-width:1000px;margin:0 auto}
+.arr-bars{display:flex;flex-direction:column;gap:1.5rem;margin-top:3rem}
+.arr-bar-item{display:grid;grid-template-columns:80px 1fr 140px;align-items:center;gap:1.5rem}
+.arr-year{font-size:.85rem;font-weight:800;color:rgba(255,255,255,.5)}
+.arr-track{height:48px;background:rgba(255,255,255,.05);border-radius:8px;overflow:hidden;position:relative}
+.arr-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 1rem;
+  font-size:.82rem;font-weight:700;color:#fff;position:relative;
+  transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.arr-fill.y1{background:linear-gradient(90deg,rgba(24,95,165,.5),rgba(24,95,165,.3));width:0}
+.arr-fill.y2{background:linear-gradient(90deg,rgba(201,168,76,.55),rgba(201,168,76,.35));width:0}
+.arr-fill.y3{background:linear-gradient(90deg,#1d9e75,rgba(29,158,117,.7));width:0}
+.arr-val{font-size:1.2rem;font-weight:900;text-align:left}
+.arr-val.blue{color:#378add}.arr-val.gold{color:#c9a84c}.arr-val.green{color:#1d9e75}
+.arr-detail{font-size:.72rem;color:rgba(255,255,255,.35);margin-top:.25rem}
+ 
+.arr-breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.ab-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.75rem}
+.ab-year{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
+.ab-year.blue{color:#378add}.ab-year.gold{color:#c9a84c}.ab-year.green{color:#1d9e75}
+.ab-arr{font-size:2rem;font-weight:900;color:#fff;margin-bottom:.25rem}
+.ab-lives{font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.ab-rows{display:flex;flex-direction:column;gap:.5rem}
+.ab-row{display:flex;justify-content:space-between;font-size:.8rem}
+.ab-row-label{color:rgba(255,255,255,.45)}
+.ab-row-val{color:#fff;font-weight:700}
+ 
+/* UNIT ECONOMICS */
+.unit-econ{padding:6rem 5%;background:#060f1c}
+.ue-inner{max-width:1100px;margin:0 auto}
+.ue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.ue-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.75rem;text-align:center;
+  transition:border-color .3s}
+.ue-card:hover{border-color:rgba(201,168,76,.2)}
+.ue-val{font-size:2rem;font-weight:900;margin-bottom:.375rem}
+.ue-val.gold{color:#c9a84c}.ue-val.green{color:#1d9e75}.ue-val.blue{color:#378add}
+.ue-metric{font-size:.78rem;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:.5rem;
+  text-transform:uppercase;letter-spacing:.06em}
+.ue-note{font-size:.8rem;color:rgba(255,255,255,.35);line-height:1.65}
+ 
+/* PRICING TABLE */
+.pricing-table-sec{padding:6rem 5%}
+.pt-inner{max-width:1000px;margin:0 auto}
+.ptable-wrap{overflow-x:auto;border-radius:16px;border:1px solid rgba(255,255,255,.08);margin-top:3rem}
+.ptable{width:100%;border-collapse:collapse;min-width:600px}
+.ptable th{background:rgba(255,255,255,.04);padding:1rem 1.25rem;
+  font-size:.78rem;font-weight:700;color:rgba(255,255,255,.4);text-align:right;
+  border-bottom:1px solid rgba(255,255,255,.07)}
+.ptable td{padding:.9rem 1.25rem;font-size:.85rem;color:rgba(255,255,255,.65);
+  border-bottom:1px solid rgba(255,255,255,.05);text-align:right}
+.ptable tr:last-child td{border-bottom:none}
+.ptable td:first-child{font-weight:700;color:#fff}
+.ptable .price-val{color:#c9a84c;font-weight:800}
+.ptable .margin-high{color:#1d9e75;font-weight:700}
+ 
+/* CTA */
+.rev-cta{padding:5rem 5%;background:linear-gradient(135deg,#060f1c,#0a1628);text-align:center}
+.rc-inner{max-width:640px;margin:0 auto}
+.cta-h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:1rem}
+.cta-h2 em{color:#c9a84c;font-style:normal}
+.cta-p{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:2.5rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btn-gold{background:#c9a84c;color:#060f1c;padding:.9rem 2rem;border-radius:8px;
+  text-decoration:none;font-weight:800;font-size:.95rem;transition:background .2s}
+.cta-btn-gold:hover{background:#b8963e}
+.cta-btn-sec{color:#fff;padding:.9rem 2rem;border-radius:8px;text-decoration:none;
+  font-weight:700;font-size:.95rem;border:1px solid rgba(255,255,255,.2)}
+ 
+/* FOOTER */
+.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;direction:rtl}
+ 
+.footer-links a:hover{color:#c9a84c}
+ 
+#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
+  background:#c9a84c;color:#060f1c;border:none;cursor:pointer;font-size:1.1rem;
+  opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:999}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#scroll-top:hover{background:#b8963e}
+@media(max-width:900px){.streams-grid,.arr-breakdown,.ue-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.arr-bar-item{grid-template-columns:60px 1fr 100px}}
+@media(max-width:480px){.arr-bar-item{grid-template-columns:1fr}}
+ 
+ 
+/* footer styles now via arabic-theme.css */
+.footer-logo-img{max-height:44px;width:auto;display:block}
+ 
+
+/* Q2 FIXED AR */
+.pr-sec-dark{background:#f8fafc!important}
+.pr-sec-dark *{color:#1e293b!important}
+.pr-sec-dark h2,.pr-sec-dark h3{color:#1A1A2E!important}
+.pr-sec-dark p,.pr-sec-dark li{color:#475569!important}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "iRonic Health",
+  "url": "https://ironichealth.com/investor/",
+  "logo": "https://ironichealth.com/investor/assets/logos/H_Badge_Metro_Blue_T.svg",
+  "description": "AI-powered health insurance orchestration platform in development for Egypt's private health insurance market. Company in formation.",
+  "founders": [
+    { "@type": "Person", "name": "Sherif Almeidany", "jobTitle": "Co-Founder & CEO" },
+    { "@type": "Person", "name": "Dr. Islam Almeidany", "jobTitle": "Co-Founder & Chief Pharmacy Officer" }
+  ],
+  "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+  "contactPoint": { "@type": "ContactPoint", "email": "info@ironichealth.com", "contactType": "Business Inquiries" }
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://ironichealth.com/investor/pricing.html">
+<link rel="alternate" hreflang="ar" href="https://ironichealth.com/investor/ar/pricing.html">
+</head>
+<body>
+<a href="#main-content" class="skip-to-content">تخطّي إلى المحتوى الرئيسي</a>
+ 
+<div id="nav-placeholder"></div>
+ 
+<main id="main-content">
+ 
+<!-- HERO -->
+<section class="rev-hero">
+  <div class="rh-bg"></div>
+  <div class="rh-grid"></div>
+  <div class="rh-inner">
+    <div class="rh-badge">💰 نموذج الإيرادات</div>
+    <h1 class="rh-h1">ثلاثة تيارات إيرادية<br><em>متشابكة ومتنامية</em></h1>
+    <p class="rh-sub">نموذج إيرادات مُصمَّم للتوسع التدريجي — يبدأ بتحقيق النتائج أولًا، ثم ينتقل إلى اشتراك سنوي مستدام، مع هامش ربح يرتفع تدريجيًا ليتجاوز 75% بحلول السنة الثالثة.</p>
+    <div class="rh-kpis">
+      <div><div class="rk-val gold">$616K</div><div class="rk-lbl">Exit ARR السنة الأولى (هدف)</div></div>
+      <div><div class="rk-val" style="color:#c9a84c">3.67&#215;</div><div class="rk-lbl">هدف عائد الاستثمار للعميل (احتيال + أتمتة إدارية)</div></div>
+      <div><div class="rk-val green">78%</div><div class="rk-lbl">هامش الربح الإجمالي (هدف السنة 3)</div></div>
+      <div><div class="rk-val blue">13.2×</div><div class="rk-lbl">نسبة LTV/CAC (هدف)</div></div>
+    </div>
+    <p style="font-size:.82rem;color:rgba(255,255,255,.5);max-width:640px;margin-top:1rem">استرداد الاحتيال وحده بيوصل بالعميل لعائد حوالي 2.1× — أقل من الحد اللي يقنع أغلب المديرين الماليين. إضافة أتمتة التكاليف الإدارية بترفعه لـ3.67× — وده الرقم اللي فعليًا بنبيع بيه.</p>
+  </div>
+</section>
+ 
+<!-- REVENUE STREAMS -->
+<section class="streams">
+  <div class="streams-inner">
+    <div class="reveal">
+      <div class="sec-label">تيارات الإيرادات</div>
+      <h2 class="sec-h2">ثلاث طرق <em style="color:#c9a84c">لتحقيق الإيرادات</em></h2>
+      <p class="sec-lead">كل تيار مُصمَّم لخدمة شريحة مختلفة من المنظومة، مما يُقلل الاعتماد على عميل واحد ويُضخّم الإيرادات الإجمالية.</p>
+    </div>
+    <div class="streams-grid">
+ 
+      <!-- Stream 1: Contingent -->
+      <div class="stream-card primary reveal">
+        <div class="stream-accent gold"></div>
+        <span class="stream-icon">🎯</span>
+        <div class="stream-label gold">التيار الأول</div>
+        <h3 class="stream-h3">تحمّل النتائج المشروط</h3>
+        <div class="stream-price gold">25%</div>
+        <div class="stream-price-sub">من التوفير المُحقَّق فعليًا</div>
+        <p class="stream-p">نتقاضى فقط عندما نوفّر — 25% من وفورات الاحتيال المُتحقق منها خلال التجربة، و15% بعدها. لا توفير = لا رسوم.</p>
+        <div class="stream-features">
+          <div class="sf-item"><span class="sf-check gold">✓</span> لا خطر مالي على العميل</div>
+          <div class="sf-item"><span class="sf-check gold">✓</span> حوافز متوافقة مع النتائج</div>
+          <div class="sf-item"><span class="sf-check gold">✓</span> إيرادات مرتبطة بالنتائج</div>
+        </div>
+      </div>
+ 
+      <!-- Stream 2: Annual Subscription -->
+      <div class="stream-card reveal">
+        <div class="stream-accent green"></div>
+        <span class="stream-icon">📅</span>
+        <div class="stream-label green">التيار الثاني</div>
+        <h3 class="stream-h3">الاشتراك السنوي حسب الشريحة</h3>
+        <div class="stream-price green">$0.90 – $2.40</div>
+        <div class="stream-price-sub">لكل مؤمَّن سنويًا، مقسّطة شهريًا (per member per year)</div>
+        <p class="stream-p">اشتراك سنوي مدفوع من شركات التأمين أو TPA أو الشركات ذاتية التمويل، حسب حجم المحفظة: كل ما زاد عدد المؤمَّنين قلّ السعر لكل فرد. الشركات ذاتية التمويل (قانون 155/2024) في أعلى شريحة كسعر شامل بدون حصة استرداد منفصلة.</p>
+        <div class="stream-features">
+          <div class="sf-item"><span class="sf-check green">✓</span> إيراد متكرر ومتوقع</div>
+          <div class="sf-item"><span class="sf-check green">✓</span> يتوسع مع نمو المنظومة</div>
+          <div class="sf-item"><span class="sf-check green">✓</span> ثلاث شرائح: $0.90 / $1.20 / $2.40 سنويًا</div>
+        </div>
+      </div>
+ 
+      <!-- Stream 3: Pharmacy / Script-Screening -->
+      <div class="stream-card reveal">
+        <div class="stream-accent blue"></div>
+        <span class="stream-icon">💊</span>
+        <div class="stream-label blue">التيار الثالث</div>
+        <h3 class="stream-h3">فحص الروشتات الصيدلانية</h3>
+        <div class="stream-price blue">$0.09</div>
+        <div class="stream-price-sub">لكل روشتة مفحوصة (ضمن نطاق $0.05–$0.50)</div>
+        <p class="stream-p">رسوم معالجة لكل وصفة طبية إلكترونية تمر عبر شبكة الصيدليات. يبدأ هذا التيار من الشهر الرابع عشر تقريبًا، بعد بناء شبكة الصيدليات خلال مرحلة التجارب.</p>
+        <div class="stream-features">
+          <div class="sf-item"><span class="sf-check blue">✓</span> حجم معاملات عالي</div>
+          <div class="sf-item"><span class="sf-check blue">✓</span> هامش ربح مرتفع، تكلفة إضافية شبه معدومة</div>
+          <div class="sf-item"><span class="sf-check blue">✓</span> توسع طبيعي مع الشبكة</div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- ARR PROJECTION -->
+<section class="arr">
+  <div class="arr-inner">
+    <div class="reveal">
+      <div class="sec-label">توقعات الإيرادات</div>
+      <h2 class="sec-h2">نمو ARR <em style="color:#c9a84c">السنوات الثلاث الأولى</em></h2>
+      <p class="sec-lead">أهداف السيناريو الأساسي للنموذج المالي — ليست نتائج فعلية ولا توجد عقود موقَّعة بعد.</p>
+    </div>
+ 
+    <div class="arr-bars reveal" id="arr-bars">
+      <div class="arr-bar-item">
+        <div class="arr-year">السنة 1</div>
+        <div class="arr-track">
+          <div class="arr-fill y1" data-target="17">السنة الأولى — بداية التوسع</div>
+        </div>
+        <div>
+          <div class="arr-val blue">$616K</div>
+          <div class="arr-detail">277K مؤمَّن · عميلان</div>
+        </div>
+      </div>
+      <div class="arr-bar-item">
+        <div class="arr-year">السنة 2</div>
+        <div class="arr-track">
+          <div class="arr-fill y2" data-target="53">التوسع في المنظومة</div>
+        </div>
+        <div>
+          <div class="arr-val gold">$1.95M</div>
+          <div class="arr-detail">1.0M مؤمَّن · 6 عملاء</div>
+        </div>
+      </div>
+      <div class="arr-bar-item">
+        <div class="arr-year">السنة 3</div>
+        <div class="arr-track">
+          <div class="arr-fill y3" data-target="100">هدف السيناريو القاعدي</div>
+        </div>
+        <div>
+          <div class="arr-val green">$3.69M</div>
+          <div class="arr-detail">2.25M مؤمَّن · 11 عميل</div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="arr-breakdown reveal">
+      <div class="ab-card">
+        <div class="ab-year blue">السنة الأولى</div>
+        <div class="ab-arr">$158K</div>
+        <div class="ab-lives">277,000 مؤمَّن (Exit ARR: $616K)</div>
+        <div class="ab-rows">
+          <div class="ab-row"><span class="ab-row-label">الاشتراك السنوي</span><span class="ab-row-val">$83K</span></div>
+          <div class="ab-row"><span class="ab-row-label">حصة الاسترداد</span><span class="ab-row-val">$75K</span></div>
+          <div class="ab-row"><span class="ab-row-label">صيدليات</span><span class="ab-row-val">—</span></div>
+          <div class="ab-row"><span class="ab-row-label">عملاء محوريون: 2</span><span class="ab-row-val">—</span></div>
+        </div>
+      </div>
+      <div class="ab-card">
+        <div class="ab-year gold">السنة الثانية</div>
+        <div class="ab-arr">$1.28M</div>
+        <div class="ab-lives">1,000,000 مؤمَّن (Exit ARR: $1.95M)</div>
+        <div class="ab-rows">
+          <div class="ab-row"><span class="ab-row-label">الاشتراك السنوي</span><span class="ab-row-val">$916K</span></div>
+          <div class="ab-row"><span class="ab-row-label">حصة الاسترداد</span><span class="ab-row-val">$311K</span></div>
+          <div class="ab-row"><span class="ab-row-label">صيدليات</span><span class="ab-row-val">$57K</span></div>
+          <div class="ab-row"><span class="ab-row-label">عملاء محوريون: 6</span><span class="ab-row-val">—</span></div>
+        </div>
+      </div>
+      <div class="ab-card">
+        <div class="ab-year green">السنة الثالثة</div>
+        <div class="ab-arr">$2.91M</div>
+        <div class="ab-lives">2,250,000 مؤمَّن (Exit ARR: $3.69M)</div>
+        <div class="ab-rows">
+          <div class="ab-row"><span class="ab-row-label">الاشتراك السنوي</span><span class="ab-row-val">$2.19M</span></div>
+          <div class="ab-row"><span class="ab-row-label">حصة الاسترداد</span><span class="ab-row-val">$568K</span></div>
+          <div class="ab-row"><span class="ab-row-label">صيدليات</span><span class="ab-row-val">$153K</span></div>
+          <div class="ab-row"><span class="ab-row-label">عملاء محوريون: 11</span><span class="ab-row-val">—</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- UNIT ECONOMICS -->
+<section class="unit-econ">
+  <div class="ue-inner">
+    <div class="reveal">
+      <div class="sec-label">الاقتصاديات التشغيلية</div>
+      <h2 class="sec-h2">أرقام <em style="color:#c9a84c">تُقنع المستثمرين</em></h2>
+      <p class="sec-lead">نموذج B2B2C مع عملاء مؤسسيين يُنتج وحدات اقتصادية استثنائية وتكلفة اكتساب منخفضة نسبيًا.</p>
+    </div>
+    <div class="ue-grid">
+      <div class="ue-card reveal">
+        <div class="ue-metric">تكلفة اكتساب العميل CAC</div>
+        <div class="ue-val gold">$75K</div>
+        <div class="ue-note">تكلفة كاملة لكل عميل مؤسسي: رواتب المبيعات والسفر على مدى دورة بيع 7 أشهر، بالإضافة لتكلفة التجربة المجانية وبناء التكامل التقني — بدون استبعاد أي بند.</div>
+      </div>
+      <div class="ue-card reveal">
+        <div class="ue-metric">القيمة الدائمة للعميل LTV</div>
+        <div class="ue-val green">$988K</div>
+        <div class="ue-note">على أساس مجمل الربح (هامش 72%)، مقيّدة بـ3 سنوات رغم أن معدل الفقدان الفعلي يعطي عمر عقد ضمني 12.5 سنة — تحفظ مقصود.</div>
+      </div>
+      <div class="ue-card reveal">
+        <div class="ue-metric">نسبة LTV/CAC</div>
+        <div class="ue-val blue">13.2×</div>
+        <div class="ue-note">المعيار المرجعي القياسي 3×. هذا الرقم بعد خصم هامش الربح وتقييد عمر العقد — نسخة بدون هذا التحفظ كانت ستظهر أعلى بكثير، لكنها لا تصمد أمام الفحص الدقيق.</div>
+      </div>
+      <div class="ue-card reveal">
+        <div class="ue-metric">هامش الربح الإجمالي</div>
+        <div class="ue-val gold">49% ← 78%</div>
+        <div class="ue-note">يرتفع مع الحجم: 49% في السنة الأولى، 74% في الثانية، 78% في الثالثة. الرقم 72% هو المستخدم في حساب القيمة الدائمة كتقدير متحفظ.</div>
+      </div>
+      <div class="ue-card reveal">
+        <div class="ue-metric">فترة استرداد CAC</div>
+        <div class="ue-val green">9.7 أشهر</div>
+        <div class="ue-note">شاملة دورة البيع كاملة (7 أشهر) — الرقم الذي يطلبه أي مستثمر منضبط. من لحظة التشغيل الفعلي فقط، الاسترداد خلال 2.7 شهر.</div>
+      </div>
+      <div class="ue-card reveal">
+        <div class="ue-metric">معدل الاحتفاظ بالعملاء</div>
+        <div class="ue-val blue">هدف</div>
+        <div class="ue-note">تكاملات API عميقة وعقود متعددة السنوات تجعل الانتقال مكلفًا (افتراض يُختبر).</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- PRICING TABLE -->
+<section class="pricing-table-sec">
+  <div class="pt-inner">
+    <div class="reveal">
+      <div class="sec-label">جدول الأسعار</div>
+      <h2 class="sec-h2">خيارات <em style="color:#c9a84c">التسعير التفصيلية</em></h2>
+    </div>
+    <div class="ptable-wrap reveal">
+      <table class="ptable">
+        <thead>
+          <tr>
+            <th>نوع الخدمة</th>
+            <th>المستخدم المستهدف</th>
+            <th>نموذج التسعير</th>
+            <th>النطاق</th>
+            <th>هامش الربح</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>تحمّل نتائج مشروط</td>
+            <td>شركات التأمين</td>
+            <td>% من التوفير</td>
+            <td class="price-val">25% من التوفير</td>
+            <td class="margin-high">هدف 85%+</td>
+          </tr>
+          <tr>
+            <td>الشريحة B — المحورية</td>
+            <td>TPA / شركات تأمين متوسطة (100–500 ألف مؤمَّن)</td>
+            <td>سنوي لكل مؤمَّن</td>
+            <td class="price-val">$1.20 / سنة</td>
+            <td class="margin-high">أول 5 عملاء</td>
+          </tr>
+          <tr>
+            <td>الشريحة A — الحجم الكبير</td>
+            <td>محافظ كبرى (أكثر من 500 ألف مؤمَّن)</td>
+            <td>سنوي لكل مؤمَّن</td>
+            <td class="price-val">$0.90 / سنة</td>
+            <td class="margin-high">TPA وطنية</td>
+          </tr>
+          <tr>
+            <td>الشريحة C — الشركات</td>
+            <td>شركات ذاتية التمويل (قانون 155/2024)</td>
+            <td>سنوي شامل</td>
+            <td class="price-val">$2.40 / سنة</td>
+            <td class="margin-high">بدون حصة استرداد منفصلة</td>
+          </tr>
+          <tr>
+            <td>فحص الروشتات الصيدلانية</td>
+            <td>شبكات الصيدليات</td>
+            <td>لكل روشتة</td>
+            <td class="price-val">$0.09</td>
+            <td class="margin-high">ضمن نطاق $0.05–$0.50</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+ 
+<!-- CTA -->
+<section class="rev-cta">
+  <div class="rc-inner reveal">
+    <h2 class="cta-h2">نموذج إيرادات <em>واضح الأرقام</em></h2>
+    <p class="cta-p">جاهز للاطلاع على النموذج المالي الكامل لـ 3 سنوات؟ تواصل معنا للحصول على حزمة المستثمرين.</p>
+    <div class="cta-btns">
+      <a href="investors.html" class="cta-btn-gold">حزمة المستثمرين ←</a>
+      <a href="contact.html" class="cta-btn-sec">طلب عرض تجريبي</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+</main>
+ 
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+ 
+<script>
+const toggle = document.querySelector('.nav-mobile-toggle');
+const mNav = document.querySelector('.mobile-nav');
+if(toggle && mNav){
+  toggle.addEventListener('click',()=>{
+    const open = mNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    mNav.setAttribute('aria-hidden', !open);
+  });
+}
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav = document.getElementById('nav');
+if(nav) window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY>40); });
+const st = document.getElementById('scroll-top');
+if(st){
+  window.addEventListener('scroll',()=>{ st.classList.toggle('visible', window.scrollY>400); });
+  st.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+}
+// Animate ARR bars on scroll
+const barsSection = document.getElementById('arr-bars');
+if(barsSection){
+  const barObs = new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){
+      document.querySelectorAll('.arr-fill').forEach(bar=>{
+        const t = bar.dataset.target;
+        setTimeout(()=>{ bar.style.width = t+'%'; }, 200);
+      });
+      barObs.disconnect();
+    }
+  },{threshold:.3});
+  barObs.observe(barsSection);
+}
+</script>
+ 
+<script id="lang-switcher-js">
+(function(){
+  var ls=document.getElementById('lang-switcher');
+  if(!ls)return;
+  var btn=ls.querySelector('.lang-btn');
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=ls.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+  document.addEventListener('click',function(){
+    ls.classList.remove('open');
+    if(btn) btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
+ 
+<script src="../js/components.js"></script>
+<script src="../js/consent.js" defer></script>
+<script src="../js/disclosure.js"></script>
+</body>
+</html>

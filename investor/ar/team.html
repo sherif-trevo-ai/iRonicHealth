@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="تعرّف على فريق iRonic Health — المؤسسان وراء منصة لربط التأمين الصحي بالذكاء الاصطناعي، مصمَّمة للسوق المصري.">
+<meta property="og:title" content="الفريق — iRonic Health">
+<meta property="og:type" content="website">
+<title>الفريق — القيادة التنفيذية · iRonic Health</title>
+<link rel="icon" type="image/svg+xml" href="../assets/H_Badge_icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/arabic-theme.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{direction:rtl;font-family:'Cairo',sans-serif;overflow-x:hidden}
+
+/* ══ DESIGN TOKENS ══ */
+/* light theme now via arabic-theme.css */
+
+/* handled by arabic-theme.css */
+.advisors .adv-card{background:var(--white);border-color:var(--border-2);box-shadow:0 2px 8px rgba(10,22,40,.05)}
+.advisors .adv-card:hover{border-color:rgba(24,95,165,.25)}
+.advisors .adv-initials{background:rgba(24,95,165,.1);border-color:rgba(24,95,165,.2);color:#185fa5}
+.advisors .adv-name{color:var(--ink)}
+.advisors .adv-role{color:#185fa5}
+.advisors .adv-desc{color:var(--muted)}
+.nav{direction:rtl}
+.nav-center a{font-family:'Cairo',sans-serif}
+.nav-logo-text{text-align:right}
+.logo-wordmark,.logo-tagline{font-family:'Cairo',sans-serif}
+.btn-lang,.btn-demo{font-family:'Cairo',sans-serif}
+
+/* ══ HERO ══ */
+.team-hero{
+  min-height:62vh;
+  background:linear-gradient(145deg,#060f1c 0%,#0a1628 60%,#0d1f3a 100%);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:140px 5% 80px;position:relative;overflow:hidden;
+}
+.th-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle 600px at 80% 30%,rgba(29,158,117,.1) 0%,transparent 60%),
+                   radial-gradient(circle 400px at 10% 70%,rgba(201,168,76,.07) 0%,transparent 50%);}
+.th-grid{position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:40px 40px;}
+.th-inner{position:relative;z-index:1;max-width:720px}
+.th-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.25);
+  border-radius:100px;padding:5px 16px;margin-bottom:1.5rem;
+  font-size:.82rem;font-weight:700;color:#1d9e75;letter-spacing:.04em;}
+.th-h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;line-height:1.1;
+  color:#fff;margin-bottom:1.25rem;}
+.th-h1 em{color:#1d9e75;font-style:normal}
+.th-sub{font-size:1.05rem;color:rgba(255,255,255,.55);line-height:1.85;max-width:600px}
+
+/* ══ FOUNDERS ══ */
+.founders{padding:6rem 5%}
+.founders-inner{max-width:1100px;margin:0 auto}
+.sec-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin-bottom:.75rem;}
+.sec-h2{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;color:#fff;margin-bottom:.75rem}
+.sec-h2 em{color:#1d9e75;font-style:normal}
+.sec-lead{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.8;max-width:580px;margin-bottom:3.5rem}
+
+.founder-cards{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.founder-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:20px;padding:2.5rem;position:relative;overflow:hidden;
+  transition:border-color .3s,transform .3s}
+.founder-card:hover{border-color:rgba(29,158,117,.3);transform:translateY(-4px)}
+.founder-card::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle 300px at 80% 0%,rgba(29,158,117,.06) 0%,transparent 60%)}
+
+.fc-avatar{width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,#1d9e75,#185fa5);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:1.5rem;
+  border:3px solid rgba(29,158,117,.3)}
+.fc-name{font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:.25rem}
+.fc-title{font-size:.85rem;color:#1d9e75;font-weight:700;margin-bottom:1.25rem}
+.fc-bio{font-size:.9rem;color:rgba(255,255,255,.52);line-height:1.9;margin-bottom:1.75rem}
+.fc-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.fc-tag{font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:20px;
+  background:rgba(29,158,117,.1);border:1px solid rgba(29,158,117,.2);color:#1d9e75}
+.fc-tag.blue{background:rgba(24,95,165,.1);border-color:rgba(24,95,165,.25);color:#378add}
+.fc-tag.gold{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.25);color:#c9a84c}
+
+.fc-contact{display:flex;flex-direction:column;gap:.5rem;margin-top:1.5rem;
+  padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+.fc-contact a{font-size:.82rem;color:rgba(255,255,255,.4);text-decoration:none;
+  display:flex;align-items:center;gap:.5rem;transition:color .2s}
+.fc-contact a:hover{color:#1d9e75}
+.fc-contact-icon{font-size:.9rem}
+
+/* ══ STORY TIMELINE ══ */
+.story{padding:6rem 5%;background:#0a1628}
+.story-inner{max-width:900px;margin:0 auto}
+.timeline{position:relative;padding-right:2rem;margin-top:3rem}
+.timeline::before{content:'';position:absolute;right:0;top:0;bottom:0;
+  width:2px;background:linear-gradient(to bottom,#1d9e75,rgba(29,158,117,.1))}
+.tl-item{position:relative;margin-bottom:3rem;padding-right:2.5rem}
+.tl-dot{position:absolute;right:-9px;top:6px;width:18px;height:18px;border-radius:50%;
+  background:#060f1c;border:3px solid #1d9e75;z-index:1}
+.tl-dot.gold{border-color:#c9a84c}
+.tl-dot.blue{border-color:#185fa5}
+.tl-date{font-size:.75rem;font-weight:700;color:#1d9e75;text-transform:uppercase;
+  letter-spacing:.08em;margin-bottom:.375rem}
+.tl-date.gold{color:#c9a84c}
+.tl-date.blue{color:#378add}
+.tl-h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:.5rem}
+.tl-p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.8}
+
+/* ══ VALUES ══ */
+.values{padding:6rem 5%;background:#060f1c}
+.values-inner{max-width:1100px;margin:0 auto}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.val-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:2rem 1.5rem;text-align:center;
+  transition:border-color .3s,transform .3s}
+.val-card:hover{border-color:rgba(201,168,76,.25);transform:translateY(-3px)}
+.val-icon{font-size:2.2rem;margin-bottom:1rem;display:block}
+.val-h3{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:.625rem}
+.val-p{font-size:.83rem;color:rgba(255,255,255,.45);line-height:1.75}
+
+/* ══ ADVISORS ══ */
+.advisors{padding:6rem 5%}
+.advisors-inner{max-width:1100px;margin:0 auto}
+.advisor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.adv-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:1.75rem;transition:border-color .3s}
+.adv-card:hover{border-color:rgba(24,95,165,.25)}
+.adv-initials{width:50px;height:50px;border-radius:50%;
+  background:rgba(24,95,165,.2);border:2px solid rgba(24,95,165,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;font-weight:800;color:#378add;margin-bottom:1rem}
+.adv-name{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.25rem}
+.adv-role{font-size:.78rem;color:#378add;font-weight:600;margin-bottom:.75rem}
+.adv-desc{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.75}
+
+/* ══ JOIN CTA ══ */
+.join-cta{padding:6rem 5%;background:linear-gradient(135deg,#060f1c,#0a1628);
+  text-align:center}
+.join-cta-inner{max-width:700px;margin:0 auto}
+.cta-h2{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;margin-bottom:1rem}
+.cta-h2 em{color:#1d9e75;font-style:normal}
+.cta-p{font-size:1rem;color:rgba(255,255,255,.5);line-height:1.85;margin-bottom:2.5rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-btn-primary{background:#1d9e75;color:#fff;padding:.9rem 2rem;
+  border-radius:8px;text-decoration:none;font-weight:700;font-size:.95rem;
+  transition:background .2s}
+.cta-btn-primary:hover{background:#178a64}
+.cta-btn-sec{background:transparent;color:#fff;padding:.9rem 2rem;
+  border-radius:8px;text-decoration:none;font-weight:700;font-size:.95rem;
+  border:1px solid rgba(255,255,255,.2);transition:border-color .2s}
+.cta-btn-sec:hover{border-color:rgba(255,255,255,.4)}
+
+/* ══ FOOTER ══ */
+.footer{background:#030a14;border-top:1px solid rgba(255,255,255,.06);padding:3rem 5% 1.5rem;font-family:'Cairo',sans-serif;direction:rtl}
+
+.footer-links a:hover{color:#1d9e75}
+
+#scroll-top{position:fixed;bottom:2rem;left:2rem;width:44px;height:44px;border-radius:50%;
+  background:#1d9e75;color:#fff;border:none;cursor:pointer;font-size:1.1rem;
+  opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;z-index:999}
+#scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+#scroll-top:hover{background:#178a64}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:768px){
+  .founder-cards{grid-template-columns:1fr}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .advisor-grid{grid-template-columns:1fr}
+  
+}
+@media(max-width:480px){
+  .values-grid{grid-template-columns:1fr}
+  
+}
+
+
+/* footer styles now via arabic-theme.css */
+.footer-logo-img{max-height:44px;width:auto;display:block}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "iRonic Health",
+  "url": "https://ironichealth.com/investor/",
+  "logo": "https://ironichealth.com/investor/assets/logos/H_Badge_Metro_Blue_T.svg",
+  "description": "AI-powered health insurance orchestration platform in development for Egypt's private health insurance market. Company in formation.",
+  "founders": [
+    { "@type": "Person", "name": "Sherif Almeidany", "jobTitle": "Co-Founder & CEO" },
+    { "@type": "Person", "name": "Dr. Islam Almeidany", "jobTitle": "Co-Founder & Chief Pharmacy Officer" }
+  ],
+  "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+  "contactPoint": { "@type": "ContactPoint", "email": "info@ironichealth.com", "contactType": "Business Inquiries" }
+}
+</script>
+<link rel="alternate" hreflang="en" href="https://ironichealth.com/investor/team.html">
+<link rel="alternate" hreflang="ar" href="https://ironichealth.com/investor/ar/team.html">
+</head>
+<body>
+<a href="#main-content" class="skip-to-content">تخطّي إلى المحتوى الرئيسي</a>
+
+<div id="nav-placeholder"></div>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="team-hero">
+  <div class="th-bg"></div>
+  <div class="th-grid"></div>
+  <div class="th-inner">
+    <div class="th-badge">👥 الفريق التنفيذي</div>
+    <h1 class="th-h1">بُنيت على <em>خبرة حقيقية</em><br>وقيادة متخصصة</h1>
+    <p class="th-sub">يجمع فريق iRonic Health بين الخبرة التقنية العميقة والمعرفة الطبية المتخصصة والرؤية الاستراتيجية لإعادة هيكلة منظومة التأمين الصحي في مصر.</p>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="founders">
+  <div class="founders-inner">
+    <div class="reveal">
+      <div class="sec-label">القيادة التنفيذية</div>
+      <h2 class="sec-h2">المؤسسون <em>يقودون التغيير</em></h2>
+      <p class="sec-lead">مؤسسان تجمعهما رؤية واحدة: بناء منظومة صحية أكثر عدالة وكفاءة لملايين المصريين.</p>
+      <p class="sec-lead" style="font-weight:700;margin-top:.5rem">إفصاح: الشريكان المؤسسان شقيقان.</p>
+    </div>
+
+    <div class="founder-cards">
+
+      <!-- Sherif -->
+      <div class="founder-card reveal">
+        <div class="fc-avatar">SA</div>
+        <div class="fc-name">م. شريف الميداني</div>
+        <div class="fc-title">المؤسس المشارك والرئيس التنفيذي</div>
+        <p class="fc-bio">
+          متخصص في تطوير الأعمال بخبرة تتجاوز 19 عامًا. يقود الجوانب التجارية لـ iRonic Health: شراكات شركات التأمين وTPA، والتواصل مع المستثمرين، واستراتيجية التمويل ودخول السوق، إلى جانب بناء المنتج والتقنية.
+        </p>
+        <div class="fc-tags">
+          <span class="fc-tag">تطوير الأعمال</span>
+          <span class="fc-tag blue">الشراكات الاستراتيجية</span>
+          <span class="fc-tag gold">استراتيجية النمو</span>
+          <span class="fc-tag">B2B SaaS</span>
+        </div>
+        <div class="fc-contact">
+          <a href="mailto:sherif@ironichealth.com"><span class="fc-contact-icon">✉</span> sherif@ironichealth.com</a>
+          <a href="tel:+201555556697" dir="ltr"><span class="fc-contact-icon">📞</span> +20 1555556697</a>
+        </div>
+      </div>
+
+      <!-- Dr. Islam -->
+      <div class="founder-card reveal">
+        <div class="fc-avatar" style="background:linear-gradient(135deg,#185fa5,#1d9e75)">IA</div>
+        <div class="fc-name">د. إسلام الميداني</div>
+        <div class="fc-title">المؤسس المشارك ومدير الشؤون الصيدلانية الإكلينيكية</div>
+        <p class="fc-bio">
+          صيدلي إكلينيكي، عضو نقابة الصيادلة المصرية، وصاحب فكرة المشروع. يقود الجوانب الدوائية والإكلينيكية للمنصة: أنماط الهدر والاحتيال، ومراجعة القواعد الإكلينيكية وكتالوج الأدوية، والحوكمة الصيدلانية لقرارات المنصة. قاعدة قواعد المحرك في جوهرها دوائية — تداخلات الأدوية، وتعديل الجرعة الكلوية، والازدواج العلاجي، وتغطية الفورمولاري — وهو المجال الذي تكون فيه الصيدلة الإكلينيكية التخصص الأدق. مراجعة المدير الطبي للقرارات عالية الأثر طبقة مصمَّمة في المنصة، وهي أول وظيفة إكلينيكية تُموَّل من الجولة.
+        </p>
+        <div class="fc-tags">
+          <span class="fc-tag blue">التأمين الصحي</span>
+          <span class="fc-tag">صيدلة إكلينيكية</span>
+          <span class="fc-tag gold">الحوكمة الصيدلانية</span>
+          <span class="fc-tag blue">أنماط الاحتيال</span>
+        </div>
+        <div class="fc-contact">
+          <a href="mailto:islam@ironichealth.com"><span class="fc-contact-icon">✉</span> islam@ironichealth.com</a>
+          <a href="tel:+201018166483" dir="ltr"><span class="fc-contact-icon">📞</span> +20 1018166483</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STORY TIMELINE -->
+<section class="story">
+  <div class="story-inner">
+    <div class="reveal">
+      <div class="sec-label">قصة iRonic Health</div>
+      <h2 class="sec-h2">من <em>المشكلة</em> إلى الحل</h2>
+      <p class="sec-lead">رحلة بُنيت على خبرة ميدانية حقيقية وإيمان راسخ بالتغيير.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot gold"></div>
+        <div class="tl-date gold">الملاحظة</div>
+        <h3 class="tl-h3">اكتشاف الفجوة</h3>
+        <p class="tl-p">لاحظ المؤسسان أن أغلب المطالبات والوصفات في مصر ما زالت ورقية، وأن دورات الموافقة تستغرق أيامًا أو أسابيع، بلا طبقة ذكية لرصد الاحتيال.</p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot blue"></div>
+        <div class="tl-date blue">المحفز — أبريل 2026</div>
+        <h3 class="tl-h3">تراخيص مؤقتة لست شركات TPA</h3>
+        <p class="tl-p">منحت الهيئة العامة للرقابة المالية تراخيص مؤقتة لست شركات لإدارة الرعاية الصحية بموجب القانون 155 لسنة 2024 — ما فتح قناة جديدة منظَّمة للسوق.</p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <div class="tl-date">القرار</div>
+        <h3 class="tl-h3">من Healio إلى iRonic Health</h3>
+        <p class="tl-p">بدأ المشروع باسم Healio، ثم تطوّر إلى iRonic Health مع اتساع نطاقه لربط أطراف المنظومة الثمانية. يجري حاليًا تأسيس شركة جديدة باسم iRonic Health في مصر.</p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="border-color:#c9a84c"></div>
+        <div class="tl-date gold">الآن — 2026</div>
+        <h3 class="tl-h3">جولة التمويل الأولى</h3>
+        <p class="tl-p">جولة Seed بقيمة 1.5 مليون دولار (SAFE Note) عند تقييم 6.5–8 مليون دولار، بعد جولة ما قبل التأسيس 3 مليون جنيه — لبناء نماذج الاحتيال، وتوقيع أول تجربة مع TPA مرخَّص أو شركة تأمين، وتوثيق نتائج أول 90 يومًا.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <div class="values-inner">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 1rem">
+      <div class="sec-label">قيمنا</div>
+      <h2 class="sec-h2">ما <em>يقودنا</em> كل يوم</h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="val-card reveal">
+        <span class="val-icon">🤖</span>
+        <h3 class="val-h3">الابتكار أولًا</h3>
+        <p class="val-p">نؤمن أن الذكاء الاصطناعي يمكنه حل مشاكل حقيقية معقدة — لا مجرد أتمتة العمليات القديمة.</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">🛡️</span>
+        <h3 class="val-h3">الثقة والشفافية</h3>
+        <p class="val-p">نبني علاقات طويلة الأمد مع شركائنا قائمة على الشفافية الكاملة في البيانات والنتائج.</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">⚡</span>
+        <h3 class="val-h3">السرعة والكفاءة</h3>
+        <p class="val-p">هدفنا تقييم المطالبة في ثوانٍ بدلًا من أسابيع — وهذا المعيار الذي نصمّم على أساسه.</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">🌍</span>
+        <h3 class="val-h3">الأثر الاجتماعي</h3>
+        <p class="val-p">كل دولار نوفره من الاحتيال هو دولار يعود إلى رعاية صحية أفضل لملايين المصريين.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL STATUS -->
+<section class="values" id="entity">
+  <div class="values-inner">
+    <div class="reveal" style="text-align:center;max-width:680px;margin:0 auto 1rem">
+      <div class="sec-label">الوضع القانوني والتنظيمي</div>
+      <h2 class="sec-h2">أين نقف <em>اليوم</em></h2>
+      <p class="sec-lead">بيان واضح بوضعنا القانوني والتنظيمي، ليتمكن المستثمرون والشركاء من التحقق منه.</p>
+    </div>
+    <div class="values-grid">
+      <div class="val-card reveal">
+        <span class="val-icon">🏛️</span>
+        <h3 class="val-h3">الكيان القانوني</h3>
+        <p class="val-p">iRonic Health — شركة قيد التأسيس في مصر. المؤسسان: م. شريف الميداني ود. إسلام الميداني (شقيقان).</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">⚖️</span>
+        <h3 class="val-h3">برمجيات لدعم القرار</h3>
+        <p class="val-p">لا نصدر وثائق تأمين ولا نحصّل أقساطًا ولا ندير مطالبات، ولذلك لا نحتاج إلى ترخيص تأمين أو TPA من الهيئة العامة للرقابة المالية. القرار النهائي لعملائنا المرخَّصين، وسنؤكد هذا الموقف مع المستشار القانوني ضمن إجراءات التأسيس.</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">™️</span>
+        <h3 class="val-h3">العلامات التجارية</h3>
+        <p class="val-p">طلبات تسجيل العلامات (اللفظية بالعربية والإنجليزية والشعار) مخطَّط تقديمها لدى الجهة المختصة — لم تُقدَّم بعد.</p>
+      </div>
+      <div class="val-card reveal">
+        <span class="val-icon">🔐</span>
+        <h3 class="val-h3">حماية البيانات</h3>
+        <p class="val-p">المنصة مصمَّمة وفق قانون حماية البيانات الشخصية 151 لسنة 2020 ومبادئ الميثاق المصري للذكاء الاصطناعي المسؤول، مع مراجعة طبية بشرية للقرارات عالية الخطورة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN CTA -->
+<section class="join-cta">
+  <div class="join-cta-inner reveal">
+    <h2 class="cta-h2">هل تريد الانضمام إلى <em>رحلتنا؟</em></h2>
+    <p class="cta-p">نبحث عن مواهب استثنائية وشركاء استراتيجيين يؤمنون بمستقبل الرعاية الصحية الرقمية في مصر.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="cta-btn-primary">تواصل معنا</a>
+      <a href="investors.html" class="cta-btn-sec">فرصة الاستثمار</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+</main>
+
+<button id="scroll-top" aria-label="العودة للأعلى">↑</button>
+
+<script>
+const toggle = document.querySelector('.nav-mobile-toggle');
+const mNav = document.querySelector('.mobile-nav');
+if(toggle && mNav){
+  toggle.addEventListener('click',()=>{
+    const open = mNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    mNav.setAttribute('aria-hidden', !open);
+  });
+}
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const nav = document.getElementById('nav');
+if(nav) window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled', window.scrollY>40); });
+const st = document.getElementById('scroll-top');
+if(st){
+  window.addEventListener('scroll',()=>{ st.classList.toggle('visible', window.scrollY>400); });
+  st.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+}
+</script>
+
+<script id="lang-switcher-js">
+(function(){
+  var ls=document.getElementById('lang-switcher');
+  if(!ls)return;
+  var btn=ls.querySelector('.lang-btn');
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=ls.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });
+  document.addEventListener('click',function(){
+    ls.classList.remove('open');
+    if(btn) btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
+
+<script src="../js/components.js"></script>
+<script src="../js/consent.js" defer></script>
+<script src="../js/disclosure.js"></script>
+</body>
+</html>
