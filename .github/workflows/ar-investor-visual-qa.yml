@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - ui/ar-investor-landing-alignment
+  pull_request:
+    branches:
+      - main
+    paths:
+      - investor/ar/index.html
+      - .github/workflows/ar-investor-visual-qa.yml
   workflow_dispatch:
 
 permissions:
