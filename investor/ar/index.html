@@ -1925,9 +1925,20 @@
     .hero-dashboard { max-width: 650px; justify-self: start; }
   }
   @media (min-width: 2200px) {
-    :root { --landing-max: 1520px; }
-    body { font-size: 18px; }
+    :root {
+      --landing-max: 2200px;
+      --landing-gutter: clamp(4rem, 6vw, 9rem);
+    }
+    html { font-size: clamp(17px, .48vw, 20px); }
+    body { font-size: 1rem; }
     .nav { max-width: none; }
+    .hero { min-height: min(1080px, calc(100svh - 70px)); }
+    .hero-inner {
+      grid-template-columns: minmax(0, 1.05fr) minmax(680px, .95fr);
+      gap: clamp(5rem, 7vw, 10rem);
+    }
+    .hero-dashboard { max-width: 900px; }
+    .section-header { max-width: 920px; }
   }
 
   /* Laptop / tablet landscape. */
