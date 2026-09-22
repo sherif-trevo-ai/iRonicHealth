@@ -153,6 +153,7 @@ jobs:
                 if (languageSwitcherWorks) {
                   await languageButton.click();
                   languageSwitcherWorks = await page.locator('.lang-dropdown').isVisible();
+                  await languageButton.click();
                 }
               }
 
