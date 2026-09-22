@@ -243,7 +243,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add visual-qa/
           git commit -m "chore: add temporary RTL visual QA snapshots [skip ci]"
-          git push
+          git push origin HEAD:fix/ar-landing-rtl-layout
 
       - name: Upload screenshots and QA report
         if: always()
