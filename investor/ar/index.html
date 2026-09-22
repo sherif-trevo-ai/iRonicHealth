@@ -1880,6 +1880,46 @@
     box-shadow: var(--shadow-sm);
   }
 
+  /* Resolve shared-class collisions on the standalone landing page. */
+  .team-grid { align-items: stretch; }
+  .team-card {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    min-width: 0;
+    text-align: center;
+  }
+  .team-card .team-avatar { flex: 0 0 72px; }
+  .team-contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .25rem;
+  }
+  .team-contact a {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    unicode-bidi: isolate;
+  }
+  .ecosystem .eco-hub {
+    position: relative;
+    inset: auto;
+    transform: none;
+    width: auto;
+    height: auto;
+    margin: 48px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+    z-index: auto;
+  }
+  .eco-parties { position: relative; z-index: 1; }
+
   /* Product proof remains dark, matching the shared dashboard treatment. */
   .dashboard-section,
   .cta-section {
@@ -2338,7 +2378,7 @@
             <span class="eco-stat-label">أطراف مترابطة</span>
           </div>
           <div class="eco-stat">
-            <span class="eco-stat-value">6–8M</span>
+            <span class="eco-stat-value"><bdi dir="ltr">6–8M</bdi></span>
             <span class="eco-stat-label">مؤمَّن عليهم في القطاع الخاص (مصر)</span>
           </div>
           <div class="eco-stat">
@@ -2467,15 +2507,15 @@
             <h3 style="font-size:1.15rem; margin-bottom:24px; color:var(--ink);">سوق التأمين الصحي الخاص في مصر ينمو بنسبة 15% سنويًا</h3>
             <div class="market-stats">
               <div class="market-stat">
-                <span class="market-stat-value">373M$</span>
+                <span class="market-stat-value"><bdi dir="ltr">$373M</bdi></span>
                 <span class="market-stat-label">TAM — أقساط التأمين الخاص 2024</span>
               </div>
               <div class="market-stat">
-                <span class="market-stat-value">80–150M$</span>
+                <span class="market-stat-value"><bdi dir="ltr">$80M–$150M</bdi></span>
                 <span class="market-stat-label">السوق القابل للخدمة SAM</span>
               </div>
               <div class="market-stat">
-                <span class="market-stat-value">18M$</span>
+                <span class="market-stat-value"><bdi dir="ltr">$18M</bdi></span>
                 <span class="market-stat-label">ARR هدف السنة الثالثة</span>
               </div>
               <div class="market-stat">
@@ -2494,14 +2534,14 @@
               </li>
               <li>
                 <div>
-                  <span class="timeline-date">2026–2027</span>
+                  <span class="timeline-date"><bdi dir="ltr">2026–2027</bdi></span>
                   <span class="timeline-text">هدف: أول تجربة مع TPA مرخَّص أو شركة تأمين</span>
                 </div>
                 <div class="timeline-dot"></div>
               </li>
               <li>
                 <div>
-                  <span class="timeline-date">2028+</span>
+                  <span class="timeline-date"><bdi dir="ltr">2028+</bdi></span>
                   <span class="timeline-text">خطة التوسع الإقليمي — السعودية، الإمارات</span>
                 </div>
                 <div class="timeline-dot"></div>
@@ -2617,7 +2657,7 @@
         <div class="team-grid">
           <div class="team-card">
             <div class="team-avatar">ش م</div>
-            <span class="team-name-ar">م. شريف الميداني</span>
+            <span class="team-name-ar">المهندس شريف الميداني</span>
             <span class="team-title-ar">المؤسس المشارك والرئيس التنفيذي</span>
             <span class="team-title-en">Co-Founder & CEO</span>
             <div class="team-contact">
@@ -2628,7 +2668,7 @@
 
           <div class="team-card">
             <div class="team-avatar" style="background:var(--blue-dark);">إ م</div>
-            <span class="team-name-ar">د. إسلام الميداني</span>
+            <span class="team-name-ar">الدكتور إسلام الميداني</span>
             <span class="team-title-ar">المؤسس المشارك ومدير الشؤون الصيدلانية الإكلينيكية</span>
             <span class="team-title-en">Co-Founder & Chief Pharmacy Officer</span>
             <div class="team-contact">
