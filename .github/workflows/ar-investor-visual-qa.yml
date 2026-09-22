@@ -154,6 +154,7 @@ jobs:
                   await languageButton.click();
                   languageSwitcherWorks = await page.locator('.lang-dropdown').isVisible();
                   await languageButton.click();
+                  await page.mouse.move(Math.floor(viewport.width / 2), Math.floor(viewport.height / 2));
                 }
               }
 
